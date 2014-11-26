@@ -1,0 +1,27 @@
+<?
+    $request = (array) simplexml_load_string(file_get_contents("php://input"));
+    
+    if(isset($request['DeviceTypeRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse duine="1364783" elapsed="0" date="2014-06-17T17:50:25+0200"><CustomerAuthenticateResponse/><CustomerDetailsResponse domain="harrycasino.com" anonymous="true" currency="EUR" currencyPrefix="€"/><DeviceTypeResponse deviceID="23097"/></CompositeResponse>';
+    }
+    else if(isset($request['CustomerFunBalanceRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:50:25+0200"><CustomerFunBalanceResponse balance="1000.00"/><EEGOpenGameResponse gameId="154775345"><DrawState drawId="0"/></EEGOpenGameResponse><EEGConfigResponse minStake="0.01" maxStake="250.00" maxWin="75000.00" defaultStake="0.02" roundLimit="250.00"><Option incStake="0.01" incPeriod="0.01"/><Option incStake="0.10" incPeriod="0.10"/><Option incStake="1.00" incPeriod="1.00"/><Option incStake="5.00" incPeriod="0.00"/></EEGConfigResponse><EEGLoadOddsResponse gameId="154775345"><DrawOdds payTableSet="0"><Prize odds="3000.00" type="5A"/><Prize odds="1000.00" type="4A"/><Prize odds="1000.00" type="5B"/><Prize odds="600.00" type="5C"/><Prize odds="500.00" type="4B"/><Prize odds="400.00" type="5D"/><Prize odds="300.00" type="4C"/><Prize odds="200.00" type="4D"/><Prize odds="200.00" type="5E"/><Prize odds="150.00" type="5F"/><Prize odds="100.00" type="3A"/><Prize odds="100.00" type="4E"/><Prize odds="100.00" type="5G"/><Prize odds="75.00" type="3B"/><Prize odds="75.00" type="4F"/><Prize odds="75.00" type="5H"/><Prize odds="50.00" type="3C"/><Prize odds="50.00" type="3D"/><Prize odds="50.00" type="4G"/><Prize odds="50.00" type="5I"/><Prize odds="30.00" type="4H"/><Prize odds="30.00" type="5J"/><Prize odds="25.00" type="3E"/><Prize odds="25.00" type="4I"/><Prize odds="15.00" type="3F"/><Prize odds="15.00" type="4J"/><Prize odds="10.00" type="2A"/><Prize odds="10.00" type="3G"/><Prize odds="10.00" type="3H"/><Prize odds="7.00" type="3I"/><Prize odds="5.00" type="3J"/><Prize type="5K" odds="100.00"/><Prize type="4K" odds="10.00"/><Prize type="3K" odds="3.00"/><Prize type="2K" odds="1.00"/><BetOdds type="line"/></DrawOdds></EEGLoadOddsResponse></CompositeResponse>';
+    }
+    
+    else if(isset($request['EEGPlaceBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:54:03+0200"><EEGPlaceBetsResponse newBalance="999.00" gameId="154775345"/><EEGLoadResultsResponse gameId="154775345"><DrawState drawId="0" state="settling"><WinLines spins="0" currentSpins="0" runningTotal="0.00" reelset="0" stops="33,45,42,38,48" display="E,H,F,F,G;E,H,J,J,G;G,F,J,J,B"/><ReplayInfo foItems="33,45,42,38,48"/><Bet seq="0" type="line" stake="1.00" pick="L50" won="false"/></DrawState></EEGLoadResultsResponse></CompositeResponse>';
+    }
+    else if(isset($request['EEGSettleBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:54:06+0200"><EEGSettleBetsResponse newBalance="999.00" gameId="154775345"/><EEGCloseGameResponse/></CompositeResponse>';
+    }
+    else if(isset($request['EEGConfigRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:54:06+0200"><CustomerFunBalanceResponse balance="999.00"/><EEGOpenGameResponse gameId="154776288"><DrawState drawId="0"/></EEGOpenGameResponse><EEGConfigResponse minStake="0.01" maxStake="250.00" maxWin="75000.00" defaultStake="0.02" roundLimit="250.00"><Option incStake="0.01" incPeriod="0.01"/><Option incStake="0.10" incPeriod="0.10"/><Option incStake="1.00" incPeriod="1.00"/><Option incStake="5.00" incPeriod="0.00"/></EEGConfigResponse></CompositeResponse>';
+    }
+    
+?>
+

@@ -1,0 +1,27 @@
+<?
+    $request = (array) simplexml_load_string(file_get_contents("php://input"));
+    
+    if(isset($request['DeviceTypeRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse duine="1364783" elapsed="0" date="2014-06-17T18:03:33+0200"><CustomerAuthenticateResponse/><CustomerDetailsResponse domain="harrycasino.com" anonymous="true" currency="EUR" currencyPrefix="€"/><DeviceTypeResponse deviceID="23097"/></CompositeResponse>';
+    }
+    else if(isset($request['CustomerFunBalanceRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:03:33+0200"><CustomerFunBalanceResponse balance="1000.00"/><EEGConfigResponse minStake="0.01" maxStake="250.00" maxWin="75000.00" defaultStake="0.04" roundLimit="250.00"><Option incStake="0.01" incPeriod="0.01"/><Option incStake="0.05" incPeriod="0.00"/><Option incStake="0.10" incPeriod="0.00"/><Option incStake="0.25" incPeriod="0.00"/><Option incStake="0.50" incPeriod="0.00"/><Option incStake="1.00" incPeriod="1.00"/><Option incStake="10.00" incPeriod="0.00"/></EEGConfigResponse><EEGOpenGameResponse gameId="154777458"><DrawState drawId="0"/></EEGOpenGameResponse><EEGLoadOddsResponse gameId="154777458"><DrawOdds payTableSet="0"><Prize odds="10000.00" type="5A"/><Prize odds="3000.00" type="4A"/><Prize odds="1500.00" type="5B"/><Prize odds="1500.00" type="5C"/><Prize odds="500.00" type="3A"/><Prize odds="400.00" type="5D"/><Prize odds="400.00" type="5E"/><Prize odds="300.00" type="4B"/><Prize odds="300.00" type="4C"/><Prize odds="250.00" type="5F"/><Prize odds="250.00" type="5G"/><Prize odds="150.00" type="5H"/><Prize odds="150.00" type="5I"/><Prize odds="100.00" type="4D"/><Prize odds="100.00" type="4E"/><Prize odds="100.00" type="5J"/><Prize odds="100.00" type="5K"/><Prize odds="70.00" type="4F"/><Prize odds="70.00" type="4G"/><Prize odds="50.00" type="2A"/><Prize odds="50.00" type="4H"/><Prize odds="50.00" type="4I"/><Prize odds="30.00" type="3B"/><Prize odds="30.00" type="3C"/><Prize odds="30.00" type="4J"/><Prize odds="30.00" type="4K"/><Prize odds="15.00" type="3D"/><Prize odds="15.00" type="3E"/><Prize odds="10.00" type="3F"/><Prize odds="10.00" type="3G"/><Prize odds="8.00" type="3H"/><Prize odds="8.00" type="3I"/><Prize odds="5.00" type="3J"/><Prize odds="5.00" type="3K"/><Prize odds="4.00" type="2B"/><Prize odds="4.00" type="2C"/><Prize type="5L" odds="200.00"/><Prize type="4L" odds="25.00"/><Prize type="3L" odds="5.00"/><Prize type="2L" odds="1.00"/><Prize type="5X" odds="0.00"/><BetOdds type="line"/></DrawOdds></EEGLoadOddsResponse></CompositeResponse>';
+    }
+    
+    else if(isset($request['EEGPlaceBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:04:27+0200"><EEGPlaceBetsResponse newBalance="999.00" gameId="154777458"/><EEGLoadResultsResponse gameId="154777458"><DrawState drawId="0" state="settling"><WinLines runningTotal="0.60" reelset="0" stops="26,17,17,40,32" display="K,K,K,J,I;D,C,L,C,C;F,F,F,G,J"><WinLine line="2" offsets="0,1,2" prize="3K" length="3" payout="0.20"/><WinLine line="3" offsets="10,11,12" prize="3F" length="3" payout="0.40"/></WinLines><ReplayInfo foItems="26,17,17,40,32"/><Bet seq="0" type="line" stake="1.00" pick="L25" payout="0.60" won="true"/></DrawState></EEGLoadResultsResponse></CompositeResponse>';
+    }
+    else if(isset($request['EEGSettleBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:04:30+0200"><EEGSettleBetsResponse newBalance="999.60" gameId="154777458"/><EEGCloseGameResponse/></CompositeResponse>';
+    }
+    else if(isset($request['EEGConfigRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:04:30+0200"><EEGOpenGameResponse gameId="154777622"><DrawState drawId="0"/></EEGOpenGameResponse><CustomerFunBalanceResponse balance="999.60"/><EEGConfigResponse minStake="0.01" maxStake="250.00" maxWin="75000.00" defaultStake="0.04" roundLimit="250.00"><Option incStake="0.01" incPeriod="0.01"/><Option incStake="0.05" incPeriod="0.00"/><Option incStake="0.10" incPeriod="0.00"/><Option incStake="0.25" incPeriod="0.00"/><Option incStake="0.50" incPeriod="0.00"/><Option incStake="1.00" incPeriod="1.00"/><Option incStake="10.00" incPeriod="0.00"/></EEGConfigResponse></CompositeResponse>';
+    }
+    
+?>
+

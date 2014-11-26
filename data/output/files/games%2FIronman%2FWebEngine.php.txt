@@ -1,0 +1,70 @@
+<?
+    $request = (array) simplexml_load_string(file_get_contents("php://input"));
+    
+    if(isset($request['DeviceTypeRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse duine="1364783" elapsed="0" date="2014-06-17T17:55:55+0200"><DeviceTypeResponse deviceID="24030"/><CustomerAuthenticateResponse/></CompositeResponse>';
+    }
+    
+    else if(isset($request['CustomerDetailsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:55:56+0200"><CustomerDetailsResponse domain="harrycasino.com" anonymous="true" currency="EUR" currencyPrefix="€"/></CompositeResponse>';
+    }
+    else if(isset($request['CustomerFunBalanceRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:55:56+0200"><CustomerFunBalanceResponse balance="1000.00"/></CompositeResponse>';
+    }
+    else if(isset($request['FOConfigRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T17:55:56+0200"><FOConfigResponse minStake="0.01" maxStake="250.00" maxWin="75000.00" defaultStake="0.04" roundLimit="250.00"><Option incStake="0.01" incPeriod="0.01"/><Option incStake="0.05" incPeriod="0.00"/><Option incStake="0.10" incPeriod="0.00"/><Option incStake="0.25" incPeriod="0.00"/><Option incStake="0.50" incPeriod="0.00"/><Option incStake="1.00" incPeriod="1.00"/><Option incStake="10.00" incPeriod="0.00"/><GameConfig>
+    <WinLines numCols="1">
+      <Line num="1" offsets=" 0,  0,  0,  0,  0"/>
+      <Line num="2" offsets="-1, -1, -1, -1, -1"/>
+      <Line num="3" offsets=" 1,  1,  1,  1,  1"/>
+      <Line num="4" offsets="-1,  0,  1,  0, -1"/>
+      <Line num="5" offsets=" 1,  0, -1,  0,  1"/>
+      <Line num="6" offsets=" 0, -1, -1, -1,  0"/>
+      <Line num="7" offsets=" 0,  1,  1,  1,  0"/>
+      <Line num="8" offsets="-1, -1,  0,  1,  1"/>
+      <Line num="9" offsets=" 1,  1,  0, -1, -1"/>
+      <Line num="10" offsets=" 0,  1,  0, -1,  0"/>
+      <Line num="11" offsets=" 0, -1,  0,  1,  0"/>
+      <Line num="12" offsets="-1,  0,  0,  0, -1"/>
+      <Line num="13" offsets=" 1,  0,  0,  0,  1"/>
+      <Line num="14" offsets="-1,  0, -1,  0, -1"/>
+      <Line num="15" offsets=" 1,  0,  1,  0,  1"/>
+      <Line num="16" offsets=" 0,  0, -1,  0,  0"/>
+      <Line num="17" offsets=" 0,  0,  1,  0,  0"/>
+      <Line num="18" offsets="-1, -1,  1, -1, -1"/>
+      <Line num="19" offsets=" 1,  1, -1,  1,  1"/>
+      <Line num="20" offsets="-1,  1,  1,  1, -1"/>
+      <Line num="21" offsets=" 1, -1, -1, -1,  1"/>
+      <Line num="22" offsets=" 0,  1, -1,  1,  0"/>
+      <Line num="23" offsets=" 0, -1,  1, -1,  0"/>
+      <Line num="24" offsets="-1,  1, -1,  1, -1"/>
+      <Line num="25" offsets=" 1, -1,  1, -1,  1"/>
+    </WinLines>
+    
+    <FreeGames minScatter="3" spins="10" prizeMult="1"/>
+  </GameConfig></FOConfigResponse></CompositeResponse>';
+    }
+    else if(isset($request['FOOpenGameRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:00:46+0200"><FOOpenGameResponse gameId="460267134" nextDrawId="0"/></CompositeResponse>';
+    }
+    
+    else if(isset($request['FOPlaceBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:01:24+0200"><FOPlaceBetsResponse drawId="0" gameId="460267134" newBalance="999.00"/><FOLoadResultsResponse gameId="460267134"><DrawState drawId="0" seed="-367714648" state="settling"><Event seq="0" id="21" type="21:S"/><Event seq="1" id="21" type="21:A"/><Event seq="2" id="23" type="23:M"/><Event seq="3" id="35" type="35:N"/><Event seq="4" id="6" type="6:D"/><Event seq="5" id="3" type="P4"/><Event seq="6" id="2" type="P3"/><Event seq="7" id="3" type="P4"/><Event seq="8" id="3" type="P4"/><Event seq="9" id="2" type="P3"/><Event seq="10" id="4" type="P5"/><Event seq="11" id="2" type="P3"/><Event seq="12" id="2" type="P3"/><Event seq="13" id="1" type="F6"/><Event seq="14" id="1" type="F6"/><Event seq="15" id="1" type="F6"/><Event seq="16" id="0" type="M2"/><WinLines spins="0" display="J,S,K,D,N;S,A,M,N,D;K,N,Q,E,T"><Scatter offsets="1,5" length="2" payout="1.00"/></WinLines><Bet seq="0" type="line" pick="L25" stake="1.00" payout="1.00" won="true"/></DrawState></FOLoadResultsResponse></CompositeResponse>';
+    }
+    else if(isset($request['FOSettleBetsRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:01:32+0200"><FOSettleBetsResponse nextDrawId="1" newBalance="1000.00"/><FOCloseGameResponse/></CompositeResponse>';
+    }
+    else if(isset($request['FOOpenGameRequest'])) {
+        echo '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2014-06-17T18:01:32+0200"><FOOpenGameResponse gameId="460267304" nextDrawId="0"/></CompositeResponse>';
+    }
+    
+?>
+

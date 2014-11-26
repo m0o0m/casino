@@ -1,0 +1,4 @@
+<?
+$time = (empty($_SESSION['lastRequestTime'])) ? false : $_SESSION['lastRequestTime'];
+echo $time;
+
