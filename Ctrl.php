@@ -36,6 +36,11 @@ class Ctrl {
     public $fsBonus = array();
 
     /**
+     * @var bool Использование сохраненной ставки в сессии
+     */
+    public $useSessionBet = false;
+
+    /**
      * Обработка запроса и запуск нужного метода
      *
      * @param object $params Параметры игры
@@ -154,7 +159,15 @@ class Ctrl {
      */
     protected function getStakeParams() {
         $stake = $this->gameParams->betConfig;
-        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="75000.00" defaultStake="'.$stake['defaultBet'].'" roundLimit="'.$stake['maxBet'].'">
+
+        $defaultBet = $stake['defaultBet'];
+        if($this->useSessionBet) {
+            if(!empty($_SESSION['lastBet'])) {
+                $defaultBet = $_SESSION['lastBet'] / $_SESSION['lastPick'];
+            }
+        }
+
+        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="75000.00" defaultStake="'.$defaultBet.'" roundLimit="'.$stake['maxBet'].'">
         '.$this->gameParams->getIncreaseData().'</EEGConfigResponse>';
 
         return $xml;
@@ -288,6 +301,51 @@ class Ctrl {
     }
 
     /**
+     * Удаляет указанное значение из строки выигрышных комбинаций
+     *
+     * @param $str
+     * @param $option
+     * @return string
+     */
+    protected function deleteWinLinesOption($str, $option) {
+        $p = strpos($str, $option);
+
+        if($p) {
+            $quoteOffset = strpos($str, '"', ($p + strlen($option) + 2)) + 1;
+
+            $result = substr($str, 0, $p) . substr($str, $quoteOffset);
+            return $result;
+        }
+        else {
+            return $str;
+        }
+    }
+
+    /**
+     * Устанавливает новое значение параметру в XML строке
+     *
+     * @param $str
+     * @param $option
+     * @param $newValue
+     * @return string
+     */
+
+    protected function updateStringOption($str, $option, $newValue) {
+        $p = strpos($str, $option);
+
+        if($p) {
+            $quoteOffset = strpos($str, '"', $p);
+            $quoteOffset2 = strpos($str, '"', ($p + strlen($option) + 2)) + 1;
+
+            $result = substr($str, 0, $quoteOffset + 1) . $newValue . substr($str, $quoteOffset2 - 1);
+            return $result;
+        }
+        else {
+            return $str;
+        }
+    }
+
+    /**
      * Дополняет\перезаписывает массив $c всем из массива $p
      *
      * @param array $c
@@ -312,18 +370,39 @@ class Ctrl {
     }
 
     /**
+     * Устанавливает дефолтное значение переменной, если она пуста
+     *
+     * @param $param
+     * @param $value
+     */
+    protected function setSessionIfEmpty($param, $value) {
+        if(empty($_SESSION[$param])) {
+            $_SESSION[$param] = $value;
+        }
+    }
+
+    /**
      * Меняет местами строки(переворачивает) в переданном оффсете.
      *
-     * @param array $offsets
-     * @return array
+     * @param array|int $offsets
+     * @return array|int
      */
     public function invertOffsets($offsets) {
-        $newOffsets = array();
-        foreach($offsets as $offset) {
-            if($offset < 5) $newOffsets[] = $offset + 10;
-            if($offset >= 5 && $offset <= 9) $newOffsets[] = $offset;
-            if($offset > 9) $newOffsets[] = $offset - 10;
+        if(is_array($offsets)) {
+            $newOffsets = array();
+            foreach($offsets as $offset) {
+                if($offset < 5) $newOffsets[] = $offset + 10;
+                if($offset >= 5 && $offset <= 9) $newOffsets[] = $offset;
+                if($offset > 9) $newOffsets[] = $offset - 10;
+            }
         }
+        else {
+            $newOffsets = '';
+            if($offsets < 5) $newOffsets = $offsets + 10;
+            if($offsets >= 5 && $offsets <= 9) $newOffsets = $offsets;
+            if($offsets > 9) $newOffsets = $offsets - 10;
+        }
+
         return $newOffsets;
     }
 

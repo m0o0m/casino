@@ -11,14 +11,21 @@ class kongCtrl extends Ctrl {
         <DrawState drawId="0" />';
         }
         else {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
         }
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -186,7 +193,7 @@ class kongCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawStates;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
         if(!empty($report['scattersReport']['totalWin']) || $report['fsBonus'] >= 3) {
             $_SESSION['bonusWIN'] = $report['totalWin'];
         }

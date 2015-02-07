@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" ?>
+<wrapperConfig>
+	<game asVersion="3" configurationStages="1" loadingStages="9" width="640" height="480" 	nativeWidth="800" nativeHeight="600" gameFormat="Slot" />
+	<gameName name="ironman"/>	
+	<clientName name="ironman" />
+</wrapperConfig>

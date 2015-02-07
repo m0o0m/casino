@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" ?>
+	<wrapperConfig>		
+		<communicationTimeout value="20"/>					
+		<javascriptIntervalTime time="75"/>
+		<autoplayMaximum value="100"/> 
+		<integration name="Standard" package="ce"/>
+
+		<operator name="ce" />
+		<gameFormats pack="std">
+			<format name="Legacy" />
+			<format name="ProgressiveDraw" />
+			<format name="Slot" />
+			<format name="SingleDraw" />
+			<format name="MultiDraw" />
+			<format name="Table" />
+		</gameFormats>
+	</wrapperConfig>

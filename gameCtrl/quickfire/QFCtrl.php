@@ -35,11 +35,26 @@ class QFCtrl extends Ctrl {
                 if($verbex == 'Spin') {
                     $this->startSpin($request);
                 }
+                if($verbex == 'BonusPick') {
+                    $this->startBonusPick($r['@attributes']['item']);
+                }
+                if($verbex == 'FreeSpin') {
+                    $this->startFreeSpin();
+                }
                 break;
             case 'VP_GETNUMMESSAGES':
                 $this->startNumMessages($request);
                 break;
+            case 'GetBalance':
+                $this->startGetBalance();
+                break;
         }
+    }
+
+    protected function startGetBalance() {
+        $responce = '<Pkt><Id mid="1" cid="10001" sid="1867" sessionid="941cf6d9-6ea1-4f53-96cb-8c383ee758c0" verb="GetBalance" Inverb="GetBalance"/><Response><PlayerInfo Balance="'.$this->getBalance() * 100 .'"/></Response></Pkt>';
+
+        $this->outXML($responce);
     }
 
     protected function startLogin($request) {

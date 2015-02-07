@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dependencies version="10.1.3.156653">
+	<files>
+		<file id="dependency/games_list" folder="Common/" file="Gamelist.xml" />
+		<file id="dependency/game_group_nodes" folder="Common/" file="GameGroupNodes.xml" lobbyFile="1"/> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/game_tree_nodes"  folder="Common/" file="GameTreeNodes.xml" lobbyFile="1"/> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/game_info"  	folder="Common/" file="GameInfo.xml" lobbyFile="1"/> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/lobby_config"  folder="Common/" file="LobbyConfig.xml" lobbyFile="1" /> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/lobby_game_config"  folder="Common/" file="LobbyGameConfig.xml" lobbyFile="1" /> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/lobby_strings"  folder="Common/" file="LobbyStrings.xml" lobbyFile="1" /> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/lobby_override_strings"  folder="Common/" file="LobbyOverrideStrings.xml" lobbyFile="1" /> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/clarion_aurora_menu" folder="Common/" file="ClarionAuroraMenu.xml" lobbyFile="1"/> <!--If the lobby is loading, we will download this file-->
+		<file id="dependency/xman_module" folder="Aurora/" file="Xman.swf" />
+		<file id="dependency/dialogues_module" folder="Aurora/" file="Dialogues.swf" />
+		<file id="dependency/dialogues_art" folder="Aurora/" file="dialogueArt.swf" />
+		<file id="dependency/frames_builder_module" folder="Aurora/" file="FramesBuilder.swf" />
+		<file id="dependency/frames_fonts" folder="Aurora/" file="fonts.swf" />
+		<file id="dependency/frames_framelib" folder="Aurora/" file="FrameLib.swf" />
+		<file id="dependency/local_strings" folder="Aurora/" file="strings.xml" />
+		<file id="dependency/sound_engine_module" folder="Aurora/" file="SoundEngine.swf" />
+		<file id="dependency/virtual_pit_boss" folder="Aurora/" file="VirtualPitBoss.swf" delayed="1"/> <!--delayed download-->
+		<file id="dependency/vpb_assets" folder="Aurora/" file="VPBAssets.swf" delayed="1"/><!--delayed download--> <!-- assets will be moved into dialogueArt -REMOVE THIS FILE -->
+		<file id="dependency/startup_messages" folder="Common/" file="startupDialogue.xml" />
+		
+		<file id="dependency/bonus_bubble" folder="Aurora/" file="bonusBubble.swf" delayed="1"/><!--delayed download-->
+		<file id="dependency/fun_bonus_bubble" folder="Aurora/" file="MainBalance.swf" delayed="1"/> 
+		<file id="dependency/progress_icon" folder="Aurora/" file="ProgressIcon.swf" delayed="1"/> 
+		
+		<file id="dependency/magneto_module" folder="Aurora/" file="Magneto.swf"  mpfEarlyDownload="1"/><!--delayed download , early load required for MPF games-->
+		<file id="dependency/mpf_module" folder="Aurora/" file="MPF.swf"  mpfEarlyDownload="1"/><!--delayed download , early load required for MPF games-->
+		
+		<file id="dependency/currencies_config" folder="Common/" file="Currencies.xml" />
+		<file id="dependency/game_strings_en" folder="Common/" file="GameStrings-en.xml" />
+		<file id="dependency/game_strings_foreign" folder="Common/" file="GameStrings-%LANG%.xml" />
+		<file id="dependency/brandMigration_config" file="BrandMigrationMapping.xml" />
+		<file id="dependency/combined_config" folder="Aurora/" file="CombinedConfig.xml" />
+		<file id="dependency/tournament_exit_art" folder="Aurora/" file="TournamentExit.swf" delayed="1" mpfEarlyDownload="1"/>
+		
+		<file id="dependency/market_manager_manager" >
+			<type id="default" folder="Aurora/" file="DefaultMarketManager.swf" />
+			<type id="italian" folder="Aurora/" file="ItalianMarketManager.swf" />
+			<type id="regulated1" folder="Aurora/" file="Regulated1MarketManager.swf" />
+			<type id="regulated2" folder="Aurora/" file="Regulated2MarketManager.swf" />
+		</file>
+		
+		<file id="dependency/raptor_banking_module">
+			<type id="mpp" folder="Aurora/" file="BankingCIP.swf" />
+			<type id="vanguard" folder="Aurora/" file="Banking.swf" />
+			<type id="legacy" folder="Aurora/" file="Banking.swf" />
+			<type id="upe_i" folder="Aurora/" file="Banking.swf" />
+			<type id="upe_f" folder="Aurora/" file="Banking.swf" />
+			<type id="sgi" folder="Aurora/" file="Banking.swf" />
+			<type id="openid" folder="Aurora/" file="Banking.swf" />
+		</file>	
+		
+		<file id="dependency/raptor_session_module" folder="Aurora/" file="Login.swf" />
+		
+	</files>
+</dependencies>

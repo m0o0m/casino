@@ -184,6 +184,15 @@ class avengersParams extends Params {
     //public $WOHSymbols = array('Captain America');
     // Символ выхода из стены героев
     public $WOHExit = 'Exit';
+
+    // startChance - стартовый ПРОЦЕНТ выпадение выхода (то есть ПРОЦЕНТ выпадения после 1 бонусной игры)
+    // stepIncrease - с каждой игрой ОБЩИЙ ПРОЦЕНТ увеличивается на заданный ПРОЦЕНТ
+    // После второй игры шанс будет 10 + 10 * 1 = 20
+    // После пятой - 10 + 10 * 4 = 50
+    public $WOHExitConfig = array(
+        'startChance' => 20,
+        'stepIncrease' => 10,
+    );
     // Шанс выпадения вайлдов в Торе
     public $bonusRand = array(
         0,0,0,0,0,0,

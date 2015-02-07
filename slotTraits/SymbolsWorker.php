@@ -19,7 +19,6 @@ trait SymbolsWorker {
     public function checkSymbolOnReelAnyPosition($symbol, $reelNumber) {
         $id = $this->params->getSymbolID($symbol);
         $visible = $this->reels[$reelNumber]->getVisibleSymbols();
-        $f = false;
         $c = 0;
         $offset = false;
         foreach($visible as $v) {

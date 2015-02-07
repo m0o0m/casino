@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data version="5.10706.6">
+  <!-- the value is set to 0(false) it will not be used >
+	< if the value is set to 1(true) it will be used-->
+  <rule id="CanUseSpinStop" value="1" />
+  <rule id="QuickSpinEnabled" value="1" />
+  <rule id="FreespinQuickSpinEnabled" value="1" />
+  <rule id="CanUseDisableGamble" value="1" />
+  <rule id="disallowAutoPickForBasegameFeature" value="0" />
+  <rule id="disallowAutoStartForFreespinsFeature" value="1" />
+  <!-- regionOverrides
+			region
+				id
+				lockedFormat[1:Coins, 2:Credits] -->
+  <regionOverrides>
+    <!-- <region id="GAME" lockedFormat="1" /> -->
+  </regionOverrides>
+</data>

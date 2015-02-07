@@ -1,4 +1,0 @@
-<?
-    require_once ('../../WebEngine.php');
-?>
-

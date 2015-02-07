@@ -1,0 +1,21 @@
+
+
+<assetslist>
+
+	
+	<asset	type="ANIMATION"	url="uiassets/animation_symbol.swf"	state="" />
+	<asset	type="MAINSCREEN"	url="uiassets_en/game_mainscreen.swf"	state="MAINGAME_NORMAL , FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION , MAINGAME_POPUP , FEATURE_FREEGAMESELECTION_NORMAL, MAINGAME_POPUP" />	
+	<asset	type="SOUND"		state="" url="uiassets/audio.swf" />
+	<asset	type="BACKGROUND"	url="uiassets/game_background.swf"	indicator="basegame"	state="MAINGAME_NORMAL,FEATURE_FREEGAMESELECTION_NORMAL,MAINGAME_POPUP"	/>
+	
+	<asset	type="SOUND"		url="uiassets/audio_win.swf" indicator="sound" state=""	/>
+	<asset	type="INFOSCREEN"	state=""	url="uiassets_en/information.swf" indicator="information" />
+	<asset	type="SOUND"		url="uiassets/audio_feature.swf" state=""	/>
+	<asset	type="FOREGROUND"	url="uiassets/celebration.swf"	indicator="bigwincelebration" state="MAINGAME_NORMAL , FEATURE_FREEGAMESELECTION_NORMAL, MAINGAME_POPUP , FEATURE_FREEGAMEPLAY_NORMAL" />
+	
+	<asset	type="POPUP"	url="uiassets_en/popups.swf"	state="FEATURE_FREEGAMESELECTION_NORMAL,FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION, MAINGAME_POPUP " />
+	
+	<asset	type="BACKGROUND"	state="FEATURE_FREEGAMESELECTION_NORMAL , FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION, MAINGAME_POPUP" indicator="freegameplay"	url="uiassets_en/freegameplay_background.swf" />
+	
+</assetslist>
+

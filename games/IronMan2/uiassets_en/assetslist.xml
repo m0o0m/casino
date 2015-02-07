@@ -1,0 +1,28 @@
+<assetslist>	
+
+	<!-- Currently we have 5 different types avaiable , so the value of type attribute will be one out of
+	BACKGROUND , MAINSCREEN , FOREGROUND , NAVIGATION , POPUP , SOUND , INFOSCREEN , ANIMATION 
+	
+	state is game specific. If no state is passed, the file won't get registered. 
+	
+	Howerer, special types like SOUND , INFOSCREEN, ANIMATION should not be registered against any state as they are generic. Only
+	these types are handled inside code.
+	
+	url is the path of the swf file-->
+	<asset	type="ANIMATION"	url="uiassets/symbols.swf"	 indicator="animation"  state="" />
+	
+	<asset	type="MAINSCREEN"	url="uiassets_en/game_mainscreen.swf"	state="MAINGAME_NORMAL,MAINGAME_POPUP,FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION ,FEATURE_FREEGAMESELECTION_NORMAL" />	
+	<asset	type="SOUND"		state="" url="uiassets/audio.swf" />
+	<asset	type="BACKGROUND"	url="uiassets/game_background.swf"	indicator="basegame"	state="MAINGAME_NORMAL,MAINGAME_POPUP"	/>
+	
+	<asset	type="SOUND"		url="uiassets/audio_win.swf" indicator="sound" state=""	/>
+	<asset	type="INFOSCREEN"	state=""	url="uiassets_en/information.swf" indicator="information" />
+	<asset	type="SOUND"		url="uiassets/audio_feature.swf" indicator="sound" state=""	/>
+	<asset	type="FOREGROUND"	url="uiassets/celebration.swf"	indicator="bigwincelebration" state="MAINGAME_NORMAL, FEATURE_FREEGAMEPLAY_NORMAL" />
+	<asset	type="ANIMATION"	url="uiassets/animation_symbol.swf"	indicator="updateanimation" state="" />		
+	
+	<asset	type="POPUP"		url="uiassets_en/popups.swf"				state="FEATURE_FREEGAMESELECTION_NORMAL,FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION,MAINGAME_POPUP" />
+	
+	<asset	type="BACKGROUND"	url="uiassets/freegameplay_background.swf"	state="FEATURE_FREEGAMEPLAY_NORMAL,FEATURE_FREEGAMEPLAY_CELEBRATION"	indicator="freegameplay" />
+	
+</assetslist>

@@ -1,0 +1,904 @@
+﻿<?xml version="1.0"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <section name="switches">
+    <key name="ALLFAV_ENABLED">1</key>
+    <key name="CORNER_BRANDING_ENABLED" />
+    <key name="SWITCH_ENABLE_COMINGSOON_LOBBY" />
+    <key name="SWITCH_INCOMPLETE_GAMES">0</key>
+    <key name="SWITCH_FORCE_COMPLETE_GAMES">0</key>
+    <!-- Called in Clarion, but not in Viper Config -->
+    <key name="HIGHLIGHT_ACTIVE_PACKAGE">1</key>
+    <key name="BALBUBBLE_MODE">1</key>
+  </section>
+  <section name="gameTypes">
+    <key name="ti_powerpoker100">@2065</key>
+    <key name="ti_powerpoker50">@2064</key>
+    <key name="ti_powerpoker10">@2063</key>
+    <key name="ti_powerpoker4">@2062</key>
+    <key name="ti_ReelPlayPoker">@16436</key>
+    <key name="ti_poker">@2095</key>
+    <key name="ti_leveluppoker">@12924</key>
+  </section>
+  <section name="gameslider">
+    <key name="initial_time">0.8</key>
+    <key name="page_time">0.1</key>
+    <key name="blurX">0.05</key>
+  </section>
+  <section name="constants.JOINTEXT">
+    <key name="text">@12510</key>
+  </section>
+  <section name="constants.LAUNCHTEXT">
+    <key name="text">@12511</key>
+  </section>
+  <section name="text.txt_lxclistmoregames">
+    <key name="text">@12175</key>
+  </section>
+  <section name="text.txt_lxclistpage">
+    <key name="string">@12174</key>
+  </section>
+  <section name="text.txt_reload">
+    <!-- Not in original list -->
+    <key name="text">@11281</key>
+  </section>
+  <section name="menuitem.ti_othertablegame">
+    <key name="image">icon14</key>
+  </section>
+  <section name="button.btn_mpvleave">
+    <key name="text">@11681</key>
+  </section>
+  <section name="button.btn_mpvjoin">
+    <key name="text">@11680</key>
+  </section>
+  <section name="menuitem.ti_mpv">
+    <key name="image">icon8</key>
+  </section>
+  <section name="text.txt_gigamename">
+    <key name="text_nameid">@11654</key>
+  </section>
+  <section name="menuitem.ti_mytournaments">
+    <key name="image">icon1</key>
+  </section>
+  <section name="text.txt_info_name1">
+    <!-- No Text Key in orginal config -->
+  </section>
+  <section name="text.txt_info_name2">
+    <key name="text1">@11658</key>
+    <key name="text2">@11658</key>
+  </section>
+  <section name="text.txt_info_name4">
+    <key name="text1">@11659</key>
+    <key name="text2">@11659</key>
+  </section>
+  <section name="text.txt_info_name5">
+    <key name="text1">@11660</key>
+    <key name="text2">@11660</key>
+    <key name="text3">@12242</key>
+  </section>
+  <section name="text.txt_info_name6">
+    <key name="text1">@11661</key>
+    <key name="text2">@11661</key>
+    <key name="text3">@12487</key>
+  </section>
+  <section name="text.txt_ScheduledPoolTitle1">
+    <key name="text">@12447</key>
+  </section>
+  <section name="text.txt_ScheduledPlayersTitle1">
+    <key name="text">@11660</key>
+  </section>
+  <section name="text.txt_ScheduledFeeTitle1">
+    <key name="text">@12448</key>
+  </section>
+  <section name="text.txt_ScheduledTimeTitle1">
+    <key name="text">@11661</key>
+  </section>
+  <section name="text.txt_ViewAllGames">
+    <key name="text">@12513</key>
+  </section>
+  <section name="text.txt_SelectAGame">
+    <key name="text">@12514</key>
+  </section>
+  <section name="text.txt_ViewAllTournaments">
+    <key name="text">@12515</key>
+  </section>
+  <section name="text.txt_sitgomoregames">
+    <key name="text">@1125</key>
+  </section>
+  <section name="text.txt_SitGoBtnlistpage_desc">
+    <key name="text">@11687</key>
+  </section>
+  <section name="strings.mpvlist_status">
+    <key name="text1">@11655</key>
+    <key name="text2">@12264</key>
+    <key name="text3">@11657</key>
+    <key name="text4">@11819</key>
+    <key name="text5">@11820</key>
+    <key name="text6">@11821</key>
+    <key name="text7">@11656</key>
+    <key name="text8">@12488</key>
+    <key name="text9">@12489</key>
+  </section>
+  <section name="text.tt_ListShowHelp">
+    <key name="text">@2055</key>
+  </section>
+  <section name="text.tt_ListShowHelp2">
+    <key name="text">@2056</key>
+  </section>
+  <section name="constants">
+    <key name="LXC_THERMLIMIT">100000</key>
+    <key name="LXC_THERMMAX">40000</key>
+    <key name="VALUE_LXCTHERMTRUNC">10</key>
+    <key name="DIV_LXCTHERMTRUNC">10</key>
+    <key name="SWITCH_LXCVIEW">1</key>
+    <key name="MPV_PLBTNCOUNT">5</key>
+    <key name="MPV_MINIPLBTNCOUNT">4</key>
+    <key name="MPV_PAGELENGTH">18</key>
+    <key name="SWITCH_MPV_STATUSSEARCH">1</key>
+    <key name="MPV_MINIPAGELENGTH">16</key>
+    <key name="MPV_DETAILSPAGELENGTH">16</key>
+    <key name="MPV_MINIDETAILSPAGELENGTH">13</key>
+    <!-- these are already in sections markes [constants.xxx] -->
+    <key name="JOINTEXT">@12510</key>
+    <key name="LAUNCHTEXT">@12511</key>
+    <key name="TRANSITION_DURATION">700</key>
+    <key name="TRANSITION_TOURNAMENT_DURATION">700</key>
+    <key name="TRANSITION_FADE_DURATION">300</key>
+    <key name="SWITCH_PRIZEZEROSUB">1</key>
+    <key name="SWITCH_LXCTHERMTRUNC" />
+    <key name="NOPLAYFORREAL" />
+    <key name="MPV_DEFSORTCOLUMN" />
+  </section>
+  <section name="itemlist.list_options">
+    <key name="item0">Register,false</key>
+    <key name="item1">ChangePassword,false</key>
+    <key name="item2">Separator,false</key>
+    <key name="item3">logon,false</key>
+    <key name="item4">logoff,false</key>
+    <key name="item5">Autologin</key>
+    <key name="item6">Separator, false</key>
+    <key name="item7">Sound,false</key>
+    <key name="item8">AmbientSound</key>
+    <key name="item9">Separator, false</key>
+    <key name="item10">SimilarGames, false</key>
+    <key name="item11">Recommendations, false</key>
+    <key name="item12">ScreenMode,false</key>
+    <key name="item13">Separator</key>
+    <key name="item14">mi_lang</key>
+  </section>
+  <section name="itemlist.list_start">
+    <key name="item0">CustomLink1</key>
+    <key name="item1">mi_lang</key>
+    <key name="item2">CasinoMail,false</key>
+    <key name="item3">ShowSplash,false</key>
+    <key name="item4">separator</key>
+    <key name="item5">CustomLink1</key>
+    <key name="item6">CustomLink2</key>
+    <key name="item7">CustomLink3, false</key>
+    <key name="item8">CustomLink4, false</key>
+    <key name="item9">separator</key>
+    <key name="item10">Help,false</key>
+    <key name="item11">separator,false</key>
+    <key name="item12">CasinoMail</key>
+    <key name="item13">PlayCheck</key>
+    <key name="item14">CashCheck</key>
+    <key name="item15">Auditors</key>
+    <key name="item16">separator, false</key>
+    <key name="item17">ResponsibleGaming</key>
+    <key name="item18">Help_About</key>
+    <key name="item19">separator</key>
+    <key name="item20">Exit</key>
+    <key name="item21">Placeholder, false</key>
+    <key name="item22">Placeholder, false</key>
+  </section>
+  <section name="itemlist.list_lang">
+	<key name="item0">mi_lang_cs</key>
+	<key name="item1">mi_lang_da</key>
+	<key name="item2">mi_lang_de</key>
+	<key name="item3">mi_lang_el</key>
+	<key name="item4">mi_lang_en</key>
+	<key name="item5">mi_lang_es</key>
+	<key name="item6">mi_lang_fi</key>
+	<key name="item7">mi_lang_fr</key>
+	<key name="item8">mi_lang_hi</key>
+	<key name="item9">mi_lang_hr</key>
+	<key name="item10">mi_lang_hu</key>
+	<key name="item11">mi_lang_id</key>
+	<key name="item12">mi_lang_it</key>
+	<key name="item13">mi_lang_ja</key>
+	<key name="item14">mi_lang_ko</key>
+	<key name="item15">mi_lang_nl</key>
+	<key name="item16">mi_lang_no</key>
+	<key name="item17">mi_lang_pl</key>
+	<key name="item18">mi_lang_pt</key>
+	<key name="item19">mi_lang_pt-br</key>
+	<key name="item20">mi_lang_ru</key>
+	<key name="item21">mi_lang_sk</key>
+	<key name="item22">mi_lang_sl</key>
+	<key name="item23">mi_lang_sv</key>
+	<key name="item24">mi_lang_th</key>
+	<key name="item25">mi_lang_tr</key>
+	<key name="item26">mi_lang_vi</key>
+	<key name="item27">mi_lang_zh</key>
+	<key name="item28">mi_lang_zh-tw</key>
+  </section>
+  <section name="menuitem.CustomLink1" >
+    <key name="text">SubMenuOne</key>
+    <key name="nodes">link1,link2,link3</key>
+  </section>
+  <section name="menuitem.link1" >
+    <key name="text">link-1</key>
+  </section>
+  <section name="menuitem.link2" >
+    <key name="text">link-2</key>
+  </section>
+  <section name="menuitem.link3" >
+    <key name="text">link-3</key>
+  </section>
+  <section name="button.btn_switchtorealslider">
+    <key name="text">@13297</key>
+  </section>
+  <section name="text.txt_listhelp">
+    <key name="file">TXT_ListHelpBKG.png</key>
+  </section>
+  <section name="text.tt_WhatsThis">
+    <key name="file">TXT_JackpotThermometerTooltip.png</key>
+  </section>
+  <section name="header.hdr_default">
+    <key name="col_percent">63,12,25</key>
+  </section>
+  <section name="header.hdr_GameType">
+    <key name="col_percent">53,20,12,15</key>
+  </section>
+  <section name="header.hdr_MegaSpinType">
+    <key name="col_percent">53,20,12,15</key>
+  </section>
+  <section name="header.hdr_Pot">
+    <key name="col_percent">63,12,25</key>
+  </section>
+  <section name="header.hdr_Bonus_Slots">
+    <key name="col_percent">53,20,12,15</key>
+  </section>
+  <section name="header.hdr_BlackJack">
+    <key name="col_percent">55,18,12,15</key>
+  </section>
+  <section name="header.hdr_MHBlackJack">
+    <key name="col_percent">80,20</key>
+  </section>
+  <section name="header.hdr_nvlmptournaments">
+    <key name="col_hdr0">@11682</key>
+    <key name="col_hdr1">@11813</key>
+    <key name="col_hdr2">@11670</key>
+    <key name="col_hdr3">@11814</key>
+  </section>
+  <section name="header.hdr_special">
+    <key name="col_percent">20,80</key>
+  </section>
+  <section name="header.hdr_feeder">
+    <key name="col_percent">20,80</key>
+  </section>
+  <section name="header.hdr_player">
+    <key name="col_hdr0">@11667</key>
+    <key name="col_hdr1">@11665</key>
+    <key name="col_hdr2">@11668</key>
+    <key name="col_hdr3">@11669</key>
+    <key name="col_hdr4">@11666</key>
+  </section>
+  <section name="header.hdr_playerBJ">
+    <key name="col_hdr0">@11667</key>
+    <key name="col_hdr1">@11665</key>
+    <key name="col_hdr2">@11668</key>
+    <key name="col_hdr3">@12936</key>
+    <key name="col_hdr4">@11666</key>
+  </section>
+  <section name="styleswap.tisyspld">
+    <key name="ti_sys_allfav">ti_sys_pld</key>
+  </section>
+  <section name="menuitem.ti_sys_pld">
+    <key name="image">icon2</key>
+  </section>
+  <section name="menuitem.ti_sys_fav">
+    <key name="image">icon2</key>
+  </section>
+  <section name="menuitem.ti_sys_allfav">
+    <key name="image">icon2</key>
+  </section>
+  <section name="strings_lxc">
+    <key name="installcount">@12268</key>
+    <key name="gamecount">@12269</key>
+  </section>
+  <section name="button.btn_lxchome">
+    <key name="text">@7340</key>
+  </section>
+  <!-- note in viper -->
+  <section name="text.txt_lxcpromo">
+    <key name="text">@12164</key>
+  </section>
+  <section name="text.txt_lxcnews">
+    <key name="text">@12165</key>
+  </section>
+  <section name="text.txt_lxcmyacc2">
+    <key name="text">@12167</key>
+  </section>
+  <section name="text.txt_lxcBank">
+    <key name="text">@12168</key>
+  </section>
+  <section name="text.txt_lxcHelp">
+    <key name="text">@12169</key>
+  </section>
+  <section name="text.txt_lxccontact">
+    <key name="text">@12170</key>
+  </section>
+  <section name="text.txt_lxcadvanced">
+    <key name="text">@12958</key>
+  </section>
+  <section name="text.txt_lxcADV">
+    <key name="text">@12172</key>
+  </section>
+  <section name="text.txt_lxcNVL">
+    <key name="text">@2125</key>
+  </section>
+  <section name="text.txt_lxcTourn">
+    <key name="text">@12446</key>
+  </section>
+  <section name="mpvrootmap">
+    <key name="1">ti_mpv</key>
+  </section>
+  <section name="text.txt_GameType">
+    <key name="text">@2042</key>
+  </section>
+  <section name="text.txt_Game">
+    <key name="text">@2043</key>
+  </section>
+  <section name="text.txt_ThermTitle">
+    <key name="text">@12177</key>
+  </section>
+  <section name="button.btn_lxcthermhelp">
+    <key name="text">@12178</key>
+  </section>
+  <section name="button.btn_lxchome3">
+    <key name="text">@12163</key>
+  </section>
+  <section name="text.txt_newintro">
+    <key name="text">@2045</key>
+  </section>
+  <section name="text.txt_favouriteintro">
+    <key name="text">@13551</key>
+  </section>
+  <section name="text.txt_mostplayedintro">
+    <key name="text">@13861</key>
+  </section>
+  <section name="text.txt_userfavouriteintro">
+    <key name="text">@13551</key>
+  </section>
+  <section name="text.txt_favouritelogin">
+    <key name="text">@13817</key>
+  </section>
+  <section name="frameratedisplay">
+    <key name="enabled">0</key>
+    <key name="exp_threshold">20</key>
+    <key name="exp_indexcomb">11</key>
+    <key name="force_trans">0</key>
+  </section>
+  <section name="text.txt_downloadprogress">
+    <key name="text">@2044</key>
+  </section>
+  <section name="text.txt_dblclickinstall">
+    <key name="text">@13578</key>
+  </section>
+  <section name="text.txt_dblclickplay">
+    <key name="text">@13577</key>
+  </section>
+  <section name="text.txt_downloadgame">
+    <key name="text">@13574</key>
+  </section>
+  <section name="speechbubble.sb_nctinfo">
+    <key name="currency_text">@13548</key>
+  </section>
+  <section name="lxc_groupmap">
+    <key name="btn_group1">ti_sys_new</key>
+    <key name="btn_group2">ti_sys_allfav</key>
+    <key name="btn_group3">ti_blackjack</key>
+    <key name="btn_group4">ti_tableMPV</key>
+    <key name="btn_group5">ti_multiplayer</key>
+    <key name="btn_group6">ti_jackpots</key>
+    <key name="btn_group7">ti_3reel</key>
+    <key name="btn_group8">ti_5reel</key>
+    <key name="btn_group9">ti_pokers</key>
+    <key name="btn_group10">ti_other</key>
+  </section>
+  <section name="itemlist.tree_root">
+    <key name="item0">ti_sys_new</key>
+    <key name="item1">ti_sys_allfav</key>
+    <key name="item2">ti_jackpots</key>
+    <key name="item3">ti_slots</key>
+    <key name="item4">ti_table</key>
+    <key name="item5">ti_pokers</key>
+    <key name="item6">ti_other</key>
+	<key name="item7">ti_Community</key>
+	<key name="item8">ti_mpv</key>
+  </section>
+  <section name="sounds">
+    <!--key name="snd_banking">lobby_sounds/SND_GameEntry.mp3</key-->
+    <key name="SND_Lobby_1">SND_Background.mp3</key>
+    <key name="SND_Lobby_2">SND_ButtonPress.mp3</key>
+    <key name="SND_Lobby_3">SND_GameEntry.mp3</key>
+    <key name="SND_Lobby_4">SND_GameExit.mp3</key>
+    <key name="SND_Lobby_5">SND_Mail_Notify.mp3</key>
+    <key name="SND_Lobby_6">SND_Rollover.mp3</key>
+    <key name="SND_Lobby_7">SND_Trans_Flip.mp3</key>
+    <key name="SND_Lobby_8">SND_Trans_Scroll.mp3</key>
+    <key name="SND_Lobby_9">SND_Trans_Swoosh.mp3</key>
+    <key name="SND_Lobby_10">FavouriteAdd.mp3</key>
+    <key name="SND_Lobby_11">FavouriteRemove.mp3</key>
+    <key name="SND_Lobby_12">SND_Connect.mp3</key>
+    <key name="SND_Lobby_13">SND_Disconnect.mp3</key>
+  </section>
+  <section name="soundconfig">
+    <!--key name="game_entry">SND_Lobby_3</key>
+    <key name="button_press">SND_Lobby_2</key-->
+    <key name="rollover">SND_Lobby_6</key>
+    <key name="flip">SND_Lobby_7</key>
+    <key name="scroll">SND_Lobby_8</key>
+    <key name="swoosh">SND_Lobby_9</key>
+    <!--key name="add_fav">SND_Lobby_10</key>
+    <key name="rem_fav">SND_Lobby_11</key>
+    <key name="welcome">SND_Lobby_12</key>
+    <key name="exit">SND_Lobby_13</key-->
+  </section>
+  <section name="menuitem.ti_jackpots">
+    <key name="image">icon3</key>
+  </section>
+  <section name="menuitem.ti_MegaSpin">
+    <key name="image">icon10</key>
+  </section>
+  <section name="menuitem.ti_AWP">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_3reel">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_5reel">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_blackjack">
+    <key name="image">icon9</key>
+  </section>
+  <section name="menuitem.ti_roulette">
+    <key name="image">icon13</key>
+    <!-- No data in original config -->
+  </section>
+  <section name="menuitem.ti_table">
+    <key name="image">icon5</key>
+  </section>
+  <section name="menuitem.ti_powerpoker">
+    <key name="image">icon11</key>
+  </section>
+  <section name="menuitem.ti_LevelUpPoker">
+    <key name="image">icon18</key>
+    <!-- No data in original config -->
+  </section>
+  <section name="menuitem.ti_pokers">
+    <key name="image">icon6</key>
+  </section>
+  <section name="menuitem.ti_other">
+    <key name="image">icon7</key>
+  </section>
+  <section name="menuitem.ti_Community">
+    <key name="image">icon8</key>
+  </section>
+  <section name="menuitem.ti_poker">
+    <key name="image">icon15</key>
+  </section>
+  <section name="menuitem.ti_powerpoker100">
+    <key name="image">icon11</key>
+  </section>
+  <section name="menuitem.ti_powerpoker50">
+    <key name="image">icon11</key>
+  </section>
+  <section name="menuitem.ti_powerpoker10">
+    <key name="image">icon11</key>
+  </section>
+  <section name="menuitem.ti_powerpoker4">
+    <key name="image">icon11</key>
+  </section>
+  <section name="text.txt_Search">
+    <key name="text">@13545</key>
+  </section>
+  <section name="text.txt_No_games_found">
+    <key name="text">@13544</key>
+  </section>
+  <section name="text.Related_results">
+    <key name="text"></key>
+  </section>
+  <section name="hide.smarties">
+    <key name="hidecsv"></key>
+    <key name="hideback">0</key>
+  </section>
+  <section name="strings.external">
+    <key name="lowPriority">@17397</key>
+    <key name="highPriority">@17398</key>
+  </section>
+  <section name="strings.gamelockedcodes">
+    <key name="item0">@17492</key>
+    <key name="item1">@17493</key>
+    <key name="item2">@17492</key>
+    <key name="item3">@17494</key>
+  </section>
+  <section name="text.txt_Notournaments">
+    <key name="text">@11822</key>
+    <!-- Hard coded on Clarion -->
+  </section>
+  <section name="text.txt_NoMytournaments">
+    <key name="text">@11823</key>
+    <!-- Hard coded on Clarion -->
+  </section>
+  <section name="graphiclist.infogfx">
+    <key name="default">TXT_Desc_Generic.png</key>
+    <!-- Hardc oded in TabBrowser.mxml -->
+  </section>
+  <section name="menuitem.mi_mpvgeneral">
+    <key name="text">@12219</key>
+  </section>
+  <section name="menuitem.mi_mpvprizes">
+    <key name="text">@11666</key>
+  </section>
+  <section name="menuitem.mi_mpvplayers">
+    <key name="text">@11670</key>
+  </section>
+  <section name="menuitem.mi_mpvrules">
+    <key name="text">@11671</key>
+  </section>
+  <section name="strings_rounds">
+    <key name="name_entryfee">@11813</key>
+  </section>
+  <section name="header.hdr_mpdefault">
+    <key name="col_hdr2">@11684</key>
+    <key name="col_percent">55,25,20</key>
+  </section>
+  <section name="header.hdr_mptournaments">
+    <key name="col_percent">55,25,20</key>
+  </section>
+  <section name="header.hdr_mpblackjack">
+    <key name="col_percent">55,25,20</key>
+  </section>
+  <section name="text.txt_listpage">
+    <key name="string">@11685</key>
+  </section>
+  <section name="text.txt_listpage_desc">
+    <key name="text">@11687</key>
+  </section>
+  <section name="text.txt_PrizePages">
+    <key name="text">@11687</key>
+  </section>
+  <section name="strings_mpv">
+    <key name="list_plrsformat">%d/%d</key>
+    <key name="fmt_days">@11688</key>
+    <key name="fmt_hours">@11689</key>
+    <key name="sg_waiting0">@5795</key>
+    <key name="sg_waiting1">@11690</key>
+    <key name="sg_waitingn">@11691</key>
+    <key name="mpgs_text1">@11692</key>
+    <key name="mpgs_text2">@11693</key>
+    <key name="mpgs_text3">@11694</key>
+    <key name="mpgs_text4">@11695</key>
+    <key name="mpgs_text5">@11696</key>
+    <key name="mpgs_text6">@11697</key>
+    <key name="list_free">@11803</key>
+    <key name="def_sort" />
+  </section>
+  <section name="strings_mpvdlg">
+    <key name="mpvt_leaveconfirm_title">@11654</key>
+    <key name="mpvt_leaveconfirm_text">@11737</key>
+  </section>
+  <section name="hide.mpvnvl">
+    <key name="hidesng">1</key>
+  </section>
+  <section name="entryfee.groups" />
+  <section name="entryfee.ten">
+    <key name="entryfee">10</key>
+    <key name="entryfeeCurrency">$</key>
+    <key name="uri_GameButton">vpac://lobby/BTN_MPVVideoSlots.png</key>
+    <key name="uri_GameGraphic">vpac://lobby/TXT_Desc_MPVSlots.png</key>
+  </section>
+  <section name="entryfee.five">
+    <key name="entryfee">5</key>
+    <key name="entryfeeCurrency">$</key>
+    <key name="uri_GameButton">vpac://lobby/BTN_MPVVideoSlots.png</key>
+    <key name="uri_GameGraphic">vpac://lobby/TXT_Desc_MPVSlots.png</key>
+  </section>
+  <section name="entryfee.two">
+    <key name="entryfee">2</key>
+    <key name="entryfeeCurrency">$</key>
+    <key name="uri_GameButton">vpac://lobby/BTN_MPVVideoSlots.png</key>
+    <key name="uri_GameGraphic">vpac://lobby/TXT_Desc_MPVSlots.png</key>
+  </section>
+  <section name="strings_InstantPlay">
+    <key name="text1">@16543</key>
+    <key name="text2">@16544</key>
+    <key name="text3">@16545</key>
+    <key name="text4">@12919</key>
+    <key name="text5">@16546</key>
+    <!-- Note being used in Clarion Code -->
+    <key name="text6">@11660</key>
+    <key name="text7">@11690</key>
+  </section>
+  <section name="button.btn_mpvview">
+    <key name="text">@12914</key>
+  </section>
+  <section name="TournamentCategoryID">
+    <key name="0">UnCategorised</key>
+    <key name="1">Reloader</key>
+    <key name="2">Extender</key>
+    <key name="3">Survivor_Slot</key>
+    <key name="4">OneShot</key>
+    <key name="5">Freeroll_Slot</key>
+    <key name="6">MidweekMoolah</key>
+    <key name="7">WeekendWhopper</key>
+    <key name="8">MonthlyMonster</key>
+    <key name="9">Attack_Blackjack</key>
+    <key name="10">GrandSlamOfSlots</key>
+    <key name="11">Survivor_Blackjack</key>
+    <key name="12">Freeroll_Blackjack</key>
+    <key name="13">Accumulator</key>
+    <key name="14">SureWinCup</key>
+  </section>
+  <section name="TournamentCategoryIcons">
+    <key name="Reloader_SmallIcon">mpv_images/Icon_Reloader_Sml.png</key>
+    <key name="Reloader_largeIcon">mpv_images/Icon_Reloader.png</key>
+    <key name="Extender_SmallIcon">mpv_images/Icon_Extender_Sml.png</key>
+    <key name="Extender_largeIcon">mpv_images/Icon_Extender.png</key>
+    <key name="Survivor_Slot_SmallIcon">mpv_images/Icon_SurvivorSlots_Sml.png</key>
+    <key name="Survivor_Slot_largeIcon">mpv_images/Icon_SurvivorSlots.png</key>
+    <key name="OneShot_SmallIcon">mpv_images/Icon_OneShot_Sml.png</key>
+    <key name="OneShot_largeIcon">mpv_images/Icon_OneShot.png</key>
+    <key name="Freeroll_Slot_SmallIcon">mpv_images/Icon_FreerollSlots_Sml.png</key>
+    <key name="Freeroll_Slot_largeIcon">mpv_images/Icon_FreerollSlots.png</key>
+    <key name="MidweekMoolah_SmallIcon">mpv_images/Icon_MidweekMoolah_Sml.png</key>
+    <key name="MidweekMoolah_largeIcon">mpv_images/Icon_MidweekMoolah.png</key>
+    <key name="WeekendWhopper_SmallIcon">mpv_images/Icon_WeekendWhopper_Sml.png</key>
+    <key name="WeekendWhopper_largeIcon">mpv_images/Icon_WeekendWhopper.png</key>
+    <key name="MonthlyMonster_SmallIcon">mpv_images/Icon_MonthlyMonster_Sml.png</key>
+    <key name="MonthlyMonster_largeIcon">mpv_images/Icon_MonthlyMonster.png</key>
+    <key name="Attack_Blackjack_SmallIcon">mpv_images/Icon_BlackjackAttack_Sml.png</key>
+    <key name="Attack_Blackjack_largeIcon">mpv_images/Icon_BlackjackAttack.png</key>
+    <key name="GrandSlamOfSlots_SmallIcon">mpv_images/Icon_GSoS_Sml.png</key>
+    <key name="GrandSlamOfSlots_largeIcon">mpv_images/Icon_GSoS.png</key>
+    <key name="Survivor_Blackjack_SmallIcon">mpv_images/Icon_SurvivorBlackjack_Sml.png</key>
+    <key name="Survivor_Blackjack_largeIcon">mpv_images/Icon_SurvivorBlackjack.png</key>
+    <key name="Freeroll_Blackjack_SmallIcon">mpv_images/Icon_FreerollBlackjack_Sml.png</key>
+    <key name="Freeroll_Blackjack_largeIcon">mpv_images/Icon_FreerollBlackjack.png</key>
+    <key name="Accumulator_SmallIcon">mpv_images/Icon_Accumulator_Sml.png</key>
+    <key name="Accumulator_largeIcon">mpv_images/Icon_Accumulator.png</key>
+    <key name="SureWinCup_SmallIcon">mpv_images/Icon_SureWinCup_Sml.png</key>
+    <key name="SureWinCup_largeIcon">mpv_images/Icon_SureWinCup.png</key>
+  </section>
+  <section name="TournamentPaymentIcons">
+    <key name="TicketIcon">Icon_Ticket.png</key>
+  </section>
+  <section name="TournamentCategoryText">
+    <key name="UnCategorised">""</key>
+    <key name="Reloader">@16463</key>
+    <key name="Extender">@16465</key>
+    <key name="Survivor_Slot">@16464</key>
+    <key name="OneShot">@16466</key>
+    <key name="Freeroll_Slot">@16467</key>
+    <key name="MidweekMoolah">@16468</key>
+    <key name="WeekendWhopper">@16469</key>
+    <key name="MonthlyMonster">@16470</key>
+    <key name="Attack_Blackjack">@16471</key>
+    <key name="GrandSlamOfSlots">@16472</key>
+    <key name="Survivor_Blackjack">@16473</key>
+    <key name="Freeroll_Blackjack">@16474</key>
+    <key name="Accumulator">@17252</key>
+    <key name="SureWinCup">@17491</key>
+  </section>
+  <section name="Strings">
+    <key name="Duration">@16475</key>
+    <key name="Achievement">@16476</key>
+    <!-- Not called for in Clarion Code -->
+    <key name="Description">@4094</key>
+    <key name="ends">@16477</key>
+    <!-- Not called for in Clarion Code -->
+    <key name="Leaderboard">@16481</key>
+    <key name="BonusPrize">@16482</key>
+    <key name="AndMore">@16483</key>
+    <key name="GrandSlamOfSlots">@16484</key>
+    <key name="GrandSlamPrizeAd">@16485</key>
+    <key name="TournamentInfo">@16486</key>
+    <!-- Not called for in Clarion Code -->
+    <key name="strFreeGamesLabel">@18085</key>
+    <key name="SCHEDULEDTAB">@12530</key>
+    <key name="SITGOTAB">@12531</key>
+    <key name="ExitCasino_title">@1161</key>
+    <key name="ExitCasino_message">@18434</key>
+  </section>
+  <section name="ListBadgeIcons">
+    <key name="enabled">1</key>
+  </section>
+  <section name="SlotButtons">
+    <key name="enabled">0</key>
+    <!-- Not being called in Clarion Code-->
+    <key name="GSOS_Button">BTN_GrandSlamOfSlots1.png</key>
+    <key name="description">@16485</key>
+    <key name="displayName">@16569</key>
+    <key name="packageName">MPVEvSlots</key>
+    <key name="uri_DefaultImage">BTN_MPVVideoSlots.png</key>
+    <key name="uri_GameButton">BTN_GrandSlamOfSlots1.png</key>
+    <key name="uri_GameGraphic">vpac://lobby/TXT_Desc_MPVSlots.png</key>
+    <key name="jackpotValue">0</key>
+    <key name="isProgressive">0</key>
+  </section>
+  <section name="CONSTANTS">
+    <key name="dayFormat" />
+    <key name="hoursFormat" />
+    <key name="strEntryFee" />
+    <key name="strPrizePool" />
+    <key name="buttonView" />
+    <key name="buttonJoin" />
+    <key name="buttonLeave" />
+    <key name="statusString" />
+    <key name="playersString" />
+    <key name="playersFormat" />
+    <key name="waitingFor0String" />
+    <key name="waitingFor1String" />
+    <key name="waitingForNString" />
+    <key name="colHeaderAlias" />
+    <key name="colHeaderPos" />
+    <key name="colHeaderWinBox" />
+    <key name="colHeaderCoins" />
+    <key name="colHeaderPrize" />
+    <key name="colHeaderBJAlias" />
+    <key name="colHeaderBJCreditsLeft" />
+    <key name="colHeaderBJPos" />
+    <key name="colHeaderBJPrize" />
+    <key name="strPages" />
+    <key name="strPlayers" />
+    <key name="strPrizes" />
+    <key name="strGeneral" />
+    <key name="strRules" />
+    <key name="SWITCH_LXCVIEW">1</key>
+    <key name="TRANSITION_DURATION">700</key>
+    <key name="TRANSITION_TOURNAMENT_DURATION">700</key>
+    <key name="TRANSITION_FADE_DURATION">300</key>
+    <key name="MPV_DETAILSPAGELENGTH">16</key>
+    <key name="MPV_PLBTNCOUNT">5</key>
+    <key name="MPV_PAGELENGTH">18</key>
+    <key name="MPV_LXCJACKPOLLINTERVAL" />
+  </section>
+  <section name="clarion_dimensions_lobby">
+    <key name="height">730</key>
+    <key name="width">1024</key>
+    <key name="smtbar_offset">-1</key>
+  </section>
+  <section name="iframes.collection">
+    <key name="iframe1" />
+  </section>
+  <section name="images.lxc_buttons_dl">
+    <key name="DefaultBlackjack">BTN_DefaultBlackjack.png</key>
+    <key name="DefaultClassicSlots">BTN_DefaultClassicSlots.png</key>
+    <key name="DefaultVideoSlots">BTN_DefaultVideoSlots.png</key>
+    <key name="DefaultJackpots">BTN_DefaultJackpots.png</key>
+    <key name="DefaultOtherTables">BTN_DefaultOtherTables.png</key>
+    <key name="DefaultRoulette">BTN_DefaultRoulette.png</key>
+    <key name="TournamentVideoSlots">BTN_MPVVideoSlots.png</key>
+    <key name="TournamentBlackjacks">BTN_MPVBlackjack.png</key>
+    <key name="Community" />
+    <key name="DefaultVideoPokers">BTN_DefaultVideoPokers.png</key>
+    <key name="DefaultOtherGames">BTN_DefaultOtherGames.png</key>
+  </section>
+  <section name="tenant.assets">
+    <key name="asset1" />
+    <!-- Clarion is looking for brandName -->
+  </section>
+  <section name="LinkedLogos">
+    <key name="Logo1" />
+  </section>
+  <section name="lobby.config">
+    <key name="AdvancedSearch">0</key>
+   <!-- <key name="cacheCount">0</key> -->
+  </section>
+  <section name="text.txt_CategoryComingSoon">
+    <key name="text" />
+  </section>
+  <section name="text.txt_lxcPRO">
+    <key name="text" />
+  </section>
+  <section name="text.IncompleteHeader">
+    <key name="text" />
+  </section>
+  <section name="text.IncompleteGameBalances">
+    <key name="text" />
+  </section>
+  <section name="text.IncompleteGames">
+    <key name="text" />
+  </section>
+  <section name="menuitem.ti_sys_new">
+    <key name="image">icon1</key>
+  </section>
+  <section name="menuitem.ti_progressivejackpottablegame">
+    <key name="image">icon5</key>
+  </section>
+  <section name="menuitem.ti_ProgressiveJackpot_VideoPoker">
+    <key name="image">icon6</key>
+  </section>
+  <section name="menuitem.ti_ProgressiveJackpot_slots">
+    <key name="image">icon4</key>
+  </section>
+  <section name="menuitem.ti_slots">
+    <key name="image">icon4</key>
+  </section>
+  <section name="menuitem.ti_5reel_100">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_50">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_40">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_30">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_25">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_20">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_15">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_9">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_5">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_freespin">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_5reel_singlebonus">
+    <key name="image">icon16</key>
+  </section>
+  <section name="menuitem.ti_3reel_5">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_3reel_3">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_3reel_1">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_3reel_bonus">
+    <key name="image">icon12</key>
+  </section>
+  <section name="menuitem.ti_Gold">
+    <key name="image">icon9</key>
+  </section>
+  <section name="menuitem.ti_multihandblackjack">
+    <key name="image">icon9</key>
+  </section>
+  <section name="menuitem.ti_singlehandblackjack">
+    <key name="image">icon9</key>
+  </section>
+  <section name="menuitem.ti_leveluppoker">
+    <key name="image">icon18</key>
+  </section>
+  <section name="menuitem.ti_ReelPlayPoker">
+    <key name="image">icon19</key>
+  </section>
+  <section name="menuitem.ti_mpslots">
+    <key name="image">icon4</key>
+  </section>
+  <section name="guicontrol.tv_games">
+    <key name="default_item" />
+  </section>
+  <section name="NewGamesAddButton">
+    <key name="enabled">0</key>
+  </section>
+  <section name="text.tt_addfav">
+    <key name="text">@13552</key>
+  </section>
+  <section name="resultItemTypes">
+    <key name="resultItemType">1,2,4,5</key>
+  </section>
+</sections>

@@ -62,7 +62,45 @@ trait BonusWorker {
             case 'stepWild':
                 $this->setStepWild($bonus['steps']);
                 break;
+            case 'setWildsIf':
+                $this->setWildsIf($bonus['symbol'], $bonus['reel'], $bonus['countConfig']);
+                break;
+            case 'odinRavens':
+                $this->odinRavens($bonus['positions'], $bonus['x3Chance'], $bonus['x6Chance']);
+                break;
         }
+    }
+
+    /**
+     * Если определенный символ присутствует на определенном барабане,
+     * то случайные символы превращаются в вайлды. Количество превращений указано в countConfig
+     *
+     * @param string $symbol
+     * @param int $reel
+     * @param array $countConfig
+     */
+    private function setWildsIf($symbol, $reel, $countConfig) {
+        $offset = $this->checkSymbolOnReelAnyPosition($symbol, $reel);
+        if($offset) {
+            $count = $countConfig['count'][$countConfig['countRnd'][rnd(0, count($countConfig['countRnd'])-1)]];
+            $wildOffsets = array();
+            while(count($wildOffsets) != $count) {
+                $rnd = rnd(0,14);
+                if(in_array($rnd, $wildOffsets) || $rnd == $offset) {
+
+                }
+                else {
+                    $wildOffsets[] = $rnd;
+                }
+            }
+            $this->bonusData = array(
+                'randomWilds' => $wildOffsets,
+                'baseWildOffset' => $offset,
+            );
+            $wildOffsets[] = $offset;
+            $this->setWildsOnPos($wildOffsets);
+        }
+
     }
 
     /**
@@ -110,7 +148,7 @@ trait BonusWorker {
     /**
      * Устанавливает wild на определенную позицию барабана по переданному offsets
      *
-     * @param int $offsets Относительное положение символов на слоте
+     * @param array $offsets Относительное положение символов на слоте
      */
     private function setWildsOnPos($offsets) {
         foreach($offsets as $pos) {
@@ -137,6 +175,14 @@ trait BonusWorker {
         foreach($reels as $reel) {
             $this->setWildReel($reel, $wild);
         }
+        $offsets = array();
+        foreach($reels as $r) {
+            $offsets[] = $this->getReelOffset($r);
+        }
+        $this->bonusData = array(
+            'reels' => $reels,
+            'offsets' => $offsets,
+        );
     }
 
     /**
@@ -208,6 +254,42 @@ trait BonusWorker {
         $this->setWilds($needleWilds);
     }
 
+    private function odinRavens($positions, $x3Chance, $x6Chance) {
+        $present = $this->checkWinLinesPresent();
+        if($present) {
+            $multiple = 2;
+            if(rnd(1, $x3Chance) == 1) {
+                $multiple = 3;
+            }
+            $pos = $positions[rnd(0, count($positions) - 1)];
+            $this->setWildOnReels(array($pos));
+            $this->bonusWildsMultiple[] = array(
+                'offset' => $pos,
+                'multiple' => $multiple,
+            );
+            $resultPos = array($pos);
+            if(rnd(1, $x6Chance) == 1) {
+                $pos2 = $pos;
+                while($pos2 == $pos) {
+                    $pos2 = $positions[rnd(0, count($positions) - 1)];
+                }
+                $this->setWildOnReels(array($pos2));
+                $newMultiple = 2;
+                if($multiple == 2) $newMultiple = 3;
+                $this->bonusWildsMultiple[] = array(
+                    'offset' => $pos2,
+                    'multiple' => $newMultiple,
+                );
+                $resultPos = array($pos, $pos2);
+            }
+
+
+            $this->bonusData = array(
+                'randomWilds' => $resultPos,
+            );
+        }
+    }
+
     /**
      * Получение данных по дополнительным выплатам по линиям
      *
@@ -259,12 +341,18 @@ trait BonusWorker {
      * @param array $addOffset - Дополнительный массив оффсетов для сдвига
      * @return array
      */
-    public function startAvalanche($report, $addOffset = array()) {
+    public function startAvalanche($report, $addOffset = array(), $getOffset = true, $scattersCount = 3) {
         $resultOffsets = array();
         foreach($report['winLines'] as $winLine) {
-            $resultOffsets = array_merge($resultOffsets, $this->getOffsetsByLine($winLine['line'], $winLine['count']));
+            if($getOffset) {
+                $resultOffsets = array_merge($resultOffsets, $this->getOffsetsByLine($winLine['line'], $winLine['count']));
+            }
+            else {
+                $resultOffsets = array_merge($resultOffsets, $winLine['line']);
+            }
+
         }
-        if($report['scattersReport']['count'] >= 3) {
+        if($report['scattersReport']['count'] >= $scattersCount) {
             $resultOffsets = array_merge($resultOffsets, $report['scattersReport']['offsets']);
         }
         $resultOffsets = array_merge($resultOffsets, $addOffset);

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Messages version="5.1.0.0-en">
+	<Game id="rubyHitMan" message="-B-Hitman-B!- -L--L-Hitman is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game. Your coins are converted to credits when you exit the game. -L-  -L-"/>
+	<Game id="HighStreakBJGold" message="-B-High Streak European Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHPerfectPairs" message="-B-Perfect Pairs European Multi Hand Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="RouletteStax" message="-B-Roulette Stax-B!- -L- -L-Roulette Stax is played on 5 Roulette wheels represented as stacks of blocks.-L- -L-Bets can be placed on the Roulette board or on a seperate Slot Bet.-L- -L-Each bet can be applied to up to 9 paylines with the total chips on the board multiplied by the number of paylines." />
+	<Game id="MHHoldemHigh" message="-B-Hold'em High-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="RubyIWBillAndTedsBJ" message="" /> 
+	<Game id="1ClickEuropeanAdvBJ" message=""/>
+	<Game id="1ClickHLEuropeanAdvBJ" message=""/>
+	<Game id="3CardPoker"  message="-B-3 Card Poker -B!- -L-Left-click a chip pile on the table to increase your bet. -L-Press Shift + Left-click on a chip pile to decrease your bet.  -L-To place a Pair Plus bet, Left-click the Pair Plus betting circle on the table before you click on the Deal button. -L-  -L- "/>
+	<Game id="3CardPokerGold"  message="-B-3 Card Poker Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="5ReelDrive" message=""/>
+	<Game id="Abrakebabra" message=""/>
+	<Game id="acesfaces" message=""/>
+	<Game id="AcesfacesPwrPoker"  message=""/>
+	<Game id="AmericanRoulette"  message="-B-American Roulette-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-  "/>
+	<Game id="ApocalypseCow"  message=""/>
+	<Game id="AtlanticCity" message=""/>
+	<Game id="AtlanticCityBJGold" message="-B-Atlantic City Blackjack Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="Baccarat"  message=""/>
+	<Game id="Belissimo" message="-B-Belissimo! -B!- -L-The Chef Symbol is WILD. A Chef symbol on any active payline will complete any winning combination. -L-  -L-  "/>
+	<Game id="big5" message=""/>
+	<Game id="BigKahuna" message=""/>
+	<Game id="BigTop" message=""/>
+	<Game id="bj" message=""/>
+	<Game id="BonusPaigowPoker"  message="-B-Pai Gow Poker -B!- -L-Left-click a chip pile on the table to increase your bet. -L-Press Shift + Left-click on a chip pile to decrease your bet.  -L-To place a Bonus bet, Left-click the Bonus Bet betting circle on the table before you click on the Deal button. -L-  "/>
+	<Game id="BreakDaBank" message=""/>
+    <Game id="BushTelegraph" message=""/>
+	<Game id="Carnaval" message=""/>
+	<Game id="CashClams" message="-B-Cash Clams-B!- -L-A single Cash Clams symbol on the payline pays 2X the winning combination it completes. Two Cash Clams symbols on the payline pay 4X the winning combination they complete.  Three Cash Clams symbols on the payline do not multiply, but complete a winning combination. -L-  -L-  "/>
+	<Game id="cashcrazy" message="-B-Cash Crazy-B!- -L-A single Crazy Professor symbol on the payline pays 2X the winning combination. Two Crazy Professor symbols on the payline pay 4X the winning combination.  Three Crazy Professor symbols on the payline do not multiply, but wins the Jackpot.  -L-  -L-  " />
+	<Game id="CashCurry" message=""/>
+	<Game id="CashSplash" message="-B-CashSplash-B!- -L-A CashSplash Symbol on the payline pays 2X and completes a winning combination. 2 CashSplash Symbols on the payline pay 4X and complete a winning combination except when 3 CashSplash Symbols are showing. -L-  -L-  "/>
+	<Game id="Cashville" message="-B-Cashville-B!- -L-Cashville is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-  "/>
+	<Game id="ChavinItlarge" message=""/>
+	<Game id="CherryRed" message=""/>
+	<Game id="chiefsmagic" message=""/>
+	<Game id="coolbuck" message="-B-Cool Buck-B!- -L-The Dollar Symbol is WILD and completes a winning combination(s) on any active payline(s).  -L-  -L-  "/>
+	<Game id="cosmicc" message="-B-Cosmic Cat-B!- -L-A Cosmic Cat on the payline will complete any winning combinations. -L-  -L-  "/>
+	<Game id="CouchPotato" message=""/>
+	<Game id="crackerjack" message="-B-Cracker Jack-B!- -L-A single Cracker Jack symbol on the payline pays 2x and completes a winning combination. 2 Cracker Jack symbols on the payline pay 4x and complete a winning combination except when 3 Cracker Jack symbols are showing. -L-  -L-  "/>
+	<Game id="Craps"  message="-B-Craps-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="CrazyChameleons" message=""/>
+	<Game id="crocs" message="-B-Crazy Crocs-B!- -L-A Crocodile symbol on the payline will complete any winning combination. -L-  -L-  " />
+	<Game id="Cyberstud" message=""/>
+	<Game id="Deuces&JokerPwrPoker"  message=""/>
+	<Game id="DeucesandJoker" message=""/>
+	<Game id="deuceswi"  message=""/>
+	<Game id="DeucesWildPwrPoker" message=""/>
+	<Game id="DinoMight" message= "-B-Dino Might-B!- -L-Dino Might is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L- "  />
+	<Game id="dm" message="-B-Double Magic-B!- -L-A single Blue Star on the payline pays 2X and completes a winning combination. 2 Blue Stars on the payline pay 4X and complete a winning combination except when 3 Blue Stars are shown.  -L-  -L-  "/>
+	<Game id="DoubleDoubleBonus" message=""/>
+	<Game id="DoubleExposure" message=""/>
+	<Game id="DoubleJoker" message=""/>
+	<Game id="DoubleJokerPwrPoker"  message=""/>
+	<Game id="DoubleWammy" message=""/>
+	<Game id="DubyaMoney" message=""/>
+	<Game id="EuropeanAdvBJ" message=""/>
+	<Game id="EuropeanBJGold" message="-B-European Blackjack Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="EuroRouletteGold" message="-B-European Roulette Gold-B!- -L- -L-Please Note:-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L- "/>
+	<Game id="fan7" message=""/>
+	<Game id="FlipCard"  message=""/>
+	<Game id="FortuneCookie" message="-B-Fortune Cookie	-B!- -L-A single Fortune Cookie symbol on the payline pays 2X and completes a winning combination. 2 Fortune Cookie symbols on the payline pay 4X and completes a winning combination except when 3 Fortune Cookie symbols are showing. -L-  -L-  "/>
+	<Game id="FrenchRoulette"  message="-B-French Roulette-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-  "/>
+	<Game id="FruitFiesta" message="-B-Fruit Fiesta-B!- -L-The Fruit Fiesta symbol is WILD and completes any winning combination.When 3 Fruit Fiesta symbols appear on the bottom payline with 3 COINS bet the Jackpot will be won. -L-  -L-  "/>
+	<Game id="fruits" message=""/>
+	<Game id="GameOn" message=""/>
+	<Game id="TheGeeGees" message=""/>
+	<Game id="GladiatorsGold" message=""/>
+	<Game id="gdragon" message="-B-Golden Dragon-B!- -L-A Golden Dragon on any active payline will complete any winning combination. -L-  -L-  "/>
+	<Game id="geniesgems" message=""/>
+	<Game id="GiftRap" message="-B-Gift Rap-B!- -L-Gift Rap is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-  "/>
+	<Game id="goblinsgold" message="-B-Goblins Gold-B!- -L-The Goblin symbol is WILD and completes any winning combination. -L-  -L-  "/>
+	<Game id="GopherGold" message=""/>
+	<Game id="HighFive" message=""/>
+	<Game id="HighLimitBaccarat"  message="-B-High Limit Baccarat-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips decrease according to the chip value currently selected.-L- -L-Watch Game Feature:-L-This game has a Watch Game feature that enables you to watch a single game without placing a bet. The Watch Game feature is available in Expert mode only.-L-  -L-  -L- "/>
+	<Game id="HighLimitEuropeanBJGold"  message="-B-High Limit European Blackjack Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="HighLimitEuroRouletteGold"  message="-B-High Limit European Roulette Gold-B!- -L- -L-Please Note:-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L- "/>
+	<Game id="HighLimitMHEuropeanBJGold"  message="-B-High Limit European Multi-Hand Blackjack Gold Series-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="HighLimitVIPBaccarat"  message="-B-VIP High Limit Baccarat-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips decrease according to the chip value currently selected.-L- -L-Watch Game Feature:-L-This game has a Watch Game feature that enables you to watch a single game without placing a bet. The Watch Game feature is available in Expert mode only.-L-  -L-  -L- "/>
+	<Game id="HipHopopotamus" message=""/>
+	<Game id="HitMan" message="-B-Hitman-B!- -L- -L-Hitman is a coin-based game. This means when you play this game, your credits are converted to coins.-L-The number of coins available depends on the coin size you select in the game.-L- -L-Your coins are converted to credits when you exit the game."/>
+	<Game id="HLEuropeanAdvBJ" message=""/>	
+	<Game id="HoHoHo" message=""/>
+	<Game id="JackpotDeuces" message="-B-Jackpot Deuces-B!- -L- Playing 5 COINS activates the JACKPOT as the maximum payout. -L-  -L-  "/>
+	<Game id="jacks" message=""/>
+	<Game id="Jackspwrpoker" message=""/>
+	<Game id="jesters" message=""/>
+	<Game id="jexpress" message="-B-Jackpot Express-B!- -L-A Gold Truck on any active payline(s) will complete any winning combination(s). -L-  -L-  "/>
+	<Game id="Jokerpok"  message=""/>
+	<Game id="JokerPwrPoker"  message=""/>
+	<Game id="jurassicjackpot" message="-B-Jurassic Jackpot-B!- -L-A single Jurassic Jackpot symbol on the payline pays 2X and completes a winning combination. 2 Jurassic Jackpot symbols on the payline pay 4X and complete a winning combination except when 3 Jurassic Jackpot symbols are showing. -L-  -L-  "/>
+	<Game id="jurassicbr" message="-B-Jurassic Jackpot-B!- -L-A single Jurassic Jackpot symbol on the payline pays 2X and completes a winning combination. 2 Jurassic Jackpot symbols on the payline pay 4X and complete a winning combination except when 3 Jurassic Jackpot symbols are showing. -L-  -L-  "/>
+	<Game id="flowerpower" message="-B-Flower Power-B!- -L-The Flower Power Symbol is WILD and completes any winning combination. -L-  -L-  "/>
+	<Game id="Keno"  message=""/>
+	<Game id="KingCashalot"  message=""/>
+	<Game id="LadiesNite" message=""/>
+	<Game id="lions" message="-B-Lions Share-B!- -L-A single Lion Head symbol on a payline pays 2X and completes a winning combination. 2 Lion Head symbols on the payline pay 4X and complete a winning combination except when 3 Lion Head symbols are showing. -L-  -L-  "/>
+	<Game id="Loaded" message="-B-Loaded-B!- -L-Loaded is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-"/>
+	<Game id="LotsofLoot" message="-B-LotsaLoot-B!- -L-A single LotsaLoot symbol on the payline pays 2X and completes a winning combination. 2 LotsaLoot symbols on the payline pay 4X and complete a winning combination except when 3 LotsaLoot symbols are showing. The Jackpot is only won on 5th payline. -L-  -L-  "/>
+	<Game id="LouisianaDouble"  message=""/>
+	<Game id="LuckyCharmer"  message="-B-Lucky Charmer-B!- -L-To qualify for the Special Bonus Feature you MUST be playing with 3 COINS. The King Cobra Symbol activates the Special Bonus Feature and also substitutes for a Green Cobra. The King Cobra is NOT a wild symbol and only appears on the 3rd reel. -L-  -L-  " />
+	<Game id="MadHatters" message="-B-Mad Hatters-B!- -L-Mad Hatters is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-" />	
+	<Game id="MajorMillions" message="-B-Major Millions-B!- -L-The Major Millions symbol is WILD and pays 2X. 2 Major Millions symbols pay 4X except when 3 Major Millions symbols are on the payline. 3 Major Millions symbols on the bottom payline with 3 COINS bet wins the JACKPOT.  -L-  -L-  "/>
+	<Game id="MegaMoolah" message=""/>
+ 	<Game id="MermaidsMillions" message=""/>
+	<Game id="MH3CardPokerGold" message="-B-3 Card Multi-Hand Poker Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHAtlanticCityBJGold" message="-B-Atlantic City Multi-Hand Blackjack Gold Series-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHBJAtlanticCity" message="-B-Atlantic City Multi-Hand Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHBJClassic" message="-B-Classic Multi-Hand Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+ 	<Game id="MHBJVegasDownTown" message="-B-Vegas Downtown Multi-Hand Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHEuropeanBJGold" message="-B-European Multi-Hand Blackjack Gold Series-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="monkeys" message="-B-Monkey's Money-B!- -L-The main Monkey symbol is wild and completes any winning payout.  -L-  -L-  "/>
+	<Game id="MonsterMania" message=""/>
+	<Game id="Moonshine" message="-B-Moonshine-B!- -L-Moonshine is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-"/>
+	<Game id="MoonshineV90" message="-B-Moonshine-B!- -L-Moonshine is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L- "/>
+	<Game id="oceans" message=""/>
+	<Game id="OrientalFortune" message=""/>
+	<Game id="Pandamonium" message=""/>
+	<Game id="partytime" message=""/>
+	<Game id="pharaohs" message=""/>
+	<Game id="pirates" message=""/>
+	<Game id="PokerPursuit"  message=""/>
+	<Game id="PollenNation"  message="-B-PollenNation-B!- -L-PollenNation is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-"/>
+	<Game id="ProgCyberstud"message=""/>
+	<Game id="ProgressiveRoulette"message="-B-Roulette Royale-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-  "/>
+	<Game id="RedDog" message=""/>
+	<Game id="ReelStrike"  message=""/>
+	<Game id="ReelThunder" message=""/>
+	<Game id="RockTheBoat" message="-B-Rock the Boat -B!- -L-A single Elvis symbol on the payline pays 2X the winning combination it completes. Two Elvis symbols on the payline pay 4X the winning combination they complete. Three Elvis symbols on the payline do not multiply, but complete a winning combination. -L-  -L-  "/>
+	<Game id="romanriches" message="-B-Roman Riches-B!- -L-A Roman Bust on the payline will complete any winning combination. -L-  -L-  "/>
+	<Game id="Roulette"  message="-B-European Roulette-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-  "/>
+	<Game id="RouletteRoyale"  message="-B-Roulette Royale-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note:The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-  "/>
+	<Game id="royce" message=""/>
+	<Game id="Scratch"message=""/>
+	<Game id="SecretAdmirer" message=""/>
+	<Game id="Sicbo"  message="-B-Sic Bo-B!- -L- -L-Placing Bets:-L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="SkullDuggery" message=""/>
+	<Game id="Spanish" message=""/>
+	<Game id="Spectacular" message=""/>
+	<Game id="SpringBreak" message=""/>
+	<Game id="Stallionaire" message=""/>
+	<Game id="SunQuest" message=""/>
+	<Game id="SupaJax"  message="-B-SupaJax-B!- -L-Playing 5 COINS activates the JACKPOT as the maximum payout." />
+	<Game id="SuperFun21" message=""/>
+	<Game id="TallyHo" message=""/>
+	<Game id="TensorBetter" message=""/>
+	<Game id="TensorBetterPwrPoker"  message=""/>
+	<Game id="ThunderStruck" message=""/>
+	<Game id="TombRaider" message=""/>
+	<Game id="trickortreat" message=""/>
+    <Game id="TreasureIreland"  message=""/>
+	<Game id="TreasureNile" message=""/>
+	<Game id="TripleMagic" message=""/>
+	<Game id="Tunzamunni" message=""/>
+	<Game id="VegasDownTown" message=""/>
+	<Game id="VegasStrip" message=""/>
+	<Game id="VinylCountDown" message=""/>
+	<Game id="VIP3CardPoker"  message="-B-3 Card Poker -B!- -L-Left-click a chip pile on the table to increase your bet. -L-Press Shift + Left-click on a chip pile to decrease your bet.  -L-To place a Pair Plus bet, Left-click the Pair Plus betting circle on the table before you click on the Deal button. -L-  -L- "/>
+	<Game id="VIP3CardPokerGold"  message="-B-3 Card Poker Gold - VIP-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="VIPcosmicc" message="-B-Cosmic Cat-B!- -L-A Cosmic Cat on the payline will complete any winning combinations. -L-  -L-  "/>
+	<Game id="VIPMoonshine" message="-B-Moonshine-B!- -L-Moonshine is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-"/>
+	<Game id="VIPTombRaider" message=""/>
+	<Game id="VIPThunderStruck" message=""/>
+	<Game id="WhatAHoot" message=""/>
+	<Game id="WhatonEarth" message=""/>
+	<Game id="WheelOfWealthSE" message="-B-Wheel of Wealth Special Edition-B!- -L-Wheel of Wealth Special Edition is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L- "/>
+    <Game id="WinSpinner" message=""/>
+	<Game id="WowPot" message="-B-WowPot-B!- -L-The WowPot symbol and Progressive Jackpot are only activated on the 3rd COIN. -L-  -L-  "/>
+	<Game id="wwizards" message=""/>
+	<Game id="pubFruity" message=""/>
+	<Game id="YouLuckyBarstard" message=""/>	
+    <Game id="zebra" message="-B-Zany Zebra-B!- -L-A Zany Zebra on any active payline(s) will complete any winning combination(s). -L-  -L-  "/>
+    <Game id="Starscape" message=""/>
+	<Game id="BingoBangoBoom" message=""/>
+	<Game id="Isis" message="-B-Isis-B!- -L-Isis is a coin-based game. This means when you play this game, your credits are converted to coins. The number of coins available depends on the coin size you select in the game.  Your coins are converted to credits when you exit the game.-L-  -L-"/>
+	<Game id="BreakDaBankAgain" message=""/>
+	<Game id="BillAndTed" message=""/>
+	<Game id="HipHopopotamus" message=""/>
+	<Game id="TrackAndFieldMouse" message=""/>
+	<Game id="Avalon" message=""/>
+	<Game id="jamaicanafortune" message=""/>
+	<Game id="RubyCashapillar" message=""/>
+	<Game id="RubyTheOsbournes" message=""/>
+	<Game id="TombRaiderII" message=""/>
+	<Game id="DawnOfTheBread" message=""/>
+	<Game id="DragonsFortune" message=""/>
+	<Game id="FreezingFuzzballs" message=""/>
+	<Game id="GoldenGhouls" message=""/>
+	<Game id="SlamFunk" message=""/>
+	<Game id="SuperZeroes" message=""/>
+	<Game id="WildChampions" message=""/>
+	<Game id="BeginnerCosmicCat " message=""/>
+	<Game id="RubyDeckTheHalls" message=""/>
+	<Game id="BeginnerMH3CardPokerGold" message="-B-3 Card Multi-Hand Poker Gold-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="BeginnerMHEuropeanBJGold" message="-B-Beginner European Multi-Hand Blackjack Gold Series-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="BeginnerEuroRouletteGold" message="-B-Beginner European Roulette Gold Series-B!- -L- -L-Placing Bets: -L-To place a bet left-click on one of the bet areas on the table.-L-To increase a bet left-click on any chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="HighStreakBJGold" message="-B-High Streak European Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="MHPerfectPairs" message="-B-Perfect Pairs European Multi Hand Blackjack-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="RouletteStax" message="-B-Roulette Stax-B!- -L- -L-Roulette Stax is played on 5 Roulette wheels represented as stacks of blocks.-L- -L-Bets can be placed on the Roulette board or on a seperate Slot Bet.-L- -L-Each bet can be applied to up to 9 paylines with the total chips on the board multiplied by the number of paylines." />
+	<Game id="MHHoldemHigh" message="-B-Hold'em High-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>
+	<Game id="CashanovaV90" message=""/>
+	<Game id="RubyBarsAndStripesV90" message=""/>
+	<Game id="RubyBurningDesireV90" message=""/>
+	<Game id="HighSpeedPoker" message="-B-Multi-Hand High Speed Poker-B!- -L- -L-Placing Bets: -L-To place a bet left-click the bet area on the table.-L-To increase a bet left-click the chip pile already placed on the table.-L-To decrease a bet hold down 'Shift' on your keyboard and left-click the chip pile of the bet you want to decrease.-L- -L-Note: The chips will decrease in accordance with your currently selected chip value. -L-  -L-  -L-"/>	
+</Messages>
+

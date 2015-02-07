@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data version="5.6742.8-en" >
+	<!-- MLG -->
+	<String id="MLG_HEADING" text="-B-Graphics Settings-B!-"/>
+	<String id="MLG_HIGH_TEXT" text="Enhanced"/>
+	<String id="MLG_MEDIUM_TEXT" text="Standard"/>
+	<String id="MLG_LOW_TEXT" text="Basic"/>
+	<String id="MLG_GROUP" text="mlg_radio_button_group"/>
+	<String id="MLG_INFO_TEXT" text="Changing graphics level may affect system performance."/>
+	<String id="MLG_RESET_BUTTON" text="Reset to Default"/>
+	<String id="MLG_ANIMATING_BG" text="Animating Background"/>
+	<String id="SWITCH_OFF_ANIMBG" text="Switch off Animating Background"/>
+	<!-- Translate? -->
+	<String id="INSUFCREDTITLE" text="Insufficient Credits"/>
+	<String id="BOUNDARYCHANGE" text="The current bet settings are no longer valid"/>
+	<String id="BOUNDARYCHANGETITLE" text="Insufficient Credits"/>
+	<!-- Options -->
+	<String id="QUICK_SPIN" text="QuickSpin"/>
+	<String id="DISPLAY_OPTIONS" text="-B-Balance, Bet and Win Values-B!-"/>
+	<String id="DISPLAY_COINS" text="Display as Coins"/>
+	<String id="DISPLAY_CREDITS" text="Display as Credits"/>
+	<!-- Stats -->
+	<String id="SPIN_RESULTS" text="-B-Spin Results-B!-"/>
+	<String id="HIGHEST_WINS" text="-B-Highest Wins-B!-"/>
+	<String id="SPINS" text="Spins played:"/>
+	<String id="SES_TIME" text="Session time:"/>
+	<String id="SPINS_PH" text="Spins per hour:"/>
+	<String id="FIRST" text="First:"/>
+	<String id="SECOND" text="Second:"/>
+	<String id="THIRD" text="Third:"/>
+	<String id="STATS_INFO" text="These statistics only apply to the current game session"/>
+	<String id="STATISTICS" text="Statistics"/>
+	<!-- Tooltips -->
+	<String id="BUTTON_SPIN" 	text=" " />
+	<String id="BUTTON_BET_MAX" text=" " />
+	<String id="BUTTON_COINS" text=" " />
+	<String id="BUTTON_COINS_EXP" text=" " />
+	<String id="INC_COIN_EXP" text=" " />
+	<String id="DEC_COIN_EXP" text=" " />
+	<String id="BUTTON_LINES" text=" " />
+	<String id="BUTTON_LINES_EXP" text=" " />
+	<String id="INC_LINE_EXP" text=" " />
+	<String id="DEC_LINE_EXP" text=" " />
+	<String id="VIEWPAYTABLEBUTTON" text=" " />
+	<String id="BUTTON_STOP_AUTOPLAY" text=" " />
+	<String id="BUTTON_SPIN_EXP" text=" " />
+	<String id="BUTTON_BET_MAX_EXP" text=" " />
+	<String id="BUTTON_AUTO_PLAY" text=" " />
+	<String id="X10_EXP" text=" " />
+	<String id="X5_EXP" text=" " />
+	<String id="UCS_INC_BUTTON" text="" />
+	<String id="UCS_DEC_BUTTON" text="" /> 
+	<String id="BUTTON_STOP" text=" " />
+	<String id="CREDITS_COINS" text=" " />
+	<String id="BUTTON_INVISIBLE" text=" " />
+	<String id="BUTTON_DISPLAY_CREDITS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_DEMOCREDITS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_GUESTCREDITS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_REALCREDITS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_COINS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_DEMOCOINS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_GUESTCOINS" text="Toggle between Credits or Coins" />
+	<String id="BUTTON_DISPLAY_REALCOINS" text="Toggle between Credits or Coins" />
+	<String id="DECBET" text=" " />
+	<String id="INCBET" text=" " />
+	<String id="BUTTON_BET_LOCK" text="Max bet locked at current setting" />
+	<!-- Payline Selector -->
+	<String id="PAYLINE_TOOLTIP" text="Payline {0} - {1} coins" />
+	<!-- Console Messages -->
+	<String id="COINS" text="COINS"/>
+	<String id="CREDITS" text="CREDITS"/>
+	<String id="SCATTER" text="SCATTER"/>
+	<String id="MESSAGE_SPIN" text="GOOD LUCK" />
+	<String id="MESSAGE_NO_WIN" text="CLICK SPIN TO PLAY" />
+	<String id="MESSAGE_FREE_SPINS_TRIGGETED" text="FREE SPIN FEATURE TRIGGERED" />
+	<String id="MESSAGE_SCATTER_PAYS" text="SCATTER PAYS {0} {1}" />
+	<String id="MESSAGE_COUNTUP" text="CLICK ANYWHERE ON SCREEN TO SKIP COUNTUP" />
+	<String id="MESSAGE_DEFAULT" text="" />
+	<String id="MESSAGE_YOU_WIN" text="WAYS PAYS {0} {1}" />
+	<String id="MESSAGE_FREESPINS_FEATURE_WIN" text="FREE SPINS FEATURE WINS {0} {1}" />
+	<String id="MESSAGE_SKIP_COUNTUP" text="CLICK ANYWHERE ON SCREEN TO SKIP COUNTUP" />
+	<String id="AUTO_PLAY_STOPPED" text="GAME STOPPED DUE TO AUTOPLAY SETTINGS"/>
+	<String id="WIN_SUMMARY_COINS" text="YOU WIN {0} {1}"/>
+	<String id="FREE_SPIN_RETRIGGERED" text="FREE SPIN FEATURE RESTARTED AT {0} SPINS"/>
+	<!--  Free Games  --> 
+	<String id="CREDIT_TYPE_BONUS" text="Wins will be added to your Bonus Balance." /> 
+	<String id="CREDIT_TYPE_CASH" text="Wins will be added to your Cash Balance." /> 
+	<String id="OFFER_INFO_WAYWINS" text="Each Free Game is {0} Ways at Coin Size {1}." /> 
+	<String id="OFFER_INFO_WINLINES" text="Each Free Game is {0} Line(s), {1} Coin(s)/Line at a {2} Coin Size." /> 
+	<String id="EXPIRY_INFO" text="These Free Games will expire on -B-{0} @ {1}-B!-." /> 
+	<String id="REFERENCE_INFO" text="Your Reference Number is {0}" /> 
+	<String id="OFFERS" text="OFFERS" /> 
+	<String id="OFFER" text="OFFER" /> 
+	<String id="MONTHS" text="January,February,March,April,May,June,July,August,September,October,November,December" /> 
+	<String id="REMAINING_GAMES" text="Your remaining Free Games will be available when you return to the game." /> 
+	<String id="FINAL_GAME_IN_PROGRESS" text="Your final Free Game is still in progress." /> 
+	<String id="FINAL_GAME_RETURN" text="You will be able to complete this when you return to the game." /> 
+	<String id="SLIDER_MESSAGE" text="Free Game Information" /> 
+	<String id="SLIDER_GAMES_REMAINING" text="Games Remaining" /> 
+	<String id="SLIDER_TYPE_CASH" text="Wins added to: Cash Balance" /> 
+	<String id="SLIDER_TYPE_BONUS" text="Wins added to: Bonus Balance" /> 
+	<String id="SLIDER_COINS_WON" text="Coins won:" /> 
+	<String id="SLIDER_CREDITS_WON" text="Credits won:" /> 
+	<String id="SLIDER_REFERENCE_NUM" text="Reference number:" /> 
+	<String id="SLIDER_EXPIRY" text="These Free Games will expire on" />
+	<String id="FREE" text="FREE" />
+	<String id="QUICK_FREE_SPIN" text="QuickSpin in free spins" />
+	<String id="DISABLE_GAMBLE" text="Switch off gamble feature" />
+	<!-- Graphics Options-->
+	<String id="GRAPHICS_TITLE" text="-B-Graphics-B!-" />
+	<String id="GRAPHICS_ENHANCED_OPTION" text="Enhanced Graphics" />
+	<String id="GRAPHICS_STATIC_0" text="(Enhanced Graphics may impact game performance)" />
+	<String id="FREESPIN_MULTIPLIER_TEXT" text="{0}x" />
+	<String id="STOP_ON_BASEGAME_FEATURES" text="Stop on Base Game features" />
+	<String id="STOP_ON_FREESPINS_FEATURES" text="Stop on Free Spins features" />
+	<!-- new console -->
+	<!--
+	Currently using the WIN_AGE_ONE_VALUE. which it uses as the base string for a string formatter.
+	Where the {0} is the numeric value of the time period {1}
+	Which will result in a string like "3 days ago" or "1 week ago".
+	The WIN_AGE_ONE_VALUE string is there so we can re order that dynamic string for different languages if needed.
+	-->
+	<String id="WIN_AGE_4_ARGS_AGO" text=" {0} {1} {2} {3} &#x000BF;" />
+	<String id="WIN_AGE_2_ARGS_AGO" text=" {0} {1} &#x000BF;" />
+	<String id="WIN_AGE_3_ARGS_AGO" text=" {0} {1} {2} &#x000BF;" />
+	<String id="WIN_AGE_SECOND" text="&#x003B1;" />
+	<String id="WIN_AGE_SECONDS" text="&#x00392;" />
+	<String id="WIN_AGE_MIN" text="&#x00393;" />
+	<String id="WIN_AGE_MINS" text="&#x003B4;" />
+	<String id="WIN_AGE_HOUR" text="&#x003B5;" />
+	<String id="WIN_AGE_HOURS" text="&#x00398;" />
+	<String id="WIN_AGE_DAY" text="&#x003C0;" />
+	<String id="WIN_AGE_DAYS" text="&#x003BC;" />
+	<String id="WIN_AGE_WEEK" text="&#x003A3;" />
+	<String id="WIN_AGE_WEEKS" text="&#x003C3;" />
+	<String id="WIN_AGE_MONTH" text="&#x003C4;" />
+	<String id="WIN_AGE_MONTHS" text="&#x003A6;" />
+	<String id="WIN_AGE_YEAR" text="&#x003C6;" />
+	<String id="WIN_AGE_YEARS" text="&#x003A9;" />
+	<String id="WIN_AGE_LESS_THAN" text="&lt;" />
+	<String id="WIN_AGE_MORE_THAN" text="&gt;" />
+	<!-- Auto Play Spins -->
+	<String id="AUTO_PLAY_SPINS_PREFIX" text="" />
+	<String id="AUTO_PLAY_SPINS_SUFFIX" text="X" />
+</data>

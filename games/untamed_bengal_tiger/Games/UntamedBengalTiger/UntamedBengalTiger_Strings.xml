@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data version="5.1.0.4-en" >
+	<String id="BUTTON_DISPLAY_CREDITS" text="" />
+	<String id="BUTTON_DISPLAY_DEMOCREDITS" text="" />
+	<String id="BUTTON_DISPLAY_GUESTCREDITS" text="" />
+	<String id="BUTTON_DISPLAY_REALCREDITS" text="" />
+	<String id="BUTTON_DISPLAY_COINS" text="" />
+	<String id="BUTTON_DISPLAY_DEMOCOINS" text="" />
+	<String id="BUTTON_DISPLAY_GUESTCOINS" text="" />
+	<String id="BUTTON_DISPLAY_REALCOINS" text="" />
+</data>

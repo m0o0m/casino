@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="5.8442.7">
+	
+	<console>
+		<field id="topWin_0" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.serviceData.player.playInfos.topWins.0.value" />
+			<updateable displayMode="2" lookupChipSize="slotData.serviceData.player.playInfos.topWins.0.chipSize" />
+		</field>
+		<field id="topWin_1" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.serviceData.player.playInfos.topWins.1.value" />
+			<updateable displayMode="2" lookupChipSize="slotData.serviceData.player.playInfos.topWins.1.chipSize" />
+		</field>	
+		<field id="topWin_2" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.serviceData.player.playInfos.topWins.2.value" />
+			<updateable displayMode="2" lookupChipSize="slotData.serviceData.player.playInfos.topWins.2.chipSize" />
+		</field>	
+		<field id="topWin_3" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.serviceData.player.playInfos.topWins.3.value" />
+			<updateable displayMode="2" lookupChipSize="slotData.serviceData.player.playInfos.topWins.3.chipSize" />
+		</field>	
+		<field id="topWin_4" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.serviceData.player.playInfos.topWins.4.value" />
+			<updateable displayMode="2" lookupChipSize="slotData.serviceData.player.playInfos.topWins.4.chipSize" />
+		</field>	
+		<field id="winDisplay" fontName="FNT_Console_Display_Win_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="150" minimumScale="0.05" autoResize="true" />
+			<updateable displayMode="2" />
+			<datalookup lookupObject="gameData.gameBalances.win" />
+		</field>
+		<field id="betDisplay" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<updateable displayMode="2" />
+			<datalookup lookupObject="slotData.bet.currentBet.actualBetValue" />
+		</field>
+		<field id="betDisplay_FreeGame" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="0" >
+			<datalookup lookupObject="slotData.bet.currentBet.betDisplayValue" />
+		</field>
+		<field id="coinsDisplay" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="" x="0" y="5" >
+			<resizable maximumWidth="98" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.bet.currentBet.numChips" />
+		</field>
+		<field id="balanceDisplay" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="1" x="0" y="0" >
+			<resizable maximumWidth="150" minimumScale="0.05" autoResize="true" />
+			<updateable displayMode="2" displayZeros="true" />
+			<datalookup lookupObject="gameData.gameBalances.currentBalance" />
+		</field>
+		<field id="spinsDisplay" fontName="FNT_Console_Display_Balance_" align="center" valign="middle" value="1 10" x="0" y="0" >
+			<resizable maximumWidth="150" minimumScale="0.05" autoResize="true" />
+			<datalookup lookupObject="slotData.autoPlay.statusDisplay" />
+		</field>
+	</console>
+	
+	<freegames>
+		<field id="Num_FreeGamesRemaining" fontName="FNT_Free_Games_Main_" align="center" valign="middle" />
+		<field id="Num_FreeGamesPlayed" fontName="FNT_Free_Games_Main_" align="center" valign="middle" />
+		<field id="Num_TotalWon" fontName="FNT_Free_Games_Total_Won_" align="center" valign="middle" >
+			<resizable maximumWidth="348" minimumScale="0.05" autoResize="true" />
+			<updateable displayMode="2" lookupChipSize="slotData.runtimeState.freegames.currentFreeGameOffer.bet.chipSize" />
+		</field>
+	</freegames>
+	
+	<summaryScreens>
+		
+		<field id="fsSummaryWin_MistyVale" fontName="FNT_Bonus_01_MV_Summary_" align="center" valign="middle">
+			<resizable maximumWidth="500" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>
+		<field id="fsSummaryWin_TrailingWild" fontName="FNT_Bonus_02_FF_Summary_" align="center" valign="middle">
+			<resizable maximumWidth="500" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>	
+		<field id="fsSummaryWin_RollingReels" fontName="FNT_Bonus_05_MK_Summary_" align="center" valign="middle">
+			<resizable maximumWidth="500" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>		
+	</summaryScreens>
+	
+	<freespins>
+		<field id="numTotalWin" fontName="FNT_Bonus_FS_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="140" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>
+		<field id="numFreeSpins" fontName="FNT_Bonus_FS_" align="center" valign="middle" x="0" y="0">
+			<resizable maximumWidth="80" minimumScale="0.45" autoResize="true" />
+		</field>
+	</freespins>
+	
+	<bigwinconfig>
+		<field id="bigWinMC" fontName="FNT_BigWin_" align="center" valign="middle">
+			<resizable maximumWidth="348" minimumScale="0.8" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>
+	</bigwinconfig>
+	
+	<modalheaders>		
+		<field id="mb_WinUpTo_value" fontName="FNT_MDL_WinUpTo_" align="left" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2" />
+		</field>		
+	</modalheaders>
+	
+	<paytable>
+	
+		<page label="pg1">
+			<!-- WinUpTo -->
+			<field id="PaytablePage1_0_0" fontName="FNT_PT_Pg4_WinUpTo_" align="left" valign="middle" value="2400000" x="0" y="0" parent="WinUpTos" fieldHolder="num">
+				<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" group="paytable1" />
+				<updateable displayMode="2" maxCoinsize="1" affixCoins="2" coinsFrame="coins" creditsFrame="credits" />
+			</field>
+		</page>
+		
+		<page label="pg2">
+			<!-- WinUpTo -->
+			<field id="PaytablePage2_0_0" fontName="FNT_PT_Pg5_WinUpTo_" align="center" valign="middle" value="2400000" x="257" y="195" >
+				<resizable maximumWidth="350" minimumScale="0.6" autoResize="true" group="paytable2winupto" />
+				<updateable displayMode="2" maxCoinsize="1" affixCoins="2"/>
+			</field>
+			<!-- Grail -->
+			<field id="PaytablePage2_0_1" fontName="FNT_PT_pg5_ScatterWinCount_" align="center" valign="middle" value="5" x="283" y="261" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable2" />
+			</field>
+			
+			<field id="PaytablePage2_0_2" fontName="FNT_PT_pg5_ScatterWinCount_" align="center" valign="middle" value="4" x="283" y="301" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable2" />
+			</field>
+			
+			<field id="PaytablePage2_0_3" fontName="FNT_PT_pg5_ScatterWinCount_" align="center" valign="middle" value="3" x="283" y="341" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable2" />
+			</field>	
+			
+			<field id="PaytablePage2_0_4" fontName="FNT_PT_pg5_ScatterWinCount_" align="center" valign="middle" value="2" x="283" y="381" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable2" />
+			</field>				
+			
+			<field id="PaytablePage2_0_5" fontName="FNT_PT_pg5_ScatterAmount_" align="center" valign="middle" value="100" x="351" y="261" >
+				<resizable maximumWidth="90" minimumScale="0.6" autoResize="true" group="paytable2" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" paylineCost="1" />
+			</field>
+			
+			<field id="PaytablePage2_0_6" fontName="FNT_PT_pg5_ScatterAmount_" align="center" valign="middle" value="20" x="351" y="301" >
+				<resizable maximumWidth="90" minimumScale="0.6" autoResize="true" group="paytable2" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" paylineCost="1" />
+			</field>
+			
+			<field id="PaytablePage2_0_7" fontName="FNT_PT_pg5_ScatterAmount_" align="center" valign="middle" value="5" x="351" y="341" >
+				<resizable maximumWidth="90" minimumScale="0.6" autoResize="true" group="paytable2" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" paylineCost="1" />
+			</field>
+			
+			<field id="PaytablePage2_0_8" fontName="FNT_PT_pg5_ScatterAmount_" align="center" valign="middle" value="1" x="351" y="381" >
+				<resizable maximumWidth="90" minimumScale="0.6" autoResize="true" group="paytable2" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" paylineCost="1" />
+			</field>
+		</page>
+		
+		<page label="pg3" />
+		<page label="pg4" />
+		<page label="pg5" />
+		<page label="pg6">
+			<!--Avalon-->
+			<field id="PaytablePage6_0_0" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="288" y="102" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_1" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="288" y="154" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_2" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="288" y="204" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_3" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="2" x="288" y="255" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_4" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="2000" x="377" y="102" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_5" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="500" x="377" y="154" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_6" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="100" x="377" y="204" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_7" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="5" x="377" y="255" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Arthur-->
+			<field id="PaytablePage6_0_8" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="671.50" y="116" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_9" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="671.50" y="163" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_10" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="671.50" y="210" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_11" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="2" x="671.50" y="257" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_12" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="1000" x="761" y="116" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_13" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="150" x="761" y="163" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_14" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="40" x="761" y="210" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_15" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="2" x="761" y="257" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Merlin-->
+			<field id="PaytablePage6_0_16" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="1055.50" y="116" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_17" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="1055.50" y="163" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_18" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="1055.50" y="210" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_19" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="2" x="1055.50" y="257" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_20" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="800" x="1145" y="116" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_21" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="100" x="1145" y="163" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_22" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="30" x="1145" y="210" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_23" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="2" x="1145" y="257" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Guinevere-->
+			<field id="PaytablePage6_0_24" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="288" y="349" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_25" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="288" y="410" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_26" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="288" y="473" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>		
+			
+			<field id="PaytablePage6_0_27" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="600" x="377" y="349" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_28" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="80" x="377" y="410" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_29" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="20" x="377" y="473" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Morgan-->
+			<field id="PaytablePage6_0_30" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="671.50" y="349" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_31" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="671.50" y="410" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_32" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="671.50" y="473" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>		
+			
+			<field id="PaytablePage6_0_33" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="400" x="761" y="349" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_34" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="60" x="761" y="410" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_35" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="15" x="761" y="473" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Black Knight-->
+			<field id="PaytablePage6_0_36" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="1055.50" y="349" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_37" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="1055.50" y="410" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>
+			
+			<field id="PaytablePage6_0_38" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="1055.50" y="473" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable6" />
+			</field>		
+			
+			<field id="PaytablePage6_0_39" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="200" x="1145" y="349" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_40" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="60" x="1145" y="410" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage6_0_41" fontName="FNT_PT_Pg1_WinAmounts_" align="center" valign="middle" value="10" x="1145" y="473" >
+				<resizable maximumWidth="102" minimumScale="0.6" autoResize="true" group="paytable6" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>		
+		</page>		
+		<page label="pg7">
+			<!--Ace-->
+			<field id="PaytablePage7_0_0" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="288.50" y="107" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_1" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="288.50" y="163" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_2" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="288.50" y="220" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_3" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="100" x="377.45" y="107" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_4" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="30" x="377.45" y="163" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_5" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="8" x="377.45" y="220" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--King-->
+			<field id="PaytablePage7_0_6" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="671.50" y="107" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_7" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="671.50" y="163" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_8" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="671.50" y="220" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_9" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="100" x="758.45" y="107" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_10" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="30" x="758.45" y="163" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_11" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="8" x="758.45" y="220" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Queen-->
+			<field id="PaytablePage7_0_12" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="1055.50" y="107" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_13" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="1055.50" y="163" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_14" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="1055.50" y="220" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_15" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="80" x="1142.45" y="107" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_16" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="15" x="1142.45" y="163" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_17" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="6" x="1142.45" y="220" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Jack-->
+			<field id="PaytablePage7_0_18" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="288.50" y="295" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_19" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="288.50" y="351" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_20" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="288.50" y="408" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_21" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="80" x="377.45" y="295" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_22" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="15" x="377.45" y="351" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_23" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="6" x="377.45" y="408" >
+				<resizable maximumWidth="100" minimumScale="0.6" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Ten-->
+			<field id="PaytablePage7_0_24" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="671.50" y="295" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_25" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="671.50" y="351" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_26" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="671.50" y="408" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_27" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="60" x="758.45" y="295" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_28" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="10" x="758.45" y="351" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_29" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="4" x="758.45" y="408" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<!--Nine-->
+			<field id="PaytablePage7_0_30" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="5" x="1055.50" y="295" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_31" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="4" x="1055.50" y="351" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>
+			
+			<field id="PaytablePage7_0_32" fontName="FNT_PT_WinCount_" align="center" valign="middle" value="3" x="1055.50" y="408" >
+				<resizable maximumWidth="30" minimumScale="0.6" autoResize="true" group="paytable7" />
+			</field>		
+			
+			<field id="PaytablePage7_0_33" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="60" x="1142.45" y="295" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_34" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="10" x="1142.45" y="351" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+			
+			<field id="PaytablePage7_0_35" fontName="FNT_PT_Pg2_WinAmounts_" align="center" valign="middle" value="4" x="1142.45" y="408" >
+				<resizable maximumWidth="100" minimumScale="0.4" autoResize="true" group="paytable7" />
+				<updateable displayMode="2" coinsize="1" coinsWagered="1" />
+			</field>
+		</page>
+	
+
+	</paytable>
+	<bonus>
+		<field id="b4_Legend" fontName="FNT_Bonus_04_DM_Legend_" align="left" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="100" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"/>
+		</field>
+		<field id="DuskyMoorsLegendHi" fontName="FNT_Bonus_04_DM_Legend_Hi_" align="left" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="100" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"/>
+		</field>
+		<field id="DuskyMoorsLegendLo" fontName="FNT_Bonus_04_DM_Legend_Lo_" align="left" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="100" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"/>
+		</field>		
+		
+		<field id="s4_SummaryTotalWin" fontName="FNT_Bonus_04_DM_Summary_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"/>
+		</field>
+		
+		<field id="b0_win" fontName="numWin_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+		</field>
+		
+		<field id="bs0_TotalWin" fontName="num_coins_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+		</field>
+		<field id="WhisperingWoodsWinValue" fontName="FNT_Bonus_03_WW_Summary_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"  />
+		</field>
+		<field id="WhisperingWoodsRevealValue" fontName="FNT_Bonus_03_WW_Summary_Lo_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" coinsize="1" />
+		</field>
+		<field id="ChoosePath_LoL_Win" fontName="FNT_Bonus_Trail_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="140" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="1" />
+		</field>
+		<field id="ChoosePath_MV_Win" fontName="FNT_Bonus_Trail_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="140" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="1" />
+		</field>
+		<field id="b0_lakeTotalWin" fontName="FNT_Bonus_00_LoL_Total_Win_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"  />
+		</field>
+		<field id="s0_lakeSummaryBonusWin" fontName="FNT_Bonus_00_LoL_Summary_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"  />
+		</field>
+		<field id="b0_lakeOfLegendPickWin" fontName="FNT_Bonus_00_LoL_DiceValue_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2"  />
+		</field>
+		<field id="IoASummaryWinValue" fontName="FNT_Bonus_07_IoA_Summary_Large_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>
+		<field id="IoASummaryMultiplierValue" fontName="FNT_Bonus_07_IoA_Summary_Small_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" thousandSeperator="true" />
+		</field>
+		<field id="IoASummaryBetValue" fontName="FNT_Bonus_07_IoA_Summary_Small_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>		
+		<field id="IoATrailSummaryValue" fontName="FNT_Bonus_07_IoA_Final_Summary_Total_" align="center" valign="middle" x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="1"/>
+		</field>
+		<!-- Hall of Shadows -->
+		<field id="hos_TotalWinField" fontName="FNT_Bonus_06_HoS_Total_Win_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_CriticalStrikeWinField" fontName="FNT_Bonus_06_HoS_Win_Critical_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_NormalStrikeWinField" fontName="FNT_Bonus_06_HoS_Win_Normal_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_PerfectStrikeWinField" fontName="FNT_Bonus_06_HoS_Win_Perfect_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_NormalBlockWinField" fontName="FNT_Bonus_06_HoS_Win_Normal_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_PerfectBlockWinField" fontName="FNT_Bonus_06_HoS_Win_Perfect_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" affixCoins="2"/>
+		</field>
+		<field id="hos_SummaryWinValue" fontName="FNT_Bonus_06_HoS_Summary_" align="center" valign="middle"  x="0" y="0">
+			<resizable maximumWidth="594" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="2" />
+		</field>
+	</bonus>
+	<trail>
+		<field id="TotalTrail" fontName="FNT_Bonus_Trail_" align="center" valign="middle">
+			<resizable maximumWidth="140" minimumScale="0.45" autoResize="true" />
+			<updateable displayMode="1" />
+		</field>
+	</trail>
+</config>

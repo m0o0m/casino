@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System version="9.4.0.136629">
+	<!-- Frame text formattting -->
+	<frame>
+		<static>
+			<credits>
+				<default x="16" y="727" width="138" height="27" textLayer="creditsValue" />
+				<default_T3 x="16" y="714" width="138" height="27" textLayer="creditsValue" />
+				<MiniFrame x="137" y="748" width="86" height="18" textLayer="creditsValue_MiniFrame" />
+				<MiniFrame_T3 x="137" y="728" width="86" height="18" textLayer="creditsValue_MiniFrame" />
+				<MiniFrame_MPF x="137" y="748" width="86" height="18" textLayer="creditsValue_MiniFrame" />
+				<MiniFrame_bottom_left x="17" y="698" width="117" height="26" textLayer="creditsValue" />
+			</credits>
+			<creditsWord>
+				<default x="12" y="698" width="138" height="34" textLayer="creditsInfo" />
+				<default_T3 x="12" y="685" width="138" height="34" textLayer="creditsInfo" />
+				<MiniFrame x="9" y="752" width="120" height="13" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_T3 x="9" y="732" width="120" height="13" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_noCredits x="9" y="752" width="120" height="13" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_noCredits_T3 x="9" y="732" width="120" height="13" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_MPF x="9" y="752" width="120" height="13" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_bottom_left x="5" y="658" width="130" height="40" textLayer="creditsInfo" />
+				<MiniFrame_noCredits_1280 x="9" y="704" width="140" height="40" textLayer="creditsInfo_MiniFrame" />
+				<MiniFrame_noBottom x="840" y="0" width="80" height="15" textLayer="creditsInfo_noBottom" />
+				<MiniFrame_noBottom_1280 x="1096" y="0" width="80" height="15" textLayer="creditsInfo_noBottom" />
+			</creditsWord>
+			<time>
+				<default x="970" y="12" width="32" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<default_T3 x="970" y="12" width="32" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_T3 x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_noCredits x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_noCredits_T3 x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_bottom_left x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_MPF x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_noBottom x="985" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_noCredits_1280 x="1241" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+				<MiniFrame_noBottom_1280 x="1241" y="0" width="39" height="20" regXPosition="center" regYPosition="middle" textLayer="timeValue" />
+			</time>
+			<heading textLayer="frameHeading" >
+				<default yOffset="3" movable="0" canHide="0" />
+				<default_T3 yOffset="3" movable="0" canHide="0" />
+				<MiniFrame movable="1" canHide="1" />
+				<MiniFrame_T3 movable="1" canHide="1" />
+				<MiniFrame_noCredits movable="1" canHide="1" />
+				<MiniFrame_noCredits_T3 movable="1" canHide="1" />
+				<MiniFrame_bottom_left movable="1" canHide="1" />
+				<MiniFrame_MPF movable="1" canHide="1" />
+				<MiniFrame_noBottom movable="1" canHide="1" />
+				<MiniFrame_noCredits_1280 movable="1" canHide="1" />
+				<MiniFrame_noBottom_1280 movable="1" canHide="1" />
+			</heading>
+		</static>
+	</frame>
+	<!-- System Frames -->
+	<systemFrame width="1024" height="768" defaultTheme="gold" availableFrames="default,default_T3,MiniFrame,MiniFrame_T3,MiniFrame_noCredits,MiniFrame_noCredits_T3,MiniFrame_bottom_left,MiniFrame_MPF,MiniFrame_noBottom,MiniFrame_noCredits_1280,MiniFrame_noBottom_1280">
+		<default className="default">
+			<frame excludeMethod="hidden">
+				<button type="6" x="173" y="648" evt="BANK" text="BANK_BTN" />
+				<button type="5" x="173" y="677" evt="EXIT" text="EXIT_BTN" />
+				<button type="18" x="173" y="706" evt="OPTIONS" text="OPTIONS_BTN" />
+				<button type="39" x="173" y="706" evt="EXPERT" text="EXPERT_BTN" show="false" />
+				<button type="39" x="173" y="706" evt="REGULAR" text="REGULAR_BTN" show="false"/>
+				<button type="7" x="173" y="735" evt="HELP" text="HELP_BTN" />
+				<button type="42" x="12" y="5" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" width="146.9" height="31.45" show="false"/>
+			</frame>
+		</default>	
+		<default_T3 className="default_T3">
+			<frame excludeMethod="hidden">
+				<button type="6" x="173" y="635" evt="BANK" text="BANK_BTN" />
+				<button type="5" x="173" y="664" evt="EXIT" text="EXIT_BTN" />
+				<button type="18" x="173" y="693" evt="OPTIONS" text="OPTIONS_BTN" />
+				<button type="39" x="173" y="693" evt="REGULAR" text="REGULAR_BTN" show="false"/>
+				<button type="39" x="173" y="693" evt="EXPERT" text="EXPERT_BTN" show="false" />
+				<button type="7" x="173" y="722" evt="HELP" text="HELP_BTN" />
+				<button type="42" x="12" y="5" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" width="146.9" height="31.45" show="false"/>
+			</frame>
+		</default_T3>
+		<MiniFrame className="miniframe">
+			<frame excludeMethod="hidden">  <!-- enabled, hidden -->
+				<button type="35" x="238.6" y="750.0" evt="OPTIONS" text="OPTIONS_BTN" show="true" theme="true"/>
+				<button type="35" x="405.2" y="750.0" evt="BANK" text="BANK_BTN" show="true" theme="true"/>
+				<button type="35" x="576.8" y="750.0" evt="STATS" text="STATS_BTN" show="true" theme="true"/>
+				<button type="35" x="748.4" y="750.0" evt="EXPERT" text="EXPERT_BTN" show="true" theme="true"/>
+				<button type="35" x="748.4" y="750.0" evt="REGULAR" text="REGULAR_BTN" show="false" theme="true"/>
+				<button type="35" x="900.0" y="750.0" evt="EXIT" text="GAMES_BTN" show="true" theme="true" />
+				<button type="36" x="953.0" y="0.0" evt="HELP" text="" useHandCursor="true" show="true" />
+				<button type="43" x="0" y="0"  evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+			</frame>
+		</MiniFrame>
+		<MiniFrame_T3 className="miniframe_T3">
+			<frame excludeMethod="hidden">  <!-- enabled, hidden -->
+				<button type="35" x="238.6" y="730.0" evt="OPTIONS" text="OPTIONS_BTN" show="true" theme="true"/>
+				<button type="35" x="405.2" y="730.0" evt="BANK" text="BANK_BTN" show="true" theme="true"/>
+				<button type="35" x="576.8" y="730.0" evt="STATS" text="STATS_BTN" show="true" theme="true"/>
+				<button type="35" x="748.4" y="730.0" evt="EXPERT" text="EXPERT_BTN" show="true" theme="true"/>
+				<button type="35" x="748.4" y="730.0" evt="REGULAR" text="REGULAR_BTN" show="false" theme="true"/>
+				<button type="35" x="900.0" y="730.0" evt="EXIT" text="GAMES_BTN" show="true" theme="true" />
+				<button type="36" x="953.0" y="0.0" evt="HELP" text="" useHandCursor="true" show="true" />
+				<button type="43" x="0" y="0"  evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+			</frame>
+		</MiniFrame_T3>
+		<MiniFrame_noCredits className="miniframeNoCredits">
+			<frame excludeMethod="hidden">
+				<button type="35" x="213.6" y="750.0" evt="OPTIONS" text="OPTIONS_BTN" show="true" theme="true"/>
+				<button type="35" x="385.2" y="750.0" evt="BANK" text="BANK_BTN" show="true" theme="true"/>
+				<button type="35" x="556.8" y="750.0" evt="STATS" text="STATS_BTN" show="true" theme="true"/>
+				<button type="35" x="728.4" y="750.0" evt="EXPERT" text="EXPERT_BTN" show="true" theme="true"/>
+				<button type="35" x="728.4" y="750.0" evt="REGULAR" text="REGULAR_BTN" show="false" theme="true"/>
+				<button type="35" x="900.0" y="750.0" evt="EXIT" text="GAMES_BTN" show="true" theme="true"/>
+				<button type="36" x="953.0" y="0.0" evt="HELP" text="" useHandCursor="true"  show="true" />
+				<button type="43" x="0" y="0" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+			</frame>
+		</MiniFrame_noCredits>	
+		<MiniFrame_noCredits_T3 className="miniframeNoCredits_T3">
+			<frame excludeMethod="hidden">
+				<button type="35" x="213.6" y="730.0" evt="OPTIONS" text="OPTIONS_BTN" show="true" theme="true"/>
+				<button type="35" x="385.2" y="730.0" evt="BANK" text="BANK_BTN" show="true" theme="true"/>
+				<button type="35" x="556.8" y="730.0" evt="STATS" text="STATS_BTN" show="true" theme="true"/>
+				<button type="35" x="728.4" y="730.0" evt="EXPERT" text="EXPERT_BTN" show="true" theme="true"/>
+				<button type="35" x="728.4" y="730.0" evt="REGULAR" text="REGULAR_BTN" show="false" theme="true"/>
+				<button type="35" x="900.0" y="730.0" evt="EXIT" text="GAMES_BTN" show="true" theme="true"/>
+				<button type="36" x="953.0" y="0.0" evt="HELP" text="" useHandCursor="true"  show="true" />
+				<button type="43" x="0" y="0" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+			</frame>
+		</MiniFrame_noCredits_T3>	
+		<MiniFrame_bottom_left className="miniframeBottomLeft">
+			<frame excludeMethod="hidden">
+				<button type="38" x="143" y="634" evt="EXIT" text="EXIT_BTN" />
+				<button type="37" x="143" y="661" evt="BANK" text="BANK_BTN" />
+				<button type="39" x="143" y="688" evt="EXPERT" text="EXPERT_BTN" />
+				<button type="39" x="143" y="688" evt="REGULAR" text="REGULAR_BTN" show="false" />
+				<button type="40" x="143" y="715" evt="OPTIONS" />
+				<button type="41" x="196" y="715" evt="STATS" />
+				<button type="36" x="953.0" y="0.0" evt="HELP" text="" useHandCursor="true"  show="true" />
+				<button type="43" x="0" y="0" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+			</frame>
+		</MiniFrame_bottom_left>
+		<MiniFrame_MPF className="miniframe">
+			<frame excludeMethod="hidden">
+				<button type="35" x="728.4" y="750.0" evt="BANK" text="BANK_BTN" theme="true"/>
+				<button type="35" x="900.0" y="750.0" evt="EXIT" text="EXIT_BTN" theme="true"/>
+				<button type="36" x="953" y="0.0" evt="HELP"  useHandCursor="true"/>
+			</frame>
+		</MiniFrame_MPF>
+		<MiniFrame_noBottom className="miniframeEmpty">
+			<frame excludeMethod="hidden">
+				<button type="36" x="951.0" y="0.0" evt="HELP" text="" useHandCursor="true"  show="true" />
+            </frame>
+		</MiniFrame_noBottom>
+		<MiniFrame_noCredits_1280 className="MiniFrame_noCredits_1280">
+            <frame excludeMethod="hidden">
+                <button type="35" x="218.0" y="702.0" evt="OPTIONS" text="OPTIONS_BTN" show="true" theme="true"/>
+                <button type="35" x="458.0" y="702.0" evt="BANK" text="BANK_BTN" show="true" theme="true"/>
+                <button type="35" x="698.0" y="702.0" evt="STATS" text="STATS_BTN" show="true" theme="true"/>
+                <button type="35" x="938.0" y="702.0" evt="EXPERT" text="EXPERT_BTN" show="true" theme="true"/>
+                <button type="35" x="938.0" y="702.0" evt="REGULAR" text="REGULAR_BTN" show="false" theme="true"/>
+                <button type="35" x="1178.0" y="702.0" evt="EXIT" text="GAMES_BTN" show="true" theme="true"/>
+                <button type="36" x="1210.0" y="0" evt="HELP" text="" useHandCursor="true" show="true" />
+                <button type="43" x="0" y="0" evt="PLAYFORREAL" text="PLAYFORREAL_BTN" show="false"/>
+            </frame>
+        </MiniFrame_noCredits_1280>
+		<MiniFrame_noBottom_1280 className="miniframeEmpty1280">
+			<frame excludeMethod="hidden">
+				<button type="36" x="1210.0" y="0" evt="HELP" text="" useHandCursor="true" show="true" />
+            </frame>
+		</MiniFrame_noBottom_1280>
+	</systemFrame>
+	<ucs>
+		<fixedValue textLayer="ucsFixedValue" x="258" y="577" width="60" regXPosition="center" regYPosition="middle" text="UCS_FIXED_VALUE" useBevel="1" />
+		<inc evt='UCS_INC_EVT' >
+			<default type="3" x="260" y="562" height="32" shortcut="UP" />
+		</inc>
+		<dec evt='UCS_DEC_EVT' >
+			<default type="4" x="232" y="562" height="32" shortcut="DOWN" />
+		</dec>
+	</ucs>
+	<!-- Options Menu / Flyout menu -->
+	<optionsMenu>
+		<settings textLayer="optionsFlyoutHeading" heading="OPTIONS_TITLE">
+			<default x="147" y="500" />
+			<default_T3 x="147" y="500" />
+			<MiniFrame x="210" y="580" />
+			<MiniFrame_T3 x="210" y="580" />
+			<MiniFrame_noCredits x="210" y="580" />
+			<MiniFrame_noCredits_T3 x="210" y="580" />
+			<MiniFrame_MPF x="210" y="580" />
+			<MiniFrame_bottom_left x="225" y="600" />
+			<MiniFrame_noCredits_1280 x="225" y="600" />
+		</settings>
+		<menu>
+			<menuItem evt="AUTOLOGIN" text="AUTOLOGIN_TEXT" />
+			<menuItem evt="CHANGEPASSWORD" text="OPTIONS_TEXT1" loginUse="t3" />
+			<menuItem evt="MUTESOUNDS" text="OPTIONS_TEXT2" loginUse="t3,mpp,upe" />
+			<menuItem evt="REGISTER" text="OPTIONS_TEXT3" loginUse="t3" />
+		</menu>
+	</optionsMenu>
+	
+		<!-- Virtual Pitt Boss -->
+	<vpb>
+		<animation tweenInDelay="1000" tweenOutDelay="1000" />
+		<eventMessages initMessageDelay="10000" numMessagesRequestDelay="10000" nextMessageDelay="1000" removeMessageDelay="15000">
+			<title font="Arial" size="15" bold="1"/>
+			<titleData font="Arial" size="13"/>
+			<instructionURL font="Arial" size="11" bold="1"/>
+		</eventMessages>
+		<placement>
+			<default x="868" y="578" />
+			<default_T3 x="868" y="565" />
+			<MiniFrame x="868" y="687" />
+			<MiniFrame_T3 x="868" y="667" />
+			<MiniFrame_noCredits x="868" y="687" />
+			<MiniFrame_noCredits_T3 x="868" y="667" />
+			<MiniFrame_MPF x="868" y="687" />
+			<MiniFrame_noBottom x="868" y="687" />
+			<MiniFrame_bottom_left x="867" y="686" />
+			<MiniFrame_noCredits_1280 x="1123" y="638" />
+			<MiniFrame_noBottom_1280 x="1123" y="638" />
+		</placement>
+		<rmm offsetRight="5" offsetBottom="92" toastDisplayTime="1000" centeredDisplayTime="800" />
+	</vpb>
+	
+	<!-- Bonus Bubble -->
+	<bonusBubble>
+		<settings font="AuroraFontMain" embeddedFonts="true" antiAliasType="advanced" size="12" color="0x111111" lineColor="0x222222" backgroundColor="0xEFEFEF" bold="true" requestDelay="500" removeDelay="0" />
+		<text cash="BALBUBBLE_CASH" bonus="BALBUBBLE_BONUS" total="BALBUBBLE_TOTAL" />
+	</bonusBubble>
+	
+	<!-- Fade message -->
+	<moduleFadeMessage>
+		<settings font="AuroraFontMain" embeddedFonts="true" antiAliasType="advanced" size="20" color="0xFFFFFF" backgroundColor="0x000000" xPadding="50" yPadding="15" alpha="0.8" interval="2000" textLayer="fadeInMessage" />
+	</moduleFadeMessage>
+	
+	<!-- Quick Mute -->
+	<quickMute tooltip1="QUICKMUTE_ON" tooltip2="QUICKMUTE_OFF" />
+	
+	<ToolTipConfig>
+		<TextField textColor="0x000000" type="dynamic" selectable="false" background="true" border="true" autoSize="left" backgroundColor="0xffffdc" multiLine="true" embedFonts="true" antiAliasType="advanced" />
+		<TextFormat align="left" font="AuroraFontMain" size="11" leftMargin="3" rightMargin="3" letterSpacing="0.5" />
+		<Show delayToStartShow="500" delayToFullDisplay="100" alphaChangeInterval="50" alphaChangeRate="0.5"/>
+		<Remove delayToFullRemove="100" alphaChangeInterval="50" alphaChangeRate="0.5" />
+	</ToolTipConfig>
+	
+	<switchUser>
+		<settings font="AuroraFontMain" embeddedFonts="true" size="15" color="0xFFFFFF" bold="true" />
+	</switchUser>
+	
+	<infomessage delay="2000" welcomeNote="" alternateText="1" >
+		<infobar usertype1="INFOBAR_USER1" usertype2="INFOBAR_USER2" usertype3="INFOBAR_USER_T3" />
+		<creditbox start="CREDITSBOX_START" usertype1="CREDITSBOX_USER1" usertype2="CREDITSBOX_USER2" usertype3="CREDITSBOX_USER_T3" usertype4="CREDITSBOX_USER5" />
+		<coinbox start="COINSBOX_START" usertype1="COINSBOX_USER1" usertype2="COINSBOX_USER2" usertype3="COINSBOX_USER_T3" usertype4="CREDITSBOX_USER5" />
+	</infomessage>
+	
+	<BrandingSettings fr1_EnabledColour="0xFFFFFF" fr1_DisableColour="0xAAAAAA" fr1_OverColour="0xFFFFFF" fr2_EnabledColour="0xFFFFFF" fr2_DisableColour="0xAAAAAA" fr2_OverColour="0xFFFFFF" fr1_FontSize="10" />
+	
+	<TextOverrides hindiFontSystemOverride="0" />
+	
+	<AbbreviationRules>
+		<format text="THOUSAND"  value="100000" />
+		<format text="TEN_THOUSAND" value="1000000" />
+		<format text="HUNDRED_THOUSAND" value="10000000" />
+		<format text="MILLION" value="100000000" />
+		<format text="TEN_MILLION" value="1000000000" />
+		<format text="HUNDRED_MILLION" value="10000000000" />
+		<format text="BILLION" value="100000000000" />
+		<format text="TEN_BILLION" value="1000000000000" />
+		<format text="HUNDRED_BILLION" value="10000000000000" />
+	</AbbreviationRules>
+</System>

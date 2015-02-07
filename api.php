@@ -11,6 +11,10 @@ class Api {
         $this->gameSession->game->string_id = $p[0];
         $this->sectionId = $p[1];
 
+        if(!empty($p[2])) {
+            $_GET['bonus'] = $p[2];
+        }
+
         
         $this->gameSession->create_time = 1411559061;
         

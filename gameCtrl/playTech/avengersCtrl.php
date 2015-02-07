@@ -1,6 +1,7 @@
 <?
 
 class avengersCtrl extends Ctrl {
+    public $useSessionBet = true;
     /*
      * Отвечает баланс+выплаты+расскладки
      */
@@ -9,14 +10,21 @@ class avengersCtrl extends Ctrl {
             $draws = '<DrawState drawId="0"/>';
         }
         else {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
         }
 
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
@@ -244,7 +252,7 @@ class avengersCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawStates;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
         $_SESSION['bonusWIN'] = $this->fsBonus['totalWin'];
     }
 
@@ -430,7 +438,15 @@ class avengersCtrl extends Ctrl {
     // формирования описание шагов при выборе иконки в Wall Of Heroes bonus
     public function getWOHDetail($step = 0) {
         $symbols = $this->gameParams->WOHSymbols;
-        if($step > 0) array_push($symbols, $this->gameParams->WOHExit);
+        //if($step > 0) array_push($symbols, $this->gameParams->WOHExit);
+
+        if($step > 0) {
+            $exitChance = $this->gameParams->WOHExitConfig['startChance'] + $this->gameParams->WOHExitConfig['stepIncrease'] * ($step - 1);
+            $eRnd = rnd(1,100);
+            if($exitChance > $eRnd) {
+                $symbols = array($this->gameParams->WOHExit);
+            }
+        }
         $cnt = count($symbols) - 1;
         $symbolsCnt = array();
         $won = 'true';

@@ -1,0 +1,3886 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data version="5.8442.6" >
+
+	<!--<instructions>
+		So far, Operations on art assets are (moe operations will be added in due coourse):-
+		
+		addAssets,addAssetsAndStopAt,playFrom,playFromAndStopAt,playFromAndStopAtAndWatchFrame,removeAssets,stopAt,fadeIn,fadeOut,removeAllAssets
+		
+		Operations on layers are (moe operations will be added in due coourse):-
+		
+		fadeInLayer,fadeOutLayer,customTweenLayer
+		
+		Operations on sounds are (moe operations will be added in due coourse):-
+		
+		playSound,stopSound
+		
+		For executing custom function from caller use , executeCallerFunction
+		For adding a delay use, addDelay
+		
+		The parametes used for operation on assets are:- ( youu can have any combination of these parameters for your operations)
+		
+		assets = collection os  dusplay objects otehr than layer, should be "," separated.
+		positions = a "|" separated positions for assets defined, eg, positions ='2,10|200,100' 
+		layer = name of the layer, where the operation will take place.
+		frame = frame name to send to or play a movieclip from.
+		asset = a display object name other than layer.
+		startFrame = frame from where a timeline starts.
+		endFrame  = at where the timeline is supposed to end.
+		watchFrame = a frame label upon reaching which the action is complete, dosent wait till the end of animation.
+		startAplha = starting alpha value in a fadein / fade out.
+		endAplha = final alpha value in any fadein/fade out
+		fadeTime = fade duration
+		xPos = final x position
+		yPos = final y position
+		xOffset
+		yOffset
+		tweenType = curerently availble only "yoyo"
+		repeat
+		ease
+		time
+		delay
+	</instructions>-->
+
+	<feature>
+		<property key="id" value="featureIntro" type="String" /> 
+
+		<actions>
+
+			<action>				
+				<property key="id" value="addCommonBackground" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_Background' positions='0,0' layer='FeatureIntroBackground' " type="String"/>	
+			</action>
+
+			<action>
+				<property key="id" value="addCommonTrail" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Path_Trail_Inactive' positions='0,0' layer='FeatureIntro' " type="String"/>	
+			</action>
+			
+			<action>
+				<property key="id" value="addDotAsset" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_Path_Choice_Dot' positions='0,0' layer='FeatureIntro' " type="String"/>	
+			</action>			
+
+			<action>    
+				<property key="id" value="BonusRevealSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Bonus_Reveal' category='game' waitToComplete='false' " type="String"/> 
+			</action>
+
+			<!-- Common -->
+			<action>				
+				<property key="id" value="killFeatureIntro" type="String" />
+				<property key="type" value="removeAllAssets" type="String" />                   
+				<property key="value" value="layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="killFeatureBkg" type="String" />
+				<property key="type" value="removeAllAssets" type="String" />                   
+				<property key="value" value="layer='FeatureIntroBackground' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addLogoAndStop" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_Camelot_Logo'  frame='Start' positions='0,0'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addLogoAndSetToLastFrame" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_Camelot_Logo'  frame='End' positions='0,0'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="playLogo" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_Camelot_Logo' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="endLogo" type="String" />
+				<property key="type" value="stopAt" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_Camelot_Logo' frame='End'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="DelayTrail" type="String" />
+				<property key="type" value="addDelay" type="String" />
+				<property key="value" value="delay='1000' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="FadeOutTrail" type="String" />
+				<property key="type" value="fadeOutLayer" type="String" />
+				<property key="value" value="endAplha='0' fadeTime='0.7' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="FadeInLayer" type="String" />
+				<property key="type" value="fadeInLayer" type="String" />
+				<property key="value" value="endAplha='1' fadeTime='0' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Path: Camelot to Lake of Legends-->
+			<action>				
+				<property key="id" value="addAllStaticDestinations" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Trail_01_Lake_Of_Legend_Inactive,GFX_Trail_02_Misty_Vale_Inactive,GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive' positions='0,0|296,231|102,388|662,597|427,390|667,272|897,156|1143,184|1062,583' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="animatePath_null_0" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_1' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>	
+			<action>				
+				<property key="id" value="completePath_null_0" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1'  frame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playLakeOfLegendsSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_LakeOfLegends' category='game' waitToComplete='true' " type="String"/> 
+			</action>
+			<action>    
+				<property key="id" value="fadeOutLakeOfLegendsSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_LakeOfLegends' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>	
+			<action>				
+				<property key="id" value="removeLakeOfLegendStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_01_Lake_Of_Legend_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addLakeOfLegendAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_01_Lake_Of_Legend_Activate' positions='296,231' frame='Start'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="playLakeOfLegendAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Trail_01_Lake_Of_Legend_Activate'  startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<action>                                                              
+				<property key="id" value="showTotalWinLakeOFLegends" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_01_Lake_Of_Legend_Complete.num' layer='FeatureIntro' conditionalValue='bonus_0_totalWin' " type="String"/>              
+			</action>
+
+			<!-- Path: Camelot to Misty Value -->
+			<action>				
+				<property key="id" value="addPathsCamelotToLakeOfLegends" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToLakeOfLegends" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_2,GFX_Trail_01_Lake_Of_Legend_Complete' positions='0,0|296,231'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToLakeOfLegends" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_02_Misty_Vale_Inactive,GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='102,388|662,597|427,390|667,272|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="animatePath_0_1" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_2' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_0_1" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_2' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playMistyValeSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_MistyVale' category='game' waitToComplete='true' " type="String"/> 
+			</action>	
+			<action>    
+				<property key="id" value="fadeOutMistyValeSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_MistyVale' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>			
+			<action>				
+				<property key="id" value="removeMistyValeStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_02_Misty_Vale_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addMistyValeAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_02_Misty_Vale_Activate' positions='102,388' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="playMistyValeAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_02_Misty_Vale_Activate' positions='102,388' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<action>                                                              
+				<property key="id" value="showTotalWinMistyVale" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_02_Misty_Vale_Complete.num' layer='FeatureIntro' conditionalValue='freespins_2_totalWin' " type="String"/>              
+			</action>
+
+			<!-- Path : Choose Bonus to Whispering Woods -->
+			<action>				
+				<property key="id" value="addPathsCamelotToWW" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToWW" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_4_Left,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete' positions='0,0|296,231|102,388'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToWW" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='662,597|667,272|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="animatePath_2_3_left" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_4_Left' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_2_3_left" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_4_Left' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playWWSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_WhisperingWoods' category='game' waitToComplete='true' " type="String"/> 
+			</action>	
+			<action>    
+				<property key="id" value="fadeOutWWSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_WhisperingWoods' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>			
+			<action>				
+				<property key="id" value="addWWAnim" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Activate' positions='427,390' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Path : Choose Bonus to Forect Falls -->
+			<action>				
+				<property key="id" value="addPathsCamelotToFF" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToFF" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_4_Right,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete' positions='0,0|296,231|102,388'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToFF" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='427,390|667,272|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="animatePath_2_3_right" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_4_Right' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_2_3_right" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_4_Right' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playFFSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_ForestFalls' category='game' waitToComplete='true' " type="String"/> 
+			</action>	
+			<action>    
+				<property key="id" value="fadeOutFFSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_ForestFalls' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>			
+			<action>				
+				<property key="id" value="addFFAnim" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Activate' positions='662,597' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Path : Whispering Woods to Dusky Moors  -->
+			<action>				
+				<property key="id" value="addPathsCamelotToWhisperingWoods" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Left' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToWhisperingWoods" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Left,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Whispering_Woods_Complete'   positions='0,0|296,231|102,388|427,390'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addAnimPath_3_5" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Left'  frame='Start' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToWhisperingWoods" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='662,597|667,272|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>	
+
+			<action>                                                              
+				<property key="id" value="showTotalWhisperingWoods" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_03_Whispering_Woods_Complete.num' layer='FeatureIntro' conditionalValue='bonus_3_totalWin' " type="String"/>              
+			</action>
+
+			<!-- Forest Falls to Dusky Moors -->
+			<action>				
+				<property key="id" value="addPathsCamelotToForestFalls" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Right' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToForestFalls" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Right,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Forest_Falls_Complete'   positions='0,0|296,231|102,388|662,597'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addAnimPath_4_5" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Right'  frame='Start' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToForestFalls" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_04_Dusky_Moors_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='427,390|667,272|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>	
+
+			<action>                                                              
+				<property key="id" value="showTotalForestFalls" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_03_Forest_Falls_Complete.num' layer='FeatureIntro' conditionalValue='freespins_3_totalWin' " type="String"/>              
+			</action>			
+
+			<!-- Dusky Moors --> 
+			<action>				
+				<property key="id" value="removeDuskyMoorsStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_04_Dusky_Moors_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="playDuskyMoorsAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_04_Dusky_Moors_Activate' positions='667,272' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>	
+			<action>				
+				<property key="id" value="addDuskyMoorsAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_04_Dusky_Moors_Activate' positions='667,272' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+
+			<!-- Path Camelot to Morgan's Keep -->			
+			<!-- Dusky Moors  Via Whispering Woods-->
+			<action>				
+				<property key="id" value="animatePath_3_5" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_5_Left' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_3_5" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Left' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addPathsCamelotToDuskyMoors_left" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Left,GFX_Path_Trail_5_Left' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToDuskyMoors_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Left,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Whispering_Woods_Complete,GFX_Trail_04_Dusky_Moors_Complete'   positions='0,0|296,231|102,388|427,390|667,272'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToDuskyMoors_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='662,597|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>	
+
+			<!-- Dusky Moors Via Forest Falls -->   
+			<action>				
+				<property key="id" value="animatePath_4_5" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_5_Right' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>	
+			<action>				
+				<property key="id" value="completePath_4_5" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Right' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addPathsCamelotToDuskyMoors_right" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Right,GFX_Path_Trail_5_Right' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>
+				<property key="id" value="addReachedDestinationsCamelotToDuskyMoors_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_5_Right,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Forest_Falls_Complete,GFX_Trail_04_Dusky_Moors_Complete'   positions='0,0|296,231|102,388|662,597|667,272'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToDuskyMoors_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_05_Morgans_Keep_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='427,390|897,156|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>    
+				<property key="id" value="playDuskyMoorsSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_DuskyMoors' category='game' waitToComplete='true' " type="String"/> 
+			</action>
+			<action>    
+				<property key="id" value="fadeOutDuskyMoorsSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_DuskyMoors' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>
+
+			<!-- Dusky Moors - Morgan Keep -->
+			<action>				
+				<property key="id" value="addAnimPath_5_6" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_6'  frame='Start' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="animatePath_5_6" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_6' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_5_6" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_6' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playMorgansKeepSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_MorganKeep' category='game' waitToComplete='true' " type="String"/> 
+			</action>
+			<action>    
+				<property key="id" value="fadeOutMorgansKeepSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_MorganKeep' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>
+			<action>				
+				<property key="id" value="removeMorgansKeepStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_05_Morgans_Keep_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addMorgansKeepAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_05_Morgans_Keep_Activate' positions='897,156' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="playMorgansKeepAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_05_Morgans_Keep_Activate' positions='897,156' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+
+
+			<action>                                                              
+				<property key="id" value="showTotalDuskyMoors" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_04_Dusky_Moors_Complete.num' layer='FeatureIntro' conditionalValue='bonus_4_totalWin' " type="String"/>              
+			</action>	
+
+			<!-- Path Camelot to Hall of Shadows -->			
+			<!--  Morgan's Keep via Whispering Woods-->
+			<action>				
+				<property key="id" value="addPathsCamelotToMorgansKeep_left" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Left,GFX_Path_Trail_5_Left,GFX_Path_Trail_6' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToMorgansKeep_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_7,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Whispering_Woods_Complete,GFX_Trail_04_Dusky_Moors_Complete,GFX_Trail_05_Morgans_Keep_Complete'   positions='0,0|296,231|102,388|427,390|667,272|897,156'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToMorgansKeep_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='662,597|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Morgan's Keep  Via Forest Falls -->    
+			<action>				
+				<property key="id" value="addPathsCamelotToMorgansKeep_right" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Right,GFX_Path_Trail_5_Right,GFX_Path_Trail_6' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>		
+			<action>
+				<property key="id" value="addReachedDestinationsCamelotToMorgansKeep_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_7,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Forest_Falls_Complete,GFX_Trail_04_Dusky_Moors_Complete,GFX_Trail_05_Morgans_Keep_Complete'   positions='0,0|296,231|102,388|662,597|667,272|897,156'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToMorgansKeep_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_06_Hall_Of_Shadows_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='427,390|1143,184|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Morgan's Keep  - Hall of Shadows -->
+			<action>				
+				<property key="id" value="animatePath_6_7" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_7' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_6_7" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_7' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playHallOfShadowsSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_HallOfShadows' category='game' waitToComplete='true' " type="String"/> 
+			</action>	
+			<action>    
+				<property key="id" value="fadeOutHallOfShadowsSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_HallOfShadows' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>			
+			<action>				
+				<property key="id" value="removeHallOfShadowsStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_06_Hall_Of_Shadows_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addHallOfShadowsAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_06_Hall_Of_Shadows_Activate' positions='1143,184' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="playHallOfShadowsAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_06_Hall_Of_Shadows_Activate' positions='1143,184' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>	
+
+			<action>                                                              
+				<property key="id" value="showTotalMorgansKeep" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_05_Morgans_Keep_Complete.num' layer='FeatureIntro' conditionalValue='freespins_4_totalWin' " type="String"/>              
+			</action>
+
+			<!-- Path Camelot to Isle of Avalon -->			
+			<!-- Hall of Shadows via Whispering Woods-->
+			<action>				
+				<property key="id" value="addPathsCamelotToHallOfShadows_left" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Left,GFX_Path_Trail_5_Left,GFX_Path_Trail_6,GFX_Path_Trail_7' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addReachedDestinationsCamelotToHallOfShadows_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_8,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Whispering_Woods_Complete,GFX_Trail_04_Dusky_Moors_Complete,GFX_Trail_05_Morgans_Keep_Complete,GFX_Trail_06_Hall_Of_Shadows_Complete'   positions='0,0|296,231|102,388|427,390|667,272|897,156|1143,184'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToHallOfShadows_left" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Forest_Falls_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='662,597|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Hall of Shadows  Via Forest Falls -->    
+			<action>				
+				<property key="id" value="addPathsCamelotToHallOfShadows_right" type="String" />
+				<property key="type" value="addAssetsAndStopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_1,GFX_Path_Trail_2,GFX_Path_Trail_3,GFX_Path_Trail_4_Right,GFX_Path_Trail_5_Right,GFX_Path_Trail_6,GFX_Path_Trail_7' frame='End'    layer='FeatureIntro' " type="String"/>	
+			</action>		
+			<action>
+				<property key="id" value="addReachedDestinationsCamelotToHallOfShadows_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_8,GFX_Trail_01_Lake_Of_Legend_Complete,GFX_Trail_02_Misty_Vale_Complete,GFX_Trail_03_Forest_Falls_Complete,GFX_Trail_04_Dusky_Moors_Complete,GFX_Trail_05_Morgans_Keep_Complete,GFX_Trail_06_Hall_Of_Shadows_Complete'   positions='0,0|296,231|102,388|662,597|667,272|897,156|1143,184'  layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="addInactiveDestinationsCamelotToHallOfShadows_right" type="String" />
+				<property key="type" value="addAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_03_Whispering_Woods_Inactive,GFX_Trail_07_Isle_Of_Avalon_Inactive'   positions='427,390|1062,583'  layer='FeatureIntro' " type="String"/>	
+			</action>
+
+			<!-- Morgan's Keep  - Hall of Shadows -->
+			<action>				
+				<property key="id" value="animatePath_7_8" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                 
+				<property key="value" value="asset='GFX_Path_Trail_8' startFrame='Start' endFrame='End'   layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="completePath_7_8" type="String" />
+				<property key="type" value="stopAt" type="String" />                 
+				<property key="value" value="assets='GFX_Path_Trail_8' frame='End' layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>    
+				<property key="id" value="playIsleOfAvalonSound" type="String" />
+				<property key="type" value="playSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_IsleOfAvalon' category='game' waitToComplete='false' " type="String"/> 
+			</action>	
+			<action>    
+				<property key="id" value="fadeOutIsleOfAvalonSound" type="String" />
+				<property key="type" value="fadeOutSound" type="String" />                   
+				<property key="value" value="soundName='SND_Adv_IsleOfAvalon' category='game' waitToComplete='false' fadeOutTime='2000' " type="String"/> 
+			</action>			
+			<action>				
+				<property key="id" value="removeIsleOfAvalonStatic" type="String" />
+				<property key="type" value="removeAssets" type="String" />                 
+				<property key="value" value="assets='GFX_Trail_07_Isle_Of_Avalon_Inactive'  layer='FeatureIntro' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="addIsleOfAvalonAnim" type="String" />
+				<property key="type" value="addAssets" type="String" />                   
+				<property key="value" value="assets='GFX_Trail_07_Isle_Of_Avalon_Activate' positions='1062,583' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="playIsleOfAvalonAnim" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />                   
+				<property key="value" value="asset='GFX_Trail_07_Isle_Of_Avalon_Activate' positions='1062,583' startFrame='Start' endFrame='End' layer='FeatureIntro' " type="String"/>	
+			</action>			
+			<action>                                                              
+				<property key="id" value="showTotalHallOfShadows" type="String" />
+				<property key="type" value="addTextWithConditionalValue" type="String" />                 
+				<property key="value" value="id='TotalTrail' parent='GFX_Trail_06_Hall_Of_Shadows_Complete.num' layer='FeatureIntro' conditionalValue='bonus_5_totalWin' " type="String"/>              
+			</action>
+
+		</actions>
+
+		<sequences>
+			<!-- Camelot - Lake of Legends -->
+			<sequence>
+
+				<property key="id" value="show_null_0" type="String" />
+				<step>
+					<property key="id" value="show_null_0_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addAllStaticDestinations,addLogoAndStop" type="String" />
+				</step>				
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_null_0" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playLakeOfLegendsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_null_0_step_1" type="String" />
+					<property key="actions" value="playLogo,BonusRevealSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="start_null_0_step_2" type="String" />
+					<property key="actions" value="animatePath_null_0,playLakeOfLegendsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playLakeOfLegendsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="start_null_0_step_3" type="String" />
+					<property key="actions" value="removeLakeOfLegendStatic,addLakeOfLegendAnim,playLakeOfLegendAnim,BonusRevealSound" type="String" /> 
+
+				</step>
+				<step>
+					<property key="id" value="start_null_0_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playLakeOfLegendsSound" type="Vector.String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_null_0" type="String" />
+				<step>
+					<property key="id" value="kill_null_0_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+
+			<sequence>
+
+				<property key="id" value="interrupt_null_0" type="String" />
+				<property key="abortSequences" value="start_null_0" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutLakeOfLegendsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_null_0_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_null_0,fadeOutLakeOfLegendsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutLakeOfLegendsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_null_0_step_2" type="String" />
+					<property key="actions" value="removeLakeOfLegendStatic,addLakeOfLegendAnim,playLakeOfLegendAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_null_0_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+
+				</step>
+			</sequence>
+
+			<!-- Lake of Legends - Misty Value -->
+			<sequence>
+
+				<property key="id" value="show_0_1" type="String" />
+				<step>
+					<property key="id" value="show_0_1_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToLakeOfLegends,addReachedDestinationsCamelotToLakeOfLegends,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToLakeOfLegends,showTotalWinLakeOFLegends" type="String" />
+				</step>				
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_0_1" type="String" />				
+				<step>
+					<property key="id" value="start_0_1_step_1" type="String" />
+					<property key="actions" value="animatePath_0_1,playMistyValeSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playMistyValeSound" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_0_1_step_2" type="String" />
+					<property key="actions" value="removeMistyValeStatic,playMistyValeAnim,BonusRevealSound" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_0_1_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_0_1_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playMistyValeSound" type="Vector.String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_0_1" type="String" />
+				<property key="abortSequences" value="start_0_1" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutMistyValeSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_0_1_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_0_1,fadeOutMistyValeSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutMistyValeSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_0_1_step_2" type="String" />
+					<property key="actions" value="removeMistyValeStatic,addMistyValeAnim,playMistyValeAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_0_1_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_0_1" type="String" />
+				<step>
+					<property key="id" value="kill_0_1_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Choose Bonus to Whispering Woods -->
+			<sequence>
+
+				<property key="id" value="show_2_3_left" type="String" />
+				<step>
+					<property key="id" value="show_2_3_left_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToWW,addReachedDestinationsCamelotToWW,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToWW,showTotalWinLakeOFLegends,showTotalWinMistyVale,addWWAnim" type="String" />
+				</step>				
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_2_3_left" type="String" />				
+				<step>
+					<property key="id" value="start_2_3_left_step_1" type="String" />
+					<property key="actions" value="animatePath_2_3_left,playWWSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playWWSound" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_2_3_left_step_2" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_2_3_left_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playWWSound" type="Vector.String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_2_3_left" type="String" />
+				<property key="abortSequences" value="start_2_3_left" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutWWSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_2_3_left_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_2_3_left,fadeOutWWSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutWWSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_left_step_2" type="String" />
+					<property key="actions" value="BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_left_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />					
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_left_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_2_3_left" type="String" />
+				<step>
+					<property key="id" value="kill_2_3_left_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Choose Bonus to Forest Falls -->
+			<sequence>
+
+				<property key="id" value="show_2_3_right" type="String" />
+				<step>
+					<property key="id" value="show_2_3_right_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToFF,addReachedDestinationsCamelotToFF,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToFF,showTotalWinLakeOFLegends,showTotalWinMistyVale,addFFAnim" type="String" />
+				</step>				
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_2_3_right" type="String" />				
+				<step>
+					<property key="id" value="start_2_3_right_step_1" type="String" />
+					<property key="actions" value="animatePath_2_3_right,playFFSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playFFSound" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_2_3_right_step_2" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_2_3_right_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playFFSound" type="Vector.String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_2_3_right" type="String" />
+				<property key="abortSequences" value="start_2_3_right" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutFFSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_2_3_right_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_2_3_right,fadeOutFFSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutFFSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_right_step_2" type="String" />
+					<property key="actions" value="BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_right_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />					
+				</step>
+				<step>
+					<property key="id" value="interrupt_2_3_right_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_2_3_right" type="String" />
+				<step>
+					<property key="id" value="kill_2_3_right_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!--Whispering Woods to Dusky Moors-->
+			<sequence>
+
+				<property key="id" value="show_3_5" type="String" />
+				<step>
+					<property key="id" value="show_3_5_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToWhisperingWoods,addReachedDestinationsCamelotToWhisperingWoods,addLogoAndSetToLastFrame,addAnimPath_3_5,addInactiveDestinationsCamelotToWhisperingWoods,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalWhisperingWoods" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_3_5" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playDuskyMoorsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_3_5_step_1" type="String" />
+					<property key="actions" value="animatePath_3_5,playDuskyMoorsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playDuskyMoorsSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_3_5_step_2" type="String" />
+					<property key="actions" value="removeDuskyMoorsStatic,playDuskyMoorsAnim,BonusRevealSound" type="String" /> 
+				</step>		
+
+				<step>
+					<property key="id" value="start_3_5_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_3_5_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playDuskyMoorsSound" type="Vector.String" />
+				</step>				
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_3_5" type="String" />
+				<property key="abortSequences" value="start_3_5" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutDuskyMoorsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_3_5_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_3_5,fadeOutDuskyMoorsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutDuskyMoorsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_3_5_step_2" type="String" />
+					<property key="actions" value="removeDuskyMoorsStatic,addDuskyMoorsAnim,playDuskyMoorsAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_3_5_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_3_5" type="String" />
+				<step>
+					<property key="id" value="kill_3_5_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>	
+
+			<!-- Forest Falls to Dusky Moors -->
+			<sequence>
+
+				<property key="id" value="show_4_5" type="String" />
+				<step>
+					<property key="id" value="show_4_5_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToForestFalls,addReachedDestinationsCamelotToForestFalls,addLogoAndSetToLastFrame,addAnimPath_4_5,addInactiveDestinationsCamelotToForestFalls,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalForestFalls" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_4_5" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playDuskyMoorsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_4_5_step_1" type="String" />
+					<property key="actions" value="animatePath_4_5,playDuskyMoorsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playDuskyMoorsSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_4_5_step_2" type="String" />
+					<property key="actions" value="removeDuskyMoorsStatic,playDuskyMoorsAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_4_5_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_4_5_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playDuskyMoorsSound" type="Vector.String" />
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_4_5" type="String" />
+				<property key="abortSequences" value="start_4_5" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutDuskyMoorsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_4_5_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_4_5,fadeOutDuskyMoorsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutDuskyMoorsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_4_5_step_2" type="String" />
+					<property key="actions" value="removeDuskyMoorsStatic,addDuskyMoorsAnim,playDuskyMoorsAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_4_5_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_4_5" type="String" />
+				<step>
+					<property key="id" value="kill_4_5_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>	
+
+			<!-- Dusky Moors to Morgan's Keep (via Whispering Woods) -->
+			<sequence>
+
+				<property key="id" value="show_5_6_left" type="String" />
+				<step>
+					<property key="id" value="show_5_6_left_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToDuskyMoors_left,addAnimPath_5_6,addReachedDestinationsCamelotToDuskyMoors_left,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToDuskyMoors_left,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalWhisperingWoods,showTotalDuskyMoors" type="String"/>
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_5_6_left" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playMorgansKeepSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_5_6_left_step_1" type="String" />
+					<property key="actions" value="animatePath_5_6,playMorgansKeepSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playMorgansKeepSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_5_6_left_step_2" type="String" />
+					<property key="actions" value="removeMorgansKeepStatic,playMorgansKeepAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_5_6_left_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_5_6_left_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playMorgansKeepSound" type="Vector.String" />
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_5_6_left" type="String" />
+				<property key="abortSequences" value="start_5_6_left" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutMorgansKeepSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_5_6_left_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_5_6,fadeOutMorgansKeepSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutMorgansKeepSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_5_6_left_step_2" type="String" />
+					<property key="actions" value="removeMorgansKeepStatic,addMorgansKeepAnim,playMorgansKeepAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_5_6_left_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_5_6_left" type="String" />
+				<step>
+					<property key="id" value="kill_5_6_left_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Dusky Moors to Morgan's Keep (via Forest Falls) -->
+			<sequence>
+
+				<property key="id" value="show_5_6_right" type="String" />
+				<step>
+					<property key="id" value="show_5_6_right_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToDuskyMoors_right,addAnimPath_5_6,addReachedDestinationsCamelotToDuskyMoors_right,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToDuskyMoors_right,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalForestFalls,showTotalDuskyMoors" type="String"/>
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_5_6_right" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playMorgansKeepSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_5_6_right_step_1" type="String" />
+					<property key="actions" value="animatePath_5_6,playMorgansKeepSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playMorgansKeepSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_5_6_right_step_2" type="String" />
+					<property key="actions" value="removeMorgansKeepStatic,playMorgansKeepAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_5_6_right_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_5_6_right_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playMorgansKeepSound" type="Vector.String" />
+				</step>	
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_5_6_right" type="String" />
+				<property key="abortSequences" value="start_5_6_right" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutMorgansKeepSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_5_6_right_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_5_6,fadeOutMorgansKeepSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutMorgansKeepSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_5_6_right_step_2" type="String" />
+					<property key="actions" value="removeMorgansKeepStatic,addMorgansKeepAnim,playMorgansKeepAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_5_6_right_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_5_6_right" type="String" />
+				<step>
+					<property key="id" value="kill_5_6_right_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Morgan's Keep to Hall of Shadows (via Whispering Woods) -->
+			<sequence>
+
+				<property key="id" value="show_6_7_left" type="String" />
+				<step>
+					<property key="id" value="show_6_7_left_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToMorgansKeep_left,addReachedDestinationsCamelotToMorgansKeep_left,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToMorgansKeep_left,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalWhisperingWoods,showTotalDuskyMoors,showTotalMorgansKeep" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_6_7_left" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playHallOfShadowsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_6_7_left_step_1" type="String" />
+					<property key="actions" value="animatePath_6_7,playHallOfShadowsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playHallOfShadowsSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_6_7_left_step_2" type="String" />
+					<property key="actions" value="removeHallOfShadowsStatic,playHallOfShadowsAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_6_7_left_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_6_7_left_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playHallOfShadowsSound" type="Vector.String" />
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_6_7_left" type="String" />
+				<property key="abortSequences" value="start_6_7_left" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutHallOfShadowsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_6_7_left_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_6_7,fadeOutHallOfShadowsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutHallOfShadowsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_6_7_left_step_2" type="String" />
+					<property key="actions" value="removeHallOfShadowsStatic,addHallOfShadowsAnim,playHallOfShadowsAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_6_7_left_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_6_7_left" type="String" />
+				<step>
+					<property key="id" value="kill_6_7_left_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Morgan's Keep to Hall of Shadows (via Forest Falls) -->
+			<sequence>
+
+				<property key="id" value="show_6_7_right" type="String" />
+				<step>
+					<property key="id" value="show_6_7_right_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToMorgansKeep_right,addReachedDestinationsCamelotToMorgansKeep_right,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToMorgansKeep_right,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalForestFalls,showTotalDuskyMoors,showTotalMorgansKeep" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_6_7_right" type="String" />
+				<property key="lateCompletingActionsToWaitFor" value="playHallOfShadowsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="start_6_7_right_step_1" type="String" />
+					<property key="actions" value="animatePath_6_7,playHallOfShadowsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playHallOfShadowsSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_6_7_right_step_2" type="String" />
+					<property key="actions" value="removeHallOfShadowsStatic,playHallOfShadowsAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_6_7_right_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_6_7_right_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<property key="toStartAfterActions" value="playHallOfShadowsSound" type="Vector.String" />
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_6_7_right" type="String" />
+				<property key="abortSequences" value="start_6_7_right" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutHallOfShadowsSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_6_7_right_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_6_7,fadeOutHallOfShadowsSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutHallOfShadowsSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_6_7_right_step_2" type="String" />
+					<property key="actions" value="removeHallOfShadowsStatic,addHallOfShadowsAnim,playHallOfShadowsAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_6_7_right_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_6_7_right" type="String" />
+				<step>
+					<property key="id" value="kill_6_7_right_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Hall of Shadows to Isle of Avalon (via Whispering Woods) -->
+			<sequence>
+
+				<property key="id" value="show_7_8_left" type="String" />
+				<step>
+					<property key="id" value="show_7_8_left_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToHallOfShadows_left,addReachedDestinationsCamelotToHallOfShadows_left,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToHallOfShadows_left,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalWhisperingWoods,showTotalDuskyMoors,showTotalMorgansKeep,showTotalHallOfShadows" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_7_8_left" type="String" />
+				<!--property key="lateCompletingActionsToWaitFor" value="playIsleOfAvalonSound" type="Vector.String" /-->
+				<step>
+					<property key="id" value="start_7_8_left_step_1" type="String" />
+					<property key="actions" value="animatePath_7_8,playIsleOfAvalonSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playIsleOfAvalonSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_7_8_left_step_2" type="String" />
+					<property key="actions" value="removeIsleOfAvalonStatic,playIsleOfAvalonAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_7_8_left_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_7_8_left_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<!--property key="toStartAfterActions" value="playIsleOfAvalonSound" type="Vector.String" /-->
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_7_8_left" type="String" />
+				<property key="abortSequences" value="start_7_8_left" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutIsleOfAvalonSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_7_8_left_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_7_8,fadeOutIsleOfAvalonSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutIsleOfAvalonSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_7_8_left_step_2" type="String" />
+					<property key="actions" value="removeIsleOfAvalonStatic,addIsleOfAvalonAnim,playIsleOfAvalonAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_7_8_left_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_7_8_left" type="String" />
+				<step>
+					<property key="id" value="kill_7_8_left_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+			<!-- Hall of Shadows to Isle of Avalon (via Forest Falls) -->
+			<sequence>
+
+				<property key="id" value="show_7_8_right" type="String" />
+				<step>
+					<property key="id" value="show_7_8_right_step_1" type="String" />
+					<property key="actions" value="FadeInLayer,addCommonBackground,addCommonTrail,addDotAsset,addPathsCamelotToHallOfShadows_right,addReachedDestinationsCamelotToHallOfShadows_right,addLogoAndSetToLastFrame,addInactiveDestinationsCamelotToHallOfShadows_right,showTotalWinLakeOFLegends,showTotalWinMistyVale,showTotalForestFalls,showTotalDuskyMoors,showTotalMorgansKeep,showTotalHallOfShadows" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="start_7_8_right" type="String" />
+				<!--property key="lateCompletingActionsToWaitFor" value="playIsleOfAvalonSound" type="Vector.String" /-->
+				<step>
+					<property key="id" value="start_7_8_right_step_1" type="String" />
+					<property key="actions" value="animatePath_7_8,playIsleOfAvalonSound" type="String" />
+					<property key="ignoreToCompleteStep" value="playIsleOfAvalonSound" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="start_7_8_right_step_2" type="String" />
+					<property key="actions" value="removeIsleOfAvalonStatic,playIsleOfAvalonAnim,BonusRevealSound" type="String" /> 
+				</step>	
+
+				<step>
+					<property key="id" value="start_7_8_right_step_3" type="String" />
+					<property key="actions" value="DelayTrail" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="start_7_8_right_step_4" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />
+					<!--property key="toStartAfterActions" value="playIsleOfAvalonSound" type="Vector.String" /-->
+				</step>					
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="interrupt_7_8_right" type="String" />
+				<property key="abortSequences" value="start_7_8_right" type="Vector.String" />
+				<property key="lateCompletingActionsToWaitFor" value="fadeOutIsleOfAvalonSound" type="Vector.String" />
+				<step>
+					<property key="id" value="interrupt_7_8_right_step_1" type="String" />
+					<property key="actions" value="endLogo,completePath_7_8,fadeOutIsleOfAvalonSound" type="String" />
+					<property key="ignoreToCompleteStep" value="fadeOutIsleOfAvalonSound" type="String" />
+				</step>
+				<step>
+					<property key="id" value="interrupt_7_8_right_step_2" type="String" />
+					<property key="actions" value="removeIsleOfAvalonStatic,addIsleOfAvalonAnim,playIsleOfAvalonAnim,BonusRevealSound" type="String" /> 					
+				</step>
+				<step>
+					<property key="id" value="interrupt_7_8_right_step_3" type="String" />
+					<property key="actions" value="FadeOutTrail" type="String" />					
+				</step>
+
+			</sequence>
+
+			<sequence>
+
+				<property key="id" value="kill_7_8_right" type="String" />
+				<step>
+					<property key="id" value="kill_7_8_right_step_1" type="String" />
+					<property key="actions" value="killFeatureIntro,killFeatureBkg" type="String" />
+				</step>		
+
+			</sequence>
+
+
+		</sequences>
+
+	</feature>
+
+
+	<!-- ===================================================================================== -->
+	<!-- ============================  MERLIN MULTIPLIER ==================================== -->
+	<!-- ===================================================================================== -->
+	<feature>
+		<property key="id" value="extraWinsMultiplier" type="String" /> 
+
+		<actions>
+
+			<!-- Rune -->
+			<!-- Entry -->
+			<action>
+				<property key="id" value="Energy" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Energy'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="EnergyRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Energy' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Reveal" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Reveal'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="RevealRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Reveal' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Walk" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Walk'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="WalkRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Walk' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<!-- Event -->
+			<action>
+				<property key="id" value="RuneDrawTillMultiplier" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Multiplier_Rune'  startFrame='Start' endFrame='ShowMultiplier' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="RuneDrawFromMultiplier" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Multiplier_Rune'  startFrame='ShowMultiplier' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpinTillMultiplier" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Multiplier_StaffSpin'  startFrame='Start' endFrame='ShowMultiplier' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpinFromMultiplier" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Multiplier_StaffSpin'  startFrame='ShowMultiplier'  endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpinRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Multiplier_StaffSpin' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<!-- Exit -->
+			<action>
+				<property key="id" value="Cape" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Exit_Cape'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Step" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Exit_StepBack'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>		
+
+			<action>
+				<property key="id" value="Rune_2x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_2x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Rune_2x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_2x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Rune_3x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_3x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Rune_3x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_3x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Rune_4x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_4x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Rune_4x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_rune_multiplier_4x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>			
+
+			<!-- Staff -->
+			<action>
+				<property key="id" value="StaffSpin_2x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_2x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpin_2x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_2x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpin_3x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_3x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpin_3x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_3x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpin_4x_TillCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_4x'  startFrame='Start' endFrame='StartCountup' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="StaffSpin_4x_FromCountUp" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_staff_multiplier_4x'  startFrame='StartCountup' endFrame='End' layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsMultiplier'" type="String" />
+			</action>			
+
+			<!-- Console Shakes -->			
+			<action>
+				<property key="id" value="Console_Shake_Vertically" type="String" />
+				<property key="type" value="customTweenLayer" type="String" />
+				<property key="value" value="tweenType='shake' repeat='1' time='0.05' yOffset='-2' xOffset='0' ease='Linear.easeNone' layer='Console'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Console_Animate_WinBox" type="String" />
+				<property key="type" value="playFrom" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' frame='Start' layer='Console' mouseEnabled='false' mouseChildren='false'" type="String"/>
+			</action>
+
+			<action>
+				<property key="id" value="Console_Fadeout_WinBox" type="String" />
+				<property key="type" value="playFrom" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' frame='FadeOut' layer='Console' mouseEnabled='false' mouseChildren='false'" type="String"/>
+			</action>
+
+			<action>				
+				<property key="id" value="FadeOutExtraWinsLayer" type="String" />
+				<property key="type" value="fadeOutLayer" type="String" />
+				<property key="value" value=" endAplha='0' fadeTime='0.7' layer='ExtraWinAnimation'" type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="FadeInExtraWinsLayer" type="String" />
+				<property key="type" value="fadeInLayer" type="String" />
+				<property key="value" value=" endAplha='1' fadeTime='0.1' layer='ExtraWinAnimation'" type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="killAll" type="String" />
+				<property key="type" value="removeAllAssets" type="String" />                   
+				<property key="value" value="layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="killAllMultiplier" type="String" />
+				<property key="type" value="removeAllAssets" type="String" />                   
+				<property key="value" value="layer='ExtraWinMultiplier' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsMultiplier'" type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="killWinBox" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' layer='Console'" type="String" />	
+			</action>
+		</actions>
+
+		<sequences>
+
+			<sequence>
+				<property key="id" value= "AbortExtraWinMultiplierAnimations" type="String" />
+
+				<step>
+					<property key="id" value="AbortExtraWinMultiplierAnimations_step1" type="String" />
+					<property key="actions" value="FadeOutExtraWinsLayer" type="String" />
+				</step>
+				<step>
+					<property key="id" value="AbortExtraWinMultiplierAnimations_step2" type="String" />
+					<property key="actions" value="killAll,killAllMultiplier" type="String" />
+				</step>
+
+			</sequence>			
+			<sequence>
+				<property key="id" value= "PreSequenceStart" type="String" />
+
+				<step>
+					<property key="id" value="PreSequenceStart_step1" type="String" />
+					<property key="actions" value="FadeInExtraWinsLayer" type="String" />
+				</step>
+
+			</sequence>
+
+			<!-- Rune/Energy Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option1_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<!-- Rune/Reveal Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option2_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>			
+
+			<!-- Rune/Walk Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="RuneDrawTillMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="RuneDrawFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType1_option3_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Rune_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<!-- StaffSpin/Energy/Cape Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option1_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<!-- StaffSpin/Reveal/Cape Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option2_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>			
+
+			<!-- StaffSpin/Walk/Cape Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Cape" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option3_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>			
+
+
+			<!-- StaffSpin/Energy/Step Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="EnergyRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option4_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<!-- StaffSpin/Reveal/Step Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="RevealRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option5_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>			
+
+			<!-- StaffSpin/Walk/Step Sequence -->
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_2x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_2x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_2x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_2x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_2x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_3x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_3x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_3x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_3x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_3x_FromCountUp" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>	
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_4x_1" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="WalkRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="StaffSpinTillMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="Console_Shake_Vertically" type="String" />
+				</step>					
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_4x_2" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpinFromMultiplier" type="String" />
+				</step>
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="StaffSpinRemove" type="String" />
+				</step>
+				<step>
+					<property key="id" value="2" type="String" />
+					<property key="actions" value="Step" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>				
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_4x_3" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_TillCountUp" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnMultiplierStart_sequenceType2_option6_4x_4" type="String" />
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="StaffSpin_4x_FromCountUp" type="String" />
+				</step>				
+				<step>
+					<property key="id" value="1" type="String" />
+					<property key="actions" value="killAllMultiplier" type="String" />
+				</step>
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnMultiplierCountupSequence" type="String" />
+
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Console_Animate_WinBox" type="String" />
+				</step>					
+
+			</sequence>	
+
+			<sequence>
+				<property key="id" value="OnMultiplierCountupCompleteSequence" type="String" />
+
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Console_Fadeout_WinBox" type="String" />
+				</step>		
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="killWinBox" type="String" />
+				</step>					
+			</sequence>				
+		</sequences>		
+	</feature>
+
+	<!-- ===================================================================================== -->
+	<!-- ============================  MERLIN COINS ==================================== -->
+	<!-- ===================================================================================== -->
+	<feature>
+		<property key="id" value="extraWinsCoins" type="String" /> 
+
+		<actions>
+			<!-- Entry -->
+			<action>
+				<property key="id" value="Energy" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Energy'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="EnergyRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Energy' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Reveal" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Reveal'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="RevealRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Reveal' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Walk" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Entry_Walk'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="WalkRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Entry_Walk' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<!-- Events -->
+			<action>
+				<property key="id" value="EnergyDraw" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Coin_EnergyDraw'  startFrame='Start' endFrame='CountupBegin' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="EnergyDrawCont" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Coin_EnergyDraw'  startFrame='CountupBegin'  endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>			
+
+			<action>
+				<property key="id" value="EnergyDrawRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Coin_EnergyDraw' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>	
+
+			<action>
+				<property key="id" value="HitBox" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Coin_HitBox'  startFrame='Start' endFrame='CountupBegin' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="HitBoxCont" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Coin_HitBox'  startFrame='CountupBegin'  endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>			
+
+			<action>
+				<property key="id" value="HitBoxRemove" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_Merlin_Coin_HitBox' layer='ExtraWinAnimation'" type="String" />
+			</action>			
+
+			<!-- Exit -->
+			<action>
+				<property key="id" value="Cape" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Exit_Cape'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>
+
+			<action>
+				<property key="id" value="Step" type="String" />
+				<property key="type" value="playFromAndStopAt" type="String" />
+				<property key="value" value="asset='GFX_Merlin_Exit_StepBack'  startFrame='Start' endFrame='End' layer='ExtraWinAnimation' hasEmbeddedSound='true' embeddedSoundCategory='game' embeddedSoundGroup='extraWinsCoins'" type="String" />
+			</action>	
+
+			<action>
+				<property key="id" value="Console_Shake_Diagonally" type="String" />
+				<property key="type" value="customTweenLayer" type="String" />
+				<property key="value" value="tweenType='shake' repeat='1' time='0.05' yOffset='2' xOffset='-1' ease='Linear.easeNone' layer='Console'" type="String"/>
+			</action>
+
+			<action>
+				<property key="id" value="Console_Animate_WinBox" type="String" />
+				<property key="type" value="playFrom" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' frame='Start' layer='Console' mouseEnabled='false' mouseChildren='false'" type="String"/>
+			</action>
+
+			<action>
+				<property key="id" value="Console_Fadeout_WinBox" type="String" />
+				<property key="type" value="playFrom" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' frame='FadeOut' layer='Console' mouseEnabled='false' mouseChildren='false'" type="String"/>
+			</action>
+			<action>				
+				<property key="id" value="FadeOutExtraWinsLayer" type="String" />
+				<property key="type" value="fadeOutLayer" type="String" />
+				<property key="value" value=" endAplha='0' fadeTime='0.7' layer='ExtraWinAnimation' " type="String"/>	
+			</action>			
+			<action>				
+				<property key="id" value="FadeInExtraWinsLayer" type="String" />
+				<property key="type" value="fadeInLayer" type="String" />
+				<property key="value" value=" endAplha='1' fadeTime='0.1' layer='ExtraWinAnimation' " type="String"/>	
+			</action>
+			<action>				
+				<property key="id" value="killAll" type="String" />
+				<property key="type" value="removeAllAssets" type="String" />                   
+				<property key="value" value="layer='ExtraWinAnimation'" type="String" />	
+			</action>
+			<action>				
+				<property key="id" value="killWinBox" type="String" />
+				<property key="type" value="removeAssets" type="String" />
+				<property key="value" value="assets='GFX_merlin_winbox_particles' layer='Console'" type="String" />	
+			</action>
+
+		</actions>
+
+		<sequences>
+			<sequence>
+				<property key="id" value= "AbortExtraWinCoinsAnimations" type="String" />
+
+				<step>
+					<property key="id" value="AbortExtraWinCoinsAnimations_step1" type="String" />
+					<property key="actions" value="FadeOutExtraWinsLayer" type="String" />
+				</step>
+				<step>
+					<property key="id" value="AbortExtraWinCoinsAnimations_step2" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>
+
+			</sequence>			
+			<sequence>
+				<property key="id" value= "PreSequenceStart" type="String" />
+
+				<step>
+					<property key="id" value="PreSequenceStart_step1" type="String" />
+					<property key="actions" value="FadeInExtraWinsLayer" type="String" />
+				</step>
+
+			</sequence>
+
+			<!-- Coin Energy -->
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType1_option1" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option1_step1" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option1_step2" type="String" />
+					<property key="actions" value="EnergyRemove,EnergyDraw" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType1_option2" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option2_step1" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option2_step2" type="String" />
+					<property key="actions" value="RevealRemove,EnergyDraw" type="String" />
+				</step>	
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType1_option3" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option3_step1" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option3_step2" type="String" />
+					<property key="actions" value="WalkRemove,EnergyDraw" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>		
+				<property key="id" value= "OnCoinStart_sequenceType1_option4" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option4_step1" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option4_step2" type="String" />
+					<property key="actions" value="EnergyRemove,EnergyDraw" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>		
+				<property key="id" value= "OnCoinStart_sequenceType1_option5" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option5_step1" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option5_step2" type="String" />
+					<property key="actions" value="RevealRemove,EnergyDraw" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType1_option6" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option6_step1" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option6_step2" type="String" />
+					<property key="actions" value="WalkRemove,EnergyDraw" type="String" />
+				</step>						
+
+			</sequence>
+
+			<!-- Coin - Hit Box -->
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option1" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option1_step1" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option1_step2" type="String" />
+					<property key="actions" value="EnergyRemove,HitBox" type="String" />
+				</step>					
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option2" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option2_step1" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option2_step2" type="String" />
+					<property key="actions" value="RevealRemove,HitBox" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option3" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option3_step1" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option3_step2" type="String" />
+					<property key="actions" value="WalkRemove,HitBox" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option4" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option4_step1" type="String" />
+					<property key="actions" value="Energy" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option4_step2" type="String" />
+					<property key="actions" value="EnergyRemove,HitBox" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option5" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option5_step1" type="String" />
+					<property key="actions" value="Reveal" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option5_step2" type="String" />
+					<property key="actions" value="RevealRemove,HitBox" type="String" />
+				</step>
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value= "OnCoinStart_sequenceType2_option6" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option6_step1" type="String" />
+					<property key="actions" value="Walk" type="String" />
+				</step>
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option6_step2" type="String" />
+					<property key="actions" value="WalkRemove,HitBox" type="String" />
+				</step>
+
+			</sequence>	
+
+			<!-- Ending Sequences -->
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option1_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option1_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option1_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Cape" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option1_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>	
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option2_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option2_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option2_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Cape" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option2_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option3_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option3_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option3_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Cape" type="String" />
+				</step>		
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option3_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option4_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option4_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option4_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option4_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option5_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option5_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option5_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option5_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType1_option6_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option6_End_step1" type="String" />
+					<property key="actions" value="EnergyDrawCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option6_End_step2" type="String" />
+					<property key="actions" value="EnergyDrawRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType1_option6_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option1_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option1_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option1_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Cape" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option1_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>		
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option2_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option2_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option2_End_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Cape" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option2_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option3_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option3_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option3_End_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Cape" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option3_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>		
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option4_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option4_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option4_End_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option4_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>		
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option5_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option5_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option5_End_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option5_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>						
+
+			</sequence>	
+
+			<sequence>
+				<property key="id" value="OnCoinStart_sequenceType2_option6_End" type="String" />
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option6_End_step1" type="String" />
+					<property key="actions" value="Console_Shake_Diagonally,HitBoxCont" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option6_End_step2" type="String" />
+					<property key="actions" value="HitBoxRemove,Step" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="OnCoinStart_sequenceType2_option6_End_step3" type="String" />
+					<property key="actions" value="killAll" type="String" />
+				</step>					
+
+			</sequence>				
+
+			<sequence>
+				<property key="id" value="OnCoinCountupSequence" type="String" />
+
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Console_Animate_WinBox" type="String" />
+				</step>					
+
+			</sequence>	
+
+			<sequence>
+				<property key="id" value="OnCoinCountupCompleteSequence" type="String" />
+
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="Console_Fadeout_WinBox" type="String" />
+				</step>	
+
+				<step>
+					<property key="id" value="0" type="String" />
+					<property key="actions" value="killWinBox" type="String" />
+				</step>					
+			</sequence>	
+
+		</sequences>		
+	</feature>
+
+</data>

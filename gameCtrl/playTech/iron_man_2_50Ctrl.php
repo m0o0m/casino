@@ -1,20 +1,28 @@
 <?
 
 class iron_man_2_50Ctrl extends Ctrl {
+    public $useSessionBet = true;
 
     protected function startInit($request) {
         if(empty($_SESSION['drawStates'])) {
             $draws = '<DrawState drawId="0"/>';
         }
         else {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
         }
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -213,7 +221,7 @@ class iron_man_2_50Ctrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawStates;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
         $_SESSION['bonusWIN'] = $totalWin;
         $_SESSION['bonus'] = 'freespin';
     }

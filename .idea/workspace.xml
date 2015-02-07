@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/gameCtrl/quickfire/thunderstruck_2Ctrl.php" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2f5ce375-8820-4156-b9f3-92b3750865e5" name="Default" comment="" />
+    <ignored path="core.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="core" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="sopranosCtrl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/sopranosCtrl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="18072">
+              <caret line="11" column="52" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="52" />
+              <folding>
+                <marker date="1423137492760" expanded="true" signature="963:1136" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="13428:13671" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="13473:13654" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="14141:14418" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="15129:15236" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="15644:15921" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="18707:18875" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="19278:19555" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="21031:21114" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="21141:21242" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="21645:21922" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="24164:24257" placeholder="..." />
+                <marker date="1423137492760" expanded="true" signature="32039:32132" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ctrl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ctrl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5417" max-vertical-offset="7704">
+              <caret line="332" column="41" selection-start-line="332" selection-start-column="23" selection-end-line="332" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thunderstruck_2Ctrl.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/thunderstruck_2Ctrl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19715224" vertical-offset="1638" max-vertical-offset="22176">
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+              <folding>
+                <marker date="1423241346431" expanded="true" signature="548:1471" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="610:841" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="1120:1455" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="1795:6980" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="1920:1948" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="1920:6973" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="2151:2657" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="2197:2639" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="2882:3001" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="2905:2939" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="2905:2986" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="3043:4297" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="3179:3336" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="3477:3639" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="3785:3952" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="4103:4275" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="4321:4353" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="4321:4502" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="4525:4556" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="4525:6957" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="11816:11847" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13321:13367" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13321:13630" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13469:13503" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13469:13596" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13699:13712" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13699:14743" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13821:13847" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="13821:14736" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="14101:14676" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="14184:14411" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="15285:15312" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="16329:16556" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="17375:17388" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="17375:18541" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="17497:17523" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="17497:18534" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="17846:18293" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="18095:18271" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="18316:18347" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="18316:18518" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="19794:19807" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="19794:21665" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="19921:19947" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="19921:21658" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20372:20416" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20372:20614" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20671:21417" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20920:21395" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20944:20976" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="20944:21219" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21011:21194" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21440:21471" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21440:21642" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21850:21863" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21850:24089" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21977:22003" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="21977:24082" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22427:22471" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22427:22669" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22702:22748" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22702:22848" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22892:22926" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22892:23055" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="22931:23026" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23096:23841" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23345:23819" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23369:23401" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23369:23644" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23436:23619" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23864:23895" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="23864:24066" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24274:24287" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24274:26510" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24401:24427" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24401:26503" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24852:24896" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="24852:25094" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25127:25173" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25127:25268" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25312:25346" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25312:25475" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25351:25446" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25516:26262" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25765:26240" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25789:25821" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25789:26064" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="25856:26039" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26285:26316" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26285:26487" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26694:26707" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26694:28933" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26821:26847" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="26821:28926" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27272:27316" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27272:27514" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27547:27593" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27547:27691" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27735:27769" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27735:27898" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27774:27869" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="27939:28685" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28188:28663" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28212:28244" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28212:28487" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28279:28462" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28708:28739" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="28708:28910" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="37911:37942" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="39071:39105" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="39071:39376" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="39126:39347" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="40691:40735" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="40979:40992" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="40979:41327" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="41105:41131" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="41105:41288" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="41105:41320" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="41261:41279" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="42165:42196" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44110:44156" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44110:44433" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44265:44299" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44265:44399" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44530:44576" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="44530:44676" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="45832:45876" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="46174:46187" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="46174:46550" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="46300:46326" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="46300:46474" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="46300:46543" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="47367:47398" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="49087:49133" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="49087:49342" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="49439:49485" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="49439:49683" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="50838:50882" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="51153:51166" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="51153:51529" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="51279:51305" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="51279:51522" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="53345:53375" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="55935:55957" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58285:58329" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58560:58606" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58750:58763" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58750:59126" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58876:58902" placeholder="..." />
+                <marker date="1423241346431" expanded="true" signature="58876:59119" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thunderstruck_2Params.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameParams/quickfire/thunderstruck_2Params.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2764" max-vertical-offset="3690">
+              <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QFCtrl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/QFCtrl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2430">
+              <caret line="54" column="210" selection-start-line="54" selection-start-column="210" selection-end-line="54" selection-end-column="210" />
+              <folding>
+                <marker date="1421721577142" expanded="true" signature="2325:2904" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="2475:2898" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="3017:4527" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="3202:4521" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="3231:4497" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="3270:3960" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="3994:4467" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="4639:4875" placeholder="..." />
+                <marker date="1421721577142" expanded="true" signature="5222:5407" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/gameParams/playTech/santa_surpriseParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/playTech/x_menParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickspin/big_bad_wolfParams.php" />
+        <option value="$PROJECT_DIR$/Params.php" />
+        <option value="$PROJECT_DIR$/gameParams/playTech/gladiatorParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/playTech/avengersParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/gladiatorCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/iron_man_2_50Ctrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/iron_manCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/santa_surpriseCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/x_menCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickspin/big_bad_wolfCtrl.php" />
+        <option value="$PROJECT_DIR$/WebEngine.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/kongCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/avengersCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/immortal_romanceCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/jurassic_parkCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/battlestar_galacticaCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/terminator_2Ctrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/hellboyParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/hellboyCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/avalon_2Ctrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/thedark_knight_risesCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/thetwistedcircusParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/thetwistedcircusCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/avalon_2Params.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/battlestar_galacticaParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/immortal_romanceParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/jurassic_parkParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/terminator_2Params.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/thedark_knight_risesParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/thetwisted_circusParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/girls_with_gunsCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/girls_with_gunsParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/untamed_wolf_packCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/untamed_wolf_packParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/untamed_giant_pandaParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/untamed_giant_pandaCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/untamed_bengal_tigerCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/untamed_bengal_tigerParams.php" />
+        <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/rockyCtrl.php" />
+        <option value="$PROJECT_DIR$/slotTraits/SymbolsWorker.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/QFCtrl.php" />
+        <option value="$PROJECT_DIR$/Slot.php" />
+        <option value="$PROJECT_DIR$/slotTraits/BonusWorker.php" />
+        <option value="$PROJECT_DIR$/gameParams/playTech/sopranosParams.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/playTech/sopranosCtrl.php" />
+        <option value="$PROJECT_DIR$/Ctrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickfire/thunderstruck_2Params.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickfire/thunderstruck_2Ctrl.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slotTraits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameParams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameParams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quickfire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameCtrl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameCtrl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quickfire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameCtrl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="playTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <envs />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f5ce375-8820-4156-b9f3-92b3750865e5" name="Default" comment="" />
+      <created>1412037301715</created>
+      <option name="number" value="Default" />
+      <updated>1412037301715</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/gladiatorParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37723213" vertical-offset="2542" max-vertical-offset="3474">
+          <caret line="160" column="84" selection-start-line="153" selection-start-column="4" selection-end-line="160" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/avengersParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6845564" vertical-offset="2849" max-vertical-offset="3834">
+          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/gladiatorCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0526314" vertical-offset="0" max-vertical-offset="6390">
+          <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/iron_man_2_50Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2893226" vertical-offset="0" max-vertical-offset="4086">
+          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/santa_surpriseCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34654588" vertical-offset="0" max-vertical-offset="5526">
+          <caret line="17" column="79" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/x_menCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36160713" vertical-offset="0" max-vertical-offset="5364">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/iron_manCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9463308" vertical-offset="0" max-vertical-offset="10044">
+          <caret line="48" column="78" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebEngine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1656">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/avengersCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="8730">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/hellboyCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2902519" vertical-offset="1265" max-vertical-offset="2178">
+          <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/immortal_romanceCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6648412" vertical-offset="1787" max-vertical-offset="2700">
+          <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/jurassic_parkCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.464403" vertical-offset="1859" max-vertical-offset="2772">
+          <caret line="29" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/terminator_2Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25082147" vertical-offset="1319" max-vertical-offset="2232">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/thedark_knight_risesCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.645126" vertical-offset="1445" max-vertical-offset="2358">
+          <caret line="113" column="63" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/battlestar_galacticaCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7984666" vertical-offset="14" max-vertical-offset="2412">
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/battlestar_galacticaParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8639309" vertical-offset="1540" max-vertical-offset="2520">
+          <caret line="130" column="63" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/hellboyParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.962963" vertical-offset="1315" max-vertical-offset="2520">
+          <caret line="130" column="60" selection-start-line="130" selection-start-column="60" selection-end-line="130" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/immortal_romanceParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9408543" vertical-offset="1373" max-vertical-offset="2394">
+          <caret line="124" column="63" selection-start-line="124" selection-start-column="63" selection-end-line="124" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/jurassic_parkParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2420591" vertical-offset="756" max-vertical-offset="2052">
+          <caret line="105" column="63" selection-start-line="105" selection-start-column="63" selection-end-line="105" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/terminator_2Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86199343" vertical-offset="1085" max-vertical-offset="2052">
+          <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/thedark_knight_risesParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8882804" vertical-offset="1205" max-vertical-offset="2196">
+          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/thetwisted_circusParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.825054" vertical-offset="1036" max-vertical-offset="1962">
+          <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/girls_with_gunsCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.148148" vertical-offset="1175" max-vertical-offset="2358">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/girls_with_gunsParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.822563" vertical-offset="1661" max-vertical-offset="2574">
+          <caret line="134" column="63" selection-start-line="134" selection-start-column="63" selection-end-line="134" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/avalon_2Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38882804" vertical-offset="365" max-vertical-offset="2304">
+          <caret line="40" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/avalon_2Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667" vertical-offset="18" max-vertical-offset="2358">
+          <caret line="14" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/untamed_giant_pandaCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25082147" vertical-offset="1391" max-vertical-offset="2304">
+          <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/untamed_giant_pandaParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.04077" vertical-offset="1241" max-vertical-offset="2394">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/untamed_wolf_packCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.148149" vertical-offset="1409" max-vertical-offset="2466">
+          <caret line="92" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/untamed_wolf_packParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0" vertical-offset="324" max-vertical-offset="2394">
+          <caret line="24" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/untamed_bengal_tigerParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7579408" vertical-offset="1504" max-vertical-offset="2430">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/untamed_bengal_tigerCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21139102" vertical-offset="1427" max-vertical-offset="2520">
+          <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/thetwisted_circusCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6845564" vertical-offset="1733" max-vertical-offset="2646">
+          <caret line="131" column="63" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/x_menParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1684666" vertical-offset="2008" max-vertical-offset="2934">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/kongParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55291575" vertical-offset="2026" max-vertical-offset="2952">
+          <caret line="141" column="51" selection-start-line="141" selection-start-column="51" selection-end-line="141" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/kongCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.34989202" vertical-offset="936" max-vertical-offset="7182">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="774">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="3870">
+          <caret line="74" column="39" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/rockyParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2862">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/rockyCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3986857" vertical-offset="1644" max-vertical-offset="6570">
+          <caret line="213" column="34" selection-start-line="213" selection-start-column="34" selection-end-line="213" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickspin/big_bad_wolfParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1554054" vertical-offset="1026" max-vertical-offset="2772">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/big_bad_wolfCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56626505" vertical-offset="2381" max-vertical-offset="8316">
+          <caret line="161" column="9" selection-start-line="151" selection-start-column="8" selection-end-line="161" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slotTraits/BonusWorker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6177106" vertical-offset="5800" max-vertical-offset="6804">
+          <caret line="354" column="66" selection-start-line="354" selection-start-column="66" selection-end-line="354" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slotTraits/SymbolsWorker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3563715" vertical-offset="30" max-vertical-offset="2628">
+          <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Slot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30237582" vertical-offset="728" max-vertical-offset="12420">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/playTech/sopranosParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.481482" vertical-offset="1085" max-vertical-offset="3618">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/playTech/sopranosCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="18072">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="52" />
+          <folding>
+            <marker date="1423137492760" expanded="true" signature="963:1136" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="13428:13671" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="13473:13654" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="14141:14418" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="15129:15236" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="15644:15921" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="18707:18875" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="19278:19555" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="21031:21114" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="21141:21242" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="21645:21922" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="24164:24257" placeholder="..." />
+            <marker date="1423137492760" expanded="true" signature="32039:32132" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5417" max-vertical-offset="7704">
+          <caret line="332" column="41" selection-start-line="332" selection-start-column="23" selection-end-line="332" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/thunderstruck_2Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2764" max-vertical-offset="3690">
+          <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/QFCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="972" max-vertical-offset="2430">
+          <caret line="54" column="210" selection-start-line="54" selection-start-column="210" selection-end-line="54" selection-end-column="210" />
+          <folding>
+            <marker date="1421721577142" expanded="true" signature="2325:2904" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="2475:2898" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="3017:4527" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="3202:4521" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="3231:4497" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="3270:3960" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="3994:4467" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="4639:4875" placeholder="..." />
+            <marker date="1421721577142" expanded="true" signature="5222:5407" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/thunderstruck_2Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19715224" vertical-offset="1638" max-vertical-offset="22176">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+          <folding>
+            <marker date="1423241346431" expanded="true" signature="548:1471" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="610:841" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="1120:1455" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="1795:6980" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="1920:1948" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="1920:6973" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="2151:2657" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="2197:2639" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="2882:3001" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="2905:2939" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="2905:2986" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="3043:4297" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="3179:3336" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="3477:3639" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="3785:3952" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="4103:4275" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="4321:4353" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="4321:4502" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="4525:4556" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="4525:6957" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="11816:11847" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13321:13367" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13321:13630" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13469:13503" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13469:13596" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13699:13712" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13699:14743" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13821:13847" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="13821:14736" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="14101:14676" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="14184:14411" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="15285:15312" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="16329:16556" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="17375:17388" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="17375:18541" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="17497:17523" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="17497:18534" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="17846:18293" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="18095:18271" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="18316:18347" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="18316:18518" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="19794:19807" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="19794:21665" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="19921:19947" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="19921:21658" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20372:20416" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20372:20614" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20671:21417" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20920:21395" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20944:20976" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="20944:21219" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21011:21194" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21440:21471" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21440:21642" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21850:21863" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21850:24089" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21977:22003" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="21977:24082" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22427:22471" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22427:22669" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22702:22748" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22702:22848" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22892:22926" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22892:23055" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="22931:23026" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23096:23841" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23345:23819" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23369:23401" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23369:23644" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23436:23619" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23864:23895" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="23864:24066" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24274:24287" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24274:26510" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24401:24427" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24401:26503" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24852:24896" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="24852:25094" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25127:25173" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25127:25268" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25312:25346" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25312:25475" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25351:25446" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25516:26262" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25765:26240" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25789:25821" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25789:26064" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="25856:26039" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26285:26316" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26285:26487" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26694:26707" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26694:28933" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26821:26847" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="26821:28926" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27272:27316" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27272:27514" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27547:27593" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27547:27691" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27735:27769" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27735:27898" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27774:27869" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="27939:28685" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28188:28663" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28212:28244" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28212:28487" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28279:28462" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28708:28739" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="28708:28910" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="37911:37942" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="39071:39105" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="39071:39376" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="39126:39347" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="40691:40735" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="40979:40992" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="40979:41327" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="41105:41131" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="41105:41288" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="41105:41320" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="41261:41279" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="42165:42196" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44110:44156" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44110:44433" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44265:44299" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44265:44399" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44530:44576" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="44530:44676" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="45832:45876" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="46174:46187" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="46174:46550" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="46300:46326" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="46300:46474" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="46300:46543" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="47367:47398" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="49087:49133" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="49087:49342" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="49439:49485" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="49439:49683" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="50838:50882" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="51153:51166" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="51153:51529" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="51279:51305" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="51279:51522" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="53345:53375" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="55935:55957" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58285:58329" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58560:58606" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58750:58763" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58750:59126" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58876:58902" placeholder="..." />
+            <marker date="1423241346431" expanded="true" signature="58876:59119" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

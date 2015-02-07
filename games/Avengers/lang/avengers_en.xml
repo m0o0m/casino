@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">  
+	<info id="en" name="English" brand="GTS" product="The Avengers" cjkh="false" rtl="false" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $" signedoff="false"/>  
+	<!-- Start generic static text -->  
+	<multitext id="1" qa="true" text="Connecting to server..."/>  
+	<multitext id="2" qa="true" text="Connection failed"/>  
+	<multitext id="3" qa="true" text="Loading"/>  
+	<multitext id="4" qa="true" text="Loading complete"/>  
+	<multitext id="5" qa="true" text="Help"/>  
+	<multitext id="6" qa="true" text="Close"/>  
+	<multitext id="7" qa="true" text="Balance"/>  
+	<multitext id="8" qa="true" text="Stake"/>  
+	<multitext id="9" qa="true" text="Odds"/>  
+	<multitext id="10" qa="true" text="Win"/>  
+	<multitext id="11" qa="true" text="To Win"/>  
+	<multitext id="12" qa="true" text="OK"/>  
+	<multitext id="13" qa="true" text="Prize Table"/>  
+	<multitext id="14" qa="true" text="Play"/>  
+	<multitext id="15" qa="true" text="Go"/>  
+	<multitext id="16" qa="true" text="Bet"/>  
+	<multitext id="17" qa="true" text="Submit"/>  
+	<multitext id="18" qa="true" text="Submit Bet"/>  
+	<multitext id="19" qa="true" text="Submit All Bets"/>  
+	<multitext id="20" qa="true" text="Cashout"/>  
+	<multitext id="21" qa="true" text="Return"/>  
+	<multitext id="22" qa="true" text="Bank"/>  
+	<multitext id="23" qa="true" text="Bonus"/>  
+	<multitext id="24" qa="true" text="Total Stake"/>  
+	<multitext id="25" qa="true" text="Max. Return"/>  
+	<multitext id="26" qa="true" text="Max. Win"/>  
+	<multitext id="27" qa="true" text="Jackpot"/>  
+	<multitext id="28" qa="true" text="Play Again"/>  
+	<multitext id="29" qa="true" text="Please try again"/>  
+	<multitext id="30" qa="true" text="Play for Fun"/>  
+	<multitext id="31" qa="true" text="Play for Real"/>  
+	<multitext id="32" qa="true" text="Game Over"/>  
+	<multitext id="33" qa="true" text="Cancel"/>  
+	<multitext id="34" qa="true" text="Clear All"/>  
+	<multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>  
+	<multitext id="36" qa="true" text="Get flash player"/>  
+	<multitext id="37" qa="true" text="Jackpots"/>
+	<multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+    <!-- End generic static text -->
+	
+	<!-- Start game specific text -->
+	<!-- Game Console -->
+	<multitext id="101" qa="true" text="INFO"/>
+	<multitext id="102" qa="true" text="BET &#10;MAX"/>
+	<multitext id="103" qa="true" text="AUTO &#10;PLAY"/>
+	<multitext id="104" qa="true" text="SPIN"/>
+	<multitext id="105" qa="true" text="LINES"/>
+	<multitext id="106" qa="true" text="LINE BET"/>
+	<multitext id="107" qa="true" text="WIN"/>
+	<multitext id="108" qa="true" text="TOTAL BET"/> 
+	<multitext id="109" qa="true" text="SPIN"/> 
+	<multitext id="110" qa="true" text="STOP"/> 
+	<multitext id="111" qa="true" text="STOP"/> 
+	<multitext id="112" qa="true" text="CLICK TO START"/> 
+	<multitext id="113" qa="true" text="-"/>
+	<multitext id="114" qa="true" text="+"/>
+	<multitext id="115" qa="true" text="UNTIL &#10;FEATURE"/>
+	<multitext id="116" qa="true" text="AUTO SPINS"/>
+	<multitext id="117" qa="true" text="-"/>
+	<multitext id="118" qa="true" text="+"/>
+	<multitext id="119" qa="true" text="UNTIL FEATURE"/>
+	
+	
+	
+	<!-- Information -->
+	<multitext id="120" qa="true" text="BACK"/>
+	<multitext id="121" qa="true" text="ONLY HIGHEST WIN PAYS PER LINE &#10;WIN COMBINATIONS PAY LEFT TO RIGHT ONLY EXCEPT [SCATTER] WHICH PAYS ANY &#10;PAYLINE WINS ARE MULTIPLIED BY THE LINE BET &#10;GAME IS PLAYED WITH 20 LINES ONLY &#10;MALFUNCTIONS VOID ALL PLAYS AND PAYS"/>
+	<multitext id="122" qa="true" text="IN WALL OF HEROES BONUS"/>
+	<multitext id="123" qa="true" text="THE HULK FREE GAMES"/>
+	<multitext id="124" qa="true" text="YOU WIN 9 FREE GAMES"/>
+	<multitext id="125" qa="true" text="THE HULK IS STACKED WILD ON REEL 3 IN FREE GAMES &#10;AND SUBSTITUTES FOR ALL SYMBOLS EXCEPT [SCATTER] &#10;MORE FREE GAMES CANNOT BE RE-TRIGGERED"/>
+	<multitext id="126" qa="true" text="THOR FREE GAMES"/>
+	<multitext id="127" qa="true" text="LIGHTNING SHOOTS FROM THOR’S HAMMER, &#10;RANDOMLY DISTRIBUTING 0-5 [WILD TESSERACT] ON THE REELS"/>
+	<multitext id="128" qa="true" text="[WILD TESSERACT] IS EXTRA WILD AND SUBSTITUTES FOR ALL EXCEPT [AVENGERS SCATTER] &#10;WILDS FROM REELS CAN BE HIT BY THE LIGHTNING. &#10;SCATTERS PAY BEFORE THEY ARE HIT BY LIGHTNING. &#10;MORE FREE GAMES CANNOT BE RE-TRIGGERED"/>
+	<multitext id="129" qa="true" text="FREE GAMES BEGIN WITH X1 MULTIPLIER. &#10;EVERY 3 SPINS, MULTIPLIER GOES UP +1. &#10;ALL WINS DURING A SPIN ARE MULTIPLIED BY THE MULTIPLIER’S VALUE &#10;DURING THAT SPIN"/>
+	<multitext id="130" qa="true" text="[REACTOR SYMBOL] APPEARS IN THE MIDDLE POSITION OF THE 3RD REEL &#10;DURING ALL FREE GAMES. &#10;[REACTOR SYMBOL] IS EXTRA WILD, SUBSTITUTING FOR ALL SYMBOLS &#10;EXCEPT SCATTER &#10;MORE FREE GAMES CANNOT BE RE-TRIGGERED"/>
+	<multitext id="131" qa="true" text="IRON MAN FREE GAMES"/>
+	<multitext id="132" qa="true" text="THE AVENGERS ASSEMBLE &#10;ON REELS FEATURE"/>
+	<multitext id="133" qa="true" text="IN ANY ORDER"/>
+	<multitext id="134" qa="true" text="APPEARING CONSECUTIVELY ON AN ACTIVE PAYLINE AND STARTING &#10;WITH THE LEFTMOST REEL, WILL AWARD 200X LINE BET. &#10;[WILD] DOES NOT PARTICIPATE IN AVENGERS ASSEMBLE FEATURE &#10;FEATURE IS AVAILABLE DURING MAIN GAME ONLY"/>
+	<multitext id="135" qa="true" text="PAYLINES"/>
+	<multitext id="137" qa="true" text="OR MORE ANYWHERE IN MAIN GAME"/>
+	<multitext id="138" qa="true" text="WALL OF HEROES FEATURE"/>
+	<multitext id="139" qa="true" text="20 [AVENGERS] SYMBOLS APPEAR ON THE SCREEN. &#10;PICK AN ICON TO REVEAL AN AVENGER.  &#10;MATCH 3 OF THE SAME AVENGER: HULK, IRON MAN, THOR, OR &#10;CAPTAIN AMERICA TO START THE CORRESPONDING FREE GAMES &#10;AFTER THE FREE GAMES MODE ENDS, THE WALL OF HEROES BONUS SCREEN &#10;WILL RE-APPEAR, AND RESET AND ADDITIONAL FREE GAMES &#10;MODES CAN BE WON. &#10;IF LOKI IS REVEALED, THE FEATURE ENDS AND THE MAIN GAME RESUMES"/>
+	<multitext id="140" qa="true" text="CAPTAIN AMERICA FREE GAMES"/>
+	<multitext id="136" qa="true" text="BEFORE EACH SPIN, A RANDOM MULTIPLIER APPEARING ON &#10;CAPTAIN AMERICA’S SHIELD OF X2 - X5 IS DETERMINED FOR THE &#10;NEXT FREE SPIN. &#10;MORE FREE GAMES CANNOT BE RE-TRIGGERED"/>
+	<multitext id="141" qa="true" text="HULK FREE GAMES"/>
+	<multitext id="142" qa="true" text="THOR FREE GAMES"/>
+	<multitext id="143" qa="true" text="IRON MAN FREE GAMES"/>
+	<multitext id="144" qa="true" text="CAPTAIN AMERICA FREE GAMES"/>
+	<multitext id="145" qa="true" text="WALL OF HEROES BONUS"/>
+	
+	
+		
+	
+	<!-- Payouts Info -->
+	<multitext id="160" qa="true" text="OF A KIND"/>	
+	<multitext id="161" qa="true" text="WILD"/>
+	<multitext id="162" qa="true" text="SCATTER"/>
+	<multitext id="166" qa="true" text="SUBSTITUTES FOR ALL &#10;SYMBOLS EXCEPT [SCATTER]"/>
+	<multitext id="165" qa="true" text="ANYWHERE"/>
+	
+	
+	<!-- PROMO MESSAGES  -->
+	<multitext id="170" qa="true" text="5 [WILD] WIN 10000x LINE BET"/>
+	<multitext id="171" qa="true" text="MIXED PAY &#10;FOR ALL &#10;IN ANY ORDER"/>
+	<multitext id="172" qa="true" text="3 OR MORE [SCATTER] ANYWHERE"/>
+	<multitext id="173" qa="true" text="WALL OF HEROES &#10;BONUS"/>
+	
+	<!-- dynamic win box -->
+	<multitext id="174" qa="true" text="BIG WIN!"/>
+	<multitext id="180" qa="true" text="BIG WIN!"/>
+	
+	<!--  FREE GAME SCREEN -->
+	<multitext id="190" qa="true" text="MULTIPLIER"/>
+	<multitext id="191" qa="true" text="FREE GAMES WIN"/>
+	<multitext id="192" qa="true" text="SPINS LEFT"/>
+	
+	
+	
+	<!--  FREE GAME POPUP -->
+	<multitext id="201" qa="true" text="GAME WIN"/>
+	<multitext id="202" qa="true" text="FEATURE WIN"/>
+	<multitext id="203" qa="true" text="TOTAL WIN"/>
+	<multitext id="204" qa="true" text="CONTINUE"/>
+	
+	<multitext id="206" qa="true" text="YOU WIN"/>
+	
+	<multitext id="208" qa="true" text="FREE GAMES"/>
+	<multitext id="209" qa="true" text="MULTIPLIER"/>
+	<multitext id="210" qa="true" text="X"/>
+	<multitext id="211" qa="true" text="CONTINUE"/>
+	
+	
+	<!--Free Game Title -->
+	<multitext id="215" qa="true" text="CAPTAIN AMERICA FREE GAMES"/>
+	<multitext id="216" qa="true" text="IRON MAN FREE GAMES"/>
+	<multitext id="217" qa="true" text="THOR FREE GAMES"/>
+	<multitext id="218" qa="true" text="HULK FREE GAMES"/>
+	
+	<!--  AUTO PLAY POPUP -->
+	<multitext id="221" qa="true" text="99 SPINS"/>
+	<multitext id="222" qa="true" text="50 SPINS"/>
+	<multitext id="223" qa="true" text="25 SPINS"/>
+	<multitext id="224" qa="true" text="10 SPINS"/>
+	<multitext id="225" qa="true" text="UNTIL &#10;FEATURE"/>
+	<multitext id="226" qa="true" text="999 SPINS"/>
+	
+	<!--  FREE GAME SELECTION POPUP  -->
+	<multitext id="296" qa="true" text="LOKI HAS UNLEASHED &#10;HIS VORTEX!"/>
+	<multitext id="297" qa="true" text="YOU WIN 9 FREE GAMES! &#10;THE HULK IS STACKED WILD &#10;ON REEL 3 EVERY SPIN"/>
+	<multitext id="298" qa="true" text="YOU WIN 9 FREE GAMES! &#10;THOR WILL AWARD [WILD TESSERACT] &#10;AS RANDOM EXTRA WILDS"/>
+	<multitext id="299" qa="true" text="YOU WIN 9 FREE GAMES! &#10;IRON MAN WIILL INCREASE THE &#10;MULTIPLIER EVERY 3 SPINS AND &#10;[REACTOR] IS EXTRA WILD"/>
+	<multitext id="300" qa="true" text="YOU WIN 9 FREE GAMES!"/>
+	<multitext id="301" qa="true" text="CAPTAIN AMERICA WILL AWARD &#10;A RANDOM MULTIPLIER EVERY SPIN"/>
+	<multitext id="302" qa="true" text="FREE GAMES"/>
+	<multitext id="303" qa="true" text="MULTIPLIER"/>
+	
+	
+	
+	<!--  FREE GAME SELECTION MAIN SCREEN  -->
+	<multitext id="305" qa="true" text="MATCH 3 &#10;OF THE SAME HERO &#10;TO START THAT HERO’S &#10;FREE GAMES MODE"/>
+	<multitext id="306" qa="true" text="WATCH OUT! &#10;LOKI’S SYMBOL &#10;ENDS BONUS"/>
+	<multitext id="307" qa="true" text="CONTINUE"/>
+	<multitext id="308" qa="true" text="MATCH 3 SYMBOLS"/>
+	<multitext id="309" qa="true" text="YOU’RE NOT DONE YET! &#10;MATCH 3 SYMBOLS AGAIN &#10;TO GET THAT HERO’S &#10;FREE GAMES!"/>
+	<multitext id="310" qa="true" text="WATCH OUT! &#10;LOKI’S SYMBOL &#10;ENDS BONUS"/>
+	<multitext id="311" qa="true" text="TOTAL FEATURE WIN:"/>
+	<multitext id="312" qa="true" text="CONGRATULATIONS! &#10;YOU HAVE FOUND"/>
+	
+	<!-- End game specific text --> 
+	
+	<!-- Start generic phrases -->  
+	<phrase id="BetUnavailable" qa="true" text="Error"/>  
+	<phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>  
+	<phrase id="BetterLuckButton" qa="true" text="OK"/>  
+	<phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>  
+	<phrase id="Congratulations" qa="true" text="Congratulations!"/>  
+	<phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>  
+	<phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>  
+	<phrase id="CongratulationsButton" qa="true" text="OK"/>  
+	<phrase id="Connecting" qa="true" text="Connecting to server"/>  
+	<phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>  
+	<phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>  
+	<phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>  
+	<phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>  
+	<phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>  
+	<phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+    <phrase id="Help" qa="true" text="THE AVENGERS&#10;5-REEL 20-LINE SLOTS&#10;&#10;The objective of The Avengers is to obtain winning symbol combinations by spinning the reels.&#10; &#10;TO PLAY THE GAME:&#10;•	Line bets are chosen by clicking + and – below LINE BET to increase or decrease the amount.&#10;•	Total bet per game round = line bet X 20. This is due to the fact that the game The Avengers is played using a fixed number of 20 active lines, no more, no less.&#10;•	Clicking SPIN spins the reels with the current selection of line bet. During the reel spins the SPIN button changes into STOP. Clicking STOP ends the spin animation and immediately displays the spin result.&#10;•	Reels can also be spun using the AUTO PLAY function. Mouse over the AUTO PLAY button to display the list of options. Select the number of spins to be played automatically or choose Until Feature to spin until the Wall of Heroes Bonus is triggered. Clicking on an option starts the AUTO PLAY function. The AUTO PLAY mode ends when the reels have been spun the number of times determined by the player, or when the Wall of Heroes Bonus is triggered if you chose Until Feature, or when you click STOP.&#10;•	Wins are calculated according to the paytable. Line win = line bet X corresponding multiplier according to the paytable. Scatter win = total bet X corresponding multiplier according to the paytable. The paytable can be accessed via the INFO page.&#10;•	On a given payline, only the highest payline winning combination pays while simultaneous winnings on different paylines are accumulated.&#10;•	In case of a winning spin, the WIN field displays the accumulating winnings. The Win ticker can be stopped by clicking anywhere on the screen to display the total win amount immediately. &#10;•	Payline wins and the total win are also displayed on the strip located at the bottom of the reels.&#10;&#10;INFO PAGE:&#10;•	Clicking INFO opens the reference screen describing different game components. Clicking the arrow buttons at the lower right-hand corner of the screen enables navigating between the different info screens.&#10;o	The PAYTABLE can be viewed on the first page of the INFO section, showing all winning combinations. When opened after a winning spin, the winning symbol combinations (number of symbols and bet multiplier) are highlighted and blink. &#10;o	The PAYLINES screen illustrates all possible payline combinations.&#10;•	Clicking BACK exits the Info screen and returns to the game.&#10;&#10;PAYLINES:&#10;•	All 20 lines are active during the game.&#10;•	There is a difference between the line bet and the total bet. The line bet shows how much is being bet on a single payline. The total bet shows how much is being bet in total on the game round. Payouts shown in the paytable are multiplied by the line bet.&#10;The Scatter symbol is an exception to these rules. More information about the Scatter symbol can be found below.&#10;&#10;ABOUT PAYOUTS:&#10;•	Payouts are listed on the PAYTABLE screen. To find the possible win amount, the line bet must be multiplied by the payout.&#10;•	If two payline winning combinations occur on the same line, the higher of them is paid out. If more than one active payline has a winning combination, the winnings are added up.&#10;•	Winning combinations can only be on an active payline, must start from the leftmost reel and the symbols have to be consecutive.&#10;The Scatter symbol is an exception to these rules. More information about the Scatter symbol can be found below.&#10;&#10;WILD SYMBOL&#10;The Wild symbol can stand for any other symbol, except Scatter to make the best possible winning combination. There is also a separate payout for 2 or more Wild symbols on an active payline, as seen in the Paytable. This is paid out instead of the regular symbol win if the win amount from Wilds is larger than the win from the regular symbols (by Wild standing in).&#10;&#10;SCATTER SYMBOL&#10;The Scatter symbols do not have to occur on any particular payline. If there are 3 or more Scatters in any position in the spin results, the payout earned is multiplied by the total bet and added to payline winnings.&#10;In addition, 3 or more Scatters anywhere trigger the Wall of Heroes Bonus with 4 Free Games modes.&#10;&#10;THE AVENGERS ASSEMBLE ON REELS FEATURE&#10;When Captain America, Iron Man, Thor, Hulk and Nick Fury symbols appear consecutively in any order on an active payline, starting with the leftmost reel, a cash prize of 200 times the line bet is awarded. This feature is available only during main game. During the feature it is possible for a winning combination to occur on more than 1 payline; in this case both will pay. However, not more than 2 paylines can win the feature simultaneously&#10;&#10;WALL OF HEROES BONUS&#10;To start the feature, click on CLICK TO START.&#10;In the Wall of Heroes Bonus, the player is presented with a wall of 20 icons to pick from until 3 of the same hero are revealed to start that hero’s Free Games: Captain America, Thor, Iron Man or Hulk. Uncovering a Loki symbol ends the Bonus and sends you back to main game. The player will always win at least one mode of Free Games when first triggered (Loki won’t be among the icons during the 1st round of the Bonus).&#10;When any of the Free Games modes ends, the Wall of Heroes screen re-appears, making it possible for the player to win more Free Games of another or the same kind. Re-triggering of Free Games is possible during the Wall of Heroes Bonus only.&#10;During all 4 modes of Free Games spins, the reels are spun automatically using the same bet per line as on the spin that won the Wall of Heroes Bonus. After each spin, the win is displayed in the WIN field. The FREE GAMES WIN field shows the accumulated winnings from the current Free Games.&#10;When the Loki symbol is uncovered and terminates the Bonus, a result board summarizes the winnings. GAME WIN shows the winnings that were received from the main game spin that won the Wall of Heroes Bonus. FEATURE WIN shows the winnings that were received during all Free Games during the Wall of Heroes Bonus. TOTAL WIN shows the accumulated winnings (Game Win and Feature Win added up).&#10;Clicking CONTINUE will return you to the main game. When returning to the main game, clicking anywhere on the screen stops the win ticker and displays the full prize.&#10;If the Wall of Heroes Bonus is triggered during the AUTO PLAY mode, the feature begins after the player clicks on CLICK TO START. Clicking CONTINUE on the screen summarizing the whole Bonus Free Games win resumes the AUTO PLAY mode in main game.&#10;&#10;CAPTAIN AMERICA FREE GAMES&#10;Triggering this feature wins you 9 free spins.  Before each spin, a random multiplier from X2 to X5, appearing on Captain America’s shield, is determined for the next free spin.&#10;More Captain America Free Games cannot be retriggered.&#10;&#10;IRON MAN FREE GAMES&#10;Triggering this feature wins you 9 free spins, beginning with X1 multiplier. Every 3 spins, Iron Man appears floating across the reels and shoots with his hand towards the multiplier, increasing it by +1 and up to X3 by the end of the Free Games round. All wins during a spin are multiplied by the multiplier’s value during that spin.&#10;During all Iron Man Free Games spins, the Reactor symbol appears in the middle position of reel 3, acting as Extra Wild – substituting all other symbols except Scatter.&#10;More Iron Man Free Games cannot be retriggered.&#10;&#10;THOR FREE GAMES&#10;Triggering this feature wins you 9 free spins, during which Thor throws lightning bolts with his hammer, turning 0 to 5 random symbols on the screen into Random Extra Wilds. If 0 symbols are to be turned into Random Extra Wilds, the Thor animation doesn’t appear during this spin at all. Wilds and Random Extra Wilds substitute all symbols except Scatter.&#10;Scatter symbols pay before they are hit by the lightning. Ordinary Wilds can be hit by a lightning too. &#10;More Thor Free Games cannot be retriggered.&#10;&#10;HULK FREE GAMES&#10;Triggering this feature wins you 9 free spins, during which Hulk is Stacked Wild and occupies the entire 3rd reel, substituting all symbols except Scatter.&#10;More Hulk Free Games cannot be retriggered.&#10;&#10;BUTTONS:&#10;INFO	Open the reference screen that describes the different game components.&#10;LINE BET + AND -	Increase or decrease the bet per line.&#10;AUTO PLAY / STOP	Spin the reels a number of times in succession or until the Wall of Heroes Bonus is triggered. / End the active AUTO PLAY reelspin mode.&#10;SPIN / STOP	Spin the reels. / Stop the reelspin animation and immediately display the spin result. In the active AUTO PLAY mode stops the reelspin animation and immediately displays the result. Clicking Stop in the active AUTO PLAY mode does not end the AUTO PLAY reelspin mode.&#10;&#10;NOTE ON MALFUNCTIONS:&#10;A malfunction voids all pays and plays.&#10;The theoretical percentage return to player (RTP) is 95.02 %."/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>  
+	<phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>  
+	<phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>  
+	<phrase id="InsufficientFundsBody" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>  
+	<phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>  
+	<phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>  
+	<phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>  
+	<phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+	<phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<phrase id="loaderStart" qa="true" text="...loading"/>  
+	<phrase id="loader1" qa="true" text="...loading graphics"/>  
+	<phrase id="loader2" qa="true" text="...loading interface"/>  
+	<phrase id="loader3" qa="true" text="...loading audio engine"/>  
+	<phrase id="loader4" qa="true" text="...loading ambience engine"/>  
+	<phrase id="loader5" qa="true" text="...loading EdGE components"/>  
+	<phrase id="loaderFinish" qa="true" text="...loading complete"/>  
+	<phrase id="MaxMultiRoundBody" qa="true" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>  
+	<phrase id="MaxSingleRoundBody" qa="true" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>  
+	<phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>  
+	<phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>  
+	<phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval."/>  
+	<phrase id="maxWinReachedBody" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+	<phrase id="maxWinReachedTitle" qa="true" text="Maximum Winnings"/>
+	<phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>  
+	<phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>  
+	<phrase id="NANTitle" qa="true" text="Invalid bet"/>  
+	<phrase id="Na" qa="true" text="n/a"/>  
+	<phrase id="PlayForFun" qa="true" text="Play for Fun"/>  
+	<phrase id="PlayForReal" qa="true" text="Play for Real"/>  
+	<phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>  
+	<phrase id="SelectRealityTitle" qa="true" text="Please select"/>  
+	<phrase id="ServerBrowserError" qa="true" text="There has been an error in your browser, please refresh"/>  
+	<phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>   
+	<phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>  
+	<phrase id="ServerError" qa="true" text="Server error"/>  
+	<phrase id="ServerErrorTitle" qa="true" text="Error"/> 
+	<phrase id="ServerJackpotBalanceBody" qa="false" text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+	<phrase id="ServerJackpotBalanceTitle" qa="false" text="Jackpot Balance"/>
+	<phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>	
+	<phrase id="ServerNoFunds" qa="true" text="We have not been able to place your bet. Please check your updated balance."/>  
+	<phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>  
+	<phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>  
+	<phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>  
+	<phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>  
+	<phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>  
+	<phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>  
+	<!-- End generic phrases --> 
+	
+
+	<!-- Start game specific phrases -->
+            <!-- i : Ishir      ;           Msg : DisplayMessage ;           T : Title            ;           M : Message -->
+
+            <phrase id="iMsgTAutoplayInsufficientFunds" qa="true" text="Insufficient balance"/>
+            <!--<phrase id="iMsgMAutoplayInsufficientFunds" qa="true" text="NOT ENOUGH BALANCE TO USE AUTOPLAY. PLEASE VISIT THE CASHIER AND MAKE A DEPOSIT"/> -->
+			<phrase id="iMsgMAutoplayInsufficientFunds" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>
+            <phrase id="iMsgTNoOpenGame" qa="true" text="Invalid Game"/>
+            <phrase id="iMsgMNoOpenGame" qa="true" text="No open game present. Request server to open game."/>
+            <phrase id="iMsgTNoLanguageFailed" qa="true" text="Language Failed"/>
+            <phrase id="iMsgMNoLanguageFailed" qa="true" text="Error loading language file."/>
+            <phrase id="iMsgTAutoplayInvalidCount" qa="true" text="INVALID SPINS"/>
+            <phrase id="iMsgMAutoplayInvalidCount" qa="true" text="PLEASE ENTER THE NUMBER OF SPINS."/>
+            <phrase id="iMsgTAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED"/>
+            <phrase id="iMsgMAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED: |COUNT| SPINS COMPLETED."/>
+			<phrase id="iMsgTFreeGameMaxWinReached" qa="true" text="Maximum winning limit"/>
+            <phrase id="iMsgMFreeGameMaxWinReached" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+            <phrase id="iMsgTBonusMaxWinReached" qa="true" text="Maximum winning limit"/>
+            <phrase id="iMsgMBonusMaxWinReached" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance." />
+            <phrase id="iMsgMLoginFailed" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+            <phrase id="iMsgTLoginFailed" qa="true" text="Login Failed"/>
+
+	<!-- i : Ishir	;	Err : Error -->
+		<phrase id="iErrSessionTimeOut" qa="true" text="Network connection failed. Unable to proceed request."/>
+
+
+	
+		<!-- i : Ishir	;	GSM : Game Supportive Messages -->
+		<phrase id="iGSMGameInitialize"				qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGamenNoWin"					qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGameStarted"				qa="true" text="GOOD LUCK!"/>
+		
+		<phrase id="iGSMTriggerFreegameSelection"	qa="true" text="%1 SCATTERS WIN %2 AND START WALL OF HEROES BONUS"/>
+		<phrase id="iGSMSlotgameWinLine"			qa="true" text="LINE %1 WINS %3 "/>
+		<phrase id="iGSMSlotgameWinScatter"			qa="true" text="%2 SCATTER WIN %3 "/>
+		<phrase id="iGSMSlotgameTotalWin"			qa="true" text="TOTAL WIN: %1" />
+		<phrase id="assembleFeature"			    qa="true" text="AVENGERS ASSEMBLE!FEATURE WINS %1" />
+		<phrase id="iGSMSlotgameYouWin"		    	qa="true" text="YOU WIN!" />
+			
+		
+		
+		<phrase id="iGSMBetmaxInsufficientFunds"	qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMAutostartActive"			qa="true" text="AUTOPLAY ACTIVATED"/>
+		<phrase id="iGSMAutostartStopped"			qa="true" text="AUTOPLAY STOPPED"/>
+		<phrase id="iGSMFeatureWinExtraFreegame"	qa="true" text="%1 SCATTERS WIN %2 AND %3 EXTRA FREE GAMES!"/>
+		<phrase id="iGSMInsufficientFunds" 			qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		<phrase id="iGSMSpinInsufficientFunds" 		qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		<phrase id="iGSMBonuValuesFG" 				qa="true" text="%1 &#10;FREE &#10;GAMES"/>
+		<phrase id="iGSMBonuValuesMultiplier" 		qa="true" text="X%1 &#10;MULTIPLIER"/>
+		
+    <!-- End game specific phrases -->
+    
+    <!-- Start generic vector text -->
+    <vector id="Win" qa="true" text="Win!"/>
+    <vector id="Unlucky" qa="true" text="Unlucky"/>
+    <vector id="Jackpot" qa="true" text="Jackpot!"/>
+    <!-- End generic vector text -->
+    
+    <!-- Start  game specific vector text -->
+    <!-- End game specific vector text -->
+    
+</languagepack>

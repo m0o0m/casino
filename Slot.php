@@ -100,6 +100,13 @@ class Slot {
     public $rows = 3;
 
     /**
+     * Дополнительные вайлды-множители, которые при попадании на линюю умножают ее
+     *
+     * @var array
+     */
+    public $bonusWildsMultiple = array();
+
+    /**
      * Инициализация слота
      *
      * Получение выигрышных линий в зависимости от количества играющих линий
@@ -247,6 +254,7 @@ class Slot {
         $this->report = array();
         $this->double = 1;
         $this->bonusData = array();
+        $this->bonusWildsMultiple = array();
     }
 
     /**
@@ -283,6 +291,13 @@ class Slot {
             foreach($SymbolwinLines as $w) {
                 if($this->params->checkSymbolCount($v, $w['count'])) {
                     $multiplier = $this->params->getWinMultiplier($v, $w['count']);
+                    $addMultiplier = array();
+                    foreach($this->bonusWildsMultiple as $bonusWild) {
+                        if(in_array($bonusWild['offset'], $w['line'])) {
+                            $multiplier *= $bonusWild['multiple'];
+                            $addMultiplier[] = $bonusWild['multiple'];
+                        }
+                    }
                     if($this->params->payOnlyHighter) {
                         $f = true;
                         foreach ($this->winLines as $k=>$zzz) {
@@ -305,6 +320,7 @@ class Slot {
                                 'id' => $w['id'] + 1,
                                 'double' => $w['double'],
                                 'withWild' => $w['withWild'],
+                                'addMultiplier' => $addMultiplier,
                             );
                         }
                     }
@@ -319,6 +335,7 @@ class Slot {
                             'id' => $w['id'] + 1,
                             'double' => $w['double'],
                             'withWild' => $w['withWild'],
+                            'addMultiplier' => $addMultiplier,
                         );
                     }
                 }
@@ -362,13 +379,19 @@ class Slot {
     private function getLeft($symbol) {
         $winLines = array();
         $lineId = 0;
+        $bonusWildPosition = array();
+        foreach($this->bonusWildsMultiple as $b) {
+            $bonusWildPosition[] = $b['offset'];
+        }
         foreach($this->lines as $line) {
             $lineSymbol = $this->getLineSymbols($line);
             $cnt = 0;
             $f = true;
             $double = 1;
             $withWild = false;
+            $lineSymbolCount = 0;
             foreach($lineSymbol as $s) {
+                $symbolPosition = $line[$lineSymbolCount];
                 if(in_array($s, $symbol) && $f) {
                     $cnt++;
                 }
@@ -376,10 +399,13 @@ class Slot {
                     $withWild = true;
                     $cnt++;
                     if($this->params->doubleIfWild) {
-                        $double = 2;
+                        if(!in_array($symbolPosition, $bonusWildPosition)) {
+                            $double = 2;
+                        }
                     }
                 }
                 else $f = false;
+                $lineSymbolCount++;
             }
             if($cnt >= $this->params->minWinCount) {
                 $winLines[] = array(
@@ -412,6 +438,12 @@ class Slot {
         /*
          * Получаем длину всех путей, закидываем оффсеты символов и тип символа(обычный или вайлд)
          */
+        $symbolPresent = false;
+
+        $bonusWildPosition = array();
+        foreach($this->bonusWildsMultiple as $b) {
+            $bonusWildPosition[] = $b['offset'];
+        }
         for($i = 0; $i <= 4; $i++) {
             $offsets[$i] = array();
             $update = false;
@@ -419,17 +451,26 @@ class Slot {
                 $symbolOffset = $this->getSymbolPositionOnReel($symbol, $i, $j);
                 $wildOffset = $this->getSymbolPositionOnReel($this->wild, $i, $j);
                 if($symbolOffset !== false) {
+                    $symbolPresent = true;
                     $update = true;
+                    $type = 'symbol';
+                    if($this->wild[0] == $symbol[0]) {
+                        $type = 'wild';
+                    }
                     $offsets[$i][] = array(
                         'offset' => $symbolOffset,
-                        'type' => 'symbol',
+                        'type' => $type,
                     );
                 }
                 elseif($wildOffset !== false) {
                     $update = true;
+                    $type = 'wild';
+                    if(in_array($wildOffset, $bonusWildPosition)) {
+                        $type = 'symbol';
+                    }
                     $offsets[$i][] = array(
                         'offset' => $wildOffset,
-                        'type' => 'wild',
+                        'type' => $type,
                     );
                 }
             }
@@ -441,7 +482,7 @@ class Slot {
                 break;
             }
         }
-        if($cnt >= $this->params->minWinCount) {
+        if($cnt >= $this->params->minWinCount && $symbolPresent) {
             for($ccc = 0; $ccc <= 4; $ccc++) {
                 if(empty($offsets[$ccc])) $offsets[$ccc] = array();
             }
@@ -521,6 +562,33 @@ class Slot {
     }
 
     /**
+     * Проверяем, есть ли выигрышные линии у слота после спина.
+     * Данная функция нужна для бонусов, которые срабатывают, если есть выигрышные линии.
+     *
+     * @return bool
+     */
+    public function checkWinLinesPresent() {
+        $present = false;
+        foreach ($this->winSymbols as $winLine) {
+            $v = $this->params->getSymbolID($winLine['symbol']);
+            if ($this->params->winLineType == 'left') {
+                $SymbolwinLines = $this->getLeft($v);
+            } elseif ($this->params->winLineType == '243') {
+                $SymbolwinLines = $this->get243($v);
+            } else {
+                $SymbolwinLines = $this->getLeft($v);
+            }
+            foreach ($SymbolwinLines as $w) {
+                if ($this->params->checkSymbolCount($v, $w['count'])) {
+                    $present = true;
+                    return $present;
+                }
+            }
+        }
+        return $present;
+    }
+
+    /**
      * Получение списка символов, которые находятся на выигрышной линии
      *
      * @param int $line Номер выигрышной линии
@@ -556,6 +624,25 @@ class Slot {
             $offsets[] = $position[$line[$i]][$i];
         }
         return $offsets;
+    }
+
+    /**
+     * Получаем Offset символов барабана по его номеру
+     *
+     * @param $reelNumber
+     * @return array
+     */
+    public function getReelOffset($reelNumber) {
+        $position = array(
+            // Первая строка слота
+            array(0, 1, 2, 3, 4),
+            // Вторая строка слота
+            array(5, 6, 7, 8, 9),
+            // Третья строка слота
+            array(10, 11 , 12, 13, 14),
+        );
+
+        return array($position[0][$reelNumber], $position[1][$reelNumber], $position[2][$reelNumber]);
     }
 
     /**

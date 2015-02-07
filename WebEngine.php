@@ -1,8 +1,11 @@
 <?php
-session_start();
 
 /* DELETE */
-if($_SERVER['HTTP_HOST'] == 'localhost') require_once 'api.php';
+if($_SERVER['HTTP_HOST'] == 'localhost') {
+    session_start();
+    require_once 'api.php';
+
+}
 /* DELETE */
 
 require_once 'slot_funcs.php';

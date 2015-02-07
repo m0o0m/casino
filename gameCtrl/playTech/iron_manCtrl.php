@@ -39,14 +39,21 @@ class iron_manCtrl extends Ctrl {
     public function startGameId($request) {
         $response = '<FOOpenGameResponse gameId="'.$this->gameID.'" nextDrawId="0"/>';
         if(!empty($_SESSION['drawStates'])) {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+                print_r($e);
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
             $response = '<FOOpenGameResponse gameId="'.$this->gameID.'" nextDrawId="'.$_SESSION['nextDraw'].'">';
             $response .= $draws;
             $response .= '</FOOpenGameResponse>';
@@ -473,8 +480,9 @@ class iron_manCtrl extends Ctrl {
 
         $this->fsBonus['drawStates'] = str_replace('{{count}}', $totalFs, $this->fsBonus['drawStates']);
         $_SESSION['gameDrawStates'] = str_replace('{{count}}', $totalFs, $_SESSION['gameDrawStates']);
+        $_SESSION['gameDrawStates'] = base64_encode(gzcompress($_SESSION['gameDrawStates'], 9));
 
-        $_SESSION['fsDrawStates'] = $this->fsBonus['drawStates'];
+        $_SESSION['fsDrawStates'] = base64_encode(gzcompress($this->fsBonus['drawStates'], 9));
     }
 
     public function showFreeSpinReport($report, $totalWin) {
@@ -531,7 +539,15 @@ class iron_manCtrl extends Ctrl {
     </FOLoadResultsResponse>
 </CompositeResponse>';
 
-        $_SESSION['drawStates'] = $drawStates.$_SESSION['gameDrawStates'];
+        $gameDrawStates = '';
+        try {
+            $gameDrawStates = gzuncompress(base64_decode($_SESSION['gameDrawStates']));
+        }
+        catch (Exception $e) {
+
+        }
+
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates . $gameDrawStates));
         $_SESSION['bonusWIN'] = $report['totalWin'];
         $_SESSION['nextDraw'] = $this->fsBonus['totalFs'] + 1;
 
@@ -539,7 +555,13 @@ class iron_manCtrl extends Ctrl {
     }
 
     public function startResult() {
-        $draws = $_SESSION['fsDrawStates'];
+        $draws = '';
+        try {
+            $draws = gzuncompress(base64_decode($_SESSION['fsDrawStates']));
+        }
+        catch (Exception $e) {
+
+        }
 
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">'.$draws.'</CompositeResponse>';
 

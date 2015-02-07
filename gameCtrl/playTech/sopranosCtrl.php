@@ -7,14 +7,21 @@ class sopranosCtrl extends Ctrl {
             $draws = '<DrawState type="BASE" drawId="0" />';
         }
         else {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+                print_r($e);
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
         }
         if(!empty($_SESSION['bonus'])) {
             if($_SESSION['bonus'] == 'stolen') {
@@ -383,7 +390,7 @@ class sopranosCtrl extends Ctrl {
         $this->outXML($xml);
 
         $_SESSION['bonus'] = 'badabing';
-        $_SESSION['drawStates'] = $drawState;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['bonusWIN'] = $totalWin;
     }
 
@@ -416,7 +423,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawState;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['bonus'] = 'raid';
         $_SESSION['bonusWIN'] = $report['totalWin'];
     }
@@ -446,7 +453,7 @@ class sopranosCtrl extends Ctrl {
         }
 
         $bonusWin = $wins * $bet * 2;
-        $totalWin = $bonusWin + $_SESSION['bonusWIN'];
+        $totalWin = $bonusWin;
         unset($_SESSION['bonusWin']);
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -460,7 +467,7 @@ class sopranosCtrl extends Ctrl {
 </CompositeResponse>';
 
 
-        game_ctrl($bet * 100, $totalWin * 100, 0, 'bonus');
+        game_ctrl(0, $totalWin * 100, 0, 'bonus');
 
         $this->outXML($xml);
 
@@ -513,7 +520,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawState;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['bonus'] = 'stolen';
         $_SESSION['bonusWIN'] = $report['totalWin'];
         $_SESSION['stolenCount'] = 0;
@@ -568,8 +575,9 @@ class sopranosCtrl extends Ctrl {
         $this->outXML($xml);
 
         $_SESSION['bonus'] = 'freespin';
-        $_SESSION['drawStates'] = $drawState;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['baseWin'] = $totalWin;
+        $_SESSION['bonusWIN'] = $totalWin;
     }
 
     public function startSoldierFS() {
@@ -639,10 +647,10 @@ class sopranosCtrl extends Ctrl {
 
 
             if($i == 0) {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
             }
             else {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'"';
             }
             $winLines = $this->getWinLinesData($report, array(
                 'spins' => $fsTotal,
@@ -665,8 +673,11 @@ class sopranosCtrl extends Ctrl {
             $i++;
         }
 
+        $_SESSION['drawStates'] = gzuncompress(base64_decode($_SESSION['drawStates']));
+
         $_SESSION['drawStates'] .= $drawStates;
         $_SESSION['bonusWIN'] = $totalWin + $_SESSION['baseWin'];
+        $_SESSION['drawStates'] = base64_encode(gzcompress($_SESSION['drawStates'], 9));
         return array(
             'totalWin' => $totalWin,
             'drawStates' => $drawStates,
@@ -743,10 +754,10 @@ class sopranosCtrl extends Ctrl {
             }
 
             if($i == 0) {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'" multiplier="'.$report['double'].'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'" multiplier="'.$report['double'].'"';
             }
             else {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'" multiplier="'.$report['double'].'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" multiplier="'.$report['double'].'"';
             }
             $winLines = $this->getWinLinesData($report, array(
                 'spins' => 20,
@@ -765,8 +776,12 @@ class sopranosCtrl extends Ctrl {
             $fsCount--;
             $i++;
         }
+
+        $_SESSION['drawStates'] = gzuncompress(base64_decode($_SESSION['drawStates']));
+
         $_SESSION['drawStates'] .= $drawStates;
         $_SESSION['bonusWIN'] = $totalWin + $_SESSION['baseWin'];
+        $_SESSION['drawStates'] = base64_encode(gzcompress($_SESSION['drawStates'], 9));
         return array(
             'totalWin' => $totalWin,
             'drawStates' => $drawStates,
@@ -846,10 +861,10 @@ class sopranosCtrl extends Ctrl {
             }
 
             if($i == 0) {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
             }
             else {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'"';
             }
             $winLines = $this->getWinLinesData($report, array(
                 'spins' => $fsTotal,
@@ -871,8 +886,12 @@ class sopranosCtrl extends Ctrl {
             $fsCount--;
             $i++;
         }
+
+        $_SESSION['drawStates'] = gzuncompress(base64_decode($_SESSION['drawStates']));
+
         $_SESSION['drawStates'] .= $drawStates;
         $_SESSION['bonusWIN'] = $totalWin + $_SESSION['baseWin'];
+        $_SESSION['drawStates'] = base64_encode(gzcompress($_SESSION['drawStates'], 9));
         return array(
             'totalWin' => $totalWin,
             'drawStates' => $drawStates,
@@ -936,10 +955,10 @@ class sopranosCtrl extends Ctrl {
             }
 
             if($i == 0) {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
             }
             else {
-                $addString = 'freeSpinsWin="'.$totalWin.'" level="'.$level.'"';
+                $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'"';
             }
             $winLines = $this->getWinLinesData($report, array(
                 'spins' => 10,
@@ -958,8 +977,12 @@ class sopranosCtrl extends Ctrl {
             $fsCount--;
             $i++;
         }
+
+        $_SESSION['drawStates'] = gzuncompress(base64_decode($_SESSION['drawStates']));
+
         $_SESSION['drawStates'] .= $drawStates;
         $_SESSION['bonusWIN'] = $totalWin + $_SESSION['baseWin'];
+        $_SESSION['drawStates'] = base64_encode(gzcompress($_SESSION['drawStates'], 9));
         return array(
             'totalWin' => $totalWin,
             'drawStates' => $drawStates,

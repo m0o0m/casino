@@ -9,14 +9,21 @@ class rockyCtrl extends Ctrl {
             $draws = '<DrawState drawId="0"/>';
         }
         else {
+            $gDraw = '';
+            try {
+                $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
+            }
+            catch (Exception $e) {
+
+            }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
                     $savedState .= $val;
                 }
-                $draws = $savedState.$_SESSION['drawStates'];
+                $draws = $savedState.$gDraw;
             }
-            else $draws = $_SESSION['drawStates'];
+            else $draws = $gDraw;
         }
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -113,7 +120,6 @@ class rockyCtrl extends Ctrl {
         if($bonusCount > 1) $respin = true;
 
         $totalWin = $report['totalWin'];
-
         if($this->gameParams->testBonusEnable) {
             $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
             switch($g) {
@@ -156,6 +162,11 @@ class rockyCtrl extends Ctrl {
             'runningTotal' => $totalWin,
         ));
 
+        if($report['kBonus']) {
+            $winLines = $this->deleteWinLinesOption($winLines, 'drawWin');
+            $winLines = $this->deleteWinLinesOption($winLines, 'lastSpins');
+        }
+
         $balanceWithoutBet = $this->getBalance() - $report['bet'];
 
         $win = ($report['totalWin'] > 0) ? "true" : "false";
@@ -167,12 +178,12 @@ class rockyCtrl extends Ctrl {
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
         <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
-            <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
+            <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" freeGames="0" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawState.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
         if($report['kBonus']) {
-            $_SESSION['drawStates'] = $drawState;
+            $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
             $_SESSION['bonusWIN'] = $totalWin;
             $_SESSION['bonus'] = 'knockout';
         }
@@ -191,10 +202,18 @@ class rockyCtrl extends Ctrl {
         $this->knockOutBonus['bonusWin'] = 0;
         $this->knockOutBonus['eventDescs'] = array();
         $this->knockOutBonus['payDescs'] = array();
+
+        $action = '';
         for($i = 1; $i <= 10; $i++) {
             if(!$knockOut) {
                 $rnd = $this->getRandParam($bonusParams['rnd']);
+
                 $action = $bonusParams['alias'][$rnd];
+
+                if($i == 10) {
+                    $action = 'K';
+                }
+
                 if($action == 'K') {
                     $knockOut = true;
                 }
@@ -332,7 +351,7 @@ class rockyCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        $_SESSION['drawStates'] = $drawStates;
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
         $_SESSION['bonusWIN'] = $totalWin;
         $_SESSION['bonus'] = 'freespin';
     }

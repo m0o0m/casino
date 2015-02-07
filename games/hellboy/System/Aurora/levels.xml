@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<levels version="9.4.0.136629" filter="1" showOnlyAllowed="1" showLevel="1">
+	
+	<level id="" allow="0" />
+	<level id="SYSTEM" allow="1" />
+	<level id="SYSTEM - Loader" allow="0" />
+	<level id="SYSTEM - ContentLoader" allow="0" color="0x395B22" />
+	<level id="SYSTEM - Core MPF" allow="1" color="0x395B22" />
+	<level id="SYSTEM - Core MPF Packet" allow="1" color="0x395B22" />
+	<level id="SYSTEM - Sound" allow="1" />
+	<level id="SYSTEM - Pings" allow="1" color="0x3D6617" />
+	<level id="SYSTEM - Xman Error" allow="1" color="0xFF0000" />
+	<level id="SYSTEM - MPF" allow="1" color="0xFF5B22" />
+	<level id="SYSTEM - BALANCE" allow="1" color="0xFF5BFF" />
+	<level id="NextGen API" allow="1" color="0x338A15" />
+	<level id="NextGen API EVENT" allow="1" color="0x338A15" />
+	
+	<level id="API" allow="1" />
+	<level id="API - Files" allow="0" />
+	<level id="API - Preloader" allow="1" />
+	<level id="API - Banking" allow="1" />
+	<level id="API - Banking Display" allow="0" />
+	<level id="API - Bonus Bubble" allow="0" />
+	<level id="API - Frames" allow="0" />
+	<level id="API - Status" allow="1" />
+	<level id="API - Packets" allow="1" />
+	<level id="API - Packets Content" allow="1" />
+	<level id="API - Sounds" allow="0" />
+	<level id="API - Sound Groups" allow="0" />
+	<level id="API - Localized" allow="0" />
+	<level id="API - Buttons" allow="0" />
+	<level id="API - Button Control" allow="0" />
+	<level id="API - Session" allow="1" />
+	<level id="API - MPF" allow="0" />
+	<level id="API - MPF Avatar" allow="0" />
+	<level id="API - MPF Packets" allow="0" />
+	<level id="API - MPF Packets Content" allow="0" />
+	<level id="API - MPF Alias" allow="0" />
+	<level id="API - Profiling" allow="0" />
+
+	<level id="API EVENT" allow="1" color="0x2B80A8" />
+	<level id="API EVENT - Status" allow="1" color="0x2B80A8" />
+	<level id="API EVENT - Packets" allow="1" color="0x2B80A8" />
+	<level id="API EVENT - Packets Content" allow="1" color="0x2B80A8" />
+	<level id="API EVENT - Files" allow="0" color="0x2B80A8" />
+	<level id="API EVENT - Files Content" allow="0" color="0x2B80A8" />
+	<level id="API EVENT - Banking" allow="1" color="0x2B80A8" />
+	<level id="API EVENT - Sounds" allow="0" color="0x2B80A8" />
+	<level id="API EVENT - Sound Groups" allow="0" color="0x2B80A8" />
+	<level id="API EVENT - Buttons" allow="0" color="0x2B80A8" />
+	<level id="API EVENT - Button Groups" allow="0" color="0x2B80A8" /> 
+	<level id="API EVENT - MPF" allow="0" />
+	<level id="API EVENT - MPF Avatar" allow="0" />
+	<level id="API EVENT - MPF Packets" allow="0" />
+	<level id="API EVENT - MPF Packets Content" allow="0" />
+	<level id="API EVENT - MPF Alias" allow="0" />
+	<level id="API EVENT - extTopbar" allow="1"  color="0x2B80A8"/>
+
+	<level id="ITALIANMARKETMANAGER" allow="0" color="0x6B10A8" />
+	<level id="REGULATED1MARKETMANAGER" allow="1" color="0x6B10A8" />
+</levels>

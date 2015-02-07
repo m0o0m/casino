@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wrapperConfig>
+		<gameName name="Santa Surprise"/>	
+		<gameTitle title="PT-SantaSurprise"/>
+		<clientName name="santa surprise"/>	
+		<game asVersion="3" configurationStages="3" gameFormat="SlotNoAutoplay" gameTitle="PT-SantaSurprise" height="373" loadingStages="17" nativeHeight="600" nativeWidth="1029" width="640"/>
+	</wrapperConfig>

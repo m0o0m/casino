@@ -83,6 +83,10 @@ class thunderstruck_2Params extends Params {
         'N' => array(12),
         // Scatter
         'B' => array(13),
+        // FS added symbol
+        'F' => array(14),
+        // Loki Magic symbol
+        'C' => array(15),
     );
     // Вайлд
     public $wild = array(0);
@@ -112,6 +116,10 @@ class thunderstruck_2Params extends Params {
     public $flash_scale_exactfit = 1;
     // Выплаты
     public $winPay = array(
+        array('symbol'=>'U', 'count'=>5, 'multiplier'=>'1000.00'),
+        array('symbol'=>'U', 'count'=>4, 'multiplier'=>'200.00'),
+        array('symbol'=>'U', 'count'=>3, 'multiplier'=>'75.00'),
+
         array('symbol'=>'W', 'count'=>5, 'multiplier'=>'500.00'),
         array('symbol'=>'W', 'count'=>4, 'multiplier'=>'100.00'),
         array('symbol'=>'W', 'count'=>3, 'multiplier'=>'30.00'),
@@ -161,4 +169,32 @@ class thunderstruck_2Params extends Params {
         array('symbol'=>'N', 'count'=>3, 'multiplier'=>'5.00'),
     );
     public $doubleIfWild = true;
+
+    // chance - 1 к числу. например chance = 200, то шанс 1 к 200.
+    // reelsCountRand - количество барабанов, которые станут wild
+    public $wildStormParams = array(
+        'chance' => 200,
+        'reelsCountRand' => array(
+            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,2,2,2,2,
+            3,3,3,
+            4,4,
+            5,
+        ),
+    );
+
+    public $lokiWild = array(
+        'count' => array(1,2,3),
+        'countRnd' => array(
+            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+            1,1,1,1,1,
+            2,
+        ),
+    );
+
+    public $odinRavens = array(
+        'positions' => array(0,1,2,3,5,6,7,8,10,11,12,13),
+        'x3Chance' => 10,
+        'x6Chance' => 100,
+    );
 }
