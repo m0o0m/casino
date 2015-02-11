@@ -81,6 +81,10 @@ class Ctrl {
         else if(!empty($request['EEGConfigRequest'])) {
             $this->startStakeConfig($request['EEGConfigRequest']);
         }
+
+        else if(!empty($request['ClientDetailsRequest'])) {
+            $this->startClientDetails($request['ClientDetailsRequest']);
+        }
         // Сохранение состояния бонуса
         else if(!empty($request['EEGSaveStateRequest']) || !empty($request['FOSaveStateRequest'])) {
             $this->startSaveState($request);
@@ -107,6 +111,18 @@ class Ctrl {
         else if(isset($request['FOLoadResultsRequest'])) {
             $this->startResult();
         }
+    }
+
+    /**
+     * Ответ за запрос информации и клиенте
+     *
+     *
+     */
+    protected function startClientDetails() {
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2015-02-08T20:05:04+0100"><ClientDetailsResponse/></CompositeResponse>';
+
+        $this->outXML($xml);
     }
 
     /**

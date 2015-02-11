@@ -30,11 +30,13 @@ class Reel {
     /**
      * Устанавливаем символы барабана согласно переданной раскладке
      *
-     * @param array $symbols Раскладка
+     * @param $symbols Раскладка
+     * @param int $visibleCount Количество видимых символов
      */
-    public function __construct($symbols) {
+    public function __construct($symbols, $visibleCount = 3) {
         $this->symbols = $symbols;
         $this->newSymbols = $symbols;
+        $this->visibleCount = $visibleCount;
         $this->updateVisibleSymbols();
     }
 
@@ -118,7 +120,8 @@ class Reel {
      */
     public function checkScatters($scatter, $iterate) {
         $offsets = array();
-        for($i = 0; $i <= 2; $i++) {
+        $visibleCount = $this->visibleCount - 1;
+        for($i = 0; $i <= $visibleCount; $i++) {
             if(in_array($this->newSymbols[$i], $scatter)) {
                 $offsets[] = $i * 5 + $iterate;
             }
@@ -137,7 +140,8 @@ class Reel {
      */
     public function checkSymbol($symbol, $iterate) {
         $offsets = array();
-        for($i = 0; $i <= 2; $i++) {
+        $visibleCount = $this->visibleCount - 1;
+        for($i = 0; $i <= $visibleCount; $i++) {
             if(in_array($this->newSymbols[$i], $symbol)) {
                 $offsets[] = $i * 5 + $iterate;
             }
@@ -168,6 +172,15 @@ class Reel {
         $this->newSymbols = array_merge(array_slice($this->newSymbols, 0, $this->visibleCount), array($del), array_slice($this->newSymbols, $this->visibleCount));
 
         $this->updateVisibleSymbols();
+    }
+
+    /**
+     * Возвращает количество видимых символов на барабане
+     *
+     * @return int
+     */
+    public function getVisibleCount() {
+        return $this->visibleCount;
     }
 }
 

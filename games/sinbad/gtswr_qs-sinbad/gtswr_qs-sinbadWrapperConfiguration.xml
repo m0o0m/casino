@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wrapperConfig>
+<gameTitle title="QS-Sinbad"/> 
+<clientName name="gtswr_qs-sinbad"/>
+<gameName name="gtswr_qs-sinbad"/>
+<game asVersion="3" configurationStages="2" gameFormat="SlotNoAutoplay" gameTitle="QS-Sinbad" height="600" loadingStages="1" nativeHeight="768" nativeWidth="1024" width="800"/>
+</wrapperConfig>

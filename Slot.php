@@ -187,6 +187,15 @@ class Slot {
         }
     }
 
+
+    public function createCustomReels($reels, $config) {
+        $this->reels = array();
+
+        for($i = 0; $i < count($reels); $i++) {
+            $this->reels[] = new Reel($reels[$i], $config[$i]);
+        }
+    }
+
     /**
      * Установка нового массива вайлдов
      *
@@ -618,7 +627,9 @@ class Slot {
             // Вторая строка слота
             array(5, 6, 7, 8, 9),
             // Третья строка слота
-            array(10, 11 , 12, 13, 14),  
+            array(10, 11 , 12, 13, 14),
+            // Четвертая строка
+            array(15, 16, 17, 18, 19),
         );
         for($i = 0; $i < $count; $i++) {
             $offsets[] = $position[$line[$i]][$i];
@@ -640,6 +651,8 @@ class Slot {
             array(5, 6, 7, 8, 9),
             // Третья строка слота
             array(10, 11 , 12, 13, 14),
+            // Четвертая строка
+            array(15, 16, 17, 18, 19),
         );
 
         return array($position[0][$reelNumber], $position[1][$reelNumber], $position[2][$reelNumber]);
@@ -653,11 +666,16 @@ class Slot {
      * @return array
      */
     public function getOffsets() {
-        $offsets = array('1' => array(), '2' => array(), '3' => array());
+        $offsets = array();
+        for($i = 1; $i <= $this->rows; $i++) {
+            $offsets["$i"] = array();
+        }
         foreach($this->reels as $r) {
-            $offsets['1'][] = $r->getOffset() + 1;
-            $offsets['2'][] = $r->getOffset() + 2;
-            $offsets['3'][] = $r->getOffset() + 3;
+            for($j = 1; $j <= $this->rows; $j++) {
+                if($j <= $r->getVisibleCount()) {
+                    $offsets["$j"][] = $r->getOffset() + $j;
+                }
+            }
         }
         return $offsets;
     }
@@ -670,12 +688,16 @@ class Slot {
      * @return array
      */
     private function getRows() {
-        $rows = array('1' => array(), '2' => array(), '3' => array());
+        $rows = array();
+        for($i = 1; $i <= $this->rows; $i++) {
+            $rows["$i"] = array();
+        }
+
         foreach($this->reels as $r) {
             $symbols = $r->getVisibleSymbols();
-            $rows['1'][] = $symbols[0];
-            $rows['2'][] = $symbols[1];
-            $rows['3'][] = $symbols[2];
+            for($j = 1; $j <= count($symbols); $j++) {
+                $rows["$j"][] = $symbols[$j - 1];
+            }
         }
         return $rows;
     }

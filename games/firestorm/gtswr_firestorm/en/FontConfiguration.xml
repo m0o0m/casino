@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FontConfiguration>
+
+	<Languages languages="en" set="Latin" defaultFont="1" defaultSet="true">
+		<Font id="0" name="MyriadPro" />
+		<Font id="1" name="MyriadProCondensed" weight="bold" />
+	</Languages>
+	<Languages languages="bg,ru" set="Cyrillic" defaultFont="0">
+		<Font id="0" name="MyriadPro" />
+		<Font id="1" name="MyriadProCondensed" weight="bold" />	
+	</Languages>
+	<Languages languages="el" set="Greek" defaultFont="0">
+		<Font id="0" name="MyriadPro" />
+		<Font id="1" name="MyriadProCondensed" weight="bold" />	
+	</Languages>
+	<Languages languages="zh-CN" set="ChineseSimplified" defaultFont="0">
+		<Font id="0" name="ArialUnicodeMS" />		
+	</Languages>
+	<Languages languages="zh-TW" set="ChineseTraditional" defaultFont="0">
+		<Font id="0" name="ArialUnicodeMS" />		
+	</Languages>
+	<Languages languages="ja" set="Japanese" defaultFont="0">
+		<Font id="0" name="ArialUnicodeMS" />		
+	</Languages>
+	<Languages languages="th" set="Thai" defaultFont="0">
+		<Font id="0" name="MyriadPro" />
+		<Font id="1" name="MyriadProCondensed" weight="bold" />		
+	</Languages>
+	<Languages languages="ko" set="Korean" defaultFont="0">
+		<Font id="0" name="ArialUnicodeMS" />		
+	</Languages>	
+</FontConfiguration>

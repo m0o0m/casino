@@ -120,6 +120,7 @@ class rockyCtrl extends Ctrl {
         if($bonusCount > 1) $respin = true;
 
         $totalWin = $report['totalWin'];
+
         if($this->gameParams->testBonusEnable) {
             $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
             switch($g) {
