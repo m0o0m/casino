@@ -13,7 +13,7 @@ class supernovaParams extends Params {
     );
     // Символы
     public $symbols = array(
-        
+
     );
     // Вайлд
     public $wild = array(0);

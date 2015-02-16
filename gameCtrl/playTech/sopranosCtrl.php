@@ -12,7 +12,7 @@ class sopranosCtrl extends Ctrl {
                 $gDraw = gzuncompress(base64_decode($_SESSION['drawStates']));
             }
             catch (Exception $e) {
-                print_r($e);
+                //print_r($e);
             }
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';

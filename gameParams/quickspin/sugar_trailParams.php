@@ -33,8 +33,8 @@ class sugar_trailParams extends Params {
     public $symbols = array(
         // Wild
         'W' => array(0),
-        // Доп.вайлд в бонусе. Z - просто поставил
-        'Z' => array(1),
+        // Доп.вайлд в бонусе
+        'B' => array(1),
         // Золотая конфета
         'A' => array(2),
         // Полосатая конфета
@@ -61,11 +61,13 @@ class sugar_trailParams extends Params {
         'R' => array(13),
         // Синий медведь
         'M' => array(14),
+        // Add spin
+        'Z' => array(15),
     );
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(14);
+    public $scatter = array(15);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -161,5 +163,28 @@ class sugar_trailParams extends Params {
         array('symbol'=> 'N', 'count'=> 3, 'multiplier'=> 3.00),
 
     );
+
+    public $sugarLockReel = array(
+        array('20','W1','40','W1','60','40','W1','20','W1','40','W1','40'),
+        array('W3','W5','W4','W3','W5','W3','W5','W3','W5','W4','W3','W4'),
+        array('R2','R1','R2','R1','R2','R1','R3','R2','R1','R2','R2','R1'),
+    );
+
+    public $sugarCashReel = array(
+        array(40,80,40,120,80,40,120,40,80,40,80,60),
+        array('M2',25,'M3',30,'M2',40,'M3',50,'M2',40,'M3',60),
+        array('M3',50,'M2',75,'M5',30,'M2',30,'M3',20,'M4',30),
+    );
+
+    public $sugarCandyReel = array(
+        array('F1',80,'F1',60,'F1',80,'F1',40,'F2',120,'F1',80),
+        array('F6','F9','F7','F6','F8','F10','F8','F6','F7','F8','F6','F7'),
+        array('W3','W1','W2','W1','W2','W1','W2','W1','W3','W1','W2','W1'),
+    );
+
+    // Шанс выпадения дополнительного вилда. Увеличивает общее количество летающих вайлдов
+    public $sugarCandyAddWildChance = 3;
+
+    public $bonusRand = array(0);
 
 }

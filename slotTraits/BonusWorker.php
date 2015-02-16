@@ -48,7 +48,8 @@ trait BonusWorker {
                 $this->setMultipleWithWild($bonus['multiple']);
                 break;
             case 'wildsOnPos':
-                $this->setWildsOnPos($bonus['offsets']);
+                $wildSymbol = (empty($bonus['wildSymbol'])) ? false : $bonus['wildSymbol'];
+                $this->setWildsOnPos($bonus['offsets'], $wildSymbol);
                 break;
             case 'wildReels':
                 $this->setWildReels($bonus['reels']);
@@ -150,11 +151,14 @@ trait BonusWorker {
      *
      * @param array $offsets Относительное положение символов на слоте
      */
-    private function setWildsOnPos($offsets) {
+    public function setWildsOnPos($offsets, $wildSymbol = false) {
+        if(!$wildSymbol) {
+            $wildSymbol = $this->wild[0];
+        }
         foreach($offsets as $pos) {
             $reelNumber = $pos % 5;
             $p = floor($pos / 5);
-            $this->reels[$reelNumber]->setSymbolOnPosition($p, $this->wild[0]);
+            $this->reels[$reelNumber]->setSymbolOnPosition($p, $wildSymbol);
         }
     }
 
@@ -229,13 +233,16 @@ trait BonusWorker {
      * @param array $offsets
      */
     private function setWildOnReels($offsets) {
+        $replacedSymbols = array();
         foreach($offsets as $pos) {
             $reelNumber = $pos % 5;
             $p = floor($pos / 5);
+            $replacedSymbols[] = $this->reels[$reelNumber]->getVisibleSymbols()[$p];
             $this->reels[$reelNumber]->setSymbolOnPosition($p, $this->wild[0]);
         }
         $this->bonusData = array(
             'offsets' => $offsets,
+            'replacedSymbols' => $replacedSymbols,
         );
     }
 
