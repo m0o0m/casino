@@ -69,6 +69,9 @@ trait BonusWorker {
             case 'odinRavens':
                 $this->odinRavens($bonus['positions'], $bonus['x3Chance'], $bonus['x6Chance']);
                 break;
+            case 'setReelsOffsets':
+                $this->setReelsOffsets($bonus['offsets']);
+                break;
         }
     }
 
@@ -261,6 +264,14 @@ trait BonusWorker {
         $this->setWilds($needleWilds);
     }
 
+    /**
+     * Бонус ворон одина
+     *
+     * @param $positions
+     * @param $x3Chance
+     * @param $x6Chance
+     */
+
     private function odinRavens($positions, $x3Chance, $x6Chance) {
         $present = $this->checkWinLinesPresent();
         if($present) {
@@ -294,6 +305,17 @@ trait BonusWorker {
             $this->bonusData = array(
                 'randomWilds' => $resultPos,
             );
+        }
+    }
+
+    /**
+     * Устанавливает оффсеты для барабанов и обновляет символы
+     *
+     * @param $offsets
+     */
+    public function setReelsOffsets($offsets) {
+        for($i = 0; $i < count($offsets); $i++) {
+            $this->reels[$i]->setOffset($offsets[$i]);
         }
     }
 

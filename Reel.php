@@ -60,6 +60,22 @@ class Reel {
     }
 
     /**
+     * Функция подобна spin(), но смещение барабана мы задаем вручную
+     *
+     * @param $offset
+     * @return $this
+     */
+    public function setOffset($offset) {
+        $tmp = array_merge($this->symbols, $this->symbols);
+        $cnt = count($this->symbols);
+        $this->offset = $offset;
+        $this->newSymbols = array_slice($tmp, $this->offset, $cnt);
+        $this->updateVisibleSymbols();
+
+        return $this;
+    }
+
+    /**
      * Получение видимых символов барабана
      *
      * @return array Видимые символы барабана
