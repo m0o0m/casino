@@ -270,7 +270,7 @@ class rapunzel_towerCtrl extends Ctrl {
                     $currentMultiple = $this->bonus['ladder']['multiple'];
                 }
             }
-            
+
             $respinReport = $this->slot->spin(array(
                 array(
                     'type' => 'wildsOnPos',
@@ -495,7 +495,6 @@ class rapunzel_towerCtrl extends Ctrl {
             $this->bonus['ladder']['l1PD'] = true;
         }
         else {
-            $this->bonus['ladder']['level'] = 0;
             $this->bonus['ladder']['bonusSpins'] = 0;
         }
     }

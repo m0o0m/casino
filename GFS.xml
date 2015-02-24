@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompositeResponse elapsed="0" date="2015-02-24T17:03:21+0100">
+    <EEGPlaceBetsResponse newBalance="996.56" freeGames="0" gameId="196665119" />
+    <EEGLoadResultsResponse gameId="196665119">
+        <DrawState drawId="0" state="settling">
+            <WinLines spins="14" currentSpins="10" runningTotal="3.00" reelset="0" stops="52,3,103,25,30" display="G,A,S,B,H;B,F,E,F,B;E,S,C,S,H">
+                <Scatter offsets="2,11,13" spins="10" prize="3S" length="3" payout="3.00" />
+            </WinLines>
+            <ReplayInfo foItems="52,3,103,25,30" />
+            <Bet seq="0" type="line" stake="1.00" pick="L25" payout="66.52" won="true" />
+        </DrawState>
+        <DrawState drawId="1">
+            <WinLines spins="14" currentSpins="10" runningTotal="3.00" reelset="1" stops="78,6,69,36,14" display="E,H,S,D,F;C,F,G,I,E;I,B,A,S,D">
+                <Feature>
+                    <Detail name="ladder" value="2" level="0" spins="0" added="2" offsets="2,13" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="78,6,69,36,14" />
+        </DrawState>
+        <DrawState drawId="2">
+            <WinLines spins="14" currentSpins="10" runningTotal="3.00" reelset="1" stops="65,64,17,1,23" display="D,S,C,W,A;E,E,G,H,H;A,B,S,D,B">
+                <Feature>
+                    <Detail name="ladder" value="4" level="1" spins="0" added="2" offsets="1,12" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="65,64,17,1,23" />
+        </DrawState>
+        <DrawState drawId="3">
+            <WinLines spins="14" currentSpins="10" runningTotal="5.80" reelset="1" stops="0,75,12,19,10" display="E,E,K,S,I;W,D,E,H,C;G,I,G,B,G">
+                <WinLine line="2" offsets="0,1,2" prize="3E" length="3" payout="0.40" />
+                <WinLine line="6" offsets="0,1,7" prize="3E" length="3" payout="0.40" />
+                <WinLine line="9" offsets="5,1,2" prize="3E" length="3" payout="0.40" />
+                <WinLine line="10" offsets="5,1,7" prize="3E" length="3" payout="0.40" />
+                <WinLine line="14" offsets="5,6,2" prize="3D" length="3" payout="1.20" />
+                <Feature>
+                    <Detail name="wildmultiplier" multiplier="2.0" length="1" offsets="2" />
+                    <Detail name="ladder" value="5" level="1" spins="0" added="1" offsets="3" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="0,75,12,19,10" />
+        </DrawState>
+        <DrawState drawId="4">
+            <WinLines spins="14" currentSpins="10" runningTotal="9.56" reelset="1" stops="28,1,37,11,20" display="I,W,D,S,F;H,F,H,F,C;D,A,C,D,E">
+                <WinLine line="10" offsets="5,1,7" prize="3H" length="3" payout="0.08" />
+                <WinLine line="11" offsets="5,11,7" prize="3H" length="3" payout="0.08" />
+                <WinLine line="23" offsets="10,1,2" prize="3D" length="3" payout="0.60" />
+                <WinLine line="25" offsets="10,11,2,13" prize="4D" length="4" payout="3.00" />
+                <Feature>
+                    <Detail name="ladder" value="6" level="1" spins="0" added="1" offsets="3" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="28,1,37,11,20" />
+        </DrawState>
+        <DrawState drawId="5">
+            <WinLines spins="14" currentSpins="10" runningTotal="9.88" reelset="1" stops="49,103,3,30,38" display="A,G,A,B,C;E,S,G,F,I;G,H,C,D,B">
+                <WinLine line="2" offsets="0,1,2" prize="3G" length="3" payout="0.08" />
+                <WinLine line="6" offsets="0,1,7" prize="3G" length="3" payout="0.08" />
+                <WinLine line="20" offsets="0,11,2" prize="3H" length="3" payout="0.08" />
+                <WinLine line="23" offsets="10,1,2" prize="3G" length="3" payout="0.08" />
+                <Feature>
+                    <Detail name="ladder" value="7" level="1" spins="0" added="1" offsets="6" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="49,103,3,30,38" />
+        </DrawState>
+        <DrawState drawId="6">
+            <WinLines spins="14" currentSpins="12" runningTotal="16.72" reelset="1" stops="18,98,7,55,42" display="G,B,B,I,C;C,H,G,A,G;I,S,A,E,W">
+                <WinLine line="2" offsets="0,1,2" prize="3G" length="3" payout="0.08" />
+                <WinLine line="6" offsets="0,1,7" prize="3G" length="3" payout="0.08" />
+                <WinLine line="9" offsets="5,1,2" prize="3C" length="3" payout="0.60" />
+                <WinLine line="21" offsets="10,1,12,3,14" prize="5I" length="5" payout="3.00" />
+                <WinLine line="23" offsets="10,1,2,3,14" prize="5I" length="5" payout="3.00" />
+                <WinLine line="24" offsets="0,1,12" prize="3G" length="3" payout="0.08" />
+                <Feature>
+                    <Detail name="ladder" value="8" level="2" spins="2" added="1" offsets="11" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="18,98,7,55,42" />
+        </DrawState>
+        <DrawState drawId="7">
+            <WinLines spins="14" currentSpins="12" runningTotal="20.16" reelset="1" stops="80,92,97,51,35" display="I,A,C,F,H;B,I,E,B,D;I,D,B,G,E">
+                <WinLine line="4" offsets="0,6,12,8" prize="4I" length="4" payout="0.60" />
+                <WinLine line="8" offsets="5,11,12" prize="3D" length="3" payout="0.60" />
+                <WinLine line="9" offsets="5,1,2" prize="3C" length="3" payout="0.60" />
+                <WinLine line="10" offsets="5,1" prize="2W" length="2" payout="0.20" />
+                <WinLine line="13" offsets="10,6,12,8" prize="4I" length="4" payout="0.60" />
+                <WinLine line="15" offsets="5,6,12,8" prize="4I" length="4" payout="0.60" />
+                <WinLine line="18" offsets="0,6,12" prize="3I" length="3" payout="0.08" />
+                <WinLine line="21" offsets="10,1,12" prize="3I" length="3" payout="0.08" />
+                <WinLine line="24" offsets="0,1,12" prize="3I" length="3" payout="0.08" />
+                <Feature>
+                    <Detail name="ladder" value="8" level="2" spins="0" added="0" offsets="null" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="80,92,97,51,35" />
+        </DrawState>
+        <DrawState drawId="8">
+            <WinLines spins="14" currentSpins="12" runningTotal="20.16" reelset="1" stops="17,21,32,52,25" display="A,D,G,B,B;G,H,S,G,G;C,I,E,S,D">
+                <Feature>
+                    <Detail name="ladder" value="10" level="2" spins="0" added="2" offsets="7,13" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="17,21,32,52,25" />
+        </DrawState>
+        <DrawState drawId="9">
+            <WinLines spins="14" currentSpins="12" runningTotal="23.16" reelset="1" stops="3,61,46,27,37" display="A,H,I,H,E;I,D,D,D,C;E,F,E,G,I">
+                <WinLine line="16" offsets="0,6,7,8" prize="4D" length="4" payout="3.00" />
+                <Feature>
+                    <Detail name="ladder" value="10" level="2" spins="0" added="0" offsets="null" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="3,61,46,27,37" />
+        </DrawState>
+        <DrawState drawId="10">
+            <WinLines spins="14" currentSpins="12" runningTotal="23.56" reelset="1" stops="74,95,53,41,2" display="E,F,C,H,G;G,S,I,B,A;A,F,A,I,E">
+                <WinLine line="3" offsets="10,11,12" prize="3F" length="3" payout="0.20" />
+                <WinLine line="21" offsets="10,1,12" prize="3F" length="3" payout="0.20" />
+                <Feature>
+                    <Detail name="ladder" value="11" level="2" spins="0" added="1" offsets="6" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="74,95,53,41,2" />
+        </DrawState>
+        <DrawState drawId="11">
+            <WinLines spins="14" currentSpins="12" runningTotal="27.92" reelset="1" stops="33,49,77,27,26" display="H,H,A,H,G;G,B,F,D,D;D,E,S,G,H">
+                <WinLine line="2" offsets="0,1,2,3" prize="4H" length="4" payout="0.60" />
+                <WinLine line="5" offsets="10,6,2,8" prize="4D" length="4" payout="3.00" />
+                <WinLine line="12" offsets="0,6,2" prize="3H" length="3" payout="0.08" />
+                <WinLine line="14" offsets="5,6,2" prize="3G" length="3" payout="0.08" />
+                <WinLine line="19" offsets="10,6,2" prize="3D" length="3" payout="0.60" />
+                <Feature>
+                    <Detail name="ladder" value="12" level="2" spins="0" added="1" offsets="12" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="33,49,77,27,26" />
+        </DrawState>
+        <DrawState drawId="12">
+            <WinLines spins="14" currentSpins="14" runningTotal="48.52" reelset="1" stops="21,13,47,52,32" display="E,B,D,B,C;A,G,E,G,G;F,D,A,S,A">
+                <WinLine line="6" offsets="0,1,7,3,4" prize="5E" length="5" payout="4.00" />
+                <WinLine line="8" offsets="5,11,12" prize="3D" length="3" payout="0.60" />
+                <WinLine line="9" offsets="5,1,2,3" prize="4D" length="4" payout="3.00" />
+                <WinLine line="10" offsets="5,1,7,3" prize="4E" length="4" payout="2.00" />
+                <WinLine line="15" offsets="5,6,12,8,9" prize="5G" length="5" payout="3.00" />
+                <WinLine line="21" offsets="10,1,12,3,14" prize="5F" length="5" payout="4.00" />
+                <WinLine line="24" offsets="0,1,12,3,4" prize="5E" length="5" payout="4.00" />
+                <Feature>
+                    <Detail name="ladder" value="13" level="3" spins="2" added="1" offsets="13" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="21,13,47,52,32" />
+        </DrawState>
+        <DrawState drawId="13">
+            <WinLines spins="14" currentSpins="14" runningTotal="64.84" reelset="2" stops="8,24,102,4,33" display="E,I,A,F,G;D,F,G,H,A;I,D,C,K,H">
+                <WinLine line="8" offsets="5,11,12,13,9" prize="5D" length="5" payout="16.00" />
+                <WinLine line="21" offsets="10,1,12" prize="3I" length="3" payout="0.16" />
+                <WinLine line="23" offsets="10,1,2" prize="3I" length="3" payout="0.16" />
+                <Feature>
+                    <Detail name="wildmultiplier" multiplier="2.0" length="1" offsets="13" />
+                    <Detail name="ladder" value="13" level="3" spins="0" added="0" offsets="null" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="8,24,102,4,33" />
+        </DrawState>
+        <DrawState drawId="14">
+            <WinLines spins="14" currentSpins="14" runningTotal="66.52" reelset="2" stops="70,62,59,48,24" display="B,I,F,G,H;G,D,A,I,B;H,F,E,A,G">
+                <WinLine line="6" offsets="0,1,7" prize="3I" length="3" payout="0.08" />
+                <WinLine line="16" offsets="0,6,7" prize="3D" length="3" payout="0.60" />
+                <WinLine line="20" offsets="0,11,2,13" prize="4F" length="4" payout="1.00" />
+                <Feature>
+                    <Detail name="ladder" value="13" level="3" spins="0" added="0" offsets="null" />
+                </Feature>
+            </WinLines>
+            <ReplayInfo foItems="70,62,59,48,24" />
+        </DrawState>
+    </EEGLoadResultsResponse>
+</CompositeResponse>

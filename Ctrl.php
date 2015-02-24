@@ -291,6 +291,7 @@ class Ctrl {
             'trigger' => '',
             'drawWin' => $report['totalWin'],
             'display' => 'rows',
+            'winLineMultiple' => 1,
         );
         $params = $this->extendArray($params, $override);
 
@@ -307,7 +308,8 @@ class Ctrl {
                 $star = '';
                 if($winLine['withWild']) $star = '*';
                 $offset = $this->slot->getOffsetsByLine($winLine['line'], $winLine['count']);
-                $xml .= '<WinLine line="'.$winLine['id'].'" offsets="'.implode(',', $offset).'" prize="'.$winLine['count'].$winLine['alias'].$star.'" length="'.$winLine['count'].'" payout="'.$report['betOnLine']*$winLine['multiple'].'" />';
+                $payout = $report['betOnLine']*$winLine['multiple']*$params['winLineMultiple'];
+                $xml .= '<WinLine line="'.$winLine['id'].'" offsets="'.implode(',', $offset).'" prize="'.$winLine['count'].$winLine['alias'].$star.'" length="'.$winLine['count'].'" payout="'.$payout.'" />';
             }
             $xml .= $params['bonus'];
             $xml .= '</WinLines>';
