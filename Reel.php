@@ -60,6 +60,21 @@ class Reel {
     }
 
     /**
+     * Заменяет символ на другой
+     *
+     * @param $old
+     * @param $new
+     */
+    public function replaceSymbols($old, $new) {
+        foreach($this->newSymbols as &$s) {
+            if($s == $old) {
+                $s = $new;
+            }
+        }
+        $this->updateVisibleSymbols();
+    }
+
+    /**
      * Функция подобна spin(), но смещение барабана мы задаем вручную
      *
      * @param $offset

@@ -81,10 +81,77 @@ trait BonusWorker {
             case 'wildReelsIfSymbol':
                 $this->setWildReelsIfSymbol($bonus['symbol'], $bonus['offsets'], $bonus['wildSymbol'], $bonus['symbolIfEmpty'], $bonus['cancelIfLess']);
                 break;
+            case 'randomReplace':
+                $this->setRandomReplace($bonus['symbols'], $bonus['replacement']);
+                break;
+            case 'replace':
+                $this->setReplace($bonus['relation']);
+                break;
+            case 'symbolOnPosition':
+                $this->setSymbolOnPosition($bonus['offsets'], $bonus['symbol']);
+                break;
 
         }
     }
 
+    /**
+     * Устанавливает символ на переданные оффсеты
+     *
+     * @param array $offsets
+     * @param string $symbol
+     */
+    private function setSymbolOnPosition($offsets, $symbol) {
+        $id = $this->params->getSymbolID($symbol);
+        foreach($offsets as $pos) {
+            $reelNumber = $pos % 5;
+            $p = floor($pos / 5);
+            $this->reels[$reelNumber]->setSymbolOnPosition($p, $id[0]);
+        }
+    }
+
+    /**
+     * Заменяет переданные символы на другие в прямом порядке
+     *
+     * @param array $relation
+     */
+    private function setReplace($relation) {
+        foreach($relation as $o=>$n) {
+            $oID = $this->params->getSymbolID($o);
+            $nID = $this->params->getSymbolID($n);
+            foreach($this->reels as $r) {
+                $r->replaceSymbols($oID[0], $nID[0]);
+            }
+        }
+    }
+
+    /**
+     * Заменяет каждый $symbols на случайный из $replacement
+     *
+     * @param array $symbols
+     * @param array $replacement
+     */
+    private function setRandomReplace($symbols, $replacement) {
+        $replacementArray = array();
+        foreach($symbols as $s) {
+            $symbolStr = $this->params->getSymbolByID(array($s));
+            $rnd = $replacement[rnd(0, count($replacement)-1)];
+            $replacementArray[$symbolStr] = $this->params->getSymbolByID(array($rnd));
+            foreach($this->reels as $r) {
+                $r->replaceSymbols($s, $rnd);
+            }
+        }
+        $this->bonusData['replaced'] = $replacementArray;
+    }
+
+    /**
+     * Устанавливает барабаны в вайлд, в зависимости от количества выпавших символов и наличие символов для замены
+     *
+     * @param $symbol Если выпал данный символ, то барабаны могут превратиться в wild
+     * @param $offsets Оффсет символов для замены на вайлд барабаны.
+     * @param $wildSymbol ID вайлда для установки в wild-барабан
+     * @param $symbolIfEmpty Если переданный offset пустой, то проверяет наличие оффсетов по данному символу
+     * @param $cancelIfLess Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)
+     */
     private function setWildReelsIfSymbol($symbol, $offsets, $wildSymbol, $symbolIfEmpty, $cancelIfLess) {
         $info = $this->getSymbolAnyCount($symbol);
         $changedOffsets = array();
