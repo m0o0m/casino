@@ -72,8 +72,87 @@ trait BonusWorker {
             case 'setReelsOffsets':
                 $this->setReelsOffsets($bonus['offsets']);
                 break;
+            case 'wildReelsOfSymbol':
+                $this->setWildReelsOfSymbol($bonus['symbol'], $bonus['reels'], $bonus['wildSymbol']);
+                break;
+            case 'randomWildsOnPos':
+                $this->setRandomWildsOnPos($bonus['positions'], $bonus['wildSymbol'], $bonus['wildsCount']);
+                break;
+            case 'wildReelsIfSymbol':
+                $this->setWildReelsIfSymbol($bonus['symbol'], $bonus['offsets'], $bonus['wildSymbol'], $bonus['symbolIfEmpty'], $bonus['cancelIfLess']);
+                break;
+
         }
     }
+
+    private function setWildReelsIfSymbol($symbol, $offsets, $wildSymbol, $symbolIfEmpty, $cancelIfLess) {
+        $info = $this->getSymbolAnyCount($symbol);
+        $changedOffsets = array();
+        $eInfo = $this->getSymbolAnyCount($symbolIfEmpty);
+        $diff = $eInfo['count'] - count($offsets);
+        if($cancelIfLess - $diff < 1) {
+
+        }
+        else {
+            if($info['count'] > 0) {
+                if(count($offsets) == 0) {
+
+                    $offsets = $eInfo['offsets'];
+                }
+                for($i = 0; $i < $info['count']; $i++) {
+                    if(isset($offsets[$i])) {
+                        $reelNumber = $offsets[$i] % 5;
+                        $this->setWildReel($reelNumber, $wildSymbol);
+                        $changedOffsets[] = $offsets[$i];
+                    }
+                }
+            }
+        }
+        $this->bonusData['changedOffsets'] = $changedOffsets;
+    }
+
+    /**
+     * Устанавливает вайлды в рандомные переданные оффсеты на барабаны.
+     *
+     * @param $positions Допустимые позиции для вайлдов
+     * @param $wildSymbol Чистолой идентификатор вайлда
+     * @param $wildsCount Количество вайдов
+     */
+    private function setRandomWildsOnPos($positions, $wildSymbol, $wildsCount) {
+        shuffle($positions);
+        $shufflePositions = array_splice($positions, 0, $wildsCount);
+
+        $this->setWildsOnPos($shufflePositions, $wildSymbol);
+
+        $this->bonusData['wildsOffsets'] = $shufflePositions;
+    }
+
+    /**
+     * Устанавливает барабаны в wild-reels в зависимости от количества выпавших символов
+     *
+     * @param $symbol Символ, по которому будет подсчитываться количество wild-барабанов
+     * @param $reels Номера барабанов, которые могут стать wild
+     * @param $wildSymbol ID вайлда, который будет установлен на wild-барабаны
+     */
+    private function setWildReelsOfSymbol($symbol, $reels, $wildSymbol) {
+        $info = $this->getSymbolAnyCount($symbol);
+        $cnt = $info['count'];
+        $wildReelsNumbers = array();
+        while(count($wildReelsNumbers) !== $cnt) {
+            $reelNumber = $reels[rnd(0, count($reels)-1)];
+            if(in_array($reelNumber, $wildReelsNumbers)) {
+
+            }
+            else {
+                $wildReelsNumbers[] = $reelNumber;
+                $this->setWildReel($reelNumber, $wildSymbol);
+            }
+        }
+        $this->bonusData['wildReels'] = $wildReelsNumbers;
+        $this->bonusData['symbolInfo'] = $info;
+    }
+
+
 
     /**
      * Если определенный символ присутствует на определенном барабане,

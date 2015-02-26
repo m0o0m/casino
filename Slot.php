@@ -116,9 +116,10 @@ class Slot {
      * @param object $params Параметры текущей игры
      * @param int $linesCount Количество линий, по которым будет считаться выигрыш
      * @param int $bet Общая ставка
-     * $param float $bet Полная ставка
+     * @param mixed $bet Полная ставка
+     * @param mixed $betOnLineIndex Дополнительный множитель для правильного рассчета ставки на линию
      */
-    public function __construct($params, $linesCount, $bet) {
+    public function __construct($params, $linesCount, $bet, $betOnLineIndex = 1) {
         $this->params = $params;
         $this->lines = $this->getWinLines($params->winLines, $linesCount);
         $this->wins = $params->winPay;
@@ -130,7 +131,7 @@ class Slot {
 
         $this->bet = $bet;
         $this->linesCount = $linesCount;
-        $this->betOnLine = $bet / $linesCount;
+        $this->betOnLine = $bet * $betOnLineIndex / $linesCount;
 
         foreach($params->reels[0] as $reel) {
             $this->reels[] = new Reel($reel);
