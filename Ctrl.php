@@ -81,6 +81,10 @@ class Ctrl {
         else if(!empty($request['EEGConfigRequest'])) {
             $this->startStakeConfig($request['EEGConfigRequest']);
         }
+        else if(!empty($request['EEGLoadResultsRequest'])) {
+            $this->startBonusResult();
+        }
+
 
         else if(!empty($request['ClientDetailsRequest'])) {
             $this->startClientDetails($request['ClientDetailsRequest']);

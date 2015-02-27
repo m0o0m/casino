@@ -44,7 +44,7 @@ class Params {
             $c = count($reel);
             $reelsStr .= '<Reels reelset="'.$i.'" numReels="'.$c.'">';
             foreach($reel as $k=>$row) {
-                $reelsStr .= '<Reel id="'.$k.'" numStops="1" stops="'.implode(',', $row).'" />';
+                $reelsStr .= '<Reel id="'.$k.'" numStops="'.count($row).'" stops="'.implode(',', $row).'" />';
             }
             $reelsStr .= '</Reels>';
             $reelsStr .= '</EEGLoadReelsResponse>';

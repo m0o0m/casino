@@ -47,9 +47,11 @@ class firestormParams extends Params {
         'J' => array(10),
         // Большая морда
         'S' => array(11),
-
+        // Rand1
         'R1' => array(12),
+        // Rand2
         'R2' => array(13),
+        // Rand3
         'R3' => array(14),
     );
     // Вайлд

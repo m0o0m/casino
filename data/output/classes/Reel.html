@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">9</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">16</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">18</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-863660640"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-816239155"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-863660640" class="accordion-body collapse in">
+            <div id="namespace-816239155" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -190,6 +190,8 @@
                             <section class="span4">
                                                                     <a href="../classes/Reel.html#method___construct" class="">__construct()</a><br />
                                                                     <a href="../classes/Reel.html#method_spin" class="">spin()</a><br />
+                                                                    <a href="../classes/Reel.html#method_replaceSymbols" class="">replaceSymbols()</a><br />
+                                                                    <a href="../classes/Reel.html#method_setOffset" class="">setOffset()</a><br />
                                                                     <a href="../classes/Reel.html#method_getVisibleSymbols" class="">getVisibleSymbols()</a><br />
                                                                     <a href="../classes/Reel.html#method_getVisibleSymbol" class="">getVisibleSymbol()</a><br />
                                                                     <a href="../classes/Reel.html#method_setAsWild" class="">setAsWild()</a><br />
@@ -198,6 +200,7 @@
                                                                     <a href="../classes/Reel.html#method_checkSymbol" class="">checkSymbol()</a><br />
                                                                     <a href="../classes/Reel.html#method_getOffset" class="">getOffset()</a><br />
                                                                     <a href="../classes/Reel.html#method_avalanche" class="">avalanche()</a><br />
+                                                                    <a href="../classes/Reel.html#method_getVisibleCount" class="">getVisibleCount()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -401,16 +404,21 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$symbols</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$symbols</span>, integer  <span class="argument">$visibleCount = 3</span>) </pre>
                 <p><em>Устанавливаем символы барабана согласно переданной раскладке</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>array</td>
+                                <td></td>
                                 <td>$symbols </td>
                                 <td><p>Раскладка</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$visibleCount </td>
+                                <td><p>Количество видимых символов</p></td>
                             </tr>
                                             </table>
                 
@@ -441,6 +449,81 @@
 Устанавливаем offset барабана
 Обновляем видимые символы</p>
 
+                
+                
+                                    <h4>Returns</h4>
+                    $this
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_replaceSymbols" name="method_replaceSymbols" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">replaceSymbols()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">replaceSymbols(  <span class="argument">$old</span>,   <span class="argument">$new</span>) </pre>
+                <p><em>Заменяет символ на другой</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$old </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$new </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setOffset" name="method_setOffset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setOffset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setOffset(  <span class="argument">$offset</span>) : $this</pre>
+                <p><em>Функция подобна spin(), но смещение барабана мы задаем вручную</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -694,7 +777,7 @@
                 
                                     <h4>Returns</h4>
                     integer
-                                            &mdash; <p>$this->offset</p>
+                                            &mdash; <p>$this-&gt;offset</p>
                                     				
                             </article>
         </div>
@@ -730,6 +813,34 @@
                 
                 
                 				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getVisibleCount" name="method_getVisibleCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getVisibleCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getVisibleCount() : integer</pre>
+                <p><em>Возвращает количество видимых символов на барабане</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -818,7 +929,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 26th, 2014 at 10:52.
+                    on February 27th, 2015 at 20:58.
                 </section>
             </section>
         </section>

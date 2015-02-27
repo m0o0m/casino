@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">9</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">16</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">18</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1770561248"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-265468006"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1770561248" class="accordion-body collapse in">
+            <div id="namespace-265468006" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -188,6 +188,8 @@
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsOnPos" class="">setWildsOnPos()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setReelsOffsets" class="">setReelsOffsets()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_getFullLineBonus" class="">getFullLineBonus()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_startAvalanche" class="">startAvalanche()</a><br />
                                                             </section>
@@ -213,15 +215,23 @@
                             <section class="span4">
                                                                     <a href="../classes/BonusWorker.html#method_checkBonus" class="">checkBonus()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_executeBonus" class="">executeBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomWildIfSymbolCount" class="">setRandomWildIfSymbolCount()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setSymbolOnPosition" class="">setSymbolOnPosition()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setReplace" class="">setReplace()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomReplace" class="">setRandomReplace()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelsIfSymbol" class="">setWildReelsIfSymbol()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomWildsOnPos" class="">setRandomWildsOnPos()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelsOfSymbol" class="">setWildReelsOfSymbol()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsIf" class="">setWildsIf()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildReel" class="">setWildReel()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setRandomWild" class="">setRandomWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setMultipleWithWild" class="">setMultipleWithWild()</a><br />
-                                                                    <a href="../classes/BonusWorker.html#method_setWildsOnPos" class="">setWildsOnPos()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildReels" class="">setWildReels()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_checkExpandWild" class="">checkExpandWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setScatters" class="">setScatters()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildOnReels" class="">setWildOnReels()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setStepWild" class="">setStepWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_odinRavens" class="">odinRavens()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No private properties found</em>
@@ -264,6 +274,83 @@
                 <div class="span8 content class"><h2>Methods</h2></div>
                 <aside class="span4 detailsbar"></aside>
             </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsOnPos" name="method_setWildsOnPos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWildsOnPos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>,   <span class="argument">$wildSymbol = false</span>) </pre>
+                <p><em>Устанавливает wild на определенную позицию барабана по переданному offsets</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td><p>Относительное положение символов на слоте</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildSymbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReelsOffsets" name="method_setReelsOffsets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setReelsOffsets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReelsOffsets(  <span class="argument">$offsets</span>) </pre>
+                <p><em>Устанавливает оффсеты для барабанов и обновляет символы</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
@@ -315,7 +402,7 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="public ">startAvalanche()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>) : array</pre>
+                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>,   <span class="argument">$scattersCount = 3</span>) : array</pre>
                 <p><em>Если есть выигрышные линии, то символы на этих линиях убираются и заменяются
 предыдущими невидимыми символами слота. Репорт делается для каждой победы до тех пор,
 пока выигрышных линий не будет.</em></p>
@@ -336,6 +423,16 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td><ul>
 <li>Дополнительный массив оффсетов для сдвига</li>
 </ul></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$getOffset </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$scattersCount </td>
+                                <td></td>
                             </tr>
                                             </table>
                 
@@ -402,6 +499,370 @@ primaryLine - ID последней выигрышной линии.</p>
                                                     <tr>
                                 <td>array</td>
                                 <td>$bonus </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomWildIfSymbolCount" name="method_setRandomWildIfSymbolCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomWildIfSymbolCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildIfSymbolCount(  <span class="argument">$offsets</span>,   <span class="argument">$symbol</span>,   <span class="argument">$needleCount</span>,   <span class="argument">$wildConfig</span>) </pre>
+                <p><em>Устанавливает вайлды(или любой символ) на переданные позиции в рандомном количестве\порядке, если на слоте выпало нужное количество выбранных символов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$offsets </td>
+                                <td><p>Возможные позиции вайлдов\новых символов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$symbol </td>
+                                <td><p>Символ, по которому идет проверка</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$needleCount </td>
+                                <td><p>Количество символов, с которым начнется установка вайлдов\новых символов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildConfig </td>
+                                <td><p>Описание количества вайлдов, шанса количества вайлда и символ вайлда</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSymbolOnPosition" name="method_setSymbolOnPosition" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setSymbolOnPosition()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSymbolOnPosition(array  <span class="argument">$offsets</span>, string  <span class="argument">$symbol</span>) </pre>
+                <p><em>Устанавливает символ на переданные оффсеты</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReplace" name="method_setReplace" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setReplace()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReplace(array  <span class="argument">$relation</span>) </pre>
+                <p><em>Заменяет переданные символы на другие в прямом порядке</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$relation </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomReplace" name="method_setRandomReplace" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomReplace()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomReplace(array  <span class="argument">$symbols</span>, array  <span class="argument">$replacement</span>) </pre>
+                <p><em>Заменяет каждый $symbols на случайный из $replacement</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbols </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$replacement </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReelsIfSymbol" name="method_setWildReelsIfSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelsIfSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsIfSymbol(  <span class="argument">$symbol</span>,   <span class="argument">$offsets</span>,   <span class="argument">$wildSymbol</span>,   <span class="argument">$symbolIfEmpty</span>,   <span class="argument">$cancelIfLess</span>) </pre>
+                <p><em>Устанавливает барабаны в вайлд, в зависимости от количества выпавших символов и наличие символов для замены</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$symbol </td>
+                                <td><p>Если выпал данный символ, то барабаны могут превратиться в wild</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$offsets </td>
+                                <td><p>Оффсет символов для замены на вайлд барабаны.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildSymbol </td>
+                                <td><p>ID вайлда для установки в wild-барабан</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$symbolIfEmpty </td>
+                                <td><p>Если переданный offset пустой, то проверяет наличие оффсетов по данному символу</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$cancelIfLess </td>
+                                <td><p>Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomWildsOnPos" name="method_setRandomWildsOnPos" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomWildsOnPos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildsOnPos(  <span class="argument">$positions</span>,   <span class="argument">$wildSymbol</span>,   <span class="argument">$wildsCount</span>) </pre>
+                <p><em>Устанавливает вайлды в рандомные переданные оффсеты на барабаны.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$positions </td>
+                                <td><p>Допустимые позиции для вайлдов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildSymbol </td>
+                                <td><p>Чистолой идентификатор вайлда</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildsCount </td>
+                                <td><p>Количество вайдов</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReelsOfSymbol" name="method_setWildReelsOfSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelsOfSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsOfSymbol(  <span class="argument">$symbol</span>,   <span class="argument">$reels</span>,   <span class="argument">$wildSymbol</span>) </pre>
+                <p><em>Устанавливает барабаны в wild-reels в зависимости от количества выпавших символов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$symbol </td>
+                                <td><p>Символ, по которому будет подсчитываться количество wild-барабанов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$reels </td>
+                                <td><p>Номера барабанов, которые могут стать wild</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$wildSymbol </td>
+                                <td><p>ID вайлда, который будет установлен на wild-барабаны</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsIf" name="method_setWildsIf" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildsIf()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsIf(string  <span class="argument">$symbol</span>, integer  <span class="argument">$reel</span>, array  <span class="argument">$countConfig</span>) </pre>
+                <p><em>Если определенный символ присутствует на определенном барабане,
+то случайные символы превращаются в вайлды. Количество превращений указано в countConfig</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reel </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$countConfig </td>
                                 <td></td>
                             </tr>
                                             </table>
@@ -543,42 +1004,6 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_setWildsOnPos" name="method_setWildsOnPos" class="anchor"></a>
-            <article class="method">
-                <h3 class="private ">setWildsOnPos()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(integer  <span class="argument">$offsets</span>) </pre>
-                <p><em>Устанавливает wild на определенную позицию барабана по переданному offsets</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>integer</td>
-                                <td>$offsets </td>
-                                <td><p>Относительное положение символов на слоте</p></td>
-                            </tr>
-                                            </table>
-                
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                    <dt>File</dt>
-                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
             <a id="method_setWildReels" name="method_setWildReels" class="anchor"></a>
             <article class="method">
                 <h3 class="private ">setWildReels()</h3>
@@ -586,7 +1011,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <pre class="signature" style="margin-right: 54px;">setWildReels(array  <span class="argument">$reels</span>, boolean  <span class="argument">$setWild = false</span>) </pre>
                 <p><em>Установка барабанов в wild-барабаны</em></p>
                 <p>Если передан $setWild, то этот символ будет использоваться как Wild
-Стандартно используется нулевой символ массива $this->wild</p>
+Стандартно используется нулевой символ массива $this-&gt;wild</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -702,7 +1127,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setWildOnReels(array  <span class="argument">$offsets</span>) </pre>
                 <p><em>Устанавливает вайлды на переданный offsets</em></p>
-                <p>Вайлд берется как нулевой элемент $this->wild</p>
+                <p>Вайлд берется как нулевой элемент $this-&gt;wild</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -745,6 +1170,52 @@ primaryLine - ID последней выигрышной линии.</p>
                                                     <tr>
                                 <td>array</td>
                                 <td>$steps </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_odinRavens" name="method_odinRavens" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">odinRavens()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">odinRavens(  <span class="argument">$positions</span>,   <span class="argument">$x3Chance</span>,   <span class="argument">$x6Chance</span>) </pre>
+                <p><em>Бонус ворон одина</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$positions </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$x3Chance </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$x6Chance </td>
                                 <td></td>
                             </tr>
                                             </table>
@@ -815,7 +1286,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 26th, 2014 at 10:52.
+                    on February 27th, 2015 at 20:58.
                 </section>
             </section>
         </section>

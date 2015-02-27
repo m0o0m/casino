@@ -1,9 +1,10 @@
-<?xml version="1.0" ?>
+﻿<?xml version="1.0" ?>
 	<wrapperConfig>		
 		<communicationTimeout value="20"/>					
 		<javascriptIntervalTime time="75"/>
-		<integration name="Legacy"/>
-		
+			<autoplayMaximum value="100"/> 
+		<integration name="Standard" package="ce"/>
+
 		<keepAlive pollInterval="6000" marketOnly="true">
 			<market id="it"/>
 		</keepAlive>
@@ -16,7 +17,7 @@
 		<over18URL url="ENTER"/>
 		<operatorAddress address="ENTER"/>
 		
-		<operator name="ub" />
+		<operator name="ce" />
 		<gameFormats pack="std">
 			<format name="Legacy" />
 			<format name="ProgressiveDraw" >
@@ -56,5 +57,4 @@
 				<market market="it"/>
 			</format>
 		</gameFormats>
-
 	</wrapperConfig>

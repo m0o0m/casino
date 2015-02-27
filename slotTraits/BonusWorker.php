@@ -14,6 +14,7 @@ trait BonusWorker {
      */
     private function checkBonus() {
         $bonus = $this->spinBonus;
+
         if(!empty($bonus['type'])) {
             $this->executeBonus($bonus);
         }
@@ -90,7 +91,31 @@ trait BonusWorker {
             case 'symbolOnPosition':
                 $this->setSymbolOnPosition($bonus['offsets'], $bonus['symbol']);
                 break;
+            case 'randomWildIfSymbolCount':
+                $this->setRandomWildIfSymbolCount($bonus['offsets'], $bonus['symbol'], $bonus['needleCount'], $bonus['wildConfig']);
+                break;
 
+        }
+    }
+
+
+    /**
+     * Устанавливает вайлды(или любой символ) на переданные позиции в рандомном количестве\порядке, если на слоте выпало нужное количество выбранных символов
+     *
+     * @param $offsets Возможные позиции вайлдов\новых символов
+     * @param $symbol Символ, по которому идет проверка
+     * @param $needleCount Количество символов, с которым начнется установка вайлдов\новых символов
+     * @param $wildConfig Описание количества вайлдов, шанса количества вайлда и символ вайлда
+     */
+    private function setRandomWildIfSymbolCount($offsets, $symbol, $needleCount, $wildConfig) {
+        $sReport = $this->getSymbolAnyCount($symbol);
+        if($sReport['count'] == $needleCount) {
+            $r = $wildConfig['wildCountRanceChance'][rnd(0, count($wildConfig['wildCountRanceChance']) - 1)];
+            $wildsCount = $wildConfig['wildCountRange'][$r];
+            shuffle($offsets);
+            $wildsOffsets = array_slice($offsets, 0, $wildsCount);
+
+            $this->setSymbolOnPosition($wildsOffsets, $wildConfig['wildSymbol']);
         }
     }
 

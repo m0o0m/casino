@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <FontConfiguration>
 	<Languages set="Latin" defaultFont="0" defaultSet="true">
-		<Font id="0" name="Verdana" />		
-		<Font id="1" name="Verdana" weight="bold"/>
+		<Font id="0" name="ArialBlack" />	
+		<Font id="1" name="Arial" />		
 	</Languages>
 	<Languages languages="ru,bg" set="Cyrillic" defaultFont="0">
-		<Font id="0" name="Verdana" />		
-		<Font id="1" name="Verdana" weight="bold"/>	
+		<Font id="0" name="ArialBlack" />	
+		<Font id="1" name="Arial" />	
 	</Languages>
 	<Languages languages="el" set="Greek" defaultFont="0">
-		<Font id="0" name="Verdana" />		
-		<Font id="1" name="Verdana" weight="bold"/>		
+		<Font id="0" name="ArialBlack" />	
+		<Font id="1" name="Arial" />		
 	</Languages>
 	<Languages languages="zh-cn" set="ChineseSimplified" defaultFont="0">
 		<Font id="0" name="ArialUnicodeMS" />		

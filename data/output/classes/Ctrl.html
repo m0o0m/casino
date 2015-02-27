@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">9</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">16</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">18</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1449914544"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1708778146"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1449914544" class="accordion-body collapse in">
+            <div id="namespace-1708778146" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -195,6 +195,7 @@
                             <section class="span4">
                                                                     <a href="../classes/Ctrl.html#property_bonus" class="">$bonus</a><br />
                                                                     <a href="../classes/Ctrl.html#property_fsBonus" class="">$fsBonus</a><br />
+                                                                    <a href="../classes/Ctrl.html#property_useSessionBet" class="">$useSessionBet</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -203,6 +204,7 @@
                         <section class="row-fluid protected">
                             <section class="span4">
                                                                     <a href="../classes/Ctrl.html#method_processRequest" class="">processRequest()</a><br />
+                                                                    <a href="../classes/Ctrl.html#method_startClientDetails" class="">startClientDetails()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_getRequest" class="">getRequest()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_getFormatedDate" class="">getFormatedDate()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_outXML" class="">outXML()</a><br />
@@ -215,8 +217,11 @@
                                                                     <a href="../classes/Ctrl.html#method_startSaveState" class="">startSaveState()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_afterSaveState" class="">afterSaveState()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_getWinLinesData" class="">getWinLinesData()</a><br />
+                                                                    <a href="../classes/Ctrl.html#method_deleteWinLinesOption" class="">deleteWinLinesOption()</a><br />
+                                                                    <a href="../classes/Ctrl.html#method_updateStringOption" class="">updateStringOption()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_extendArray" class="">extendArray()</a><br />
                                                                     <a href="../classes/Ctrl.html#method_getRandParam" class="">getRandParam()</a><br />
+                                                                    <a href="../classes/Ctrl.html#method_setSessionIfEmpty" class="">setSessionIfEmpty()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <a href="../classes/Ctrl.html#property_request" class="">$request</a><br />
@@ -312,6 +317,30 @@
                                 <h4>Type</h4>
                 array
                 &mdash; Содержит информацию по текущим FSам                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_useSessionBet" name="property_useSessionBet" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$useSessionBet</h3>
+                <pre class="signature">$useSessionBet : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; Использование сохраненной ставки в сессии                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -491,14 +520,14 @@
             <article class="method">
                 <h3 class="public ">invertOffsets()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">invertOffsets(array  <span class="argument">$offsets</span>) : array</pre>
+                <pre class="signature" style="margin-right: 54px;">invertOffsets(array|integer  <span class="argument">$offsets</span>) : array|integer</pre>
                 <p><em>Меняет местами строки(переворачивает) в переданном оффсете.</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>array</td>
+                                <td>array|integer</td>
                                 <td>$offsets </td>
                                 <td></td>
                             </tr>
@@ -506,7 +535,7 @@
                 
                 
                                     <h4>Returns</h4>
-                    array
+                    array|integer
                                     				
                             </article>
         </div>
@@ -575,6 +604,32 @@
                                 <td></td>
                             </tr>
                                             </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_startClientDetails" name="method_startClientDetails" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">startClientDetails()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">startClientDetails() </pre>
+                <p><em>Ответ за запрос информации и клиенте</em></p>
+                
+
                 
                 
                 				
@@ -978,6 +1033,93 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_deleteWinLinesOption" name="method_deleteWinLinesOption" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">deleteWinLinesOption()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">deleteWinLinesOption(  <span class="argument">$str</span>,   <span class="argument">$option</span>) : string</pre>
+                <p><em>Удаляет указанное значение из строки выигрышных комбинаций</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$option </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_updateStringOption" name="method_updateStringOption" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">updateStringOption()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">updateStringOption(  <span class="argument">$str</span>,   <span class="argument">$option</span>,   <span class="argument">$newValue</span>) : string</pre>
+                <p><em>Устанавливает новое значение параметру в XML строке</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$option </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$newValue </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_extendArray" name="method_extendArray" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">extendArray()</h3>
@@ -1053,6 +1195,45 @@
         </aside>
     </div>
 
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSessionIfEmpty" name="method_setSessionIfEmpty" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setSessionIfEmpty()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSessionIfEmpty(  <span class="argument">$param</span>,   <span class="argument">$value</span>) </pre>
+                <p><em>Устанавливает дефолтное значение переменной, если она пуста</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$param </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$value </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
                                                     </div>
     </section>
 
@@ -1102,7 +1283,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 26th, 2014 at 10:52.
+                    on February 27th, 2015 at 20:58.
                 </section>
             </section>
         </section>
