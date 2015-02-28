@@ -1,4 +1,13 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
 
 /**
  * Class Ctrl

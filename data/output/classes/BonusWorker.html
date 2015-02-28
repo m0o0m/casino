@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">16</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-265468006"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1710012251"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-265468006" class="accordion-body collapse in">
+            <div id="namespace-1710012251" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -281,7 +281,7 @@
             <article class="method">
                 <h3 class="public ">setWildsOnPos()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>,   <span class="argument">$wildSymbol = false</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>, mixed  <span class="argument">$wildSymbol = false</span>) </pre>
                 <p><em>Устанавливает wild на определенную позицию барабана по переданному offsets</em></p>
                 
 
@@ -293,9 +293,9 @@
                                 <td><p>Относительное положение символов на слоте</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>mixed</td>
                                 <td>$wildSymbol </td>
-                                <td></td>
+                                <td><p>Если false, то берется $this-&gt;wild[0], иначе берется переданный $wildSymbol</p></td>
                             </tr>
                                             </table>
                 
@@ -402,7 +402,7 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="public ">startAvalanche()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>,   <span class="argument">$scattersCount = 3</span>) : array</pre>
+                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>, integer  <span class="argument">$scattersCount = 3</span>) : array</pre>
                 <p><em>Если есть выигрышные линии, то символы на этих линиях убираются и заменяются
 предыдущими невидимыми символами слота. Репорт делается для каждой победы до тех пор,
 пока выигрышных линий не будет.</em></p>
@@ -430,7 +430,7 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$scattersCount </td>
                                 <td></td>
                             </tr>
@@ -1286,7 +1286,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 27th, 2015 at 20:58.
+                    on February 28th, 2015 at 21:28.
                 </section>
             </section>
         </section>

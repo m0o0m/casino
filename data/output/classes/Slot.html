@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">16</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-265500100"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1298307278"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-265500100" class="accordion-body collapse in">
+            <div id="namespace-1298307278" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -1009,7 +1009,7 @@ offsets - Позиции символа на барабанах</p>
             <article class="method">
                 <h3 class="public ">setWildsOnPos()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>,   <span class="argument">$wildSymbol = false</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>, mixed  <span class="argument">$wildSymbol = false</span>) </pre>
                 <p><em>Устанавливает wild на определенную позицию барабана по переданному offsets</em></p>
                 
 
@@ -1021,9 +1021,9 @@ offsets - Позиции символа на барабанах</p>
                                 <td><p>Относительное положение символов на слоте</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>mixed</td>
                                 <td>$wildSymbol </td>
-                                <td></td>
+                                <td><p>Если false, то берется $this-&gt;wild[0], иначе берется переданный $wildSymbol</p></td>
                             </tr>
                                             </table>
                 
@@ -1130,7 +1130,7 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="public ">startAvalanche()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>,   <span class="argument">$scattersCount = 3</span>) : array</pre>
+                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>, integer  <span class="argument">$scattersCount = 3</span>) : array</pre>
                 <p><em>Если есть выигрышные линии, то символы на этих линиях убираются и заменяются
 предыдущими невидимыми символами слота. Репорт делается для каждой победы до тех пор,
 пока выигрышных линий не будет.</em></p>
@@ -1158,7 +1158,7 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$scattersCount </td>
                                 <td></td>
                             </tr>
@@ -1189,7 +1189,7 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(object  <span class="argument">$params</span>, integer  <span class="argument">$linesCount</span>, mixed  <span class="argument">$bet</span>, mixed  <span class="argument">$betOnLineIndex = 1</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(object  <span class="argument">$params</span>, integer  <span class="argument">$linesCount</span>, float  <span class="argument">$bet</span>, float  <span class="argument">$betOnLineIndex = 1</span>) </pre>
                 <p><em>Инициализация слота</em></p>
                 <p>Получение выигрышных линий в зависимости от количества играющих линий
 Создание массива символов(без повторов), которые учавствуют в выплате
@@ -1208,12 +1208,12 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td><p>Количество линий, по которым будет считаться выигрыш</p></td>
                             </tr>
                                                     <tr>
-                                <td>mixed</td>
+                                <td>float</td>
                                 <td>$bet </td>
-                                <td><p>Полная ставка</p></td>
+                                <td><p>Общая ставка</p></td>
                             </tr>
                                                     <tr>
-                                <td>mixed</td>
+                                <td>float</td>
                                 <td>$betOnLineIndex </td>
                                 <td><p>Дополнительный множитель для правильного рассчета ставки на линию</p></td>
                             </tr>
@@ -1378,21 +1378,21 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="public ">createCustomReels()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">createCustomReels(  <span class="argument">$reels</span>,   <span class="argument">$config</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">createCustomReels(array  <span class="argument">$reels</span>, array  <span class="argument">$config</span>) </pre>
+                <p><em>Устанавливает новые барабаны с нужным количеством видимых символов</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$reels </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$config </td>
-                                <td></td>
+                                <td><p>Массив, содержащий количество видимых символов для каждого барабана</p></td>
                             </tr>
                                             </table>
                 
@@ -2736,7 +2736,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 27th, 2015 at 20:58.
+                    on February 28th, 2015 at 21:28.
                 </section>
             </section>
         </section>

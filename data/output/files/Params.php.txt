@@ -1,4 +1,13 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
 
 /**
  * Class Params
@@ -25,6 +34,8 @@ class Params {
     public $winLineType = 'left';
 
     /**
+     * Создание параметров игры и установка текущего ID игры
+     *
      * @param int $gameID Номер игры
      */
     public function __construct($gameID) {
@@ -101,6 +112,19 @@ class Params {
     public function getPrizes() {
         $prizeStr = '';
         foreach($this->winPay as $prize) {
+            $prizeStr .= '<Prize odds="'.$prize['multiplier'].'" type="'.$prize['count'].$prize['symbol'].'" />';
+        }
+        return $prizeStr;
+    }
+
+    /**
+     * Создание XML по выплатам
+     *
+     * @return string
+     */
+    public function getPrizes2() {
+        $prizeStr = '';
+        foreach($this->winPay2 as $prize) {
             $prizeStr .= '<Prize odds="'.$prize['multiplier'].'" type="'.$prize['count'].$prize['symbol'].'" />';
         }
         return $prizeStr;

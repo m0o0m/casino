@@ -1,4 +1,13 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
 
 /**
  * Class BonusWorker
@@ -324,6 +333,7 @@ trait BonusWorker {
      * Устанавливает wild на определенную позицию барабана по переданному offsets
      *
      * @param array $offsets Относительное положение символов на слоте
+     * @param mixed $wildSymbol Если false, то берется $this->wild[0], иначе берется переданный $wildSymbol
      */
     public function setWildsOnPos($offsets, $wildSymbol = false) {
         if(!$wildSymbol) {
@@ -539,6 +549,8 @@ trait BonusWorker {
      *
      * @param array $report - Репорт спина.
      * @param array $addOffset - Дополнительный массив оффсетов для сдвига
+     * @param bool @getOffset
+     * @param int $scattersCount
      * @return array
      */
     public function startAvalanche($report, $addOffset = array(), $getOffset = true, $scattersCount = 3) {

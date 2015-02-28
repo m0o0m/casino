@@ -1,4 +1,13 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
 
 /**
  * Class Params
@@ -25,6 +34,8 @@ class Params {
     public $winLineType = 'left';
 
     /**
+     * Создание параметров игры и установка текущего ID игры
+     *
      * @param int $gameID Номер игры
      */
     public function __construct($gameID) {

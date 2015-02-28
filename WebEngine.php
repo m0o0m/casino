@@ -1,4 +1,12 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
 
 /* DELETE */
 if($_SERVER['HTTP_HOST'] == 'localhost') {
@@ -25,6 +33,11 @@ $_SESSION['lastRequestTime'] = time();
  * Входная точка обработки запроса
  */
 class WebEngine {
+    /**
+     * Глобальный объект для работы с балансом, параметрами игры из базы и т.д
+     *
+     * @var Api
+     */
     public static $api;
 
     /**

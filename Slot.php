@@ -1,4 +1,14 @@
 <?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
+
 
 /**
  * Class Slot
@@ -115,9 +125,8 @@ class Slot {
      *
      * @param object $params Параметры текущей игры
      * @param int $linesCount Количество линий, по которым будет считаться выигрыш
-     * @param int $bet Общая ставка
-     * @param mixed $bet Полная ставка
-     * @param mixed $betOnLineIndex Дополнительный множитель для правильного рассчета ставки на линию
+     * @param float $bet Общая ставка
+     * @param float $betOnLineIndex Дополнительный множитель для правильного рассчета ставки на линию
      */
     public function __construct($params, $linesCount, $bet, $betOnLineIndex = 1) {
         $this->params = $params;
@@ -188,7 +197,12 @@ class Slot {
         }
     }
 
-
+    /**
+     * Устанавливает новые барабаны с нужным количеством видимых символов
+     *
+     * @param array $reels
+     * @param array $config Массив, содержащий количество видимых символов для каждого барабана
+     */
     public function createCustomReels($reels, $config) {
         $this->reels = array();
 
