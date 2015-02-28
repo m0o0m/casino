@@ -28,21 +28,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sinbadCtrl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/sinbadCtrl.php">
+      <file leaf-file-name="treasure_islandCtrl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/treasure_islandCtrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3703704" vertical-offset="8675" max-vertical-offset="10170">
-              <caret line="484" column="39" selection-start-line="484" selection-start-column="39" selection-end-line="484" selection-end-column="39" />
-              <folding>
-                <marker date="1425063027368" expanded="true" signature="7044:7312" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="8770:8827" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="8770:8881" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="12384:12456" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="19866:19950" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="19866:20134" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="20287:20343" placeholder="..." />
-                <marker date="1425063027368" expanded="true" signature="20287:20404" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-10.666667" vertical-offset="918" max-vertical-offset="2736">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,48 +41,18 @@
       <file leaf-file-name="Params.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Params.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1864" max-vertical-offset="3870">
-              <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
+            <state vertical-scroll-proportion="-9.333333" vertical-offset="1502" max-vertical-offset="4104">
+              <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ctrl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ctrl.php">
+      <file leaf-file-name="treasure_islandParams.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gameParams/quickspin/treasure_islandParams.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6215" max-vertical-offset="8100">
-              <caret line="354" column="41" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BonusWorker.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/slotTraits/BonusWorker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16630669" vertical-offset="1520" max-vertical-offset="10404">
-              <caret line="93" column="41" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Slot.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Slot.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3374" max-vertical-offset="12834">
-              <caret line="204" column="28" selection-start-line="204" selection-start-column="20" selection-end-line="204" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sinbadParams.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gameParams/quickspin/sinbadParams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2267" max-vertical-offset="3744">
-              <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.16308041" vertical-offset="0" max-vertical-offset="3330">
+              <caret line="8" column="46" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -107,12 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gameParams/quickfire/avalon_2Params.php" />
-        <option value="$PROJECT_DIR$/gameParams/quickfire/battlestar_galacticaParams.php" />
-        <option value="$PROJECT_DIR$/gameParams/quickfire/immortal_romanceParams.php" />
-        <option value="$PROJECT_DIR$/gameParams/quickfire/jurassic_parkParams.php" />
-        <option value="$PROJECT_DIR$/gameParams/quickfire/terminator_2Params.php" />
-        <option value="$PROJECT_DIR$/gameParams/quickfire/thedark_knight_risesParams.php" />
         <option value="$PROJECT_DIR$/gameParams/quickfire/thetwisted_circusParams.php" />
         <option value="$PROJECT_DIR$/gameCtrl/quickfire/girls_with_gunsCtrl.php" />
         <option value="$PROJECT_DIR$/gameParams/quickfire/girls_with_gunsParams.php" />
@@ -140,7 +95,6 @@
         <option value="$PROJECT_DIR$/gameCtrl/playTech/avengersCtrl.php" />
         <option value="$PROJECT_DIR$/gameCtrl/quickspin/supernovaCtrl.php" />
         <option value="$PROJECT_DIR$/gameParams/quickspin/supernovaParams.php" />
-        <option value="$PROJECT_DIR$/Params.php" />
         <option value="$PROJECT_DIR$/gameCtrl/playTech/sopranosCtrl.php" />
         <option value="$PROJECT_DIR$/gameParams/quickspin/sugar_trailParams.php" />
         <option value="$PROJECT_DIR$/gameParams/quickspin/rapunzel_towerParams.php" />
@@ -158,6 +112,13 @@
         <option value="$PROJECT_DIR$/slotTraits/BonusWorker.php" />
         <option value="$PROJECT_DIR$/gameParams/quickspin/sinbadParams.php" />
         <option value="$PROJECT_DIR$/gameCtrl/quickspin/sinbadCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickspin/three musketeersCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickspin/three musketeersParams.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickspin/three_musketeersParams.php" />
+        <option value="$PROJECT_DIR$/Params.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickspin/three_musketeersCtrl.php" />
+        <option value="$PROJECT_DIR$/gameCtrl/quickspin/treasure_islandCtrl.php" />
+        <option value="$PROJECT_DIR$/gameParams/quickspin/treasure_islandParams.php" />
       </list>
     </option>
   </component>
@@ -315,15 +276,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -351,19 +312,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -382,9 +343,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -410,34 +371,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/avalon_2Params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38882804" vertical-offset="365" max-vertical-offset="2304">
-          <caret line="40" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/avalon_2Ctrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667" vertical-offset="18" max-vertical-offset="2358">
-          <caret line="14" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/untamed_giant_pandaCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25082147" vertical-offset="1391" max-vertical-offset="2304">
-          <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameParams/quickfire/untamed_giant_pandaParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.04077" vertical-offset="1241" max-vertical-offset="2394">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameCtrl/quickfire/untamed_wolf_packCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.148149" vertical-offset="1409" max-vertical-offset="2466">
@@ -641,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameParams/quickspin/beowulfParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.6896942" vertical-offset="0" max-vertical-offset="3438">
-          <caret line="181" column="18" selection-start-line="181" selection-start-column="18" selection-end-line="181" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slotTraits/SymbolsWorker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63066953" vertical-offset="1702" max-vertical-offset="2628">
@@ -690,21 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/beowulfCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1916758" vertical-offset="4811" max-vertical-offset="8046">
-          <caret line="277" column="8" selection-start-line="277" selection-start-column="8" selection-end-line="277" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Slot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3374" max-vertical-offset="12834">
-          <caret line="204" column="28" selection-start-line="204" selection-start-column="20" selection-end-line="204" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameParams/quickspin/firestormParams.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.101925254" vertical-offset="0" max-vertical-offset="2628">
@@ -719,21 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ctrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6215" max-vertical-offset="8100">
-          <caret line="354" column="41" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/rapunzel_towerCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.37037" vertical-offset="5840" max-vertical-offset="9126">
-          <caret line="340" column="4" selection-start-line="340" selection-start-column="4" selection-end-line="340" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/goldilocksCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-28.481482" vertical-offset="4847" max-vertical-offset="5760">
@@ -741,43 +637,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Params.php">
+    <entry file="file://$PROJECT_DIR$/slotTraits/BonusWorker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1864" max-vertical-offset="3870">
-          <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.16630669" vertical-offset="1520" max-vertical-offset="10404">
+          <caret line="93" column="41" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Slot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32181427" vertical-offset="3374" max-vertical-offset="12834">
+          <caret line="204" column="28" selection-start-line="204" selection-start-column="20" selection-end-line="204" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameParams/quickspin/sinbadParams.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2267" max-vertical-offset="3744">
+        <state vertical-scroll-proportion="0.5334064" vertical-offset="2267" max-vertical-offset="3744">
           <caret line="153" column="42" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/beowulfCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1916758" vertical-offset="4811" max-vertical-offset="8046">
+          <caret line="277" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="441" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickspin/beowulfParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.814815" vertical-offset="2354" max-vertical-offset="3438">
+          <caret line="153" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="185" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/rapunzel_towerCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.703703" vertical-offset="2006" max-vertical-offset="9126">
+          <caret line="138" column="33" selection-start-line="134" selection-start-column="8" selection-end-line="138" selection-end-column="33" />
+          <folding>
+            <marker date="1424792627905" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424792627905" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickspin/three_musketeersParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8324206" vertical-offset="1400" max-vertical-offset="2340">
+          <caret line="120" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="124" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29218572" vertical-offset="3342" max-vertical-offset="8100">
+          <caret line="200" column="34" selection-start-line="200" selection-start-column="23" selection-end-line="200" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333" vertical-offset="1502" max-vertical-offset="4104">
+          <caret line="113" column="34" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/three_musketeersCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31965443" vertical-offset="712" max-vertical-offset="2520">
+          <caret line="56" column="69" selection-start-line="56" selection-start-column="69" selection-end-line="56" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/sinbadCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3703704" vertical-offset="8675" max-vertical-offset="10170">
-          <caret line="484" column="39" selection-start-line="484" selection-start-column="39" selection-end-line="484" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.271632" vertical-offset="1156" max-vertical-offset="10170">
+          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="79" selection-end-column="30" />
           <folding>
-            <marker date="1425063027368" expanded="true" signature="7044:7312" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="8770:8827" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="8770:8881" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="12384:12456" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="19866:19950" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="19866:20134" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="20287:20343" placeholder="..." />
-            <marker date="1425063027368" expanded="true" signature="20287:20404" placeholder="..." />
+            <marker date="1425063027368" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425063027368" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slotTraits/BonusWorker.php">
+    <entry file="file://$PROJECT_DIR$/gameCtrl/quickspin/treasure_islandCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16630669" vertical-offset="1520" max-vertical-offset="10404">
-          <caret line="93" column="41" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="41" />
+        <state vertical-scroll-proportion="-10.666667" vertical-offset="918" max-vertical-offset="2736">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameParams/quickspin/treasure_islandParams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16308041" vertical-offset="0" max-vertical-offset="3330">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="46" />
           <folding />
         </state>
       </provider>

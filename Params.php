@@ -107,6 +107,19 @@ class Params {
     }
 
     /**
+     * Создание XML по выплатам
+     *
+     * @return string
+     */
+    public function getPrizes2() {
+        $prizeStr = '';
+        foreach($this->winPay2 as $prize) {
+            $prizeStr .= '<Prize odds="'.$prize['multiplier'].'" type="'.$prize['count'].$prize['symbol'].'" />';
+        }
+        return $prizeStr;
+    }
+
+    /**
      * Создание XML по выигрышным линиям
      *
      * @return string

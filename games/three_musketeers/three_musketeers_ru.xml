@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">  
+	<info id="ru" name="Russian" brand="GTS" product="3 Musketeers" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $" signedoff="true" autoFontSize="false"/>  
+	<!-- Start generic static text -->  
+	<multitext id="1" qa="true" text="Соединение с сервером..."/>  
+	<multitext id="2" qa="true" text="Ошибка подключения"/>  
+	<multitext id="3" qa="true" text="Загрузка"/>  
+	<multitext id="4" qa="true" text="Загрузка завершена"/>  
+	<multitext id="5" qa="true" text="Справка"/>  
+	<multitext id="6" qa="true" text="Закрыть"/>  
+	<multitext id="7" qa="true" text="Остаток"/>  
+	<multitext id="8" qa="true" text="Ставка"/>  
+	<multitext id="9" qa="true" text="Коэффициенты"/>  
+	<multitext id="10" qa="true" text="Выигрыш"/>  
+	<multitext id="11" qa="true" text="Чтобы выиграть"/>  
+	<multitext id="12" qa="true" text="ОК"/>  
+	<multitext id="13" qa="true" text="Призовая таблица"/>  
+	<multitext id="14" qa="true" text="Пуск"/>  
+	<multitext id="15" qa="true" text="Вперед!"/>  
+	<multitext id="16" qa="true" text="Ставка"/>  
+	<multitext id="17" qa="true" text="Заявить"/>  
+	<multitext id="18" qa="true" text="Заявить ставку"/>  
+	<multitext id="19" qa="true" text="Заявить все ставки"/>  
+	<multitext id="20" qa="true" text="Вывод денег"/>  
+	<multitext id="21" qa="true" text="Доход"/>  
+	<multitext id="22" qa="true" text="Банк"/>  
+	<multitext id="23" qa="true" text="Бонус"/>  
+	<multitext id="24" qa="true" text="Ставка всего"/>  
+	<multitext id="25" qa="true" text="Макс. доход"/>  
+	<multitext id="26" qa="true" text="Макс. выигрыш"/>  
+	<multitext id="27" qa="true" text="Джекпот"/>  
+	<multitext id="28" qa="true" text="Играть еще"/>  
+	<multitext id="29" qa="true" text="Повторите попытку"/>  
+	<multitext id="30" qa="true" text="Демо-игра"/>  
+	<multitext id="31" qa="true" text="Игра на деньги"/>  
+	<multitext id="32" qa="true" text="Игра закончена"/>  
+	<multitext id="33" qa="true" text="Отмена"/>  
+	<multitext id="34" qa="true" text="Сбросить все"/>  
+	<multitext id="35" qa="true" text="Чтобы играть в эту игру, необходима последняя версия Flash Player. Нажмите ссылку ниже и следуйте простым инструкциям по быстрой установке."/>  
+	<multitext id="36" qa="true" text="Загрузить Flash Player"/>  
+	<multitext id="37" qa="true" text="Джекпоты"/>  
+	<multitext id="38" qa="true" text="Необходимо отметить, что отображение и выплата сумм джекпотов осуществляются в валюте вашей учетной записи."/>  
+	<!-- End generic static text -->  
+	<!-- Start game specific text [ Begin @id=100 ] -->  
+	<!-- End game specific text -->  
+	<!-- Start generic phrases -->  
+	<phrase id="BetUnavailable" qa="true" text="Ошибка"/>  
+	<phrase id="BetUnavailableBody" qa="true" text="Эта ставка сейчас недоступна."/>  
+	<phrase id="BetterLuckButton" qa="true" text="ОК"/>  
+	<phrase id="BetterLuckTitle" qa="true" text="Играть еще?"/>  
+	<phrase id="Congratulations" qa="true" text="Поздравляем!"/>  
+	<phrase id="CongratulationsBody" qa="true" text="Вы выиграли %1!"/>  
+	<phrase id="CongratulationsHandBody" qa="true" text="Выигрыш составляет %1 с %2."/>  
+	<phrase id="CongratulationsButton" qa="true" text="ОК"/>  
+	<phrase id="Connecting" qa="true" text="Соединение с сервером"/>  
+	<phrase id="ErrorRetrievingAccount" qa="true" text="Ошибка извлечения данных предыдущей игры. Обновите страницу."/>  
+	<phrase id="ExceedingMaxWinBody" qa="true" text="Превышен максимальный лимит возможного выигрыша для одной ставки. Измените ставку или выведите деньги."/>  
+	<phrase id="ExceedingMaxWinTitle" qa="true" text="Максимальный лимит выигрыша"/>  
+	<phrase id="FunRealAnon" qa="true" text="Демо-игра. Для игры на деньги войдите в свою учетную запись или создайте ее."/>  
+	<phrase id="GameInProgressBody" qa="true" text="Игра еще не закончена. Нажмите, чтобы возобновить."/>  
+	<phrase id="GameInProgressTitle" qa="true" text="Идет игра"/>  
+	<phrase id="Help" qa="true" text="The Three Musketeers&#10;&#10;Описание игры&#10;The Three Musketeers – это 5-барабанный видеослот с 3 рядами и 20 линиями ставок. В игре предусмотрены призовые вращения с коэффициентом Wild, сдвиг символов Wild и бонус 'Все за одного'.&#10;&#10;Теоретический коэффициент выплат в данной игре составляет 96,64%.&#10;&#10;&#10;Как играть&#10;Играть в видеослоты очень просто. Просто выполните 3 действия:&#10;&#10;1. Выберите свою общую ставку.&#10;2. Нажмите кнопку 'ПУСК'.&#10;3. Следите за выигрышами в поле 'ВЫИГРЫШ'.&#10;&#10;&#10;Описание функций игры&#10;&#10;Ставка&#10;Общая ставка отображается в поле 'ОБЩАЯ СТАВКА'. Для изменения ставки щелкните по экрану и выберите желаемую общую ставку.&#10;ОБЩАЯ СТАВКА зависит от ставки на линию, умноженную на 20 активных игровых линий, плюс БОНУСНАЯ СТАВКА.&#10;БОНУСНАЯ СТАВКА всегда включена и позволяет запустить барабан с коэффициентом Wild.&#10;&#10;&#10;Пуск&#10;Чтобы начать игру, нажмите кнопку 'ПУСК'.&#10;Для быстрого останова игры снова нажмите кнопку 'ПУСК'.&#10;&#10;Выигрыш&#10;Любой общий выигрыш в игровом раунде отображается в поле 'ВЫИГРЫШ'.&#10;Все выигрыши умножаются на ставку на игровую линию.&#10;Выигрышные комбинации на игровых линиях составляются слева направо из последовательных символов.&#10;На каждой игровой линии выплачивается только наибольший выигрыш.&#10;Отдельные выигрыши отображаются на игровых линиях во время демонстрации выигрыша. В призовых играх отображается только общий выигрыш для каждого вращения.&#10;&#10;Таблица выплат&#10;Выигрышные комбинации в игре представлены в ТАБЛИЦЕ ВЫПЛАТ.&#10;&#10;Быстрая игра&#10;Функция БЫСТРОЙ ИГРЫ используется для максимального сокращения времени игрового раунда.&#10;&#10;Автоигра&#10;Функция автоигры позволяет автоматически запускать указанное количество игровых раундов.&#10;Нажмите кнопку 'АВТОИГРА' и выберите количество игровых раундов для запуска автоигры.&#10;Оставшееся количество вращений отображается справа от кнопки 'СТОП'.&#10;При нажатии кнопки 'СТОП' автоигра прекращается.&#10;&#10;Настройки&#10;В панели настроек в нижней левой части игрового экрана представлены следующие опции:&#10;Использовать ПРОБЕЛ для запуска&#10;Параметр 'Использовать ПРОБЕЛ для запуска' позволяет использовать клавишу пробела для запуска игровых раундов.&#10;&#10;Отображать при запуске экранную заставку.&#10;Этот параметр позволяет включать и выключать опцию отображения экранной заставки.&#10;&#10;&#10;Специальные символы&#10;&#10;Символы Wild&#10;Символы Wild или любые их части заменяют все символы, кроме разбросанного символа призовых вращений.&#10;Каждый полный символ Wild, принимающий участие в составлении выигрышной комбинации, отображает барабан с коэффициентом от 1X до 4X, который умножается на все выигрыши.  &#10;&#10;Бонусные символы&#10;Бонусные символы не привязаны к игровым линиям.&#10;При выпадении трех или более бонусных символов запускаются призовые вращения.&#10;При выпадении трех или более бонусных символов ставка увеличивается в 3 раза.&#10;&#10;Функции игры&#10;&#10;Призовые игры&#10;При выпадении 3 или более бонусных символов запускаются 10 призовых вращений.&#10;Призовые вращения продолжаются до тех пор, пока они не закончатся.&#10;&#10;Сдвиг символов Wild&#10;Символы Wild сдвигаются вверх или вниз для составления выигрышных комбинаций в призовых раундах.&#10;&#10;Бонус 'Все за одного'&#10;В призовых играх все мушкетеры считаются одинаковыми символами для составления выигрышных комбинаций.&#10;&#10;В случае сбоя все выигрыши аннулируются."/>  
+	<phrase id="InsufficientBet" qa="true" text="Недостаточная ставка"/>  
+	<phrase id="InsufficientBetBody" qa="true" text="Сделайте ставку не менее минимальной ставки %1."/>  
+	<phrase id="InsufficientFunds" qa="true" text="Недостаточно средств"/>  
+	<phrase id="InsufficientFundsBody" qa="true" text="Ваш кредитовый остаток недостаточен для совершения этой ставки. Проверьте кредитовый остаток на своей учетной записи."/>  
+	<phrase id="InvalidBetBody" qa="true" text="Невозможно сделать ни одной ставки"/>  
+	<phrase id="InvalidBetTitle" qa="true" text="Недопустимая ставка"/>  
+	<phrase id="InvalidBetTypeBody" qa="true" text="Одна или несколько ваших ставок еще не завершены. Убедитесь, что вы завершили все свои ставки."/>  
+	<phrase id="JackpotNotificationTitle" qa="true" text="Джекпоты"/>  
+	<phrase id="JackpotNotification" qa="true" text="Необходимо отметить, что отображение и выплата сумм джекпотов осуществляются в валюте вашей учетной записи."/>  
+	<phrase id="loaderStart" qa="true" text="...идет загрузка"/>  
+	<phrase id="loader1" qa="true" text="...загрузка графики"/>  
+	<phrase id="loader2" qa="true" text="...загрузка интерфейса"/>  
+	<phrase id="loader3" qa="true" text="...загрузка звукового процессора"/>  
+	<phrase id="loader4" qa="true" text="...загрузка процессора окружающих эффектов"/>  
+	<phrase id="loader5" qa="true" text="...загрузка EdGE-компонентов"/>  
+	<phrase id="loaderFinish" qa="true" text="...загрузка завершена"/>  
+	<phrase id="MaxMultiRoundBody" qa="true" text="Максимальная допустимая ставка в одном раунде составляет %1. Измените, пожалуйста, выбор ставки."/>  
+	<phrase id="MaxSingleRoundBody" qa="true" text="Максимальная допустимая ставка в одной игре составляет %1. Измените, пожалуйста, выбор ставки."/>  
+	<phrase id="MaxStakeTitle" qa="true" text="Максимальная ставка"/>  
+	<phrase id="MaxStakeBody" qa="true" text="Вы превысили максимальный размер в %1, установленный для данной ставки."/>  
+	<phrase id="MaxStakeAdjustedBody" qa="true" text="Вы превысили максимальный размер в %1, установленный для данной ставки. Ваша ставка будет скорректирована до этой суммы, которую вам необходимо подтвердить. "/>  
+	<phrase id="maxWinReachedBody" qa="false" text="Вы достигли максимальной суммы выигрыша %1. Игра будет закончена, а выигрыши зачислены на остаток по вашей учетной записи."/>  
+	<phrase id="maxWinReachedTitle" qa="false" text="Максимальные выигрыши"/>  
+	<phrase id="MultipleMaxStakeBody" qa="true" text="Одна или несколько ставок превысили максимально допустимую сумму для этой ставки."/>  
+	<phrase id="NANBody" qa="true" text="Введите сумму ставки цифрами."/>  
+	<phrase id="NANTitle" qa="true" text="Недопустимая ставка"/>  
+	<phrase id="Na" qa="true" text="не доступно"/>  
+	<phrase id="PlayForFun" qa="true" text="Демо-игра"/>  
+	<phrase id="PlayForReal" qa="true" text="Игра на деньги"/>  
+	<phrase id="SelectRealityBody" qa="true" text="Играйте на реальные деньги с вашей учетной записи или на виртуальные деньги."/>  
+	<phrase id="SelectRealityTitle" qa="true" text="Выберите"/>  
+	<phrase id="ServerBrowserError" qa="true" text="Ошибка в браузере, обновите страницу."/>  
+	<phrase id="ServerConnectionErrorBody" qa="true" text="Вы были отключены от игрового сервера. Проверьте подключение к сети Интернет."/>  
+	<phrase id="ServerConnectionErrorTitle" qa="true" text="Ошибка соединения"/>  
+	<phrase id="ServerError" qa="true" text="Ошибка сервера"/>  
+	<phrase id="ServerErrorTitle" qa="true" text="Ошибка"/>  
+	<phrase id="ServerNoFunds" qa="true" text="Мы не смогли разместить вашу ставку. Проверьте обновленный остаток на вашей учетной записи."/>  
+	<phrase id="ServerNoGame" qa="true" text="Невозможно извлечь данные игры."/>  
+	<phrase id="ServerNoTitle" qa="true" text="В данный момент эта игра недоступна."/>  
+	<phrase id="ServerSessionLostBody" qa="true" text="Войдите в свою учетную запись. Если вы уже вошли в учетную запись, то, возможно, время сеанса игры уже истекло."/>  
+	<phrase id="ServerSessionLostTitle" qa="true" text="Сеанс прерван"/>  
+	<phrase id="ServerSuspensionBody" qa="true" text="В настоящее время на сервере ведутся технические работы. Через несколько минут игра должна возобновиться автоматически."/>  
+	<phrase id="ServerSuspensionTitle" qa="true" text="Служба приостановлена"/>  
+	<phrase id="ServerJackpotBalanceBody" qa="false" text="Итоговая сумма джекпота уменьшилась, и отображаемая сумма больше недоступна. После обновления итоговой сумма джекпота вы сможете делать ставки опять."/>  
+	<phrase id="ServerJackpotBalanceTitle" qa="false" text="Остаток джекпота"/>  
+	<phrase id="ServerJackpotErrorBody" qa="true" text="Вы выиграли джек-пот %1!&#10;По техническим причинам мы не можем&#10;автоматически зачислить джек-пот на ваш счет.&#10;&#10;&#10;Для получения приза&#10;обратитесь в службу поддержки."/>  
+	<!-- End generic phrases -->  
+	<!-- Start game specific phrases -->  
+	<!-- start quickspin common phrases -->  
+	<phrase id="KEYPAD_START_FREESPINS" qa="true" text="НАЧАТЬ ПРИЗ. ИГРЫ"/>  
+	<phrase id="KEYPAD_FREESPINS_REMAINING_LABEL" qa="true" text="ПРИЗ. ИГРЫ"/>  
+	<phrase id="KEYPAD_FREESPINS_PLAYED_LABEL" qa="true" text="ВЫПОЛНЕНО ПРИЗ. ИГР"/>  
+	<phrase id="KEYPAD_TOTAL_WIN" qa="true" text="ОБЩИЙ ВЫИГРЫШ"/>  
+	<phrase id="KEYPAD_WIN_LABEL" qa="true" text="ВЫИГРЫШ"/>  
+	<phrase id="KEYPAD_BASEBET_LABEL" qa="true" text="ИГРОВЫЕ ЛИНИИ: %1" adjustsize="-2"/>  
+	<phrase id="KEYPAD_BASEBET_FEATURE_BET" qa="true" text="БОНУСНАЯ СТАВКА"/>  
+	<phrase id="KEYPAD_QUICKSPIN_BUTTON" qa="true" text="БЫСТРАЯ ИГРА"/>  
+	<phrase id="KEYPAD_TOTAL_BET_LABEL" qa="true" text="ОБЩАЯ СТАВКА"/>  
+	<phrase id="KEYPAD_BETPERLINE_LABEL" qa="true" text="КОЭФФИЦИЕНТ СТАВКИ: %1"/>  
+	<phrase id="EPIC_WIN_LABEL" qa="true" text="ГИГАНТСКИЙ ВЫИГРЫШ"/>  
+	<phrase id="PAYTABLE_BUTTON" qa="true" text="ТАБЛИЦА ВЫПЛАТ"/>  
+	<phrase id="SPINS" qa="true" text="ВРАЩЕНИЯ"/>  
+	<phrase id="SPIN" qa="true" text="ПУСК"/>  
+	<phrase id="KEYPAD_TOTAL_BET_SHORT" qa="true" text="ОБЩАЯ СТАВКА: %1"/>  
+	<phrase id="KEYPAD_BETPERLINE_SHORT" qa="true" text="СТАВКА НА ЛИНИЮ: %1"/>  
+	<phrase id="KEYPAD_BALANCE" qa="true" text="ОСТАТОК: %1"/>  
+	<phrase id="KEYPAD_AUTOPLAY_BUTTON" qa="true" text="АВТОИГРА"/>  
+	<phrase id="KEYPAD_AUTOPLAY_STOP_BUTTON" qa="true" text="СТОП"/>  
+	<phrase id="KEYPAD_USE_SPACE_FOR_SPIN" qa="true" text="Использовать ПРОБЕЛ для запуска"/>  
+	<phrase id="BUTTON_OK" qa="true" text="OK"/>  
+	<phrase id="CONGRATULATIONS" qa="true" text="Поздравляем!"/>  
+	<phrase id="YOU_WON" qa="true" text="Вы выиграли"/>  
+	<phrase id="CONTINUE_BUTTON" qa="true" text="ПРОДОЛЖИТЬ"/>  
+	<phrase id="TOGGLE_SPLASH_SCREEN" qa="true" text="Отображать при запуске экранную заставку."/>  
+	<phrase id="SPLASH_DONT_SHOW_NEXT" qa="true" text="Не показывать в следующий раз"/>  
+	<!-- end quickspin common phrases -->  
+	<!--start quickspin Musketeers phrases -->  
+	<phrase id="GAME_NAME" qa="true" text="Три мушкетера"/>  
+	<!-- big win -->  
+	<phrase id="BIG_WIN" qa="true" text="БОЛЬШОЙ ВЫИГРЫШ"/>  
+	<phrase id="SUPER_WIN" qa="true" text="СУПЕРВЫИГРЫШ"/>  
+	<phrase id="MEGA_WIN" qa="true" text="МЕГАВЫИГРЫШ"/>  
+	<!-- Used in header/info -->  
+	<phrase id="HEADER_RESPIN_INFO" qa="true" text="ПОВТ. ВРАЩЕНИЕ!"/>  
+	<phrase id="HEADER_ALL_WINS" qa="true" text="ВСЕ ВЫИГРЫШИ"/>  
+	<phrase id="HEADER_SCATTER_BONUS_REEL" qa="true" text="БОНУСНЫЙ БАРАБАН!"/>  
+	<phrase id="HEADER_FULLBLOCK" qa="true" text="ПОЛНЫЙ СИМВОЛ!"/>  
+	<phrase id="HEADER_MULTIPLIER_SPIN" qa="true" text="КОЭФФИЦИЕНТ!"/>  
+	<phrase id="HEADER_GOOD_LUCK" qa="true" text="УДАЧИ!"/>  
+	<!-- Free Spin transitions -->  
+	<phrase id="CONGRATS_CAPITAL_LETTERS" qa="true" text="ПОЗДРАВЛЯЕМ!"/>  
+	<phrase id="YOU_WON_X_FREE_SPINS" qa="true" text="Вы выиграли 10 приз. игр!"/>  
+	<phrase id="ALL_FOR_ONE_INFO" qa="true" text="БОНУС 'ВСЕ ЗА ОДНОГО'"/>  
+	<phrase id="WILDS_NUDGE_INFO" qa="true" text="СДВИГ СИМВОЛОВ WILD"/>  
+	<phrase id="YOU_WON_CAPITAL_LETTERS" qa="true" text="ВЫ ВЫИГРАЛИ"/>  
+	<!-- Paytable -->  
+	<phrase id="PAYTABLE_FOOTER" qa="true" text="ВЫИГРЫШИ УМНОЖАЮТСЯ НА КОЭФФИЦИЕНТ СТАВКИ. На каждой игровой линии выплачивается только наибольший выигрыш.&#10;Выигрышные комбинации на игровых линиях составляются слева направо из последовательных символов. В случае сбоя все выплаты аннулируются." adjustsize="-3"/>  
+	<!-- page 1 -->  
+	<phrase id="PAYTABLE_PG2_TITLE" qa="true" text="Призовые игры"/>  
+	<phrase id="PAYTABLE_PG2_NUMPAGES" qa="true" text="1/2"/>  
+	<phrase id="PAYTABLE_PG2_BODY" qa="true" text="При выпадении 3 бонусных символов выплачивается ставка в тройном размере и запускается 10 призовых игр"/>  
+	<phrase id="PAYTABLE_PG2_BODY2" qa="true" text="Символы Wild сдвигаются вверх или вниз для составления выигрышных комбинаций в призовых раундах."/>  
+	<phrase id="PAYTABLE_PG2_BODY3" qa="true" text="Все мушкетеры заменяют друг друга в бонусной игре 'Все за одного' в призовых играх"/>  
+	<phrase id="PAYTABLE_PG2_BODY4" qa="true" text="+2 РАУНДА"/>  
+	<!-- page 2 -->  
+	<phrase id="PAYTABLE_PG4_TITLE" qa="true" text="Символ Wild"/>  
+	<phrase id="PAYTABLE_PG4_BODY" qa="true" text="Символ Wild или любая его часть заменяет все символы, кроме бонусных символов"/>  
+	<phrase id="PAYTABLE_PG4_BODY2" qa="true" text="и"/>  
+	<phrase id="PAYTABLE_PG4_BODY3" qa="true" text="Каждый полный символ Wild, принимающий участие в составлении выигрышной комбинации, отображает барабан с коэффициентами" adjustsize="-4"/>  
+	<phrase id="PAYTABLE_PG4_BODY4" qa="true" text="от 1X" adjustsize="-16"/>  
+	<phrase id="PAYTABLE_PG4_BODY5" qa="true" text="до"/>  
+	<phrase id="PAYTABLE_PG4_BODY6" qa="true" text="4X"/>  
+	<!-- page 3 -->  
+	<phrase id="PAYTABLE_PG6_TITLE" qa="true" text="Выплаты на линиях"/>  
+	<!-- page 4 -->  
+	<phrase id="PAYTABLE_PG7_TITLE" qa="true" text="Выплаты на линиях"/>  
+	<!-- page 5 -->  
+	<phrase id="PAYTABLE_PG11_TITLE" qa="true" text="Игровые линии"/>  
+	<!-- Splash screen -->  
+	<phrase id="SPLASHSCREEN_MUSKETEER_FEATURE_1" qa="true" text="СДВИГ СИМВОЛОВ WILD В ПРИЗ. ИГРАХ" adjustsize="-5"/>  
+	<phrase id="SPLASHSCREEN_MUSKETEER_FEATURE_2" qa="true" text="БОНУС 'ВСЕ ЗА ОДНОГО'"/>  
+	<phrase id="SPLASHSCREEN_WILD_FEATURE_1" qa="true" text="КОЭФФИЦИЕНТ"/>  
+	<phrase id="SPLASHSCREEN_WILD_FEATURE_2" qa="true" text="СИМВОЛОВ WILD!"/>  
+	<phrase id="SPLASHSCREEN_FREE_SPINS" qa="true" text="ПРИЗОВЫЕ ИГРЫ"/>  
+	<!--end quickspin Musketeers phrases -->  
+	<!-- Help Text -->  
+	<!-- start back office texts -->  
+	<phrase id="BO_WIN_MULTIPLIER" qa="true" text="КОЭФФИЦИЕНТ ВЫИГРЫША"/>  
+	<phrase id="BO_SWOOP" qa="true" text="ПАДЕНИЕ СИМВОЛОВ"/>  
+	<phrase id="win_lines" qa="true" text="ЛИНИИ ВЫПЛАТ"/>  
+	<phrase id="multiplier" qa="true" text="КОЭФФИЦИЕНТ"/>  
+	<phrase id="re_spin" qa="true" text="ПОВТ. ВРАЩЕНИЕ"/>  
+	<phrase id="re_spins" qa="true" text="ПОВТ. ВРАЩЕНИЯ"/>  
+	<phrase id="re_spins_total" qa="true" text="ВСЕГО ПОВТ. ВРАЩЕНИЙ"/>  
+	<phrase id="free_spins_total" qa="true" text="ВСЕГО ПРИЗ. ИГР"/>  
+	<phrase id="pays" qa="true" text="ВЫПЛАТЫ"/>  
+	<phrase id="bonus" qa="true" text="БОНУС"/>  
+	<phrase id="symbols" qa="true" text="СИМВОЛЫ"/>  
+	<phrase id="win_type" qa="true" text="ТИП ВЫИГРЫША"/>  
+	<phrase id="draw" qa="true" text="НИЧЬЯ"/>  
+	<phrase id="freespinsAward" qa="true" text="ПРИЗОВЫЕ ИГРЫ"/>  
+	<phrase id="multiplierAward" qa="true" text="ПРИЗОВОЙ КОЭФ."/>  
+	<phrase id="respinAward" qa="true" text="ПРИЗОВЫЕ ПОВТ. ВРАЩЕНИЯ"/>  
+	<phrase id="maximumWinExceeded" qa="true" text="* Превышен максимальный выигрыш"/>  
+	<phrase id="gameRoundNotClosed" qa="true" text="Раунд игры не завершен"/>  
+	<phrase id="historyTotalWin" qa="true" text="ОБЩИЙ ВЫИГРЫШ"/>  
+	<phrase id="free_spin" qa="true" text="ПРИЗ. ИГРА"/>  
+	<phrase id="free_spins" qa="true" text="ПРИЗ. ИГРЫ"/>  
+	<phrase id="history_total_win" qa="true" text="ОБЩИЙ ВЫИГРЫШ"/>  
+	<!-- end backoffice texts -->  
+	<!-- End game specific phrases -->  
+	<!-- Start generic vector text -->  
+	<vector id="Win" qa="true" text="Выигрыш!"/>  
+	<vector id="Unlucky" qa="true" text="Не повезло"/>  
+	<vector id="Jackpot" qa="true" text="Джекпот!"/>  
+	<!-- End generic vector text -->  
+	<!-- Start  game specific vector text -->  
+	<!-- End game specific vector text --> 
+</languagepack>
+

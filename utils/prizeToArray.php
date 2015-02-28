@@ -1,46 +1,40 @@
 <pre>
 <?
-    $xml = '<DrawOdds payTableSet="0">
-            <Prize odds="500.00" type="5WR" />
-            <Prize odds="50.00" type="4WR" />
-            <Prize odds="50.00" type="5M1" />
-            <Prize odds="50.00" type="5M2" />
-            <Prize odds="50.00" type="5M3" />
-            <Prize odds="40.00" type="3WR" />
-            <Prize odds="40.00" type="5M4" />
-            <Prize odds="40.00" type="5M5" />
-            <Prize odds="20.00" type="4M1" />
-            <Prize odds="20.00" type="4M2" />
-            <Prize odds="15.00" type="4M3" />
-            <Prize odds="15.00" type="4M4" />
-            <Prize odds="15.00" type="4M5" />
-            <Prize odds="15.00" type="5F6" />
-            <Prize odds="15.00" type="5F7" />
-            <Prize odds="10.00" type="3M1" />
-            <Prize odds="10.00" type="3M2" />
-            <Prize odds="10.00" type="3M3" />
-            <Prize odds="10.00" type="5F8" />
-            <Prize odds="10.00" type="5F9" />
-            <Prize odds="10.00" type="5F10" />
-            <Prize odds="8.00" type="4F6" />
-            <Prize odds="8.00" type="4F7" />
-            <Prize odds="5.00" type="2WR" />
-            <Prize odds="5.00" type="3M4" />
-            <Prize odds="5.00" type="3M5" />
-            <Prize odds="5.00" type="4F8" />
-            <Prize odds="5.00" type="4F9" />
-            <Prize odds="5.00" type="4F10" />
-            <Prize odds="3.00" type="3F8" />
-            <Prize odds="2.00" type="2M1" />
-            <Prize odds="2.00" type="3F6" />
-            <Prize odds="2.00" type="3F7" />
-            <Prize odds="2.00" type="3F9" />
-            <Prize odds="2.00" type="3F10" />
-            <Prize type="3BN" odds="2.00" />
-            <Prize type="2SN" odds="0.00" />
-            <Prize type="3DD" odds="0.00" />
-            <Prize type="2DD" odds="0.00" />
-            <Prize type="1DD" odds="0.00" />
+    $xml = '<DrawOdds payTableSet="1">
+            <Prize type="5W" odds="250.00" />
+            <Prize type="5H" odds="100.00" />
+            <Prize type="5F" odds="100.00" />
+            <Prize type="5L" odds="100.00" />
+            <Prize type="5G" odds="75.00" />
+            <Prize type="5N" odds="75.00" />
+            <Prize type="4W" odds="50.00" />
+            <Prize type="4G" odds="40.00" />
+            <Prize type="4N" odds="40.00" />
+            <Prize type="5A" odds="40.00" />
+            <Prize type="4H" odds="25.00" />
+            <Prize type="4F" odds="25.00" />
+            <Prize type="4L" odds="25.00" />
+            <Prize type="5K" odds="20.00" />
+            <Prize type="5Q" odds="20.00" />
+            <Prize type="5J" odds="20.00" />
+            <Prize type="5T" odds="20.00" />
+            <Prize type="3W" odds="15.00" />
+            <Prize type="3H" odds="10.00" />
+            <Prize type="3F" odds="10.00" />
+            <Prize type="3L" odds="10.00" />
+            <Prize type="4A" odds="10.00" />
+            <Prize type="4K" odds="10.00" />
+            <Prize type="4Q" odds="10.00" />
+            <Prize type="4J" odds="10.00" />
+            <Prize type="4T" odds="10.00" />
+            <Prize type="3G" odds="5.00" />
+            <Prize type="3N" odds="5.00" />
+            <Prize type="3A" odds="3.00" />
+            <Prize type="3K" odds="2.00" />
+            <Prize type="3Q" odds="2.00" />
+            <Prize type="3J" odds="2.00" />
+            <Prize type="3T" odds="2.00" />
+            <Prize type="3S" odds="0.00" />
             <BetOdds type="line" />
         </DrawOdds>';
     $obj = (array) simplexml_load_string($xml);
@@ -54,7 +48,7 @@
         $odds = $prize['@attributes']['odds'];
             
         $count = substr($type, 0, 1);
-        $symbol = substr($type, 1, 1);
+        $symbol = substr($type, 1);
         $str = 'array(\'symbol\'=> \''.$symbol.'\', \'count\'=> '.$count.', \'multiplier\'=> '.$odds.'),'.PHP_EOL;
         
         $f = true;
