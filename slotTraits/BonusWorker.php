@@ -109,8 +109,120 @@ trait BonusWorker {
             case 'wildReelIfSymbolPresent':
                 $this->setWildReelIfSymbolPresent($bonus['symbol']);
                 break;
+            case 'explodedWild':
+                $this->setExplodedWild($bonus);
+                break;
 
         }
+    }
+
+
+    // TODO: Описать нормально бонус
+    /**
+     * Бонус Pirate Attack в Treasure island.
+     *
+     * @param array $config
+     */
+    private function setExplodedWild($config) {
+        $this->bonusIterateCount = 0;
+
+        $e = $this->getSymbolAnyCount($config['explodedSymbol']);
+        $bonusData = array();
+
+
+        $tmp = explode(',', $config['nonChangedSymbol']);
+
+        $nonChanged = array();
+        foreach($tmp as $s) {
+            $info = $this->getSymbolAnyCount($s);
+            $nonChanged = array_merge($nonChanged, $info['offsets']);
+        }
+        $tmp = $nonChanged;
+        $nonChanged = array();
+        $nonChanged['offsets'] = $tmp;
+
+        $explodedSymbolReplaceId = $this->params->getSymbolID($config['explodedSymbolReplace'])[0];
+        $newWildSymbolId = $this->params->getSymbolID($config['newWildSymbol'])[0];
+
+        $missSymbolId = $this->params->getSymbolID($config['missSymbol'])[0];
+
+        $explodedOffsets = array();
+
+        $missOffsets = array();
+        $explodedCount = 0;
+        if($e['count'] >= $config['countToStart']) {
+            $cnt = $config['hitsCount'][$config['hitsChance'][rnd(0, count($config['hitsChance'])-1)]];
+            for($i = 0; $i < $cnt; $i++) {
+                if(($i < $e['count'] || (count($explodedOffsets) / $config['newWildsCount']) !== $cnt) && $explodedCount != $e['count']) {
+                    if(rnd(0, 100) <= $config['missChance']) {
+                        $m = $config['offsets'][rnd(0, count($config['offsets'])-1)];
+                        while(in_array($m, $explodedOffsets) || in_array($m, $e['offsets']) || in_array($m, $missOffsets)) {
+                            $m = $config['offsets'][rnd(0, count($config['offsets'])-1)];
+
+                            if(++$this->bonusIterateCount > 1000) {
+                                return;
+                            }
+                        }
+                        $missOffsets[] = $m;
+
+                        $bonusData[] = array(
+                            'changed' => false,
+                            'explodeOffset' => $m,
+                        );
+                    }
+                    else {
+                        $reelNumber = $e['offsets'][$explodedCount] % 5;
+                        $p = floor($e['offsets'][$explodedCount] / 5);
+                        $this->reels[$reelNumber]->setSymbolOnPosition($p, $explodedSymbolReplaceId);
+                        $newExplodedOffsets = array();
+                        while(count($newExplodedOffsets) !== $config['newWildsCount']) {
+                            $newOffset = $config['offsets'][rnd(0, count($config['offsets'])-1)];
+                            if(in_array($newOffset, $explodedOffsets) || in_array($newOffset, $nonChanged['offsets']) || in_array($newOffset, $e['offsets'])) {
+
+                            }
+                            else {
+                                $newExplodedOffsets[] = $newOffset;
+                                $explodedOffsets[] = $newOffset;
+                            }
+
+                            if(++$this->bonusIterateCount > 1000) {
+                                return;
+                            }
+                        }
+                        $bonusData[] = array(
+                            'changed' => true,
+                            'explodeOffset' => $e['offsets'][$explodedCount],
+                            'newOffsets' => $newExplodedOffsets,
+                        );
+                        $explodedCount++;
+                    }
+
+                }
+                else {
+                    $m = $config['offsets'][rnd(0, count($config['offsets'])-1)];
+                    while(in_array($m, $explodedOffsets) || in_array($m, $e['offsets']) || in_array($m, $missOffsets)) {
+                        $m = $config['offsets'][rnd(0, count($config['offsets'])-1)];
+
+                        if(++$this->bonusIterateCount > 1000) {
+                            return;
+                        }
+                    }
+                    $missOffsets[] = $m;
+                    $bonusData[] = array(
+                        'changed' => false,
+                        'explodeOffset' => $m,
+                    );
+                }
+            }
+
+            $this->setWildsOnPos($explodedOffsets, $newWildSymbolId);
+            $this->setWildsOnPos($missOffsets, $missSymbolId);
+        }
+
+        $this->bonusData['explode'] = $bonusData;
+        $this->bonusData['explodeOffsets'] = $explodedOffsets;
+        $this->bonusData['missOffsets'] = $missOffsets;
+
     }
 
     /**
