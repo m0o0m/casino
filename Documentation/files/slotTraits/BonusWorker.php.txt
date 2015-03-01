@@ -103,18 +103,73 @@ trait BonusWorker {
             case 'randomWildIfSymbolCount':
                 $this->setRandomWildIfSymbolCount($bonus['offsets'], $bonus['symbol'], $bonus['needleCount'], $bonus['wildConfig']);
                 break;
+            case 'multipleReel':
+                $this->setMultipleReel($bonus['wildConfig']);
+                break;
+            case 'wildReelIfSymbolPresent':
+                $this->setWildReelIfSymbolPresent($bonus['symbol']);
+                break;
 
         }
+    }
+
+    /**
+     * Устанавливает барабан в wild-reel, если на барабане присутствует символ
+     *
+     * @param int $symbol Числовой идентификатор символа
+     */
+    private function setWildReelIfSymbolPresent($symbol) {
+        $reelNumber = 0;
+        $bonusData = array();
+        foreach($this->reels as $r) {
+            $offsets = $r->checkSymbol(array($symbol), $reelNumber);
+            if(count($offsets) > 0) {
+                $r->setAsWild($symbol);
+                $bonusData[] = array(
+                    'reel' => $reelNumber,
+                    'offsets' => $offsets,
+                );
+            }
+
+            $reelNumber++;
+        }
+    }
+
+    /**
+     * Устанавливает множитель для всех выиграшей, если какие-то барабаны полностью заполнены вайлдом(или любым другим символом)
+     * в $wildConfig передаются барабаны множителей и ID вайлда\символа для проверки
+     *
+     * @param array $wildConfig
+     */
+    private function setMultipleReel($wildConfig) {
+        $bonusData = array();
+        $rCount = 0;
+        foreach($this->reels as $r) {
+            if($r->checkFullReelSymbol($wildConfig['wildSymbol'])) {
+                $stop = rnd(0, count($wildConfig['multipleReels'][$rCount])-1);
+                $multiple = $wildConfig['multipleReels'][$rCount][$stop];
+                $this->double *= $multiple;
+
+                $bonusData[] = array(
+                    'reel' => $rCount,
+                    'multiple' => $multiple,
+                    'stop' => $stop,
+                );
+            }
+            $rCount++;
+        }
+
+        $this->bonusData = $bonusData;
     }
 
 
     /**
      * Устанавливает вайлды(или любой символ) на переданные позиции в рандомном количестве\порядке, если на слоте выпало нужное количество выбранных символов
      *
-     * @param $offsets Возможные позиции вайлдов\новых символов
-     * @param $symbol Символ, по которому идет проверка
-     * @param $needleCount Количество символов, с которым начнется установка вайлдов\новых символов
-     * @param $wildConfig Описание количества вайлдов, шанса количества вайлда и символ вайлда
+     * @param array $offsets Возможные позиции вайлдов\новых символов
+     * @param string $symbol Символ, по которому идет проверка
+     * @param int $needleCount Количество символов, с которым начнется установка вайлдов\новых символов
+     * @param array $wildConfig Описание количества вайлдов, шанса количества вайлда и символ вайлда
      */
     private function setRandomWildIfSymbolCount($offsets, $symbol, $needleCount, $wildConfig) {
         $sReport = $this->getSymbolAnyCount($symbol);
@@ -180,11 +235,11 @@ trait BonusWorker {
     /**
      * Устанавливает барабаны в вайлд, в зависимости от количества выпавших символов и наличие символов для замены
      *
-     * @param $symbol Если выпал данный символ, то барабаны могут превратиться в wild
-     * @param $offsets Оффсет символов для замены на вайлд барабаны.
-     * @param $wildSymbol ID вайлда для установки в wild-барабан
-     * @param $symbolIfEmpty Если переданный offset пустой, то проверяет наличие оффсетов по данному символу
-     * @param $cancelIfLess Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)
+     * @param string $symbol Если выпал данный символ, то барабаны могут превратиться в wild
+     * @param array $offsets Оффсет символов для замены на вайлд барабаны.
+     * @param int $wildSymbol ID вайлда для установки в wild-барабан
+     * @param string $symbolIfEmpty Если переданный offset пустой, то проверяет наличие оффсетов по данному символу
+     * @param int $cancelIfLess Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)
      */
     private function setWildReelsIfSymbol($symbol, $offsets, $wildSymbol, $symbolIfEmpty, $cancelIfLess) {
         $info = $this->getSymbolAnyCount($symbol);
@@ -215,9 +270,9 @@ trait BonusWorker {
     /**
      * Устанавливает вайлды в рандомные переданные оффсеты на барабаны.
      *
-     * @param $positions Допустимые позиции для вайлдов
-     * @param $wildSymbol Чистолой идентификатор вайлда
-     * @param $wildsCount Количество вайдов
+     * @param array $positions Допустимые позиции для вайлдов
+     * @param int $wildSymbol Чистолой идентификатор вайлда
+     * @param int $wildsCount Количество вайдов
      */
     private function setRandomWildsOnPos($positions, $wildSymbol, $wildsCount) {
         shuffle($positions);
@@ -231,9 +286,9 @@ trait BonusWorker {
     /**
      * Устанавливает барабаны в wild-reels в зависимости от количества выпавших символов
      *
-     * @param $symbol Символ, по которому будет подсчитываться количество wild-барабанов
-     * @param $reels Номера барабанов, которые могут стать wild
-     * @param $wildSymbol ID вайлда, который будет установлен на wild-барабаны
+     * @param string $symbol Символ, по которому будет подсчитываться количество wild-барабанов
+     * @param array $reels Номера барабанов, которые могут стать wild
+     * @param int $wildSymbol ID вайлда, который будет установлен на wild-барабаны
      */
     private function setWildReelsOfSymbol($symbol, $reels, $wildSymbol) {
         $info = $this->getSymbolAnyCount($symbol);
@@ -448,9 +503,9 @@ trait BonusWorker {
     /**
      * Бонус ворон одина
      *
-     * @param $positions
-     * @param $x3Chance
-     * @param $x6Chance
+     * @param array $positions
+     * @param int $x3Chance
+     * @param int $x6Chance
      */
 
     private function odinRavens($positions, $x3Chance, $x6Chance) {
@@ -492,7 +547,7 @@ trait BonusWorker {
     /**
      * Устанавливает оффсеты для барабанов и обновляет символы
      *
-     * @param $offsets
+     * @param array $offsets
      */
     public function setReelsOffsets($offsets) {
         for($i = 0; $i < count($offsets); $i++) {

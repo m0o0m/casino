@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1647151042"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2018850534"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1647151042" class="accordion-body collapse in">
+            <div id="namespace-2018850534" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -798,14 +798,14 @@
             <article class="method">
                 <h3 class="protected ">startDevice()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startDevice(  <span class="argument">$request</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">startDevice(array  <span class="argument">$request</span>) </pre>
                 <p><em>Ответ на запрос на девайсы</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$request </td>
                                 <td></td>
                             </tr>
@@ -832,7 +832,7 @@
             <article class="method">
                 <h3 class="protected ">startBalance()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startBalance(  <span class="argument">$request</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">startBalance(array  <span class="argument">$request</span>) </pre>
                 <p><em>Баланс после СПИНА и БОНУСОВ</em></p>
                 <p>Когда флешка вызывает этот метод, то это значит, что спин или любой бонус закончился
 и нужно подчистить все переменные в сессии, которые использовались бонусами.
@@ -841,7 +841,7 @@
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$request </td>
                                 <td></td>
                             </tr>
@@ -894,14 +894,14 @@
             <article class="method">
                 <h3 class="protected ">startStakeConfig()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">startStakeConfig(  <span class="argument">$request</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">startStakeConfig(array  <span class="argument">$request</span>) </pre>
                 <p><em>Баланс + данные о ставках после СПИНА</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$request </td>
                                 <td></td>
                             </tr>
@@ -1037,21 +1037,21 @@
             <article class="method">
                 <h3 class="protected ">deleteWinLinesOption()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">deleteWinLinesOption(  <span class="argument">$str</span>,   <span class="argument">$option</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">deleteWinLinesOption(string  <span class="argument">$str</span>, string  <span class="argument">$option</span>) : string</pre>
                 <p><em>Удаляет указанное значение из строки выигрышных комбинаций</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$str </td>
-                                <td></td>
+                                <td><p>Полная строка</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$option </td>
-                                <td></td>
+                                <td><p>Параметр, который нужно удалить</p></td>
                             </tr>
                                             </table>
                 
@@ -1078,24 +1078,24 @@
             <article class="method">
                 <h3 class="protected ">updateStringOption()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">updateStringOption(  <span class="argument">$str</span>,   <span class="argument">$option</span>,   <span class="argument">$newValue</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">updateStringOption(string  <span class="argument">$str</span>, string  <span class="argument">$option</span>, mixed  <span class="argument">$newValue</span>) : string</pre>
                 <p><em>Устанавливает новое значение параметру в XML строке</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$str </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$option </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>mixed</td>
                                 <td>$newValue </td>
                                 <td></td>
                             </tr>
@@ -1201,19 +1201,19 @@
             <article class="method">
                 <h3 class="protected ">setSessionIfEmpty()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setSessionIfEmpty(  <span class="argument">$param</span>,   <span class="argument">$value</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setSessionIfEmpty(string  <span class="argument">$param</span>, mixed  <span class="argument">$value</span>) </pre>
                 <p><em>Устанавливает дефолтное значение переменной, если она пуста</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$param </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>mixed</td>
                                 <td>$value </td>
                                 <td></td>
                             </tr>
@@ -1283,7 +1283,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 28th, 2015 at 21:39.
+                    on March 1st, 2015 at 02:25.
                 </section>
             </section>
         </section>

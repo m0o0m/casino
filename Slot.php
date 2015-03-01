@@ -157,6 +157,23 @@ class Slot {
     }
 
     /**
+     * Установка новых параметров игры
+     *
+     * @param Params $params
+     */
+    public function setParams(Params $params) {
+        $this->params = $params;
+
+        $this->lines = $this->getWinLines($params->winLines, $this->linesCount);
+        $this->wins = $params->winPay;
+        $this->winSymbols = $this->getWinSymbols();
+        $this->symbols = $params->symbols;
+        $this->wild = $params->wild;
+        $this->scatter = $params->scatter;
+        $this->drawID = -1;
+    }
+
+    /**
      * Получаем список линий, в зависимости от выигрышных линий
      *
      * @param array $lines Все выигрышные линии слота
@@ -335,7 +352,7 @@ class Slot {
                             }
                         }
                         if ($f) {
-                            $this->winLines[] = array(
+                            $addArray = array(
                                 'line' => $w['line'],
                                 'multiple' => $multiplier * $w['double'],
                                 'symbol' => $v,
@@ -346,21 +363,31 @@ class Slot {
                                 'withWild' => $w['withWild'],
                                 'addMultiplier' => $addMultiplier,
                             );
+                            if(!empty($w['collecting'])) {
+                                $addArray['collecting'] = $w['collecting'];
+                            }
+                            $this->winLines[] = $addArray;
                         }
                     }
                     else {
                         $this->totalMultiple += $multiplier * $w['double'];
-                        $this->winLines[] = array(
+                        $addArray = array(
                             'line' => $w['line'],
                             'multiple' => $multiplier * $w['double'],
                             'symbol' => $v,
                             'alias' => $alias,
                             'count' => $w['count'],
                             'id' => $w['id'] + 1,
+                            'collecting' => $w['collecting'],
                             'double' => $w['double'],
                             'withWild' => $w['withWild'],
                             'addMultiplier' => $addMultiplier,
                         );
+                        if(!empty($w['collecting'])) {
+                            $addArray['collecting'] = $w['collecting'];
+                        }
+                        $this->winLines[] = $addArray;
+
                     }
                 }
             }
@@ -414,6 +441,7 @@ class Slot {
             $double = 1;
             $withWild = false;
             $lineSymbolCount = 0;
+            $collecting = false;
             foreach($lineSymbol as $s) {
                 $symbolPosition = $line[$lineSymbolCount];
                 if(in_array($s, $symbol) && $f) {
@@ -428,7 +456,18 @@ class Slot {
                         }
                     }
                 }
-                else $f = false;
+                elseif($this->params->collectingPay && !in_array($s, $symbol) && $f && $lineSymbolCount > 0) {
+                    if(in_array($s, $this->params->collectingSymbols) && in_array($symbol[0], $this->params->collectingSymbols)) {
+                        $collecting = true;
+                        $cnt++;
+                    }
+                    else {
+                        $f = false;
+                    }
+                }
+                else {
+                    $f = false;
+                }
                 $lineSymbolCount++;
             }
             if($cnt >= $this->params->minWinCount) {
@@ -438,8 +477,10 @@ class Slot {
                     'id' => $lineId,
                     'double' => $this->double * $double,
                     'withWild' => $withWild,
+                    'collecting' => $collecting,
                 );
             }
+
 
             $lineId++;
         }
@@ -452,7 +493,6 @@ class Slot {
      * Возвращает массив, содержащий описание линий, на которых символов >= minWinCount
      *
      * @param array $symbol Массив числовых идентификаторов символа
-     * @param string $alias Буквенный идентификатор символа
      * @return array
      */
     private function get243($symbol) {
@@ -655,7 +695,7 @@ class Slot {
     /**
      * Получаем Offset символов барабана по его номеру
      *
-     * @param $reelNumber
+     * @param int $reelNumber
      * @return array
      */
     public function getReelOffset($reelNumber) {

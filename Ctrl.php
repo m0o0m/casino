@@ -205,7 +205,7 @@ class Ctrl {
     /**
      * Ответ на запрос на девайсы
      *
-     * @param $request
+     * @param array $request
      */
     protected function startDevice($request) {
         $stake = $this->gameParams->betConfig;
@@ -220,7 +220,7 @@ class Ctrl {
      * и нужно подчистить все переменные в сессии, которые использовались бонусами.
      * Это нужно, в основном, для безопасной перезагрузки флешки с дальнейшим восстановлением
      *
-     * @param $request
+     * @param array $request
      */
     protected function startBalance($request) {
         $this->clearSession();
@@ -244,7 +244,7 @@ class Ctrl {
     /**
      * Баланс + данные о ставках после СПИНА
      *
-     * @param $request
+     * @param array $request
      */
     protected function startStakeConfig($request) {
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><CustomerFunBalanceResponse balance="'.$this->getBalance().'"/><EEGOpenGameResponse gameId="'.$this->gameID.'"><DrawState drawId="0"/></EEGOpenGameResponse>'.$this->getStakeParams().'</CompositeResponse>';
@@ -305,6 +305,8 @@ class Ctrl {
             'drawWin' => $report['totalWin'],
             'display' => 'rows',
             'winLineMultiple' => 1,
+            'collecting' => false,
+            'collectingSymbol' => '',
         );
         $params = $this->extendArray($params, $override);
 
@@ -322,7 +324,11 @@ class Ctrl {
                 if($winLine['withWild']) $star = '*';
                 $offset = $this->slot->getOffsetsByLine($winLine['line'], $winLine['count']);
                 $payout = $report['betOnLine']*$winLine['multiple']*$params['winLineMultiple'];
-                $xml .= '<WinLine line="'.$winLine['id'].'" offsets="'.implode(',', $offset).'" prize="'.$winLine['count'].$winLine['alias'].$star.'" length="'.$winLine['count'].'" payout="'.$payout.'" />';
+                $alias = $winLine['alias'];
+                if($params['collecting'] && !empty($winLine['collecting'])) {
+                    $alias = $params['collectingSymbol'];
+                }
+                $xml .= '<WinLine line="'.$winLine['id'].'" offsets="'.implode(',', $offset).'" prize="'.$winLine['count'].$alias.$star.'" length="'.$winLine['count'].'" payout="'.$payout.'" />';
             }
             $xml .= $params['bonus'];
             $xml .= '</WinLines>';
@@ -334,8 +340,8 @@ class Ctrl {
     /**
      * Удаляет указанное значение из строки выигрышных комбинаций
      *
-     * @param $str
-     * @param $option
+     * @param string $str Полная строка
+     * @param string $option Параметр, который нужно удалить
      * @return string
      */
     protected function deleteWinLinesOption($str, $option) {
@@ -355,9 +361,9 @@ class Ctrl {
     /**
      * Устанавливает новое значение параметру в XML строке
      *
-     * @param $str
-     * @param $option
-     * @param $newValue
+     * @param string $str
+     * @param string $option
+     * @param mixed $newValue
      * @return string
      */
 
@@ -403,8 +409,8 @@ class Ctrl {
     /**
      * Устанавливает дефолтное значение переменной, если она пуста
      *
-     * @param $param
-     * @param $value
+     * @param string $param
+     * @param mixed $value
      */
     protected function setSessionIfEmpty($param, $value) {
         if(empty($_SESSION[$param])) {

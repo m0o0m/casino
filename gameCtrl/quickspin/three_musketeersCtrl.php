@@ -69,6 +69,9 @@ class three_musketeersCtrl extends Ctrl {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
+            case 'FS':
+                $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
+                break;
         }
 
         $_SESSION['lastBet'] = $stake;
@@ -80,18 +83,38 @@ class three_musketeersCtrl extends Ctrl {
     protected function getSpinData() {
         $this->slot->drawID = -1;
         $respin = false;
-
-
-        $report = $this->slot->spin();
-
         $bonusWin = 0;
+
+        $bonus = array(
+            'type' => 'multipleReel',
+            'wildConfig' => $this->gameParams->wildMultipleConfig,
+        );
+
+        if($this->gameParams->testBonusEnable) {
+            $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
+            switch($g) {
+                case 'fs':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(26,6,10,13,37),
+                    );
+                    break;
+            }
+        }
+
+
+        $report = $this->slot->spin($bonus);
 
         $report['type'] = 'SPIN';
 
         $report['scattersReport'] = $this->slot->getScattersCount();
 
-        if($report['scattersReport']['count'] > 2) {
-            $respin = true;
+        if($report['scattersReport']['count'] == 3) {
+            $report['scattersReport']['totalWin'] = $report['bet'] * 3;
+            $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $this->getFreeSpinBonus($report);
+            $bonusWin = $this->bonus['bonusWin'];
+            $report['type'] = 'FS';
         }
 
 
@@ -108,6 +131,16 @@ class three_musketeersCtrl extends Ctrl {
 
     protected function showSpinReport($report, $totalWin) {
         $bonus = '';
+
+        $mMultiple = array();
+        $mIndex = array();
+        foreach($report['bonusData'] as $m) {
+            $mMultiple[] = $m['multiple'];
+            $mIndex[] = $m['stop'];
+        }
+        if(count($mMultiple) > 0) {
+            $bonus .= '<WildReelMultiplier Multiplier="'.implode(',', $mMultiple).'" Index="'.implode(',', $mIndex).'" />';
+        }
 
         $winLines = $this->getWinLinesData($report, array(
             'bonus' => $bonus,
@@ -128,6 +161,99 @@ class three_musketeersCtrl extends Ctrl {
                 </DrawState>
             </EEGLoadResultsResponse>
         </CompositeResponse>';
+
+        $this->outXML($xml);
+    }
+
+    protected function getFreeSpinBonus($report) {
+        $this->bonus['totalWin'] = $report['totalWin'];
+        $this->bonus['bonusWin'] = 0;
+
+        $this->gameParams->collectingPay = true;
+        $this->gameParams->collectingSymbols = array(0,1,2);
+
+        $this->slot->setParams($this->gameParams);
+        $this->slot->setReels($this->gameParams->reels[1]);
+        $this->slot->drawID = 0;
+
+        $spins = 10;
+
+        $draws = '';
+        while($spins > 0) {
+            $bonus = '';
+            $fsReport = $this->slot->spin(array(
+                array(
+                    'type' => 'wildReelIfSymbolPresent',
+                    'symbol' => 11,
+                ),
+                array(
+                    'type' => 'multipleReel',
+                    'wildConfig' => $this->gameParams->wildMultipleConfig,
+                )
+            ));
+
+            $this->bonus['totalWin'] += $fsReport['totalWin'];
+            $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $addString = ' rsName="FreeSpins" display2="'.$this->gameParams->getDisplay($fsReport['rows']).'"';
+
+            $mMultiple = array();
+            $mIndex = array();
+            foreach($fsReport['bonusData'] as $m) {
+                $mMultiple[] = $m['multiple'];
+                $mIndex[] = $m['stop'];
+            }
+            if(count($mMultiple) > 0) {
+                $bonus .= '<WildReelMultiplier Multiplier="'.implode(',', $mMultiple).'" Index="'.implode(',', $mIndex).'" />';
+            }
+
+            $winLines = $this->getWinLinesData($fsReport, array(
+                'bonus' => $bonus,
+                'runningTotal' => $this->bonus['totalWin'],
+                'display' => 'startRows',
+                'addString' => $addString,
+                'reelset' => 1,
+                'spins' => 10,
+                'currentSpins' => 10,
+                'collecting' => true,
+                'collectingSymbol' => 'AM',
+            ));
+
+            $draw = '<DrawState drawId="'.$this->slot->drawID.'">'.$winLines.'<ReplayInfo foItems="'.$fsReport['stops'].'" /></DrawState>';
+
+            $draws .= $draw;
+
+            $spins--;
+        }
+
+        $this->bonus['drawStates'] = $draws;
+    }
+
+    protected function showFreeSpinReport($report, $totalWin) {
+        $bonus = '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" spins="10" prize="3BN" length="3" payout="'.$report['scattersReport']['totalWin'].'" />';
+
+        $winLines = $this->getWinLinesData($report, array(
+            'bonus' => $bonus,
+            'runningTotal' => $report['totalWin'],
+            'spins' => 10,
+            'currentSpins' => 10,
+        ));
+
+        $balanceWithoutBet = $this->getBalance() - $report['bet'];
+
+        $drawStates = '<DrawState drawId="0" state="settling">' . $winLines . '
+                    <ReplayInfo foItems="' . $report['stops'] . '"/>
+                    <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="true"/>
+                </DrawState>'.$this->bonus['drawStates'];
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>
+        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+            <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '" freeGames="0" />
+            <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
+        </CompositeResponse>';
+
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
+        $_SESSION['bonusWIN'] = $totalWin;
 
         $this->outXML($xml);
     }

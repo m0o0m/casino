@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Sinbad</title>
+    <title>Three Musketeers</title>
     <style>
         * {
             margin:0;

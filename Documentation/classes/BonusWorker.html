@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1979756796"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1504024925"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1979756796" class="accordion-body collapse in">
+            <div id="namespace-1504024925" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -215,6 +215,8 @@
                             <section class="span4">
                                                                     <a href="../classes/BonusWorker.html#method_checkBonus" class="">checkBonus()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_executeBonus" class="">executeBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelIfSymbolPresent" class="">setWildReelIfSymbolPresent()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setMultipleReel" class="">setMultipleReel()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setRandomWildIfSymbolCount" class="">setRandomWildIfSymbolCount()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setSymbolOnPosition" class="">setSymbolOnPosition()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setReplace" class="">setReplace()</a><br />
@@ -322,14 +324,14 @@
             <article class="method">
                 <h3 class="public ">setReelsOffsets()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setReelsOffsets(  <span class="argument">$offsets</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setReelsOffsets(array  <span class="argument">$offsets</span>) </pre>
                 <p><em>Устанавливает оффсеты для барабанов и обновляет символы</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$offsets </td>
                                 <td></td>
                             </tr>
@@ -522,33 +524,106 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_setWildReelIfSymbolPresent" name="method_setWildReelIfSymbolPresent" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelIfSymbolPresent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelIfSymbolPresent(integer  <span class="argument">$symbol</span>) </pre>
+                <p><em>Устанавливает барабан в wild-reel, если на барабане присутствует символ</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td><p>Числовой идентификатор символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMultipleReel" name="method_setMultipleReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setMultipleReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMultipleReel(array  <span class="argument">$wildConfig</span>) </pre>
+                <p><em>Устанавливает множитель для всех выиграшей, если какие-то барабаны полностью заполнены вайлдом(или любым другим символом)
+в $wildConfig передаются барабаны множителей и ID вайлда\символа для проверки</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wildConfig </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href="../files/slotTraits.BonusWorker.html"><div class="path-wrapper">slotTraits/BonusWorker.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_setRandomWildIfSymbolCount" name="method_setRandomWildIfSymbolCount" class="anchor"></a>
             <article class="method">
                 <h3 class="private ">setRandomWildIfSymbolCount()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setRandomWildIfSymbolCount(  <span class="argument">$offsets</span>,   <span class="argument">$symbol</span>,   <span class="argument">$needleCount</span>,   <span class="argument">$wildConfig</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildIfSymbolCount(array  <span class="argument">$offsets</span>, string  <span class="argument">$symbol</span>, integer  <span class="argument">$needleCount</span>, array  <span class="argument">$wildConfig</span>) </pre>
                 <p><em>Устанавливает вайлды(или любой символ) на переданные позиции в рандомном количестве\порядке, если на слоте выпало нужное количество выбранных символов</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$offsets </td>
                                 <td><p>Возможные позиции вайлдов\новых символов</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$symbol </td>
                                 <td><p>Символ, по которому идет проверка</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$needleCount </td>
                                 <td><p>Количество символов, с которым начнется установка вайлдов\новых символов</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$wildConfig </td>
                                 <td><p>Описание количества вайлдов, шанса количества вайлда и символ вайлда</p></td>
                             </tr>
@@ -695,34 +770,34 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="private ">setWildReelsIfSymbol()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setWildReelsIfSymbol(  <span class="argument">$symbol</span>,   <span class="argument">$offsets</span>,   <span class="argument">$wildSymbol</span>,   <span class="argument">$symbolIfEmpty</span>,   <span class="argument">$cancelIfLess</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsIfSymbol(string  <span class="argument">$symbol</span>, array  <span class="argument">$offsets</span>, integer  <span class="argument">$wildSymbol</span>, string  <span class="argument">$symbolIfEmpty</span>, integer  <span class="argument">$cancelIfLess</span>) </pre>
                 <p><em>Устанавливает барабаны в вайлд, в зависимости от количества выпавших символов и наличие символов для замены</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$symbol </td>
                                 <td><p>Если выпал данный символ, то барабаны могут превратиться в wild</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$offsets </td>
                                 <td><p>Оффсет символов для замены на вайлд барабаны.</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$wildSymbol </td>
                                 <td><p>ID вайлда для установки в wild-барабан</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$symbolIfEmpty </td>
                                 <td><p>Если переданный offset пустой, то проверяет наличие оффсетов по данному символу</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$cancelIfLess </td>
                                 <td><p>Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)</p></td>
                             </tr>
@@ -751,24 +826,24 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="private ">setRandomWildsOnPos()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setRandomWildsOnPos(  <span class="argument">$positions</span>,   <span class="argument">$wildSymbol</span>,   <span class="argument">$wildsCount</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildsOnPos(array  <span class="argument">$positions</span>, integer  <span class="argument">$wildSymbol</span>, integer  <span class="argument">$wildsCount</span>) </pre>
                 <p><em>Устанавливает вайлды в рандомные переданные оффсеты на барабаны.</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$positions </td>
                                 <td><p>Допустимые позиции для вайлдов</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$wildSymbol </td>
                                 <td><p>Чистолой идентификатор вайлда</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$wildsCount </td>
                                 <td><p>Количество вайдов</p></td>
                             </tr>
@@ -797,24 +872,24 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="private ">setWildReelsOfSymbol()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setWildReelsOfSymbol(  <span class="argument">$symbol</span>,   <span class="argument">$reels</span>,   <span class="argument">$wildSymbol</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsOfSymbol(string  <span class="argument">$symbol</span>, array  <span class="argument">$reels</span>, integer  <span class="argument">$wildSymbol</span>) </pre>
                 <p><em>Устанавливает барабаны в wild-reels в зависимости от количества выпавших символов</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$symbol </td>
                                 <td><p>Символ, по которому будет подсчитываться количество wild-барабанов</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$reels </td>
                                 <td><p>Номера барабанов, которые могут стать wild</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$wildSymbol </td>
                                 <td><p>ID вайлда, который будет установлен на wild-барабаны</p></td>
                             </tr>
@@ -1197,24 +1272,24 @@ primaryLine - ID последней выигрышной линии.</p>
             <article class="method">
                 <h3 class="private ">odinRavens()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">odinRavens(  <span class="argument">$positions</span>,   <span class="argument">$x3Chance</span>,   <span class="argument">$x6Chance</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">odinRavens(array  <span class="argument">$positions</span>, integer  <span class="argument">$x3Chance</span>, integer  <span class="argument">$x6Chance</span>) </pre>
                 <p><em>Бонус ворон одина</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$positions </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$x3Chance </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$x6Chance </td>
                                 <td></td>
                             </tr>
@@ -1286,7 +1361,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 28th, 2015 at 21:39.
+                    on March 1st, 2015 at 02:25.
                 </section>
             </section>
         </section>

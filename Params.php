@@ -34,6 +34,13 @@ class Params {
     public $winLineType = 'left';
 
     /**
+     * Использовать при подсчете выигрышных линий группированные символы
+     *
+     * @var bool
+     */
+    public $collectingPay = false;
+
+    /**
      * Создание параметров игры и установка текущего ID игры
      *
      * @param int $gameID Номер игры

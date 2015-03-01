@@ -39,7 +39,7 @@ class Reel {
     /**
      * Устанавливаем символы барабана согласно переданной раскладке
      *
-     * @param $symbols Раскладка
+     * @param array $symbols раскладка символов
      * @param int $visibleCount Количество видимых символов
      */
     public function __construct($symbols, $visibleCount = 3) {
@@ -71,8 +71,8 @@ class Reel {
     /**
      * Заменяет символ на другой
      *
-     * @param $old
-     * @param $new
+     * @param int $old
+     * @param int $new
      */
     public function replaceSymbols($old, $new) {
         foreach($this->newSymbols as &$s) {
@@ -84,9 +84,26 @@ class Reel {
     }
 
     /**
+     * Проверка на заполнения видимых символов барабана ОДНИМ символом
+     *
+     * @param int $symbol Числовой идентификатор символа
+     * @return bool
+     */
+    public function checkFullReelSymbol($symbol) {
+        $unique = array_unique($this->getVisibleSymbols());
+
+        if(count($unique) == 1 && $unique[0] == $symbol) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
      * Функция подобна spin(), но смещение барабана мы задаем вручную
      *
-     * @param $offset
+     * @param int $offset На сколько сдвинуть баранан
      * @return $this
      */
     public function setOffset($offset) {

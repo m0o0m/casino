@@ -61,8 +61,8 @@ trait SymbolsWorker {
      * Проверка положения символа на определенной позиции барабана
      *
      * @param string $symbol Буквенный идентификатор символа
-     * @param $reelNumber Номер барабана ( начинается с 0)
-     * @param $position Позиция на отображаемых символах барабана (начинается с 0)
+     * @param int $reelNumber Номер барабана ( начинается с 0)
+     * @param int $position Позиция на отображаемых символах барабана (начинается с 0)
      * @return bool
      */
     public function chechSymbolOnReel($symbol, $reelNumber, $position) {

@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1452017939"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1716551448"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1452017939" class="accordion-body collapse in">
+            <div id="namespace-1716551448" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -191,6 +191,7 @@
                                                                     <a href="../classes/Reel.html#method___construct" class="">__construct()</a><br />
                                                                     <a href="../classes/Reel.html#method_spin" class="">spin()</a><br />
                                                                     <a href="../classes/Reel.html#method_replaceSymbols" class="">replaceSymbols()</a><br />
+                                                                    <a href="../classes/Reel.html#method_checkFullReelSymbol" class="">checkFullReelSymbol()</a><br />
                                                                     <a href="../classes/Reel.html#method_setOffset" class="">setOffset()</a><br />
                                                                     <a href="../classes/Reel.html#method_getVisibleSymbols" class="">getVisibleSymbols()</a><br />
                                                                     <a href="../classes/Reel.html#method_getVisibleSymbol" class="">getVisibleSymbol()</a><br />
@@ -404,16 +405,16 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$symbols</span>, integer  <span class="argument">$visibleCount = 3</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$symbols</span>, integer  <span class="argument">$visibleCount = 3</span>) </pre>
                 <p><em>Устанавливаем символы барабана согласно переданной раскладке</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$symbols </td>
-                                <td><p>Раскладка</p></td>
+                                <td><p>раскладка символов</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
@@ -473,19 +474,19 @@
             <article class="method">
                 <h3 class="public ">replaceSymbols()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">replaceSymbols(  <span class="argument">$old</span>,   <span class="argument">$new</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">replaceSymbols(integer  <span class="argument">$old</span>, integer  <span class="argument">$new</span>) </pre>
                 <p><em>Заменяет символ на другой</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$old </td>
                                 <td></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$new </td>
                                 <td></td>
                             </tr>
@@ -508,20 +509,56 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_checkFullReelSymbol" name="method_checkFullReelSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">checkFullReelSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkFullReelSymbol(integer  <span class="argument">$symbol</span>) : boolean</pre>
+                <p><em>Проверка на заполнения видимых символов барабана ОДНИМ символом</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td><p>Числовой идентификатор символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_setOffset" name="method_setOffset" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">setOffset()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setOffset(  <span class="argument">$offset</span>) : $this</pre>
+                <pre class="signature" style="margin-right: 54px;">setOffset(integer  <span class="argument">$offset</span>) : $this</pre>
                 <p><em>Функция подобна spin(), но смещение барабана мы задаем вручную</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$offset </td>
-                                <td></td>
+                                <td><p>На сколько сдвинуть баранан</p></td>
                             </tr>
                                             </table>
                 
@@ -929,7 +966,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 28th, 2015 at 21:39.
+                    on March 1st, 2015 at 02:25.
                 </section>
             </section>
         </section>
