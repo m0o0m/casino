@@ -267,6 +267,7 @@ class goldilocksCtrl extends Ctrl {
                 'currentSpins' => '{{currentSpins}}',
                 'lastSpins' => $totalSpins,
                 'bonus' => $bonus,
+                'winLineMultiple' => $fsReport['wildMultiple']['count'] + 1,
             ));
 
             $draw = '<DrawState drawId="'.$currentDraw.'">'.$winLines.'<ReplayInfo foItems="'.$fsReport['stops'].'" /></DrawState>';
