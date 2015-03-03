@@ -148,22 +148,48 @@ class sugar_trailCtrl extends Ctrl {
     protected function getSpinData() {
         $respin = false;
         $bonusCount = 0;
-        $report = $this->slot->spin();
+        $bonus = array();
+        if($this->gameParams->testBonusEnable) {
+            $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
+            switch($g) {
+                case 'candy':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(9,32,12,3,0),
+                    );
+                    break;
+                case 'lock':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(0,6,37,6,0),
+                    );
+                    break;
+                case 'cash':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(0,5,2,22,12),
+                    );
+                    break;
+            }
+        }
+
+
+        $report = $this->slot->spin($bonus);
 
         $report['type'] = 'SPIN';
 
         $bonusWin = 0;
 
-        $m = $this->slot->getSymbolAnyCount('F');
-        if($m['count'] > 2) {
+        $f = $this->slot->getSymbolAnyCount('F');
+        if($f['count'] > 2) {
             $bonusCount++;
             $report['type'] = 'CANDY';
             $this->getCandyBonusData($report);
             $bonusWin = $this->bonus['bonusWin'];
         }
 
-        $m = $this->slot->getSymbolAnyCount('R');
-        if($m['count'] > 2) {
+        $r = $this->slot->getSymbolAnyCount('R');
+        if($r['count'] > 2) {
             $bonusCount++;
             $report['type'] = 'LOCK';
             $this->getLockBonusData($report);
@@ -218,7 +244,9 @@ class sugar_trailCtrl extends Ctrl {
     }
 
     protected function showLockReport($report, $totalWin) {
-        $bonus = '<BonusRespins credits="'.$this->bonus['credits'].'" respins="'.$this->bonus['respins'].'" wilds="'.$this->bonus['wilds'].'" />';
+        $report['totalWin'] += $this->bonus['preBonusWin'];
+        $bonus = '<Bonus offsets="" prize="RespinFeatureCreditsPayout" length="0" payout="'.$this->bonus['preBonusWin'].'" />
+        <BonusRespins credits="'.$this->bonus['credits'].'" respins="'.$this->bonus['respins'].'" wilds="'.$this->bonus['wilds'].'" />';
 
         $addString = ' preReelStops="'.implode(',', $this->bonus['stops']).'" preReelDisplay="'.$this->bonus['display'].'"';
 
@@ -290,6 +318,7 @@ class sugar_trailCtrl extends Ctrl {
     }
 
     public function showCandyReport($report, $totalWin) {
+        $report['totalWin'] += $this->bonus['preBonusWin'];
         $bonus = '<Bonus offsets="" prize="FreeSpinFeatureCreditsPayout" length="0" payout="'.$this->bonus['preBonusWin'].'" />
                 <BonusFreeSpins credits="'.$this->bonus['credits'].'" freeSpins="'.$this->bonus['spins'].'" wilds="'.$this->bonus['wilds'].'" />';
 
@@ -364,6 +393,9 @@ class sugar_trailCtrl extends Ctrl {
         $this->bonus['preBonusWin'] = $report['betOnLine'] * $multiple;
         $this->bonus['stops'] = $stops;
         $this->bonus['display'] = implode(',', $display);
+
+        $this->bonus['bonusWin'] += $this->bonus['preBonusWin'];
+        $this->bonus['totalWin'] += $this->bonus['preBonusWin'];
 
         $this->bonus['credits'] = $multiple;
         $this->bonus['respins'] = $respins;
