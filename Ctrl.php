@@ -62,6 +62,7 @@ class Ctrl {
         $this->gameParams = $params;
 
         $this->processRequest($this->request);
+
     }
 
     /**
