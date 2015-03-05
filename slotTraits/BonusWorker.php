@@ -112,8 +112,16 @@ trait BonusWorker {
             case 'explodedWild':
                 $this->setExplodedWild($bonus);
                 break;
+            case 'multipleBySymbolCount':
+                $this->setMultipleBySymbolCount($bonus['symbol'], $bonus['multipleInc']);
+                break;
 
         }
+    }
+
+    private function setMultipleBySymbolCount($symbol, $multipleInc) {
+        $info = $this->getSymbolAnyCount($symbol);
+        $this->double = $info['count'] + $multipleInc;
     }
 
 

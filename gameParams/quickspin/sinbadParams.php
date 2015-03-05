@@ -62,10 +62,10 @@ class sinbadParams extends Params {
         'M2' => array(5),
         // Бородач
         'M3' => array(6),
-        // Пират
-        'M5' => array(7),
         // нектомант?
-        'M4' => array(8),
+        'M4' => array(7),
+        // Пират
+        'M5' => array(8),
         // Серый камень
         'F6' => array(9),
         // Розовый камень

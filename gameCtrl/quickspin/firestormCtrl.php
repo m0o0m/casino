@@ -86,9 +86,16 @@ class firestormCtrl extends Ctrl {
         $bonusWin = 0;
 
         $report = $this->slot->spin(array(
-            'type' => 'randomReplace',
-            'symbols' => array(12,13,14),
-            'replacement' => array(1,2,3,4,5,6,7,8,9,10),
+            array(
+                'type' => 'randomReplace',
+                'symbols' => array(12,13,14),
+                'replacement' => array(1,2,3,4,5,6,7,8,9,10),
+            ),
+            array(
+                'type' => 'multipleBySymbolCount',
+                'symbol' => 'S',
+                'multipleInc' => -1,
+            ),
         ));
 
         $report['type'] = 'SPIN';
@@ -98,14 +105,27 @@ class firestormCtrl extends Ctrl {
             $report['type'] = 'LOCKED';
 
             $randomLockedArray = array('R1', 'R2', 'R3');
-            $randomLocked = $randomLockedArray[rnd(0, count($randomLockedArray)-1)];
+            $rnd = rnd(0, count($randomLockedArray)-1);
+            $randomLocked = $randomLockedArray[$rnd];
             $randomLockedSymbol = $report['bonusData']['replaced'][$randomLocked];
             $report['randomLockedSymbol'] = $randomLockedSymbol;
+            $report['randomLockedReplacement'] = $randomLockedArray[$rnd];
             $report['wildReport'] = $this->slot->getSymbolAnyCount('W');
             $report['randomReport'] = $this->slot->getSymbolAnyCount($randomLockedSymbol);
 
             $this->getLockedData($report);
             $bonusWin = $this->bonus['bonusWin'];
+        }
+
+        if($this->gameParams->testBonusEnable) {
+            $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
+            switch($g) {
+                case 'lock':
+                    if($report['scattersReport']['count'] < 2) {
+                        $respin = true;
+                    }
+                    break;
+            }
         }
 
         $totalWin = $report['totalWin'] + $bonusWin;
@@ -216,10 +236,6 @@ class firestormCtrl extends Ctrl {
                     'relation' => $report['bonusData']['replaced'],
                 ),
                 array(
-                    'type' => 'multiple',
-                    'range' => array($multiple, $multiple),
-                ),
-                array(
                     'type' => 'symbolOnPosition',
                     'offsets' => $scattersInfo['offsets'],
                     'symbol' => 'S',
@@ -233,6 +249,11 @@ class firestormCtrl extends Ctrl {
                     'type' => 'symbolOnPosition',
                     'offsets' => $randomInfo['offsets'],
                     'symbol' => $randomLockedSymbol,
+                ),
+                array(
+                    'type' => 'multipleBySymbolCount',
+                    'symbol' => 'S',
+                    'multipleInc' => -1,
                 ),
             ));
 
@@ -275,9 +296,11 @@ class firestormCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
+            $multiple = $sNew['count'] - 1;
+
             $bonus = '<Features>
                     <Feature name="RandomReplacement" '.$replaced.' />
-                    <Feature name="LockedSymbols" lockedBefore="'.$lockedBefore.'" lockedAfter="'.$lockedAfter.'" lockedSymbol="'.$randomLockedSymbol.'" addedScatterOffsets="'.implode(',', $sDiff).'" addedWildOffsets="'.implode(',', $wDiff).'" addedRandomOffsets="'.implode(',', $rDiff).'" />
+                    <Feature name="LockedSymbols" lockedBefore="'.$lockedBefore.'" lockedAfter="'.$lockedAfter.'" lockedSymbol="'.$report['randomLockedReplacement'].'" addedScatterOffsets="'.implode(',', $sDiff).'" addedWildOffsets="'.implode(',', $wDiff).'" addedRandomOffsets="'.implode(',', $rDiff).'" />
                     <Feature name="Multiplier" numScatters="'.$sNew['count'].'" multiplier="'.$multiple.'" />
                 </Features>';
 
@@ -305,7 +328,7 @@ class firestormCtrl extends Ctrl {
             $wildInfo = $wNew;
             $randomInfo = $rNew;
 
-            $multiple = $scattersInfo['count'] - 1;
+
         }
 
         $draws = str_replace('{{count}}', $this->slot->drawID, $draws);
@@ -351,7 +374,7 @@ class firestormCtrl extends Ctrl {
 
         $bonus = '<Features>
                     <Feature name="RandomReplacement" '.$this->bonus['replaced'].' />
-                    <Feature name="LockedSymbols" lockedBefore="-,-,-,-,-;-,-,-,-,-;-,-,-,-,-" lockedAfter="'.$lockedAfter.'" lockedSymbol="'.$this->bonus['randomLockedSymbol'].'" addedScatterOffsets="'.implode(',', $sNew['offsets']).'" addedWildOffsets="'.implode(',', $wNew['offsets']).'" addedRandomOffsets="'.implode(',', $rNew['offsets']).'" />
+                    <Feature name="LockedSymbols" lockedBefore="-,-,-,-,-;-,-,-,-,-;-,-,-,-,-" lockedAfter="'.$lockedAfter.'" lockedSymbol="'.$report['randomLockedReplacement'].'" addedScatterOffsets="'.implode(',', $sNew['offsets']).'" addedWildOffsets="'.implode(',', $wNew['offsets']).'" addedRandomOffsets="'.implode(',', $rNew['offsets']).'" />
                     <Feature name="Multiplier" numScatters="'.$sNew['count'].'" multiplier="'.$multiple.'" />
                 </Features>';
 
