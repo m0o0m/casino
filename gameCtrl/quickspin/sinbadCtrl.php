@@ -438,18 +438,18 @@ class sinbadCtrl extends Ctrl {
             $this->bonus['ladder']['bonusSpins'] = 2;
             $this->slot->createCustomReels($this->gameParams->reels[3], array(3,4,4,4,3));
             $this->bonus['reelset'] = 3;
-            $this->slot->setWilds(array(0,4,5,6));
+            $this->slot->setWilds(array(3,4,5,6));
             $this->bonus['ladder']['l3PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 6 && !$this->bonus['ladder']['l2PD']) {
             $this->bonus['ladder']['level'] = 2;
             $this->bonus['ladder']['bonusSpins'] = 2;
-            $this->slot->setWilds(array(0,4,5));
+            $this->slot->setWilds(array(3,4,5));
             $this->bonus['ladder']['l2PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 2 && !$this->bonus['ladder']['l1PD']) {
             $this->bonus['ladder']['level'] = 1;
-            $this->slot->setWilds(array(0,4));
+            $this->slot->setWilds(array(3,4));
             $this->bonus['ladder']['l1PD'] = true;
         }
         else {

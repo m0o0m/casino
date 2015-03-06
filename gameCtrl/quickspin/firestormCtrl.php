@@ -31,7 +31,35 @@ class firestormCtrl extends Ctrl {
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
     </EEGOpenGameResponse>
-    '.$this->gameParams->getReels().$this->gameParams->getWinLines().$this->getStakeParams().'
+    '.$this->gameParams->getReels().'<EEGLoadWinLinesResponse gameId="'.$this->gameID.'">
+        <WinLines>
+            <Line num="1" offsets=" 0,  0,  0,  0,  0" />
+            <Line num="2" offsets="-1, -1, -1, -1, -1" />
+            <Line num="3" offsets=" 1,  1,  1,  1,  1" />
+            <Line num="4" offsets="-1,  0,  1,  0, -1" />
+            <Line num="5" offsets=" 1,  0, -1,  0,  1" />
+            <Line num="6" offsets="-1, -1,  0, -1, -1" />
+            <Line num="7" offsets=" 1,  1,  0,  1,  1" />
+            <Line num="8" offsets=" 0,  1,  1,  1,  0" />
+            <Line num="9" offsets=" 0, -1, -1, -1,  0" />
+            <Line num="10" offsets=" 0, -1,  0, -1,  0" />
+            <Line num="11" offsets=" 0,  1,  0,  1,  0" />
+            <Line num="12" offsets="-1,  0, -1,  0, -1" />
+            <Line num="13" offsets=" 1,  0,  1,  0,  1" />
+            <Line num="14" offsets=" 0,  0, -1,  0,  0" />
+            <Line num="15" offsets=" 0,  0,  1,  0,  0" />
+            <Line num="16" offsets="-1,  0,  0,  0, -1" />
+            <Line num="17" offsets=" 1,  0,  0,  0,  1" />
+            <Line num="18" offsets="-1,  0,  1,  1,  1" />
+            <Line num="19" offsets=" 1,  0, -1, -1, -1" />
+            <Line num="20" offsets="-1,  1, -1,  1, -1" />
+            <Line num="21" offsets=" 1, -1,  1, -1,  1" />
+            <Line num="22" offsets="-1,  1,  1,  1, -1" />
+            <Line num="23" offsets=" 1, -1, -1, -1,  1" />
+            <Line num="24" offsets="-1, -1,  1, -1, -1" />
+            <Line num="25" offsets=" 1,  1, -1,  1,  1" />
+        </WinLines>
+    </EEGLoadWinLinesResponse>'.$this->getStakeParams().'
     <EEGLoadOddsResponse gameId="'.$this->gameID.'">
         <DrawOdds payTableSet="0">
             '.$this->gameParams->getPrizes().'
