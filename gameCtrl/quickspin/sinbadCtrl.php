@@ -278,7 +278,7 @@ class sinbadCtrl extends Ctrl {
         $this->bonus['spins'] = 7;
 
         $this->slot->createCustomReels($this->gameParams->reels[1], array(3,4,4,4,3));
-        $this->slot->setWilds(array(0,17));
+        $this->slot->setWilds(array(3,17));
         $this->slot->drawID = 0;
 
         $wlCount = 0;
@@ -463,7 +463,7 @@ class sinbadCtrl extends Ctrl {
         $this->bonus['spins'] = 12;
 
         $this->slot->createCustomReels($this->gameParams->reels[4], array(3,4,4,4,3));
-        $this->slot->setWilds(array(0,15,18));
+        $this->slot->setWilds(array(3,15,18));
         $this->slot->drawID = 0;
 
         $positions = array(1,2,3,6,7,8,11,12,13,16,17,18);
