@@ -101,6 +101,18 @@ class beowulfCtrl extends Ctrl {
                         'offsets' => array(2,17,37,10,0),
                     );
                     break;
+                case 'fs4':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(2,17,37,68,0),
+                    );
+                    break;
+                case 'fs5':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(2,17,37,68,32),
+                    );
+                    break;
             }
         }
 
@@ -406,7 +418,7 @@ class beowulfCtrl extends Ctrl {
 
     protected function showFreeSpinReport($report, $totalWin) {
         $sr = $report['scattersReport'];
-        $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" spins="1" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$report['bet']*$sr['count'].'" />';
+        $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" spins="1" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$report['scattersReport']['totalWin'].'" />';
 
         $addString = ' reelsetName="Base"';
 
