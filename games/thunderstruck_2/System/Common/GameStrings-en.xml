@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings version="5.4.0.0-en">
+	<string id="TEMPLATE_TEXT">This is sample English text</string>
+	<string id="TEMPLATE_CDATA_TEXT"><![CDATA[<p>This is sample English html text</p>]]></string>
+</strings>

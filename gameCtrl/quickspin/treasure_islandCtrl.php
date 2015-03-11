@@ -180,7 +180,7 @@ class treasure_islandCtrl extends Ctrl {
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        if(!empty($report['bonusData']['explode'])) {
+        if(!empty($report['bonusData']['explode']) || $totalWin > 0) {
             $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
             $_SESSION['bonusWIN'] = $totalWin;
         }

@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">
+    <info  id="en" name="english" brand="GTS" product="Iron Man 2" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $"/>
+    <!-- Start generic static text -->		
+    <multitext id="1" qa="true" text="Connecting to server…"/>
+    <multitext id="2" qa="true" text="Connection failed"/>
+    <multitext id="3" qa="true" text="Loading"/>
+    <multitext id="4" qa="true" text="Loading complete"/>
+    <multitext id="5" qa="true" text="Help"/>
+    <multitext id="6" qa="true" text="Close"/>
+    <multitext id="7" qa="true" text="Balance"/>
+    <multitext id="8" qa="true" text="Stake"/>
+    <multitext id="9" qa="true" text="Odds"/> 
+    <multitext id="10" qa="true" text="Win"/>
+    <multitext id="11" qa="true" text="To Win"/>
+    <multitext id="12" qa="true" text="OK"/>
+    <multitext id="13" qa="true" text="Prize Table" />
+    <multitext id="14" qa="true" text="Play" />
+    <multitext id="15" qa="true" text="Go" />
+    <multitext id="16" qa="true" text="BET"/>   
+    <multitext id="17" qa="true" text="Submit"/>
+    <multitext id="18" qa="true" text="Submit Bet"/>
+    <multitext id="19" qa="true" text="Submit All Bets"/> 
+    <multitext id="20" qa="true" text="Cashout" />    
+    <multitext id="21" qa="true" text="Return" />    
+    <multitext id="22" qa="true" text="Bank" />    
+    <multitext id="23" qa="true" text="Bonus" />    
+    <multitext id="24" qa="true" text="Total Stake" />    
+    <multitext id="25" qa="true" text="Max. Return" />    
+    <multitext id="26" qa="true" text="Max. Win" />    
+    <multitext id="27" qa="true" text="Jackpot" />    
+    <multitext id="28" qa="true" text="Play Again"/>
+    <multitext id="29" qa="true" text="Please try again" />    
+    <multitext id="30" qa="true" text="Play for Fun"/>
+    <multitext id="31" qa="true" text="Play for Real"/>
+    <multitext id="32" qa="true" text="Game Over"/>
+    <multitext id="33" qa="true" text="Cancel"/>
+    <multitext id="34" qa="true" text="Clear All"/>
+    <multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>
+    <multitext id="36" qa="true" text="Get flash player"/>        
+	<multitext id="37" qa="true" text="Jackpots"/>
+	<multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	
+    <!-- End generic static text -->
+	
+	
+	<!-- Start game specific text -->
+	
+	<!-- Game Console -->
+	<multitext id="101" qa="true" text="INFO"/>
+	<multitext id="102" qa="true" text="BET &#10;MAX"/>
+	<multitext id="103" qa="true" text="AUTO &#10;START"/>
+	<multitext id="104" qa="true" text="SPINS"/>
+	<multitext id="105" qa="true" text="LINES"/>
+	<multitext id="106" qa="true" text="BET PER LINE"/>
+	<multitext id="107" qa="true" text="WIN"/>
+	<multitext id="108" qa="true" text="TOTAL BET"/> 
+	<multitext id="109" qa="true" text="SPIN"/> 
+	<multitext id="110" qa="true" text="STOP"/> 
+	<multitext id="111" qa="true" text="STOP"/> 
+	<multitext id="112" qa="true" text="CLICK TO START"/> 
+	<multitext id="113" qa="true" text="-"/>
+	<multitext id="114" qa="true" text="+"/>
+	<multitext id="115" qa="true" text="LINE BET"/>
+	
+	
+	
+	
+	
+	<!-- Information -->
+	<multitext id="120" qa="true" text="BACK"/>
+	<multitext id="121" qa="true" text="HIDE PAYLINES"/>
+	<multitext id="122" qa="true" text="SHOW PAYLINES"/>
+	<multitext id="123" qa="true" text="ONLY HIGHEST WIN PAYS PER LINE &#10;WIN COMBINATIONS PAY LEFT TO RIGHT ONLY EXCEPT [SCATTER] WHICH PAYS ANY &#10;PAYLINE WINS ARE MULTIPLIED BY THE LINE BET. GAME IS PLAYED WITH 50 LINES ONLY &#10;MALFUNCTIONS VOID ALL PLAYS AND PAYS"/>
+	
+	
+	<!-- Payouts Info -->
+	
+	<multitext id="130" qa="true" text="WILD"/>	
+	<multitext id="131" qa="true" text="SCATTER"/>
+	<multitext id="132" qa="true" text="10 FREE GAMES"/>
+	<multitext id="133" qa="true" text="SUBSTITUTES ALL SYMBOLS EXCEPT [SCATTER]"/>
+	<multitext id="134" qa="true" text="WITH INCREASING MULTIPLIER &#10;AND [WILD] AS EXTRA WILD!"/>
+	
+	
+	
+	 
+	<!-- Free Games Info -->
+	<multitext id="140" qa="true" text="FREE GAMES WITH INCREASING MULTIPLIER"/>
+	<multitext id="141" qa="true" text="3 OR MORE ANYWHERE WINS"/>
+	<multitext id="142" qa="true" text="10 FREE GAMES"/>
+	<multitext id="143" qa="true" text="INCREASING MULTIPLIER"/>
+	<multitext id="144" qa="true" text="EXTRA WILD"/>
+	<multitext id="145" qa="true" text="FREE GAMES BEGIN WITH X2 MULTIPLIER &#10;WITH EVERY TWO SPINS, MULTIPLIER GOES UP +1 &#10;ALL WINS DURING A SPIN ARE MULTIPLIED BY THE &#10;MULTIPLIER´S VALUE DURING THAT SPIN"/>
+	<multitext id="146" qa="true" text="[WILD] APPEARS IN THE MIDDLE POSITION OF THE &#10;MIDDLE REEL DURING ALL FREE GAME SPINS &#10;[WILD] IS EXTRA WILD, SUBSTITUTING FOR ALL &#10;SYMBOLS EXCEPT [SCATTER] &#10;&#10;MORE FREE GAMES CANNOT BE RETRIGGERED"/>
+	
+	 
+	
+	
+	<!-- Stacked Symbols Info -->
+	
+	<multitext id="150" qa="true" text="STACKED SYMBOLS"/>	
+	<multitext id="151" qa="true" text="SIX OF THE SYMBOLS IN THE GAME ARE STACKED IN TWOS ON THE REELS &#10;&#10;GRAPHICALLY, THEY APPEAR AS ONE LONG IMAGE. EACH IMAGE OCCUPIES TWO REEL POSITIONS, REPRESENTING &#10;TWO SEPARATE AND IDENTICAL SYMBOLS, ONE ON TOP OF THE OTHER. THE SYMBOLS PAY REGULARLY, &#10;INDEPENDENT OF ONE ANOTHER"/>
+	
+		
+		
+	
+	<!-- PROMO MESSAGES  -->
+	<multitext id="160" qa="true" text=" 5x [WILD] WINS &#10;3000x LINE BET!"/>
+	<multitext id="161" qa="true" text="5x [SCATTER] ANYWHERE WINS &#10;100x TOTAL BET!"/>
+	<multitext id="162" qa="true" text="3 OR MORE [SCATTER] ANYWHERE WINS &#10;10 FREE GAMES WITH INCREASING MULTIPLIER!"/>
+	<multitext id="163" qa="true" text="[WILD] EXTRA FROZEN WILD &#10;  IN FREE GAMES!"/>	
+	<multitext id="164" qa="true" text="5 OF A KIND!"/>
+	<multitext id="165" qa="true" text="FREE GAMES"/>
+	
+	
+	
+	<!--  FREE GAME SCREEN -->
+	<multitext id="170" qa="true" text="SPINS LEFT"/>
+	<multitext id="171" qa="true" text="MULTIPLIER"/>
+	<multitext id="172" qa="true" text="FREE GAMES WIN"/>
+	
+		
+	<!--  FREE GAME POPUP -->
+	<multitext id="201" qa="true" text="CONTINUE"/>
+	<multitext id="202" qa="true" text="YOU WIN"/>
+	<multitext id="203" qa="true" text="10"/>
+	<multitext id="204" qa="true" text="WITH INCREASING &#10;MULTIPLIER AND &#10;[WILD] AS EXTRA WILD"/>
+	<multitext id="205" qa="true" text="CONTINUE"/>
+	<multitext id="206" qa="true" text="GAME WIN"/>
+	<multitext id="207" qa="true" text="FEATURE WIN"/>
+	<multitext id="208" qa="true" text="TOTAL WIN"/>
+	<multitext id="209" qa="true" text="FREE GAMES"/>
+	
+	
+	<!-- End game specific text --> 
+	
+	
+	
+	<!-- Start generic phrases -->	
+    <phrase id="BetUnavailable" qa="true" text="Error"/>
+    <phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>
+    <phrase id="BetterLuckButton" qa="true" text="OK"/>
+    <phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>
+    <phrase id="Congratulations" qa="true" text="Congratulations!"/>
+    <phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>
+    <phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>
+    <phrase id="CongratulationsButton" qa="true" text="OK"/>
+    <phrase id="Connecting" qa="true" text="Connecting to server"/>
+    <phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>
+    <phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>
+    <phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>
+    <phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>
+    <phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>
+    <phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+    <phrase id="Help" qa="true" text="5-Reel 50-Line Slots&#10;&#10;Iron Man 2’s objective is to obtain winning symbol combinations by spinning the reels.&#10;&#10;TO PLAY THE GAME:&#10;LINE BET&#10;Increase the ‘LINE BET’ by clicking the ‘BET PER LINE’ button. Once maximum LINE BET is reached, clicking the button again will reset the bet to the minimum BET PER LINE.&#10;LINES&#10;* Iron Man 2 is fixed at 50 paylines.&#10;TOTAL BET&#10;Shows the line bet multiplied by the number of paylines.&#10;SPIN&#10;Clicking ‘SPIN’ spins the reels with the selected LINE BET and TOTAL BET.&#10;BET MAX&#10;Clicking ‘BET MAX’ spins the reels and the maximum possible BET PER LINE.&#10;INFO&#10;Click the ‘INFO’ button to view winning paylines and payout information.&#10;Scroll through INFO screens by using the left and right arrows.&#10;To view paylines click “SHOW PAYLINES”.&#10;To Exit the PAYTABLE click the ‘BACK’ button.&#10;&#10;DISPLAY BOXES:&#10;LINES: Display’s the number of lines active. Note this can’t be changed from 50.&#10;LINE BET: Display’s the amount staked per line.&#10;TOTAL BET: Display’s the total bet per game.&#10;WIN: Display’s the winning amount.&#10;&#10;AUTO START&#10;There is an auto start function available that will start each spin automatically until either something occurs that requires your intervention or the number of set spins expires. Select your desired number of spins using the + and - buttons. Click ‘AUTO START’ to commence the spins. Click 'STOP' to cancel auto start.&#10;&#10;ABOUT PAYOUTS:&#10;* If two winning combinations occur on the same line, the higher of them is paid out.&#10;* Win combinations must occur from left to right.&#10;* The Wild Symbol is the Shield logo. It can stand for any other symbol, excluding scatter, to make the best possible winning combination.&#10;* There is a separate payout for 2 or more consecutive Wild Symbols on an active payline.&#10;Line Bet and Total Bet are different.  The line bet shows how much you're betting on a single payline. The total bet shows how much you're spending in this game round. Payouts shown in the paytable are multiplied by the line bet, not by the total bet. If more than one active payline has a winning combination, the winnings are added up.&#10;&#10;SCATTER SYMBOL:&#10;* Scatter symbols do not have to occur on a particular payline.&#10;* Payout for scatter symbols is multiplied by the total Bet.&#10;* If there are 2 or more Scatters in the spin results, the payout earned is multiplied by the total bet and added to payline winnings.&#10;* If 3, 4 or 5 Scatter Symbols appear on the anywhere on the reels simultaneously 10 Free Games are won.&#10;&#10;FREE GAMES&#10;* Free Games begin with a x2 multiplier, with every 2 spins this multiplier increases by 1.&#10;* Click “CLICK TO START” to begin free spins.&#10;* A special Wild symbol will appear in the middle of the reels during Free Games. It substitutes for all symbols except Scatter.&#10;* More Free Games cannot be triggered.&#10;* When Free Games have expired clicking CONTINUE will return you to the regular slot reels.&#10;&#10;DISPLAY&#10;* SPINS LEFT – Indicates free spins remaining.&#10;* FREE GAMES WIN – Indicates current winnings from free spins.&#10;* MULTIPLIER – Indicates the multiplier.&#10;&#10;Malfunction voids all pays and plays.&#10;&#10;This game has a Return to Player of 91.323%."/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>
+    <phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>
+    <phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>
+    <phrase id="InsufficientFundsBody" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance"/>
+	
+    <phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>
+    <phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>
+    <phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>  
+	<phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+	<phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<phrase id="loaderStart" qa="true" text="...loading"/>   
+    <phrase id="loader1" qa="true" text="...loading graphics"/>
+    <phrase id="loader2" qa="true" text="...loading interface"/>
+    <phrase id="loader3" qa="true" text="...loading audio engine"/>
+    <phrase id="loader4" qa="true" text="...loading ambience engine"/>
+    <phrase id="loader5" qa="true" text="...loading EdGE components"/>
+    <phrase id="loaderFinish" qa="true" text="...loading complete"/>
+	<phrase id="MaxMultiRoundBody" qa="false" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>
+	<phrase id="MaxSingleRoundBody" qa="false" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+	<phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>
+	<phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+    <phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval. "/>
+    <phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>
+    <phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>
+    <phrase id="NANTitle" qa="true" text="Invalid bet"/>
+    <phrase id="Na" qa="true" text="n/a"/>
+    <phrase id="PlayForFun" qa="true" text="Play for Fun"/>
+    <phrase id="PlayForReal" qa="true" text="Play for Real"/>
+    <phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>
+    <phrase id="SelectRealityTitle" qa="true" text="Please select"/>
+    <phrase id="ServerBrowserError" qa="true" text="There has been an error in your browser, please refresh"/>
+    <phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>
+    <phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>
+    <phrase id="ServerError" qa="true" text="Server error"/>
+    <phrase id="ServerErrorTitle" qa="true" text="Error"/>
+	<phrase id="ServerJackpotBalanceBody" qa="false" text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+	<phrase id="ServerJackpotBalanceTitle" qa="false" text="Jackpot Balance"/>
+	<phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>
+    <phrase id="ServerNoFunds" qa="true" text="We have not been able to place your bet. Please check your updated balance."/>
+    <phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>
+    <phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>
+    <phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+    <phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>
+    <phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>
+    <phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>
+	<phrase id="maxWinReachedBody" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+	<phrase id="maxWinReachedTitle" qa="true" text="Maximum Winnings"/>
+    <!-- End generic phrases -->
+	
+	<!-- Start game specific phrases -->
+            <!-- i : Ishir      ;           Msg : DisplayMessage ;           T : Title            ;           M : Message -->
+            <phrase id="iMsgTOpenGame" qa="true" text="Open Game"/>
+            <phrase id="iMsgMOpenGame" qa="true" text="You have an open game. Click ok to continue. "/>
+            <phrase id="iMsgTInsufficientFunds" qa="true" text="Insufficient balance"/>
+            <phrase id="iMsgMInsufficientFunds" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance"/>
+            <phrase id="iMsgTAutoplayInsufficientFunds" qa="true" text="Insufficient balance"/>
+            <phrase id="iMsgMAutoplayInsufficientFunds" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance"/>       
+            <phrase id="iMsgTStakeLessThenAllowed" qa="true" text="Invalid Bet"/>
+            <phrase id="iMsgMStakeLessThenAllowed" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1. "/>
+            <!--<phrase id="iMsgTMoreLessThenAllowed" qa="true" text="Invalid Bet"/>
+            <phrase id="iMsgMStakeMoreThenAllowed" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance"/>-->
+            <phrase id="iMsgTNoResponseFromServer" qa="true" text="Server Error"/>
+            <phrase id="iMsgMNoResponseFromServer" qa="true" text="Empty Response XML from server. Click ok to resend request to server."/>
+            <phrase id="iMsgTNoOpenGame" qa="true" text="Invalid Game"/>
+            <phrase id="iMsgMNoOpenGame" qa="true" text="No open game present. Request server to open game."/>
+            <phrase id="iMsgTNoLanguageFailed" qa="true" text="Language Failed"/>
+            <phrase id="iMsgMNoLanguageFailed" qa="true" text="Error loading language file."/>
+            <phrase id="iMsgTAutoplayInvalidCount" qa="true" text="INVALID SPINS"/>
+            <phrase id="iMsgMAutoplayInvalidCount" qa="true" text="PLEASE ENTER THE NUMBER OF SPINS."/>
+            <phrase id="iMsgTAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED"/>
+            <phrase id="iMsgMAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED: |COUNT| SPINS COMPLETED."/>
+			<!--<phrase id="iMsgTFreeGameMaxWinReached" qa="true" text="Maximum winning limit"/>
+            <phrase id="iMsgMFreeGameMaxWinReached" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+            <phrase id="iMsgTBonusMaxWinReached" qa="true" text="Maximum winning limit"/>
+            <phrase id="iMsgMBonusMaxWinReached" qa="true" text="You have exceeded the maximum possible winning limit for any one bet."/>-->
+            <phrase id="iMsgMLoginFailed" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+            <phrase id="iMsgTLoginFailed" qa="true" text="Login Failed"/>
+			<phrase id="iMsgTMoreLessThenAllowedRound" qa="true" text="Round Limit Exceed"/>
+			<phrase id="iMsgMStakeMoreThenAllowedRound" qa="true" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>
+
+	<!-- i : Ishir	;	Err : Error -->
+		<phrase id="iErrSessionTimeOut" qa="true" text="Network connection failed. Unable to proceed request."/>
+
+
+		
+	
+		<!-- i : Ishir	;	GSM : Game Supportive Messages -->
+		<phrase id="iGSMGameInitialize"				qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGamenNoWin"					qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGameStarted"				qa="true" text="GOOD LUCK!"/>
+		
+		<phrase id="iGSMTriggerFreegameSelection"	qa="true" text="%1 SCATTERS WIN %2"/>
+		<phrase id="iGSMSlotgameWinLine"			qa="true" text="LINE %1 WINS %3 "/>
+		<phrase id="iGSMSlotgameWinScatter"			qa="true" text="%2 SCATTER WIN %3 "/>
+		<phrase id="iGSMSlotgameTotalWin"			qa="true" text="TOTAL WIN: %1" />
+		
+			
+		
+		
+		<phrase id="iGSMBetmaxInsufficientFunds"	qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMAutostartActive"			qa="true" text="AUTOPLAY ACTIVATED"/>
+		<phrase id="iGSMAutostartStopped"			qa="true" text="AUTOPLAY STOPPED"/>
+		<phrase id="iGSMFeatureWinExtraFreegame"	qa="true" text="%1 SCATTERS WIN %2 AND %3 EXTRA FREE GAMES!"/>
+		<!--
+		<phrase id="iGSMInsufficientFunds" 			qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		<phrase id="iGSMSpinInsufficientFunds" 		qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		-->
+		<phrase id="iGSMBonuValuesFG" 				qa="true" text="%1 &#10;FREE &#10;GAMES"/>
+		<phrase id="iGSMBonuValuesMultiplier" 		qa="true" text="X%1 &#10;MULTIPLIER"/>
+		
+    <!-- End game specific phrases -->
+    
+    <!-- Start generic vector text -->
+    <vector id="Win" qa="true" text="Win!"/>
+    <vector id="Unlucky" qa="true" text="Unlucky"/>
+    <vector id="Jackpot" qa="true" text="Jackpot!"/>
+    <!-- End generic vector text -->
+    
+    <!-- Start  game specific vector text -->
+    <!-- End game specific vector text -->
+    
+</languagepack>

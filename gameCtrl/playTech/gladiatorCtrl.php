@@ -160,9 +160,8 @@ class gladiatorCtrl extends Ctrl {
             </EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        if($report['helmetReport']['count'] >= 3) {
+        if($report['helmetReport']['count'] >= 3 || $totalWin > 0) {
             $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
-            $_SESSION['bonus'] = 'helmet';
             $_SESSION['bonusWIN'] = $totalWin;
         }
 

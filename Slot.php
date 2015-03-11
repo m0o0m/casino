@@ -622,6 +622,7 @@ class Slot {
                                     'id' => implode('', $resultOffsets),
                                     'double' => $this->double * $double,
                                     'withWild' => $withWild,
+                                    'collecting' => false,
                                 );
                                 $s5--;
                             } while ($s5 > 0);

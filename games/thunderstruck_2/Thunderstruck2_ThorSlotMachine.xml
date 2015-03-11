@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SlotMachine version="5.1.0.4">
+	<init>
+		<console id="4000-0" />
+		<asset id="thorBackgroundStatic" frame="" />
+		<asset id="thorBackgroundAnim" frame="" />
+		<asset id="thorBG" frame="" />
+	</init>
+	
+	<Delays>
+		<Delay id="minWildStormDelay" value="3000" />
+		<Delay id="minSpinTime" value="500" />
+		<Delay id="timeBetweenReelStops" value="40" />
+		<Delay id="minQuickSpinTime" value="400" />
+		<Delay id="timeQuickSpinInterval" value="0" />
+		<Delay id="timeDelayForWinDisplay" value="250" />
+		<Delay id="timeDelayForMinWait" value="250" />
+	</Delays>
+	
+	<ModalHeaders>
+		<DefaultHeader id="thorLogo" />
+		
+		<ConditionalHeaders>
+			
+			<ConditionalBag id="5ofKind" csvWinIds="0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72" duration="1">
+				<!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+				<!-- It is possible to have multiple Headers in a conditionla bag as per the Random Bag -->
+				<ConditionalHeader id="mt_5ofKind" />
+			</ConditionalBag>
+			
+		</ConditionalHeaders>
+		
+		<RandomHeaders>
+			<RandomBag id="dur2" duration="2" spinsToTrigger="2">
+				<!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+				<RandomHeader id="mt_win5Multi" />
+				<RandomHeader id="mt_AllWinsPay" />
+			</RandomBag>
+			
+		</RandomHeaders>
+		
+		<Priority Queue="5ofKind" />
+	</ModalHeaders>
+	
+	<EnvironmentalAnimations>
+		<Bag id="sparks" minTimeBetween="250" variance="1000">
+			<Item id="shock1" />
+			<Item id="shock2" />
+			<Item id="shock4" />
+			<Item id="shock5" />
+			<Item id="shock6" />
+			<Item id="shock7" />
+			<Item id="shock8" />
+			<Item id="shock9" />
+			<Item id="shock10" />
+			<Item id="shock10above" />
+			<Item id="shock11" />
+			<Item id="shock12" />
+			<Item id="shock13" />
+		</Bag>
+	</EnvironmentalAnimations>		
+	
+	<NumericFormatter space="10" /> <!-- space in pixels -->	
+</SlotMachine>

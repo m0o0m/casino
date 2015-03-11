@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SlotMachine version="5.1.0.6">
+	<init>
+		<console id="3000-0" />
+		<asset id="odinBG" frame="" />
+	</init>
+	
+	<Delays>
+		<Delay id="minSpinTime" value="500" />
+		<Delay id="timeBetweenReelStops" value="40" />
+		<Delay id="minQuickSpinTime" value="400" />
+		<Delay id="timeQuickSpinInterval" value="0" />
+		<Delay id="timeDelayForWinDisplay" value="250" />
+		<Delay id="timeDelayForMinWait" value="250" />
+		<Delay id="multiplierFadeInTime" value="2" />  <!-- in seconds, not milli -->
+	</Delays>
+	
+	<ModalHeaders>
+		<Automation enabled="0" />
+		<DefaultHeader id="odinLogo" />
+		
+		<ConditionalHeaders>
+			
+			<ConditionalBag id="5ofKind" csvWinIds="0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72" duration="1">
+				<!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+				<!-- It is possible to have multiple Headers in a conditionla bag as per the Random Bag -->
+				<ConditionalHeader id="mo_5ofKind" />
+			</ConditionalBag>
+			
+		</ConditionalHeaders>
+		
+		<RandomHeaders>
+			<RandomBag id="dur2" duration="2" spinsToTrigger="2">
+				<!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+				<RandomHeader id="mo_win6Multi" />
+				<RandomHeader id="mo_AllWinsPay" />
+			</RandomBag>
+			
+		</RandomHeaders>
+		
+		<Priority Queue="5ofKind" />
+	</ModalHeaders>
+	
+	<RavenAnimations>
+		<!-- Left Raven Idle Fly Positioning: -->
+		<!-- Right Raven Middle Fly Positioning: -->
+		<RavenAnimation id="raven_Idle_2_L" 	className="raven_1_L" 	position="78,17" /><!--top-->
+		<RavenAnimation id="raven_Middle_2_R" 	className="raven_1_L" 	position="249,17" />
+		<RavenAnimation id="raven_Idle_1_L" 	className="raven_2_L" 	position="156,17" /> <!-- middle-->
+		<RavenAnimation id="raven_Middle_1_R" 	className="raven_2_L" 	position="328,17" />
+		<RavenAnimation id="raven_Idle_0_L" 	className="raven_3_L" 	position="166,17" /><!--bottom-->
+		<RavenAnimation id="raven_Middle_0_R" 	className="raven_3_L" 	position="336,17" />
+		<!-- Right Raven Idle Fly Positioning: -->
+		<!-- Left Raven Middle Fly Positioning: -->
+		<RavenAnimation id="raven_Idle_2_R" 	className="raven_1_R" 	position="266,17" /><!--top-->
+		<RavenAnimation id="raven_Middle_2_L" 	className="raven_1_R" 	position="95,17" />
+		<RavenAnimation id="raven_Idle_1_R" 	className="raven_2_R" 	position="288,17" /><!-- middle-->
+		<RavenAnimation id="raven_Middle_1_L" 	className="raven_2_R" 	position="118,17" />
+		<RavenAnimation id="raven_Idle_0_R" 	className="raven_3_R" 	position="288,17" /><!--bottom-->
+		<RavenAnimation id="raven_Middle_0_L" 	className="raven_3_R" 	position="119,17" />
+	</RavenAnimations>
+	
+	<NumericFormatter space="10" /> <!-- space in pixels -->	
+</SlotMachine>

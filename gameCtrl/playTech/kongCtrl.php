@@ -194,7 +194,7 @@ class kongCtrl extends Ctrl {
         $this->outXML($xml);
 
         $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
-        if(!empty($report['scattersReport']['totalWin']) || $report['fsBonus'] >= 3) {
+        if($totalWin > 0) {
             $_SESSION['bonusWIN'] = $report['totalWin'];
         }
 

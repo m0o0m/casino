@@ -207,7 +207,7 @@ class rapunzel_towerCtrl extends Ctrl {
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        if($respin == 'true') {
+        if($respin == 'true' || $totalWin > 0) {
             $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
             $_SESSION['bonusWIN'] = $totalWin;
         }

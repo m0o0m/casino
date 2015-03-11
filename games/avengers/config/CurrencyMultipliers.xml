@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+	<currencyMultipliers>	
+		<base currency="GBP"/>
+		<GBP multiplier="1"/>
+		<USD multiplier="1"/>
+		<EUR multiplier="1"/>
+		<SEK multiplier="5"/>
+		<DKK multiplier="10"/>
+	</currencyMultipliers>

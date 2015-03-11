@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wrapperConfig>
+ <gameName name="avengers"/>
+ <gameTitle title="PT-Avengers"/>
+ <clientName name="avengers"/>
+ <game asVersion="3" configurationStages="2" gameFormat="SlotNoAutoplay" gameTitle="PT-Avengers" height="439" loadingStages="5" nativeHeight="878" nativeWidth="1600" width="800"/>
+</wrapperConfig>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wrapperConfig>
-	<gameName name="iron man 2"/>
-	<clientName name="iron man 2"/>	
-	<game asVersion="3" configurationStages="2" gameFormat="SlotNoAutoplay" gameTitle="PT-IronMan2" height="480" loadingStages="5" nativeHeight="600" nativeWidth="800" width="640"/>	
-</wrapperConfig>

@@ -249,16 +249,23 @@ class iron_manCtrl extends Ctrl {
             $_SESSION['seed'] = true;
         }
         $event = $this->getEvent($report);
-        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
-    <FOPlaceBetsResponse drawId="0" gameId="'.$this->gameID.'" newBalance="'.$balanceWithoutBet.'" />
-    <FOLoadResultsResponse gameId="'.$this->gameID.'">
-        <DrawState drawId="0" seed="'.$seed.'" state="settling">
+
+        $drawStates = '<DrawState drawId="0" seed="'.$seed.'" state="settling">
         '.$event.'
             '.$winLines.'
             <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
-        </DrawState>
-    </FOLoadResultsResponse>
+        </DrawState>';
+
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+    <FOPlaceBetsResponse drawId="0" gameId="'.$this->gameID.'" newBalance="'.$balanceWithoutBet.'" />
+    <FOLoadResultsResponse gameId="'.$this->gameID.'">'.$drawStates.'</FOLoadResultsResponse>
 </CompositeResponse>';
+
+        if($totalWin > 0) {
+            $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
+            $_SESSION['bonusWIN'] = $totalWin;
+            $_SESSION['nextDraw'] = 1;
+        }
 
         $this->outXML($xml);
     }

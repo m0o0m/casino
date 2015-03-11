@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<currencies version="9.8.0.150020">
+	<currency id="USD" full="US $" symbol="$" format="# ###.##" format0="$#,###.##" format1="US $#,###.##" format2="$ # ###.##" format3="US $ # ###.##" top="1" />
+	<currency id="IEP" full="IE £" symbol="£" format="# ###.##" format0="£#,###.##" format1="IE £#,###.##" format2="£ # ###.##" format3="IE £ # ###.##" />
+	<currency id="BEF" full="BE ₣" symbol="₣" format="# ###.##" format0="#.###,## ₣" format1="BE ₣#.###,##" format2="₣ # ###.## " format3="BE ₣ # ###.##" />
+	<currency id="ZAR" full="ZA R" symbol="R" format="# ###.##" format0="R #,###.##" format1="ZA R#,###.##" format2="R # ###.##" format3="ZA R # ###.##" top="1" />
+	<currency id="JPY" full="JP ¥" symbol="¥" format="# ###" format0="¥#,###" format1="JP ¥#,###" format2="¥ # ###" format3="JP ¥ # ###" />
+	<currency id="AUD" full="AU $" symbol="$" format="# ###.##" format0="$#,###.##" format1="AU $#,###.##" format2="$ # ###.##" format3="AU $ # ###.##" top="1" />
+	<currency id="CAD" full="CA $" symbol="$" format="# ###.##" format0="$#,###.##" format1="CA $#,###.##" format2="$ # ###.##" format3="CA $ # ###.##" top="1" />
+	<currency id="DKK" full="DK kr" symbol="kr" format="# ###.##" format0="kr #.###,##" format1="DK kr#.###,##" format2="kr # ###.##" format3="DK kr # ###.##" top="1" />
+	<currency id="DEM" full="DE DM" symbol="DM" format="# ###.##" format0="#.###,## DM" format1="DE DM#.###,##" format2="DM # ###.##" format3="DE DM # ###.##" />
+	<currency id="GBP" full="GB £" symbol="£" format="# ###.##" format0="£#,###.##" format1="GB £#,###.##" format2="£ # ###.##" format3="GB £ # ###.##" top="1" />
+	<currency id="ITL" full="IT ₤" symbol="₤" format="# ###.##" format0="₤ #.###,##" format1="IT ₤#.###,##" format2="₤ # ###.##" format3="IT ₤ # ###.##" />
+	<currency id="NOK" full="NO kr" symbol="kr" format="# ###.##" format0="kr # ###,##" format1="NO kr# ###,##" format2="kr # ###.##" format3="NO kr# ###.##" />
+	<currency id="ATS" full="AT S" symbol="S" format="# ###.##" format0="S #.###,##" format1="AT S#.###,##" format2="S # ###.##" format3="AT S # ###.##" />
+	<currency id="CHF" full="CH Fr." symbol="Fr." format="# ###.##" format0="SFr. #'###.##" format1="CH Fr.#'###.##" format2="SFr. # ###.##" format3="CH Fr. # ###.##" />
+	<currency id="SEK" full="SE kr" symbol="kr" format="# ###.##" format0="#.###,## kr" format1="SE kr#.###,##" format2="kr # ###.##" format3="SE kr # ###.##" top="1" />
+	<currency id="ESP" full="ES Pts" symbol="Pts" format="# ###.##" format0="#.###,## Pts" format1="ES Pts#.###,##" format2="Pts # ###.##" format3="ES Pts # ###.##" />
+	<currency id="FIM" full="FI mk" symbol="mk" format="# ###.##" format0="# ###,## mk" format1="FI mk# ###,##" format2="mk # ###.##" format3="FI mk # ###.##" />
+	<currency id="FRF" full="FR ₣" symbol="₣" format="# ###.##" format0="# ###,## ₣" format1="FR ₣# ###,##" format2="₣ # ###.## " format3="FR ₣ # ###.##" />
+	<currency id="GRD" full="GR ₯" symbol="₯" format="# ###.##" format0="#.###,## ₯" format1="GR ₯#.###,##" format2="₯ # ###.## " format3="GR ₯ # ###.##" />
+	<currency id="HKD" full="HK $" symbol="$" format="# ###.##" format0="HK$#,###.##" format1="HK $#,###.##" format2="HK$ # ###.##" format3="HK $ # ###.##" />
+	<currency id="MYR" full="MY RM" symbol="RM" format="# ###.##" format0="RM#,###.##" format1="MY RM#,###.##" format2="RM # ###.##" format3="MY RM # ###.##" />
+	<currency id="NLG" full="NL ƒ" symbol="ƒ" format="# ###.##" format0="ƒ #.###,##" format1="NL ƒ#.###,##" format2="ƒ # ###.##" format3="NL ƒ # ###.##" />
+	<currency id="NZD" full="NZ $" symbol="$" format="# ###.##" format0="$#,###.##" format1="NZ $#,###.##" format2="$ # ###.##" format3="NZ $ # ###.##" />
+	<currency id="PHP" full="PH Php" symbol="Php" format="# ###.##" format0="Php#,###.##" format1="PH Php#,###.##" format2="Php # ###.##" format3="PH Php # ###.##" />
+	<currency id="PKR" full="PK Rs" symbol="Rs" format="# ###.##" format0="Rs#,###.##" format1="PK Rs#,###.##" format2="Rs # ###.##" format3="PK Rs # ###.##" />
+	<currency id="PTE" full="PT $" symbol="$" format="# ###.##" format0="#.###,## $" format1="PT $#.###,##" format2="$ # ###.##" format3="PT $ # ###.##" />
+	<currency id="EUR" full="EU €" symbol="€" format="# ###.##" format0="€ #.###,##" format1="EU €#.###,##" format2="€ # ###.##" format3="EU € # ###.##" top="1" />
+	<currency id="SGD" full="SG $" symbol="$" format="# ###.##" format0="$#,###.##" format1="SG $#,###.##" format2="$ # ###.##" format3="SG $ # ###.##" />
+	<currency id="THB" full="TH ฿" symbol="฿" format="# ###.##" format0="฿#,###.##" format1="TH ฿#,###.##" format2="฿ # ###.##" format3="TH ฿ # ###.##" />
+	<currency id="CNY" full="CN ¥" symbol="¥" format="# ###.##" format0="￥#,###.##" format1="CN ¥#,###.##" format2="￥ # ###.##" format3="CN ¥ # ###.##" />
+	<currency id="TWD" full="TW NT$" symbol="NT$" format="# ###.##" format0="NT$#,###.##" format1="TW NT$#,###.##" format2="NT$ # ###.##" format3="TW NT$ # ###.##" />
+	<currency id="CZK" full="CZ Kč" symbol="Kč" format="# ###.##" format0="# ###,## Kč" format1="CZ Kč# ###,##" format2="Kč # ###.##" format3="CZ Kč # ###.##" />
+	<currency id="HUF" full="HU Ft" symbol="Ft" format="# ###.##" format0="# ###,## Ft" format1="HU Ft# ###,##" format2="Ft # ###.##" format3="HU Ft # ###.##"/>
+	<currency id="ILS" full="IL ₪" symbol="₪" format="# ###.##" format0="₪ #,###.##" format1="IL ₪#,###.##" format2="₪ # ###.##" format3="IL ₪ # ###.##" />
+	<currency id="SKK" full="SK Sk" symbol="Sk" format="# ###.##" format0="# ###,## Sk" format1="SK Sk# ###,##" format2="Sk # ###.##" format3="SK Sk # ###.##" />
+	<currency id="ISK" full="IS kr." symbol="kr." format="# ###.##" format0="#.###,## kr." format1="IS kr.#.###,##" format2="kr. # ###.## " format3="IS kr. # ###.##" /> 
+	<currency id="KRW" full="KR ₩" symbol="₩" format="# ###.##" format0="₩#,###" format1="KR ₩#,###" format2="₩ # ###.##" format3="KR ₩ # ###.##" />
+	<currency id="UAH" full="UA ₴" symbol="₴" format="# ###.##" format0="₴#,###.##" format1="UA ₴#,###.##" format2="₴ # ###.##" format3="UA ₴ # ###.##" />
+	<currency id="MOP" full="MO $" symbol="$" format="# ###.##" format0="$#,###.##" format1="MO $#,###.##" format2="$ # ###.##" format3="MO $ # ###.##" />
+	<currency id="TRL" full="TR £" symbol="£" format="# ###.##" format0="£#,###.##" format1="TR £#,###.##" format2="£ # ###.##" format3="TR £ # ###.##" />
+	<currency id="PLN" full="PL zł" symbol="zł" format="# ###.##" format0="# ###,## zł" format1="PL zł# ###,##" format2="zł # ###.##" format3="PL zł # ###.##" />
+	<currency id="LVL" full="LV Ls" symbol="Ls" format="# ###.##" format0="Ls#,###.##" format1="LV Ls#,###.##" format2="Ls # ###.##" format3="LV Ls # ###.##" />
+	<currency id="RUB" full="RU Р." symbol="Р." format="# ###.##" format0="# ###,##р." format1="RU Р.# ###,##" format2="р. # ###.##" format3="RU Р. # ###.##" />
+	<currency id="EEK" full="EE kr" symbol="kr" format="# ###.##" format0="# ###.## kr" format1="EE kr# ###.##" format2="kr # ###.## " format3="EE kr # ###.##" />
+	<currency id="MXN" full="MX $" symbol="$" format="# ###.##" format0="$#,###.##" format1="MX $#,###.##" format2="$ # ###.##" format3="MX $ # ###.##" />
+	<currency id="COP" full="CO $" symbol="$" format="# ###.##" format0="$ #.###,##" format1="CO $#.###,##" format2="$ # ###.##" format3="CO $ # ###.##" />
+	<currency id="PEN" full="PE S/." symbol="S/." format="# ###.##" format0="S/. #,###.##" format1="PE S/.#,###.##" format2="S/. # ###.##" format3="PE S/. # ###.##" />
+	<currency id="TRY" full="TR TL" symbol="TL" format="# ###.##" format0="#,###.##TL" format1="TR TL#,###.##" format2="TL # ###.##" format3="TR TL # ###.##" />
+	<currency id="CLP" full="CL $" symbol="$" format="# ###.##" format0="$#,###.##" format1="CL $#,###.##" format2="$ # ###.##" format3="CL $ # ###.##" />
+	<currency id="IDR" full="ID Rp" symbol="Rp" format="# ###.##" format0="Rp#,###.##" format1="ID Rp#,###.##" format2="Rp # ###.##" format3="ID Rp # ###.##" />
+	<currency id="ARS" full="AR $" symbol="$" format="# ###.##" format0="#,###.##$" format1="AR $#,###.##" format2="$ # ###.##" format3="AR $ # ###.##" />
+	<currency id="XOF" full="XO ₣" symbol="₣" format="# ###.##" format0="#,###.##₣" format1="XO ₣#,###.##" format2="₣ # ###.##" format3="XO ₣ # ###.##" />
+	<currency id="VEF" full="VE Bs." symbol="Bs." format="# ###.##" format0="Bs.#,###.##" format1="VE Bs.#,###.##" format2="Bs. # ###.##" format3="VE Bs. # ###.##" />
+	<currency id="RON" full="RO lei" symbol="lei" format="# ###.##" format0="#,###.##lei" format1="RO lei#,###.##" format2="lei # ###.##" format3="RO lei # ###.##" />
+	<currency id="HNL" full="HN L" symbol="L" format="# ###.##" format0="L#,###.##" format1="HN L#,###.##" format2="L # ###.##" format3="HN L # ###.##" />
+	<currency id="GEL" full="GEL" symbol="GEL" format="# ###.##" format0="#,###.## GEL" format1="GEL#,###.##" format2="GEL # ###.##" format3="GEL # ###.##" />
+	<currency id="XAF" full="XA ₣" symbol="₣" format="# ###.##" format0="₣#,###.##" format1="XA ₣#,###.##" format2="₣ # ###.##" format3="XA ₣ # ###.##" />
+	<currency id="BRL" full="BR R$" symbol="R$" format="# ###.##" format0="R$#,###.##" format1="BR R$#,###.##" format2="R$ # ###.##" format3="BR R$ # ###.##" />
+	<currency id="PYG" full="PY ₲" symbol="₲" format="# ###.##" format0="₲#,###.##" format1="PY ₲#,###.##" format2="₲ # ###.##" format3="PY ₲ # ###.##" />
+	<currency id="AMD" full="AM Դ" symbol="Դ" format="# ###.##" format0="#,###.##Դ" format1="AM Դ#,###.##" format2="Դ # ###.##" format3="AM Դ # ###.##" />
+	<currency id="VND" full="VN ₫" symbol="₫" format="# ###.##" format0="₫#,###.##" format1="VN ₫#,###.##" format2="₫ # ###.##" format3="VN ₫ # ###.##" />
+	<currency id="UYU" full="UY $" symbol="$" format="# ###.##" format0="$#,###.##" format1="UY $#,###.##" format2="$ # ###.##" format3="UY $ # ###.##" />
+	<currency id="BGN" full="BG лв" symbol="лв" format="# ###.##" format0="лв#,###.##" format1="BG лв#,###.##" format2="лв # ###.##" format3="BG лв # ###.##" />
+	<currency id="AED" full="AE Dhs" symbol="Dhs" format="# ###.##" format0="Dhs#,###.##" format1="AE Dhs#,###.##" format2="Dhs # ###.##" format3="AE Dhs # ###.##" />
+	<currency id="INR" full="IN Rs" symbol="Rs" format="# ###.##" format0="Rs#,###.##" format1="IN Rs#,###.##" format2="Rs # ###.##" format3="IN Rs # ###.##" />
+</currencies>

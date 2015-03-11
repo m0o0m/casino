@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wrapperConfig>
-<gameName name="gtswr_firestorm"/>
-<gameTitle title="QS-Firestorm"/>
-<clientName name="gtswr_firestorm"/>
-<game asVersion="3" configurationStages="2" gameFormat="SlotNoAutoplay" gameTitle="QS-Firestorm" height="600" loadingStages="1" nativeHeight="768" nativeWidth="1024" width="800"/>
-</wrapperConfig>

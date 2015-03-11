@@ -166,12 +166,12 @@ class santa_surpriseCtrl extends Ctrl {
             </EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        $this->outXML($xml);
-
-        if($report['bonusGift']['win']) {
+        if($report['bonusGift']['win'] || $totalWin > 0) {
             $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
             $_SESSION['bonusWIN'] = $report['totalWin'];
         }
+
+        $this->outXML($xml);
     }
 
     private function checkBonusGift() {

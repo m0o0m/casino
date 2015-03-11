@@ -1,0 +1,9 @@
+<?xml version='1.0' ?>
+<game_configuration override='false'>
+	<version 		value='7'/>
+	<debug 			value='true'/>
+	<debug_view 	value='false'/>
+	<normal_game>
+		<celebration_treshold	value='30'/>
+	</normal_game>
+</game_configuration>

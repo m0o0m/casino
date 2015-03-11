@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data version="5.1.0.4">
+
+
+	<swf id="backgroundSound" channel="BGSounds">
+		<Sound id="SND_Background" />
+	</swf>
+	
+	<swf id="achievementSounds" channel="GameSounds">
+		<Sound id="SND_Achievement"  />
+	</swf>
+	
+	<swf id="baseMinimumSounds" channel="GameSounds">
+		<Sound id="SND_CoinRush"  />
+		<Sound id="SND_Decrease"  />
+		<Sound id="SND_Increase"  />
+		<Sound id="SND_SelectCoin"  />
+		<Sound id="SND_SelectCoinDec"  />
+		<Sound id="SND_SelectCoinInc"  />
+		<Sound id="SND_Spin"  />
+		<Sound id="SND_Stop"  />
+		<Sound id="SND_Symbol12_Spin"  />
+		<Sound id="SND_popupSound"  />
+	</swf>
+	
+	<swf id="baseWinSounds" channel="WinSounds">
+		<Sound id="SND_Attention"  />
+		<Sound id="SND_Countup"  />
+		<Sound id="SND_CountupEnd"  />
+		<Sound id="SND_Win"  />
+	</swf>
+	
+	<swf id="buttonSounds" channel="GameSounds">
+		<Sound id="SND2_Next"  />
+		<Sound id="SND2_BackToGame"  />
+		<Sound id="SND_View"  />
+		<Sound id="SND_CoinCredit"  />
+		<Sound id="SND_AutoplayStop"  />
+		<Sound id="SND_Autoplay"  />
+	</swf>
+	
+	<swf id="reelSymbolSounds" channel="WinSounds">
+		<Sound id="SND_5OfAKind"  />	
+		<Sound id="SND_Symbol14"  />
+		<Sound id="SND_Symbol14_StopReel1"  />
+		<Sound id="SND_Symbol14_StopReel2"  />
+		<Sound id="SND_Symbol14_StopReel3"  />
+		<Sound id="SND_Symbol14_StopReel4"  />
+		<Sound id="SND_Symbol14_StopReel5"  />
+		<Sound id="SND_Symbol14_Trigger"  />
+		<Sound id="SND_Symbol1"  />
+		<Sound id="SND_Symbol2"  />
+		<Sound id="SND_Symbol3"  />
+		<Sound id="SND_Symbol4"  />
+		<Sound id="SND_Symbol5"  />
+		<Sound id="SND_Symbol6"  />
+		<Sound id="SND_Symbol7"  />
+		<Sound id="SND_TopWin_Countup"  />
+		<Sound id="SND_TopWin_CountupEnd"  />	
+	</swf>	
+	<swf id="wildstorm_Sounds" channel="GameSounds">
+		<!-- 
+		<Sound id="SND_WildStorm_Countup"  />
+		<Sound id="SND_WildStorm_CountupEnd"  />
+		-->
+		<Sound id="SND_WildStorm_Hammer"  />
+		<Sound id="SND_WildStorm_Intro"  />
+		<Sound id="SND_WildStorm_Outro"  />
+		<Sound id="SND_WildStorm_Wild"  />
+		<Sound id="SND_WildStorm_Strike"  />
+		<Sound id="SND_Wildstorm_Exit"  />
+	</swf>
+	
+	<swf id="wildStormBackgroundSound" channel="BGSounds">
+		<Sound id="SND_WildStorm_Background" />		
+	</swf>
+	
+	<swf id="wildstorm_CountUps" channel="WinSounds">
+		<Sound id="SND_WildStorm_Countup"  />
+		<Sound id="SND_WildStorm_CountupEnd"  />	
+	</swf>	
+	
+	<swf id="FS_ValkyrieSounds" channel="WinSounds">
+		<Sound id="SND_FSValkyrie_Countup"  />
+		<Sound id="SND_FSValkyrie_CountupEnd"  />
+		<Sound id="SND_FSValkyrie_ExitLoop"  />
+		<Sound id="SND_FSValkyrie_Summary"  />
+	</swf>
+	
+	<swf id="FS_ThorSounds" channel="WinSounds">
+		<Sound id="SND_FSThor_Countup"  />
+		<Sound id="SND_FSThor_CountupEnd"  />
+		<Sound id="SND_FSThor_ExitLoop"  />
+		<Sound id="SND_FSThor_Explosion"  />
+		<Sound id="SND_FSThor_Multiplier"  />
+		<Sound id="SND_FSThor_Summary"  />
+		<Sound id="SND_FSThorExplode_Land"  />
+	</swf>
+		
+	<swf id="FS_OdinSounds" channel="WinSounds">
+		<Sound id="SND_FSOdin_Countup"  />
+		<Sound id="SND_FSOdin_CountupEnd"  />
+		<Sound id="SND_FSOdin_ExitLoop"  />
+		<Sound id="SND_FSOdin_RavenJump"  />
+		<Sound id="SND_FSOdin_RavenWild"  />
+		<Sound id="SND_FSOdin_Summary"  />
+	</swf>
+		
+	<swf id="FS_LokiSounds" channel="WinSounds">
+		<Sound id="SND_FSLoki_Countup"  />
+		<Sound id="SND_FSLoki_CountupEnd"  />
+		<Sound id="SND_FSLoki_ExitLoop"  />
+		<Sound id="SND_FSLoki_MagicLoop"  />
+		<Sound id="SND_FSLoki_MagicShoot"  />
+		<Sound id="SND_FSLoki_MagicStopReel"  />
+		<Sound id="SND_FSLoki_Summary"  />
+	</swf>
+	
+	<swf id="FS_ValkyrieBackgroundSound" channel="BGSounds">
+		<Sound id="SND_FSValkyrie_Background" />
+	</swf>
+
+	<swf id="FS_ThorBackgroundSound" channel="BGSounds">
+		<Sound id="SND_FSThor_Background" />
+	</swf>
+	
+	<swf id="FS_OdinBackgroundSound" channel="BGSounds">
+		<Sound id="SND_FSOdin_Background" />		
+	</swf>
+
+	<swf id="FS_LokiBackgroundSound" channel="BGSounds">
+		<Sound id="SND_FSLoki_Background" />		
+	</swf>	
+		
+	<swf id="FS_SharedSounds" channel="GameSounds">
+		<Sound id="SND_FSBackToGame"  />
+		<Sound id="SND_FSSpin"  />
+		<Sound id="SND_FSStop"  />
+		<Sound id="SND_GHS_Rollover"  />
+		<Sound id="SND_GHS_Select"  />
+	</swf>
+	
+	<swf id="FS_GHSBackgroundSound" channel="BGSounds">
+		<Sound id="SND_GHSBackground" />		
+	</swf>	
+	
+	<swf id="FS_Enter_AdvSounds" channel="GameSounds">
+		<Sound id="SND_GHS_Narrator1_ADV" />
+	</swf>
+		
+	<swf id="FS_Loki_AdvSounds" channel="GameSounds">
+		<Sound id="SND_GHS_Narrator2_ADV" />
+	</swf>
+		
+	<swf id="FS_Odin_AdvSounds" channel="GameSounds">
+		<Sound id="SND_GHS_Narrator3_ADV" />
+	</swf>
+		
+	<swf id="FS_Thor_AdvSounds" channel="GameSounds">
+		<Sound id="SND_GHS_Narrator4_ADV" />
+	</swf>
+		
+	<swf id="FS_Gold_AdvSounds" channel="GameSounds">
+		<Sound id="SND_GHS_Narrator5_ADV" />
+	</swf>
+</data>

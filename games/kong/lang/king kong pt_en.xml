@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">
+    <info  id="en" name="Englis" brand="Casino Euro" product="King Kong" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $"/>
+    <!-- Start generic static text -->		
+    <multitext id="1" qa="true" text="Connecting to server…"/>
+    <multitext id="2" qa="true" text="Connection failed"/>
+    <multitext id="3" qa="true" text="Loading"/>
+    <multitext id="4" qa="true" text="Loading complete"/>
+    <multitext id="5" qa="true" text="Help"/>
+    <multitext id="6" qa="true" text="Close"/>
+    <multitext id="7" qa="true" text="Balance"/>
+    <multitext id="8" qa="true" text="Stake"/>
+    <multitext id="9" qa="true" text="Odds"/> 
+    <multitext id="10" qa="true" text="Win"/>
+    <multitext id="11" qa="true" text="To Win"/>
+    <multitext id="12" qa="true" text="OK"/>
+    <multitext id="13" qa="true" text="Prize Table" />
+    <multitext id="14" qa="true" text="Play" />
+    <multitext id="15" qa="true" text="Go" />
+    <multitext id="16" qa="true" text="BET"/>   
+    <multitext id="17" qa="true" text="Submit"/>
+    <multitext id="18" qa="true" text="Submit Bet"/>
+    <multitext id="19" qa="true" text="Submit All Bets"/> 
+    <multitext id="20" qa="true" text="Cashout" />    
+    <multitext id="21" qa="true" text="Return" />    
+    <multitext id="22" qa="true" text="Bank" />    
+    <multitext id="23" qa="true" text="Bonus" />    
+    <multitext id="24" qa="true" text="Total Stake" />    
+    <multitext id="25" qa="true" text="Max. Return" />    
+    <multitext id="26" qa="true" text="Max. Win" />    
+    <multitext id="27" qa="true" text="Jackpot" />    
+    <multitext id="28" qa="true" text="Play Again"/>
+    <multitext id="29" qa="true" text="Please try again" />    
+    <multitext id="30" qa="true" text="Play for Fun"/>
+    <multitext id="31" qa="true" text="Play for Real"/>
+    <multitext id="32" qa="true" text="Game Over"/>
+    <multitext id="33" qa="true" text="Cancel"/>
+    <multitext id="34" qa="true" text="Clear All"/>
+    <multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>
+    <multitext id="36" qa="true" text="Get flash player"/>        
+	<multitext id="37" qa="true" text="Jackpots"/>
+	<multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	
+    <!-- End generic static text -->
+    
+	
+    <!-- Start game specific text [ Begin @id=100 ] -->
+	
+		<!-- Game Console -->
+		<multitext id="101" qa="true" text="INFO"/>
+		<multitext id="103" qa="true" text="LINES"/> 
+		<multitext id="104" qa="true" text="-"/> 
+		<multitext id="105" qa="true" text="+"/> 
+		<multitext id="106" qa="true" text="BET MAX"/>
+		<multitext id="107" qa="true" text="SPIN"/>
+		<multitext id="108" qa="true" text="STOP"/>
+		<multitext id="109" qa="true" text="TOTAL BET"/>
+		<multitext id="110" qa="true" text="LINE BET"/>
+		<multitext id="111" qa="true" text="WIN"/>
+		<multitext id="115" qa="true" text="AUTO PLAY"/> 
+		<multitext id="116" qa="true" text="STOP"/> 
+		<multitext id="117" qa="true" text="-"/> 
+		<multitext id="118" qa="true" text="+"/> 
+		<multitext id="119" qa="true" text="SPINS"/>
+		<multitext id="120" qa="true" text="CLICK TO START"/>
+		<multitext id="121" qa="true" text="TO START"/>
+		<multitext id="122" qa="true" text="GAMBLE"/>
+		<multitext id="123" qa="true" text="BET PER LINE"/>
+		
+		<!-- Information -->
+		<multitext id="125" qa="true" text="SHOW PAYLINES"/>
+		<multitext id="126" qa="true" text="HIDE PAYLINES"/>
+		<multitext id="127" qa="true" text="BACK"/>
+		
+		<!--Paylines Information-->
+		<multitext id="131" qa="true" text="ONLY HIGHEST WIN PAYS PER LINE &#10;WIN COMBINATIONS PAY LEFT TO RIGHT EXCEPT SCATTER WHICH PAYS ANY &#10; PAYLINE WINS ARE MULTIPLIED BY THE LINE BET &#10;MALFUNCTIONS VOID ALL PLAYS AND PAYS"/>		
+		 
+		<!--CITY TOWER BONUS in Information-->
+		<multitext id="140" qa="true" text="KING KONG IS UNDER ATTACK ATOP THE CITY TOWER &#10;&#10;THREE TIMES YOU WILL BE FACED WITH 3 PLANES EACH TIME YOU MUST PICK 1 OUT OF 3 PLANES TO TAKE DOWN BY PRESSING THE CORRESPONDING ARROW EACH PLANE IS WORTH A CASH PRIZE &#10;&#10;TAKING DOWN 3 PLANES ENDS THE CITY TOWER BONUS AND BEGINS JUNGLE MODE"/>	
+		<multitext id="141" qa="true" text="OR MORE ANYWHERE ON REELS IN BIG CITY MODE"/>
+		<multitext id="142" qa="true" text="CITY TOWER BONUS"/>
+		
+		<!--WILD KONG RESPINS in Information-->
+		<multitext id="148" qa="true" text="WILD KONG RESPINS"/>
+		<multitext id="149" qa="true" text="OR MORE ANYWHERE ON REELS IN BIG CITY MODE"/>	
+		<multitext id="150" qa="true" text="THE PLAYER IS AWARDED 3 FREE RESPINS &#10;&#10;IN THE 1ST RESPIN, ALL SYMBOLS ON REELS 1+5 ARE WILD, SUBSTITUTING FOR ALL SYMBOLS EXCEPT SCATTER &#10;&#10;IN THE 2ND RESPIN, ALL SYMBOLS ON REELS 2+4 ARE WILD, SUBSTITUTING FOR ALL SYMBOLS EXCEPT SCATTER &#10;&#10;IN THE 3RD RESPIN, ALL SYMBOLS ON REELS 1+3+5 ARE WILD, SUBSTITUTING FOR ALL SYMBOLS EXCEPT SCATTER &#10;&#10;CITY TOWER BONUS CANNOT BE TRIGGERED DURING &#10;THE RESPINS &#10;&#10;FEATURE CANNOT BE RETRIGGERED"/>
+		
+		<!--SKULL ISLAND BONUS in Information-->
+		
+		<multitext id="161" qa="true" text="SKULL ISLAND BONUS"/>
+		<multitext id="162" qa="true" text="OR MORE ANYWHERE ON  REELS IN JUNGLE MODE"/>		
+		<multitext id="163" qa="true" text="BEFORE YOU IS A MAP OF SKULL ISLAND &#10;&#10;CHOOSING A LOCATION ON THE MAP REVEALS 1 OF 3 CREATURES OR KING KONG &#10;&#10;MATCH 3 CREATURES TO WIN A CASH PRIZE. EACH CREATURE IS WORTH A DIFFERENT CASH PRIZE. &#10;HOWEVER, UNCOVERING ONLY ONE KING KONG WINS THE BIGGEST PRIZE &#10;&#10;WINNING A CASH PRIZE ENDS THE SKULL ISLAND BONUS AND BEGINS BIG CITY MODE"/>
+		
+		
+		<!--WILD JUNGLE RESPINS in Information-->
+		<multitext id="170" qa="true" text="WILD JUNGLE RESPINS"/>
+		<multitext id="171" qa="true" text="OR MORE ANYWHERE ON  REELS IN JUNGLE MODE"/>
+		<multitext id="172" qa="true" text="PLAYER IS AWARDED 3 FREE RESPINS &#10;&#10;EVERY TIME A WILD APPEARS, IT REMAINS FROZEN &#10;ON THE REELS UNTIL FEATURE ENDS, SUBSTITUTING FOR ALL SYMBOLS EXCEPT SCATTER &#10;&#10;SKULL ISLAND BONUS CANNOT BE TRIGGERED DURING THE RESPINS &#10;&#10;ADDITIONAL WILDS ARE ADDED TO THE FEATURE REELS &#10;&#10;FEATURE CANNOT BE RETRIGGERED"/>
+		
+		<!--GAME MODES in Information-->
+		<multitext id="180" qa="true" text="JUNGLE MODE &#10;&#10;BIG CITY MODE"/>
+		<multitext id="181" qa="true" text="THE GAME IS PLAYED IN 2 MODES: JUNGLE MODE AND BIG CITY MODE &#10;&#10;IN EACH OF THESE MODES, THE SYMBOLS CHANGE VISUALLY BUT THE PAYTABLE REMAINS THE SAME &#10;&#10;JUNGLE MODE &#10;3 OR MORE WILD ANYWHERE TRIGGERS THE  WILD JUNGLE RESPINS FEATURE &#10;&#10;3 OR MORE SCATTER ANYWHERE TRIGGERS THE SKULL ISLAND BONUS &#10;&#10;BIG CITY MODE BEGINS WHEN EXITING SKULL ISLAND BONUS &#10;&#10;BIG CITY MODE &#10;3 OR MORE WILD ANYWHERE TRIGGERS THE  WILD KONG RESPINS FEATURE &#10;&#10;3 OR MORE SCATTER ANYWHERE TRIGGERS THE CITY TOWER BONUS &#10;&#10;JUNGLE MODE BEGINS WHEN EXITING CITY TOWER BONUS &#10;&#10;ENTER THE GAME IN JUNGLE MODE. RE-ENTER IN THE MODE YOU WERE PLAYING BEFORE EXITING"/>
+			
+		
+		<!--Payouts in Information-->
+		<multitext id="190" qa="true" text="JUNGLE MODE PAYTABLE"/>
+		<multitext id="191" qa="true" text="WILD JUNGLE RESPINS"/>
+		<multitext id="192" qa="true" text="3 OR MORE SCATTERED WILD"/>
+		<multitext id="193" qa="true" text="WILD"/>
+		<multitext id="194" qa="true" text="SUBSTITUTES FOR ALL &#10;SYMBOLS EXCEPT SCATTER"/>
+		<multitext id="195" qa="true" text="SKULL ISLAND BONUS"/>
+		<multitext id="196" qa="true" text="SCATTER"/>
+		<multitext id="197" qa="true" text="BIG CITY MODE PAYTABLE"/>
+		<multitext id="198" qa="true" text="WILD KONG RESPINS"/>
+		<multitext id="199" qa="true" text="CITY TOWER BONUS"/>
+		
+		
+		<!-- PROMO MESSAGES BASE GAME-->
+		
+		<multitext id="210" qa="true" text="5X WILD WINS &#10;3000X LINE BET!"/>
+		<multitext id="211" qa="true" text="5X SCATTER ANYWHERE WINS &#10;100X TOTAL BET!"/>
+		<multitext id="212" qa="true" text="3 OR MORE WILD ANYWHERE STARTS &#10;WILD JUNGLE RESPINS FEATURE!"/>
+		<multitext id="213" qa="true" text="3 OR MORE WILD ANYWHERE STARTS &#10;WILD KONG RESPINS FEATURE!"/>
+		<multitext id="214" qa="true" text="3 OR MORE SCATTER ANYWHERE &#10;WINS SKULL ISLAND BONUS!"/>
+		<multitext id="215" qa="true" text="3 OR MORE SCATTER ANYWHERE &#10;WINS CITY TOWER BONUS!"/>
+		<multitext id="216" qa="true" text="5 OF A KIND"/>
+		
+		<!--  FREE GAME SCREEN -->
+		<multitext id="225" qa="true" text="RESPINS LEFT:"/>
+		<multitext id="226" qa="true" text="3"/>
+		
+
+		<!--  AUTOPLAY POPUP -->
+		<multitext id="230" qa="true" text="50 SPINS"/>
+		<multitext id="231" qa="true" text="30 SPINS"/>
+		<multitext id="232" qa="true" text="20 SPINS"/>
+		<multitext id="233" qa="true" text="10 SPINS"/>
+		<multitext id="234" qa="true" text="AUTO SPINS"/>
+		
+		
+		<!--  FEATURE WIN POPUP -->
+		<multitext id="240" qa="true" text="3 &#10;WILD JUNGLE &#10;RESPINS"/>
+		<multitext id="241" qa="true" text="3 &#10;WILD KONG &#10;RESPINS"/>
+		<multitext id="242" qa="true" text="CONTINUE"/>	
+		<multitext id="243" qa="true" text="GAME WIN"/>
+		<multitext id="244" qa="true" text="BONUS WIN"/>
+		<multitext id="245" qa="true" text="TOTAL WIN"/>
+		<multitext id="246" qa="true" text="BONUS WIN"/>
+		<multitext id="247" qa="true" text="CONGRATULATIONS! &#10;YOU FOUND:"/>
+		<multitext id="248" qa="true" text="CONGRATULATIONS! &#10;YOU FOUND KONG!"/>
+		
+		
+		<!-- SKULL ISLAND BONUS -->
+		
+		<multitext id="255" qa="true" text="SKULL ISLAND BONUS"/>
+		<multitext id="256" qa="true" text="THE JUNGLE ADVENTURE BEGINS!"/>
+		<multitext id="257" qa="true" text="CREATURES ARE HIDING IN THE JUNGLE!"/>
+		<multitext id="258" qa="true" text="MATCH 3 CREATURES TO WIN &#10;FIND 1 KONG TO WIN BIG"/>
+		<multitext id="259" qa="true" text="GREAT, YOU DISCOVERED &#10;KING KONG! &#10;PICK AGAIN!"/>
+		<multitext id="260" qa="true" text="YOU DISCOVERED &#10;A VASTATOSAURUS REX! &#10;PICK AGAIN!"/>
+		<multitext id="261" qa="true" text="GREAT, YOU DISCOVERED &#10;ANOTHER VASTATOSAURUS REX! &#10;PICK AGAIN!"/>
+		<multitext id="262" qa="true" text="YOU DISCOVERED &#10;A VENATOSAURUS! &#10;PICK AGAIN!"/>
+		<multitext id="263" qa="true" text="GREAT, YOU DISCOVERED &#10;ANOTHER VENATOSAURUS! &#10;PICK AGAIN!"/>
+		<multitext id="264" qa="true" text="YOU DISCOVERED &#10;A BRONTOSAURUS! &#10;PICK AGAIN!"/>
+		<multitext id="265" qa="true" text="GREAT, YOU DISCOVERED &#10;ANOTHER BRONTOSAURUS! &#10;PICK AGAIN!"/>
+		
+		
+		<!-- CITY TOWER BONUS -->
+		
+		<multitext id="270" qa="true" text="CITY TOWER BONUS"/>
+		<multitext id="271" qa="true" text="KONG IS ON THE LOOSE IN THE BIG CITY!"/>
+		<multitext id="272" qa="true" text="PLANES HAVE BEEN SENT TO TAKE HIM DOWN!"/>
+		<multitext id="273" qa="true" text="WIN:"/>
+		<multitext id="274" qa="true" text="TOTAL BONUS :"/>
+		<multitext id="275" qa="true" text="TAKE DOWN 3 PLANES FOR CASH!"/>
+		<multitext id="276" qa="true" text="TAKE DOWN THE FIRST PLANE &#10;CLICK ON AN ARROW"/>
+		<multitext id="277" qa="true" text="TAKE DOWN THE SECOND PLANE &#10;CLICK ON AN ARROW"/>
+		<multitext id="278" qa="true" text="TAKE DOWN THE LAST PLANE &#10;CLICK ON AN ARROW"/>
+
+    <!-- End game specific text -->
+    
+    
+	<!-- Start generic phrases -->	
+    <phrase id="BetUnavailable" qa="true" text="Error"/>
+    <phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>
+    <phrase id="BetterLuckButton" qa="true" text="OK"/>
+    <phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>
+    <phrase id="Congratulations" qa="true" text="Congratulations!"/>
+    <phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>
+    <phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>
+    <phrase id="CongratulationsButton" qa="true" text="OK"/>
+    <phrase id="Connecting" qa="true" text="Connecting to server"/>
+    <phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>
+    <phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>
+    <phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>
+    <phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>
+    <phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>
+    <phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+    <phrase id="Help" qa="true" text="KONG THE 8TH WONDER OF THE WORLD &#10;&#10;5-Reel 20-line Slots &#10;The objective of KONG THE EIGHTH WONDER OF THE WORLD is to obtain winning symbol combinations by spinning the reels.&#10;&#10;TO PLAY THE GAME: &#10;&#10;*Line bets are chosen by clicking + or - below LINE BET to increase or decrease the amount.&#10;*Paylines are chosen by clicking + or - below LINES. Paylines can also be activated by using the numbered buttons on either side of the reels. Selecting a high payline includes all the lower ones too. For example, selecting payline 6 also activates paylines 1 through 5. Clicking BET MAX activates all paylines and spins the reels.&#10;*Total bet per game round = line bet X active paylines.&#10;*Clicking SPIN spins the reels with the current selection of lines and line bets. During the reel spins the SPIN button changes into Stop. Clicking STOP ends the spin animation and immediately displays the spin result.&#10;*Reels can also be spun using the AUTO PLAY function. Roll over the AUTO PLAY button to display the options: 10, 20, 30 or 50 spins. Clicking on any of them selects the successive number of spins to be enabled and spins the reels. The AUTO PLAY button changes into STOP during the AUTO PLAY mode of reelspin. The AUTO PLAY mode ends when the reels have been spun the number of times determined by the player, or when the player clicks STOP. &#10;If a bonus or feature is triggered during the AUTO PLAY mode, the feature begins after the player clicks on CLICK TO START. When the feature / bonus is complete, the player clicks on CONTINUE on the screen summarizing the win, the AUTO PLAY mode will then resume.&#10;*Wins are calculated according to the paytable. Line win = LINE BET X corresponding multiplier according to the paytable. SCATTER win = total bet X corresponding multiplier according to the paytable. The paytable can be accessed via the Info page. When opened after a winning spin, the winning symbol combinations (number of symbols and bet multiplier) are highlighted and blink.&#10;*On a given payline, only the highest payline winning combination pays while simultaneous winnings on different paylines are accumulated.&#10;*In case of a winning spin, the WIN field displays the accumulating winnings. The WIN ticker can be stopped by clicking anywhere on the screen to display the total WIN amount immediately. &#10;&#10;INFO PAGE: &#10;&#10;*Clicking INFO opens the reference screen describing different game components. Clicking the arrow buttons at the lower right-hand corner of the screen enables navigating between the different info screens. &#10;&#10;PAYLINES: &#10;&#10;*Active paylines are represented by lines that appear over the reels. &#10;*Only active paylines can register wins. &#10;The SCATTER symbol is an exception to these rules. More information about the SCATTER symbol can be found below. &#10;&#10;WILD SYMBOL: &#10;&#10;The WILD symbol in the game is the King Kong symbol with green background in Jungle Mode and King Kong symbol with blue background in Big City Mode. The symbols pay the same in both modes and differ only graphically. WILD can stand for any other symbol, except SCATTER, to make the best possible winning combination. &#10;&#10;WILD JUNGLE RESPINS FEATURE: &#10;&#10;If three or more WILD symbols appear in any position on the reels simultaneously, even off the paylines, during Jungle Mode, the Wild Jungle Respins feature is triggered. When this happens click on    ‘CLICK TO START’ to start the feature. &#10;The player is awarded 3 free respins, during which more WILD symbols are added to the reels and every time a WILD symbol appears, it remains frozen until the feature ends. &#10;During the free respins, the reels are spun automatically using the same number of LINES and BET PER LINE as on the spin that won the feature. &#10;The skull island bonus cannot be triggered during the Wild Jungle Respins feature. The Wild Jungle Respins feature cannot be retriggered during the respins. &#10;&#10;WILD KONG RESPINS FEATURE: &#10;&#10;If three or more Wild symbols appear in any position on the reels simultaneously, even off the paylines, during Big City Mode, the Wild Kong Respins feature is triggered. When this happens click on ‘CLICK TO START’ to start the feature. &#10;The player is awarded 3 free respins. In the first respin, all symbols on reels #1 and #5 are WILD. In the second respin, all symbols on reels #2 and #4 are WILD. In the third respin, all symbols on reels #1, #3 and #5 are WILD. On the reels that are covered with WILDS, an animation is played of King Kong chasing a car in a city.  The rest of the reels spin regularly. The WILD symbols substitute for all other symbols except SCATTER. &#10;During the free respins, the reels are spun automatically using the same number of LINES and BET PER LINE as on the spin that won the feature. &#10;The city tower bonus cannot be triggered during the Wild Kong Respins feature. The Wild Kong Respins feature cannot be retriggered during the respins. &#10;&#10;SKULL ISLAND BONUS: &#10;&#10;If three or more SCATTER symbols appear in any position on the reels simultaneously during Jungle mode, the skull island bonus is triggered. &#10;To start the Skull Island Bonus round, click on CLICK TO START. &#10;In the Skull Island Bonus, the player is presented a map with 13 locations. Click on a location to uncover one out of three creatures or King Kong. Play until you uncover three of the same kind of creature or until you have found one King Kong.  Each creature is worth a different cash prize which is a multiple of the total bet of the spin that triggered the Skull Island Bonus (X10, X15 or X20 for creatures or X30 for King Kong).  The maximum total amount that can be won from the Skull Island Bonus is 30 times the total bet of the spin that triggered the feature. &#10;At the end of the skull island bonus, a win screen displays your winnings. Click CONTINUE to return to the regular slot reels, where normal gameplay resumes in Big City Mode. &#10;&#10;CITY TOWER BONUS: &#10;&#10;If three or more SCATTER symbols appear in any position on the reels simultaneously during Big City mode, the City Tower Bonus is triggered. &#10;To start the City Tower Bonus round, click on Click to Start. &#10;In the City Tower Bonus, King Kong is on top of a high city tower, with planes flying around him. The player must pick 1 out of 3 planes on three separate occasions. Clicking on a selection wins a cash prize, which is a multiple of the total bet of the spin that triggered the City Tower Bonus (from X1 to X8) and begins a short clip in which King Kong takes down a plane. Once the clip is over, if there are any more selections to be made, the player is returned to the screen in which another plane must be picked. Taking down three planes ends the City Tower Bonus. The maximum total amount that can be won from the City Tower Bonus is 23 times the total bet of the spin that triggered the feature.&#10;At the end of the City Tower Bonus, a win screen displays your winnings. Click Continue to return to the regular slot reels, where normal gameplay resumes in Jungle Mode. &#10;This game has a Return to Player of 95.5%. &#10;"/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>
+    <phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>
+    <phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>
+    <phrase id="InsufficientFundsBody" qa="true" text="Insufficient Balance for the requested bet. Please place a lower bet or visit the Cashier to make a deposit."/>
+    <phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>
+    <phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>
+    <phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>  
+	<phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+	<phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<phrase id="loaderStart" qa="true" text="...loading"/>   
+    <phrase id="loader1" qa="true" text="...loading graphics"/>
+    <phrase id="loader2" qa="true" text="...loading interface"/>
+    <phrase id="loader3" qa="true" text="...loading audio engine"/>
+    <phrase id="loader4" qa="true" text="...loading ambience engine"/>
+    <phrase id="loader5" qa="true" text="...loading EdGE components"/>
+    <phrase id="loaderFinish" qa="true" text="...loading complete"/>
+    <phrase id="MaxMultiRoundBody" qa="false" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>
+	<phrase id="MaxSingleRoundBody" qa="false" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>
+	<phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>
+    <phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+    <phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval. "/>
+    <phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>
+    <phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>
+    <phrase id="NANTitle" qa="true" text="Invalid bet"/>
+    <phrase id="Na" qa="true" text="n/a"/>
+    <phrase id="PlayForFun" qa="true" text="Play for Fun"/>
+    <phrase id="PlayForReal" qa="true" text="Play for Real"/>
+    <phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>
+    <phrase id="SelectRealityTitle" qa="true" text="Please select"/>
+    <phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>
+    <phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>
+    <phrase id="ServerError" qa="true" text="Server error"/>
+    <phrase id="ServerErrorTitle" qa="true" text="Error"/>
+	<phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>
+    <phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>
+    <phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>
+    <phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+    <phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>
+    <phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>
+    <phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>
+    <!-- End generic phrases -->
+	
+	
+	<!-- Generic Server Error Messages Start -->
+	<phrase id="ServerBrowserError"			qa="true"	text="There has been an error in your browser, please refresh"/>
+	<phrase id="ServerNoFunds"				qa="true"	text="We have not been able to place your bet. Please check your updated balance."/>
+	<phrase id="ServerJackpotBalanceBody"	qa="false"	text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+	<phrase id="ServerJackpotBalanceTitle"	qa="false"	text="Jackpot Balance"/>
+	<!-- Generic Server Error Messages End -->  
+  
+	
+    <!-- Start game specific phrases -->
+		<!-- i : Ishir	;	Msg : DisplayMessage	;	T : Title	;	M : Message -->
+		<phrase id="iMsgTOpenGame" qa="true" text="Open Game"/>
+		<phrase id="iMsgMOpenGame" qa="true" text="You have an open game. Click ok to continue. "/>
+		<phrase id="iMsgTInsufficientFunds" qa="true" text="Insufficient balance"/>
+		<phrase id="iMsgMInsufficientFunds" qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET."/>
+		<phrase id="iMsgTStakeLessThenAllowed" qa="true" text="Invalid Bet"/>
+		<phrase id="iMsgMStakeLessThenAllowed" qa="true" text="Bet Placed Is Less Then Minimum Stake Allowed For This Game."/>
+		<phrase id="iMsgTMoreLessThenAllowed" qa="true" text="Invalid Bet"/>
+		<phrase id="iMsgMStakeMoreThenAllowed" qa="true" text="Bet Placed Is More Then Maximum Stake Allowed For This Game."/>
+		<phrase id="iMsgTNoResponseFromServer" qa="true" text="Server Error"/>
+		<phrase id="iMsgMNoResponseFromServer" qa="true" text="Empty Response XML from server. Click ok to resend request to server."/>
+		<phrase id="iMsgTNoOpenGame" qa="true" text="Invalid Game"/>
+		<phrase id="iMsgMNoOpenGame" qa="true" text="No open game present. Request server to open game."/>
+		<phrase id="iMsgTNoLanguageFailed" qa="true" text="Language Failed"/>
+		<phrase id="iMsgMNoLanguageFailed" qa="true" text="Error loading language file."/>
+		<phrase id="iMsgTAutoplayInvalidCount" qa="true" text="INVALID SPINS"/>
+		<phrase id="iMsgMAutoplayInvalidCount" qa="true" text="PLEASE ENTER THE NUMBER OF SPINS."/>
+		<phrase id="iMsgTAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED"/>
+		<phrase id="iMsgMAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED: |COUNT| SPINS COMPLETED."/>
+		<phrase id="iMsgTFreeGameMaxWinReached" qa="true" text="Maximum winning limit"/>
+		<phrase id="iMsgMFreeGameMaxWinReached" qa="true" text="You have exceeded the maximum possible winning limit for any one bet."/>
+		<phrase id="iMsgTBonusMaxWinReached" qa="true" text="Maximum winning limit"/>
+		<phrase id="iMsgMBonusMaxWinReached" qa="true" text="You have exceeded the maximum possible winning limit for any one bet."/>
+		<phrase id="iMsgMLoginFailed" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+		<phrase id="iMsgTLoginFailed" qa="true" text="Login Failed"/>	
+		<phrase id="iGSMSlotgambleInfo"				qa="true" text="CHOOSE RED OR BLACK" />
+		<phrase id="iGSMSlotgambleWin"				qa="true" text="YOU WIN: |WIN|" />		
+		<phrase id="iMsgTGambleLimitReached" qa="true" text="GAMBLE LIMIT REACHED"/>
+		<phrase id="iMsgMGambleLimitReached" qa="true" text="YOU HAVE REACHED GAMBLE DOUBLE UP LIMIT."/>
+		
+		
+		
+		<!-- i : Ishir	;	Err : Error -->
+		<phrase id="iErrSessionTimeOut" qa="true" text="Network connection failed. Unable to proceed request."/>
+		
+		<!-- i : Ishir	;	GSM : Game Supportive Messages -->
+		<phrase id="iGSMGameInitialize"				qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGamenNoWin"					qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGameStarted"				qa="true" text="GOOD LUCK!"/>
+		<phrase id="iGSMTriggerBonus"				qa="true" text="%2 SCATTERS WIN %1 AND START THE BONUS!"/>
+		<phrase id="iGSMTriggerFreegameSelection"	qa="true" text="YOU WIN WILD KONG RESPINS"/>
+		<phrase id="iGSMSlotgameWinLine"			qa="true" text="LINE %1 WINS %3 "/>
+		<phrase id="iGSMSlotgameWinScatter"			qa="true" text="%2 WILD WIN %3 "/>
+		<phrase id="iGSMSlotgameTotalWin"			qa="true" text="TOTAL WIN: %1" />
+		<phrase id="iGSMRockyFeatureWin"			qa="true" text="YOU WIN %1" />
+				
+		<phrase id="iGSMBonusCollect"				qa="true" text="COLLECT"/>
+		
+		<phrase id="iGSMBetmaxInsufficientFunds"	qa="true" text="CLICK SPIN TO START"/>
+		
+		<phrase id="iGSMAutostartActive"			qa="true" text="AUTOSTART ACTIVATED"/>
+		<phrase id="iGSMAutostartStopped"			qa="true" text="AUTOSTART STOPPED"/>
+		
+		<phrase id="iGSMFeatureWinBonus"			qa="true" text="%2 SCATTERS WIN %1 AND START THE BONUS!"/>
+		<phrase id="iGSMFeatureWinFreegame"			qa="true" text="YOU WIN WILD KONG RESPINS"/>
+		<phrase id="iGSMFeatureWinExtraFreegame"	qa="true" text="%1 SCATTERS WIN %2 AND %3 EXTRA FREE GAMES!"/>
+		<phrase id="iGSMInsufficientFunds" 			qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		<phrase id="iGSMSpinInsufficientFunds" 		qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		
+		
+    <!-- End game specific phrases -->
+    
+    <!-- Start generic vector text -->
+    <vector id="Win" qa="true" text="Win!"/>
+    <vector id="Unlucky" qa="true" text="Unlucky"/>
+    <vector id="Jackpot" qa="true" text="Jackpot!"/>
+    <!-- End generic vector text -->
+    
+    <!-- Start  game specific vector text -->
+    <!-- End game specific vector text -->
+    
+</languagepack>

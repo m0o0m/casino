@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<languagepack xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <info id="en" name="English" brand="GTS" product="The Sopranos" debug="false" cjkh="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $"/>
+  
+   	<!-- BUTTONS -->
+	
+	<multitext id="1" qa="true" text="SPIN"/>
+	<multitext id="2" qa="true" text="STOP"/>
+	<multitext id="3" qa="true" text="CLICK TO START"/>
+	<multitext id="4" qa="true" text="BET MAX"/>
+	<multitext id="5" qa="true" text="BET PER LINE"/>
+	<multitext id="6" qa="true" text="LINES"/>
+	<multitext id="7" qa="true" text="AUTO START"/>
+	<multitext id="8" qa="true" text="STOP"/>
+	<multitext id="9" qa="true" text="INFO"/>
+	<multitext id="10" qa="true" text="UNTIL FEATURE"/>
+	<multitext id="12" qa="true" text="UNTIL FEATURE"/>
+	<multitext id="11" qa="true" text="AUTO SPINS"/>
+	
+	<!-- BUTTONS PAY TABLE-->
+	
+	<multitext id="21" qa="true" text="BACK"/>
+	<multitext id="22" qa="true" text="SHOW PAYLINES"/>
+	<multitext id="23" qa="true" text="HIDE PAYLINES"/>
+	
+	<!-- LABELS -->
+	
+	<multitext id="101" qa="true" text="WIN"/>
+	<multitext id="102" qa="true" text="TOTAL BET"/>
+	<multitext id="103" qa="true" text="LINE BET"/>
+	<multitext id="104" qa="true" text="LINES"/>
+	<multitext id="105" qa="true" text="SPINS"/>
+	
+	<!-- OTHER -->
+	<multitext id="500" qa="true" text="CONTINUE"/>
+	<multitext id="501" qa="true" text="5 OF A KIND"/>
+	
+	<!-- MESSAGES -->
+	
+	<phrase id="StakeMaxLimitTitle" 			qa="true" text="Max Stake"/>
+	<phrase id="StakeMaxLimitBody" 				qa="true" text="The maximum total stake permitted per game is [max]. Please adjust your bet selection."/>
+	<phrase id="StakeMinLimitTitle" 			qa="true" text="Insufficient bet"/>
+	<phrase id="StakeMinLimitBody" 				qa="true" text="Please place a bet equal to or greater than the minimum bet of [min]."/>
+	<phrase id="InvalidBetsTitle" 				qa="true" text="Bets"/>
+	<phrase id="InvalidBetsBody" 				qa="true" text="Sorry, cannot accept these bets."/>
+	<phrase id="ServerConnectionErrorBody" 		qa="true" text="You have been disconnected from the gaming server. Please check your internet connection. Game will be closed now."/>
+	<phrase id="ServerConnectionErrorTitle" 	qa="true" text="Connection Error"/>
+	<phrase id="maxWinReachedBody" 				qa="true" text="You have reached the maximum winnings limit of [max]. Your current game will now end and your winnings will be credited to your balance."/>
+	<phrase id="maxWinReachedTitle" 			qa="true" text="Maximum Winnings"/>
+	<phrase id="ServerNoFundsTitle" 			qa="true" text="Insufficient funds"/>
+	<phrase id="ServerNoFundsBody" 				qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance. "/>
+	<phrase id="InvalidBetTypeTitle" 			qa="true" text="Invalid bet"/>
+	<phrase id="InvalidBetTypeBody" 			qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>
+	<phrase id="GameInProgressBody" 			qa="true" text="You are part way through a game. Please click to resume."/>
+	<phrase id="GameInProgressTitle" 			qa="true" text="Game in progress"/>
+	<phrase id="InsufficientFundsTitle" 		qa="true" text="Insufficient funds"/>
+	<phrase id="InsufficientFundsBody" 			qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>
+	<phrase id="ErrorLanguageFileTitle" 		qa="true" text="Language file"/>
+	<phrase id="ErrorLanguageFileBody" 			qa="true" text="Error loading language file."/>
+	
+	<!-- ALERTS -->
+	
+	<phrase id="alert_17" 	qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance. "/>
+	<phrase id="alert_22" 	qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance. "/>
+	<phrase id="alert_113" 	qa="true" text="Autoplay stopped. Do you want to repeat Autoplay?"/>
+	
+	<!-- STATUS BAR -->
+	
+	<phrase id="spin" 									qa="true" text="SPIN"/>
+	<phrase id="continue" 								qa="true" text="CONTINUE"/>
+	<phrase id="back" 									qa="true" text="BACK"/>
+	
+	<phrase id="until_feature" 							qa="true" text="UNTIL FEATURE"/>
+
+	<phrase id="infobar_total_win" 						qa="true" text="TOTAL WIN: [TW]"/>
+	<phrase id="infobar_bonus" 							qa="true" text="YOU WIN BONUS!"/>
+	<phrase id="infobar_more_free_games" 				qa="true" text="YOU WIN [S] EXTRA FREE GAMES!"/>
+	<phrase id="line_win" 								qa="true" text="&lt;left>LINE [L_ID] WINS [W]&lt;right>TOTAL WIN: [TW]"/>
+	<phrase id="line_pay" 								qa="true" text="LINE [L_ID] PAYS [W1] + [W2]&lt;right>TOTAL WIN: [TW]"/>
+	<phrase id="infobar_scatter_win" 					qa="true" text="&lt;left>[X] SCATTERS WIN [W]&lt;right>TOTAL WIN: [TW]"/>
+	<phrase id="infobar_scatter_free_games" 			qa="true" text="[X] SCATTERS WIN [W] AND START FREE GAMES!"/>
+	<phrase id="infobar_scatter_extra_free_games" 		qa="true" text="[X] SCATTERS WIN [W] AND [S] EXTRA FREE GAMES!"/>
+	<phrase id="infobar_screen_win" 					qa="true" text="&lt;left>CURRENT SCREEN WIN: [SW]&lt;right>TOTAL WIN: [TW]"/>
+	<phrase id="infobar_screen_win_and_free_games" 		qa="true" text="&lt;left>CURRENT SCREEN WIN: [SW] + FREE GAMES&lt;right>TOTAL WIN: [TW]"/>
+	<phrase id="infobar_screen_win_only_free_games" 	qa="true" text="&lt;left>CURRENT SCREEN WIN: FREE GAMES&lt;right>TOTAL WIN: [TW]"/>
+	
+	<phrase id="freegames" 								qa="true" text="FREE GAMES"/>
+	<phrase id="multiplier" 							qa="true" text="MULTIPLIER"/>
+	
+	<phrase id="infobar_click_spin_to_start" 			qa="true" text="CLICK SPIN TO START"/>
+	<phrase id="infobar_balance" 						qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+	<phrase id="infobar_good_luck" 						qa="true" text="GOOD LUCK!"/>
+	<phrase id="infobar_free_games" 					qa="true" text="YOU WIN FREE GAMES!"/>
+	
+	<phrase id="infobar_auto_play_start" 				qa="true" text="AUTOSTART ACTIVATED"/>
+	<phrase id="infobar_auto_play_stop" 				qa="true" text="AUTOSTART STOPPED"/>
+	
+	<phrase id="infobar_reloading" 						qa="true" text="Sorry, there has been an error. The game is reloaded."/>
+	
+	<phrase id="alert_auto_play_stopped" 				qa="true" text="Autoplay stopped: [spincount] spins completed."/>
+	<phrase id="alert_auto_play_enter_spins" 			qa="true" text="Please enter the number of spins."/>
+	
+   <!-- OUTRO SCREENS -->
+	<multitext id="650" 						qa="true" text="GAME WIN"/>
+	<multitext id="651" 						qa="true" text="FEATURE WIN"/>
+	<multitext id="652" 						qa="true" text="TOTAL WIN"/>
+	
+	<multitext id="653" 						qa="true" text="GAME WIN"/>
+	<multitext id="654" 						qa="true" text="FEATURE WIN"/>
+	<multitext id="655" 						qa="true" text="TOTAL WIN"/>
+	
+	<!-- RAID BONUS -->
+	<multitext id="600" 							qa="true" text="FLOOR" />
+	<multitext id="601" 							qa="true" text="CONTAINER" />
+	<multitext id="602" 							qa="true" text="CLOSET" />
+	<multitext id="603" 							qa="true" text="CEILING" />
+	<multitext id="604" 							qa="true" text="ARE YOU SURE YOUR MONEY IS SAFE?" />
+	<multitext id="605" 							qa="true" text="FEATURE TRIGGERED" />
+	<multitext id="606" 							qa="true" text="HIDE ENVELOPES!&#xA;	EACH HIDEOUT CAN HOLD UP TO 4 CASH ENVELOPES&#xA;	ONLY 2 HIDEOUTS ARE SAFE" />
+	<multitext id="607" 							qa="true" text="AUTHORITIES ARE ABOUT TO RAID 2 PLACES" />
+	<multitext id="608" 							qa="true" text="YOU WIN" />
+
+	<multitext id="611" 							qa="true" text="BETTER LUCK NEXT TIME" />
+	<multitext id="612" 							qa="true" text="RAID BONUS" />
+	
+	<!-- BADA BING BONUS -->
+	<multitext id="700" 							qa="true" text="TOTAL BONUS" />
+	<multitext id="701" 							qa="true" text="EVERYONE WANTS TO MEET TONY&#xA;	CHOOSE THE ONE WHO WILL SEE HIM" />
+	<multitext id="702" 							qa="true" text="TONY HAS MORE TIME&#xA;	CHOOSE THE ONE WHO WILL SEE HIM NOW" />
+	<multitext id="703" 							qa="true" text="YOUR CONCERN IS APPRECIATED" />
+	<multitext id="704" 							qa="true" text="GLAD SOME BUSINESS ARRANGEMENT COULD BE MADE" />
+	<multitext id="705" 							qa="true" text="GLAD THINGS COULD BE SORTED OUT" />
+	<multitext id="706" 							qa="true" text="GOOD, WE STRAIGHTENED THINGS OUT WITHIN THE FAMILY" />
+	<multitext id="707" 							qa="true" text="YOU’VE DONE THE FAMILY A GREAT SERVICE" />
+
+	<!-- STOLEN GOODS BONUS -->
+	<multitext id="800" 							qa="true" text="STOLEN GOODS BONUS" />
+	<multitext id="801" 							qa="true" text="PICK A CONTAINER TO REVEAL ITS CASH PRIZE&#xA;CHOOSE WHETHER TO KEEP THE PRIZE&#xA;OR FORFEIT IT AND TRY ANOTHER CONTAINER.&#xA;THE BANK OF PRIZES IS LISTED ON THE RIGHT.&#xA;UP TO 3 PICKS ARE ALLOWED" />
+	<multitext id="802" 							qa="true" text="VALUE OF&#xA;STOLEN GOODS&#xA;IN THE DIFFERENT&#xA;CONTAINERS" />
+	<multitext id="803" 							qa="true" text="PICK A CONTAINER TO HIT AND REVEAL&#xA;THE STOLEN GOODS" />
+	<multitext id="804" 							qa="true" text="TRY&#xA;ANOTHER" />
+	<multitext id="805" 							qa="true" text="KEEP&#xA;PRIZE" />
+	<multitext id="806" 							qa="true" text="FINAL PICK" />
+	<multitext id="807" 							qa="true" text="3 PICKS LEFT" />
+	<multitext id="808" 							qa="true" text="2 PICKS LEFT" />
+	
+  <!-- PAYTABLE-->
+	<multitext id="950" 						qa="true" text="FREE GAMES"/>
+	<multitext id="951" 						qa="true" text="OF A KIND"/>
+	<multitext id="952" 						qa="true" text="ALSO FEATURING"/>
+	<multitext id="953" 						qa="true" text="ON REELS MYSTERY RAID BONUS"/>
+	<multitext id="954" 						qa="true" text="3 OR MORE ANYWHERE"/>
+	<multitext id="955" 						qa="true" text="ANYWHERE ON REELS 2+3+4"/>
+	<multitext id="956" 						qa="true" text="ANYWHERE ON REELS 1+5"/>
+	<multitext id="957" 						qa="true" text="CRIME FAMILY FREE GAMES WITH 4 MODES"/>
+	<multitext id="958" 						qa="true" text="SUBSTITUTES FOR ALL SYMBOLS EXCEPT SCATTER, STOLEN GOODS SYMBOL AND BADA BING SYMBOL"/>
+  
+	<multitext id="960" 						qa="true" text="3 OR MORE SCATTER ANYWHERE"/>
+	<multitext id="961" 						qa="true" text="YOUR CURRENT FREE GAMES LEVEL IS: "/>
+	<multitext id="962" 						qa="true" text="UNLOCK 4 FREE GAMES MODES: SOLDIER, CAPO, BOSS, AND FAMILY &#xA;EACH FREE GAMES MODE HAS DIFFERENT RULES. PICK WHICH MODE TO PLAY FROM THE MODES YOU HAVE UNLOCKED&#xA;THE UNLOCKING PROCESS IS PRESENTED IN THE PROGRESS BAR, UNDERNEATH THE 4 FREE GAMES MODES&#xA;&#xA;UNLOCKING IS DONE FROM LEFT TO RIGHT: SOLDIER, CAPO, BOSS, FAMILY RESPECTIVELY&#xA;UNLOCKING A MODE OCCURS WHEN 3 BARS ARE FILLED UNDER THAT MODE:  FILLING THE PROGRESS BAR WILL CHANGE IT TO A SELECT BUTTON.&#xA;ONCE A MODE HAS BEEN UNLOCKED IT STAYS THAT WAY FOR THE DURATION OF THE GAME EVEN AFTER EXITING AND RE-ENTERING THE GAME&#xA;ONCE YOU HAVE UNLOCKED MORE THAN ONE MODE, YOU MAY CHOOSE WHICH MODE TO PLAY BY CLICKING SELECT UNDER THE CHOSEN MODE&#xA;SOLDIER MODE UNLOCKS ON 1st FREE GAMES TRIGGER"/>
+	<multitext id="963" 						qa="true" text="3 SCATTER IN THE MAIN GAME ==&gt; 1 STEP IN THE PROGRESS BAR&#xA;4 OR 5 SCATTER IN THE MAIN GAME ==&gt; 2 STEPS IN THE PROGRESS BAR&#xA;SCATTER DURING FREE GAMES WINS AS PER PAYTABLE BUT DOES NOT&#xA;TRIGGER MORE FREE GAMES"/>
+	<multitext id="964" 						qa="true" text="CRISTOPHER IS EXTRA WILD, SUBSTITUTING FOR ALL SYMBOLS EXCEPT SCATTER AND WILD&#xA;CRISTOPHER  ANYWHERE ON REEL 3 IN CENTER POSITION WINS 5 MORE FREE GAMES &#xA;MORE FREE GAMES CAN BE WON INFINITELY "/>
+	<multitext id="965" 						qa="true" text="FREE GAMES START WITH A RANDOM INITIAL MULTIPLIER OF x2, x3, x4 OR x5&#xA;IF ONE OR MORE PAULIE APPEARS ANYWHERE IN THE SPIN MULTIPLIER GROWS +1 &#xA;IF NO PAULIE APPEARS ON THE REELS, THE MULTIPLIER GOES DOWN -1. MULTIPLIER CANNOT BE LOWER THAN x2&#xA;THE APPEARANCE OF PAULIE WILL ONLY AFFECT THE MULTIPLIER OF THE NEXT SPIN&#xA;CAPO FREE GAMES CANNOT BE RETRIGGERED"/>
+	<multitext id="966" 						qa="true" text="2 TO 5 ADDITIONAL EXTRA WILDS ARE DISTRIBUTED RANDOMLY ON THE REELS DURING EVERY SPIN. SCATTER WINS ARE COUNTED BEFORE WILDS ARE DISTRIBUTED&#xA;WILD ANYWHERE ON REEL 3 IN THE CENTER POSITION WINS 5 MORE FREE GAMES &#xA;EXTRA WILD CANNOT RETRIGGER FREE GAMES&#xA;MORE FREE GAMES CAN BE WON INFINITELY"/>
+	<multitext id="967" 						qa="true" text="ONLY THE 5 FAMILY MEMBERS WILD, PAULIE, CHRISTOPHER, JOHNNY, BOBBIE AS WELL AS ARTIE AND SCATTER APPEARS ON THE REELS&#xA;WILD DOUBLES ALL WINS WHEN SUBSTITUTING&#xA;FAMILY FREE GAMES CANNOT BE RETRIGGERED&#xA;"/>
+  
+	<multitext id="970" 						qa="true" text="TRIGGERED RANDOMLY DURING THE MAIN GAME"/>
+	<multitext id="971" 						qa="true" text="THE AUTHORITIES ARE ABOUT TO RAID 2 OF YOUR LOCATIONS!&#xA;HIDE 4 CASH ENVELOPES IN 4 HIDEOUTS. YOU MAY STASH 0 TO 4 ENVELOPES IN ANY LOCATION. EACH ENVELOPE HOLDS 2X TOTAL BET ONCE ALL ENVELOPES HAVE BEEN STASHED YOU CAN CHOOSE WHETHER TO CONTINUE WITH YOUR SELECTION OR DISTRIBUTE ENVELOPES AGAIN&#xA;ONLY 2 OF THE HIDEOUT LOCATIONS ARE SAFE!&#xA;YOU WIN THE ACCUMULATED CASH VALUE OF ANY OF THE ENVELOPES YOU HID SUCCESSFULLY IN THE 2 SAFE HIDEOUTS&#xA;BONUS CANNOT BE TRIGGERED DURING FREE GAMES&#xA;"/>
+	<multitext id="972" 						qa="true" text="ANYWHERE ON REELS 2+3+4 DURING THE MAIN GAME"/>
+	<multitext id="973" 						qa="true" text="ARTIE, BOBBY, CHRISTOPHER, JOHNNY AND PAULIE ARE WAITING TO MEET TONY&#xA;CHOOSE WHO TONY WILL SEE NEXT. ANY CHOICE WINS A CASH PRIZE&#xA;ONCE ANY OF THE GUYS ENTERS THE ROOM 1 OF 2 THINGS CAN HAPPEN:&#xA;1. MEETING ENDS AND PLAYER CAN CHOOSE ANOTHER GUY TO GO IN AND MEET TONY&#xA;2. THE BONUS ROUND ENDS AND PLAYER RETURNS TO MAIN GAME "/>
+	<multitext id="974" 						qa="true" text="ANYWHERE ON REELS 1+5 DURING THE MAIN GAME"/>
+	<multitext id="975" 						qa="true" text="PLAN THE BIG HEIST! &#xA;YOU HAVE INFORMATION ABOUT 10 CONTAINERS. THE CASH PRIZES OF ALL CONTAINERS ARE FOUND AT THE SIDE OF THE SCREEN, BUT YOU DO NOT KNOW WHICH CONTAINER IS WORTH WHICH PRIZE&#xA;PICK A CONTAINER TO REVEAL ITS CASH PRIZE&#xA;AFTER SEEING THE VALUE OF THE PRIZE YOU CAN KEEP THE PRIZE OR CHANGE THE CONTAINER AND PICK AGAIN. UP TO 3 PICKS CAN BE PLAYED. 3RD PICK IS FINAL AND CANNOT BE SWAPPED &#xA;BONUS CANNOT BE TRIGGERED DURING FREE GAMES&#xA;"/>
+
+	<multitext id="980" 						qa="true" text="PAYLINES"/>
+	<multitext id="981" 						qa="true" text="ONLY HIGHEST WIN PAYS PER LINE &#xA;WIN COMBINATIONS PAY LEFT TO RIGHT ONLY EXCEPT SCATTER WHICH PAYS ANY  &#xA;PAYLINE WINS ARE MULTIPLIED BY THE LINE BET&#xA;MALFUNCTIONS VOID ALL PLAYS AND PAYS"/>
+  
+	<multitext id="994" 						qa="true" text="4 FREE GAMES MODES"/>
+	
+	<multitext id="996" 						qa="true" text="25 FREE GAMES"/>
+	<multitext id="997" 						qa="true" text="20 FREE GAMES"/>
+	<multitext id="998" 						qa="true" text="10 FREE GAMES"/>
+	<multitext id="999" 						qa="true" text="10 FREE GAMES"/>
+    <!-- PAYTABLE END-->
+	
+	<!-- PROMOS -->
+	<multitext id="1000" 						qa="true" text="BIG WIN!"/>
+	<multitext id="1001" 						qa="true" text="3 OR MORE SCATTER SYMBOL ANYWHERE START THE CRIME FAMILY FREE GAMES!"/>
+	<multitext id="1002" 						qa="true" text="5X SCATTER SYMBOL WINS 100X TOTAL BET!"/>
+	<multitext id="1003" 						qa="true" text="5X WILD SYMBOL WINS 3000X TOTAL BET!"/>
+	<multitext id="1004" 						qa="true" text="4 UNLOCKABLE FREE GAMES MODES!"/>
+	<multitext id="1005" 						qa="true" text="WIN CASH IN RAID BONUS!"/>
+	<multitext id="1006" 						qa="true" text="STOLEN GOODS SYMBOL ANYWHERE ON REELS 1+5 WINS STOLEN GOODS BONUS!"/>
+	<multitext id="1007" 						qa="true" text="BADA BING SYMBOL ANYWHERE ON REELS 2+3+4 WINS BADA BING BONUS!"/>
+	<!-- PROMOS  END-->
+	
+	<!-- FS INTRO LEVEL 1100-->
+	<multitext id="1100" 						qa="true" text="CHOOSE YOUR FREE GAMES MODE"/>
+	<multitext id="1101" 						qa="true" text="SELECT"/>
+	<multitext id="1102" 						qa="true" text="25 FREE GAMES"/>
+	<multitext id="1103" 						qa="true" text="CHRISTOPHER IS EXTRA WILD&#xA;CHRISTOPHER IN CENTER OF REEL 3&#xA;WINS 5 MORE FREE GAMES"/>
+	<multitext id="1104" 						qa="true" text="20 FREE GAMES"/>
+	<multitext id="1105" 						qa="true" text="WITH DYNAMIC&#xA;MULTIPLIER"/>
+	<multitext id="1106" 						qa="true" text="10 FREE GAMES"/>
+	<multitext id="1107" 						qa="true" text="WITH RANDOM WILDS&#xA;WILD IN CENTER OF REEL 3&#xA;WINS 5 MORE FREE GAMES"/>
+	<multitext id="1108" 						qa="true" text="10 FREE GAMES"/>
+	<multitext id="1109" 						qa="true" text="ONLY FAMILY MEMBERS,&#xA;	ARTIE AND SCATTER ON REELS WILD DOUBLE WINS WHEN SUBSTITUTING"/>
+	<multitext id="1110" 						qa="true" text="CRIME FAMILY FREE GAMES"/>
+	<!-- FS INTRO END -->
+	
+	<!-- FS -->
+	<multitext id="1200" 						qa="true" text="PLAY MORE TO ADVANCE IN RANK"/>
+	<multitext id="1201" 						qa="true" text="FREE GAMES WIN"/>
+	<multitext id="1202" 						qa="true" text="MULTIPLIER"/>
+	<multitext id="1203" 						qa="true" text="FREE GAMES"/>
+	<multitext id="1204" 						qa="true" text="FREE GAME"/>
+	
+	<multitext id="1205" 						qa="true" text="SOLDIER LEVEL FREE GAMES"/>
+	<multitext id="1206" 						qa="true" text="CAPO LEVEL FREE GAMES"/>
+	<multitext id="1207" 						qa="true" text="BOSS LEVEL FREE GAMES"/>
+	<multitext id="1208" 						qa="true" text="FAMILY LEVEL FREE GAMES"/>
+	
+	<!-- FS END -->
+	<!-- FS END-->
+	
+	<!-- INFO TEXTS -->
+	<phrase id="sop_more_free_spins" 			qa="true" text="YOU WIN 5 MORE FREE GAMES"/>
+	<phrase id="sop_bonus_bada_bing" 			qa="true" text="YOU WIN BADA BING BONUS"/>
+	<phrase id="sop_bonus_stolen_goods" 		qa="true" text="YOU WIN STOLEN GOODS BONUS"/>
+	<phrase id="sop_bonus_raid" 				qa="true" text="YOU WIN RAID BONUS"/>
+	
+	<phrase id="StolenGoodsPick" 					qa="true" text="PICK A CONTAINER TO HIT &#xA;	AND REVEAL THE STOLEN GOODS"/>
+	<phrase id="StolenGoodsKeepOrPick"				qa="true" text="KEEP THE GOODS OR PICK A DIFFERENT CONTAINER" />
+	<phrase id="StolenGoodsKeep" 					qa="true" text="KEEP THE GOODS FROM CHOSEN CONTAINER" />
+	<phrase id="RaidSingleEnvelope" 				qa="true" text="[NUM_ENVELOPES] ENVELOPE WAS&#xA;	SUCCESSFULLY HIDDEN" />
+	<phrase id="RaidMultipleEnvelopes" 			qa="true" text="[NUM_ENVELOPES] ENVELOPES WERE&#xA;	SUCCESSFULLY HIDDEN " />
+	<phrase id="Help" qa="true" text="The Sopranos&#10; &#10;5-Reel 25-Line Slots&#10; &#10;The Sopranos objective is to obtain winning symbol combinations by spinning the reels. &#10; &#10;TO PLAY THE GAME:&#10;LINE BET&#10;Displays the current bet pet line. Click the ‘+’ or ‘-‘ buttons to change this.&#10; &#10;LINES&#10;Displays the number of active lines. Click the ‘+’ or ‘-‘ buttons to change this. &#10; &#10;TOTAL BET&#10;Shows the line bet multiplied by the number of paylines.&#10;&#10;SPIN&#10;Clicking ‘SPIN’ spins the reels with the selected LINES, LINE BET and TOTAL BET. &#10; &#10;BET MAX&#10;Clicking ‘BET MAX’ spins the reels and the maximum possible BET PER LINE. &#10; &#10;INFO&#10;Click the ‘INFO’ button to view winning paylines and payout information.&#10;Scroll through INFO screens by using the left and right arrows. &#10;To Exit the PAYTABLE click the ‘BACK’ button.&#10;&#10;WIN&#10;Displays the winning amount.&#10;&#10;AUTO PLAY&#10;There is an auto start function available that will start each spin automatically until either something occurs that requires your intervention or the number of set spins expires. Selecting your desired number of spins will automatically commence AUTO SPINS. Clicking the STOP button beneath the AUTO SPINS indicator will stop AUTO PLAY.&#10;&#10;ABOUT PAYOUTS:&#10;* If two winning combinations occur on the same line, the higher of them is paid out.&#10;* Win combinations must occur from left to right and on an active payline.&#10;* The Wild Symbol is represented by the Tony Soprano symbol. It can stand for any other symbol, excluding Scatter, Stolen Goods or Bada Bing symbols, to make the best possible winning combination.&#10;* There is a separate payout for 2 or more consecutive Wild Symbols on an active payline.&#10;&#10;Payouts shown in the paytable are multiplied by the line bet, not by the total bet. If more than one active payline has a winning combination, the winnings are added up. &#10; &#10;SCATTER SYMBOL: &#10;* Scatter symbols do not have to occur on a particular payline. &#10;* Payout for scatter symbols is multiplied by the total Bet. &#10;* If there are 3 or more Scatters in the spin results, the payout earned is multiplied by the total bet and added to payline winnings. &#10;* 3 or more scatters anywhere win the Crime Family Free Games. &#10;* Press “CLICK TO START” to begin each bonus. &#10;*Press “CONTINUE” to return to the regular reels when the bonus ends. &#10; &#10;CRIME FAMILY FREE GAMES&#10;* Select your free games mode, there are four game modes to choose from although 3 will be locked until further free spins are triggered. &#10;*Each time free spins bonus is triggered you will be awarded points which will be used to advance in rank and unlock further game modes. &#10;* Detailed information over specific modes can be found in the INFO table. &#10; &#10;DISPLAY&#10;* Remaining spins are displayed above the reels. &#10;* FREE GAMES WIN – Indicates current winnings from free spins. &#10;* MULTIPLIER – Indicates the multiplier. &#10; &#10;RAID BONUS&#10;* Triggered randomly in the main game. &#10;* Distribute the four envelopes of cash in any of the four hideouts, each hideout can hide up to 4 cash envelopes. &#10;* Only two hideouts are safe. &#10;* You will be asked to confirm your selection before the raid occurs. &#10; &#10;STOLEN GOODS BONUS&#10;* The Bonus is triggered when the Stolen Goods symbol appears on reels 1 and 5. &#10;* Picking a container will reveal a cash prize, the player can either keep the prize or try another. &#10;* The player is limited to a set amount of picks indicated above the map. &#10; &#10;BADA BING BONUS&#10;* The Bonus is triggered when the Bada Bing symbol appears on reels 2, 3 and 4. &#10;* Choose the one who will see Tony Soprano. &#10;* One of two possible outcomes will occur for each choice: &#10;1. The meeting ends and the player can choose another guy to go in and meet Tony&#10;2. The bonus ends and the player returns to the main game. &#10; &#10;Malfunction voids all pays and plays. &#10; &#10;This game has a Return to Player of 94%."/>
+</languagepack>

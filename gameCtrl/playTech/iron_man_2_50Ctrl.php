@@ -130,16 +130,21 @@ class iron_man_2_50Ctrl extends Ctrl {
 
         $win = ($report['totalWin'] > 0) ? "true" : "false";
 
+        $drawStates = '<DrawState drawId="0" state="settling">' . $winLines . '
+                    <ReplayInfo foItems="' . $report['stops'] . '"/>
+                    <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
+                </DrawState>';
+
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
         <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
-            <EEGLoadResultsResponse gameId="' . $this->gameID . '">
-                <DrawState drawId="0" state="settling">' . $winLines . '
-                    <ReplayInfo foItems="' . $report['stops'] . '"/>
-                    <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
-                </DrawState>
-            </EEGLoadResultsResponse>
+            <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
+
+        if($totalWin > 0) {
+            $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
+            $_SESSION['bonusWIN'] = $totalWin;
+        }
 
         $this->outXML($xml);
     }

@@ -172,7 +172,7 @@ class rockyCtrl extends Ctrl {
 
         $win = ($report['totalWin'] > 0) ? "true" : "false";
 
-        $drawState = '<DrawState drawId="0" state="settling">' . $winLines . '
+        $drawStates = '<DrawState drawId="0" state="settling">' . $winLines . '
                     <ReplayInfo foItems="' . $report['stops'] . '"/>
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>';
@@ -180,11 +180,11 @@ class rockyCtrl extends Ctrl {
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
         <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" freeGames="0" gameId="' . $this->gameID . '"/>
-            <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawState.'</EEGLoadResultsResponse>
+            <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        if($report['kBonus']) {
-            $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
+        if($report['kBonus'] || $totalWin > 0) {
+            $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
             $_SESSION['bonusWIN'] = $totalWin;
             $_SESSION['bonus'] = 'knockout';
         }

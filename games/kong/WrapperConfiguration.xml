@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" ?>
+	<wrapperConfig>
+		<gameName name="king kong pt"/>	
+		<clientName name="king kong pt" />
+		<game asVersion="3" gameFormat="SlotNoAutoplay" loadingStages="3" configurationStages="1" height="400" width="640" nativeHeight="720" nativeWidth="1152" gameTitle="PT-KingKong"/>
+	</wrapperConfig>

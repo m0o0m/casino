@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<wrapperConfig>
- <game asVersion="3" gameFormat="SlotNoAutoplay" loadingStages="6" configurationStages="2" width="640" height="373"  nativeHeight="600" nativeWidth="1029" gameTitle="PT-Gladiator"/>
- <gameName name="gladiator"/> 
- <clientName name="gladiator" />
-</wrapperConfig>
