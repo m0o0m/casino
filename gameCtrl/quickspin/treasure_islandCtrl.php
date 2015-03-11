@@ -169,16 +169,21 @@ class treasure_islandCtrl extends Ctrl {
 
         $win = ($report['totalWin'] > 0) ? "true" : "false";
 
+        $drawStates = '<DrawState drawId="0" state="settling">' . $winLines . '
+                    <ReplayInfo foItems="' . $report['stops'] . '"/>
+                    <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
+                </DrawState>';
+
         $xml = '<?xml version="1.0" encoding="UTF-8"?>
         <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
-            <EEGLoadResultsResponse gameId="' . $this->gameID . '">
-                <DrawState drawId="0" state="settling">' . $winLines . '
-                    <ReplayInfo foItems="' . $report['stops'] . '"/>
-                    <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
-                </DrawState>
-            </EEGLoadResultsResponse>
+            <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
+
+        if(!empty($report['bonusData']['explode'])) {
+            $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
+            $_SESSION['bonusWIN'] = $totalWin;
+        }
 
         $this->outXML($xml);
     }
@@ -484,6 +489,8 @@ class treasure_islandCtrl extends Ctrl {
         $superWildPaid = false;
         $barrelPaid = false;
         $starPaid = false;
+
+        $realXLevel = 0;
         foreach($resultArray as &$r) {
             if($r['name'] == 'freeSpins') {
                 $fsCount = $config['addFsCount'][$this->getRandParam($config['addFsCountChance'])];
@@ -512,6 +519,7 @@ class treasure_islandCtrl extends Ctrl {
                     if($r['won']) {
                         $r['number'] = $xWildLevel++;
                         $r['seq'] = $iterate;
+                        $realXLevel++;
                     }
                     else {
                         $r['number'] = $xWildLevel++;
@@ -596,7 +604,7 @@ class treasure_islandCtrl extends Ctrl {
                 </Feature>';
 
         $this->bonus['spins'] = $spins;
-        $this->bonus['xWildLevel'] = $xWildLevel;
+        $this->bonus['xWildLevel'] = $realXLevel;
 
         $this->gameParams->winPay = $this->gameParams->winPay2;
         $this->slot->setParams($this->gameParams);
