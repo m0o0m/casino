@@ -186,14 +186,21 @@ class sinbadParams extends Params {
         array('symbol'=> 'F10', 'count'=> 3, 'multiplier'=> 2.00),
     );
 
+    // Настройки выпадения вайлдов в Ape FS
+    // x1Percent - шанс выпадения 1 вайлда
+    // x2Percent - шанс выпадения 2х вайлдов
+    // Может быть так, что не выпадет ни 1 ни 2 вайлда. Не нужно ставить х1Percent >= 100
     public $apeConfig = array(
         'x1Percent' => 95,
         'x2Percent' => 15,
     );
 
+    // Настройки SnakeFS
+    // wildCountRange - количество вайлдов
+    // wildCountRangeChance - шанс выпадения вайлдов
     public $snakeConfig = array(
         'wildCountRange' => array(2,3),
-        'wildCountRanceChance' => array(
+        'wildCountRangeChance' => array(
             0,0,0,0,0,
             1,1,1,
         ),

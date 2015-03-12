@@ -149,6 +149,7 @@ class sugar_trailCtrl extends Ctrl {
         $respin = false;
         $bonusCount = 0;
         $bonus = array();
+
         if($this->gameParams->testBonusEnable) {
             $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
             switch($g) {
@@ -172,7 +173,6 @@ class sugar_trailCtrl extends Ctrl {
                     break;
             }
         }
-
 
         $report = $this->slot->spin($bonus);
 

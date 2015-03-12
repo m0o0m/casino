@@ -125,7 +125,6 @@ class three_musketeersCtrl extends Ctrl {
             }
         }
 
-
         $report = $this->slot->spin($bonus);
 
         $report['type'] = 'SPIN';

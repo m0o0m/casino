@@ -137,9 +137,6 @@ class treasure_islandCtrl extends Ctrl {
             }
         }
 
-
-
-
         $totalWin = $report['totalWin'] + $bonusWin;
 
         return array(

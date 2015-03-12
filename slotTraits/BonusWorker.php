@@ -119,6 +119,12 @@ trait BonusWorker {
         }
     }
 
+    /**
+     * Устанавливает множитель всех выигрышей, в зависимости от количества выпавших символов на барабанах.
+     *
+     * @param string $symbol Количество символов = множитель.
+     * @param int $multipleInc Дополнительное значение, которое прибавляется к итоговому множетелю. Может быть отрицательным.
+     */
     private function setMultipleBySymbolCount($symbol, $multipleInc) {
         $info = $this->getSymbolAnyCount($symbol);
         $this->double = $info['count'] + $multipleInc;
@@ -294,7 +300,7 @@ trait BonusWorker {
     private function setRandomWildIfSymbolCount($offsets, $symbol, $needleCount, $wildConfig) {
         $sReport = $this->getSymbolAnyCount($symbol);
         if($sReport['count'] == $needleCount) {
-            $r = $wildConfig['wildCountRanceChance'][rnd(0, count($wildConfig['wildCountRanceChance']) - 1)];
+            $r = $wildConfig['wildCountRangeChance'][rnd(0, count($wildConfig['wildCountRangeChance']) - 1)];
             $wildsCount = $wildConfig['wildCountRange'][$r];
             shuffle($offsets);
             $wildsOffsets = array_slice($offsets, 0, $wildsCount);

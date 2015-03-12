@@ -206,6 +206,10 @@ class treasure_islandParams extends Params {
         array('symbol'=> 'T', 'count'=> 3, 'multiplier'=> 2.00),
     );
 
+    // Описание бонуса Pirate Attack
+    // Изменять можно только:
+    // hitsChance - шанс выпадения 2х или 3х выстелов
+    // missChance - шанс промаха по боченку в %. (100% - промах в любом случае)
     public $pirateAttack = array(
         'countToStart' => 2,
         'hitsCount' => array(2,3),
@@ -223,6 +227,16 @@ class treasure_islandParams extends Params {
         'missSymbol' => 'M',
     );
 
+    // Настройки выпадения бонусных игр при скаттерах
+    // credit - моментальная выплата ставка х2, hunt - Бонус с лопатками, fs - ФСы
+    // fsTypeChance - шанс выпадения определенного типа бонуса. Больше всего шанс у "credit", потом "hunt" и потом "fs".
+    // bonusArray - массив ФСных бонусов:
+    // starFs - запускает ФС. xWilds - Запускает бонус с дополнительными вайлдами. superWilds - бонус с большим количеством вайлдов на барабанах.
+    // freeSpins - дополнительные фриспины. credit - какой-то выигрыш. barrelsLocked - бонус с залочеными бочками.
+    // addFsCount - Количество доп. ФСов, которые могут даваться за один раз.
+    // addFsCountChance - шанс выпадения количества доп.ФСов.
+    // payout - множитель ставки на линию, который может выпасть, когда выбираем "credit" в островах.
+    // payoutChance - шанс выпадения определенного множителя для "credit"
     public $fsConfig = array(
         'fsType' => array('credit', 'hunt', 'fs'),
         'fsTypeChance' => array(
@@ -250,6 +264,12 @@ class treasure_islandParams extends Params {
         ),
     );
 
+    // Настройки бонусной игры Treasure Hunt
+    // treasureChance - шанс найти сокровищницу.
+    // treasureChance - множители ставки на линию, когда нашли сокровищницу
+    // treasureMultipleChance - шанс выпадения определенного множителя для сокровищниц
+    // digMultiple - множители ставки для обычных находок.
+    // digMultipleChance - шанс выпадения определенного множителя для обычных находок.
     public $huntConfig = array(
         'treasureChance' => 20,
         'treasureMultiple' => array(300, 500, 750),

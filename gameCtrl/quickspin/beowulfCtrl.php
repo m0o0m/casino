@@ -92,6 +92,7 @@ class beowulfCtrl extends Ctrl {
         $bonusCount = 0;
 
         $bonus = array();
+
         if($this->gameParams->testBonusEnable) {
             $g = (empty($_GET['bonus'])) ? '' : $_GET['bonus'];
             switch($g) {

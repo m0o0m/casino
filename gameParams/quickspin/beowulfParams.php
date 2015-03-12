@@ -4,6 +4,7 @@
 class beowulfParams extends Params {
 
     // раскладки
+    // Главная, FreeSpinsNoWD, FreeSpin, GrendelTrigger, GrendelRespin
     public $reels = array(
         // Основная игра
         array(
@@ -172,6 +173,10 @@ class beowulfParams extends Params {
         array('symbol'=> 'K', 'count'=> 3, 'multiplier'=> 3.00),
     );
 
+    // Настройка шанса выпадения и прочего для Grendel Attack
+    // Chance - 1 к 15.
+    // wildsCountRange - количество возможных вайлдов
+    // wildsCountChance - рандом для вайлдов
     public $grendelConfig = array(
         'chance' => 15,
         'wildsCountRange' => array(3,4,5,6),

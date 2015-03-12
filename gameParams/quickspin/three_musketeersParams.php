@@ -105,14 +105,12 @@ class three_musketeersParams extends Params {
         array('symbol'=> 'M3', 'count'=> 5, 'multiplier'=> 100.00),
         array('symbol'=> 'C5', 'count'=> 5, 'multiplier'=> 100.00),
         array('symbol'=> 'C6', 'count'=> 5, 'multiplier'=> 100.00),
-        //array('symbol'=> 'AM', 'count'=> 5, 'multiplier'=> 100.00),
         array('symbol'=> 'M4', 'count'=> 4, 'multiplier'=> 50.00),
         array('symbol'=> 'C5', 'count'=> 4, 'multiplier'=> 50.00),
         array('symbol'=> 'C6', 'count'=> 4, 'multiplier'=> 50.00),
         array('symbol'=> 'M1', 'count'=> 4, 'multiplier'=> 30.00),
         array('symbol'=> 'M2', 'count'=> 4, 'multiplier'=> 30.00),
         array('symbol'=> 'M3', 'count'=> 4, 'multiplier'=> 30.00),
-        //array('symbol'=> 'AM', 'count'=> 4, 'multiplier'=> 30.00),
         array('symbol'=> 'M4', 'count'=> 3, 'multiplier'=> 25.00),
         array('symbol'=> 'S7', 'count'=> 5, 'multiplier'=> 25.00),
         array('symbol'=> 'S8', 'count'=> 5, 'multiplier'=> 25.00),
@@ -123,7 +121,6 @@ class three_musketeersParams extends Params {
         array('symbol'=> 'M3', 'count'=> 3, 'multiplier'=> 20.00),
         array('symbol'=> 'C5', 'count'=> 3, 'multiplier'=> 20.00),
         array('symbol'=> 'C6', 'count'=> 3, 'multiplier'=> 20.00),
-        //array('symbol'=> 'AM', 'count'=> 3, 'multiplier'=> 20.00),
         array('symbol'=> 'S7', 'count'=> 4, 'multiplier'=> 15.00),
         array('symbol'=> 'S8', 'count'=> 4, 'multiplier'=> 15.00),
         array('symbol'=> 'S9', 'count'=> 4, 'multiplier'=> 15.00),
@@ -135,10 +132,11 @@ class three_musketeersParams extends Params {
         array('symbol'=> 'M3', 'count'=> 2, 'multiplier'=> 3.00),
         array('symbol'=> 'S9', 'count'=> 3, 'multiplier'=> 3.00),
         array('symbol'=> 'S0', 'count'=> 3, 'multiplier'=> 3.00),
-        //array('symbol'=> 'AM', 'count'=> 2, 'multiplier'=> 3.00),
         array('symbol'=> 'BN', 'count'=> 3, 'multiplier'=> 3.00),
     );
 
+
+    // Барабаны для wild-множителей
     public $wildMultipleConfig = array(
         'multipleReels' => array(
             array(1),
