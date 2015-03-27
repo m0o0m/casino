@@ -147,17 +147,18 @@ class rapunzel_towerCtrl extends Ctrl {
             $report['type'] = 'FS';
         }
 
-
         $report['sticky'] = $this->slot->getSymbolAnyCount('T');
-        if($report['sticky']['count'] > 2) {
-            $bonusCount++;
-            $report['bonus'] = $this->getRespinData($report, array(
-                'rsName' => 'BaseRespin',
-                'reel' => 1,
-                'multiplier' => 1,
-                'bonus' => '',
-            ));
-            $bonusWin += $report['bonus']['bonusWin'];
+        if($report['linesCount'] == 30) {
+            if($report['sticky']['count'] > 2) {
+                $bonusCount++;
+                $report['bonus'] = $this->getRespinData($report, array(
+                    'rsName' => 'BaseRespin',
+                    'reel' => 1,
+                    'multiplier' => 1,
+                    'bonus' => '',
+                ));
+                $bonusWin += $report['bonus']['bonusWin'];
+            }
         }
 
         $totalWin = $report['totalWin'] + $bonusWin;
@@ -177,7 +178,7 @@ class rapunzel_towerCtrl extends Ctrl {
         $bonus = '';
 
 
-        if($report['sticky']['count'] > 2) {
+        if($report['sticky']['count'] > 2 && $report['linesCount'] == 30) {
             $respin = 'true';
             $addDraws = $report['bonus']['drawStates'];
         }
@@ -397,11 +398,12 @@ class rapunzel_towerCtrl extends Ctrl {
             }
 
 
+
             $bonus .= '<Feature name="ladder" value="'.$this->bonus['ladder']['ladderLevel'].'" level="'.$this->bonus['ladder']['level'].'" spins="'.$this->bonus['ladder']['bonusSpins'].'" />';
 
 
             $addDraws = '';
-            if($fsReport['sticky']['count'] > 2) {
+            if($fsReport['sticky']['count'] > 2 && $report['linesCount'] == 30) {
                 $respin = 'true';
             }
             else {
@@ -420,7 +422,7 @@ class rapunzel_towerCtrl extends Ctrl {
                 'lastSpins' => $totalSpins,
                 'bonus' => $bonus,
             ));
-            if($fsReport['sticky']['count'] > 2) {
+            if($fsReport['sticky']['count'] > 2 && $report['linesCount'] == 30) {
                 $fsReport['bonus'] = $this->getRespinData($fsReport, array(
                     'rsName' => 'FSRespin',
                     'reel' => 3,
@@ -441,7 +443,7 @@ class rapunzel_towerCtrl extends Ctrl {
                 $totalSpins += $this->bonus['ladder']['bonusSpins'];
             }
 
-            if($fsReport['sticky']['count'] > 2) {
+            if($fsReport['sticky']['count'] > 2 && $report['linesCount'] == 30) {
                 if($spins == 1) {
                     $this->bonus['YES'] = true;
                 }

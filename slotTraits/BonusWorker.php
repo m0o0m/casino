@@ -127,7 +127,11 @@ trait BonusWorker {
      */
     private function setMultipleBySymbolCount($symbol, $multipleInc) {
         $info = $this->getSymbolAnyCount($symbol);
-        $this->double = $info['count'] + $multipleInc;
+        $resultMultiple = $info['count'] + $multipleInc;
+        if($resultMultiple < 1) {
+            $resultMultiple = 1;
+        }
+        $this->double = $resultMultiple;
     }
 
 
