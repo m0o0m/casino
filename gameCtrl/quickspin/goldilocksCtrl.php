@@ -231,7 +231,16 @@ class goldilocksCtrl extends Ctrl {
 
             $this->bonus['ladder']['bonusSpins'] = 0;
 
-            $fsReport = $this->slot->spin();
+            $fsReport = $this->slot->spin(array(
+                'type' => 'wildsByLevel',
+                'increaseSymbol' => 'S',
+                'currentLevel' => $this->bonus['ladder']['ladderLevel'],
+                'steps' => array(
+                    '3' => array(0,1,2),
+                    '8' => array(0,1,2,3),
+                    '13' => array(0,1,2,3,4),
+                ),
+            ));
 
             $currentDraw = $this->slot->drawID;
 
@@ -300,18 +309,15 @@ class goldilocksCtrl extends Ctrl {
         if($this->bonus['ladder']['ladderLevel'] > 12 && !$this->bonus['ladder']['l3PD']) {
             $this->bonus['ladder']['level'] = 3;
             $this->bonus['ladder']['bonusSpins'] = 2;
-            $this->slot->setWilds(array(0,1,2,3,4));
             $this->bonus['ladder']['l3PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 7 && !$this->bonus['ladder']['l2PD']) {
             $this->bonus['ladder']['level'] = 2;
             $this->bonus['ladder']['bonusSpins'] = 2;
-            $this->slot->setWilds(array(0,1,2,3));
             $this->bonus['ladder']['l2PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 2 && !$this->bonus['ladder']['l1PD']) {
             $this->bonus['ladder']['level'] = 1;
-            $this->slot->setWilds(array(0,1,2));
             $this->bonus['ladder']['l1PD'] = true;
         }
         else {

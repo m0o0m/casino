@@ -115,9 +115,24 @@ trait BonusWorker {
             case 'multipleBySymbolCount':
                 $this->setMultipleBySymbolCount($bonus['symbol'], $bonus['multipleInc']);
                 break;
+            case 'wildsByLevel':
+                $this->setWildsByLevel($bonus);
+                break;
 
         }
     }
+
+    private function setWildsByLevel($bonus) {
+        $increaseCount = $this->getSymbolAnyCount($bonus['increaseSymbol'])['count'];
+        $finalLevel = $bonus['currentLevel'] + $increaseCount;
+        foreach($bonus['steps'] as $c=>$w) {
+            if($finalLevel >= $c) {
+                $this->setWilds($w);
+            }
+        }
+    }
+
+
 
     /**
      * Устанавливает множитель всех выигрышей, в зависимости от количества выпавших символов на барабанах.
