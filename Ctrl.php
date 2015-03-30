@@ -215,6 +215,17 @@ class Ctrl {
     }
 
     /**
+     * Отправка баланса пользователя
+     *
+     * @param $request
+     */
+    protected function startFunBalance($request) {
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><CustomerFunBalanceResponse balance="'.$this->getBalance().'"/></CompositeResponse>';
+
+        $this->outXML($xml);
+    }
+
+    /**
      * Баланс после СПИНА и БОНУСОВ
      *
      * Когда флешка вызывает этот метод, то это значит, что спин или любой бонус закончился

@@ -67,11 +67,17 @@ class big_bad_wolfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
+        $payType = 'standart';
+
         $this->showSpinReport($spinData['report'], $spinData['totalWin']);
+
+        if(!empty($this->fsBonus['drawStates'])) {
+            $payType = 'free';
+        }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
-        game_ctrl($stake * 100, $totalWin * 100, 0, 'standart');
+        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
     }
 
     protected function getSpinData() {

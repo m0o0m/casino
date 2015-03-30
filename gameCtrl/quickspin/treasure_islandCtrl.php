@@ -49,7 +49,7 @@ class treasure_islandCtrl extends Ctrl {
 
         $this->outXML($xml);
     }
-
+    
     protected function startSpin($request) {
         $betAttr = (array) $request->Bet;
         $betAttr = $betAttr['@attributes'];
@@ -77,11 +77,14 @@ class treasure_islandCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
+        $payType = 'standart';
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
+                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -89,7 +92,7 @@ class treasure_islandCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, 'standart');
+        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
     }
 
     protected function getSpinData() {

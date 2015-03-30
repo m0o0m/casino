@@ -93,11 +93,14 @@ class firestormCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
+        $payType = 'standart';
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'LOCKED':
+                $payType = 'free';
                 $this->showLockedReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -105,7 +108,7 @@ class firestormCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, 'standart');
+        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
     }
 
     protected function getSpinData() {

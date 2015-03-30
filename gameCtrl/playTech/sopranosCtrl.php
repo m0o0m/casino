@@ -251,20 +251,26 @@ class sopranosCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
+        $payType = 'standart';
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'BADABING':
+                $payType = 'bonus';
                 $this->showBadaBingReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'RAID':
+                $payType = 'bonus';
                 $this->showRaidReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'STOLEN':
+                $payType = 'bonus';
                 $this->showStolenReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FREESPIN':
+                $payType = 'free';
                 $this->showFsReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -272,7 +278,7 @@ class sopranosCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, 'standart');
+        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
     }
 
     protected function getSpinData() {
@@ -612,7 +618,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'standart');
+        game_ctrl(0, $totalWin * 100, false, 'free');
     }
     private function getSoldierData() {
         $fsCount = 25;
@@ -717,7 +723,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'standart');
+        game_ctrl(0, $totalWin * 100, false, 'free');
     }
     private function getCapoData() {
         $fsCount = 20;
@@ -822,7 +828,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'standart');
+        game_ctrl(0, $totalWin * 100, false, 'free');
     }
     private function getBossData() {
         $fsCount = 10;
@@ -932,7 +938,7 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'standart');
+        game_ctrl(0, $totalWin * 100, false, 'free');
     }
     private function getFamilyData() {
         $fsCount = 10;

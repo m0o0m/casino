@@ -124,17 +124,22 @@ class sugar_trailCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
+        $payType = 'standart';
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'LOCK':
+                $payType = 'free';
                 $this->showLockReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'CASH':
+                $payType = 'bonus';
                 $this->showCashReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'CANDY':
+                $payType = 'free';
                 $this->showCandyReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -142,7 +147,7 @@ class sugar_trailCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, 'standart');
+        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
     }
 
     protected function getSpinData() {
