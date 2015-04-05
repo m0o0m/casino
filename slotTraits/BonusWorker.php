@@ -118,10 +118,34 @@ trait BonusWorker {
             case 'wildsByLevel':
                 $this->setWildsByLevel($bonus);
                 break;
+            case 'multipleByLevel':
+                $this->setMultipleByLevel($bonus);
+                break;
 
         }
     }
 
+    /**
+     * Устанавливает общий множитель в зависимости от количества выпавших символов за определенный период игры
+     *
+     * @param $bonus
+     */
+    private function setMultipleByLevel($bonus) {
+        $increaseCount = $this->getSymbolAnyCount($bonus['increaseSymbol'])['count'];
+        $finalLevel = $bonus['currentLevel'] + $increaseCount;
+        foreach($bonus['steps'] as $c=>$w) {
+            if($finalLevel >= $c) {
+                $this->double = $c;
+            }
+        }
+    }
+
+
+    /**
+     * Устанавливает вайлды в зависимости от количества выпавших символов за определенный период игры
+     *
+     * @param $bonus
+     */
     private function setWildsByLevel($bonus) {
         $increaseCount = $this->getSymbolAnyCount($bonus['increaseSymbol'])['count'];
         $finalLevel = $bonus['currentLevel'] + $increaseCount;

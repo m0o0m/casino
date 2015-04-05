@@ -288,8 +288,12 @@ class big_bad_wolfCtrl extends Ctrl {
             $canAvalanche = true;
             $slot->setReels($this->gameParams->reels[$reelset]);
             $slot->setBonus(array(
-                'type' => 'multiple',
-                'range' => array($multiple, $multiple),
+                'type' => 'multipleByLevel',
+                'increaseSymbol' => 'J',
+                'currentLevel' => $moons,
+                'steps' => array(
+                    '6' => 2,
+                ),
             ));
             $slot->setWilds($this->gameParams->wild);
 
@@ -322,6 +326,8 @@ class big_bad_wolfCtrl extends Ctrl {
 
             $bonus = '';
             if($report['scattersReport']['count'] >= 3) {
+                $fsCount += 10;
+                $totalFS += 10;
                 $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
                 $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $sr = $report['scattersReport'];
@@ -416,6 +422,8 @@ class big_bad_wolfCtrl extends Ctrl {
                         $r['totalWin'] += $r['scattersReport']['totalWin'];
                         $sr = $r['scattersReport'];
                         $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'L" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+                        $fsCount += 10;
+                        $totalFS += 10;
                     }
 
                     $w = $r['winLines'];

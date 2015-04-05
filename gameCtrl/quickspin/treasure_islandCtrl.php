@@ -279,83 +279,39 @@ class treasure_islandCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $totalWin;
         $this->bonus['totalWin'] += $totalWin;
 
+        $treasureWin = array_sum($treasureMultipleArray) * $report['betOnLine'];
+        $digWin = array_sum($digMultipleArray) * $report['betOnLine'];
+
         $seq = 0;
 
-        $detail = '';
-        $treasureWon = (array_sum($treasureMultipleArray) > 0) ? 'true' : 'false';
-        if($treasureWon !== 'true') {
-            $detail .= '<Detail name="TreasureChest" won="false">';
-        }
+        $treasureDetail = '';
 
-        if(in_array(300, $treasureMultipleArray)) {
-            $d1 = '<Detail name="TreasureChest" type="Hit" payout="'.($report['betOnLine']*300).'" seq="'.$seq++.'" won="true">';
-            $d1Won = true;
+        if($treasureWin == 0) {
+            $treasureDetail .= '<Detail name="TreasureChest" won="false">';
         }
         else {
-            $d1 = '<Detail name="TreasureChest" type="Miss" payDescs="'.($report['betOnLine']*300).'" />';
-            $d1Won = false;
+            $treasureDetail .= '<Detail name="TreasureChest" type="Hit" payout="'.$treasureWin.'" seq="'.($seq++).'" won="true">';
         }
 
-        if(in_array(500, $treasureMultipleArray)) {
-            $d2 = '<Detail name="TreasureChest" type="Hit" payout="'.($report['betOnLine']*500).'" seq="'.$seq++.'" won="true">';
-            $d2Won = true;
+        $last = array_diff($config['treasureMultiple'], $treasureMultipleArray);
+        foreach($last as $l) {
+            $treasureDetail .= '<Detail name="TreasureChest" type="Miss" payDescs="'.($l * $report['betOnLine']).'" />';
         }
-        else {
-            $d2 = '<Detail name="TreasureChest" type="Miss" payDescs="'.($report['betOnLine']*500).'" />';
-            $d2Won = false;
+        $treasureDetail .= '</Detail>';
+
+
+        $digDetail = '';
+
+        foreach($config['digMultiple'] as $d) {
+            if(in_array($d, $digMultipleArray)) {
+                $digDetail .= '<Detail name="dig" payout="'.($d * $report['betOnLine']).'" seq="'.($seq++).'" won="true" />';
+            }
+            else {
+                $digDetail .= '<Detail name="dig" payout="'.($d * $report['betOnLine']).'" won="false" />';
+            }
         }
 
-        if(in_array(700, $treasureMultipleArray)) {
-            $d3 = '<Detail name="TreasureChest" type="Hit" payout="'.($report['betOnLine']*700).'" seq="'.$seq++.'" won="true">';
-            $d3Won = true;
-        }
-        else {
-            $d3 = '<Detail name="TreasureChest" type="Miss" payDescs="'.($report['betOnLine']*700).'" />';
-            $d3Won = false;
-        }
-
-        if($d1Won) {
-            $detail .= $d1.$d2.$d3;
-        }
-        elseif($d2Won) {
-            $detail .= $d2.$d1.$d3;
-        }
-        elseif($d3Won) {
-            $detail .= $d3.$d1.$d2;
-        }
-        else {
-            $detail .= $d1.$d2.$d3;
-        }
-
-        $detail .= '</Detail>';
-
-        if(in_array(50, $digMultipleArray)) {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*50).'" seq="'.$seq++.'" won="true" />';
-        }
-        else {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*50).'" won="false" />';
-        }
-
-        if(in_array(60, $digMultipleArray)) {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*60).'" seq="'.$seq++.'" won="true" />';
-        }
-        else {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*60).'" won="false" />';
-        }
-
-        if(in_array(160, $digMultipleArray)) {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*160).'" seq="'.$seq++.'" won="true" />';
-        }
-        else {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*160).'" won="false" />';
-        }
-
-        if(in_array(250, $digMultipleArray)) {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*250).'" seq="'.$seq++.'" won="true" />';
-        }
-        else {
-            $detail .= '<Detail name="dig" payout="'.($report['betOnLine']*250).'" won="false" />';
-        }
+        $detail = $treasureDetail . $digDetail;
 
         $xml = '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="3S" length="3" payout="0.00" />
                 <Bonus offsets="" prize="TreasureHunt" length="0" payout="'.$this->bonus['bonusWin'].'" />
@@ -376,105 +332,42 @@ class treasure_islandCtrl extends Ctrl {
         $config = $this->gameParams->fsConfig;
 
         $bonusArray = $config['bonusArray'];
-        shuffle($bonusArray );
+        shuffle($bonusArray);
+
+        $betOnLine = $report['betOnLine'];
 
         $bonusType = '';
         $xWildLevel = 1;
-        $end = false;
-
-
-
         $spins = 6;
-
         $resultArray = array();
-
-
+        $seq = 0;
+        $end = false;
         foreach($bonusArray as $b) {
-            if($b == 'xWilds' && !$end) {
-                if($bonusType == '') $bonusType = 'xWilds';
-                $resultArray[] = array(
-                    'name' => 'xWilds',
-                    'won' => true,
-                );
-            }
-            elseif($b == 'xWilds' && $end) {
-                $resultArray[] = array(
-                    'name' => 'xWilds',
-                    'won' => false,
-                );
-            }
 
-            if($b == 'freeSpins' && !$end) {
-                $resultArray[] = array(
-                    'name' => 'freeSpins',
-                    'won' => true,
-                );
+            $item = array(
+                'name' => $b,
+                'won' => !$end,
+            );
+            if(!$end) {
+                $item['seq'] = $seq++;
             }
-            elseif($b == 'freeSpins' && $end) {
-                $resultArray[] = array(
-                    'name' => 'freeSpins',
-                    'won' => false,
-                );
+            if($b == 'freeSpins') {
+                $item['spins'] = $config['addFsCount'][$this->getRandParam($config['addFsCountChance'])];
+            }
+            if($b == 'xWilds') {
+                $item['number'] = $xWildLevel++;
             }
 
-
-            if($b == 'credit' && !$end) {
-                $resultArray[] = array(
-                    'name' => 'credit',
-                    'won' => true,
-                );
-            }
-            elseif($b == 'credit' && $end) {
-                $resultArray[] = array(
-                    'name' => 'credit',
-                    'won' => false,
-                );
-            }
-
-
-            if($b == 'superWilds' && !$end) {
-                if($bonusType == '') $bonusType = 'superWilds';
-                $resultArray[] = array(
-                    'name' => 'superWilds',
-                    'won' => true,
-                );
-            }
-            elseif($b == 'superWilds' && $end) {
-                $resultArray[] = array(
-                    'name' => 'superWilds',
-                    'won' => false,
-                );
-            }
-
-
-
-            if($b == 'starFs' && !$end) {
+            $resultArray[] = $item;
+            if($b == 'starFs') {
                 $end = true;
-                $resultArray[] = array(
-                    'name' => 'starFs',
-                    'won' => true,
-                );
             }
-            elseif($b == 'starFs' && $end) {
-                $resultArray[] = array(
-                    'name' => 'starFs',
-                    'won' => false,
-                );
-            }
+        }
 
-
-            if($b == 'barrelsLocked' && !$end) {
-                if($bonusType == '') $bonusType = 'barrelsLocked';
-                $resultArray[] = array(
-                    'name' => 'barrelsLocked',
-                    'won' => true,
-                );
-            }
-            elseif($b == 'barrelsLocked' && $end) {
-                $resultArray[] = array(
-                    'name' => 'barrelsLocked',
-                    'won' => false,
-                );
+        foreach($resultArray as $r) {
+            if(in_array($r['name'], array('xWilds', 'superWilds', 'barrelsLocked')) && $r['won']) {
+                $bonusType = $r['name'];
+                break;
             }
         }
 
@@ -482,117 +375,41 @@ class treasure_islandCtrl extends Ctrl {
             $bonusType = 'xWilds';
         }
 
-        $iterate = 0;
-        $bonusPayout = 0;
+        $totalPayout = 0;
 
-        $xWildPaid = false;
-        $superWildPaid = false;
-        $barrelPaid = false;
-        $starPaid = false;
-
-        $realXLevel = 0;
         foreach($resultArray as &$r) {
-            if($r['name'] == 'freeSpins') {
-                $fsCount = $config['addFsCount'][$this->getRandParam($config['addFsCountChance'])];
-                $r['spins'] = $fsCount;
+            $payout = $betOnLine * $config['payout'][$this->getRandParam($config['payoutChance'])];
+
+            if($r['name'] !== $bonusType && $r['name'] !== 'freeSpins' && $r['name'] !== 'starFs') {
+                $r['payout'] = $payout;
                 if($r['won']) {
-                    $r['seq'] = $iterate;
-                    $spins += $fsCount;
+                    $totalPayout += $payout;
                 }
             }
-
-            if($r['name'] == 'starFs' && !$starPaid) {
-                $starPaid = true;
-                $r['seq'] = $iterate;
+        }
+        $realXLevel = 0;
+        foreach($resultArray as $i) {
+            if($i['name'] == 'xWilds' && $i['won'] && $bonusType == 'xWilds') {
+                $realXLevel = $i['number'];
             }
-
-            if($r['name'] == 'credit') {
-                $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                if($r['won']) {
-                    $r['seq'] = $iterate;
-                    $bonusPayout += $r['payout'];
-                }
+            if($i['name'] == 'freeSpins' && $i['won']) {
+                $spins += $i['spins'];
             }
-
-            if($r['name'] == 'xWilds') {
-                if($bonusType == 'xWilds') {
-                    if($r['won']) {
-                        $r['number'] = $xWildLevel++;
-                        $r['seq'] = $iterate;
-                        $realXLevel++;
-                    }
-                    else {
-                        $r['number'] = $xWildLevel++;
-                    }
-                }
-                else {
-                    if($r['won']) {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                        $r['seq'] = $iterate;
-                        $bonusPayout += $r['payout'];
-                    }
-                    else {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                    }
-
-                }
-            }
-
-            if($r['name'] == 'superWilds') {
-                if($bonusType == 'superWilds' && !$superWildPaid) {
-                    $superWildPaid = true;
-                    if($r['won']) {
-                        $r['seq'] = $iterate;
-                    }
-                }
-                else {
-                    if($r['won']) {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                        $r['seq'] = $iterate;
-                        $bonusPayout += $r['payout'];
-                    }
-                    else {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                    }
-
-                }
-            }
-
-            if($r['name'] == 'barrelsLocked') {
-                if($bonusType == 'barrelsLocked' && !$barrelPaid) {
-                    $barrelPaid = true;
-                    if($r['won']) {
-                        $r['seq'] = $iterate;
-                    }
-                }
-                else {
-                    if($r['won']) {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                        $r['seq'] = $iterate;
-                        $bonusPayout += $r['payout'];
-                    }
-                    else {
-                        $r['payout'] = $report['betOnLine'] * $config['payout'][$this->getRandParam($config['payoutChance'])];
-                    }
-
-                }
-            }
-
-            $iterate++;
         }
 
-        $this->bonus['bonusWin'] += $report['betOnLine'] * $bonusPayout;
-        $this->bonus['totalWin'] += $report['betOnLine'] * $bonusPayout;
-
+        $this->bonus['bonusWin'] += $report['betOnLine'] * $totalPayout;
+        $this->bonus['totalWin'] += $report['betOnLine'] * $totalPayout;
         $detail = '';
-        foreach($resultArray as $r) {
-            $detail .= '<Detail';
-            foreach($r as $k=>$v) {
+        foreach($resultArray as $l) {
+            $item = '';
+            $item .= '<Detail';
+            foreach($l as $k=>$v) {
                 if($v === true) $v = 'true';
                 if($v === false) $v = 'false';
-                $detail .= ' '.$k.'="'.$v.'"';
+                $item .= ' '.$k.'="'.$v.'"';
             }
-            $detail .= ' />';
+            $item .= ' />';
+            $detail .= $item;
         }
 
         $this->bonus['bonus'] = '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="3S" length="3" payout="0.00" />
