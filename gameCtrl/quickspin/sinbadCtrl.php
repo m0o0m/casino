@@ -89,14 +89,13 @@ class sinbadCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
-                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -104,10 +103,14 @@ class sinbadCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
 
         $report = $this->slot->spin(array(
@@ -122,6 +125,7 @@ class sinbadCtrl extends Ctrl {
         if($report['scattersReport']['count'] > 2) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             $report['type'] = 'FS';
         }
 
@@ -252,12 +256,13 @@ class sinbadCtrl extends Ctrl {
 
             $this->getBonusResult();
             while(!game_ctrl(0, $this->bonus['bonusWin'] * 100)) {
+
                 $this->getBonusResult();
             }
 
             $this->showBonusReport();
 
-            game_ctrl(0, $this->bonus['bonusWin'] * 100, 0, 'standart');
+            $this->startPay();
 
             unset($_SESSION['report']);
             unset($_SESSION['fsPick']);
@@ -266,6 +271,10 @@ class sinbadCtrl extends Ctrl {
     }
 
     protected function getBonusResult() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         switch($_SESSION['fsPick']) {
             case 'ape':
                 $this->getApeData($_SESSION['report']);
@@ -331,6 +340,8 @@ class sinbadCtrl extends Ctrl {
 
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             $bonus = '';
             if($wlNewCount > 0) {
@@ -411,6 +422,8 @@ class sinbadCtrl extends Ctrl {
 
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             $addString = ' display2="'.$this->gameParams->getDisplay($fsReport['rows']).'" replacement="'.implode(',', $fsReport['bonusData']['replaced']).'"';
 
@@ -499,6 +512,8 @@ class sinbadCtrl extends Ctrl {
 
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             $bonus = '';
             $sn = $this->slot->getSymbolAnyCount('SN');

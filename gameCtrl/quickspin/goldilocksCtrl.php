@@ -65,14 +65,13 @@ class goldilocksCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
-                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
 
@@ -81,10 +80,14 @@ class goldilocksCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $this->slot->drawID = -1;
         $respin = false;
         $bonusWin = 0;
@@ -110,6 +113,7 @@ class goldilocksCtrl extends Ctrl {
         $report['wildMultiple'] = $this->slot->getSymbolAnyCount('K');
         if($report['wildMultiple']['count'] > 0) {
             $report['totalWin'] *= ($report['wildMultiple']['count'] + 1);
+            $report['spinWin'] *= ($report['wildMultiple']['count'] + 1);
         }
 
 
@@ -118,6 +122,7 @@ class goldilocksCtrl extends Ctrl {
         if($report['scattersReport']['count'] == 3) {
             $report['scattersReport']['totalWin'] = $report['bet'] * 3;
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
 
             $this->getFreeSpinData($report);
             $bonusWin = $this->bonus['bonusWin'];
@@ -267,6 +272,8 @@ class goldilocksCtrl extends Ctrl {
 
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             if($fsReport['scattersReport']['count'] > 0) {
                 $this->checkLadderLevel($fsReport['scattersReport']['count']);

@@ -118,7 +118,7 @@ class iron_manCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -126,17 +126,20 @@ class iron_manCtrl extends Ctrl {
                 break;
             case 'FREESPIN':
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
-                $payType = 'free';
                 break;
         }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin(array(
             'type' => 'expandWild',
@@ -151,11 +154,13 @@ class iron_manCtrl extends Ctrl {
         $report['mixedPay'] = $this->getMixedPay();
         if($report['mixedPay']['win']) {
             $report['totalWin'] += $report['betOnLine'] * $report['mixedPay']['totalMultiple'];
+            $report['spinWin'] += $report['betOnLine'] * $report['mixedPay']['totalMultiple'];
         }
 
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getFreeSpinBonus($report);
                 $report['totalWin'] = $this->fsBonus['totalWin'];
@@ -447,6 +452,8 @@ class iron_manCtrl extends Ctrl {
             }
 
             $this->fsBonus['bonusWin'] += $report['totalWin'];
+
+            $this->fsPays[] = $report['totalWin'];
 
             $winLines = $this->getWinLinesData($report, array(
                 'spins' => '{{count}}',

@@ -67,7 +67,7 @@ class rockyCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -75,17 +75,20 @@ class rockyCtrl extends Ctrl {
                 break;
             case 'FREESPIN':
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
-                $payType = 'free';
                 break;
         }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin();
         $report['scattersReport'] = $this->slot->getScattersCount();
@@ -107,11 +110,13 @@ class rockyCtrl extends Ctrl {
         $report['rocky'] = $this->getRockyBonus($report);
         if($report['rocky'] != false) {
             $report['totalWin'] += $report['bet'] * 5;
+            $report['spinWin'] += $report['bet'] * 5;
         }
 
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getFreeSpinBonus($report);
                 $report['totalWin'] = $this->fsBonus['totalWin'];
@@ -236,6 +241,8 @@ class rockyCtrl extends Ctrl {
             }
         }
 
+        $this->bonusPays[] = $this->knockOutBonus['bonusWin'];
+
     }
 
     private function getRockyBonus($report) {
@@ -306,6 +313,8 @@ class rockyCtrl extends Ctrl {
             }
 
             $this->fsBonus['bonusWin'] += $report['totalWin'];
+
+            $this->fsPays[] = $report['totalWin'];
 
             $winLines = $this->getWinLinesData($report, array(
                 'reelset' => 1,

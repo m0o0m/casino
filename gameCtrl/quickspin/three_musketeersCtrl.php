@@ -88,14 +88,13 @@ class three_musketeersCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
-                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -103,10 +102,14 @@ class three_musketeersCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $this->slot->drawID = -1;
         $respin = false;
         $bonusWin = 0;
@@ -137,6 +140,7 @@ class three_musketeersCtrl extends Ctrl {
         if($report['scattersReport']['count'] == 3) {
             $report['scattersReport']['totalWin'] = $report['bet'] * 3;
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             $this->getFreeSpinBonus($report);
             $bonusWin = $this->bonus['bonusWin'];
             $report['type'] = 'FS';
@@ -224,6 +228,8 @@ class three_musketeersCtrl extends Ctrl {
 
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             $addString = ' rsName="FreeSpins" display2="'.$this->gameParams->getDisplay($fsReport['rows']).'"';
 

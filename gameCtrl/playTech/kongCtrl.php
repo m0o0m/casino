@@ -71,7 +71,7 @@ class kongCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -79,17 +79,17 @@ class kongCtrl extends Ctrl {
                 break;
         }
 
-        if($spinData['report']['fsBonus']['count'] >= 3) {
-            $payType = 'free';
-        }
-
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin();
         $report['scattersReport'] = $this->slot->getScattersCount();
@@ -102,6 +102,7 @@ class kongCtrl extends Ctrl {
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getBonus($report);
                 $report['totalWin'] = $this->bonus['totalWin'];
@@ -247,6 +248,8 @@ class kongCtrl extends Ctrl {
             }
         }
         $this->bonus['totalWin'] += $this->bonus['bonusWin'];
+        $this->bonusPays[] = $this->bonus['bonusWin'];
+
         $this->bonus['eventDescs'] = implode(',', $wins);
 
         $_SESSION['mode'] = 'CityMode';
@@ -269,6 +272,8 @@ class kongCtrl extends Ctrl {
         }
 
         $this->bonus['totalWin'] += $this->bonus['bonusWin'];
+        $this->bonusPays[] = $this->bonus['bonusWin'];
+
         $this->bonus['payDescs'] = implode(';', $wins);
 
         $_SESSION['mode'] = 'JungleMode';
@@ -306,6 +311,8 @@ class kongCtrl extends Ctrl {
                 $wildOffsets = $report['fsBonus']['offsets'];
 
                 $this->fsBonus['bonusWin'] += $report['totalWin'];
+
+                $this->fsPays[] = $report['totalWin'];
 
                 $display2 = $this->gameParams->getDisplay($report['rows']);
                 $bonus = '<Feature name="FrozenWild" payout="'.($this->fsBonus['bonusWin'] + $startWin).'">
@@ -360,6 +367,8 @@ class kongCtrl extends Ctrl {
 
 
                 $this->fsBonus['bonusWin'] += $report['totalWin'];
+
+                $this->fsPays[] = $report['totalWin'];
 
                 $display2 = $this->gameParams->getDisplay($report['rows']);
                 $bonus = '<Feature name="FrozenWild" payout="'.($this->fsBonus['bonusWin'] + $startWin).'">

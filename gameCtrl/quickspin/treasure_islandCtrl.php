@@ -77,14 +77,13 @@ class treasure_islandCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
-                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -92,10 +91,14 @@ class treasure_islandCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $this->slot->drawID = -1;
         $respin = false;
 
@@ -242,6 +245,8 @@ class treasure_islandCtrl extends Ctrl {
         $this->bonus['totalWin'] += $report['bet'] * 2;
         $this->bonus['bonusWin'] += $report['bet'] * 2;
 
+        $this->bonusPays[] = $report['bet'] * 2;
+
         $this->bonus['bonus'] = '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="3S" length="3" payout="0.00" />
                 <Bonus offsets="" prize="Credit Bonus" length="0" payout="'.$this->bonus['bonusWin'].'" />
                 <Feature name="BaseGameIntroBonusPick">
@@ -278,6 +283,8 @@ class treasure_islandCtrl extends Ctrl {
         $totalWin = $report['betOnLine'] * (array_sum($treasureMultipleArray) + array_sum($digMultipleArray));
         $this->bonus['bonusWin'] += $totalWin;
         $this->bonus['totalWin'] += $totalWin;
+
+        $this->bonusPays[] = $totalWin;
 
         $treasureWin = array_sum($treasureMultipleArray) * $report['betOnLine'];
         $digWin = array_sum($digMultipleArray) * $report['betOnLine'];
@@ -500,6 +507,8 @@ class treasure_islandCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
+            $this->fsPays[] = $fsReport['totalWin'];
+
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {
                 $bonus = $this->getExplodeXml($fsReport['bonusData']['explode']);
@@ -558,6 +567,8 @@ class treasure_islandCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
+            $this->fsPays[] = $fsReport['totalWin'];
+
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {
                 $bonus = $this->getExplodeXml($fsReport['bonusData']['explode']);
@@ -611,6 +622,8 @@ class treasure_islandCtrl extends Ctrl {
 
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {

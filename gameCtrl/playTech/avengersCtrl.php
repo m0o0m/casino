@@ -71,7 +71,7 @@ class avengersCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -79,26 +79,30 @@ class avengersCtrl extends Ctrl {
                 break;
             case 'WOH':
                 $this->showWOHReport($spinData['report'], $spinData['totalWin']);
-                $payType = 'free';
                 break;
         }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     /*
      * Получаем данные спина и сумарный выигрыш
      */
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin();
 
         $report['bonusLine'] = $this->slot->getFullLineBonus();
         if($report['bonusLine']['totalMultiple'] > 0) {
             $report['totalWin'] += $report['betOnLine'] * $report['bonusLine']['totalMultiple'];
+            $report['spinWin'] += $report['betOnLine'] * $report['bonusLine']['totalMultiple'];
         }
         $report['type'] = 'SPIN';
         $report['scattersReport'] = $this->slot->getScattersCount();
@@ -106,6 +110,7 @@ class avengersCtrl extends Ctrl {
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getWallOfHero($report);
                 $report['totalWin'] = $this->fsBonus['totalWin'];
@@ -312,6 +317,8 @@ class avengersCtrl extends Ctrl {
             $drawState = '<DrawState drawId="'.$this->fsBonus['drawID'].'">'.$winLines.'<ReplayInfo foItems="'.$report['stops'].'" /></DrawState>';
 
             $drawsXml .= $drawState;
+
+            $this->fsPays[] = $report['totalWin'];
         }
         return $drawsXml;
     }
@@ -352,6 +359,8 @@ class avengersCtrl extends Ctrl {
             $drawState = '<DrawState drawId="'.$this->fsBonus['drawID'].'">'.$winLines.'<ReplayInfo foItems="'.$report['stops'].'" /></DrawState>';
 
             $drawsXml .= $drawState;
+
+            $this->fsPays[] = $report['totalWin'];
         }
         return $drawsXml;
     }
@@ -396,6 +405,8 @@ class avengersCtrl extends Ctrl {
             $drawState = '<DrawState drawId="'.$this->fsBonus['drawID'].'">'.$winLines.'<ReplayInfo foItems="'.$report['stops'].'" /></DrawState>';
 
             $drawsXml .= $drawState;
+
+            $this->fsPays[] = $report['totalWin'];
         }
         return $drawsXml;
     }
@@ -440,6 +451,8 @@ class avengersCtrl extends Ctrl {
             $drawState = '<DrawState drawId="'.$this->fsBonus['drawID'].'">'.$winLines.'<ReplayInfo foItems="'.$report['stops'].'" /></DrawState>';
 
             $drawsXml .= $drawState;
+
+            $this->fsPays[] = $report['totalWin'];
         }
         return $drawsXml;
     }

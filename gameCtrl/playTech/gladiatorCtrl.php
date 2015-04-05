@@ -67,28 +67,31 @@ class gladiatorCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 if($spinData['report']['helmetReport']['count'] >= 3) {
-                    $payType = 'bonus';
                 }
                 break;
             case 'COLISEUM':
                 $this->showColiseumReport($spinData['report'], $spinData['totalWin']);
-                $payType = 'free';
                 break;
         }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin();
         $report['scattersReport'] = $this->slot->getScattersCount();
@@ -97,6 +100,7 @@ class gladiatorCtrl extends Ctrl {
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getColiseumBonus($report);
                 $report['totalWin'] = $this->coliseumBonus['totalWin'];
@@ -191,6 +195,8 @@ class gladiatorCtrl extends Ctrl {
             $this->helmetBonus['payDesc'][] = $win;
         }
         $this->helmetBonus['totalWin'] += $this->helmetBonus['bonusWin'];
+
+        $this->bonusPays[] = $this->helmetBonus['bonusWin'];
     }
 
 
@@ -294,6 +300,8 @@ class gladiatorCtrl extends Ctrl {
             }
 
             $this->coliseumBonus['bonusWin'] += $report['totalWin'];
+
+            $this->fsPays[] = $report['totalWin'];
 
             $reelSymbols = $this->slot->getReelSymbols(2);
             if(in_array(0, $reelSymbols)) {

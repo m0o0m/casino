@@ -223,7 +223,8 @@ class sopranosCtrl extends Ctrl {
     }
 
     public function endStolenGoods($win) {
-        game_ctrl(0, $win * 100, 0, 'bonus');
+        $this->bonusPays[] = $win;
+        $this->startPay();
     }
 
 
@@ -251,26 +252,22 @@ class sopranosCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'BADABING':
-                $payType = 'bonus';
                 $this->showBadaBingReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'RAID':
-                $payType = 'bonus';
                 $this->showRaidReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'STOLEN':
-                $payType = 'bonus';
                 $this->showStolenReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FREESPIN':
-                $payType = 'free';
                 $this->showFsReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -278,10 +275,14 @@ class sopranosCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $bonusCount = 0;
         $report = $this->slot->spin();
@@ -305,6 +306,7 @@ class sopranosCtrl extends Ctrl {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['type'] = 'FREESPIN';
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             $bonusCount++;
         }
 
@@ -477,8 +479,9 @@ class sopranosCtrl extends Ctrl {
     </EEGActionResponse>
 </CompositeResponse>';
 
+        $this->bonusPays[] = $totalWin;
 
-        game_ctrl(0, $totalWin * 100, 0, 'bonus');
+        $this->startPay();
 
         $this->outXML($xml);
 
@@ -500,6 +503,7 @@ class sopranosCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $report['bet'] * $win;
         }
         $this->bonus['totalWin'] = $startWin + $this->bonus['bonusWin'];
+        $this->bonusPays[] = $this->bonus['bonusWin'];
     }
 
     public function showStolenReport($report, $totalWin) {
@@ -618,9 +622,13 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'free');
+        $this->startPay();
     }
     private function getSoldierData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $fsCount = 25;
         $fsTotal = 25;
         $bet = $_SESSION['lastBet'];
@@ -634,7 +642,6 @@ class sopranosCtrl extends Ctrl {
         $i = 0;
         while($fsCount > 0) {
             $report = $this->slot->spin();
-            $totalWin += $report['totalWin'];
 
             if($this->slot->chechSymbolOnReel('C', 2, 1)) {
                 $fsCount += 5;
@@ -652,8 +659,13 @@ class sopranosCtrl extends Ctrl {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
                 $report['scattersReport']['totalWin'] = $bet * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+                $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="'.$report['scattersReport']['count'].'S" length="'.$report['scattersReport']['count'].'" payout="'.$report['scattersReport']['totalWin'].'" spins="0" />';
             }
+
+            $totalWin += $report['totalWin'];
+
+            $this->fsPays[] = $report['totalWin'];
 
 
 
@@ -723,9 +735,13 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'free');
+        $this->startPay();
     }
     private function getCapoData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $fsCount = 20;
         $bet = $_SESSION['lastBet'];
 
@@ -746,7 +762,7 @@ class sopranosCtrl extends Ctrl {
                 'type' => 'multiple',
                 'range' => array($startMult, $startMult),
             ));
-            $totalWin += $report['totalWin'];
+
 
             $c = $this->slot->getSymbolAnyCount('P');
             if($c['count'] > 0) {
@@ -761,8 +777,12 @@ class sopranosCtrl extends Ctrl {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
                 $report['scattersReport']['totalWin'] = $bet * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+                $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="'.$report['scattersReport']['count'].'S" length="'.$report['scattersReport']['count'].'" payout="'.$report['scattersReport']['totalWin'].'" spins="0" />';
             }
+
+            $totalWin += $report['totalWin'];
+            $this->fsPays[] = $report['totalWin'];
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'" multiplier="'.$report['double'].'"';
@@ -828,9 +848,13 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'free');
+        $this->startPay();
     }
     private function getBossData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $fsCount = 10;
         $fsTotal = 10;
         $lastPick = $_SESSION['lastPick'];
@@ -848,7 +872,7 @@ class sopranosCtrl extends Ctrl {
                 'range' => array(2, 5),
                 'not' => 7,
             ));
-            $totalWin += $report['totalWin'];
+
 
             $wildOffsets = implode(',', $report['bonusData']['offsets']);
 
@@ -868,8 +892,12 @@ class sopranosCtrl extends Ctrl {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
                 $report['scattersReport']['totalWin'] = $bet * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+                $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="'.$report['scattersReport']['count'].'S" length="'.$report['scattersReport']['count'].'" payout="'.$report['scattersReport']['totalWin'].'" spins="0" />';
             }
+
+            $totalWin += $report['totalWin'];
+            $this->fsPays[] = $report['totalWin'];
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
@@ -938,9 +966,13 @@ class sopranosCtrl extends Ctrl {
 
         $this->outXML($xml);
 
-        game_ctrl(0, $totalWin * 100, false, 'free');
+        $this->startPay();
     }
     private function getFamilyData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $fsCount = 10;
         $lastPick = $_SESSION['lastPick'];
         $bet = $_SESSION['lastBet'];
@@ -954,7 +986,7 @@ class sopranosCtrl extends Ctrl {
         $baseWin = $_SESSION['baseWin'];
         while($fsCount > 0) {
             $report = $this->slot->spin();
-            $totalWin += $report['totalWin'];
+
 
             $bonus = '';
             $trigger = '';
@@ -962,8 +994,12 @@ class sopranosCtrl extends Ctrl {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
                 $report['scattersReport']['totalWin'] = $bet * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+                $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="'.$report['scattersReport']['count'].'S" length="'.$report['scattersReport']['count'].'" payout="'.$report['scattersReport']['totalWin'].'" spins="0" />';
             }
+
+            $totalWin += $report['totalWin'];
+            $this->fsPays[] = $report['totalWin'];
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';

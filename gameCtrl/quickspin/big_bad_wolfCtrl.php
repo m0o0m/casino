@@ -67,20 +67,20 @@ class big_bad_wolfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report'][0]['spinWin'];
 
         $this->showSpinReport($spinData['report'], $spinData['totalWin']);
 
-        if(!empty($this->fsBonus['drawStates'])) {
-            $payType = 'free';
-        }
-
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
 
         $this->slot->setWilds($this->gameParams->wild);
@@ -99,6 +99,7 @@ class big_bad_wolfCtrl extends Ctrl {
         if($report['scattersReport']['count'] >= 3) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             $this->getFreeSpinBonus($report, $report['totalWin']);
             $totalWin = $this->fsBonus['totalWin'];
             $report['addDraws'] = $this->fsBonus['drawStates'];
@@ -149,6 +150,8 @@ class big_bad_wolfCtrl extends Ctrl {
 
 
                 $r['runningTotal'] = $preTotal + $r['totalWin'];
+
+                $this->fsPays[] = $r['totalWin'];
 
                 $reports[] = $r;
                 $stageCount++;
@@ -338,6 +341,8 @@ class big_bad_wolfCtrl extends Ctrl {
 
             $this->fsBonus['totalWin'] += $report['totalWin'];
 
+            $this->fsPays[] = $report['totalWin'];
+
             $report['runningTotal'] = $this->fsBonus['totalWin'];
 
             /* ----------------- */
@@ -429,6 +434,8 @@ class big_bad_wolfCtrl extends Ctrl {
                     $w = $r['winLines'];
                     $s = $r['scattersReport']['count'];
                     $this->fsBonus['totalWin'] += $r['totalWin'];
+
+                    $this->fsPays[] = $r['totalWin'];
 
                     $r['runningTotal'] = $this->fsBonus['totalWin'];
                     $stageCount++;

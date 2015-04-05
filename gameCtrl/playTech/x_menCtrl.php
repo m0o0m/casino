@@ -66,14 +66,13 @@ class x_menCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'HERO':
-                $payType = 'free';
                 $this->showHeroReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -81,13 +80,17 @@ class x_menCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     /*
      * Получаем данные спина и сумарный выигрыш
      */
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $report = $this->slot->spin();
         $report['scattersReport'] = $this->slot->getScattersCount();
@@ -96,6 +99,7 @@ class x_menCtrl extends Ctrl {
         if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
                 $this->getHeroData($report);
                 $report['totalWin'] = $this->hero['totalWin'];
@@ -106,6 +110,7 @@ class x_menCtrl extends Ctrl {
         if($this->checkXBonus()) {
             $bonusWin = $report['bet'] * $this->gameParams->xBonus['multiplier'];
             $report['totalWin'] += $bonusWin;
+            $report['spinWin'] += $bonusWin;
             $report['xBonus'] = true;
             $report['xBonusWin'] = $bonusWin;
         }
@@ -202,6 +207,8 @@ class x_menCtrl extends Ctrl {
                 $report = $this->slot->spin();
 
                 $this->hero['bonusWin'] += $report['totalWin'];
+
+                $this->fsPays[] = $report['totalWin'];
                 // check mode change
                 $centerReel = $this->slot->getReelSymbols(2);
                 if(in_array(2, $centerReel)) {
@@ -236,6 +243,8 @@ class x_menCtrl extends Ctrl {
 
                 $report = $this->slot->spin();
                 $this->hero['bonusWin'] += $report['totalWin'];
+
+                $this->fsPays[] = $report['totalWin'];
 
                 $centerReel = $this->slot->getReelSymbols(2);
                 if(in_array(1, $centerReel)) {

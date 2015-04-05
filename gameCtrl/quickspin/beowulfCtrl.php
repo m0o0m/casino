@@ -65,18 +65,16 @@ class beowulfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'GRENDEL':
-                $payType = 'bonus';
                 $this->showGrendelReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'FS':
-                $payType = 'free';
                 $this->showFreeSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -84,10 +82,14 @@ class beowulfCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $this->slot->drawID = -1;
         $respin = false;
 
@@ -174,6 +176,7 @@ class beowulfCtrl extends Ctrl {
 
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
             $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
             $report['type'] = 'FS';
 
             $this->getFreeSpinData($report);
@@ -247,6 +250,8 @@ class beowulfCtrl extends Ctrl {
 
             $this->bonus['bonusWin'] += $rReport['totalWin'];
             $this->bonus['totalWin'] += $rReport['totalWin'];
+
+            $this->fsPays[] = $rReport['totalWin'];
 
             $addString = ' mask="'.$report['mask'].'" reelsetName="GrendelRespin"';
 
@@ -392,6 +397,8 @@ class beowulfCtrl extends Ctrl {
 
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
             if($reelset == 1) {
                 $addString = ' reelsetName="FreeSpinsNoWD"';

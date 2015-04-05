@@ -124,22 +124,19 @@ class sugar_trailCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $payType = 'standart';
+        $this->spinPays[] = $spinData['report']['spinWin'];
 
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'LOCK':
-                $payType = 'free';
                 $this->showLockReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'CASH':
-                $payType = 'bonus';
                 $this->showCashReport($spinData['report'], $spinData['totalWin']);
                 break;
             case 'CANDY':
-                $payType = 'free';
                 $this->showCandyReport($spinData['report'], $spinData['totalWin']);
                 break;
         }
@@ -147,10 +144,14 @@ class sugar_trailCtrl extends Ctrl {
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
-        game_ctrl($stake * 100, $totalWin * 100, 0, $payType);
+        $this->startPay();
     }
 
     protected function getSpinData() {
+        $this->spinPays = array();
+        $this->fsPays = array();
+        $this->bonusPays = array();
+
         $respin = false;
         $bonusCount = 0;
         $bonus = array();
@@ -434,6 +435,8 @@ class sugar_trailCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
+            $this->fsPays[] = $fsReport['totalWin'];
+
 
             $display = $this->gameParams->getDisplay($fsReport['rows']);
             $addString = ' displayWithWildOverlays="'.$display.'"';
@@ -503,6 +506,8 @@ class sugar_trailCtrl extends Ctrl {
 
         $this->bonus['credits'] = $credits;
         $this->bonus['multiple'] = array_sum($multipleArray);
+
+        $this->bonusPays[] = $this->bonus['bonusWin'];
     }
 
     protected function getCandyBonusData($report) {
@@ -584,6 +589,8 @@ class sugar_trailCtrl extends Ctrl {
 
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
+
+            $this->fsPays[] = $fsReport['totalWin'];
 
 
             $display = $this->gameParams->getDisplay($fsReport['rows']);

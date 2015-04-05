@@ -427,6 +427,7 @@ class Slot {
             'betOnLine' => $this->betOnLine,
             'stops' => implode(',', $this->getOffsets()[1]),
             'totalWin' => $this->betOnLine * $this->totalMultiple,
+            'spinWin' => $this->betOnLine * $this->totalMultiple,
             'drawID' => $this->drawID,
             'addDraws' => '',
         );

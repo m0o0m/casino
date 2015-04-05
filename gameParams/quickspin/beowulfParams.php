@@ -3,7 +3,7 @@
 
 class beowulfParams extends Params {
 
-    // раскладки
+    // раскладкиocal
     // Главная, FreeSpinsNoWD, FreeSpin, GrendelTrigger, GrendelRespin
     public $reels = array(
         // Основная игра

@@ -50,6 +50,19 @@ class Ctrl {
     public $useSessionBet = false;
 
     /**
+     * @var array Массив выплат по спину
+     */
+    public $spinPays = array();
+    /**
+     * @var array Массив выплат по ФСам
+     */
+    public $fsPays = array();
+    /**
+     * @var array Массив выплат по бонусам
+     */
+    public $bonusPays = array();
+
+    /**
      * Обработка запроса и запуск нужного метода
      *
      * @param object $params Параметры игры
@@ -63,6 +76,23 @@ class Ctrl {
 
         $this->processRequest($this->request);
 
+    }
+
+    /**
+     * Запуск выплат по спинам, ФСам и бонусам
+     */
+    public function startPay() {
+        foreach($this->spinPays as $p) {
+            game_ctrl($this->slot->bet * 100, $p * 100, 0, 'standart');
+        }
+
+        foreach($this->fsPays as $p) {
+            game_ctrl(0, $p * 100, 0, 'free');
+        }
+
+        foreach($this->bonusPays as $p) {
+            game_ctrl(0, 0, $p * 100, 'bonus');
+        }
     }
 
     /**
@@ -314,7 +344,7 @@ class Ctrl {
             'addString' => '',
             'bonus' => '',
             'trigger' => '',
-            'drawWin' => $report['totalWin'],
+            'drawWin' => $report['spinWin'],
             'display' => 'rows',
             'winLineMultiple' => 1,
             'collecting' => false,
