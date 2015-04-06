@@ -163,11 +163,16 @@ class big_bad_wolfCtrl extends Ctrl {
             switch($g) {
                 case 'fs':
                     if(empty($this->fsBonus)) $respin = true;
+
                     break;
                 case 'avalanche':
                     if(count($reports) < 2) $respin = true;
                     break;
             }
+        }
+
+        if(!empty($this->fsBonus)) {
+            if($this->fsBonus['moons'] < 6) $respin = true;
         }
 
         return array(
@@ -285,12 +290,17 @@ class big_bad_wolfCtrl extends Ctrl {
         $moons = 0;
         $level = 0;
 
+        $p1Payd = false;
+        $p2Payd = false;
+
         while($fsCount > 0) {
             $spins = 0;
             $added = 0;
             $canAvalanche = true;
             $slot->setReels($this->gameParams->reels[$reelset]);
-            $slot->setBonus(array(
+            $slot->setWilds($this->gameParams->wild);
+
+            $report = $slot->spin(array(
                 'type' => 'multipleByLevel',
                 'increaseSymbol' => 'J',
                 'currentLevel' => $moons,
@@ -298,9 +308,6 @@ class big_bad_wolfCtrl extends Ctrl {
                     '6' => 2,
                 ),
             ));
-            $slot->setWilds($this->gameParams->wild);
-
-            $report = $slot->spin();
             $report['scattersReport'] = $slot->getScattersCount();
             $report['type'] = 'SPIN';
             $report['rsName'] = 'FreeSpin';
@@ -312,18 +319,23 @@ class big_bad_wolfCtrl extends Ctrl {
                 $addOffset = $mR['offsets'];
                 $moons++;
                 $added = 1;
-                if($moons == 3) {
+                if($moons > 2 && !$p1Payd) {
                     $canAvalanche = false;
                     $level = $reelset = $multiple = 1;
                     $spins = 2;
                     $fsCount += 2;
                     $totalFS += 2;
+                    $p1Payd = true;
                 }
-                if($moons == 6) {
+                if($moons > 5 && !$p2Payd) {
                     $canAvalanche = false;
                     $fsCount += 2;
                     $totalFS += 2;
-                    $level = $spins = $reelset = $multiple = 2;
+                    $level = 2;
+                    $spins = 2;
+                    $reelset = 2;
+                    $multiple = 2;
+                    $p2Payd = true;
                 }
             }
 
@@ -377,8 +389,12 @@ class big_bad_wolfCtrl extends Ctrl {
                     'steps' => $this->gameParams->stepWildConfig,
                     ),
                     array(
-                        'type' => 'multiple',
-                        'range' => array($multiple, $multiple),
+                        'type' => 'multipleByLevel',
+                        'increaseSymbol' => 'J',
+                        'currentLevel' => $moons,
+                        'steps' => array(
+                            '6' => 2,
+                        ),
                     )
                 ));
                 $w = $report['winLines'];
@@ -404,18 +420,23 @@ class big_bad_wolfCtrl extends Ctrl {
                         $addOffset = $mR['offsets'];
                         $moons++;
                         $added = 1;
-                        if($moons == 3) {
+                        if($moons > 2 && !$p1Payd) {
                             $canAvalanche = false;
                             $level = $reelset = $multiple = 1;
                             $spins = 2;
                             $fsCount += 2;
                             $totalFS += 2;
+                            $p1Payd = true;
                         }
-                        if($moons == 6) {
+                        if($moons > 5 && !$p2Payd) {
                             $canAvalanche = false;
                             $fsCount += 2;
                             $totalFS += 2;
-                            $level = $spins = $reelset = $multiple = 2;
+                            $level = 2;
+                            $spins = 2;
+                            $reelset = 2;
+                            $multiple = 2;
+                            $p2Payd = true;
                         }
                     }
                     else {
@@ -468,6 +489,7 @@ class big_bad_wolfCtrl extends Ctrl {
             $fsCount--;
         }
 
+        $this->fsBonus['moons'] = $moons;
         $this->fsBonus['bonusWin'] = $this->fsBonus['totalWin'] - $startWin;
         $this->fsBonus['totalFS'] = $totalFS;
         $this->fsBonus['lastDraw'] = $lastDraw;

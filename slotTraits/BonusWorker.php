@@ -135,7 +135,7 @@ trait BonusWorker {
         $finalLevel = $bonus['currentLevel'] + $increaseCount;
         foreach($bonus['steps'] as $c=>$w) {
             if($finalLevel >= $c) {
-                $this->double = $c;
+                $this->double = $w;
             }
         }
     }
