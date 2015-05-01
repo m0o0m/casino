@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data version="5.10332.4">
+	<!--<instructions>
+		 So far, Operations on art assets are (more operations will be added in due coourse):-
+
+		 preapareAssets - parameters, prepareFor=' values are either bonus or summary
+		 addAssetAndShow,addAssetAndHide - parameters, asset='assetId'
+		 removeAllAssets
+		 removeAsset - parameters, asset='assetId'
+
+		 [### BUTTONS SPECIFIC ### ]
+
+		 addButtonsAndShow
+		 addButtonsAndHide
+		 removeAllButtons
+		 enableAllButtons
+		 disableAllButtons
+		 inactivateAllButtons
+		 showAllButtons
+		 hideAllButtons
+		 disableButton - parameters, asset='assetId'
+		 enableButton - parameters, asset='assetId'
+		 inactivateButton - parameters, asset='assetId'
+
+		 [### GENERIC ASSET PROPERTIES SPECIFIC ### ]
+
+		 playFrom  - parameters, asset='assetId'  frame='frame name'
+		 playFromAndStopAt - parameters, asset='assetId'  startFrame='stat frame name' endFrame ='end frame name'
+		 playFromAndStopAtAndWatchFrame - above parameters plus  watchFrame='watched frame name' , the action will be completed when the timeline reachs the watched frame, but the animation will continue till the endFrame
+		 gotoFrameAndStop  - parameters, asset='assetId'  frame='frame name'
+		 swapDepth  -  - parameters, assets='asset to be swapped, asset to be swapped with'
+		 changePosition - TODO
+		 tweenPosition  - parameters : asset='assetId', startPos='x,y' [ this is optional if you have a default start position [] endPos='x,y' time='2' [ in seconds]
+		 addControlWrapperButton - parameters, asset='assetId'  , this is mostly the back to game button
+		 fadeIn,fadeOut - parameters, asset='assetId' fadeTime='Number' endAlpha='alpha value'
+		 fadeInLayer,fadeOutLayer - TODO
+
+		 [### SOUND SPECIFIC ###]
+
+		 playSound - parameters, name='sound name' category='background or game or win'
+		 stopSound - parameters, name='sound name'
+
+		 [### SHOWING WINS IN TEXTFIELDS SPECIFIC ### ]
+
+		 showTotalWin - id='textFieldId'   showTotalWin='true'
+		 showTextfield - id='textFieldId'   value='87843'  static value from config
+		 showWonAmounts - showWonAmounts='true' , the textfield ids are calcualted by the code from the win positions at the moment.
+		 [### COUNT UP SPECIFIC ###]
+
+		 startCountup - parameters , strategyId='0' endValueType='pickWin or totalWin' startValue='dont use for pickwin or total win' endValue='dont use for pickwin or total win'
+		 </instructions>-->
+	<config parser="mgs.games.data.slots.config.parser.BonusParser">	 
+	<property key="views" value="BONUS_0,BONUS_1,FREESPIN_REELSET_6,FREESPIN_REELSET_5,FREESPIN_REELSET_4,FREESPIN_REELSET_3,FREESPIN_REELSET_2" type="Vector.String" />
+	<bonuses>
+		<bonusIdToClassMap>
+			<bonus>
+				<property key="ids" value="0" type="Vector.int" />
+				<property key="qualifiedpath" value="mgs.games.slots.Bonus.Random" type="String" />
+				<property key="class" value="RandomSelectionBonus" type="String" />				
+			</bonus>
+			<bonus>
+				<property key="ids" value="1" type="Vector.int" />
+				<property key="qualifiedpath" value="mgs.games.slots.Bonus.Selection" type="String" />
+				<property key="class" value="SelectionBonus" type="String" />				
+			</bonus>
+		</bonusIdToClassMap>
+
+		<common>			
+			<property key="validBonusIds" value="0,1,2,3,4" type="Vector.int" />
+		</common>
+
+		<!-- common actions identified to be used by all objects  -->
+
+		<countups>
+			<countup>
+				<property key="id" value="0" type="String" />
+				<property key="delayToStart" value="0" type="Number" />
+				<property key="frameRate" value="30" type="int" />
+				<property key="timeLimit" value="15000" type="Number" />
+				<property key="strategy" value="AnticipationAcceleratorCountupStrategy" type="String" />
+			</countup>
+		
+		</countups>
+
+		<summaries>
+
+		</summaries>
+
+		<bonus>
+			<property key="id" value="0" type="int" />
+			<property key="name" value="TRex" type="String" />
+			<property key="type" value="PickXofY" type="String" />
+			<property key="validPicks" value="0" type="Vector.int" />
+			<property key="winTextFieldIdPrefix" value="" type="String" />
+			<property key="countup" value="0" type="String" />
+			<property key="layers" value="Bonus" type="Vector.String" />
+			<property key="hasSummary" value="false" type="Boolean" />
+			<property key="buttonsToPickMap" value="RefreshContinueButton" type="Vector.String" />
+			<property key="entryTransitionId" value="BASEGAME_0_BONUS_0" type="String" />
+			<property key="exitTransitionId" value="" type="String" />
+			<property key="hasTransitionFromIntroOnRefresh" value="false" type="Boolean" />
+			<bonusSpecificActions>
+				<action>
+					<property key="id" value="b0_prepareAssetObjects" type="String" />
+					<property key="type" value="prepareAssets" type="String" />
+					<property key="value" value=" prepareFor='bonus' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="b0_sendPick" type="String" />
+					<property key="type" value="sendPick" type="String" />
+					<property key="value" value=" value='0' " type="String" />
+				</action>
+				<action>				
+					<property key="id" value="b0_addMainMovie" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Random_Selection' frame='fadeInStart'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b0_addMainMovieOnRefresh" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Random_Selection' frame='fadeInStartEnd'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b0_addMainMovieStatic" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Random_Selection_Static' frame='fadeInStart'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b0_addMainMovieOnRefreshStatic" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Random_Selection_Static' frame='fadeInStartEnd'  " type="String" />	
+				</action>
+				
+				<!--Button actions-->
+				<action>
+					<property key="id" value="AddRefreshContinueButton" type="String" />
+					<property key="type" value="addControlWrapperButton" type="String" />
+					<property key="value" value=" asset='RefreshContinueButton' " type="String" />
+				</action>
+				
+				<!-- Sound Actions -->
+				<action>
+					<property key="id" value="PlayBackgroundSound" type="String" />
+					<property key="type" value="playSound" type="String" />
+					<property key="value" value=" name='SND_FSMenu_Background' category='background' loop='true' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="PlayAnalysingSound" type="String" />
+					<property key="type" value="playSound" type="String" />
+					<property key="value" value=" name='SND_FSMenu_AutoSelect' category='game' loop='false' " type="String" />
+				</action>
+			</bonusSpecificActions>
+			<bonusStateSequences>
+			
+				<sequence>
+					<property key="id" value="b0_prepare" type="String" />
+					<property key="state" value="prepare" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b0_prepareAssetObjects" type="String" />
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b0_show" type="String" />
+					<property key="state" value="show" type="String" />
+					<property key="mlgLevels" value="0,1" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b0_addMainMovie" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="PlayBackgroundSound" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				<sequence>
+					<property key="id" value="b0_show" type="String" />
+					<property key="state" value="show" type="String" />
+					<property key="mlgLevels" value="2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b0_addMainMovieStatic" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="PlayBackgroundSound" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b0_enable" type="String" /> 
+					<property key="state" value="enable" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+				</sequence>
+
+				<sequence>
+					<property key="id" value="b0_starting" type="String" /> 
+					<property key="state" value="starting" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b0_waitingForPick" type="String" /> 
+					<property key="state" value="waitingForPick" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+					<steps>
+						<step>
+							<property key="id" value="sendPick" type="String" />
+							<property key="action" value="b0_sendPick" type="String" />	
+						</step>						
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b0_startingRefresh" type="String" /> 
+					<property key="state" value="refreshStarting" type="String" />
+					<property key="mlgLevels" value="0,1" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b0_addMainMovieOnRefresh" type="String" />	
+						</step> 
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="AddRefreshContinueButton" type="String" />
+						</step>
+					</steps>
+				</sequence>
+				<sequence>
+					<property key="id" value="b0_startingRefresh" type="String" /> 
+					<property key="state" value="refreshStarting" type="String" />
+					<property key="mlgLevels" value="2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b0_addMainMovieOnRefreshStatic" type="String" />	
+						</step> 
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="AddRefreshContinueButton" type="String" />
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="RefreshContinueButtonClickedSeq" type="String" />
+					<property key="state" value="Up" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="sendPick" type="String" />
+							<property key="action" value="b0_sendPick" type="String" />	
+						</step>						
+					</steps>
+				</sequence>
+			
+			</bonusStateSequences>
+			<assets>
+				<backgrounds>
+					
+				</backgrounds>
+				<movies>
+					<rules>
+						<property key="alwaysShow" value="false" type="Boolean" />
+						<property key="mouseEnabled" value="false" type="Boolean" />
+						<property key="mouseChildren" value="false" type="Boolean" />
+					</rules>
+					<item>
+						<property key="id" value="Bonus_Random_Selection" type="String" />
+						<property key="artClass" value="mc_FS_Random_Container" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="fixedPosition" value="true" type="Boolean" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="Bonus_Random_Selection_Static" type="String" />
+						<property key="artClass" value="mc_FS_Random_ContainerStatic" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="fixedPosition" value="true" type="Boolean" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+				</movies>
+				<textfields>
+					
+				</textfields>
+				<buttons>
+					<rules>
+						<property key="onRefreshDisableIfAlreadyPicked" value="false" type="Boolean" />
+						<property key="onRefreshDontShowIfAlreadyPicked" value="true" type="Boolean" />
+						<property key="onRefreshIfAlreadyPickedSendToFrame" value="false" type="Boolean" />
+						<property key="states" value="Over,Out,Down,Up" type="Vector.String" />
+						<property key="activeFrameName" value="Active" type="String" />
+						<property key="inactiveFrameName" value="Inactive" type="String" />
+						<property key="overFrameName" value="Over" type="String" />
+						<property key="depressedFrameName" value="Depressed" type="String" />
+						<property key="disableFrameName" value="Inactive" type="String" />
+						<property key="hiddenFrameName" value="Hidden" type="String" />
+						<property key="clickAnimationStartFrameName" value="Active" type="String" />
+						<property key="clickAnimationEndFrameName" value="End" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</rules>
+				</buttons>
+				
+				<controlWrapperObjets>
+						<buttons>
+							<button>
+								<property key="id" value="RefreshContinueButton" type="String" />
+								<property key="artClass" value="BTN_FS_Continue" type="String" />
+								<property key="layer" value="BonusSummary" type="String" />
+								<property key="position" value="464,596" type="Point" />
+								<property key="zIndex" value="0" type="int" />
+								<property key="callback" value="buttonKeyUpHandler" type="String" />
+								<property key="shortCutKeys" value="13" type="Vector.uint" />
+							</button>
+						</buttons>
+					</controlWrapperObjets>
+			</assets>
+		</bonus>
+		
+		<bonus>
+			<property key="id" value="1" type="int" />
+			<property key="name" value="TRex" type="String" />
+			<property key="type" value="PickXofY" type="String" />
+			<property key="validBonusIds" value="1" type="Vector.int" />
+			<property key="validPicks" value="0,1,2,3,4" type="Vector.int" />
+			<property key="winTextFieldIdPrefix" value="" type="String" />
+			<property key="countup" value="0" type="String" />
+			<property key="layers" value="Bonus" type="Vector.String" />
+			<property key="hasSummary" value="false" type="Boolean" />
+			<property key="buttonsToPickMap" value="TrexButton,RaptorButton,BracButton,TriButton,DiloButton" type="Vector.String" />
+			<property key="entryTransitionId" value="BASEGAME_0_BONUS_1" type="String" />
+			<property key="exitTransitionId" value="" type="String" />
+			<property key="hasTransitionFromIntroOnRefresh" value="false" type="Boolean" />
+			<bonusSpecificActions>
+				<action>
+					<property key="id" value="b1_prepareAssetObjects" type="String" />
+					<property key="type" value="prepareAssets" type="String" />
+					<property key="value" value=" prepareFor='bonus' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="b1_sendPick" type="String" />
+					<property key="type" value="sendPick" type="String" />
+					<property key="value" value="" type="String" />
+				</action>
+				<action>				
+					<property key="id" value="b1_addMainMovie" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Selection' frame='fadeInStart'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b1_addMainMovieOnRefresh" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Selection' frame='fadeInStartEnd'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b1_addMainMovie_Static" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Selection_Static' frame='fadeInStart'  " type="String" />	
+				</action>
+				<action>				
+					<property key="id" value="b1_addMainMovieOnRefresh_Static" type="String" />
+					<property key="type" value="addAssetAndShow" type="String" />			 
+					<property key="value" value=" asset='Bonus_Selection_Static' frame='fadeInStartEnd'  " type="String" />	
+				</action>
+				
+				<!--Button actions-->
+				<action>
+					<property key="id" value="AddTrexButton" type="String" />
+					<property key="type" value="addButtonsAndShow" type="String" />
+					<property key="value" value=" asset='TrexButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="RemoveTrexButton" type="String" />
+					<property key="type" value="removeAsset" type="String" />
+					<property key="value" value=" asset='TrexButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="EnableTrexButton" type="String" />
+					<property key="type" value="enableButton" type="String" />
+					<property key="value" value=" asset='TrexButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="DisableTrexButton" type="String" />
+					<property key="type" value="disableButton" type="String" />
+					<property key="value" value=" asset='TrexButton' " type="String" />
+				</action>
+				
+				<action>
+					<property key="id" value="AddRaptorButton" type="String" />
+					<property key="type" value="addButtonsAndShow" type="String" />
+					<property key="value" value=" asset='RaptorButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="RemoveRaptorButton" type="String" />
+					<property key="type" value="removeAsset" type="String" />
+					<property key="value" value=" asset='RaptorButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="EnableRaptorButton" type="String" />
+					<property key="type" value="enableButton" type="String" />
+					<property key="value" value=" asset='RaptorButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="DisableRaptorButton" type="String" />
+					<property key="type" value="disableButton" type="String" />
+					<property key="value" value=" asset='RaptorButton' " type="String" />
+				</action>
+				
+				<action>
+					<property key="id" value="AddBracButton" type="String" />
+					<property key="type" value="addButtonsAndShow" type="String" />
+					<property key="value" value=" asset='BracButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="RemoveBracButton" type="String" />
+					<property key="type" value="removeAsset" type="String" />
+					<property key="value" value=" asset='BracButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="EnableBracButton" type="String" />
+					<property key="type" value="enableButton" type="String" />
+					<property key="value" value=" asset='BracButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="DisableBracButton" type="String" />
+					<property key="type" value="disableButton" type="String" />
+					<property key="value" value=" asset='BracButton' " type="String" />
+				</action>
+				
+				<action>
+					<property key="id" value="AddTriButton" type="String" />
+					<property key="type" value="addButtonsAndShow" type="String" />
+					<property key="value" value=" asset='TriButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="RemoveTriButton" type="String" />
+					<property key="type" value="removeAsset" type="String" />
+					<property key="value" value=" asset='TriButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="EnableTriButton" type="String" />
+					<property key="type" value="enableButton" type="String" />
+					<property key="value" value=" asset='TriButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="DisableTriButton" type="String" />
+					<property key="type" value="disableButton" type="String" />
+					<property key="value" value=" asset='TriButton' " type="String" />
+				</action>
+				
+				<action>
+					<property key="id" value="AddDiloButton" type="String" />
+					<property key="type" value="addButtonsAndShow" type="String" />
+					<property key="value" value=" asset='DiloButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="RemoveDiloButton" type="String" />
+					<property key="type" value="removeAsset" type="String" />
+					<property key="value" value=" asset='DiloButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="EnableDiloButton" type="String" />
+					<property key="type" value="enableButton" type="String" />
+					<property key="value" value=" asset='DiloButton' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="DisableDiloButton" type="String" />
+					<property key="type" value="disableButton" type="String" />
+					<property key="value" value=" asset='DiloButton' " type="String" />
+				</action>
+				
+				<!-- Sound Actions -->
+				<action>
+					<property key="id" value="PlayBackgroundSound" type="String" />
+					<property key="type" value="playSound" type="String" />
+					<property key="value" value=" name='SND_FSMenu_Background' category='background' loop='true' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="PlayButtonOverSound" type="String" />
+					<property key="type" value="playSound" type="String" />
+					<property key="value" value=" name='SND_FSMenu_Rollover' category='game' loop='false' " type="String" />
+				</action>
+				<action>
+					<property key="id" value="PlayButtonSelectSound" type="String" />
+					<property key="type" value="playSound" type="String" />
+					<property key="value" value=" name='SND_FSMenu_Select' category='game' loop='false' " type="String" />
+				</action>
+			</bonusSpecificActions>
+			<bonusStateSequences>
+			
+				<sequence>
+					<property key="id" value="b1_prepare" type="String" />
+					<property key="state" value="prepare" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="b1_prepareAssetObjects" type="String" />
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b1_show" type="String" />
+					<property key="state" value="show" type="String" />
+					<property key="mlgLevels" value="0,1" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="PlayBackgroundSound" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="b1_addMainMovie" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="2" type="String" />
+							<property key="action" value="AddTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="3" type="String" />
+							<property key="action" value="DisableTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="4" type="String" />
+							<property key="action" value="AddRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="5" type="String" />
+							<property key="action" value="DisableRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="6" type="String" />
+							<property key="action" value="AddBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="7" type="String" />
+							<property key="action" value="DisableBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="8" type="String" />
+							<property key="action" value="AddTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="9" type="String" />
+							<property key="action" value="DisableTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="10" type="String" />
+							<property key="action" value="AddDiloButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="11" type="String" />
+							<property key="action" value="DisableDiloButton" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b1_show" type="String" />
+					<property key="state" value="show" type="String" />
+					<property key="mlgLevels" value="2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="0" type="String" />
+							<property key="action" value="PlayBackgroundSound" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="b1_addMainMovie_Static" type="String" />
+						</step>
+						<step>
+							<property key="id" value="2" type="String" />
+							<property key="action" value="AddTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="3" type="String" />
+							<property key="action" value="DisableTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="4" type="String" />
+							<property key="action" value="AddRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="5" type="String" />
+							<property key="action" value="DisableRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="6" type="String" />
+							<property key="action" value="AddBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="7" type="String" />
+							<property key="action" value="DisableBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="8" type="String" />
+							<property key="action" value="AddTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="9" type="String" />
+							<property key="action" value="DisableTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="10" type="String" />
+							<property key="action" value="AddDiloButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="11" type="String" />
+							<property key="action" value="DisableDiloButton" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="b1_refreshPLaying" type="String" /> 
+					<property key="state" value="refreshPlaying" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+					<steps>	
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="EnableTrexButton" type="String" />	
+						</step>			
+						<step>
+							<property key="id" value="2" type="String" />
+							<property key="action" value="EnableRaptorButton" type="String" />	
+						</step>			
+						<step>
+							<property key="id" value="3" type="String" />
+							<property key="action" value="EnableBracButton" type="String" />	
+						</step>	
+						<step>
+							<property key="id" value="4" type="String" />
+							<property key="action" value="EnableTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="5" type="String" />
+							<property key="action" value="EnableDiloButton" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="SelectionButtonClickedSeq" type="String" />
+					<property key="state" value="Up" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" />
+					<steps>
+						<step>
+							<property key="id" value="sendPick" type="String" />
+							<property key="action" value="b1_sendPick" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="PlayButtonSelectSound" type="String" />	
+						</step>						
+						<step>
+							<property key="id" value="2" type="String" />
+							<property key="action" value="DisableTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="3" type="String" />
+							<property key="action" value="RemoveTrexButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="4" type="String" />
+							<property key="action" value="DisableRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="5" type="String" />
+							<property key="action" value="RemoveRaptorButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="6" type="String" />
+							<property key="action" value="DisableBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="7" type="String" />
+							<property key="action" value="RemoveBracButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="8" type="String" />
+							<property key="action" value="DisableTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="9" type="String" />
+							<property key="action" value="RemoveTriButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="10" type="String" />
+							<property key="action" value="DisableDiloButton" type="String" />	
+						</step>
+						<step>
+							<property key="id" value="11" type="String" />
+							<property key="action" value="RemoveDiloButton" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+				
+				<sequence>
+					<property key="id" value="SelectionButtonOverSequence" type="String" /> 
+					<property key="state" value="Over" type="String" />
+					<property key="mlgLevels" value="0,1,2" type="Vector.uint" />
+					<property key="default" value="true" type="Boolean" /> 
+					<steps>
+						<step>
+							<property key="id" value="1" type="String" />
+							<property key="action" value="PlayButtonOverSound" type="String" />	
+						</step>
+					</steps>
+				</sequence>
+			
+			</bonusStateSequences>
+			<assets>
+				<backgrounds>
+					
+				</backgrounds>
+				<movies>
+					<rules>
+						<property key="alwaysShow" value="false" type="Boolean" />
+						<property key="mouseEnabled" value="false" type="Boolean" />
+						<property key="mouseChildren" value="false" type="Boolean" />
+					</rules>
+					<item>
+						<property key="id" value="Bonus_Selection" type="String" />
+						<property key="artClass" value="mc_FS_Select_Container" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="fixedPosition" value="true" type="Boolean" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="Bonus_Selection_Static" type="String" />
+						<property key="artClass" value="mc_FS_Select_ContainerStatic" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="fixedPosition" value="true" type="Boolean" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+				</movies>
+				<textfields>
+					
+				</textfields>
+				<buttons>
+					<rules>
+						<property key="onRefreshDisableIfAlreadyPicked" value="false" type="Boolean" />
+						<property key="onRefreshDontShowIfAlreadyPicked" value="true" type="Boolean" />
+						<property key="onRefreshIfAlreadyPickedSendToFrame" value="false" type="Boolean" />
+						<property key="states" value="Over,Out,Down,Up" type="Vector.String" />
+						<property key="activeFrameName" value="Active" type="String" />
+						<property key="inactiveFrameName" value="Inactive" type="String" />
+						<property key="overFrameName" value="Over" type="String" />
+						<property key="depressedFrameName" value="Depressed" type="String" />
+						<property key="disableFrameName" value="Inactive" type="String" />
+						<property key="hiddenFrameName" value="Hidden" type="String" />
+						<property key="clickAnimationStartFrameName" value="Active" type="String" />
+						<property key="clickAnimationEndFrameName" value="End" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</rules>
+					<item>
+						<property key="id" value="TrexButton" type="String" />
+						<property key="artClass" value="BTN_FS_Select_Trex" type="String" />
+						<property key="hitArea" value="" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="frameOnLoad" value="Active" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="RaptorButton" type="String" />
+						<property key="artClass" value="BTN_FS_Select_Raptor" type="String" />
+						<property key="hitArea" value="" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="frameOnLoad" value="Active" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="BracButton" type="String" />
+						<property key="artClass" value="BTN_FS_Select_Brac" type="String" />
+						<property key="hitArea" value="" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="frameOnLoad" value="Active" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="TriButton" type="String" />
+						<property key="artClass" value="BTN_FS_Select_Tri" type="String" />
+						<property key="hitArea" value="" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="frameOnLoad" value="Active" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+					<item>
+						<property key="id" value="DiloButton" type="String" />
+						<property key="artClass" value="BTN_FS_Select_Dilo" type="String" />
+						<property key="hitArea" value="" type="String" />
+						<property key="layer" value="Bonus" type="String" />
+						<property key="position" value="0,0" type="Point" />
+						<property key="zIndex" value="0" type="int" />
+						<property key="frameOnLoad" value="Active" type="String" />
+						<property key="forLevels" value="0" type="Vector.int" />
+					</item>
+				</buttons>
+			</assets>
+		</bonus>
+	</bonuses>
+	</config>
+	</data>

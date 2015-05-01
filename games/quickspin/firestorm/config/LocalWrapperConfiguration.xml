@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" ?>
+	<wrapperConfig>		
+		<communicationTimeout value="20"/>					
+		<javascriptIntervalTime time="75"/>
+			<autoplayMaximum value="100"/> 
+		<integration name="Standard" package="ce"/>
+
+		<keepAlive pollInterval="6000" marketOnly="true">
+			<market id="it"/>
+		</keepAlive>
+		
+		<activityTracking timeout="1200000" marketOnly="true">
+			<market id="it"/>
+		</activityTracking>
+		
+		<licenseeRGURL url="ENTER"/>
+		<over18URL url="ENTER"/>
+		<operatorAddress address="ENTER"/>
+		
+		<operator name="ce" />
+		<gameFormats pack="std">
+			<format name="Legacy" />
+			<format name="ProgressiveDraw" >
+				<market market="it"/>
+			</format>
+			<format name="Slot" >
+				<market market="it"/>
+			</format>
+			<format name="SlotNoAutoplay" >
+				<market market="it"/>
+			</format>
+			<format name="SingleDraw" >
+				<market market="it"/>
+			</format>
+			<format name="MultiDraw" >
+				<market market="it"/>
+			</format>
+			<format name="Table" >
+				<market market="it"/>
+			</format>
+			<format name="MultiDrawTable" >
+				<market market="it"/>
+			</format>
+			<format name="Blackjack" >
+				<market market="it"/>
+			</format>
+			<format name="MultiDrawDeferedId" >
+				<market market="it"/>
+			</format>
+			<format name="SingleDrawDeferedId" >
+				<market market="it"/>
+			</format>
+			<format name="ProgressiveDrawDeferedId" >
+				<market market="it"/>
+			</format>
+			<format name="TableDeferedId" >
+				<market market="it"/>
+			</format>
+		</gameFormats>
+	</wrapperConfig>

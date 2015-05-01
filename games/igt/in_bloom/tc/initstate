@@ -1,0 +1,269 @@
+<GameLogicResponse><OutcomeDetail><TransactionId>A2310-14264037715377</TransactionId><Stage>BaseGame</Stage><NextStage>BaseGame</NextStage><Balance>3000.00</Balance><GameStatus>Initial</GameStatus><Settled>0</Settled><Pending>0</Pending><Payout>0</Payout></OutcomeDetail><PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+			<Entry name="Reel0" stripIndex="24">
+				<Cell name="L0C0R0" stripIndex="24">s21</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="14">
+				<Cell name="L0C0R1" stripIndex="14">s06</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="3">
+				<Cell name="L0C0R2" stripIndex="3">s42</Cell>
+			</Entry>
+			
+			<Entry name="Reel3" stripIndex="57">
+				<Cell name="L0C1R0" stripIndex="57">s21</Cell>
+			</Entry>
+			<Entry name="Reel4" stripIndex="3">
+				<Cell name="L0C1R1" stripIndex="3">s33</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="12">
+				<Cell name="L0C1R2" stripIndex="12">s12</Cell>
+			</Entry>
+			
+			<Entry name="Reel6" stripIndex="8">
+				<Cell name="L0C2R0" stripIndex="8">s34</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="0">
+				<Cell name="L0C2R1" stripIndex="0">s14</Cell>
+			</Entry>
+			<Entry name="Reel8" stripIndex="58">
+				<Cell name="L0C2R2" stripIndex="58">b01</Cell>
+			</Entry>
+			
+			<Entry name="Reel9" stripIndex="0">
+				<Cell name="L0C3R0" stripIndex="0">s13</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="1">
+				<Cell name="L0C3R1" stripIndex="1">s23</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="99">
+				<Cell name="L0C3R2" stripIndex="99">s08</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="4">
+				<Cell name="L0C4R0" stripIndex="4">s07</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="3">
+				<Cell name="L0C4R1" stripIndex="3">s42</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="2">
+				<Cell name="L0C4R2" stripIndex="2">s32</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="FlowerPicker.Picks" stage="FlowerPicker">
+			<Entry name="L0C0R0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">spins,5,trigger,PoppyGarden</Cell>
+			</Entry>
+			<Entry name="L0C1R0" stripIndex="1">
+				<Cell name="L0C1R0" stripIndex="1">spins,8,trigger,RoseGarden</Cell>
+			</Entry>
+			<Entry name="L0C2R0" stripIndex="2">
+				<Cell name="L0C2R0" stripIndex="2">spins,10,trigger,CallaLilyGarden</Cell>
+			</Entry>
+			<Entry name="L0C3R0" stripIndex="3">
+				<Cell name="L0C3R0" stripIndex="3">spins,12,trigger,WaterLilyGarden</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="PoppyGarden.Reels" stage="PoppyGarden">
+			<Entry name="Reel0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">s11</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="0">
+				<Cell name="L0C0R1" stripIndex="0">s11</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="16">
+				<Cell name="L0C0R2" stripIndex="16">s10</Cell>
+			</Entry>
+			
+			<Entry name="Reel3" stripIndex="124">
+				<Cell name="L0C1R0" stripIndex="124">s06</Cell>
+			</Entry>
+			<Entry name="Reel4" stripIndex="4">
+				<Cell name="L0C1R1" stripIndex="4">s11</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="4">
+				<Cell name="L0C1R2" stripIndex="4">s11</Cell>
+			</Entry>
+			
+			<Entry name="Reel6" stripIndex="0">
+				<Cell name="L0C2R0" stripIndex="0">s06</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="2">
+				<Cell name="L0C2R1" stripIndex="2">s08</Cell>
+			</Entry>
+			<Entry name="Reel8" stripIndex="37">
+				<Cell name="L0C2R2" stripIndex="37">s09</Cell>
+			</Entry>
+			
+			<Entry name="Reel9" stripIndex="0">
+				<Cell name="L0C3R0" stripIndex="0">s13</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="0">
+				<Cell name="L0C3R1" stripIndex="0">s13</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="0">
+				<Cell name="L0C3R2" stripIndex="0">s13</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="12">
+				<Cell name="L0C4R0" stripIndex="12">s11</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="0">
+				<Cell name="L0C4R1" stripIndex="0">s05</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="12">
+				<Cell name="L0C4R2" stripIndex="12">s11</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="RoseGarden.Reels" stage="RoseGarden">
+			<Entry name="Reel0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">s21</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="0">
+				<Cell name="L0C0R1" stripIndex="0">s21</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="16">
+				<Cell name="L0C0R2" stripIndex="16">s10</Cell>
+			</Entry>
+			
+			<Entry name="Reel3" stripIndex="124">
+				<Cell name="L0C1R0" stripIndex="124">s06</Cell>
+			</Entry>
+			<Entry name="Reel4" stripIndex="4">
+				<Cell name="L0C1R1" stripIndex="4">s21</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="4">
+				<Cell name="L0C1R2" stripIndex="4">s21</Cell>
+			</Entry>
+			
+			<Entry name="Reel6" stripIndex="0">
+				<Cell name="L0C2R0" stripIndex="0">s06</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="2">
+				<Cell name="L0C2R1" stripIndex="2">s08</Cell>
+			</Entry>
+			<Entry name="Reel8" stripIndex="37">
+				<Cell name="L0C2R2" stripIndex="37">s09</Cell>
+			</Entry>
+			
+			<Entry name="Reel9" stripIndex="0">
+				<Cell name="L0C3R0" stripIndex="0">s23</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="0">
+				<Cell name="L0C3R1" stripIndex="0">s23</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="0">
+				<Cell name="L0C3R2" stripIndex="0">s23</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="12">
+				<Cell name="L0C4R0" stripIndex="12">s21</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="0">
+				<Cell name="L0C4R1" stripIndex="0">s05</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="12">
+				<Cell name="L0C4R2" stripIndex="12">s21</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="CallaLilyGarden.Reels" stage="CallaLilyGarden">
+			<Entry name="Reel0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">s31</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="0">
+				<Cell name="L0C0R1" stripIndex="0">s31</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="16">
+				<Cell name="L0C0R2" stripIndex="16">s10</Cell>
+			</Entry>
+			
+			<Entry name="Reel3" stripIndex="124">
+				<Cell name="L0C1R0" stripIndex="124">s06</Cell>
+			</Entry>
+			<Entry name="Reel4" stripIndex="4">
+				<Cell name="L0C1R1" stripIndex="4">s31</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="4">
+				<Cell name="L0C1R2" stripIndex="4">s31</Cell>
+			</Entry>
+			
+			<Entry name="Reel6" stripIndex="0">
+				<Cell name="L0C2R0" stripIndex="0">s06</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="2">
+				<Cell name="L0C2R1" stripIndex="2">s08</Cell>
+			</Entry>
+			<Entry name="Reel8" stripIndex="37">
+				<Cell name="L0C2R2" stripIndex="37">s09</Cell>
+			</Entry>
+			
+			<Entry name="Reel9" stripIndex="0">
+				<Cell name="L0C3R0" stripIndex="0">s33</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="0">
+				<Cell name="L0C3R1" stripIndex="0">s33</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="0">
+				<Cell name="L0C3R2" stripIndex="0">s33</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="12">
+				<Cell name="L0C4R0" stripIndex="12">s31</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="0">
+				<Cell name="L0C4R1" stripIndex="0">s05</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="12">
+				<Cell name="L0C4R2" stripIndex="12">s31</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="WaterLilyGarden.Reels" stage="WaterLilyGarden">
+			<Entry name="Reel0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">s41</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="0">
+				<Cell name="L0C0R1" stripIndex="0">s41</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="16">
+				<Cell name="L0C0R2" stripIndex="16">s10</Cell>
+			</Entry>
+			
+			<Entry name="Reel3" stripIndex="124">
+				<Cell name="L0C1R0" stripIndex="124">s06</Cell>
+			</Entry>
+			<Entry name="Reel4" stripIndex="4">
+				<Cell name="L0C1R1" stripIndex="4">s41</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="4">
+				<Cell name="L0C1R2" stripIndex="4">s41</Cell>
+			</Entry>
+			
+			<Entry name="Reel6" stripIndex="0">
+				<Cell name="L0C2R0" stripIndex="0">s06</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="2">
+				<Cell name="L0C2R1" stripIndex="2">s08</Cell>
+			</Entry>
+			<Entry name="Reel8" stripIndex="37">
+				<Cell name="L0C2R2" stripIndex="37">s09</Cell>
+			</Entry>
+			
+			<Entry name="Reel9" stripIndex="0">
+				<Cell name="L0C3R0" stripIndex="0">s43</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="0">
+				<Cell name="L0C3R1" stripIndex="0">s43</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="0">
+				<Cell name="L0C3R2" stripIndex="0">s43</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="12">
+				<Cell name="L0C4R0" stripIndex="12">s41</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="0">
+				<Cell name="L0C4R1" stripIndex="0">s05</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="12">
+				<Cell name="L0C4R2" stripIndex="12">s41</Cell>
+			</Entry>		
+		</PopulationOutcome>
+		<PatternSliderInput>
+			<BetPerPattern>1</BetPerPattern>
+			<PatternsBet>50</PatternsBet>
+		</PatternSliderInput>
+	<Balances totalBalance="3000.00"><Balance name="FREE">3000.00</Balance></Balances></GameLogicResponse>

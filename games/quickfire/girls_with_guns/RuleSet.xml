@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data version="5.1.10816.8">
+  <!-- the value is set to 0(false) it will not be used >
+	< if the value is set to 1(true) it will be used-->
+  <rule id="CanUseSpinStop" value="1" />
+  <rule id="QuickSpinEnabled" value="1" />
+  <rule id="FreespinQuickSpinEnabled" value="1" />
+  <rule id="CanUseDisableGamble" value="1" />
+  <rule id="UseCustomAutoPlaySettings" value="0" />
+  <rule id="MaxCustomAutoPlaySettings" value="9999" />
+  <rule id="MinCustomAutoPlaySettings" value="1" />
+  <rule id="EditableAutoPlayValue" value="1" />
+  <rule id="CustomAutoPlayValues" value="5,10,15,25,100,250,500" />
+  <rule id="DisableAutoFireForArcadeSlots" value="0" />
+   <rule id="MaximunInvaderContinousKills" value="25" />
+  <rule id="MaxStopOnWinAutoPlaySettings" value="9999" />
+  <rule id="MinStopOnWinAutoPlaySettings" value="1" />
+  
+  <rule id="disallowAutoPickForBasegameFeature" value="0" />
+  <rule id="disallowAutoStartForFreespinsFeature" value="1" />
+ 
+  <!-- regionOverrides
+			region
+				id
+				lockedFormat[1:Coins, 2:Credits] -->
+  <regionOverrides>
+    <!-- <region id="GAME" lockedFormat="1" /> -->
+  </regionOverrides>
+</data>

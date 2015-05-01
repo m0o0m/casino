@@ -406,6 +406,9 @@ class treasure_islandCtrl extends Ctrl {
 
         $this->bonus['bonusWin'] += $report['betOnLine'] * $totalPayout;
         $this->bonus['totalWin'] += $report['betOnLine'] * $totalPayout;
+
+        $this->bonusPays[] = $report['betOnLine'] * $totalPayout;
+
         $detail = '';
         foreach($resultArray as $l) {
             $item = '';
@@ -674,8 +677,7 @@ class treasure_islandCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="true"/>
                 </DrawState>'.$this->bonus['drawStates'];
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';

@@ -1,0 +1,1685 @@
+<PaytableResponse><PaytableStatistics description="Kitty Glitter 30L 3x3x3x3x3" maxRTP="94.92" minRTP="93.51" name="Kitty Glitter" type="Slot"/><PrizeInfo name="PrizeInfoLines" strategy="PayLeft">									
+			<Prize name="s01">									
+				<PrizePay count="3" pph="1192" value="50"/>							
+				<PrizePay count="4" pph="11423" value="300"/>							
+				<PrizePay count="5" pph="89749" value="1000"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s01" required="false"/>								
+			</Prize>									
+			<Prize name="s02">									
+				<PrizePay count="3" pph="1015" value="40"/>							
+				<PrizePay count="4" pph="6763" value="200"/>							
+				<PrizePay count="5" pph="77102" value="750"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s02" required="false"/>								
+			</Prize>									
+			<Prize name="s03">									
+				<PrizePay count="3" pph="271" value="30"/>							
+				<PrizePay count="4" pph="1869" value="125"/>							
+				<PrizePay count="5" pph="14686" value="400"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s03" required="false"/>								
+			</Prize>									
+			<Prize name="s04">									
+				<PrizePay count="3" pph="338" value="20"/>							
+				<PrizePay count="4" pph="2425" value="100"/>							
+				<PrizePay count="5" pph="14278" value="300"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s04" required="false"/>								
+			</Prize>									
+			<Prize name="s05">									
+				<PrizePay count="3" pph="483" value="10"/>							
+				<PrizePay count="4" pph="3010" value="30"/>							
+				<PrizePay count="5" pph="17728" value="125"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s05" required="false"/>								
+			</Prize>									
+			<Prize name="s06">									
+				<PrizePay count="3" pph="541" value="5"/>							
+				<PrizePay count="4" pph="3808" value="20"/>							
+				<PrizePay count="5" pph="25701" value="100"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s06" required="false"/>								
+			</Prize>									
+			<Prize name="s07">									
+				<PrizePay count="3" pph="285" value="5"/>							
+				<PrizePay count="4" pph="1812" value="20"/>							
+				<PrizePay count="5" pph="9424" value="100"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s07" required="false"/>								
+			</Prize>									
+			<Prize name="s08">									
+				<PrizePay count="3" pph="342" value="5"/>							
+				<PrizePay count="4" pph="2754" value="20"/>							
+				<PrizePay count="5" pph="21636" value="100"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s08" required="false"/>								
+			</Prize>									
+			<Prize name="s09">									
+				<PrizePay count="3" pph="230" value="5"/>							
+				<PrizePay count="4" pph="1883" value="20"/>							
+				<PrizePay count="5" pph="12709" value="100"/>							
+				<Symbol id="w01" required="false"/>								
+				<Symbol id="w02" required="false"/>								
+				<Symbol id="s09" required="false"/>								
+			</Prize>									
+		</PrizeInfo><PrizeInfo name="PrizeInfoScatter" strategy="PayAny">									
+			<Prize name="b01">									
+				<PrizePay count="3" pph="153" value="3"/>								
+				<Symbol id="b01" required="true"/>								
+			</Prize>									
+		</PrizeInfo><StripInfo name="BaseGame">										
+			<Strip name="Reel0">										
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 53	-->				
+
+
+			</Strip>										
+			<Strip name="Reel1">										
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 69	-->				
+
+			</Strip>										
+			<Strip name="Reel2">										
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 63	-->				
+				<!-- empty position here, but not in other model(s)	strip Row 64	-->				
+
+			</Strip>										
+			<Strip name="Reel3">										
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 57	-->				
+				<!-- empty position here, but not in other model(s)	strip Row 58	-->				
+				<!-- empty position here, but not in other model(s)	strip Row 59	-->				
+
+			</Strip>										
+			<Strip name="Reel4">										
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 62	-->				
+
+			</Strip>										
+		</StripInfo><StripInfo name="FreeSpin">										
+			<Strip name="Reel0">										
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 69	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 70	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 71	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 72	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 73	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 74	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 75	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 76	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 77	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 78	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 79	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 80	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 81	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 82	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 83	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 84	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 85	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 86	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 87	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 88	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 89	-->				
+
+			</Strip>										
+			<Strip name="Reel1">										
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 69	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 70	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 71	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 72	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 73	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 74	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 75	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 76	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 77	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 78	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 79	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 80	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 81	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 82	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 83	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 84	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 85	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 86	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 87	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 88	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 89	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 90	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 91	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 92	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 93	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 94	-->				
+
+			</Strip>										
+			<Strip name="Reel2">										
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 69	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 70	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 71	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 72	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 73	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 74	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 75	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 76	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 77	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 78	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 79	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 80	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 81	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 82	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 83	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 84	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 85	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 86	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 87	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 88	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 89	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 90	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 91	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 92	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 93	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 94	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 95	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 96	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 97	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 98	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 99	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 100	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 101	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 102	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 103	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 104	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 105	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 106	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 107	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 108	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 109	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 110	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 111	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 112	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 113	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 114	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 115	-->				
+
+			</Strip>										
+			<Strip name="Reel3">										
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 69	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 70	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 71	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 72	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 73	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 74	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 75	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 76	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 77	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 78	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 79	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 80	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 81	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 82	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 83	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 84	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 85	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 86	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 87	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 88	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 89	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 90	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 91	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 92	-->				
+				<Stop symbolID="b01" weight="1"/>
+				<!--	strip Row 93	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 94	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 95	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 96	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 97	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 98	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 99	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 100	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 101	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 102	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 103	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 104	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 105	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 106	-->				
+
+			</Strip>										
+			<Strip name="Reel4">										
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 1	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 2	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 3	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 4	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 5	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 6	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 7	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 8	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 9	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 10	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 11	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 12	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 13	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 14	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 15	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 16	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 17	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 18	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 19	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 20	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 21	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 22	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 23	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 24	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 25	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 26	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 27	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 28	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 29	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 30	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 31	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 32	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 33	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 34	-->				
+				<Stop symbolID="s01" weight="1"/>
+				<!--	strip Row 35	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 36	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 37	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 38	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 39	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 40	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 41	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 42	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 43	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 44	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 45	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 46	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 47	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 48	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 49	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 50	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 51	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 52	-->				
+				<Stop symbolID="s02" weight="1"/>
+				<!--	strip Row 53	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 54	-->				
+				<Stop symbolID="s07" weight="1"/>
+				<!--	strip Row 55	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 56	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 57	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 58	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 59	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 60	-->				
+				<Stop symbolID="w01" weight="1"/>
+				<!--	strip Row 61	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 62	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 63	-->				
+				<Stop symbolID="w02" weight="1"/>
+				<!--	strip Row 64	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 65	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 66	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 67	-->				
+				<Stop symbolID="s06" weight="1"/>
+				<!--	strip Row 68	-->				
+				<Stop symbolID="s08" weight="1"/>
+				<!--	strip Row 69	-->				
+				<Stop symbolID="s03" weight="1"/>
+				<!--	strip Row 70	-->				
+				<Stop symbolID="s05" weight="1"/>
+				<!--	strip Row 71	-->				
+				<Stop symbolID="s09" weight="1"/>
+				<!--	strip Row 72	-->				
+				<Stop symbolID="s04" weight="1"/>
+				<!--	strip Row 73	-->				
+
+			</Strip>										
+		</StripInfo><PatternSliderInfo><PatternInfo max="30" min="1">								
+				<Step>1</Step>							
+				<Step>5</Step>							
+				<Step>9</Step>							
+				<Step>15</Step>							
+				<Step>30</Step>							
+			</PatternInfo><BetInfo max="1000" min="1"><Step>1</Step><Step>2</Step><Step>3</Step><Step>5</Step><Step>10</Step><Step>20</Step><Step>50</Step><Step>100</Step><Step>200</Step><Step>500</Step><Step>1000</Step></BetInfo></PatternSliderInfo><AwardCapInfo name="AwardCapInfo">															
+			<TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>							
+		<CurrencyCap><CurrencyType>FPY</CurrencyType><AwardCap>25000000</AwardCap></CurrencyCap></AwardCapInfo><DenominationList><Denomination softwareId="200-1127-001">1.0</Denomination></DenominationList><GameBetInfo><MinChipValue>1.0</MinChipValue><MinBet>1.0</MinBet><MaxBet>150.0</MaxBet></GameBetInfo><AutoSpinInfo enable="True"><Step>10</Step><Step>20</Step><Step>30</Step><Step>40</Step><Step>50</Step></AutoSpinInfo><VersionInfo><GameLogicVersion>1.0</GameLogicVersion></VersionInfo></PaytableResponse>

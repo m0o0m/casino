@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System version="9.4.0.136629">
+	
+	<!-- Server -->
+	<server serverID="" demoServerID="0" allowServerID="1" protocolPrefix="insecure" enableCustomHeader="0" customHeaderName="" >
+		<logic targeturl="x.php" />
+		<flashax url="https://plugins.valueactive.eu/flashax/" />
+		<performanceRating supported="1" numberOfIterations="600000" />
+	</server>
+	
+	<RegulatedMarket market="default" id=""/>
+	
+	<!-- Casino -->
+	<casino>
+		<info casinoName="Casino" regCasinoName="QuickFire Casino" oldRegCasinoName="Quickfire Casino" gamingGroupName="" companyName="Microgaming" casinoClientType="1" hasmenu="0" exitAction="1" preloaderText="LOADING" XUACompatible="0" />
+		<login disableHiddenGames="0" hiddenGames="" loginType="T3" loginBySessionID="1" demoPlay="0" autoLogin="1" allowRememberPassword="1" useGenAuthLogin="0" externalLogin="1" autoGameLaunch="1" allowForgotPassword="1" showReturnDialog="0" showRegonLogin="1" assumeDemoIfNoCredentials="0" autoShowConnectDiag="1" oneClick="0" oneClickIgnoreAuthToken="0" hidePractisePlayBtn="0" isVanguard="0" showRegonLoginAlways="0" allowBrandMigration="1" useOpenIDLogin="0" allowOpenIDOverride="1" />
+		<session usePingPkt="1" />
+		<bank eCashPromptDialog="0" eCashPromptDialogSkipLobby="0" allowGuestPurchase="1" quickBank="1" useInsufficientFader="1" />
+		<!--  Help - helpsys = 0 is for legacy help and the will use the url and windowparams in the node below. Helpsys = 1 with use a help system like Raiden or flaire and then will use the setting in externalLaunch -> raidenHelp   -->
+		<help helpsys="1" />
+		<OLR autoShowRegDiag="0" byPassREgDiag="0" guestPromptforRealplay="0" />
+		<operatorPage demoPlay="0" realPlay="0" guestPlay="0" />
+		<timers sessionTimeout="600000" proxyTimeout="120000" keepAliveTimer="150000" aspKeepAliveTimer="900000" />
+		<mpp multicurrency="1" />
+		<debug allow="0" debugLevels="levels.xml" debugType="1" />
+		<contextMenu allowZoom="0" showVersionNumbers="0" />
+		<creditsFormat format="# ###.##" convertToCredits="1" useTMSeparator="1" separatorTM=" " separatorF="." />
+		<resolutionLock allow="1" maxWidth="1280" maxHeight="768" />
+		<popups allowBlockedPopupWarning="0" />
+		<currencies allow="1" applyMultiplier="0" abbreviate="0" />
+		<notifier connectionID="_" notifierTimeout="300000"/>
+		<menu defaultTabPage="SLOTSTAB" hideConnectButtonsForDemo="0" />
+		<operatorRedirect allow="0" url="http://derblpam3.mgsops.net/ruby-systemdev/OsirisReturn/" postOffSwitch="doRedirect" />
+		<padlock visible="1" />
+		<clock showTime="1" />
+		<dialogs excludedsystemDiag="MM_Reminder,info" />
+		<closePage hasPageCloseAlert="false" alertText="ALERT_TEXT"  finalAlertText="FINAL_ALERT_TEXT" />
+    	<languageRedirect enabled="0" languageFallBack="en" excludedLanguages=""/>
+		<!--QuickFire platform for SkyVegas -->
+		<!--counters for consecutive wager default= 0-->
+		<moduleCounters enableConsecutiveBetsCounter="0" consecutiveBetsCount="0" />
+	</casino>
+	
+	<!-- Launch nodes for system sites -->
+	<!--
+		Defaults: (if not found in external launch node)
+			newWindow="1"
+			doPost="1"
+			addQueryString="0"
+			safeQueryString="0"
+			
+		Note:
+			'externalGame' and 'launchOtherSite' does not require URL - passed from inside the system
+			if Ruby launched from T3 'fullReturnUrl' and ' safeReturnUrl' will default to T3 return url
+			
+		list of param values to choose from:
+			username
+			password
+			ppusername - the practise play username of upe only
+			pppassword - the practise play password - for UPE only
+			clientType
+			serverID
+			language
+			userType
+			BTag
+			BTag2
+			BTag3
+			BTag4
+			BTag5
+			fullReturnUrl
+			safeReturnUrl
+			gameid
+			extgameid
+			sessionid
+			mutesound
+			authToken
+			helpcatagory
+			extgamelist
+			curmid
+			curcid
+			pcmguid
+			mpfuserid
+			autologin
+			theme
+			variant
+			regMarket
+			hgames
+			incompleteGamesshowing  (this is needed when launching an external game - t3 or Aurora)
+			externalReturn (this is used to tell the menu (T3 generally) that the game is returning to it)
+			sessiontoken
+			sessionuserid
+			curtournamentid
+	-->
+	<externalLaunch>
+		<bankSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1009,username=%username%,password=%sessiontoken%,clienttype=%clienttype%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,authtoken=%authtoken%" winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<quickBankSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1014,ECashMenuMode=3,QuickBankingFlag=true,loginname=%username%,password=%sessiontoken%,clienttype=%clienttype%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,authtoken=%authtoken%" winParams="height=430,width=720,toolbar=no,status=no,scrollbars=no,location=no,menubar=no,directories=no,resizable=no" />
+		<realOLRSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="0" doPost="1" nameValues="applicationID=1003,loginname=%username%,clienttype=%clienttype%,usertype=0,ul=%language%,ssologintype=%usertype%,serverid=%serverid%,password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,tokenloginrequired=%tokenloginrequired%,externalid=%externalid%" winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<guestOLRSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="0" doPost="1" nameValues="applicationID=1003,loginname=%username%,clienttype=%clienttype%,usertype=1,ul=%language%,ssologintype=%usertype%,serverid=%serverid%,password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%" winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<migrateSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1097,loginname=%username%,ul=%language%,UserType=%usertype%,ssologintype=%usertype%,ServerID=%serverID%,Password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%" winParams="height=440,width=640,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<fanfairSite newWindow="1" nameValues="casinoId=%clientType%,ul=%language%" winParams="height=440,width=640,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<operatorPageSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1007,loginname=%username%,clienttype=%clienttype%,ul=%language%,UserType=%usertype%,ssologintype=%usertype%,ServerID=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%," winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<myAccountSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1083,ul=%language%,btag=%btag%,loginname=%username%,password=%sessiontoken%,ssologintype=%usertype%,usertype=%usertype%,clienttype=%clienttype%,serverid=%serverid%,return_url=%fullreturnurl%,lang=%language%" winParams="height=786,width=1024,toolbar=no,status=no,scrollbars=no,location=no,menubar=no,directories=no,resizable=yes" />
+		<forgotPasswordSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1059,ul=%language%,btag=%btag%,loginname=%username%,password=%sessiontoken%,ssologintype=%usertype%,usertype=%usertype%,clienttype=%clienttype%,serverid=%serverid%,return_url=%fullreturnurl%,lang=%language%" winParams="height=600,width=800,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<launchChat newWindow="1" doPost="1" nameValues="usertype=%userType%,username=%username%" winParams="height=800,width=600,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<legacyHelp url="/quickfireen/help/" newWindow="1" doPost="0" nameValues="" winParams="height=440,width=640,toolbar=no,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<raidenHelp url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1019,serverID=%serverID%,username=%username%,usertype=%usertype%,Clienttype=%clientType%,lang=%language%,moduleid=%curmid%,clientid=%curcid%,scat=%helpcatagory%,cookie=%cookie%,gamelist=%extgamelist%,flags=1,lobbytype=10,gameid=%gameid%,extgameid=%extgameid%" winParams="height=600,width=800,toolbar=no,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<externalGame newWindow="0" doPost="1" addQueryString="1" safeQueryString="1" nameValues="UserType=%userType%,sext1=%username%,sext2=%password%,Ul=%language%,CasinoID=%serverID%,ClientType=%clientType%,return_url=%fullReturnUrl%,xsession=%sessionid%,xsessiontoken=%sessiontoken%,xsessionuserid=%sessionuserid%,mutesound=%mutesound%,authToken=%authToken%,autologin=%autologin%,hgames=%hgames%,theme=%theme%,variant=%variant%,regMarket=%regMarket%,incompleteGamesShowing=%incompletegamesshowing%,externalReturn=%externalReturn%,participationCode=%participationCode%,isQuickRedirect=true" winParams="height=800,width=600,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<launchReturnUrl newWindow="0" doPost="1" addQueryString="0" safeQueryString="0" nameValues="UserType=%userType%,sext1=%username%,sext2=%password%,Ul=%language%,CasinoID=%serverID%,ClientType=%clientType%,xsession=%sessionid%,xsessiontoken=%sessiontoken%,xsessionuserid=%sessionuserid%,mutesound=%mutesound%,authToken=%authToken%,autologin=%autologin%,incompleteGamesShowing=%incompletegamesshowing%,externalReturn=1" winParams="height=800,width=600,toolbar=yes,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<aliasActivation url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1081,OnMPVCasinoSlots=1,HideRturnToLobbyButton=1,serverid=%serverid%,ul=%language%,userid=%mpfuserid%,usertype=%usertype%,loginname=%username%,password=%sessiontoken%,clienttype=%clienttype%,useraccountid=%mpfuserid%,networkid=%networkid%" allowDomain="*" winParams="height=470,width=660,toolbar=no,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<avatarUpload url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1086,userType=%userType%,serverID=%serverID%,Useraccountid=%mpfuserid%,ul=%language%,loginname=%username%,Password=%sessiontoken%,sessiontoken=%sessiontoken%,sessionuserid=%sessionuserid%" winParams="height=470,width=660,toolbar=no,status=no,scrollbars=yes,location=no,menubar=no,directories=no" />
+		<preBrandMigrationSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="0" doPost="1" nameValues="applicationID=2001,loginname=%username%,clienttype=1,usertype=%usertype%,ul=%language%,ssologintype=%usertype%,serverid=%serverid%,password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,mun=%username%,mpw=%password%,mupidentifier=%mupidentifier%,msid=%serverid%,musertype=%usertype%,tokenloginrequired=%tokenloginrequired%,pwdhash=%pwdhash%" winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<postBrandMigrationSite url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="0" doPost="1" nameValues="applicationID=1050,loginname=%username%,clienttype=1,usertype=%usertype%,ul=%language%,ssologintype=%usertype%,serverid=%serverid%,password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%safereturnurl%,lang=%language%,mun=%username%,mpw=%password%,mupidentifier=%mupidentifier%,msid=%serverid%,musertype=%usertype%,tokenloginrequired=%tokenloginrequired%,externalid=%externalid%,pwdhash=%pwdhash%" winParams="height=600,width=800,directories=no,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<openidLogin url="https://redirector3.valueactive.eu/casino/default.aspx" winHeight="426" winWidth="580"  nameValues="applicationid=1606,serverid=%serverid%,ul=%language%,clienttypeid=1,showcsv=titlebar,playerlevel=%playerlevel%,lastauthtype=%lastauthtype%"/>
+		<funBonusTermsConditions url="https://redirector3.valueactive.eu/casino/default.aspx" newWindow="1" doPost="1" nameValues="applicationID=1088,ServerID=%ServerID%,username=%username%,usertype=%usertype%,password=%tokenorpassword%,accounttype=%accounttype%,Clienttype=%clienttype%,Directx=%directx%,PCMGUID=%PCMUID%,lang=%lang%,cookie=%cookie%,a=updatetermsandconditions" />
+		<launchFunBonusTutorial url="\FunTutorial.aspx" winHeight="598" winWidth="1071"  winParams="height=598,width=1071,toolbar=no,status=no,scrollbars=no,location=no,menubar=no,directories=no,resizable=no"/>
+	</externalLaunch>
+	
+	<!-- External Sites -->
+	<!--
+		'realNameValues' will ONLY be passed if user is logged in as real user (userType == 0)
+	-->
+	<externalSites excludeList="">
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx"  requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1001,lang=%language%,username=%username%,ul=%language%,usertype=%usertype%,accounttype=%usertype%,fbusername=%fbusername%,ssologintype=%usertype%,serverid=%serverid%,password=%sessiontoken%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,hidelogin=%hidelogin%,userid=%sessionuserid%" realNameValues="" iconURL="Playcheck.swf" tooltip="EXTSITE_TOOLTIP1" winParams="height=786,width=1024,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1002,userlanguage=%language%,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,password=%sessiontoken%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%" iconURL="CashCheck.swf" tooltip="EXTSITE_TOOLTIP2"  winParams="height=786,width=1024,location=no,menubar=no,resizable=yes,scrollbars=no,status=no,toolbar=no" />
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1011,casinoid=%serverid%,loginname=%username%,ID=%username%,clienttype=%clienttype%,ul=%language%,usertype=0,ssologintype=%usertype%,serverid=%serverid%,password=%sessiontoken%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%"  iconURL="Loyalty.swf" tooltip="EXTSITE_TOOLTIP3"  winParams="height=786,width=1024,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1010,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,password=%password%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%,xsession=%sessionid%,xsessiontoken=%sessiontoken%,xsessionuserid=%sessionuserid%" iconURL="Promotions.swf" tooltip="EXTSITE_TOOLTIP5" winParams="height=786,width=1024,toolbar=no,scrollbars=yes,menubar=yes" />
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx" requireLogin="0" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1061,ServerID=%ServerID%,username=%username%,usertype=%usertype%,Clienttype=%clienttype%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%" iconURL="News.swf" tooltip="EXTSITE_TOOLTIP4" winParams="height=786,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="https://redirector3.valueactive.eu/casino/default.aspx" requireLogin="0" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1012,ServerID=%ServerID%,username=%username%,usertype=%usertype%,Clienttype=%clienttype%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%" iconURL="Auditors.swf" tooltip="EXTSITE_TOOLTIP6" winParams="height=786,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		
+		<site name="" url="http://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1100,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%," iconURL="icons/.swf" tooltip="Ext Site Custom 1 ToolTip - Local\English" winParams="height=786,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="http://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1200,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%," iconURL="icons/.swf" tooltip="Ext Site Custom 2 ToolTip - Local\English" winParams="height=768,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="http://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1300,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%," iconURL="icons/.swf" tooltip="Ext Site Custom 3 ToolTip - Local\English" winParams="height=768,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+		<site name="" url="http://redirector3.valueactive.eu/casino/default.aspx" requireLogin="1" requireBalanceUpdate="0" newWindow="1" doPost="1" nameValues="applicationID=1400,username=%username%,ul=%language%,usertype=%usertype%,ssologintype=%usertype%,serverid=%serverid%,pcmguid=%pcmguid%,cookie=%btag%,cookie2=%btag2%,cookie3=%btag3%,cookie4=%btag4%,cookie5=%btag5%,return_url=%fullreturnurl%,lang=%language%," iconURL="icons/.swf" tooltip="Ext Site Custom 4 ToolTip - Local\English" winParams="height=768,width=1024,directories=no,location=no,menubar=no,resizable=yes,scrollbars=yes,status=no,toolbar=no" />
+	</externalSites>
+	
+		
+	<!-- Branding Files -->
+	<brandingFiles>
+		<playForReal supported="0" demoPlay="1" guestPlay="1" action="olr" tooltip="PLAY_FOR_REAL_TOOLTIP" playForRealSWF="playforReal">
+			<customPage url="https://redirector3.valueactive.eu/casino/default.aspx" nameValues="applicationID=1015,ServerID=%ServerID%,gameID=%extgameid%,sext1=%username%,sext2=%password%,ul=%language%" newWindow="0" doPost="1" winParams="height=300,width=800,toolbar=no,status=no,scrollbars=no,location=no,menubar=no,directories=no,resizable=yes" />
+		</playForReal>
+		
+		<!-- setting for "Powered By..." -->
+		<!-- type=0=hideAll -->
+		<!-- type=1= show Microgaming -->
+		<!-- ignoreModuleBadge indicates if the type value is overriden by module badge setting -->
+		<engineBadge type="1" ignoreModuleBadge="true" />
+	</brandingFiles>
+	
+	<aspSettings>
+		<relocate killFramesetOnRelocate="1" />
+		<strings Copyright="Copyright (c) Microgaming 2012" CompanyName="Microgaming" />
+		<contactDetails supportEmailAddress="" />
+		<!--
+		shortCutIcon defaultShortcutURL:
+			"CASINOURLFULL", "CASINOURLBASE", "CASINOURLFULLBC", "CASINOURLSAFE", "CASINOURLSAFEBC":
+		-->
+		<eula url="http://www.microgaming.co.uk/eula.aspx?ISOCode=" />
+		<vault domain=".vault.valueactive.eu" oldDomain="" />
+		<shortCutExe url="https://casinolink.installprogram.eu/download/casinolink/download.asp" GUID="23027e77-81c6-4027-b9a5-c430e66660ee" filename="CasinoLink.exe" />
+		<shortCutIcon iconFilename="Icons/ QuickFire Casino.ico" enableDefaultShortcut="0" defaultShortcutURL="CASINOURLFULL" enableUserShortcut="0" userShortCutURL="" />
+		<pluginSettings defaultWmode="opaque" OCXRequired="0" FSRequired="0" flashOCXVersion="10,0,0,0" flashOCXContentVersion="10" flashOCXMajorRevision="0" flashOCXMinorRevision="0" flashPlayerDownloadURL="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" />
+	</aspSettings>
+		
+	<!-- Excluded Buttons -->
+	<excludedButtons ids="EXIT,BANK,PLAYFORREAL" />
+	
+	<!-- Virtual Pitt Boss -->
+	<vpb supported="1">
+		<rmm useRMM="1" rmmTemplateURL="https://redirector3.valueactive.eu/casino/default.aspx?applicationID=1016" />
+	</vpb>
+	
+	<!-- Bonus Bubble -->
+	<bonusBubble supported="0" showCurrency="1"/>
+	<funBonus supported="0" >
+		<config id="DELAYPOLLINGINMIN" value="1"/>
+		<config id="AUTOHIDEDELAY" value="5"/> 
+	</funBonus>
+	
+	<mpf supported="1" allowTokenLogin="1" enableMPFOneClick="0">
+		<!-- compressionType = 0 = COMPRESSION_TYPE_NONE -->
+		<!-- compressionType = 5 = COMPRESSION_TYPE_ZLIB1 -->	
+		<settings compressionType="5" 
+			mpvPolicyPort="843" 
+			mpvServerHost="mpv-router3flash.valueactive.eu" 
+			mpvServerLobbyHost="mpv-lobby3flash.valueactive.eu" 
+			mpvPortRange="443-443" 
+			mpvLobbyPort="443" 
+			mpvLobbyPortType="BINARY"
+			mpvPortType="BINARY" 
+			mpvPortSsl="true"
+			mpvLobbyPortSsl="true"
+			toggleLogging="true"
+			swfHost="WEB_MPV" />
+		<avatar 
+			fileUrl="http://mppv2avatars3.valueactive.eu/MPV_Avatar/"
+			cancel="cancel.aspx"
+			fetch="fetch.aspx"
+		/>
+		<registration systemReg="1" maxTitleLength="30" />
+	</mpf>
+	
+	<sgi>
+		<settings preloaderSWF_AS2="SgiLoader.swf" preloaderSWF_AS3="SgiLoader.swf" preloaderXML="preloader.xml" 
+		topbarSWF="topBar.swf" topBarXml="Topbar.xml" gameScriptURL="/gamelaunch/game-scripts" isGameScriptLangAware="1"
+		initWidth="800" initHeight="682" mgsUser="mgs7"	quality="BEST" showGameLogo="1" readTokenFromCookie="0"
+		tokenCookieName="casino_login" reflectionRulesURL="TopBarReflection.xml" useExternalCashBalance="0" doSystemRGIOperatorNode="0" doDefaultFrameAdjustment="0" />
+		<url1>
+			http://gamesext.ladbrokes.com/fog/swf/swf_extn/TopBar/gen_games_menu.php?LANG=
+		</url1>
+		<url2>
+			&amp;gamesServerURL=
+		</url2>
+	</sgi>
+	
+	<!-- PCM -->
+	<pcm>
+		<tracking enable="1" url="https://pcm3.valueactive.eu/api/playerstep.aspx" guidUrl="https://pcm3.valueactive.eu/api/guid/textguid.aspx" paramName="trackingGUID">
+			<createGuid stepId="25" />
+			<attemptActivation stepId="32" />
+			<failedActivation stepId="33" />
+			<successfullActivation stepId="34" />
+			<successfullLogin stepId="35" />
+			<failedLogin stepId="36" />
+			<popupBlocked stepId="1246" />
+			<popupWarning stepId="1247" />
+			<popupSuccess stepId="1248" />
+			<gameInitialized stepId="1428" allow="1" />
+			<gameDownloaded stepId="1429" allow="1" />
+			<loginWithMigrate stepId="1700" />
+			<loginAfterMigrate stepId="1705" />
+			<failedTokenLogin stepId="2384" />
+			<successfulTokenLogin stepId="2385" />
+			<userDisconnected stepId="2642" />
+			<userTimedOut stepId="2643" />
+			<userAccountLocked stepId="2747"/>
+			<casinoErrors stepId="2793" />
+			<browserClosed stepId="2847" />
+			<externalPageLaunch stepId="2866" />
+			<bankingUsage stepId="2876" />
+			<cacheDetection stepId="2921" />
+			<funBonusModeSwitch stepId="2631" />
+			<funBonusTutorialLaunch stepId="2632" />
+		</tracking>
+	</pcm>
+	
+	<!-- Stats Service -->
+	<statsservice enable="1">
+		<failedLogin statsNamespace="failedlogin" />
+		<browserClosed statsNamespace="casinoclosed" />
+		<avgSpeed statsNamespace="avgspeed" />
+	</statsservice>
+	
+	<oneClick authCookieName="LIL_Login" authCookiePath="/" authCookieDomain="ladbrokes.com" authURL="http://backoffice.ladbrokes.com:8112/oxixmlserver" authUN="mgs_casino" authPWD="1cl1ck" />
+	
+</System>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wrapperConfig>
+<gameName name="the three musketeers"/>
+<gameTitle title="QS-3Musketeers"/>
+<clientName name="the three musketeers"/>
+<game asVersion="3" configurationStages="2" gameFormat="SlotNoAutoplay" gameTitle="QS-3Musketeers" height="480" loadingStages="1" nativeHeight="768" nativeWidth="1024" width="640"/>
+</wrapperConfig>

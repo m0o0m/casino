@@ -1,0 +1,366 @@
+﻿<nodes version="10.1.3.156653">
+  <node name="ti_sys_new" text="@2075" textTab="undefined" isSysGroup="1">
+    <columns>
+      <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+  </node>
+  <node name="ti_sys_allfav" text="@13549" textTab="undefined" isSysGroup="1">
+    <columns>
+      <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_sys_fav" text="@13725" textTab="undefined" isSysGroup="1">
+      <columns>
+        <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_sys_pld" text="@13727" textTab="undefined" isSysGroup="1">
+      <columns>
+        <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_jackpots" text="@2089" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_progressivejackpottablegame" text="@2108" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_ProgressiveJackpot_VideoPoker" text="@2094" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_ProgressiveJackpot_slots" text="@2076" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_slots" text="@2076" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_5reel" text="@2081" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+      <node name="ti_5reel_100" text="@12795" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_50" text="@12547" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_40" text="@11431" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_30" text="@2087" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_25" text="@2086" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_20" text="@2085" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_15" text="@2084" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_9" text="@2083" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_5" text="@2082" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_freespin" text="@2122" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_5reel_singlebonus" text="@2118" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@2058" att="4" pct="20" align="2" loff="0" roff="4" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+    </node>
+    <node name="ti_3reel" text="@2077" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+      <node name="ti_3reel_5" text="@2080" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_3reel_3" text="@2079" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_3reel_1" text="@2078" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_3reel_bonus" text="@2118" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_AWP" text="@12243" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@2058" att="4" pct="20" align="2" loff="0" roff="4" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+    </node>
+    <node name="ti_MegaSpin" text="@2088" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2058" att="4" pct="20" align="2" loff="0" roff="4" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_AWP" text="@12243" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2058" att="4" pct="20" align="2" loff="0" roff="4" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_table" text="@2090" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_Gold" text="@11327" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_blackjack" text="@2091" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="55" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2060" att="3" pct="18" align="1" loff="0" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+      <node name="ti_multihandblackjack" text="@2112" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="80" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@2060" att="3" pct="20" align="1" loff="0" roff="4" srt="0"/>
+        </columns>
+      </node>
+      <node name="ti_singlehandblackjack" text="@2111" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="55" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@2060" att="3" pct="18" align="1" loff="0" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+    </node>
+    <node name="ti_roulette" text="@2092" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_othertablegame" text="@2093" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_pokers" text="@2094" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_poker" text="@2095" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_leveluppoker" text="@12924" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+    <node name="ti_powerpoker" text="@2096" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="53" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@2058" att="5" pct="20" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="15" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+      <node name="ti_powerpoker100" text="@2100" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_powerpoker50" text="@2099" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_powerpoker10" text="@2098" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+      <node name="ti_powerpoker4" text="@2097" textTab="undefined" isSysGroup="0">
+        <columns>
+          <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+          <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+          <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+        </columns>
+      </node>
+    </node>
+    <node name="ti_ReelPlayPoker" text="@16436" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_other" text="@17072" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+	   <column txt="@2058" att="5" pct="40" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+  </node>
+  <node name="ti_Community" text="@13326" textTab="undefined" isSysGroup="0">
+    <columns>
+      <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+      <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+    </columns>
+    <node name="ti_mpslots" text="@12934" textTab="undefined" isSysGroup="0">
+      <columns>
+        <column txt="@2057" att="0" pct="63" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@12265" att="16" pct="12" align="2" loff="0" roff="4" srt="1"/>
+        <column txt="@2059" att="17" pct="25" align="2" loff="0" roff="4" srt="1"/>
+      </columns>
+    </node>
+  </node>
+  <node name="ti_mpv" text="@11663" textTab="undefined" isSysGroup="1">
+    <columns>
+      <column txt="@11682" att="0" pct="55" align="0" loff="4" roff="0" srt="0"/>
+      <column txt="@11683" att="0" pct="25" align="2" loff="0" roff="4" srt="0"/>
+      <column txt="@11684" att="0" pct="20" align="2" loff="0" roff="4" srt="0"/>
+    </columns>
+    <node name="ti_mytournaments" text="@11664" textTab="undefined" isSysGroup="1">
+      <columns>
+        <column txt="@11682" att="0" pct="55" align="0" loff="4" roff="0" srt="0"/>
+        <column txt="@11683" att="0" pct="25" align="2" loff="0" roff="4" srt="0"/>
+        <column txt="@11684" att="0" pct="20" align="2" loff="0" roff="4" srt="0"/>
+      </columns>
+    </node>
+  </node>
+</nodes>

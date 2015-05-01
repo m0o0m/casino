@@ -1,0 +1,136 @@
+<GameLogicResponse><OutcomeDetail><TransactionId>A2210-14264043371645</TransactionId><Stage>BaseGame</Stage><NextStage>BaseGame</NextStage><Balance>3000.00</Balance><GameStatus>Initial</GameStatus><Settled>0</Settled><Pending>0</Pending><Payout>0</Payout></OutcomeDetail><PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+				<Entry name="Reel0" stripIndex="40">
+					<Cell name="L0C0R0" stripIndex="40">s01</Cell>
+					<Cell name="L0C0R1" stripIndex="41">s08</Cell>
+					<Cell name="L0C0R2" stripIndex="42">s03</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="45">
+					<Cell name="L0C1R0" stripIndex="45">s02</Cell>
+					<Cell name="L0C1R1" stripIndex="46">s02</Cell>
+					<Cell name="L0C1R2" stripIndex="47">s06</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="5">
+					<Cell name="L0C2R0" stripIndex="5">s01</Cell>
+					<Cell name="L0C2R1" stripIndex="6">s07</Cell>
+					<Cell name="L0C2R2" stripIndex="7">b01</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="15">
+					<Cell name="L0C3R0" stripIndex="15">s07</Cell>
+					<Cell name="L0C3R1" stripIndex="16">b03</Cell>
+					<Cell name="L0C3R2" stripIndex="17">s05</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="22">
+					<Cell name="L0C4R0" stripIndex="22">s07</Cell>
+					<Cell name="L0C4R1" stripIndex="23">s04</Cell>
+					<Cell name="L0C4R2" stripIndex="24">s09</Cell>
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="KirkBonus.Reels" stage="KirkBonus">
+				<Entry name="Reel0" stripIndex="25">
+					<Cell name="L0C0R0" stripIndex="25">s14</Cell>
+					<Cell name="L0C0R1" stripIndex="26">s09</Cell>
+					<Cell name="L0C0R2" stripIndex="27">s17</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="69">
+					<Cell name="L0C1R0" stripIndex="69">w05</Cell>
+					<Cell name="L0C1R1" stripIndex="70">w05</Cell>
+					<Cell name="L0C1R2" stripIndex="71">s08</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="10">
+					<Cell name="L0C2R0" stripIndex="10">s16</Cell>
+					<Cell name="L0C2R1" stripIndex="11">s16</Cell>
+					<Cell name="L0C2R2" stripIndex="12">s05</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="4">
+					<Cell name="L0C3R0" stripIndex="4">s15</Cell>
+					<Cell name="L0C3R1" stripIndex="5">s07</Cell>
+					<Cell name="L0C3R2" stripIndex="6">b01</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="51">
+					<Cell name="L0C4R0" stripIndex="51">w04</Cell>
+					<Cell name="L0C4R1" stripIndex="52">s07</Cell>
+					<Cell name="L0C4R2" stripIndex="53">w05</Cell>
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="SpockBonus.Reels" stage="SpockBonus">
+				<Entry name="Reel0" stripIndex="2">
+					<Cell name="L0C0R0" stripIndex="2">s11</Cell>
+					<Cell name="L0C0R1" stripIndex="3">s07</Cell>
+					<Cell name="L0C0R2" stripIndex="4">s12</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="45">
+					<Cell name="L0C1R0" stripIndex="45">w03</Cell>
+					<Cell name="L0C1R1" stripIndex="46">w03</Cell>
+					<Cell name="L0C1R2" stripIndex="47">s06</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="3">
+					<Cell name="L0C2R0" stripIndex="3">s05</Cell>
+					<Cell name="L0C2R1" stripIndex="4">s10</Cell>
+					<Cell name="L0C2R2" stripIndex="5">s10</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="0">
+					<Cell name="L0C3R0" stripIndex="0">w03</Cell>
+					<Cell name="L0C3R1" stripIndex="1">s05</Cell>
+					<Cell name="L0C3R2" stripIndex="2">s13</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="3">
+					<Cell name="L0C4R0" stripIndex="3">w02</Cell>
+					<Cell name="L0C4R1" stripIndex="4">s08</Cell>
+					<Cell name="L0C4R2" stripIndex="5">s13</Cell>
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="UhuraBonus.Reels" stage="UhuraBonus">
+				<Entry name="Reel0" stripIndex="4">
+					<Cell name="L0C0R0" stripIndex="4">s03</Cell>
+					<Cell name="L0C0R1" stripIndex="5">s08</Cell>
+					<Cell name="L0C0R2" stripIndex="6">s18</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="6">
+					<Cell name="L0C1R0" stripIndex="6">b01</Cell>
+					<Cell name="L0C1R1" stripIndex="7">s08</Cell>
+					<Cell name="L0C1R2" stripIndex="8">s09</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="0">
+					<Cell name="L0C2R0" stripIndex="0">s09</Cell>
+					<Cell name="L0C2R1" stripIndex="1">b01</Cell>
+					<Cell name="L0C2R2" stripIndex="2">s06</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="27">
+					<Cell name="L0C3R0" stripIndex="27">s02</Cell>
+					<Cell name="L0C3R1" stripIndex="28">s07</Cell>
+					<Cell name="L0C3R2" stripIndex="29">s05</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="7">
+					<Cell name="L0C4R0" stripIndex="7">s01</Cell>
+					<Cell name="L0C4R1" stripIndex="8">s07</Cell>
+					<Cell name="L0C4R2" stripIndex="9">s18</Cell>
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="ScottyBonus.Reels" stage="ScottyBonus">
+				<Entry name="Reel0" stripIndex="0">
+					<Cell name="L0C0R0" stripIndex="0">s21</Cell>
+					<Cell name="L0C0R1" stripIndex="1">s05</Cell>
+					<Cell name="L0C0R2" stripIndex="2">s19</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="0">
+					<Cell name="L0C1R0" stripIndex="0">s19</Cell>
+					<Cell name="L0C1R1" stripIndex="1">s08</Cell>
+					<Cell name="L0C1R2" stripIndex="2">s07</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="10">
+					<Cell name="L0C2R0" stripIndex="10">s20</Cell>
+					<Cell name="L0C2R1" stripIndex="11">s20</Cell>
+					<Cell name="L0C2R2" stripIndex="12">s05</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="12">
+					<Cell name="L0C3R0" stripIndex="12">s21</Cell>
+					<Cell name="L0C3R1" stripIndex="13">s08</Cell>
+					<Cell name="L0C3R2" stripIndex="14">s01</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="49">
+					<Cell name="L0C4R0" stripIndex="49">s06</Cell>
+					<Cell name="L0C4R1" stripIndex="50">s05</Cell>
+					<Cell name="L0C4R2" stripIndex="51">w07</Cell>
+				</Entry>
+			</PopulationOutcome>
+		<PatternSliderInput>
+			<BetPerPattern>1</BetPerPattern>
+			<PatternsBet>30</PatternsBet>
+		</PatternSliderInput>
+	<Balances totalBalance="3000.00"><Balance name="FREE">3000.00</Balance></Balances></GameLogicResponse>

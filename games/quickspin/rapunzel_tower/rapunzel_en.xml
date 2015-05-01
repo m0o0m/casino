@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">
+	<info id="en" name="English" brand="Casino Euro" product="Rapunzel" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $" signedoff="false"/>
+	<!-- Start generic static text -->
+	<multitext id="1" qa="true" text="Connecting to server..."/>
+	<multitext id="2" qa="true" text="Connection failed"/>
+	<multitext id="3" qa="true" text="Loading"/>
+	<multitext id="4" qa="true" text="Loading complete"/>
+	<multitext id="5" qa="true" text="Help"/>
+	<multitext id="6" qa="true" text="Close"/>
+	<multitext id="7" qa="true" text="Balance"/>
+	<multitext id="8" qa="true" text="Stake"/>
+	<multitext id="9" qa="true" text="Odds"/>
+	<multitext id="10" qa="true" text="Win"/>
+	<multitext id="11" qa="true" text="To Win"/>
+	<multitext id="12" qa="true" text="OK"/>
+	<multitext id="13" qa="true" text="Prize Table"/>
+	<multitext id="14" qa="true" text="Play"/>
+	<multitext id="15" qa="true" text="Go"/>
+	<multitext id="16" qa="true" text="Bet"/>
+	<multitext id="17" qa="true" text="Submit"/>
+	<multitext id="18" qa="true" text="Submit Bet"/>
+	<multitext id="19" qa="true" text="Submit All Bets"/>
+	<multitext id="20" qa="true" text="Cashout"/>
+	<multitext id="21" qa="true" text="Return"/>
+	<multitext id="22" qa="true" text="Bank"/>
+	<multitext id="23" qa="true" text="Bonus"/>
+	<multitext id="24" qa="true" text="Total Stake"/>
+	<multitext id="25" qa="true" text="Max. Return"/>
+	<multitext id="26" qa="true" text="Max. Win"/>
+	<multitext id="27" qa="true" text="Jackpot"/>
+	<multitext id="28" qa="true" text="Play Again"/>
+	<multitext id="29" qa="true" text="Please try again"/>
+	<multitext id="30" qa="true" text="Play for Fun"/>
+	<multitext id="31" qa="true" text="Play for Real"/>
+	<multitext id="32" qa="true" text="Game Over"/>
+	<multitext id="33" qa="true" text="Cancel"/>
+	<multitext id="34" qa="true" text="Clear All"/>
+	<multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>
+	<multitext id="36" qa="true" text="Get flash player"/>
+	<multitext id="37" qa="true" text="Jackpots"/>
+	<multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<!-- End generic static text -->
+	<!-- Start game specific text [ Begin @id=100 ] -->
+
+	<!-- End game specific text -->
+	<!-- Start generic phrases -->
+	<phrase id="BetUnavailable" qa="true" text="Error"/>
+	<phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>
+	<phrase id="BetterLuckButton" qa="true" text="OK"/>
+	<phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>
+	<phrase id="Congratulations" qa="true" text="Congratulations!"/>
+	<phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>
+	<phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>
+	<phrase id="CongratulationsButton" qa="true" text="OK"/>
+	<phrase id="Connecting" qa="true" text="Connecting to server"/>
+	<phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>
+	<phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>
+	<phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>
+	<phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>
+	<phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>
+	<phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+	<phrase id="Help" qa="true" text="Rapunzel's Tower&#10;&#10;About the game&#10;Rapunzel’s Tower is a 5 reel, 20 bet line video slot. The game features Free Spins, Bonus Wilds stick until you win, Stacked Wilds, and the Free Spins Tower Feature.&#10;Theoretical payout is:&#10;97.05% with Feature Bet enabled&#10;92.72% with Feature Bet disabled&#10;&#10;&#10;How to play&#10;Video slots are very easy to play. Just follow the 3 steps:&#10;&#10;1. Choose your total bet&#10;2. Press the SPIN button&#10;3. Check for any win in the WIN field&#10;&#10;For more understanding of Settings, Game Rules, and Game Features read the text below.&#10;&#10;&#10;Description of game functionality&#10;&#10;Bet&#10;The Total bet is shown in the TOTAL BET display.&#10;Change the bet by clicking on the display and decide on the total bet of your choice.&#10;The Total Bet is based on the bet per line multiplied with the number of bet lines active.&#10;The number of bet lines used in the game can be changed by clicking on the BET LINES display.&#10;FEATURE BET enables the 'Bonus Wilds stick until you win' feature. The cost of feature bet is the basic bet (number of bet lines multiplied with bet per line) multiplied with 1,5.&#10;&#10;Spin&#10;The game is started by pressing the SPIN button.&#10;You can Quick stop the game by pressing the SPIN button again.&#10;&#10;Win&#10;Any total win in a game round will be displayed in the WIN field.&#10;All wins are multiplied with the bet per bet line.&#10;Bet line wins pay in succession from leftmost to right.&#10;Only the highest win per active bet line is paid.&#10;The separate bet line wins will be displayed on the bet lines during win presentation.&#10;In Free Spins only the total win is displayed for each spin.&#10;&#10;Paytable&#10;All winning combinations in the game can be viewed in the PAYTABLE.&#10;&#10;Fast Play&#10;The FAST PLAY functionality can is used to get the shortest game round possible.&#10;The duration of game rounds may vary depending on bandwidth and server response time.&#10;&#10;Autoplay&#10;Autoplay allow you to have the game play a number of game rounds automatically.&#10;Press AUTOPLAY and choose a number of game rounds to initiate Autoplay.&#10;The remaining number of spins is displayed to the right of the STOP button.&#10;Autoplay is stopped by pressing the STOP button.&#10;&#10;Settings&#10;In the settings panel at the low left of the game you can choose:&#10;- Use SPACE for spin&#10;Use SPACE for spin allows you to use your Space Bar on your keyboard to initiate game rounds.&#10;&#10;- Show Splash Screen on startup&#10;This setting allows you to switch the games Splash Screen on and off."/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>
+	<phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>
+	<phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>
+	<phrase id="InsufficientFundsBody" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>
+	<phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>
+	<phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>
+	<phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>
+	<phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+	<phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<phrase id="loaderStart" qa="true" text="...loading"/>
+	<phrase id="loader1" qa="true" text="...loading graphics"/>
+	<phrase id="loader2" qa="true" text="...loading interface"/>
+	<phrase id="loader3" qa="true" text="...loading audio engine"/>
+	<phrase id="loader4" qa="true" text="...loading ambience engine"/>
+	<phrase id="loader5" qa="true" text="...loading EdGE components"/>
+	<phrase id="loaderFinish" qa="true" text="...loading complete"/>
+	<phrase id="MaxMultiRoundBody" qa="true" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>
+	<phrase id="MaxSingleRoundBody" qa="true" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>
+	<phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>
+	<phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+	<phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval."/>
+	<phrase id="maxWinReachedBody" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+	<phrase id="maxWinReachedTitle" qa="true" text="Maximum Winnings"/>
+	<phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>
+	<phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>
+	<phrase id="NANTitle" qa="true" text="Invalid bet"/>
+	<phrase id="Na" qa="true" text="n/a"/>
+	<phrase id="PlayForFun" qa="true" text="Play for Fun"/>
+	<phrase id="PlayForReal" qa="true" text="Play for Real"/>
+	<phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>
+	<phrase id="SelectRealityTitle" qa="true" text="Please select"/>
+	<phrase id="ServerBrowserError" qa="true" text="There has been an error in your browser, please refresh"/>
+	<phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>
+	<phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>
+	<phrase id="ServerError" qa="true" text="Server error"/>
+	<phrase id="ServerErrorTitle" qa="true" text="Error"/>
+	<phrase id="ServerJackpotBalanceBody" qa="false" text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+	<phrase id="ServerJackpotBalanceTitle" qa="false" text="Jackpot Balance"/>
+	<phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>
+	<phrase id="ServerNoFunds" qa="true" text="We have not been able to place your bet. Please check your updated balance."/>
+	<phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>
+	<phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>
+	<phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+	<phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>
+	<phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>
+	<phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>
+	<!-- End generic phrases -->
+	<!-- Start game specific phrases -->
+
+	<phrase id="KEYPAD_START_FREESPINS" qa="false" text="START FREE SPINS"/>
+	<phrase id="KEYPAD_FREESPINS_REMAINING_LABEL" qa="false" text="FREE SPINS"/>
+	<phrase id="KEYPAD_TOTAL_WIN" qa="false" text="TOTAL WIN"/>
+	<phrase id="KEYPAD_WIN_LABEL" qa="false" text="WIN"/>
+	<phrase id="KEYPAD_BETLINES_LABEL" qa="false" text="BET LINES: %1"/>
+	<phrase id="KEYPAD_QUICKSPIN_BUTTON" qa="false" text="FAST PLAY"/>
+	<phrase id="KEYPAD_TOTAL_BET_LABEL" qa="false" text="TOTAL BET"/>
+	<phrase id="KEYPAD_BETPERLINE_LABEL" qa="false" text="BET PER LINE: %1" />
+	<phrase id="BIG_WIN_LABEL" qa="false" text="BIG WIN"/>
+	<phrase id="PAYTABLE_BUTTON" qa="false" text="PAYTABLE" />
+	<phrase id="SPINS" qa="false" text="SPINS"/>
+	<phrase id="SPIN" qa="false" text="SPIN"/>
+	<phrase id="KEYPAD_TOTAL_BET_SHORT" qa="false" text="TOTAL BET: %1"/>
+	<phrase id="KEYPAD_BALANCE" qa="false" text="BALANCE: %1"/>
+	<phrase id="KEYPAD_AUTOPLAY_BUTTON" qa="false" text="AUTOPLAY"/>
+	<phrase id="KEYPAD_AUTOPLAY_STOP_BUTTON" qa="false" text="STOP"/>
+	<phrase id="KEYPAD_USE_SPACE_FOR_SPIN" qa="false" text="Use SPACE for spin"/>
+	<phrase id="BUTTON_OK" qa="false" text="OK"/>
+	<phrase id="CONGRATULATIONS" qa="false" text="Congratulations!"/>
+	<phrase id="YOU_WON" qa="false" text="You won"/>
+	<phrase id="CONTINUE_BUTTON" qa="false" text="CONTINUE"/>
+	<phrase id="TOGGLE_SPLASH_SCREEN" qa="false" text="Show Splash Screen on startup."/>
+	<phrase id="SPLASH_DONT_SHOW_NEXT" qa="false" text="Don't show next time"/>
+	<phrase id="ALL_WINS_X" qa="false" text="ALL WINS X%1"/>
+	<phrase id="PAYTABLE_SB_HEADER" qa="false" text="BONUS WILDS STICK UNTIL YOU WIN" />
+	<phrase id="PAYTABLE_SB_BODY" qa="false" text="3+ Bonus Wild symbols initiate feature.&#10;Bonus Wild symbols stick to their position and initiate respin.&#10;The game will respin until a win is rewarded.&#10;&#10;Feature is only active if FEATURE BET is enabled.&#10;&#10;Bonus Wilds act as regular wild symbols if feature is disabled.&#10;&#10;Bonus Wilds appear on reels 2, 3 and 4."/>
+	<phrase id="PAYTABLE_WR_HEADER" qa="false" text="STACKED WILDS"/>
+	<phrase id="PAYTABLE_WR_BODY" qa="false" text="Wild symbol substitutes for all symbols except the Free Spin scatter symbol."/>
+	<phrase id="PAYTABLE_SC_BODY" qa="false" text="3 Scatter symbols initiate 10 free spins.&#10;&#10;Additional Free Spins can be rewarded both in the Tower feature and by getting 3 Scatter symbols.&#10;&#10;Free Spin Scatters appear on reels 2, 3 and 4."/>
+	<phrase id="PAYTABLE_TOWER_BODY" qa="false" text="Climb the tower to save Rapunzel!&#10;&#10;Each Bonus Wild symbol appearing on the reels in Free Spins awards one step on the tower.&#10;&#10;Step 10 rewards 2 additional spins&#10;Step 15 rewards 1 additional spin&#10;Step 20 rewards 2 additional spins&#10;Step 25 rewards 2 additional spins and an X2 multiplier on wins in remaining spins."/>
+	<phrase id="PAYTABLE_TOWER_HEADER" qa="false" text="TOWER FEATURE"/>
+	<phrase id="PAYTABLE_SC_HEADER" qa="false" text="FREE SPINS"/>
+    <phrase id="PAYTABLE_SC_FOOTER" qa="false" text="Scatter wins are added to payline wins"/>
+	<phrase id="PAYTABLE_FOOTER" qa="false" text="WINS MULTIPLIED BY BET PER LINE.&#10;Only the highest win per active bet line is paid. Bet line wins pay if in succession from leftmost to right.&#10;Malfunction voids all pays."/>
+	<phrase id="TEASER_SB_PRE_SYMBOL_TEXT" qa="false" text="3 OR MORE" />
+	<phrase id="TEASER_SB_POST_SYMBOL_TEXT" qa="false" text="TRIGGERS FEATURE"/>
+	<phrase id="TEASER_SC_TEXT" qa="false" text="TRIGGERS FREE SPINS" />
+	<phrase id="FEATURE_BET_ENABLED_HEADER" qa="false" text="FEATURE BET ENABLED"/>
+	<phrase id="FEATURE_BET_ENABLED_BODY" qa="false" text="WILDS STICK UNTIL YOU WIN&#10;feature is now active."/>
+	<phrase id="FEATURE_BET_DISABLED_HEADER" qa="false" text="FEATURE BET DISABLED" />
+	<phrase id="FEATURE_BET_DISABLED_BODY" qa="false" text="WILDS STICK UNTIL YOU WIN&#10;feature is no longer active."/>
+	<phrase id="FREESPINS_INTRO_TEXT" qa="false" text="Congratulations!&#10;You won %1 free spins" />
+	<phrase id="FREESPINS_EXIT_TEXT" qa="false" text="YOU WON" />
+	<phrase id="WON_ADDITIONAL_SPINS_ONE" qa="false" text="+1 SPIN"/>
+	<phrase id="WON_ADDITIONAL_SPINS_SEVERAL" qa="false" text="+%1 SPINS" />
+	<phrase id="WON_MULTIPLIER" qa="false" text="ALL WINS X%1"/>
+	<phrase id="FEATURE_BET" qa="false" text="FEATURE BET"/>
+	<phrase id="SPLASH_RESPIN_WILD" qa="false" text="BONUS WILDS STICK UNTIL YOU WIN"/>
+	<phrase id="SPLASH_FREESPIN_TOWER" qa="false" text="SAVE RAPUNZEL IN&#10;FREE SPINS"/>
+	<phrase id="LADDER_TOP_ITEM_HEADER" qa="false" text="REACH THE TOP FOR"/>
+	<phrase id="LADDER_TOP_ITEM_MULTIPLIER" qa="false" text="ALL WINS X%1"/>
+
+	<!-- End game specific phrases -->
+	<!-- Start generic vector text -->
+	<vector id="Win" qa="true" text="Win!"/>
+	<vector id="Unlucky" qa="true" text="Unlucky"/>
+	<vector id="Jackpot" qa="true" text="Jackpot!"/>
+	<!-- End generic vector text -->
+	<!-- Start  game specific vector text -->
+	<!-- End game specific vector text -->
+</languagepack>
+

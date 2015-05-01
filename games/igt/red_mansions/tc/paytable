@@ -1,0 +1,1173 @@
+<PaytableResponse><PaytableStatistics description="Red Mansions 40L + 1024 Ways" maxRTP="95.03" minRTP="92.90" name="Red Mansions" type="Slot"/><PrizeInfo name="BaseGame.PrizeInfoLines" strategy="PayLeft">
+			<Prize name="s01">
+				<PrizePay count="5" pph="101256" value="5000"/>
+				<PrizePay count="4" pph="15821" value="800"/>
+				<PrizePay count="3" pph="2341" value="125"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s01" required="false"/>
+			</Prize>
+			<Prize name="s02">
+				<PrizePay count="5" pph="97506" value="2000"/>
+				<PrizePay count="4" pph="10187" value="500"/>
+				<PrizePay count="3" pph="1870" value="100"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s02" required="false"/>
+			</Prize>
+			<Prize name="s03">
+				<PrizePay count="5" pph="70317" value="1000"/>
+				<PrizePay count="4" pph="7347" value="400"/>
+				<PrizePay count="3" pph="657" value="75"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s03" required="false"/>
+			</Prize>
+			<Prize name="s04">
+				<PrizePay count="5" pph="135008" value="500"/>
+				<PrizePay count="4" pph="28772" value="100"/>
+				<PrizePay count="3" pph="3002" value="50"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s04" required="false"/>
+			</Prize>
+			<Prize name="s05">
+				<PrizePay count="5" pph="95982" value="500"/>
+				<PrizePay count="4" pph="35549" value="100"/>
+				<PrizePay count="3" pph="4043" value="50"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s05" required="false"/>
+			</Prize>
+			<Prize name="s06">
+				<PrizePay count="5" pph="17848" value="300"/>
+				<PrizePay count="4" pph="2163" value="75"/>
+				<PrizePay count="3" pph="423" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s06" required="false"/>
+			</Prize>
+			<Prize name="s07">
+				<PrizePay count="5" pph="15746" value="300"/>
+				<PrizePay count="4" pph="3674" value="75"/>
+				<PrizePay count="3" pph="863" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s07" required="false"/>
+			</Prize>
+			<Prize name="s08">
+				<PrizePay count="5" pph="16081" value="150"/>
+				<PrizePay count="4" pph="5555" value="50"/>
+				<PrizePay count="3" pph="352" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s08" required="false"/>
+			</Prize>
+			<Prize name="s09">
+				<PrizePay count="5" pph="22974" value="150"/>
+				<PrizePay count="4" pph="2785" value="50"/>
+				<PrizePay count="3" pph="720" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s09" required="false"/>
+			</Prize>
+		</PrizeInfo><PrizeInfo name="FreeSpin.PrizeInfoLines" strategy="PayLeft">
+			<Prize name="s01">
+				<PrizePay count="5" pph="103604" value="5000"/>
+				<PrizePay count="4" pph="9867" value="800"/>
+				<PrizePay count="3" pph="1758" value="125"/>
+				<PrizePay count="2" pph="106" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s01" required="false"/>
+			</Prize>
+			<Prize name="s02">
+				<PrizePay count="5" pph="97506" value="2000"/>
+				<PrizePay count="4" pph="10187" value="500"/>
+				<PrizePay count="3" pph="1870" value="100"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s02" required="false"/>
+			</Prize>
+			<Prize name="s03">
+				<PrizePay count="5" pph="70317" value="1000"/>
+				<PrizePay count="4" pph="7347" value="400"/>
+				<PrizePay count="3" pph="657" value="75"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s03" required="false"/>
+			</Prize>
+			<Prize name="s04">
+				<PrizePay count="5" pph="135008" value="500"/>
+				<PrizePay count="4" pph="28772" value="100"/>
+				<PrizePay count="3" pph="3002" value="50"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s04" required="false"/>
+			</Prize>
+			<Prize name="s05">
+				<PrizePay count="5" pph="95982" value="500"/>
+				<PrizePay count="4" pph="35549" value="100"/>
+				<PrizePay count="3" pph="4043" value="50"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s05" required="false"/>
+			</Prize>
+			<Prize name="s06">
+				<PrizePay count="5" pph="17848" value="300"/>
+				<PrizePay count="4" pph="2163" value="75"/>
+				<PrizePay count="3" pph="423" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s06" required="false"/>
+			</Prize>
+			<Prize name="s07">
+				<PrizePay count="5" pph="15746" value="300"/>
+				<PrizePay count="4" pph="3674" value="75"/>
+				<PrizePay count="3" pph="863" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s07" required="false"/>
+			</Prize>
+			<Prize name="s08">
+				<PrizePay count="5" pph="16081" value="150"/>
+				<PrizePay count="4" pph="5555" value="50"/>
+				<PrizePay count="3" pph="352" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s08" required="false"/>
+			</Prize>
+			<Prize name="s09">
+				<PrizePay count="5" pph="22974" value="150"/>
+				<PrizePay count="4" pph="2785" value="50"/>
+				<PrizePay count="3" pph="720" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s09" required="false"/>
+			</Prize>
+		</PrizeInfo><PrizeInfo name="PrizeInfoLeftRight" strategy="PayMultiWayLeftRight">
+			<Prize name="s01">
+				<PrizePay count="5" pph="98.882705149668" value="500"/>
+				<PrizePay count="4" pph="95.5334790028788" value="100"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s01" required="false"/>
+			</Prize>
+			<Prize name="s02">
+				<PrizePay count="5" pph="95" value="350"/>
+				<PrizePay count="4" pph="54" value="75"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s02" required="false"/>
+			</Prize>
+			<Prize name="s03">
+				<PrizePay count="5" pph="69" value="250"/>
+				<PrizePay count="4" pph="39" value="75"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s03" required="false"/>
+			</Prize>
+			<Prize name="s04">
+				<PrizePay count="5" pph="132" value="100"/>
+				<PrizePay count="4" pph="201" value="40"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s04" required="false"/>
+			</Prize>
+			<Prize name="s05">
+				<PrizePay count="5" pph="94" value="100"/>
+				<PrizePay count="4" pph="357" value="40"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s05" required="false"/>
+			</Prize>
+			<Prize name="s06">
+				<PrizePay count="5" pph="17" value="40"/>
+				<PrizePay count="4" pph="12" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s06" required="false"/>
+			</Prize>
+			<Prize name="s07">
+				<PrizePay count="5" pph="15" value="40"/>
+				<PrizePay count="4" pph="27" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s07" required="false"/>
+			</Prize>
+			<Prize name="s08">
+				<PrizePay count="5" pph="16" value="40"/>
+				<PrizePay count="4" pph="53" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s08" required="false"/>
+			</Prize>
+			<Prize name="s09">
+				<PrizePay count="5" pph="22" value="40"/>
+				<PrizePay count="4" pph="15" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s09" required="false"/>
+			</Prize>
+		</PrizeInfo><StripInfo name="BaseGame">
+			<Strip name="Reel0">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel1">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel2">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel3">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel4">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s09" weight="7"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="5"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel5">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s09" weight="7"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="5"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel6">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s09" weight="7"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="5"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel7">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s08" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s09" weight="7"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="5"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel8">
+				<Stop symbolID="s03" weight="7"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="5"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="23"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s09" weight="22"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel9">
+				<Stop symbolID="s03" weight="7"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="5"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="23"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s09" weight="22"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel10">
+				<Stop symbolID="s03" weight="7"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="5"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="23"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s09" weight="22"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel11">
+				<Stop symbolID="s03" weight="7"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="5"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="5"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="14"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="15"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="23"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s09" weight="22"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="8"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel12">
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel13">
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel14">
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel15">
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="6"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="8"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="6"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel16">
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel17">
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel18">
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel19">
+				<Stop symbolID="s05" weight="4"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="5"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="3"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 22 -->
+			</Strip>
+		</StripInfo><StripInfo name="FreeSpin">
+			<Strip name="Reel0">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel1">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel2">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel3">
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s06" weight="4"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s08" weight="6"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s09" weight="6"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel4">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s09" weight="12"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel5">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s09" weight="12"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel6">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s09" weight="12"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel7">
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s06" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s07" weight="6"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s09" weight="12"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="4"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel8">
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="11"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="10"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="8"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 12 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel9">
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="11"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="10"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="8"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 12 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel10">
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="11"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="10"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="8"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 12 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel11">
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="11"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="10"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s07" weight="8"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="7"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="10"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="10"/>	<!-- Strip row 12 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="b01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 18 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="w01" weight="2"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel12">
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="4"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel13">
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="4"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel14">
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="4"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel15">
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s04" weight="1"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s05" weight="1"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s06" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 8 -->
+				<Stop symbolID="s07" weight="2"/>	<!-- Strip row 9 -->
+				<Stop symbolID="s08" weight="5"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s08" weight="4"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s09" weight="5"/>	<!-- Strip row 12 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 13 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s01" weight="3"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s01" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s02" weight="1"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s03" weight="3"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel16">
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel17">
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel18">
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+			<Strip name="Reel19">
+				<Stop symbolID="s05" weight="3"/>	<!-- Strip row 1 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 2 -->
+				<Stop symbolID="s05" weight="2"/>	<!-- Strip row 3 -->
+				<Stop symbolID="s06" weight="2"/>	<!-- Strip row 4 -->
+				<Stop symbolID="s07" weight="4"/>	<!-- Strip row 5 -->
+				<Stop symbolID="s08" weight="3"/>	<!-- Strip row 6 -->
+				<Stop symbolID="s08" weight="2"/>	<!-- Strip row 7 -->
+				<Stop symbolID="s09" weight="4"/>	<!-- Strip row 8 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 9 -->
+				<Stop symbolID="w01" weight="1"/>	<!-- Strip row 10 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 11 -->
+				<Stop symbolID="s01" weight="1"/>	<!-- Strip row 12 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 13 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 14 -->
+				<Stop symbolID="s02" weight="2"/>	<!-- Strip row 15 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 16 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 17 -->
+				<Stop symbolID="s03" weight="2"/>	<!-- Strip row 18 -->
+				<Stop symbolID="s03" weight="1"/>	<!-- Strip row 19 -->
+				<Stop symbolID="s04" weight="3"/>	<!-- Strip row 20 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 21 -->
+				<Stop symbolID="s04" weight="2"/>	<!-- Strip row 22 -->
+			</Strip>
+		</StripInfo><PatternSliderInfo name="PatternSliderInfo">
+			<PatternInfo max="80" min="1">
+				<Step>1</Step>
+				<Step>10</Step>
+				<Step>20</Step>
+				<Step>40</Step>
+				<Step>80</Step>
+			</PatternInfo>
+		<BetInfo max="1000" min="1"><Step>1</Step><Step>2</Step><Step>3</Step><Step>5</Step><Step>10</Step><Step>20</Step><Step>30</Step><Step>50</Step><Step>100</Step><Step>200</Step><Step>300</Step><Step>500</Step><Step>1000</Step></BetInfo></PatternSliderInfo><AwardCapInfo name="AwardCapInfo">
+			<TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>
+		<CurrencyCap><CurrencyType>FPY</CurrencyType><AwardCap>25000000</AwardCap></CurrencyCap></AwardCapInfo><FreeSpinInfo name="FreeSpin.FreeSpinInfo">
+			<Reset>false</Reset>
+			<Increment>
+				<Strategy>HighestOnly</Strategy>
+				<MaxFreeSpins>130</MaxFreeSpins>
+				<Triggers>
+					<Trigger freespins="10" name="2 b01"/>
+					<Trigger freespins="15" name="3 b01"/>
+					<Trigger freespins="20" name="4 b01"/>
+				</Triggers>
+			</Increment>
+			<Decrement>
+				<Strategy>ConstantDecrement</Strategy>
+				<Count>1</Count>
+			</Decrement>
+			<OutcomeTrigger name="FreeSpin"/>
+		</FreeSpinInfo><DenominationList><Denomination softwareId="200-1231-001">1.0</Denomination></DenominationList><GameBetInfo><MinChipValue>1.0</MinChipValue><MinBet>1.0</MinBet><MaxBet>15.0</MaxBet></GameBetInfo><AutoSpinInfo enable="True"><Step>10</Step><Step>20</Step><Step>30</Step><Step>40</Step><Step>50</Step></AutoSpinInfo><VersionInfo><GameLogicVersion>1.0</GameLogicVersion></VersionInfo></PaytableResponse>

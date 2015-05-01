@@ -1,0 +1,136 @@
+<GameLogicResponse><OutcomeDetail><TransactionId>A2110-14264049134246</TransactionId><Stage>BaseGame</Stage><NextStage>BaseGame</NextStage><Balance>3000.00</Balance><GameStatus>Initial</GameStatus><Settled>0</Settled><Pending>0</Pending><Payout>0</Payout></OutcomeDetail><PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+			<Entry name="Reel0" stripIndex="7">
+				<Cell name="L0C0R0" stripIndex="7">s03</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="9">
+				<Cell name="L0C0R1" stripIndex="9">s03</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="4">
+				<Cell name="L0C0R2" stripIndex="4">s02</Cell>
+			</Entry>
+			<Entry name="Reel3" stripIndex="17">
+				<Cell name="L0C0R3" stripIndex="17">s07</Cell>
+			</Entry>
+			
+			<Entry name="Reel4" stripIndex="20">
+				<Cell name="L0C1R0" stripIndex="20">s01</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="8">
+				<Cell name="L0C1R1" stripIndex="8">s06</Cell>
+			</Entry>
+			<Entry name="Reel6" stripIndex="5">
+				<Cell name="L0C1R2" stripIndex="5">s04</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="6">
+				<Cell name="L0C1R3" stripIndex="6">s05</Cell>
+			</Entry>
+			
+			<Entry name="Reel8" stripIndex="14">
+				<Cell name="L0C2R0" stripIndex="14">b01</Cell>
+			</Entry>
+			<Entry name="Reel9" stripIndex="20">
+				<Cell name="L0C2R1" stripIndex="20">s02</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="18">
+				<Cell name="L0C2R2" stripIndex="18">w01</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="7">
+				<Cell name="L0C2R3" stripIndex="7">s07</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="16">
+				<Cell name="L0C3R0" stripIndex="16">s01</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="5">
+				<Cell name="L0C3R1" stripIndex="5">s06</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="0">
+				<Cell name="L0C3R2" stripIndex="20">s04</Cell>
+			</Entry>
+			<Entry name="Reel15" stripIndex="5">
+				<Cell name="L0C3R3" stripIndex="5">s05</Cell>
+			</Entry>
+			
+			<Entry name="Reel16" stripIndex="18">
+				<Cell name="L0C4R0" stripIndex="18">s03</Cell>
+			</Entry>
+			<Entry name="Reel17" stripIndex="18">
+				<Cell name="L0C4R1" stripIndex="18">s03</Cell>
+			</Entry>
+			<Entry name="Reel18" stripIndex="17">
+				<Cell name="L0C4R2" stripIndex="17">s02</Cell>
+			</Entry>
+			<Entry name="Reel19" stripIndex="7">
+				<Cell name="L0C4R3" stripIndex="7">s07</Cell>
+			</Entry>
+		</PopulationOutcome><PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+			<Entry name="Reel0" stripIndex="0">
+				<Cell name="L0C0R0" stripIndex="0">s01</Cell>
+			</Entry>
+			<Entry name="Reel1" stripIndex="9">
+				<Cell name="L0C0R1" stripIndex="9">s04</Cell>
+			</Entry>
+			<Entry name="Reel2" stripIndex="16">
+				<Cell name="L0C0R2" stripIndex="16">s07</Cell>
+			</Entry>
+			<Entry name="Reel3" stripIndex="18">
+				<Cell name="L0C0R3" stripIndex="18">s08</Cell>
+			</Entry>
+
+			<Entry name="Reel4" stripIndex="13">
+				<Cell name="L0C1R0" stripIndex="13">s07</Cell>
+			</Entry>
+			<Entry name="Reel5" stripIndex="2">
+				<Cell name="L0C1R1" stripIndex="2">s02</Cell>
+			</Entry>
+			<Entry name="Reel6" stripIndex="10">
+				<Cell name="L0C1R2" stripIndex="10">s06</Cell>
+			</Entry>
+			<Entry name="Reel7" stripIndex="3">
+				<Cell name="L0C1R3" stripIndex="3">s03</Cell>
+			</Entry>
+			
+			<Entry name="Reel8" stripIndex="0">
+				<Cell name="L0C2R0" stripIndex="0">s03</Cell>
+			</Entry>
+			<Entry name="Reel9" stripIndex="21">
+				<Cell name="L0C2R1" stripIndex="21">s02</Cell>
+			</Entry>
+			<Entry name="Reel10" stripIndex="12">
+				<Cell name="L0C2R2" stripIndex="12">b01</Cell>
+			</Entry>
+			<Entry name="Reel11" stripIndex="21">
+				<Cell name="L0C2R3" stripIndex="21">s02</Cell>
+			</Entry>
+			
+			<Entry name="Reel12" stripIndex="9">
+				<Cell name="L0C3R0" stripIndex="9">s08</Cell>
+			</Entry>
+			<Entry name="Reel13" stripIndex="3">
+				<Cell name="L0C3R1" stripIndex="3">s05</Cell>
+			</Entry>
+			<Entry name="Reel14" stripIndex="3">
+				<Cell name="L0C3R2" stripIndex="3">s05</Cell>
+			</Entry>
+			<Entry name="Reel15" stripIndex="12">
+				<Cell name="L0C3R3" stripIndex="12">w01</Cell>
+			</Entry>
+			
+			<Entry name="Reel16" stripIndex="17">
+				<Cell name="L0C4R0" stripIndex="17">s03</Cell>
+			</Entry>
+			<Entry name="Reel17" stripIndex="3">
+				<Cell name="L0C4R1" stripIndex="3">s06</Cell>
+			</Entry>
+			<Entry name="Reel18" stripIndex="10">
+				<Cell name="L0C4R2" stripIndex="10">s01</Cell>
+			</Entry>
+			<Entry name="Reel19" stripIndex="4">
+				<Cell name="L0C4R3" stripIndex="4">s07</Cell>
+			</Entry>
+		</PopulationOutcome>
+		<PatternSliderInput>
+			<BetPerPattern>1</BetPerPattern>
+			<PatternsBet>80</PatternsBet>
+		</PatternSliderInput>
+	<Balances totalBalance="3000.00"><Balance name="FREE">3000.00</Balance></Balances></GameLogicResponse>

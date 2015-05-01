@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play$ /core/WebEngine.php?game=sumatran_storm|||igt&action=spin
+RewriteRule clientconfig$ /core/WebEngine.php?game=sumatran_storm|||igt&action=config
+RewriteRule initstate$ /core/WebEngine.php?game=sumatran_storm|||igt&action=init
+RewriteRule paytable$ /core/WebEngine.php?game=sumatran_storm|||igt&action=paytable

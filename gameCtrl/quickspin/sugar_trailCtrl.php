@@ -408,6 +408,8 @@ class sugar_trailCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $this->bonus['preBonusWin'];
         $this->bonus['totalWin'] += $this->bonus['preBonusWin'];
 
+        $this->bonusPays[] = $this->bonus['preBonusWin'];
+
         $this->bonus['credits'] = $multiple;
         $this->bonus['respins'] = $respins;
         $this->bonus['wilds'] = $wildsCount;
@@ -550,6 +552,8 @@ class sugar_trailCtrl extends Ctrl {
 
         $this->bonus['bonusWin'] += $this->bonus['preBonusWin'];
         $this->bonus['totalWin'] += $this->bonus['preBonusWin'];
+
+        $this->bonusPays[] = $this->bonus['preBonusWin'];
 
         $this->bonus['credits'] = $credits;
         $this->bonus['wilds'] = $wildsCount;

@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^lang.aspx$  getlang.php
+RewriteRule ^Lang.aspx$  getlang.php

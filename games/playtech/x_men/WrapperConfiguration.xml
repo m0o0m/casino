@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" ?>
+	<wrapperConfig>	
+		<gameName name="x men"/>	
+		<clientName name="x men" />		
+		<game asVersion="3" configurationStages="2" loadingStages="5" width="640" height="480"  nativeWidth="1029" nativeHeight="600" gameFormat="SlotNoAutoplay" gameTitle="PT-XMen" />
+	</wrapperConfig>

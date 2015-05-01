@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data version="5.1.0.8" >
+	<frame type="default" />
+	<assetProviders>
+		<assetProvider id="default">
+			<buttons>
+				<!-- Regular -->
+				<button id="btn_HitArea" />
+				<button id="button_SPIN" />
+				<button id="button_bet_max" />
+				<button id="button_coins" />
+				<button id="viewPaytableButton" />
+				<button id="button_display_credits" />
+				<button id="button_display_coins" />
+				<button id="button_display_realCredits" />
+				<button id="button_display_realCoins" />
+				<button id="button_display_guestCredits" />
+				<button id="button_display_guestCoins" />
+				<button id="button_display_demoCredits" />
+				<button id="button_display_demoCoins" />
+				<button id="button_display_practiceCoins" />
+				<button id="button_display_practiceCredits" />
+				<!-- UCS -->
+				<button id="UCS_dec_button" />
+				<button id="UCS_inc_button" />
+				<!-- button id="button_lines" /-->
+				<!-- Expert -->
+				<button id="button_STOP_exp" />
+				<button id="button_SPIN_exp" />
+				<button id="button_bet_max_exp" />
+				<button id="button_coins_exp" />
+				<button id="inc_COIN_exp" />
+				<button id="dec_COIN_exp" />
+				<button id="button_auto_play" />
+				<button id="x10_exp" />
+				<button id="x5_exp" />
+				<!--fs buttons -->
+				<button id="button_start_fs_valkyrie" />
+				<button id="button_start_fs_loki" />
+				<button id="button_start_fs_odin" />
+				<button id="button_start_fs_thor" />
+				<button id="button_continue_fs_valkyrie" />
+				<button id="button_continue_fs_loki" />
+				<button id="button_continue_fs_odin" />
+				<button id="button_continue_fs_thor" />				
+				<!--Paytable-->
+			</buttons>
+			<sprites>
+				<sprite id="frame_bg_regular"/>
+				<sprite id="frame_bg_expert"/>
+				<sprite id="frame_valkyrie_regular"/>
+				<sprite id="frame_valkyrie_expert"/>
+				<sprite id="frame_loki_regular"/>
+				<sprite id="frame_loki_expert"/>
+				<sprite id="frame_odin_regular"/>
+				<sprite id="frame_odin_expert"/>
+				<sprite id="frame_thor_regular"/>
+				<sprite id="frame_thor_expert"/>
+				<!-- UCS -->
+				<sprite id="UCS_Background" />
+			</sprites>
+			<seperators />				
+			<graphicalFonts>
+				<graphicalFont id="UCSNum" type="sprite" characters="0123456789." />				
+				<graphicalFont id="UCSNumValkyrie" type="sprite" characters="0123456789." />				
+				<graphicalFont id="UCSNumLoki" type="sprite" characters="0123456789." />				
+				<graphicalFont id="UCSNumOdin" type="sprite" characters="0123456789." />				
+				<graphicalFont id="UCSNumThor" type="sprite" characters="0123456789." />
+				<graphicalFont id="BigWinNum" type="sprite" characters="0123456789." />		
+				<graphicalFont id="BigWinNumCredits" type="sprite" characters="0123456789."/>				
+			</graphicalFonts>
+			<texts>
+				<text id="win_display" type="textField" width="150" height="25"/>
+				<text id="bet_display" type="textField" width="150" height="20"/>
+				<text id="spins_display" type="textField" width="150" height="20"/>
+				<text id="coins_display" type="textField" width="150" height="20"/>
+				<!-- <text id="message_bar" type="textField" height="20"/> -->
+				<text id="balance_Box" type="textField" width="250" height="30"/>	
+				<!-- UCS -->
+				<text id="UCS_text" type="sprite" font="UCSNum" align="center" tracking="10" />				
+				<text id="UCS_text_valkyrie" type="sprite" font="UCSNumValkyrie" align="center" />				
+				<text id="UCS_text_loki" type="sprite" font="UCSNumLoki" align="center" />				
+				<text id="UCS_text_odin" type="sprite" font="UCSNumOdin" align="center" />				
+				<text id="UCS_text_thor" type="sprite" font="UCSNumThor" align="center" />				
+			</texts>
+			<textFormats>
+				<textFormat id="info_display_tf" font="Arial" size="15" color="0xFFFFFF" bold="true" italic="false" underline="false" align="center" kerning="true" letterSpacing="0"  />
+				<textFormat id="win_display_tf" font="Arial" size="21" color="0xFFFFFF" bold="true" italic="false" underline="false" align="center" kerning="true" letterSpacing="0"  />
+				<textFormat id="message_bar_tf" font="Arial" size="12" color="0xFFFFFF" bold="false" italic="false" underline="false" align="center" kerning="true" letterSpacing="0"  />
+				<textFormat id="balance_Box_tf" font="Arial" size="20" color="0xFFFFFF" bold="true" italic="false" underline="false" align="center" kerning="true" letterSpacing="0"  />
+			</textFormats>
+			<!-- The UCS is a container and holds elements of the above assets -->
+			<ucs>
+				<ucs id="ucs" betFormat="coins">
+					<sprite id="UCS_Background"	x="201"	y="638" />
+					<fixedValue>
+						<sprite id="UCS_FixedValue"	x="88.5"	y="106" />
+					</fixedValue>
+					<dec>
+						<button id="UCS_dec_button"	x="207"	y="699"	event="decBet"	shortcut="45"/>
+					</dec>
+					<inc>
+						<button id="UCS_inc_button"	x="248"	y="699"	event="incBet"	shortcut="43"/>
+					</inc>
+					<text id="UCS_text"	x="245"	y="673" value="7.77" />
+				</ucs>			
+			</ucs>
+		</assetProvider>
+	</assetProviders>
+	
+	<!-- Console Descriptions -->
+	<consoles>
+		<messageBar>
+			<text id="message_bar" x ="0" y="622.5" width="1024" height="20" border="false" textFormat="message_bar_tf">
+				<textFormat font="Arial" size="12" color="0xFFFFFF" bold="true" italic="false" 
+							underline="false" align="center" kerning="true" letterSpacing="1"  />
+			</text>
+		</messageBar>
+		<console id="0000-0" assetProvider="default" description="Regular Normal Console">
+			<buttons>
+				<button id="btn_HitArea"		x="915"	y="715"	event=""	shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="button_SPIN"		x="915"	y="715"	event="SPIN"	shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="button_bet_max"		x="675"	y="715"	event="BETMAX"	shortcut="32"	activationRule="AlwaysEnabled" />
+				<button id="button_coins"		x="431"	y="715"	event="COINS"	shortcut="67"	activationRule="AlwaysEnabled" />				
+				<button id="viewPaytableButton"		x="18"	y="647"	event="PAYTABLE_OPEN"	shortcut="86"	activationRule="AlwaysEnabled" />				
+				<button id="button_display_credits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_guestCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_realCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_practiceCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_demoCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_coins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_guestCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_demoCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_realCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_practiceCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+			</buttons>
+			<sprites>
+				<sprite id="frame_bg_regular" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="coins_display"	x="431"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="676"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />				
+			</textLayout >
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		<console id="0001-0" assetProvider="default" description="Expert Normal Console">
+			<buttons>				
+				<button id="btn_HitArea"		x="915"	y="715"	event=""	shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="button_SPIN_exp"		x="915"	y="715"	event="SPIN"	shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="button_STOP_exp"		x="915"	y="715"	event="STOP"	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_bet_max_exp"		x="723"	y="715"	event="BETMAX"	shortcut="32"	activationRule="AlwaysEnabled" />
+				<button id="button_coins_exp"		x="581"	y="715"	event="COINS"	shortcut="67"	activationRule="AlwaysEnabled" />				
+				<button id="inc_COIN_exp"			x="505"	y="703"	event="COINS_INC"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="dec_COIN_exp"			x="505"	y="726"	event="COINS_DEC"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_auto_play"		x="415"	y="715"	event="AUTOPLAY"	shortcut="65"	activationRule="AlwaysEnabled" />				
+				<button id="x10_exp"				x="339"	y="703"	event="AUTOPLAY_10"	shortcut="88"	activationRule="AlwaysEnabled" />				
+				<button id="x5_exp"					x="339"	y="727"	event="AUTOPLAY_5"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="viewPaytableButton"		x="18"	y="647"	event="PAYTABLE_OPEN"	shortcut="86"	activationRule="AlwaysEnabled" />				
+				<button id="button_display_credits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_guestCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_realCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_practiceCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_demoCredits"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_coins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_guestCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_demoCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_practiceCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />				
+				<button id="button_display_realCoins"		x="100"	y="724"	event="DISPLAY_COINS_CREDITS"	shortcut=""	activationRule="AlwaysEnabled" />			
+			</buttons>
+			<sprites>
+				<sprite id="frame_bg_expert" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="spins_display"	x="392"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="coins_display"	x="557"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="720"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />				
+			</textLayout >
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		
+		<console id="1000-0" assetProvider="default" description="Regular Valkyrie Console">
+			<buttons>
+				<button id="button_start_fs_valkyrie"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysDisabled" />
+				<button id="button_continue_fs_valkyrie"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysDisabled" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_valkyrie_regular" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="coins_display"	x="431"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="676"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_valkyrie"	x="245"	y="673" value="1.00" />
+			</textLayout >
+		</console>
+		<console id="1001-0" assetProvider="default" description="Expert Valkyrie Console">
+			<buttons>
+				<button id="button_start_fs_valkyrie"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_valkyrie"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_valkyrie_expert" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="spins_display"	x="392"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="coins_display"	x="557"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="720"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_valkyrie"	x="245"	y="673" value="1.00" />				
+			</textLayout >
+		</console>
+		
+		<console id="2000-0" assetProvider="default" description="Regular Loki Console">
+			<buttons>
+				<button id="button_start_fs_loki"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_loki"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_loki_regular" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="coins_display"	x="431"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="676"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_loki"	x="245"	y="673" value="1.00" />
+			</textLayout >
+		</console>
+		<console id="2001-0" assetProvider="default" description="Expert Loki Console">
+			<buttons>
+				<button id="button_start_fs_loki"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_loki"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_loki_expert" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="spins_display"	x="392"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="coins_display"	x="557"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="720"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_loki"	x="245"	y="673" value="1.00" />				
+			</textLayout >
+		</console>
+		
+		<console id="3000-0" assetProvider="default" description="Regular Odin Console">
+			<buttons>
+				<button id="button_start_fs_odin"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_odin"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_odin_regular" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="coins_display"	x="431"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="676"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_odin"	x="245"	y="673" value="1.00" />
+			</textLayout >
+		</console>
+		<console id="3001-0" assetProvider="default" description="Expert Odin Console">
+			<buttons>
+				<button id="button_start_fs_odin"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_odin"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_odin_expert" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="spins_display"	x="392"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="coins_display"	x="557"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="720"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_odin"	x="245"	y="673" value="1.00" />				
+			</textLayout >
+		</console>
+		
+		<console id="4000-0" assetProvider="default" description="Regular Thor Console">
+			<buttons>
+				<button id="button_start_fs_thor"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_thor"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_thor_regular" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="coins_display"	x="431"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="676"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_thor"	x="245"	y="673" value="1.00" />
+			</textLayout >
+		</console>
+		<console id="4001-0" assetProvider="default" description="Expert Thor Console">
+			<buttons>
+				<button id="button_start_fs_thor"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+				<button id="button_continue_fs_thor"	x="640"	y="718"	event=""	shortcut=""	activationRule="AlwaysHidden" />
+			</buttons>
+			<sprites>
+				<sprite id="frame_thor_expert" x="0"	y="630" />
+			</sprites>
+			<textLayout>
+				<text id="spins_display"	x="392"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="coins_display"	x="557"	y="663"	value="5" textFormat="info_display_tf" />
+				<text id="bet_display"		x="720"	y="663"	value="5.00" textFormat="info_display_tf" />				
+				<text id="win_display"		x="915"	y="656"	value="0.00" textFormat="win_display_tf" />
+				<text id="balance_Box"		x="100"	y="682"	value="88888888888888" textFormat="balance_Box_tf" />
+				<text id="UCS_text_thor"	x="245"	y="673" value="1.00" />				
+			</textLayout >
+		</console>
+		
+	</consoles>
+	<bigWinAnimations>
+		<coins quantity="10" multiplier="500" />
+		<coins quantity="9" multiplier="500" />
+		<coins quantity="8" multiplier="500" />
+		<coins quantity="7" multiplier="500" />
+		<coins quantity="6" multiplier="500" />
+		<coins quantity="5" multiplier="500" />
+		<coins quantity="4" multiplier="500" />
+		<coins quantity="3" multiplier="500" />
+		<coins quantity="2" multiplier="500" />
+		<coins quantity="1" multiplier="500" />
+	</bigWinAnimations>	
+</data>

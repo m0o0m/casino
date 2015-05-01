@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play$ /core/WebEngine.php?game=water_dragons|||igt&action=spin
+RewriteRule clientconfig$ /core/WebEngine.php?game=water_dragons|||igt&action=config
+RewriteRule initstate$ /core/WebEngine.php?game=water_dragons|||igt&action=init
+RewriteRule paytable$ /core/WebEngine.php?game=water_dragons|||igt&action=paytable

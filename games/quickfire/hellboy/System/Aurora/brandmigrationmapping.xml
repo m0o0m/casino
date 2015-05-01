@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MigrationServerMapping version="1.5.0.0-en">
+  <mapping lang="en" id="256" url="https://bigflash.gameassists.co.uk/bigflash/" />
+  <mapping lang="nl" id="256" url="https://bigflash.gameassists.co.uk/bigflash/" />
+  <mapping lang="sv" id="256" url="https://bigflash.gameassists.co.uk/bigflash/" />
+</MigrationServerMapping>

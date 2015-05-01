@@ -25,6 +25,7 @@ require_once 'Slot.php';
 require_once 'Reel.php';
 require_once 'Ctrl.php';
 require_once 'Params.php';
+require_once 'Ways.php';
 $_SESSION['lastRequestTime'] = time();
 
 /**

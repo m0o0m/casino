@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play$ /core/WebEngine.php?game=wolf_run_gpe|||igt&action=spin
+RewriteRule clientconfig$ /core/WebEngine.php?game=wolf_run_gpe|||igt&action=config
+RewriteRule initstate$ /core/WebEngine.php?game=wolf_run_gpe|||igt&action=init
+RewriteRule paytable$ /core/WebEngine.php?game=wolf_run_gpe|||igt&action=paytable

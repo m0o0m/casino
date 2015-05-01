@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SlotMachine version="5.1.0.8">
+  <init>
+    <console id="0000-0" />
+    <asset id="baseBG" frame="" />
+    <asset id="wayWinLeft" frame="" />
+    <asset id="wayWinRight" frame="1" />
+    <asset id="baseLogo" frame="" />
+    <asset id="baseReelArt" frame="" />
+  </init>
+  <Delays>
+    <Delay id="autoplayStoppedMessage" value="1800" />
+    <Delay id="anticipationReelDelay_1" value="2000" />
+    <Delay id="anticipationReelDelay_2" value="2200" />
+    <Delay id="anticipationReelDelay_3" value="3000" />
+    <Delay id="minWildStormDelay" value="3000" />
+    <Delay id="delayBetweenWildStormStrikes" value="4000" />
+    <Delay id="minSpinTime" value="500" />
+	<Delay id="timeBetweenReelStops" value="40" />
+    <Delay id="minQuickSpinTime" value="300" />    
+    <Delay id="timeQuickSpinInterval" value="0" />
+    <Delay id="timeDelayForWinDisplay" value="800" />
+	<Delay id="cloudFadeInTime" value="60" />
+    <!-- in seconds, not milli -->
+    <Delay id="autoplayBigWinDelay" value="4000" />
+	<Delay id="startCloudTextAnim" value="1500"></Delay>
+    <!--startCloudTextAnim is in milliseconds, delay starts from when cloud fadeIn begins-->
+    <Delay id="startThorLandAnim" value="3000"></Delay>
+    <!--startThorLandAnim is in milliseconds, delay starts from when cloud fadeIn begins-->
+  </Delays>
+  <ConsoleShake time="10" yDistance="20" />
+  <Triggers>
+    <Trigger name="ghs" winID="75,76,77,79,80,81" symbolId="13" sound="SND_Symbol14_Trigger" />
+  </Triggers>
+  <WinSounds>
+    <Sound name="SND_5OfAKind" winID="0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72" bigWinExclude="true" />
+    <!--  -->
+    <Sound name="SND_Symbol14" winID="78,82" />
+    <!-- Scatter Win -->
+    <Sound name="SND_Symbol14_Trigger" winID="75,76,77,79,80,81" />
+    <!-- 3 or more scatters -->
+    <Sound name="SND_Symbol2" winID="3,4,5" />
+    <!-- Thor -->
+    <Sound name="SND_Symbol3" winID="9,10,11" />
+    <!-- Odin -->
+    <Sound name="SND_Symbol4" winID="15,16,17" />
+    <!-- Loki -->
+    <Sound name="SND_Symbol5" winID="21,22,23" />
+    <!-- Valkyrie -->
+    <Sound name="SND_Symbol6" winID="27,28,29" />
+    <!-- Asgard -->
+    <Sound name="SND_Symbol7" winID="33,34,35" />
+    <!-- longBoat -->
+    <Sound name="SND_Win" winID="39,40,41,45,46,47,51,52,53,57,58,59,63,64,65,69,70,71" />
+    <Sound name="SND_Symbol1" winID="1,2,6,7,8,12,13,14,18,19,20,24,25,26,30,31,32,36,37,38,42,43,44,48,49,50,54,55,56,60,61,62,66,67,68,72,73,74" />
+    <!--Sound  name="SND_Win" wildSubstituteSound="SND_Symbol1" wildID="0" winID="40,41,46,47,52,53,58,59,64,65,70,71"/-->
+  </WinSounds>
+  <ModalHeaders>
+    <DefaultHeader id="baseLogo" />
+    <ConditionalHeaders>
+      <ConditionalBag id="5ofKind" csvWinIds="0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57,60,63,66,69,72" duration="1">
+        <!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+        <!-- It is possible to have multiple Headers in a conditionla bag as per the Random Bag -->
+        <ConditionalHeader id="mb_5ofKind" />
+      </ConditionalBag>
+      <ConditionalBag id="scatter" csvWinIds="78,82" duration="2">
+        <ConditionalHeader id="mb_Scatters" />
+      </ConditionalBag>
+    </ConditionalHeaders>
+    <RandomHeaders>
+      <RandomBag id="dur2" duration="2" spinsToTrigger="4">
+        <!-- id is the ID of the MovieClips Export linkage and the ID as used in the Art Asset Controller -->
+        <RandomHeader id="mb_WildStorm" />
+        <RandomHeader id="mb_Progress" />
+        <RandomHeader id="mb_LogoDoubles" />
+        <RandomHeader id="mb_AllWinsPay" />
+      </RandomBag>
+    </RandomHeaders>
+    <Priority Queue="5ofKind,scatter" />
+  </ModalHeaders>
+  <EnvironmentalAnimations>
+    <Bag id="sparks" minTimeBetween="250" variance="1000">
+      <Item id="shock1" />
+      <Item id="shock2" />
+      <Item id="shock4" />
+      <Item id="shock5" />
+      <Item id="shock6" />
+      <Item id="shock7" />
+      <Item id="shock8" />
+      <Item id="shock9" />
+      <Item id="shock10" />
+      <Item id="shock10above" />
+      <Item id="shock11" />
+      <Item id="shock12" />
+      <Item id="shock13" />
+    </Bag>
+  </EnvironmentalAnimations>
+</SlotMachine>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dialogs version="5.7221.2">
+	<dialogue  id="Stats">
+		<table padding="20" paddingTop="10" paddingBottom="10" background="background" dropshadow="background">
+			<tr padding="0" >
+				<td colspan="2"><ctrl id="title" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left"><ctrl id="Heading1" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="Spins" /></td>
+				<td paddingRight="40" align="right"><ctrl id="SpinsNum" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="Session" /></td>
+				<td paddingRight="40" align="right"><ctrl id="SessionTime" /></td>
+			</tr>
+			<tr paddingBottom="15">
+				<td paddingLeft="40"><ctrl id="SpinPH" /></td>
+				<td paddingRight="40" align="right"><ctrl id="SpinPHNum" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0"><ctrl id="sep1" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" paddingLeft="25" paddingBottom="5"><ctrl id="Heading2" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="First" /></td>
+				<td paddingRight="40" align="right"><ctrl id="FirstAmount" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"> <ctrl id="Second" /></td>
+				<td paddingRight="40" align="right"><ctrl id="SecondAmount" /></td>
+			</tr>
+			<tr paddingBottom="15">
+				<td paddingLeft="40"><ctrl id="Third" /></td>
+				<td paddingRight="40" align="right"><ctrl id="ThirdAmount" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0"><ctrl id="sep2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="Left" paddingTop="20"><ctrl id="Message1" /></td>
+			</tr>
+			<tr paddingBottom="20">
+				<td colspan="2" align="center">
+					<ctrl id="OK" marginRight="10" marginLeft="10" />
+					<ctrl id="RESET" marginLeft="10" marginRight="10" />
+				</td>
+			</tr>
+		</table>
+		<controls>
+			<ctrl id="title" type="title" configId="title" text="STATISTICS" />
+			<ctrl id="background" type="graphic" configId="defaultBackground" />
+			<ctrl id="modal" type="graphic" configId="defaultModal" />
+			<ctrl id="sep1" type="graphic" configId="horzSep" />
+			<ctrl id="sep2" type="graphic" configId="horzSep" />
+			<ctrl id="Heading1" type="text" text="SPIN_RESULTS" configId="textSubHeading" />
+			<ctrl id="Heading2" type="text" text="HIGHEST_WINS" configId="textSubHeading" />
+			<ctrl id="Spins" type="text" text="SPINS" configId="text" />
+			<ctrl id="SpinsNum" type="text" text="SPINS" configId="text" />
+			<ctrl id="Session" type="text" text="SES_TIME" configId="text" />
+			<ctrl id="SessionTime" type="text" text="SES_TIME" configId="text" />
+			<ctrl id="SpinPH" type="text" text="SPINS_PH" configId="text" />
+			<ctrl id="SpinPHNum" type="text" text="SPINS_PH" configId="text" />
+			<ctrl id="First" type="text" text="FIRST" configId="text" />
+			<ctrl id="FirstAmount" type="text" text="FIRST" configId="text" />
+			<ctrl id="Second" type="text" text="SECOND" configId="text" />
+			<ctrl id="SecondAmount" type="text" text="SECOND" configId="text" />
+			<ctrl id="Third" type="text" text="THIRD" configId="text" />
+			<ctrl id="ThirdAmount" type="text" text="THIRD" configId="text" />
+			<ctrl id="Message1" type="text" text="STATS_INFO" configId="text" />
+			<ctrl id="OK" configId="default" type="button" text="OK_BTN" tabIndex="1" />
+			<ctrl id="RESET" type="button" configId="default" text="RESET_BTN"  tabIndex="2" />
+		</controls>	
+	 </dialogue >
+	<dialogue  id="Options">
+		<table padding="20" paddingTop="10" paddingBottom="10" background="background" dropshadow="background">
+			<tr padding="0" >
+				<td colspan="2"><ctrl id="title" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left" paddingLeft="25" paddingBottom="5"><ctrl id="Heading1" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="QuickSpins" /></td>
+			</tr>
+			<tr paddingBottom="10">
+				<td paddingLeft="40"><ctrl id="QuickFreespins" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0"><ctrl id="sep1" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" paddingLeft="25" paddingBottom="5"><ctrl id="Heading2" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="AllSounds" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="GameSounds" /></td>
+			</tr>
+			<tr paddingBottom="0">
+				<td paddingLeft="40"><ctrl id="WinSounds" /></td>
+			</tr>
+			<tr paddingBottom="10">
+				<td paddingLeft="40"><ctrl id="BGSounds" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0">
+					<ctrl id="sep3" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" paddingLeft="25" paddingBottom="5">
+					<ctrl id="Heading3" />
+				</td>
+
+			</tr>
+			<tr paddingBottom="10">
+				<td paddingLeft="40">
+					<ctrl id="Coins" />
+				</td>
+				<td paddingRight="40" align="right">
+					<ctrl id="Credits" />
+				</td>
+			</tr>
+			<tr paddingBottom="15">
+				<td paddingLeft="40"><ctrl id="OK" /></td>
+				<td paddingRight="40" align="right"><ctrl id="CANCEL" /></td>
+			</tr>
+		</table>
+		<controls>
+			<ctrl id="title" type="title" configId="title" text="OPTIONS_TITLE" />
+			<ctrl id="background" type="graphic" configId="defaultBackground" />
+			<ctrl id="modal" type="graphic" configId="defaultModal" />
+			<ctrl id="sep1" type="graphic" configId="horzSep" />
+			<ctrl id="sep2" type="graphic" configId="horzSep" />
+			<ctrl id="sep3" type="graphic" configId="horzSep" />
+			<ctrl id="Heading1" type="text" text="GAME_PLAY_SETTINGS" configId="textSubHeading" />
+			<ctrl id="Heading2" type="text" text="SOUND_SETTINGS" configId="textSubHeading" />
+			<ctrl id="Heading3" type="text" text="DISPLAY_OPTIONS" configId="textSubHeading" />
+			<ctrl id="QuickSpins" type="checkbox" text="QUICK_SPIN" configId="default" />
+			<ctrl id="QuickFreespins" type="checkbox" text="QUICK_FREE_SPIN" configId="default" />
+			<ctrl id="DisableGamble" type="checkbox" text="DISABLE_GAMBLE" configId="default" />
+			<ctrl id="AllSounds" type="checkbox" text="SWITCH_OFF_ALL_SOUNDS" configId="default" />
+			<ctrl id="GameSounds" type="checkbox" text="SWITCH_OFF_GAME_SOUNDS" configId="default" />
+			<ctrl id="WinSounds" type="checkbox" text="SWITCH_OFF_WIN_SOUNDS" configId="default" />
+			<ctrl id="BGSounds" type="checkbox" text="SWITCH_OFF_BG_SOUNDS" configId="default" />
+			<ctrl id="Coins" type="radiobutton" groupName="COINSCREDITS" text="DISPLAY_COINS" configId="default" />
+			<ctrl id="Credits" type="radiobutton" groupName="COINSCREDITS" text="DISPLAY_CREDITS" configId="default" />
+			<ctrl id="OK" configId="default" type="button" text="OK_BTN" tabIndex="1" />
+			<ctrl id="CANCEL" type="button" configId="default" text="CANCEL_BTN"  tabIndex="2" />
+		</controls>	
+	 </dialogue >
+	<dialogue id="AutoPlay_CoinsToCurrency">	<!-- Message Ok Cancel View -->
+		<table padding="20" paddingTop="10" paddingBottom="10" background="background" dropshadow="background">
+			<tr padding="0" >
+				<td colspan="2"><ctrl id="title" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" paddingTop="20"><ctrl id="static1" /></td>
+			</tr>
+			<tr>
+				<td><ctrl id="static2" /></td>
+				<td paddingLeft="10" paddingBottom="15"><ctrl id="numSpinsCombo" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0"><ctrl id="sep1" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" paddingTop="15"><ctrl id="static3" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" paddingLeft="25" paddingBottom="0"><ctrl id="stopSettingsRadio1" /></td>
+			</tr>
+			<tr paddingTop="0" paddingBottom="0">
+				<td></td><td align="center" paddingLeft="10"><ctrl id="static5" /></td>
+			</tr>
+			<tr paddingTop="0" paddingBottom="15">
+				<td paddingLeft="25"><ctrl id="stopSettingsRadio2" /></td>
+				<td paddingLeft="10" align="center"><ctrl id="winExceedsOrEqualsCombo" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" padding="0"><ctrl id="sep2" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" paddingTop="20"><ctrl id="static4" /></td>
+			</tr>
+			<tr paddingBottom="20">
+				<td colspan="2" align="center">
+					<ctrl id="SAVEANDCLOSE" marginRight="10" marginLeft="10" />
+					<ctrl id="START" marginLeft="10" marginRight="10" />
+					<ctrl id="CANCEL" marginLeft="10" marginRight="10" />
+				</td>
+			</tr>
+		</table>
+		<controls>
+			<ctrl id="title" type="title" configId="title" text="AUTOPLAY_TITLE" />
+			<ctrl id="background" type="graphic" configId="defaultBackground" />
+			<ctrl id="modal" type="graphic" configId="defaultModal" />
+			<ctrl id="sep1" type="graphic" configId="horzSep" />
+			<ctrl id="sep2" type="graphic" configId="horzSep" />
+			<ctrl id="static1" type="text" text="AUTOPLAY_TEXT1" configId="textSubHeading" />
+			<ctrl id="static2" type="text" text="AUTOPLAY_TEXT2" configId="text" />
+			<ctrl id="static5" type="text" text="COINSBOX_START" configId="text" />
+			<ctrl id="numSpinsCombo" type="combobox" data="5,10,15,25,100,250,500" labels="5,10,15,25,100,250,500" defaultIndex="3" restrict="0-9" configId="default" editable="true" tabIndex="1" />
+			<ctrl id="static3" type="text" text="AUTOPLAY_TEXT3" configId="textSubHeading" />
+			<ctrl id="stopSettingsRadio1" type="radiobutton" groupName="stopSettings" text="AUTOPLAY_TEXT4" configId="default" selected="true" tabIndex="2" />
+			<ctrl id="stopSettingsRadio2" type="radiobutton" groupName="stopSettings" text="AUTOPLAY_TEXT5" configId="default" tabIndex="3" />
+			<ctrl id="winExceedsOrEqualsCombo" type="combobox" data="100,500,1000,5000,9999" labels="100,500,1000,5000,9999" defaultIndex="1" restrict="0-9" configId="default" editable="true" tabIndex="4" />
+			<ctrl id="static4" type="text" text="AUTOPLAY_TEXT6" configId="multiline" minWidth="250" />
+			<ctrl id="SAVEANDCLOSE" configId="default" type="button" text="SAVECLOSE_BTN" tabIndex="5" />
+			<ctrl id="START" type="button" configId="default" text="START_BTN" shortCut="13" tabIndex="6" />
+			<ctrl id="CANCEL" type="button" configId="default" text="CANCEL_BTN" shortCut="27" tabIndex="7" />
+		</controls>
+	</dialogue>
+</Dialogs>

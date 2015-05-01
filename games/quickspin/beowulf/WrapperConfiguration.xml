@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+	<wrapperConfig>
+		<gameName name="beowulf"/>	
+		<clientName name="beowulf" />
+		<game asVersion="3" gameFormat="SlotNoAutoplay" loadingStages="1" configurationStages="2" height="480" width="640" nativeHeight="768" nativeWidth="1024" gameTitle="QS-Beowulf"/>
+	</wrapperConfig>

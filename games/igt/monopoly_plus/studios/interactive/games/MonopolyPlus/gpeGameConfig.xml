@@ -1,0 +1,6 @@
+<gameconfig>
+<components>
+ <game layer="0" x="100" y="100"  loadOnStart="true" addToStage="true" >[assetPath]/[studio]/games/[game]/bin/Game.swf</game>
+</components>
+</gameconfig>
+

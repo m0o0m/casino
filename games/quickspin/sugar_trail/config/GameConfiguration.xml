@@ -1,0 +1,7 @@
+<GameConfiguration>	
+	<Markets markets="ray">		
+		<GameFormats formats="Slot">
+			<ConfigurationItem item="StopButton" value="disabled"/>
+		</GameFormats>		
+	</Markets>	
+</GameConfiguration>

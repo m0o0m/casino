@@ -28,6 +28,10 @@ class Reel {
      */
     private $visibleSymbols = array();
     /**
+     * @var array $fullVisibleSymbols Видимые символы барабана + предыдущий + следующий
+     */
+    private $fullVisibleSymbols = array();
+    /**
      * @var int $visibleCount Количество видимых символов на барабане
      */
     private $visibleCount = 3;
@@ -126,12 +130,25 @@ class Reel {
     }
 
     /**
+     * Получение полных видимых символов барабана
+     *
+     * @return array
+     */
+    public function getFullVisibleSymbols() {
+        return $this->fullVisibleSymbols;
+    }
+
+    /**
      * Обновление видимых символов барабана. Устанавливаются как первые символы барабана(после смещения)
      */
     private function updateVisibleSymbols() {
+        $this->fullVisibleSymbols = array();
+        array_push($this->fullVisibleSymbols, end($this->newSymbols));
         for($i = 0; $i < $this->visibleCount; $i++) {
             $this->visibleSymbols[$i] = $this->newSymbols[$i];
+            array_push($this->fullVisibleSymbols,$this->newSymbols[$i]);
         }
+        array_push($this->fullVisibleSymbols, $this->newSymbols[$this->visibleCount]);
     }
 
     /**
@@ -142,6 +159,16 @@ class Reel {
      */
     public function getVisibleSymbol($pos) {
         return $this->visibleSymbols[$pos];
+    }
+
+    /**
+     * Получение видимых символов барабана + предыдущий + последующий символ
+     *
+     * @param $pos
+     * @return mixed
+     */
+    public function getFullVisibleSymbol($pos) {
+        return $this->fullVisibleSymbols[$pos];
     }
 
     /**

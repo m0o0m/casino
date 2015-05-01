@@ -238,7 +238,7 @@ class treasure_islandParams extends Params {
     // payout - множитель ставки на линию, который может выпасть, когда выбираем "credit" в островах.
     // payoutChance - шанс выпадения определенного множителя для "credit"
     public $fsConfig = array(
-        'fsType' => array('credit', 'hunt', 'fs'),
+        'fsType' => array('hunt', 'hunt', 'hunt'),
         'fsTypeChance' => array(
             0,0,0,0,0,0,0,0,
             1,1,1,1,1,

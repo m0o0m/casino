@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play$ /core/WebEngine.php?game=nouveau_riche|||igt&action=spin
+RewriteRule clientconfig$ /core/WebEngine.php?game=nouveau_riche|||igt&action=config
+RewriteRule initstate$ /core/WebEngine.php?game=nouveau_riche|||igt&action=init
+RewriteRule paytable$ /core/WebEngine.php?game=nouveau_riche|||igt&action=paytable

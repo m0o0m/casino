@@ -1,0 +1,1669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="5.11588.7">
+
+	<!-- ControllerEvents This is a listener list for the controller events. If the listeners are grouped in one node they would be executed asynchronously
+	 * commandToWaitForListeners - If this is true it means that the listeners will wait for its execution to be completed before returning.
+	 * If this is false the listeners return immediately.If you have events not listened to by controllers this value should be false
+	 * Otherwise all the other events might get blocked.-->
+
+	<ControllerEvent parser="mgs.games.data.slots.config.parser.ControllerEventParser">
+		<!-- Events related to Slot Main Controller-->
+		<event>
+			<property key="EventName" value="ChangeView" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="views" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freegames" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="runningSymbols" type="String" /> 
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="suspendedReel" type="String" /> 
+				</listener>				
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="introTriggerAnim" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="startup_dialog" type="String" />
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="background" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="border" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>		
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="bonus" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="background_parallax" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="screenShake" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelFade" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="freeSpinsSummary" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+
+		<event>
+			<property key="EventName" value="GraphicsLevelChanged" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="background" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="background_parallax" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelFade" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="screenShake" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+
+		<event>
+			<property key="EventName" value="SendFreeGamesRejection" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="serverComm" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="BetSwitched" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freegames" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		
+		<!-- Events related to Balance-->
+		<event>
+			<property key="EventName" value="GameBalance" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+		</event>
+		<event>
+			<property key="EventName" value="SystemBalance" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+		</event>
+		<event>
+			<property key="EventName" value="InsufficientBalance" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="IncrementalBalanceUpdate" type="String" /><!-- mapped by a feature-->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="IncrementalBalanceReset" type="String" /><!-- mapped by a feature-->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to Bet-->
+		<event>
+			<property key="EventName" value="TimerCompleteForBetUpdate" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+		</event>
+		<event>
+			<property key="EventName" value="BetUpdate" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BetChanged" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BoundaryChanged" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<!-- Events related to Countups-->
+		<event>
+			<property key="EventName" value="CountupBegin" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="bigWin" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="CountupComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+			</listeners>	
+		</event>
+		<event>
+			<property key="EventName" value="countupInterrupted" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+		</event>
+		<event>
+			<property key="EventName" value="RestartCountup" type="String" /><!-- This event is semnt by the feature to start countup -->
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DoNotPlayCountupSound" type="String" /><!-- This event is semnt by the feature to start countup -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ForcePlayCountupSound" type="String" /><!-- This event is sent by the feature to start countup -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DoNotRunCountup" type="String" /><!-- This event is semnt by the feature to start countup -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="FeatureCountupLimit" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to Dialogs-->
+		<event>
+			<property key="EventName" value="DialogDisplayed" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DialogRemoved" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BoundaryNotice" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="OptionsUpdate" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="sounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="background_parallax" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+
+		<!-- Events related to Freespins-->
+		<event>
+			<property key="EventName" value="FreespinStarted" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="symbolSwap" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="movieWins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="bigWin" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="serverComm" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="FreespinComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="movieWins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="smashingWilds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="WinsSoundComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+
+		<!-- Events related to Paytables-->
+		<event>
+			<property key="EventName" value="PaytableOpened" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="paytable" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="PaytableClosed" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to autoplay-->
+		<event>
+			<property key="EventName" value="AutoplayStopped" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="AutoplayNextSpin" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+		</event>
+		
+		<event>
+			<property key="EventName" value="DelayAutoplayNextSpin" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+		</event>		
+
+		<!-- Events related to Timer-->
+		<event>
+			<property key="EventName" value="ConfigureSpinDelayTimer" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to Console-->
+		<event>
+			<property key="EventName" value="SpinStarted" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="symbolSwap" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="movieWins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="paytable" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="achievement_notifications" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="timer" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="bigWin" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="serverComm" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+		</event>
+		<event>
+			<property key="EventName" value="Autoplay" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="StartAutoplay" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="StopAutoplay" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="Increment/DecrementChipSize" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="Increment/DecrementCoins" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="SpinStopped" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="UpdateCoinsCreditsDisplay" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="EnableConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DisableConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DeactivateConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="lockConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="unlockConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event><event>
+			<property key="EventName" value="ReactivateConsole" type="String" /> <!-- This event is sent by features -->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ContinueFreespins" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="Increment/DecrementLines" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to reels-->
+		<event>
+			<property key="EventName" value="ReelsCreated" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelFade" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="suspendedReel" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="SwapReelSymbols" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelDelayRule" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelContinueRule" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReconfigureReels" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelsStarted" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freegames" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="AllReelsStopped" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="symbolSwap" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="movieWins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="hookEvent" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="suspendedReel" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="console" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>		
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freegames" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="reelsStartedActingOnPacket" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="betLock" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelAnticipation" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>	
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="mysteryMultiplier" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="smashingWilds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>	
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="runningSymbols" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>			
+		</event>
+		<event>
+			<property key="EventName" value="ReelsInLoopingPhase" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelBounce" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelFade" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelBreathe" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="reelFade" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReelStopped" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="wildReels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="suspendedReel" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="TriggerAnimComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="introTriggerAnim" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="TriggerAnimStart" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+		</event>
+
+		<!-- Events related to System Frame-->
+		<event>
+			<property key="EventName" value="FrameButtonClick" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DeactivateMiniFrame" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ReactivateMiniFrame" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>		
+
+		<!-- Events related to Transition-->
+		<event>
+			<property key="EventName" value="TransitionStart" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="introTriggerAnim" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="bonus" type="String" /> 
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="TransitionEnd" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="introTriggerAnim" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="controllerComponentName" value="bonus" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BlockTransition" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="UnblockTransition" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DoTransition" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to Wins-->
+		<event>
+			<property key="EventName" value="WinsSequenceStart" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+		</event>
+		<event>
+			<property key="EventName" value="WinSequenceStopped" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="WinStoppedImmediately" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="IterationOfTheWinSequenceCompleted" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+		</event>
+		<event>
+			<property key="EventName" value="LongestSymbolWinAnimComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="WaitOnFeatureForLongestWinAnim" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> 
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> 
+				</listener>
+ 				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> 
+				</listener> 
+			</listeners>
+		</event>		
+		<event>
+			<property key="EventName" value="AllIterationsOfTheWinSequenceCompleted" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="IndividualWinStarted" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+		</event>
+		<event>
+			<property key="EventName" value="BlockWinSequence" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="UnblockWinSequence" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DoNotPlayWinSound" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<event>
+			<property key="EventName" value="PauseTriggerAnim" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="ResumeTriggerAnim" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+
+		<!-- Events related to Interrupts-->
+		<event>
+			<property key="EventName" value="UserInteraction" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+		</event>
+		<event>
+			<property key="EventName" value="interrupt" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="countups" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="autoplay" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="transition" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="alternateBaseGame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="secondinterruptneeded" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="EnableInterrupt" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DisableInterrupt" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>		
+
+		<!-- Events related to Sounds-->
+		<event>
+			<property key="EventName" value="Mute" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="controllerComponentName" value="sounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="PlayBGSound" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="StopBGSound" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="WinSequenceFlash" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+		</event>
+
+		<!-- Events related to Startup Dialog-->
+		<event>
+			<property key="EventName" value="startupDialogOpen" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+
+		</event>
+		<event>
+			<property key="EventName" value="startupDialogClosed" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="bet" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="interrupts" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="StopWinSequence" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+					
+			</listeners>
+			
+		</event>
+		
+		<event>
+			<property key="EventName" value="StartWinSequence" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="bigWin" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="movieWins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="wins" type="String" /> <!-- Name of the listening controller -->
+				</listener>					
+			</listeners>			
+			
+		</event>
+		<event>
+			<property key="EventName" value="BonusOpen" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BonusFeatureComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="FreespinsFeatureComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="dialogs" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>		
+		<event>
+			<property key="EventName" value="CountupBonusComplete" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>				
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="BonusDone" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>				
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="balance" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="SystemExitDelayed" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="views" type="String" /> <!-- Name of the listening controller -->
+				</listener>	
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+				<listener>
+					<property key="featureComponentName" value="backgroundSounds" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+				<listener>
+					<property key="controllerComponentName" value="freespins" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<!-- Events related to Free Games-->
+		<event>
+			<property key="EventName" value="SkipFreeGameOffer" type="String" />
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<!-- View will always have to be the first listener and have the other listeners as synchronous for this event-->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="freegames" type="String" /> <!-- Name of the listening controller -->
+				</listener>				
+			</listeners>
+		</event>
+		
+		<event>
+			<property key="EventName" value="IncrementalWinFeatureComplete" type="String" /><!-- mapped by a feature-->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="sgi" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="AddExtraReelSymbols" type="String" /><!-- mapped by a feature-->
+			<property key="commandToWaitForListeners" value="true" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="reels" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="shakeScreen" type="String" /><!-- mapped by a feature-->
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="featureComponentName" value="screenShake" type="String" /> <!-- Name of the listening controller -->
+				</listener>			
+			</listeners>
+			
+		</event>		
+		<event>
+			<property key="EventName" value="EnableMiniFrameButtons" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+		<event>
+			<property key="EventName" value="DisableMiniFrameButtons" type="String" />
+			<property key="commandToWaitForListeners" value="false" type="Boolean" /> <!-- if true event is synchronoous -->
+			<!-- These listeners are the controllers that will be listening to the event dispatched by the above -->
+			<listeners>
+				<listener>
+					<property key="controllerComponentName" value="systemFrame" type="String" /> <!-- Name of the listening controller -->
+				</listener>
+			</listeners>
+		</event>
+	</ControllerEvent>
+</config>

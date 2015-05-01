@@ -67,7 +67,7 @@ class big_bad_wolfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report'][0]['spinWin'];
+        $this->spinPays[] = $spinData['report'][0]['baseSpinWin'];
 
         $this->showSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -110,6 +110,7 @@ class big_bad_wolfCtrl extends Ctrl {
         }
 
         $report['runningTotal'] = $report['totalWin'];
+        $report['baseSpinWin'] = $report['spinWin'];
 
         $reports[] = $report;
 
@@ -136,7 +137,7 @@ class big_bad_wolfCtrl extends Ctrl {
                     $r['scattersReport']['totalWin'] = $r['bet'] * $this->gameParams->scatterMultiple[$r['scattersReport']['count']];
                     $r['totalWin'] += $r['scattersReport']['totalWin'];
                     $this->getFreeSpinBonus($r, $preTotal + $r['totalWin']);
-                    $totalWin += $this->fsBonus['totalWin'];
+                    $totalWin = $this->fsBonus['totalWin'];
                     $r['addDraws'] = $this->fsBonus['drawStates'];
                     $this->slot->drawID = $this->fsBonus['lastDraw'];
                 }
@@ -163,7 +164,9 @@ class big_bad_wolfCtrl extends Ctrl {
             switch($g) {
                 case 'fs':
                     if(empty($this->fsBonus)) $respin = true;
-
+                    if(!empty($this->fsBonus)) {
+                        if(!$this->fsBonus['addSpins']) $respin = true;
+                    }
                     break;
                 case 'avalanche':
                     if(count($reports) < 2) $respin = true;
@@ -171,9 +174,7 @@ class big_bad_wolfCtrl extends Ctrl {
             }
         }
 
-        if(!empty($this->fsBonus)) {
-            if($this->fsBonus['moons'] < 6) $respin = true;
-        }
+
 
         return array(
             'totalWin' => $totalWin,
@@ -293,6 +294,8 @@ class big_bad_wolfCtrl extends Ctrl {
         $p1Payd = false;
         $p2Payd = false;
 
+        $addSpins = false;
+
         while($fsCount > 0) {
             $spins = 0;
             $added = 0;
@@ -341,12 +344,14 @@ class big_bad_wolfCtrl extends Ctrl {
 
             $bonus = '';
             if($report['scattersReport']['count'] >= 3) {
+                $addSpins = true;
                 $fsCount += 10;
                 $totalFS += 10;
+                $spins += 10;
                 $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
                 $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $sr = $report['scattersReport'];
-                $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'L" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+                $bonus = '<Scatter spins="10" offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'L" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
             }
 
 
@@ -372,7 +377,7 @@ class big_bad_wolfCtrl extends Ctrl {
                 'currentSpins' => '{{count}}',
             ));
 
-            $draw = '<DrawState drawId="'.$report['drawID'].'" fsBaseDraw="0" fsTriggeringDraw="'.$fsTrigger.'">
+            $draw = '<DrawState fsLeft="'.$fsCount.'" drawId="'.$report['drawID'].'" fsBaseDraw="0" fsTriggeringDraw="'.$fsTrigger.'">
             '.$winLines.'
             <ReplayInfo foItems="'.$report['stops'].'" />
         </DrawState>';
@@ -447,9 +452,11 @@ class big_bad_wolfCtrl extends Ctrl {
                         $r['scattersReport']['totalWin'] = $r['bet'] * $this->gameParams->scatterMultiple[$r['scattersReport']['count']];
                         $r['totalWin'] += $r['scattersReport']['totalWin'];
                         $sr = $r['scattersReport'];
-                        $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'L" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+                        $bonus = '<Scatter spins="10" offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'L" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
                         $fsCount += 10;
                         $totalFS += 10;
+                        $spins += 10;
+                        $addSpins = true;
                     }
 
                     $w = $r['winLines'];
@@ -490,6 +497,7 @@ class big_bad_wolfCtrl extends Ctrl {
         }
 
         $this->fsBonus['moons'] = $moons;
+        $this->fsBonus['addSpins'] = $addSpins;
         $this->fsBonus['bonusWin'] = $this->fsBonus['totalWin'] - $startWin;
         $this->fsBonus['totalFS'] = $totalFS;
         $this->fsBonus['lastDraw'] = $lastDraw;

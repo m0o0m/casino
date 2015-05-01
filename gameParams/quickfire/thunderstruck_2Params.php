@@ -104,8 +104,10 @@ class thunderstruck_2Params extends Params {
 
     public $winLines = array();
 
-    public $winLineType = '243';
+    public $winLineType = 'ways';
     public $minWinCount = 3;
+
+    public $reelConfig = array(3,3,3,3,3);
 
     // настройка ставок
     public $currency = '$';

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameConfig version="2.0.0.10-en" servicePktInfo="version='5'">
+	<Settings>
+		<NumCountUp enabled="true" increment="3" delay="5" />
+		<Delays>
+			<!-- Gamble Delays -->
+			<Delay id="beforeLeavingGamble" value = "3500" />
+				
+			<!-- Bonus Delays -->
+			<Delay id="idleTimeout" value="7500" />
+			<Delay id="idleTimeoutChamberOfFire" value="15000" />
+			<Delay id="transitionDelay" value="2500" />
+			<Delay id="revealDelay" value="1500" />
+			<Delay id="greetDelay" value="2000" />
+			<Delay id="winAllDelay" value="300" />
+			<Delay id="chamberOfFireMessage" value="3000" />
+
+			<!-- Game Delays -->
+			<Delay id="bonusTriggerDelay" value="3500"/>
+			<Delay id="winSummaryIntervalTime" value="2000"/>
+			<Delay id="flashInterval" value="200"/>
+			<Delay id="reelBreath" value="150"/>
+			<Delay id="stopReelDelay" value="500"/>						
+			<Delay id="stopReelAnticipationDelay" value="1500"/>
+			<Delay id="showCardBackDelay" value="1500" />
+			<Delay id="coinDropDelay" value="500"/>
+			<Delay id="autoPlayNoWin" value="800"/>
+			<Delay id="autoPlayWin" value="5500"/>
+			<Delay id="supaModeReelSpeed" value="70"/>
+			<Delay id="minSpinTime" value="1300"/>
+			<Delay id="playActivationSound" value="100"/>
+			<Delay id="beforeStartingSupaMode" value="800"/>
+			<Delay id="beforeDisplayingFSstartScreen" value="2500"/>
+			<Delay id="beforeDisplayingSMstartScreen" value="500"/>		
+			<Delay id="betweenFreeSpinsNoWin" value="1200"/>
+			<Delay id="freeSpinPings" value="240000"/>
+			<Delay id="btwDissolveStarts" value="5"/>			
+			<Delay id="toDropOnePosition" value="600"/>
+			<Delay id="afterReelSlidesDone" value="800"/>
+			<Delay id="beforeDisplayingFSsummaryScreen" value="800"/>
+			<Delay id="insufficientCreditsDisplayDelay" value="1500"/>
+			<Delay id="afterFSmultiplierFlash" value="800"/>
+			<Delay id="reelAttractInterval" value="120"/>
+			<Delay id="reelAttractCycles" value="8"/>
+			<Delay id="beforeShowingFreeGameSummary" value="2000" />
+			<Delay id="fadeOutBigBox" value="500" />
+			<Delay id="fadeFrameIn" value="20" />
+		</Delays> 
+		<Language>
+			<Strings>	
+				<string resID="_3859" value="CLICK SPIN TO PLAY" />
+				<string resID="_3854" value="PAYLINE {0} - {1} COINS" />
+				<string resID="_10299" value="YOU WIN {0} COINS" />
+				<string resID="_10299a" value="YOU WIN {0} CREDITS" />
+				<string resID="_12325" value="FREE SPIN FEATURE TRIGGERED" />
+				<string resID="_11198" value="CLICK ANYWHERE ON SCREEN TO SKIP WIN COUNT UP" />
+				<string resID="_12563" value="YOU WIN A {0}x MULTIPLIER" />
+				<string resID="_12311" value="MAXIMUM MULTIPLIER REACHED" />
+				<string resID="_5156" value="BONUS FEATURE ACTIVATED" />
+				<string resID="_12562" value="SELECT A LOCATION" />
+				<string resID="_5154" value="SELECT AN OBJECT" />
+				<string resID="goodLuck" value ="GOOD LUCK"/>
+				<string resID="_8764" value ="GAMBLE YOUR WIN OR CLICK SPIN TO PLAY" />
+				<!-- ?? -->
+				<string resID="_a" value="TOTAL FEATURE WIN {0} COINS" />				
+				<string resID="_aa" value="TOTAL FEATURE WIN {0} CREDITS" />				
+				<string resID="_b" value="LINE {0} PAYS {1} COINS" />
+				<string resID="_bb" value="LINE {0} PAYS {1} CREDITS" />
+				<string resID="_c" value="FREE SPIN FEATURE ACTIVATED" />
+				<string resID="_d" value="YOU WIN {0} FREE SPINS AT A MULTIPLIER OF {1}X" />
+				<string resID="_e" value="CONGRATULATIONS – YOU WIN {0} COINS" />
+				<string resID="_f" value="UNDERWORLD BONUS WINS {0} COINS" />
+				<string resID="_ff" value="UNDERWORLD BONUS WINS {0} CREDITS" />
+				<string resID="_g" value="{0}/{1}" />
+				<string resID="_h" value="SCATTER WIN PAYS {0} COINS" />
+				<string resID="_hh" value="SCATTER WIN PAYS {0} CREDITS" />
+				<string resID="_i" value="GAME STOPPED DUE TO AUTOPLAY SETTINGS" />
+				<string resID="_j" value="SUPER MODE FEATURE TRIGGERED" />
+				<string resID="_k" value="CONTINUING FREE SPINS" />
+			</Strings>
+		</Language>
+		<Frame balanceDisplayMode="1" updateWinTextBoxForEachWinline="false" enableOptionsButton="false" >			
+			<BetInfoFormat>
+				<Property name="font" value="Arial" type="string" />
+				<Property name="align" value="center" type="string" />
+				<Property name="size" value="13" type="number" />
+				<Property name="color" value="0xFFFFFF" type="number" />				
+				<Property name="bold" value="true" type="boolean" />				
+			</BetInfoFormat>
+		</Frame>
+		<!--  game stuff-->
+		<PayTable highlightPaytable="true" />
+		<Spin showLinesForBetMax="true" reelStop="reelStop" 
+				speed="-70" breathe="20,15,10,5,4,3,2,1" bounce="30,30,30" 
+				spinblurx="0" spinblury="15"
+				breatheblurx="0" breatheblury="5" />
+		<Sets>
+			<Set type="N">
+				<SRSA sequence="g97f2a9f296fm89fdam96fs97fn87fean99f897fl86fn99fa97f897feao99fn89f0a8f297fn86ft98fa97fg97fl96fdap98fo9n97fm97fd98f699fdap98ff98f0a8f497fl86fq97fc96fg98fk98fdam99f298fca54" />
+				<SRSA sequence= 
+"s8sfg8tf0a6arfaarfn8rf29rfg8sf1a6asfr8rffasf49sf1a6aqf6arf19tfm8sfgasf59rfo8qf6a4asfiasf09qffarf0a7arf9atfn8rf49qfj8tf0a5arfr8rfdarf29sf3a7arf5atf19qfm8qfjatf39rfq8qf3a04" />
+				<SRSA sequence=
+"g12830s0082238h128c13820t008g10822389128g1382138000108g0280218b138113881282108s0s03820s028r0280238k038d118301128r00832389108e108311820s018j0283228b1280138811821282091" />
+				<SRSA sequence=
+"b2b5k3c5l2h2a542b5j3a5e2c514d5g2h2b5t3d554b5i3a5p3b5c2a5m2g2c5a2c5m3c544d5l2j2d504a572c5j3c564b5n2i2c5t3d5j2a5p3b544a5r3c552d5n2g2c582d5j3d5j2a504c5e2d5r3c5b2a5k2g2a542b5k3c5c2c524d5o3c5m232" />
+				<SRSA sequence=
+"6dcdkc1emctdmccdcdmc6encgdncfelctdlc6dddkckdmc8ekcmdkcfemctdmc5emcbdkcaelcpdlc0ekcidnc9dcdncfekcpdmc5ekcidkc0enchdnc9dcdmcndnc8elcddlc5ekcjdnc0enctdncaelceenc8dc2" />
+			</Set>
+			<Set type="F">
+				<SRSA sequence=
+"2e8cgdbc4eacoeacqcpd9cad9cpebcpcodbc9e8coe9cpd8crd8c8ebcocnd8coe8cgd8c7e8coe9cdd8ctd8c3ebcld8cqcod9cidnd9codbcqdbc8ebcpcpdbc2e8cedbc6e8cpebcdd9csdac1eacidacqcod8c6ebcocf2" />
+				<SRSA sequence=
+"bfe90ff9fgigf9mgf93fg9gfh91ff9egggf97ff9rgg9ffg9egigh9hgg9bff94fg90hf9hfe98fe9kgjgh90hh9cfg9qgf9dgjgf9ngg95fg9fff9seg9cghgg99fg9rgg9hff9dghgg9jge9cfh93fg90hg9gfg97fe9ega3" />
+				<SRSA sequence=
+"l5t3e445q346t3l5s3p5s3d435q3j5r376t3d5r3l5r3h5t3c445s3t4s376t3o5s355q3a5q3h5s38555r3c425r375r376q3o4s3o5q3f425q395r376r3c5q3l5q3e5t3e435r3s4r366s3p5q325t3d5s3h5s3d420" />
+				<SRSA sequence=
+"62h5e3f5o2e2h582g5e3e5g2f554g5i2e2g5n3g534h5f3g5r3f5h2g5q2f2f562e5s3h504f5o2f2e554f5b2f5g3h524e5o2e2g5m3e5e2e5r3e514h5o3g5a2h5o2d2g562g5g3g5c2h564f5i2h5n3f542e5p2c2e5b2f5e3g5i2e574f5s3f5p222" />
+				<SRSA sequence=
+"i53613a403c403t52603k403s503s4s2d4t2j53613b603j40376s2t4s2c403m4133613j40366t29403a603k51613t40366t2n4s286s28403r5s2k516s25613j4t23613l4039613b403e413j413s4s2i590" />
+			</Set>
+		</Sets>
+		<BigWinAnimations>
+			<Coins quantity="10" multiplier="275" />
+			<Coins quantity="9" multiplier="300" />
+			<Coins quantity="8" multiplier="325" />
+			<Coins quantity="7" multiplier="350" />
+			<Coins quantity="6" multiplier="375" />
+			<Coins quantity="5" multiplier="400" />
+			<Coins quantity="4" multiplier="425" />
+			<Coins quantity="3" multiplier="450" />
+			<Coins quantity="2" multiplier="475" />
+			<Coins quantity="1" multiplier="500" />
+		</BigWinAnimations>
+		<Gamble size="1" />
+		<FreeSpins  showFreeSpinSummary="true"  showFreeSpinStartScreen="true" reelStop="freeSpinReelStop" />
+		<AutoPlay continueAutoPlayAfterBonusFeature="false" checkStopConditionForSpinX="false" maximumSpinsAllowed="9999"  maximumWinAmount="9999.00"/>				
+		<SymbolAnimations continuous="0,1,2,3,4,5,11,12" standard="6,7,8,9,10" wild="" />
+		<Triggers enabled="True" ascendingSounds="True" searchKey="0" repeatCnt="1">
+			<Control symbol="11" rule="0" adjacency="False" minimum="3" rank="0" reelStopSound="SND_Symbol12_StopReel" />
+			<Control symbol="12" rule="0" adjacency="False" minimum="3" rank="0" reelStopSound="SND_Symbol12_StopReel" />
+		</Triggers>
+		<WinSounds topWinLimit="5000">
+			<Sound  name="SND_WinHigh1" winID="27,28,29,30"/>
+			<Sound  name="SND_WinHigh2" winID="23,24,25,26"/>
+			<Sound  name="win" winID="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22" />
+		</WinSounds>
+		<ButtonSets>
+				<ButtonSet id="ALL" list="GAMBLEBACKTOGAME,BACKTOGAME,STARTFREESPINS,CONTINUEFREESPINS,REGULARLINES,REGULARCOINS,REGULARBETMAX,REGULARSPIN,REGULARGAMBLE,REGULARCOLLECT,EXPERTCOINS,EXPERTLINES,EXPERTBETMAX,EXPERTSPIN,EXPERTGAMBLE,EXPERTCOLLECT,AUTOPLAY,SPIN5X,SPIN10X,LINES_INC,LINES_DEC,COINS_INC,COINS_DEC,REGULAR_FREEGAMESPIN,EXPERT_FREEGAMESPIN,REGULAR_USELATER,EXPERT_USELATER,STOP,COLLECT" />
+				<ButtonSet id="REGULAR" list="REGULARSPIN,REGULARLINES,REGULARCOINS,REGULARBETMAX" />				
+				<ButtonSet id="EXPERT" list="EXPERTSPIN,EXPERTBETMAX,EXPERTCOINS,EXPERTLINES,AUTOPLAY,SPIN5X,SPIN10X,LINES_DEC,LINES_INC,COINS_INC,COINS_DEC" />
+				<ButtonSet id="FGREGULAR" list="REGULAR_FREEGAMESPIN,REGULAR_USELATER,REGULARLINES,REGULARCOINS" />
+				<ButtonSet id="FGEXPERT" list="EXPERT_FREEGAMESPIN,EXPERT_USELATER,EXPERTCOINS,EXPERTLINES,AUTOPLAY,SPIN5X,SPIN10X,LINES_DEC,LINES_INC,COINS_INC,COINS_DEC" />			
+				<!--ButtonSet id="BACKTOGAME" list="BACKTOGAME" />
+				<ButtonSet id="STARTFREESPINS" list="STARTFREESPINS" />
+				<ButtonSet id="CONTINUEFREESPINS" list="CONTINUEFREESPINS" /-->
+		</ButtonSets>
+
+		<LocalDialogs>
+			<Dialog id="AutoPlay" text="AUTOPLAY_TITLE">
+				<Layout>
+					<Table rows="1" cols="1" align="center">
+						<TR>
+							<TD id="static1" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="2">
+						<TR>
+							<TD id="static2" />
+							<TD id="numSpins_CB" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="Sep1" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1" align="center">
+						<TR>
+							<TD id="static3" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="stopSettings_RB1" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="2">
+						<TR>
+							<TD id="stopSettings_RB2" />
+							<TD id="winExceedsOrEquals_CB" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="Sep2" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1" align="center">
+						<TR>
+							<TD id="static4" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="3">
+						<TR>
+							<TD id="SAVEANDCLOSE" />
+							<TD id="START" />
+							<TD id="CANCEL" />
+						</TR>
+					</Table>
+				</Layout>
+				<Controls>
+					<Ctrl id="Sep1" type="separator" style="horizontal"/>
+					<Ctrl id="Sep2" type="separator" style="horizontal"/>
+					<Ctrl id="static1" type="static" text="AUTOPLAY_TEXT1" lineformat="single" />
+					<Ctrl id="static2" type="static" text="AUTOPLAY_TEXT2" lineformat="single" />
+					<Ctrl id="numSpins_CB" type="ComboBox" values="5,10,15,25,100,250,500" displayValues="5,10,15,25,100,250,500"
+						defaultValue="3" linkageName="ComboBox" editable="true" tabindex="1" />
+					<Ctrl id="static3" type="static" text="AUTOPLAY_TEXT3" lineformat="single" />
+					<Ctrl id="stopSettings_RB1" type="radiobox" groupname="stopSettings" text="AUTOPLAY_TEXT4" defstate="true"
+						tabindex="2" />
+					<Ctrl id="stopSettings_RB2" type="radiobox" groupname="stopSettings" text="AUTOPLAY_TEXT5" defstate="false"
+						tabindex="3" />
+					<Ctrl id="winExceedsOrEquals_CB" type="ComboBox" values="100,500,1000,5000,10000" displayValues="100.00,500.00,1000.00,5000.00,10000.00"
+						defaultValue="1" linkageName="ComboBox" editable="true" tabindex="4" />
+					<Ctrl id="static4" type="static" text="AUTOPLAY_TEXT6" lineformat="single" />
+					<Ctrl id="SAVEANDCLOSE" type="button" ButtonText="SAVECLOSE_BTN" ShortCut="ENTER"
+						tabindex="5" />
+					<Ctrl id="START" type="button" ButtonText="START_BTN"  ShortCut="ENTER"
+						tabindex="6" />
+					<Ctrl id="CANCEL" type="button" ButtonText="CANCEL_BTN"  ShortCut="ESCAPE"
+						tabindex="7" />
+				</Controls>
+			</Dialog>
+			<Dialog id="Options" text="Options">
+				<Layout>
+					<Table rows="1" cols="1" align="center">
+						<TR>
+							<TD id="static_gamesettings" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="quickSpins_chkbox" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="Sep1" />
+						</TR>
+					</Table>					
+					<Table rows="1" cols="1" align="center">
+						<TR>
+							<TD id="static_balance" />
+						</TR>
+					</Table>
+					<Table rows="1" cols="2">
+						<TR>
+							<TD id="coindisplay_radbox" />
+							<TD id="credsdisplay_radbox" />
+						</TR>
+					</Table>						
+					<Table rows="1" cols="1">
+						<TR>
+							<TD id="Sep2" />
+						</TR>
+					</Table>
+					
+					<Table rows="1" cols="3">
+						<TR>
+							<TD id="blank" />
+							<TD id="OK" />
+							<TD id="CANCEL" />
+						</TR>
+					</Table>
+				</Layout>
+				<Controls>
+					<Ctrl id="static_gamesettings" type="static" text="Game Settings" lineformat="single" />					
+					<TD id="quickSpins_chkbox" type="checkbox" text="Quick Spin" defstate="false" tabindex="1" />
+					<Ctrl id="Sep1" type="separator" style="horizontal"/>
+					
+					<Ctrl id="static_balance" type="static" text="Balance, Bet and Win Values" lineformat="single" />
+					
+					<TD id="coindisplay_radbox" type="radiobox" groupname="displaySettings" text="Display as Coins" defstate="false" tabindex="2" />
+					<TD id="credsdisplay_radbox" type="radiobox" groupname="displaySettings" text="Display as Credits" defstate="false" tabindex="3" />
+					<Ctrl id="Sep2" type="separator" style="horizontal"/>
+					
+					<Ctrl id="blank" type="static" text=" " lineformat="single" />
+					<Ctrl id="OK" type="button" ButtonText="OK"  ShortCut="ENTER"	tabindex="4" />
+					<Ctrl id="CANCEL" type="button" ButtonText="CANCEL_BTN"  ShortCut="ESCAPE" tabindex="5" />
+				</Controls>
+			</Dialog>				
+		</LocalDialogs>		
+	</Settings>
+</GameConfig>

@@ -1,0 +1,179 @@
+<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R0140-14228534796897</TransactionId>
+        <Stage>BaseGame</Stage>
+        <NextStage>BaseGame</NextStage>
+        <Balance>2965.00</Balance>
+        <GameStatus>Start</GameStatus>
+        <Settled>40</Settled>
+        <Pending>0</Pending>
+        <Payout>5</Payout>
+    </OutcomeDetail>
+    <HighlightOutcome name="BaseGame.Scatter" type="" />
+    <HighlightOutcome name="BaseGame.TransformedReels" type="" />
+    <HighlightOutcome name="BaseGame.Lines" type="">
+        <Highlight name="Line 22" type="">
+            <Cell name="L0C0R1" type="" />
+            <Cell name="L0C1R1" type="" />
+            <Cell name="L0C2R3" type="" />
+        </Highlight>
+    </HighlightOutcome>
+    <TriggerOutcome component="" name="Picker" stage="" />
+    <TriggerOutcome component="" name="MysteryTrigger" stage="" />
+    <AwardCapOutcome name="AwardCap">
+        <AwardCapExceeded>false</AwardCapExceeded>
+    </AwardCapOutcome>
+    <FreeSpinOutcome name="">
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>0</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>0</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PopulationOutcome name="BaseGame.TransformedReels" stage="BaseGame">
+        <Entry name="Reel0" stripIndex="31">
+            <Cell name="L0C0R0" stripIndex="31">s08</Cell>
+            <Cell name="L0C0R1" stripIndex="32">s08</Cell>
+            <Cell name="L0C0R2" stripIndex="33">s01</Cell>
+            <Cell name="L0C0R3" stripIndex="34">s09</Cell>
+            <Cell name="L0C0R4" stripIndex="35">s09</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="56">
+            <Cell name="L0C1R0" stripIndex="56">s04</Cell>
+            <Cell name="L0C1R1" stripIndex="57">s08</Cell>
+            <Cell name="L0C1R2" stripIndex="58">s05</Cell>
+            <Cell name="L0C1R3" stripIndex="59">s10</Cell>
+            <Cell name="L0C1R4" stripIndex="0">s10</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="106">
+            <Cell name="L0C2R0" stripIndex="106">s03</Cell>
+            <Cell name="L0C2R1" stripIndex="107">s07</Cell>
+            <Cell name="L0C2R2" stripIndex="108">s03</Cell>
+            <Cell name="L0C2R3" stripIndex="109">s08</Cell>
+            <Cell name="L0C2R4" stripIndex="110">s01</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="36">
+            <Cell name="L0C3R0" stripIndex="36">s05</Cell>
+            <Cell name="L0C3R1" stripIndex="37">s03</Cell>
+            <Cell name="L0C3R2" stripIndex="38">s07</Cell>
+            <Cell name="L0C3R3" stripIndex="39">s10</Cell>
+            <Cell name="L0C3R4" stripIndex="40">b01</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="3">
+            <Cell name="L0C4R0" stripIndex="3">s07</Cell>
+            <Cell name="L0C4R1" stripIndex="4">s01</Cell>
+            <Cell name="L0C4R2" stripIndex="5">s08</Cell>
+            <Cell name="L0C4R3" stripIndex="6">s11</Cell>
+            <Cell name="L0C4R4" stripIndex="7">s04</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+        <Entry name="Reel0" stripIndex="31">
+            <Cell name="L0C0R0" stripIndex="31">s08</Cell>
+            <Cell name="L0C0R1" stripIndex="32">s08</Cell>
+            <Cell name="L0C0R2" stripIndex="33">s01</Cell>
+            <Cell name="L0C0R3" stripIndex="34">s09</Cell>
+            <Cell name="L0C0R4" stripIndex="35">s09</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="56">
+            <Cell name="L0C1R0" stripIndex="56">s04</Cell>
+            <Cell name="L0C1R1" stripIndex="57">s08</Cell>
+            <Cell name="L0C1R2" stripIndex="58">s05</Cell>
+            <Cell name="L0C1R3" stripIndex="59">s10</Cell>
+            <Cell name="L0C1R4" stripIndex="0">s10</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="106">
+            <Cell name="L0C2R0" stripIndex="106">s03</Cell>
+            <Cell name="L0C2R1" stripIndex="107">s07</Cell>
+            <Cell name="L0C2R2" stripIndex="108">s03</Cell>
+            <Cell name="L0C2R3" stripIndex="109">s08</Cell>
+            <Cell name="L0C2R4" stripIndex="110">s01</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="36">
+            <Cell name="L0C3R0" stripIndex="36">s05</Cell>
+            <Cell name="L0C3R1" stripIndex="37">s03</Cell>
+            <Cell name="L0C3R2" stripIndex="38">s07</Cell>
+            <Cell name="L0C3R3" stripIndex="39">s10</Cell>
+            <Cell name="L0C3R4" stripIndex="40">b01</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="3">
+            <Cell name="L0C4R0" stripIndex="3">s07</Cell>
+            <Cell name="L0C4R1" stripIndex="4">s01</Cell>
+            <Cell name="L0C4R2" stripIndex="5">s08</Cell>
+            <Cell name="L0C4R3" stripIndex="6">s11</Cell>
+            <Cell name="L0C4R4" stripIndex="7">s04</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PopulationOutcome name="BaseGame.MysteryFeature" stage="BaseGame">
+        <Entry name="MysteryFeature" stripIndex="0">
+            <Cell name="L0C5R0" stripIndex="0">inactive</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+        <Entry name="Reel0" stripIndex="2">
+            <Cell name="L0C0R0" stripIndex="0">w01</Cell>
+            <Cell name="L0C0R1" stripIndex="1">w01</Cell>
+            <Cell name="L0C0R2" stripIndex="2">w01</Cell>
+            <Cell name="L0C0R3" stripIndex="3">w01</Cell>
+            <Cell name="L0C0R4" stripIndex="4">w01</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="6">
+            <Cell name="L0C1R0" stripIndex="4">s11</Cell>
+            <Cell name="L0C1R1" stripIndex="5">s11</Cell>
+            <Cell name="L0C1R2" stripIndex="6">s01</Cell>
+            <Cell name="L0C1R3" stripIndex="7">s08</Cell>
+            <Cell name="L0C1R4" stripIndex="8">s03</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="20">
+            <Cell name="L0C2R0" stripIndex="18">s03</Cell>
+            <Cell name="L0C2R1" stripIndex="19">s07</Cell>
+            <Cell name="L0C2R2" stripIndex="20">s06</Cell>
+            <Cell name="L0C2R3" stripIndex="21">b01</Cell>
+            <Cell name="L0C2R4" stripIndex="22">s09</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="6">
+            <Cell name="L0C3R0" stripIndex="4">s11</Cell>
+            <Cell name="L0C3R1" stripIndex="5">s05</Cell>
+            <Cell name="L0C3R2" stripIndex="6">s09</Cell>
+            <Cell name="L0C3R3" stripIndex="7">s10</Cell>
+            <Cell name="L0C3R4" stripIndex="8">s01</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="2">
+            <Cell name="L0C4R0" stripIndex="0">w01</Cell>
+            <Cell name="L0C4R1" stripIndex="1">w01</Cell>
+            <Cell name="L0C4R2" stripIndex="2">w01</Cell>
+            <Cell name="L0C4R3" stripIndex="3">w01</Cell>
+            <Cell name="L0C4R4" stripIndex="4">w01</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>0</PicksRemaining>
+        <PickCount>0</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
+    <PrizeOutcome multiplier="1" name="BaseGame.Lines" pay="5" stage="" totalPay="5" type="Pattern">
+        <Prize betMultiplier="1" multiplier="1" name="Line 22" pay="5" payName="3 s08" symbolCount="3" totalPay="5" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="5" stage="" totalPay="5" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="5" payName="" symbolCount="0" totalPay="5" ways="0" />
+    </PrizeOutcome>
+    <TransactionId>A2210-14264043297364</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>1</BetPerPattern>
+        <PatternsBet>40</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="2965.00">
+        <Balance name="FREE">2965.00</Balance>
+    </Balances>
+</GameLogicResponse>

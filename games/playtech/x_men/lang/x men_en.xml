@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">
+    <info  id="en" name="English" brand="Casino Euro" product="X-Men" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $"/>
+    <!-- Start generic static text -->		
+    <multitext id="1" qa="true" text="Connecting to server…"/>
+    <multitext id="2" qa="true" text="Connection failed"/>
+    <multitext id="3" qa="true" text="Loading"/>
+    <multitext id="4" qa="true" text="Loading complete"/>
+    <multitext id="5" qa="true" text="Help"/>
+    <multitext id="6" qa="true" text="Close"/>
+    <multitext id="7" qa="true" text="Balance"/>
+    <multitext id="8" qa="true" text="Stake"/>
+    <multitext id="9" qa="true" text="Odds"/> 
+    <multitext id="10" qa="true" text="Win"/>
+    <multitext id="11" qa="true" text="To Win"/>
+    <multitext id="12" qa="true" text="OK"/>
+    <multitext id="13" qa="true" text="Prize Table" />
+    <multitext id="14" qa="true" text="Play" />
+    <multitext id="15" qa="true" text="Go" />
+    <multitext id="16" qa="true" text="BET"/>   
+    <multitext id="17" qa="true" text="Submit"/>
+    <multitext id="18" qa="true" text="Submit Bet"/>
+    <multitext id="19" qa="true" text="Submit All Bets"/> 
+    <multitext id="20" qa="true" text="Cashout" />    
+    <multitext id="21" qa="true" text="Return" />    
+    <multitext id="22" qa="true" text="Bank" />    
+    <multitext id="23" qa="true" text="Bonus" />    
+    <multitext id="24" qa="true" text="Total Stake" />    
+    <multitext id="25" qa="true" text="Max. Return" />    
+    <multitext id="26" qa="true" text="Max. Win" />    
+    <multitext id="27" qa="true" text="Jackpot" />    
+    <multitext id="28" qa="true" text="Play Again"/>
+    <multitext id="29" qa="true" text="Please try again" />    
+    <multitext id="30" qa="true" text="Play for Fun"/>
+    <multitext id="31" qa="true" text="Play for Real"/>
+    <multitext id="32" qa="true" text="Game Over"/>
+    <multitext id="33" qa="true" text="Cancel"/>
+    <multitext id="34" qa="true" text="Clear All"/>
+    <multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>
+    <multitext id="36" qa="true" text="Get flash player"/>        
+	<multitext id="37" qa="true" text="Jackpots"/>
+	<multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	
+    <!-- End generic static text -->
+    
+	
+    <!-- Start game specific text [ Begin @id=100 ] -->
+	
+		<!-- Game Console -->
+		
+		<multitext id="101" qa="true" text="INFO"/>
+		<multitext id="102" qa="true" text="-"/> 
+		<multitext id="103" qa="true" text="+"/> 
+		<multitext id="104" qa="true" text="AUTO START"/>
+		<multitext id="105" qa="true" text="LINES"/>
+		<multitext id="106" qa="true" text="BET PER"/>
+		<multitext id="107" qa="true" text="LINE"/>
+		<multitext id="108" qa="true" text="BET &#10;MAX"/>
+		<multitext id="109" qa="true" text="SPIN"/>
+		<multitext id="110" qa="true" text="STOP"/>
+		<multitext id="111" qa="true" text="CLICK TO START"/>
+		
+		<multitext id="112" qa="true" text="SPINS"/>
+		<multitext id="113" qa="true" text="LINE BET"/>
+		<multitext id="114" qa="true" text="TOTAL BET"/>
+		<multitext id="115" qa="true" text="WIN"/>
+				
+
+		
+		
+		<!-- PROMO MESSAGES  -->
+		
+		<multitext id="121" qa="true" text="5X"/>
+		<multitext id="122" qa="true" text="PAYS"/>
+		<multitext id="123" qa="true" text="1000X"/>
+		<multitext id="124" qa="true" text="LINE BET!"/>
+		<multitext id="125" qa="true" text="3X"/>
+		<multitext id="126" qa="true" text="WINS"/>
+		<multitext id="127" qa="true" text="FREE GAMES!"/>
+		<multitext id="128" qa="true" text="HEROES"/>
+		<multitext id="129" qa="true" text="VS."/>
+		<multitext id="130" qa="true" text="VILLAINS"/>
+		<multitext id="131" qa="true" text="IN FREE GAMES!"/>
+		<multitext id="132" qa="true" text="5"/>
+		<multitext id="133" qa="true" text="OF A KIND"/>
+		<multitext id="134" qa="true" text="X-FEATURE"/>
+		<multitext id="135" qa="true" text="TOTAL BET!"/>
+		
+		
+				
+		<!-- Information -->
+		<multitext id="138" qa="true" text="BACK"/>
+		<multitext id="139" qa="true" text="SHOW PAYLINES"/>
+		<multitext id="140" qa="true" text="HIDE PAYLINES"/>
+		
+
+		
+		
+		<!-- Pay table -->
+			
+		<multitext id="141" qa="true" text="EXTRA WILD &#10;IN FREE GAMES &#10;VILLAINS MODE"/>
+		<multitext id="142" qa="true" text="EXTRA WILD &#10;IN FREE GAMES &#10;HEROES MODE"/>
+		<multitext id="143" qa="true" text="SUBSTITUTES FOR ALL"/>
+		<multitext id="144" qa="true" text="SYMBOLS EXCEPT"/>
+		<multitext id="145" qa="true" text="HEROES"/>
+		<multitext id="146" qa="true" text="UNLIMITED"/>
+		<multitext id="147" qa="true" text="FREE GAMES"/>
+		<multitext id="148" qa="true" text="VS."/>
+		<multitext id="149" qa="true" text="VILLAINS"/>
+		<multitext id="150" qa="true" text="8 FREE GAMES"/>
+		<multitext id="151" qa="true" text="SCATTER"/>
+		<multitext id="152" qa="true" text="X-FEATURE"/>
+		<multitext id="153" qa="true" text="WINS"/>
+		<multitext id="154" qa="true" text="5X"/>
+		<multitext id="155" qa="true" text="TOTAL BET"/>
+		<multitext id="156" qa="true" text="OF A KIND"/>
+		
+		
+		
+		<!-- PAY LINE -->
+		
+		<multitext id="161" qa="true" text="ONLY HIGHEST WIN PAYS PER LINE"/>
+		<multitext id="162" qa="true" text="WIN COMBINATIONS PAY LEFT TO RIGHT ONLY EXCEPT"/>
+		<multitext id="163" qa="true" text="WHICH PAYS ANY"/>
+		<multitext id="164" qa="true" text="PAYLINE WINS ARE MULTIPLIED BY THE LINE BET."/>
+		<multitext id="165" qa="true" text="MALFUNCTION VOIDS ALL PLAYS AND PAYS"/>
+
+		
+		<!-- INFO X-MEN  -->
+		
+		<multitext id="171" qa="true" text="THE X-FEATURE"/>
+		<multitext id="172" qa="true" text="THE FEATURE IS TRIGGERED WHEN ANY OF THE HERO"/>
+		<multitext id="173" qa="true" text="SYMBOLS, IN ANY COMBINATION, OCCUPY THE"/>
+		<multitext id="174" qa="true" text="5"/>
+		<multitext id="175" qa="true" text="POSITIONS"/>
+		<multitext id="176" qa="true" text="ON  THE  REELS"/>
+		<multitext id="177" qa="true" text="2, 3"/>
+		<multitext id="178" qa="true" text="AND"/>
+		<multitext id="179" qa="true" text="4"/>
+		<multitext id="180" qa="true" text="THAT FORM AN"/>
+		<multitext id="181" qa="true" text="SHAPE"/>
+		<multitext id="182" qa="true" text="THE HERO SYMBOLS ARE:"/>
+		<multitext id="183" qa="true" text="THE FEATURE IMMEDIATELY PAYS A PRIZE OF "/>
+		<multitext id="184" qa="true" text="5X"/>
+		<multitext id="185" qa="true" text="TOTAL BET"/>
+		<multitext id="186" qa="true" text=","/>
+		<multitext id="187" qa="true" text="WHICH IS ADDED TO THE LINE AND SCATTER WINS"/>
+		<multitext id="188" qa="true" text="THE FEATURE IS AVAILABLE IN MAIN GAME ONLY"/>
+		
+		
+		<!-- INFO FREE GAMES  -->
+		
+		<multitext id="191" qa="true" text="FREE GAMES"/>
+		<multitext id="192" qa="true" text="OR MORE"/>
+		<multitext id="193" qa="true" text="UNLIMITED &#10;FREE GAMES IN"/>
+		<multitext id="194" qa="true" text="HEROES MODE"/>
+		<multitext id="195" qa="true" text="8 &#10;FREE GAMES IN"/>
+		<multitext id="196" qa="true" text="VILLAINS MODE"/>
+		<multitext id="197" qa="true" text="TRIGGERS"/>
+		<multitext id="198" qa="true" text="VILLAINS"/>
+		<multitext id="199" qa="true" text="MODE"/>
+		<multitext id="200" qa="true" text="ANYWHERE ON REEL 3"/>
+		<multitext id="201" qa="true" text="HEROES"/>
+		<multitext id="202" qa="true" text="HEROES:"/>
+		<multitext id="203" qa="true" text="FREE GAMES BEGIN IN HEROES MODE &#10;X-FEATURE NOT AVAILABLE IN FREE GAMES &#10;SCATTERS DO NOT APPEAR IN FREE GAMES &#10;FREE GAMES CAN BE PLAYED INFINITELY"/>
+		<multitext id="204" qa="true" text="VILLAINS:"/>
+		
+
+
+		<!--  FREE GAME HEROES MODE -->
+		<multitext id="209" qa="true" text="FREE GAMES"/>
+		<multitext id="210" qa="true" text="HEROES MODE"/>
+		<multitext id="211" qa="true" text="UNLIMITED NUMBER OF FREE GAMES IN"/>
+		<multitext id="212" qa="true" text="HEROES MODE"/>
+		<multitext id="213" qa="true" text="ONLY HEROES,"/>
+		<multitext id="214" qa="true" text=", AND"/>
+		<multitext id="215" qa="true" text="APPEAR"/>
+		<multitext id="216" qa="true" text="ON THE REELS"/>
+		<multitext id="217" qa="true" text="IS"/>
+		<multitext id="218" qa="true" text="EXTRA WILD"/>
+		<multitext id="219" qa="true" text="ANYWHERE ON"/>
+		<multitext id="220" qa="true" text="REEL"/>
+		<multitext id="221" qa="true" text="3"/>
+		<multitext id="222" qa="true" text="TRIGGERS VILLAINS MODE"/>
+		<multitext id="223" qa="true" text="HEROES MODE CAN BE PLAYED INFINITELY"/>
+		
+		
+		<!--  FREE GAME VILLAINS MODE -->
+		<multitext id="227" qa="true" text="FREE GAMES"/>
+		<multitext id="228" qa="true" text="VILLAINS MODE"/>
+		<multitext id="229" qa="true" text="8 FREE GAMES IN VILLAINS MODE"/>
+		<multitext id="230" qa="true" text="ONLY VILLAINS,"/>
+		<multitext id="231" qa="true" text=", AND"/>
+		<multitext id="232" qa="true" text="APPEAR"/>
+		<multitext id="233" qa="true" text="ON THE REELS"/>
+		<multitext id="234" qa="true" text="IS"/>
+		<multitext id="235" qa="true" text="EXTRA WILD"/>
+		<multitext id="236" qa="true" text="ANYWHERE ON"/>
+		<multitext id="237" qa="true" text="REEL"/>
+		<multitext id="238" qa="true" text="3"/>
+		<multitext id="239" qa="true" text="TRIGGERS HEROES MODE"/>
+		
+		
+		<!--  FEATURE WIN POPUP -->
+		
+		<multitext id="251" qa="true" text="YOU WIN"/>
+		<multitext id="252" qa="true" text="UNLIMITED FREE GAMES IN"/>
+		<multitext id="253" qa="true" text="HEROES MODE"/>
+		<multitext id="254" qa="true" text="VS."/>
+		<multitext id="255" qa="true" text="8 FREE GAMES IN"/>
+		<multitext id="256" qa="true" text="VILLAINS MODE"/>
+		<multitext id="257" qa="true" text="CONTINUE"/>
+		<multitext id="258" qa="true" text="TOTAL FREE GAMES PLAYED:"/>
+		<multitext id="259" qa="true" text="GAME WIN"/>
+		<multitext id="260" qa="true" text="FEATURE WIN"/>
+		<multitext id="261" qa="true" text="TOTAL WIN"/>
+		
+		
+		
+		<!--  FREE GAME SCREEN -->
+		
+		<multitext id="265" qa="true" text="UNLIMITED &#10;SPINS"/>
+		<multitext id="266" qa="true" text="FREE GAMES"/>
+		<multitext id="267" qa="true" text="HEROES MODE"/>	
+		<multitext id="268" qa="true" text="FREE GAMES WIN"/>
+		<multitext id="269" qa="true" text="SPINS LEFT"/>
+		<multitext id="270" qa="true" text="FREE GAMES"/>
+		<multitext id="271" qa="true" text="VILLAINS MODE"/>		
+		
+
+
+
+
+
+	<!-- Start generic phrases -->	
+	
+    <phrase id="BetUnavailable" qa="true" text="Error"/>
+    <phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>
+    <phrase id="BetterLuckButton" qa="true" text="OK"/>
+    <phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>
+    <phrase id="Congratulations" qa="true" text="Congratulations!"/>
+    <phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>
+    <phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>
+    <phrase id="CongratulationsButton" qa="true" text="OK"/>
+    <phrase id="Connecting" qa="true" text="Connecting to server"/>
+    <phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>
+    <phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>
+    <phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>
+    <phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>
+    <phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>
+    <phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+    <phrase id="Help" qa="true" text="X-MEN&#10;&#10;5-Reel 25-line Slots&#10;&#10;The object of X-MEN is to obtain winning symbol combinations by spinning the reels.&#10;&#10;TO PLAY THE GAME:&#10;&#10;*Line bets are chosen by clicking BET PER LINE. When the maximum amount is reached, clicking the button again resets the line bet. &#10;*Paylines are chosen by clicking LINES. Each click activates a payline. When all paylines are activated, clicking the button again resets it to one active payline. Paylines can also be activated by using the numbered buttons on either side of the reels. Selecting a high payline includes all the lower ones too. For example, selecting payline 6 also activates paylines 1 through 5. Clicking BET MAX activates all paylines and spins the reels.&#10;*TOTAL BET = LINE BET X LINES.&#10;*Clicking SPIN spins the reels with the current selection of lines and line bets. During the reel spins the Spin button changes into STOP. Clicking STOP ends the spin animation and immediately displays the spin result.&#10;*Reels can also be spun using the Auto Start function. Clicking + or - above Auto Start selects the successive number of spins to be enabled. Clicking AUTO START spins the reels. The Auto Start button changes into STOP during the Auto Start mode of reelspin. The Auto Start mode ends when the reels have been spun the number of times determined by the player, or when the player clicks STOP.&#10;*Wins are calculated according to the paytable. Line win = line bet X corresponding multiplier according to the paytable. Scatter win = total bet X corresponding multiplier according to the paytable. The paytable can be accessed via the Info page.&#10;*On a given payline, only the highest payline winning combination pays while simultaneous winnings on different paylines are added up together.&#10;*In case of a winning spin, the Win field displays the accumulating winnings. The win ticker can be stopped by clicking anywhere on the screen. Symbols that make up the winning combinations are also animated. The animations are just visual theme elements and do not change the actual symbol.&#10;*Payline wins and the total win are also displayed on the strip located at the bottom of the reels or the game window.&#10;&#10;INFO PAGE:&#10;*	Clicking Info opens the reference screen describing different game components. Clicking the arrow buttons at the lower right-hand corner of the screen enables navigating between the different info screens.&#10;*	The Paytable screen shows all winning combinations. When opened after a winning spin, the winning symbol combinations (number of symbols and bet multiplier) are highlighted and blink.&#10;*	The X-Feature screen shows the necessary symbol combinations to trigger the X-Feature.&#10;*	The Free Games screen gives an overview of the Heroes and Villains modes in Free Games. For more information on the two modes, enter Heroes Mode page or Villains Mode page&#10;*	The Heroes Mode screen explains the rules of Heroes Mode in Free Games.&#10;*	The Villains Mode screen explains the rules of Villains Mode in Free Games.&#10;*	SHOW PAYLINES can be clicked from the Paytable page to open a screen which illustrates all possible payline combinations. Clicking HIDE PAYLINES closes this screen and returns to the Paytable page.&#10;*	Clicking BACK exits the Info screen and returns to the game.&#10;&#10;PAYLINES:&#10;*	Active paylines are represented by lines that appear over the reels. Paylines can be activated and their shape displayed by progressively clicking LINES.&#10;*	Only active paylines can register wins.&#10;*	There is a difference between the LINE BET and the TOTAL BET. The line bet shows how much is being bet on a single payline. The TOTAL BET shows how much is being bet in total on the game round. Payouts shown in the paytable are multiplied by the line bet.&#10;The Scatter symbol is an exception to these rules. More information about the Scatter symbol can be found below.&#10;&#10;&#10;ABOUT PAYOUTS:&#10;*	If a symbol has a winning combination on more than one reel, the winnings are added up.&#10;*	Winning combinations must start from the leftmost reel, and the symbols have to be on consecutive reels.&#10;*	If two payline winning combinations occur on the same line, the higher of them is paid out. If more than one active payline has a winning combination, the winnings are added up.&#10;*	Winning combinations must start from the leftmost reel, and the symbols have to be consecutive.&#10;The Scatter symbol is an exception to these rules. More information about the Scatter symbol can be found below.&#10;&#10;THEME SYMBOLS:&#10;The theme symbols are separated into two groups, Heroes and Villains.&#10;Heroes:	 		Villains:	 &#10;Professor X		Magneto&#10;Wolverine		Deathstrike&#10;Nightcrawler		Mystique&#10;Storm			Sabretooth&#10;Cyclops			Juggernaut&#10;WILD SYMBOL:&#10;&#10;The Wild symbol in the game is the WILD symbol. It can stand for any other symbol, except Scatter, to make the best possible winning combination.&#10;Please note: There is also a separate payout for 2 or more Wild symbols on an active payline, as seen in the paytable. This is paid out instead of the regular symbol win, if the win amount from Wild symbols is larger than the win from the regular symbol (by Wild standing in).&#10;&#10;SCATTER SYMBOL:&#10;The Scatter symbol in the game is the X-MEN symbol. Scatter symbols do not have to occur on a particular payline - if there are two or more Scatter symbols in the spin results, an additional win is earned and added to payline winnings. The payout for the Scatter symbols is multiplied by the total bet.&#10;If three or more Scatters appear on the reels simultaneously, regardless of position, Free Games are initiated.&#10;&#10;FREE GAMES:&#10;Three or more Scatter symbols anywhere on the reels, trigger the Free Games.&#10;If the Free Games are triggered, click on Click to Start to reveal the entrance screen to the Free Games. Click Continue to begin Free Games.&#10;Free Games are played in two modes: Heroes Mode and Villains Mode. Free Games begin in Heroes Mode. Heroes Mode is played with an unlimited number of free spins. Villains Mode is played with 8 free spins. In The 8 free spins in Villains Mode all together, only 8 free spins will be played before the Free Games end and the main game resumes.&#10;When a Magneto symbol appears anywhere on reel #3 during Heroes Mode, Heroes Mode stops and Villains Mode begins. &#10;When a Professor X symbol appears anywhere on reel #3 during Villains Mode, Villains Mode stops and Heroes Mode begins. If a Professor X symbol appears anywhere on reel #3 during the last, 8th free spin in Villains mode, then Heroes mode is not triggered. &#10;In Heroes Mode, the only symbols on the reels are the hero symbols, the Wild symbol, and the Magneto symbol. The Magneto symbol counts as an extra Wild symbol and can appear only on reel #3, substituting for all symbols except the Wild symbol. In theory it is possible to have an infinite number of free spins in the Heroes Mode if the Villains Mode is never triggered.&#10;In Villains Mode, the only symbols on the reels are the villain symbols, the Wild symbol, and the Professor X symbol. The Professor X symbol counts as an extra Wild symbol and can appear only on reel #3, substituting for all symbols except the Wild symbol. After every spin, one free spin is subtracted from that count. When the number reaches zero the Free Games end.&#10;More Free Games cannot be retriggered during Free Games.&#10;During the Free Games, the reels are spun automatically using the same number of lines and bets per line as on the spin that won the Free Games. After each spin, the win is displayed in the Win field. The Free Games Win field shows the accumulated winnings from the current Free Games.&#10;After all Free Games have been completed, a result board summarizes the winnings. Game win shows the winnings that were received from the spin that won the free games. Feature win shows the winnings that were received from the free spins. Total win shows the aggregate winnings (Game Win and Feature Win added up).&#10;Clicking CONTINUE will return you to the main game.&#10;&#10;THE X - FEATURE:&#10;The X-Feature is triggered when any of the hero symbols, in whatever combination, occupy the 5 symbol locations on the reels #2, #3 and #4 as specified in the Info page. When the X-Feature is triggered, it immediately adds 5X the total bet to the player’s winnings in addition to all other winnings.&#10;The X-Feature cannot be triggered during Free Games.&#10;&#10;BUTTONS:&#10;INFO		Open the reference screen that describes the different game components.&#10;AUTO START / STOP Spin the reels a number of times in succession. / End the active Auto Start reelspin mode.&#10;+ and - buttons	Increase or decrease the number of successive spins made with Auto Start.&#10;LINES		Activate one more payline.&#10;BET PER LINE	Increases the line bet.&#10;BET MAX	Activate all paylines, and spin the reels.&#10;SPIN / STOP	Spin the reels. / Stop the reelspin animation and immediately display the spin result. In the active Auto Start mode stop the reelspin animation and immediately display the result. Clicking STOP in the active Auto Start mode does not end the Auto Start reelspin mode.&#10;&#10;Note on malfunctions: A malfunction voids all pays and plays.&#10;&#10;This game has a Return to Player of 95.025%."/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>
+    <phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>
+    <phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>
+    <phrase id="InsufficientFundsBody" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>
+    <phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>
+    <phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>
+    <phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>  
+	<phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+	<phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+	<phrase id="loaderStart" qa="true" text="...loading"/>   
+    <phrase id="loader1" qa="true" text="...loading graphics"/>
+    <phrase id="loader2" qa="true" text="...loading interface"/>
+    <phrase id="loader3" qa="true" text="...loading audio engine"/>
+    <phrase id="loader4" qa="true" text="...loading ambience engine"/>
+    <phrase id="loader5" qa="true" text="...loading EdGE components"/>
+    <phrase id="loaderFinish" qa="true" text="...loading complete"/>
+    <phrase id="MaxMultiRoundBody" qa="false" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>
+	<phrase id="MaxSingleRoundBody" qa="false" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>
+	<phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>
+    <phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+    <phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval. "/>
+    <phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>
+    <phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>
+    <phrase id="NANTitle" qa="true" text="Invalid bet"/>
+    <phrase id="Na" qa="true" text="n/a"/>
+    <phrase id="PlayForFun" qa="true" text="Play for Fun"/>
+    <phrase id="PlayForReal" qa="true" text="Play for Real"/>
+    <phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>
+    <phrase id="SelectRealityTitle" qa="true" text="Please select"/>
+    <phrase id="ServerBrowserError" qa="true" text="There has been an error in your browser, please refresh"/>
+    <phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>
+    <phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>
+    <phrase id="ServerError" qa="true" text="Server error"/>
+    <phrase id="ServerErrorTitle" qa="true" text="Error"/>
+	<phrase id="ServerJackpotBalanceBody" qa="false" text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+	<phrase id="ServerJackpotBalanceTitle" qa="false" text="Jackpot Balance"/>
+	<phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>
+    <phrase id="ServerNoFunds" qa="true" text="We have not been able to place your bet. Please check your updated balance."/>
+    <phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>
+    <phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>
+    <phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+    <phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>
+    <phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>
+    <phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>
+    <!-- End generic phrases -->
+    
+	
+    <!-- Start game specific phrases -->
+		<!-- i : Ishir	;	Msg : DisplayMessage	;	T : Title	;	M : Message -->
+		
+		<phrase id="iMsgTOpenGame" qa="true" text="Open Game"/>
+		<phrase id="iMsgMOpenGame" qa="true" text="You have an open game. Click ok to continue. "/>
+		<phrase id="iMsgTInsufficientFunds" qa="true" text="Insufficient balance"/>
+		<phrase id="iMsgMInsufficientFunds" qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET."/>
+		<phrase id="iMsgTAutoplayInsufficientFunds" qa="true" text="Insufficient balance"/>
+        <phrase id="iMsgMAutoplayInsufficientFunds" qa="true" text="NOT ENOUGH BALANCE TO USE AUTOPLAY."/>
+		<phrase id="iMsgTStakeLessThenAllowed" qa="true" text="Invalid Bet"/>
+		<phrase id="iMsgMStakeLessThenAllowed" qa="true" text="Bet Placed Is Less Than Minimum Stake Allowed For This Game."/>
+		<phrase id="iMsgTMoreLessThenAllowed" qa="true" text="Invalid Bet"/>
+		<phrase id="iMsgMStakeMoreThenAllowed" qa="true" text="Bet Placed Is More Than Maximum Stake Allowed For This Game."/>
+		<phrase id="iMsgTMoreLessThenAllowedRound" qa="true" text=""/>
+        <phrase id="iMsgMStakeMoreThenAllowedRound" qa="true" text="The client does not allow bets to be placed that could
+breach the round limit."/>
+		<phrase id="iMsgTNoResponseFromServer" qa="true" text="Server Error"/>
+		<phrase id="iMsgMNoResponseFromServer" qa="true" text="Empty Response XML from server. Click ok to resend request to server."/>
+		<phrase id="iMsgTNoOpenGame" qa="true" text="Invalid Game"/>
+		<phrase id="iMsgMNoOpenGame" qa="true" text="No open game present. Request server to open game."/>
+		<phrase id="iMsgTNoLanguageFailed" qa="true" text="Language Failed"/>
+		<phrase id="iMsgMNoLanguageFailed" qa="true" text="Error loading language file."/>
+		<phrase id="iMsgTAutoplayInvalidCount" qa="true" text="INVALID SPINS"/>
+		<phrase id="iMsgMAutoplayInvalidCount" qa="true" text="PLEASE ENTER THE NUMBER OF SPINS."/>
+		<phrase id="iMsgTAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED"/>
+		<phrase id="iMsgMAutoplaySpinsComplete" qa="true" text="AUTOPLAY STOPPED: |COUNT| SPINS COMPLETED."/>
+		<phrase id="iMsgTFreeGameMaxWinReached" qa="true" text="Maximum winning limit"/>
+		<phrase id="iMsgMFreeGameMaxWinReached" qa="true" text="You have exceeded the maximum possible winning limit for any one bet."/>
+		
+		<!-- i : Ishir	;	Err : Error -->
+		<phrase id="iErrSessionTimeOut" qa="true" text="Network connection failed. Unable to proceed request."/>
+		
+		<!-- i : Ishir	;	GSM : Game Supportive Messages -->
+		<phrase id="iGSMGameInitialize"				qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGamenNoWin"					qa="true" text="CLICK SPIN TO START"/>
+		<phrase id="iGSMGameStarted"				qa="true" text="GOOD LUCK!"/>
+		<phrase id="iGSMTriggerBonus"				qa="true" text="YOU WIN BONUS!"/>
+		<phrase id="iGSMTriggerFreegameSelection"	qa="true" text="%1 SCATTERS WIN %2 AND START FREE GAMES!"/>
+		<phrase id="iGSMSlotgameWinLine"			qa="true" text="LINE %1 WINS %3 "/>
+		<phrase id="iGSMSlotgameWinScatter"			qa="true" text="%2 SCATTERS WIN %3 "/>
+		<phrase id="iGSMSlotgameTotalWin"			qa="true" text="TOTAL WIN: %1" />
+		
+		<phrase id="iGSMXMenFeatureWin"				qa="true" text="YOU WIN X FEATURE" />
+		<phrase id="iGSMSlotgameWinXMenFeature"		qa="true" text="X FEATURE WINS %3" />
+		
+		<phrase id="iGSMBonusCollect"				qa="true" text="COLLECT"/>
+		
+		<phrase id="iGSMBetmaxInsufficientFunds"	qa="true" text="CLICK SPIN TO START"/>
+		
+		<phrase id="iGSMAutostartActive"			qa="true" text="AUTOSTART ACTIVATED"/>
+		<phrase id="iGSMAutostartStopped"			qa="true" text="AUTOSTART STOPPED"/>
+		
+		<phrase id="iGSMFeatureWinBonus"			qa="true" text="YOU WIN BONUS!"/>
+		<phrase id="iGSMFeatureWinFreegame"			qa="true" text="YOU WIN FREE GAMES!"/>
+		<phrase id="iGSMFeatureWinExtraFreegame"	qa="true" text="YOU WIN MORE FREE GAMES!"/>
+		<phrase id="iGSMInsufficientFunds" 			qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		<phrase id="iGSMSpinInsufficientFunds" 		qa="true" text="INSUFFICIENT BALANCE FOR THE REQUESTED BET"/>
+		
+		
+    <!-- End game specific phrases -->
+    
+    <!-- Start generic vector text -->
+    <vector id="Win" qa="true" text="Win!"/>
+    <vector id="Unlucky" qa="true" text="Unlucky"/>
+    <vector id="Jackpot" qa="true" text="Jackpot!"/>
+    <!-- End generic vector text -->
+    
+    <!-- Start  game specific vector text -->
+    <!-- End game specific vector text -->
+</languagepack>

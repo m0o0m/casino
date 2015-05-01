@@ -82,17 +82,22 @@ class Ctrl {
      * Запуск выплат по спинам, ФСам и бонусам
      */
     public function startPay() {
-        foreach($this->spinPays as $p) {
-            game_ctrl($this->slot->bet * 100, $p * 100, 0, 'standart');
+        $fl = fopen('log', 'w+');
+        foreach($this->spinPays as $s) {
+            game_ctrl($this->slot->bet * 100, $s * 100, 0, 'standart');
+            fwrite($fl, 'spin - '.$s.PHP_EOL);
         }
 
-        foreach($this->fsPays as $p) {
-            game_ctrl(0, $p * 100, 0, 'free');
+        foreach($this->fsPays as $f) {
+            game_ctrl(0, $f * 100, 0, 'free');
+            fwrite($fl, 'free - '.$f.PHP_EOL);
         }
 
-        foreach($this->bonusPays as $p) {
-            game_ctrl(0, 0, $p * 100, 'bonus');
+        foreach($this->bonusPays as $b) {
+            game_ctrl(0, 0, $b * 100, 'bonus');
+            fwrite($fl, 'bonus - '.$b.PHP_EOL);
         }
+        fclose($fl);
     }
 
     /**

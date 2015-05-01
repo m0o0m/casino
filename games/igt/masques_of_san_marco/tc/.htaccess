@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play$ /core/WebEngine.php?game=masques_of_san_marco|||igt&action=spin
+RewriteRule clientconfig$ /core/WebEngine.php?game=masques_of_san_marco|||igt&action=config
+RewriteRule initstate$ /core/WebEngine.php?game=masques_of_san_marco|||igt&action=init
+RewriteRule paytable$ /core/WebEngine.php?game=masques_of_san_marco|||igt&action=paytable

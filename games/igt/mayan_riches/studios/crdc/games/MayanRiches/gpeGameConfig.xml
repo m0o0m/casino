@@ -1,0 +1,6 @@
+<gpeConfig>
+<components>
+        <game addToStage="true">[assetPath]/[studio]/games/[game]/bin/Game.swf</game>
+</components>
+</gpeConfig>
+

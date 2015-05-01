@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languagepack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.vstechnology.net/schemas/languagepack.xsd">
+    <info id="en" name="English" brand="Casino Euro" product="Beowulf" cjkh="false" rtl="false" debug="false" version="$Id: vgtemplate_en.xml 26636 2007-12-04 14:49:59Z daram $" signedoff="false"/>
+    <!-- Start generic static text -->
+    <multitext id="1" qa="true" text="Connecting to server..."/>
+    <multitext id="2" qa="true" text="Connection failed"/>
+    <multitext id="3" qa="true" text="Loading"/>
+    <multitext id="4" qa="true" text="Loading complete"/>
+    <multitext id="5" qa="true" text="Help"/>
+    <multitext id="6" qa="true" text="Close"/>
+    <multitext id="7" qa="true" text="Balance"/>
+    <multitext id="8" qa="true" text="Stake"/>
+    <multitext id="9" qa="true" text="Odds"/>
+    <multitext id="10" qa="true" text="Win"/>
+    <multitext id="11" qa="true" text="To Win"/>
+    <multitext id="12" qa="true" text="OK"/>
+    <multitext id="13" qa="true" text="Prize Table"/>
+    <multitext id="14" qa="true" text="Play"/>
+    <multitext id="15" qa="true" text="Go"/>
+    <multitext id="16" qa="true" text="Bet"/>
+    <multitext id="17" qa="true" text="Submit"/>
+    <multitext id="18" qa="true" text="Submit Bet"/>
+    <multitext id="19" qa="true" text="Submit All Bets"/>
+    <multitext id="20" qa="true" text="Cashout"/>
+    <multitext id="21" qa="true" text="Return"/>
+    <multitext id="22" qa="true" text="Bank"/>
+    <multitext id="23" qa="true" text="Bonus"/>
+    <multitext id="24" qa="true" text="Total Stake"/>
+    <multitext id="25" qa="true" text="Max. Return"/>
+    <multitext id="26" qa="true" text="Max. Win"/>
+    <multitext id="27" qa="true" text="Jackpot"/>
+    <multitext id="28" qa="true" text="Play Again"/>
+    <multitext id="29" qa="true" text="Please try again"/>
+    <multitext id="30" qa="true" text="Play for Fun"/>
+    <multitext id="31" qa="true" text="Play for Real"/>
+    <multitext id="32" qa="true" text="Game Over"/>
+    <multitext id="33" qa="true" text="Cancel"/>
+    <multitext id="34" qa="true" text="Clear All"/>
+    <multitext id="35" qa="true" text="To play this game you require the latest version Flash Player. Please click the link below and follow the quick and simple installation instructions."/>
+    <multitext id="36" qa="true" text="Get flash player"/>
+    <multitext id="37" qa="true" text="Jackpots"/>
+    <multitext id="38" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+    <!-- End generic static text -->
+    <!-- Start game specific text [ Begin @id=100 ] -->
+
+    <!-- End game specific text -->
+    <!-- Start generic phrases -->
+    <phrase id="BetUnavailable" qa="true" text="Error"/>
+    <phrase id="BetUnavailableBody" qa="true" text="This bet is not currently available."/>
+    <phrase id="BetterLuckButton" qa="true" text="OK"/>
+    <phrase id="BetterLuckTitle" qa="true" text="Play Again?"/>
+    <phrase id="Congratulations" qa="true" text="Congratulations!"/>
+    <phrase id="CongratulationsBody" qa="true" text="You have won %1!"/>
+    <phrase id="CongratulationsHandBody" qa="true" text="You have won %1 with a %2."/>
+    <phrase id="CongratulationsButton" qa="true" text="OK"/>
+    <phrase id="Connecting" qa="true" text="Connecting to server"/>
+    <phrase id="ErrorRetrievingAccount" qa="true" text="There has been an error retrieving your previous game, please refresh"/>
+    <phrase id="ExceedingMaxWinBody" qa="true" text="You have exceeded the maximum possible winning limit for any one bet. Please change your bet or cashout."/>
+    <phrase id="ExceedingMaxWinTitle" qa="true" text="Maximum winning limit"/>
+    <phrase id="FunRealAnon" qa="true" text="Play for fun. If you would like to Play for Real, please log into or create an account."/>
+    <phrase id="GameInProgressBody" qa="true" text="You are part way through a game. Please click to resume."/>
+    <phrase id="GameInProgressTitle" qa="true" text="Game in progress"/>
+    <phrase id="Help" qa="false" text="Game Rules&#10; &#10;Beowulf&#10; &#10;About the game&#10;Beowulf is a 5 reel, 3 row, 25 bet line video slot. The game features Stacked Wilds,  the random triggered Grendel Attack, and Free Spins with the fight between Beowulf and the Dragon.&#10;Theoretical payout is 97.21% &#10; &#10; &#10;How to play&#10;Video slots are very easy to play. Just follow these 3 steps:&#10; &#10;1. Choose your total bet&#10;2. Press the SPIN symbol button&#10;3. Check for any win in the WIN field&#10; &#10;For more understanding of Settings, Game Rules, and Game Features read the text below.&#10; &#10; &#10;Description of game functionality&#10; &#10;Bet&#10;The Total bet is shown in the TOTAL BET display. Change the bet by clicking on the display and choosing the total bet of your choice.&#10;The Total Bet is based on the bet per line multiplied with the number of bet lines active.&#10;The FEATURE BET is always played and enabled the Grendel Feature.  The total bet with the FEATURE BET enabled is the basic bet (the number of bet lines multiplied by the bet per line) plus 5 times the bet per line.&#10;As such the TOTAL BET is 30 x the BET PER LINE&#10; &#10;Spin&#10;The game is started by pressing the SPIN symbol button.&#10;You can Quick Stop the game by pressing the SPIN symbol button again.&#10; &#10;Win&#10;Any total win in a game round will be displayed in the WIN field&#10;All wins are multiplied by the bet per line.&#10;Bet line wins pay in succession from leftmost to right.&#10;Only the highest win per active bet line is paid.&#10;Each individual bet line win will be displayed on their bet line as the wins are presented.&#10; &#10;Paytable&#10;All winning combinations in the game can be viewed in the PAYTABLE.&#10; &#10;Fast Play&#10;The FAST PLAY functionality is used to get the shortest game round possible. The duration of game rounds may vary depending on bandwidth and server response time.&#10; &#10;Autoplay&#10;Autoplay allows you to play a number of game rounds automatically&#10;Press AUTOPLAY and choose a number of game rounds to initiate Autoplay.&#10;The remaining number of spins is displayed to the right of the STOP button.&#10;Autoplay is stopped by pressing the STOP button.&#10; &#10;Settings&#10;In the settings panel at the bottom left of the game you can choose:&#10;Use SPACE for spin&#10;Use SPACE for spin allows you to use your Space Bar on your keyboard to initiate game rounds.&#10; &#10;Show Splash Screen on startup&#10;This setting allows you to switch the games Splash Screen on and off.&#10; &#10; &#10;Special symbols&#10; &#10;Wild Symbols&#10;The game has four different types of Wild Symbols:&#10;- Stacked Wilds, appear in main game and substitute for all symbols except Bonus Scatter, Grendel Attack symbol, Sword Wild symbol, and Dragon Wild Symbol.&#10;- Grendel Attack Wild, appear in Grendel Attack and substitute for all symbols except Bonus Scatter, Sword Wild symbol, and Dragon Wild Symbol.&#10;- Sword Wild symbol, appear in free spins and substitute for all symbols except Dragon Wild symbol.&#10;- Dragon Wild symbol, appear in free spins and substitute for all symbols except Sword Wild symbol.&#10; &#10;Scatter Symbols&#10;Scatter symbols are not bound to bet lines. The game has two different Scatter symbols:&#10;Free Spins Scatter symbols appear in the main game. Three or more symbols will initiate the Free Spins Bonus. Three Scatters pay 3 x the bet, Four Scatter symbols pay 10 x the bet, Five Scatters pay 20 x the bet. Scatter wins are added to payline wins.&#10;Grendel Attack Scatter symbols appear in the Grendel Attack. Each symbol awards one respin during the Grendel Attack Bonus.&#10; &#10;Game Features&#10; &#10;Stacked Wilds&#10;Wild symbols stacked on each other create the possibilities of major wins.&#10; &#10;Grendel Attack&#10;The Grendel Attack feature appears in the Main game and is randomly triggered.&#10;The feature awards a random number of Wild symbols that will lock to their positions for a set number of respins&#10;The number of Grendel Scatter symbols that appears on reel 5 determines the number of respins.&#10; &#10;Free Spin Dragon Fight&#10;3+ Free Spin Scatter symbols initiates the Free Spins feature.&#10;There are no predetermined number of free spins. The Free Spins Bonus continues until the Free Spin Dragon fight has ended. &#10;For each Sword Wild symbol that appears 1 health is removed from the Dragon Health bar. The Sword Wild symbol is locked for the remainder of the free spins, or until it is removed by a Dragon Wild symbol.&#10;For each Dragon symbol that appears 1 health is removed from the Beowulf Health bar. If there are any Sword Wild symbols on the reels, the Sword Wild awarded first will be removed by the Dragon Wild, and be replaced  for the payout of that specific round by a Fire Wild covering the whole reel.&#10;The Free Spins Dragon Fight ends when one of the Health Bars is empty.&#10;3 additional spins are awarded if Beowulf wins the fight.&#10; &#10;Malfunction in the game voids all pays."/>
+    <phrase id="InsufficientBet" qa="true" text="Insufficient bet"/>
+    <phrase id="InsufficientBetBody" qa="true" text="Please place a bet equal to or greater than the minimum bet of %1."/>
+    <phrase id="InsufficientFunds" qa="true" text="Insufficient funds"/>
+    <phrase id="InsufficientFundsBody" qa="true" text="You do not have sufficient credits to place this bet. Please check your credit balance."/>
+    <phrase id="InvalidBetBody" qa="true" text="There are no bets to place"/>
+    <phrase id="InvalidBetTitle" qa="true" text="Invalid bet"/>
+    <phrase id="InvalidBetTypeBody" qa="true" text="One or more of your bets is incomplete. Please make sure you complete all your bets."/>
+    <phrase id="JackpotNotificationTitle" qa="true" text="Jackpots"/>
+    <phrase id="JackpotNotification" qa="true" text="Note that any Jackpots are shown and paid in your account currency."/>
+    <phrase id="loaderStart" qa="true" text="...loading"/>
+    <phrase id="loader1" qa="true" text="...loading graphics"/>
+    <phrase id="loader2" qa="true" text="...loading interface"/>
+    <phrase id="loader3" qa="true" text="...loading audio engine"/>
+    <phrase id="loader4" qa="true" text="...loading ambience engine"/>
+    <phrase id="loader5" qa="true" text="...loading EdGE components"/>
+    <phrase id="loaderFinish" qa="true" text="...loading complete"/>
+    <phrase id="MaxMultiRoundBody" qa="true" text="The maximum total stake permitted per round is %1. Please adjust your bet selection."/>
+    <phrase id="MaxSingleRoundBody" qa="true" text="The maximum total stake permitted per game is %1. Please adjust your bet selection."/>
+    <phrase id="MaxStakeTitle" qa="true" text="Maximum stake"/>
+    <phrase id="MaxStakeBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet."/>
+    <phrase id="MaxStakeAdjustedBody" qa="true" text="You have exceeded the maximum stake of %1 allowed for this bet. Your stake will now be adjusted to this amount for your approval."/>
+    <phrase id="maxWinReachedBody" qa="true" text="You have reached the maximum winnings limit of %1. Your current game will now end and your winnings will be credited to your balance."/>
+    <phrase id="maxWinReachedTitle" qa="true" text="Maximum Winnings"/>
+    <phrase id="MultipleMaxStakeBody" qa="true" text="One or more of your bets exceeded the maximum stake allowed for that bet."/>
+    <phrase id="NANBody" qa="true" text="Please enter a numerical bet amount."/>
+    <phrase id="NANTitle" qa="true" text="Invalid bet"/>
+    <phrase id="Na" qa="true" text="n/a"/>
+    <phrase id="PlayForFun" qa="true" text="Play for Fun"/>
+    <phrase id="PlayForReal" qa="true" text="Play for Real"/>
+    <phrase id="SelectRealityBody" qa="true" text="Play with real funds from your account or virtual funds."/>
+    <phrase id="SelectRealityTitle" qa="true" text="Please select"/>
+    <phrase id="ServerBrowserError" qa="true" text="There has been an error in your browser, please refresh"/>
+    <phrase id="ServerConnectionErrorBody" qa="true" text="You have been disconnected from the gaming server. Please check your internet connection."/>
+    <phrase id="ServerConnectionErrorTitle" qa="true" text="Connection Error"/>
+    <phrase id="ServerError" qa="true" text="Server error"/>
+    <phrase id="ServerErrorTitle" qa="true" text="Error"/>
+    <phrase id="ServerJackpotBalanceBody" qa="false" text="The jackpot balance has decreased and the amount displayed is no longer available. The jackpot balance will now update and your bet can be placed again."/>
+    <phrase id="ServerJackpotBalanceTitle" qa="false" text="Jackpot Balance"/>
+    <phrase id="ServerJackpotErrorBody" qa="false" text="You have won the %1 Jackpot! Due to technical problems we are currently unable to add the jackpot to your bankroll automatically. To receive your prize, please contact customer support."/>
+    <phrase id="ServerNoFunds" qa="true" text="We have not been able to place your bet. Please check your updated balance."/>
+    <phrase id="ServerNoGame" qa="true" text="Unable to retrieve game data."/>
+    <phrase id="ServerNoTitle" qa="true" text="This game is not currently available."/>
+    <phrase id="ServerSessionLostBody" qa="true" text="Please log into your account. If you were previously logged in, your session may have expired."/>
+    <phrase id="ServerSessionLostTitle" qa="true" text="Session Lost"/>
+    <phrase id="ServerSuspensionBody" qa="true" text="The server is currently undergoing maintenance. Your game should resume automatically in a couple of minutes."/>
+    <phrase id="ServerSuspensionTitle" qa="true" text="Suspension of service"/>
+    <!-- End generic phrases -->
+
+    <!-- Start game specific phrases -->
+
+    <!-- start quickspin common phrases -->
+    <phrase id="KEYPAD_START_FREESPINS" qa="false" text="START FREE SPINS"/>
+    <phrase id="KEYPAD_FREESPINS_REMAINING_LABEL" qa="false" text="FREE SPINS"/>
+    <phrase id="KEYPAD_FREESPINS_PLAYED_LABEL" qa="false" text="FREE SPINS PLAYED"/>
+    <phrase id="KEYPAD_TOTAL_WIN" qa="false" text="TOTAL WIN"/>
+    <phrase id="KEYPAD_WIN_LABEL" qa="false" text="WIN"/>
+    <phrase id="KEYPAD_BASEBET_LABEL" qa="false" text="BET LINES: %1"/>
+    <phrase id="KEYPAD_QUICKSPIN_BUTTON" qa="false" text="FAST PLAY"/>
+    <phrase id="KEYPAD_TOTAL_BET_LABEL" qa="false" text="TOTAL BET"/>
+    <phrase id="KEYPAD_BETPERLINE_LABEL" qa="false" text="BET PER LINE: %1" />
+    <phrase id="BIG_WIN_LABEL" qa="false" text="BIG WIN"/>
+    <phrase id="PAYTABLE_BUTTON" qa="false" text="PAYTABLE" />
+    <phrase id="SPINS" qa="false" text="SPINS"/>
+    <phrase id="SPIN" qa="false" text="SPIN"/>
+    <phrase id="KEYPAD_TOTAL_BET_SHORT" qa="false" text="TOTAL BET: %1"/>
+    <phrase id="KEYPAD_BETPERLINE_SHORT" qa="false" text="BET PER LINE: %1"/>
+    <phrase id="KEYPAD_BALANCE" qa="false" text="BALANCE: %1"/>
+    <phrase id="KEYPAD_AUTOPLAY_BUTTON" qa="false" text="AUTOPLAY"/>
+    <phrase id="KEYPAD_AUTOPLAY_STOP_BUTTON" qa="false" text="STOP"/>
+    <phrase id="KEYPAD_USE_SPACE_FOR_SPIN" qa="false" text="Use SPACE for spin"/>
+    <phrase id="BUTTON_OK" qa="false" text="OK"/>
+    <phrase id="CONGRATULATIONS" qa="false" text="Congratulations!"/>
+    <phrase id="YOU_WON" qa="false" text="You won"/>
+    <phrase id="CONTINUE_BUTTON" qa="false" text="CONTINUE"/>
+    <phrase id="TOGGLE_SPLASH_SCREEN" qa="false" text="Show Splash Screen on startup."/>
+    <phrase id="SPLASH_DONT_SHOW_NEXT" qa="false" text="Don't show next time"/>
+
+    <!-- end quickspin common phrases -->
+
+    <!--start quickspin beowulf phrases -->
+    <phrase id="FEATURE_BET" qa="false" text="25 + FEATURE BET"/>
+    <phrase id="GRENDEL_COUNTER_TEXT" qa="false" text="RESPINS REMAINING"/>
+    <phrase id="GRENDEL_COUNTER_TEXT_WITH_PARAM" qa="false" text="RESPINS REMAINING %1"/>
+    <phrase id="BEOWULF_FREESPINS_LEFT_SEVERAL" qa="false" text="%1 FREE SPINS REMAINING"/>
+    <phrase id="BEOWULF_FREESPINS_LEFT_LAST" qa="false" text="%1 FREE SPIN REMAINING"/>
+    <phrase id="SPLASH_FEATURE_1" qa="false" text="EXTRA WILDS and RESPINS in the"/>
+    <phrase id="SPLASH_FEATURE_2" qa="false" text="Defeat the dragon with&#10;LOCKING WILDS&#10;in the FREE SPINS !"/>
+    <phrase id="FREESPINS_EXIT_TEXT" qa="false" text="Congratulations!"/>
+    <phrase id="FREESPINS_EXIT_YOU_WON" qa="false" text="You won:"/>
+    <phrase id="EXTRA_FREE_SPINS_AWARD" qa="false" text="CONGRATULATIONS&#10;YOU WON&#10;3 EXTRA FREE SPINS"/>
+    <phrase id="PAYTABLE_FOOTER" qa="false" text="WINS MULTIPLIED BY BET PER LINE. Only the highest win per active betline is paid.&#10;Bet line wins pay if in succession from leftmost to right. Malfunction voids all pays."/>
+    <phrase id="PAYTABLE_HEADER_SC" qa="false" text="FREE SPINS"/>
+    <phrase id="PAYTABLE_BODY_SC" qa="false" text="3+ Free spins Scatter symbols activate free spins.&#10;Free spins continues until the Free Spin Dragon Fight feature has ended."/>
+    <phrase id="PAYTABLE_SCATTER_PAY" qa="false" text="%1 Scatter symbols pays bet x%2 "/>
+    <phrase id="PAYTABLE_HEADER_DRAGONFIGHT" qa="false" text="FREE SPIN DRAGON FIGHT"/>
+    <phrase id="PAYTABLE_BODY_DRAGONFIGHT" qa="false" text="The Free Spins Bonus is played with a number of free spins determined by the outcome of a fight between Beowulf and the Dragon.&#10;&#10;For each Sword symbol that appears 1 health is removed from the Dragon Health bar.&#10;For each Dragon symbol that appears 1 health is removed from the Beowulf Health bar.&#10;The Free Spins Dragon Fight bonus ends when one of the health bars is empty.&#10;3 additional spins are awarded if Beowulf wins the fight."/>
+    <phrase id="PAYTABLE_HEADER_DRAGONFIGHT_CONTINUED" qa="false" text="FREE SPIN DRAGON FIGHT continued"/>
+    <phrase id="PAYTABLE_HEADER_DRAGONFIGHT_SWORD" qa="false" text="Sword Symbol"/>
+    <phrase id="PAYTABLE_HEADER_DRAGONFIGHT_DRAGON" qa="false" text="Dragon Symbol"/>
+    <phrase id="PAYTABLE_BODY_DRAGONFIGHT_SWORD" qa="false" text="The Sword symbol will remain held in its position until removed by a Dragon symbol or until Free Spin ends.&#10;&#10;The Sword symbol is wild and substitutes for all symbols except Dragon Symbol and Free Spin scatter."/>
+    <phrase id="PAYTABLE_BODY_DRAGONFIGHT_DRAGON" qa="false" text="Dragon symbol removes 1 Sword symbol if there are any on the reels. The Sword symbol will expand to cover the whole reel on which it appears, and then is removed for the following free spins.&#10;If more than 1 Sword symbol is held on the reels then the Sword symbol to be removed is the first one that appeared, of those that are currently held.&#10;&#10;The Dragon symbol is wild for all symbols except Sword wild symbol and Free Spin scatter."/>
+    <phrase id="PAYTABLE_LOW_WIN_HEADER" qa="false" text="LOW WIN SYMBOLS"/>
+    <phrase id="PAYTABLE_MEDIUM_WIN_HEADER" qa="false" text="MEDIUM WIN SYMBOLS"/>
+    <phrase id="PAYTABLE_HEADER_GRENDEL_ATTACK" qa="false" text="GRENDEL ATTACK"/>
+    <phrase id="PAYTABLE_BODY_GRENDEL_INTRO" qa="false" text="The Grendel Attack feature awards a random number of Wild symbols that will lock to their positions for a set  number of respins."/>
+    <phrase id="PAYTABLE_BODY_GRENDEL_GR" qa="false" text="The number of Grendel symbols that appears on reel 5 determines the number of respins."/>
+    <phrase id="PAYTABLE_BODY_GRENDEL_WG" qa="false" text="The locked wild symbols substitutes for all symbols except the Free Spin scatter symbol and the Regular Wild symbol."/>
+    <phrase id="PAYTABLE_BODY_GRENDEL_RANDOM" qa="false" text="The Grendel Attack feature is randomly triggered."/>
+    <phrase id="PAYTABLE_HEADER_WR" qa="false" text="REGULAR WILD"/>
+    <phrase id="PAYTABLE_BODY_WR" qa="false" text="Wild symbol substitutes for all symbols except Free Spin scatter symbol, Sword bonus symbol, and Dragon bonus symbol."/>
+    <phrase id="TEASER_GR_TEXT" qa="false" text="CAN APPEAR ANY TIME"/>
+    <phrase id="TEASER_SC_TEXT" qa="false" text="3 OR MORE&#10;TRIGGERS FREE SPINS"/>
+    <phrase id="FS_INTRO_SWORD" qa="false" text="Beowulf Strike"/>
+    <phrase id="FS_INTRO_DRAGON" qa="false" text="Dragon Strike"/>
+    <phrase id="FS_INTRO_HEADER" qa="false" text="You triggered the Free Spins!"/>
+    <phrase id="FS_INTRO_DESCRIPTION" qa="false" text="Free Spins continue until Beowulf or Dragon wins&#10;+3 Spins if Beowulf wins"/>
+    <phrase id="FS_SKIP" qa="false" text="Skip"/>
+    <!--end quickspin beowulf phrases -->
+
+    <!-- start back office texts -->
+    <phrase id="BO_LADDER_VALUE" qa="false" text="LADDER VALUE"/>
+    <phrase id="BO_BEOWULF_LIFE" qa="false" text="Beowulf Life"/>
+    <phrase id="BO_DRAGON_LIFE" qa="false" text="Dragon Life"/>
+    <phrase id="BO_SWORDS_AWARDED" qa="false" text="Swords awarded"/>
+    <phrase id="BO_DRAGONS_AWARDED" qa="false" text="Dragons awarded"/>
+    <phrase id="win_lines" qa="true" text="WIN LINES"/>
+    <phrase id="free_spin" qa="true" text="FREE SPIN"/>
+    <phrase id="free_spins" qa="true" text="FREE SPINS"/>
+    <phrase id="free_spins_total" qa="true" text="FREE SPINS TOTAL"/>
+    <phrase id="pays" qa="true" text="PAYS"/>
+    <phrase id="bonus" qa="true" text="BONUS"/>
+    <!-- end backoffice texts -->
+
+    <!-- End game specific phrases -->
+    <!-- Start generic vector text -->
+    <vector id="Win" qa="true" text="Win!"/>
+    <vector id="Unlucky" qa="true" text="Unlucky"/>
+    <vector id="Jackpot" qa="true" text="Jackpot!"/>
+    <!-- End generic vector text -->
+    <!-- Start  game specific vector text -->
+    <!-- End game specific vector text -->
+</languagepack>

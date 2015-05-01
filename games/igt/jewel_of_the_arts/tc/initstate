@@ -1,0 +1,34 @@
+<GameLogicResponse><OutcomeDetail><TransactionId>A2310-14264037718420</TransactionId><Stage>BaseGame</Stage><NextStage>BaseGame</NextStage><Balance>3000.00</Balance><GameStatus>Initial</GameStatus><Settled>0</Settled><Pending>0</Pending><Payout>0</Payout></OutcomeDetail><PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+				<Entry name="Reel0" stripIndex="45">
+					<Cell name="L0C0R0" stripIndex="45">s08</Cell>
+					<Cell name="L0C0R1" stripIndex="0">s03</Cell>
+					<Cell name="L0C0R2" stripIndex="1">s07</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="24">
+					<Cell name="L0C1R0" stripIndex="24">s02</Cell>
+					<Cell name="L0C1R1" stripIndex="25">s06</Cell>
+					<Cell name="L0C1R2" stripIndex="26">s01</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="27">
+					<Cell name="L0C2R0" stripIndex="27">s02</Cell>
+					<Cell name="L0C2R1" stripIndex="28">s08</Cell>
+					<Cell name="L0C2R2" stripIndex="29">s03</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="23">
+					<Cell name="L0C3R0" stripIndex="23">b01</Cell>
+					<Cell name="L0C3R1" stripIndex="24">s02</Cell>
+					<Cell name="L0C3R2" stripIndex="25">s08</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="43">
+					<Cell name="L0C4R0" stripIndex="43">s08</Cell>
+					<Cell name="L0C4R1" stripIndex="44">s06</Cell>
+					<Cell name="L0C4R2" stripIndex="45">s03</Cell>
+				</Entry>
+			</PopulationOutcome><TriggerOutcome name="FreeSpin.WildState">
+				<Trigger name="WildReel1"/>
+			</TriggerOutcome>
+		<PatternSliderInput>
+			<BetPerPattern>1</BetPerPattern>
+			<PatternsBet>20</PatternsBet>
+		</PatternSliderInput>
+	<Balances totalBalance="3000.00"><Balance name="FREE">3000.00</Balance></Balances></GameLogicResponse>

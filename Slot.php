@@ -131,6 +131,11 @@ class Slot {
     public $double = 1;
 
     /**
+     * @var float Ставка на линию с учетом индекса
+     */
+    public $betOnLine;
+
+    /**
      * Инициализация слота
      *
      * Получение выигрышных линий в зависимости от количества играющих линий
@@ -340,9 +345,19 @@ class Slot {
             elseif($this->params->winLineType == '243') {
                 $SymbolwinLines = $this->get243($v);
             }
+            elseif ($this->params->winLineType == 'ways') {
+                $SymbolwinLines = $this->getWays($v);
+            }
+            elseif ($this->params->winLineType == 'waysRight') {
+                $SymbolwinLines = $this->getWaysRight($v);
+            }
+            elseif ($this->params->winLineType == 'waysLeftRight') {
+                $SymbolwinLines = $this->getWaysLeftRight($v);
+            }
             else {
                 $SymbolwinLines = $this->getLeft($v);
             }
+
             foreach($SymbolwinLines as $w) {
                 if($this->params->checkSymbolCount($v, $w['count'])) {
                     $multiplier = $this->params->getWinMultiplier($v, $w['count']);
@@ -376,6 +391,7 @@ class Slot {
                                 'double' => $w['double'],
                                 'withWild' => $w['withWild'],
                                 'addMultiplier' => $addMultiplier,
+                                'direction' => $w['direction'],
                             );
                             if(!empty($w['collecting'])) {
                                 $addArray['collecting'] = $w['collecting'];
@@ -396,6 +412,7 @@ class Slot {
                             'double' => $w['double'],
                             'withWild' => $w['withWild'],
                             'addMultiplier' => $addMultiplier,
+                            'direction' => $w['direction'],
                         );
                         if(!empty($w['collecting'])) {
                             $addArray['collecting'] = $w['collecting'];
@@ -419,6 +436,7 @@ class Slot {
             'totalMultiple' => $this->totalMultiple,
             'offset' => $this->getOffsets(),
             'rows' => $this->getRows(),
+            'fullRows' => $this->getFullRows(),
             'startRows' => $this->startRows,
             'bonusData' => $this->bonusData,
             'double' => $this->double,
@@ -493,6 +511,7 @@ class Slot {
                     'double' => $this->double * $double,
                     'withWild' => $withWild,
                     'collecting' => $collecting,
+                    'direction' => 'left',
                 );
             }
 
@@ -641,6 +660,103 @@ class Slot {
         return $winLines;
     }
 
+    private function getWays($symbol) {
+        $reelConfig = $this->params->reelConfig;
+        $alias = $this->params->getSymbolByID($symbol);
+        $ways = new Ways($symbol, $alias, $this->params->doubleIfWild, $this->double, $this->params->minWinCount, 'left');
+        $isWild = !!count(array_intersect($symbol, $this->wild));
+        for($i = 0; $i < count($reelConfig); $i++) {
+            $reelSymbols = $this->reels[$i]->getVisibleSymbols();
+            $matches = array();
+            for($j = 0; $j < count($reelSymbols); $j++) {
+                $rs = $reelSymbols[$j];
+                $offset = $j * 5 + $i;
+                $type = '';
+                $matched = false;
+                if(in_array($rs, $symbol)) {
+                    $type = 'symbol';
+                    $matched = true;
+                }
+                elseif(in_array($rs, $this->wild)) {
+                    $type = 'wild';
+                    $matched = true;
+                }
+                elseif($this->params->collectingPay) {
+                    if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                        $type = 'collecting';
+                        $matched = true;
+                    }
+                }
+                if($isWild && $matched) {
+                    $type = 'wild';
+                }
+
+                if($matched) {
+                    $matches[] = array(
+                        'offset' => $offset,
+                        'type' => $type,
+                        'symbol' => $rs,
+                    );
+                }
+            }
+            $ways->addMatches($matches);
+
+        }
+        return $ways->getWinLines();
+    }
+
+    private function getWaysRight($symbol) {
+        $reelConfig = $this->params->reelConfig;
+        $alias = $this->params->getSymbolByID($symbol);
+        $ways = new Ways($symbol, $alias, $this->params->doubleIfWild, $this->double, $this->params->minWinCount, 'right');
+        $isWild = !!count(array_intersect($symbol, $this->wild));
+        for($i = count($reelConfig) - 1; $i >= 0; $i--) {
+            $reelSymbols = $this->reels[$i]->getVisibleSymbols();
+            $matches = array();
+            for($j = 0; $j < count($reelSymbols); $j++) {
+                $rs = $reelSymbols[$j];
+                $offset = $j * 5 + $i;
+                $type = '';
+                $matched = false;
+                if(in_array($rs, $symbol)) {
+                    $type = 'symbol';
+                    $matched = true;
+                }
+                elseif(in_array($rs, $this->wild)) {
+                    $type = 'wild';
+                    $matched = true;
+                }
+                elseif($this->params->collectingPay) {
+                    if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                        $type = 'collecting';
+                        $matched = true;
+                    }
+                }
+                if($isWild && $matched) {
+                    $type = 'wild';
+                }
+
+                if($matched) {
+                    $matches[] = array(
+                        'offset' => $offset,
+                        'type' => $type,
+                        'symbol' => $rs,
+                    );
+                }
+            }
+            $ways->addMatches($matches);
+
+        }
+        return $ways->getWinLines();
+    }
+
+    private function getWaysLeftRight($symbol) {
+        $left = $this->getWays($symbol);
+        $right = $this->getWaysRight($symbol);
+
+        return array_merge($left, $right);
+    }
+
     /**
      * Проверяем, есть ли выигрышные линии у слота после спина.
      * Данная функция нужна для бонусов, которые срабатывают, если есть выигрышные линии.
@@ -653,9 +769,14 @@ class Slot {
             $v = $this->params->getSymbolID($winLine['symbol']);
             if ($this->params->winLineType == 'left') {
                 $SymbolwinLines = $this->getLeft($v);
-            } elseif ($this->params->winLineType == '243') {
+            }
+            elseif ($this->params->winLineType == '243') {
                 $SymbolwinLines = $this->get243($v);
-            } else {
+            }
+            elseif ($this->params->winLineType == 'ways') {
+                $SymbolwinLines = $this->getWays($v);
+            }
+            else {
                 $SymbolwinLines = $this->getLeft($v);
             }
             foreach ($SymbolwinLines as $w) {
@@ -766,6 +887,26 @@ class Slot {
 
         foreach($this->reels as $r) {
             $symbols = $r->getVisibleSymbols();
+            for($j = 1; $j <= count($symbols); $j++) {
+                $rows["$j"][] = $symbols[$j - 1];
+            }
+        }
+        return $rows;
+    }
+
+    /**
+     * Получение видимых символов барабанов + предыдущие и последующие символы
+     *
+     * @return array
+     */
+    private function getFullRows() {
+        $rows = array();
+        for($i = 1; $i <= ($this->rows + 2); $i++) {
+            $rows["$i"] = array();
+        }
+
+        foreach($this->reels as $r) {
+            $symbols = $r->getFullVisibleSymbols();
             for($j = 1; $j <= count($symbols); $j++) {
                 $rows["$j"][] = $symbols[$j - 1];
             }

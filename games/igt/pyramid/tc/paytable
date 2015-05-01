@@ -1,0 +1,714 @@
+<PaytableResponse><PaytableStatistics description="100K Pyramid 15L 3x3x3x3x3" maxRTP="95.03" minRTP="92.78" name="100K Pyramid" type="Slot"/><PrizeInfo name="PrizeInfoLines" strategy="PayLeft">										
+			<Prize name="s01">										
+				<PrizePay count="5" pph="103199.7" value="1000"/>			
+				<PrizePay count="4" pph="24153.1" value="500"/>			
+				<PrizePay count="3" pph="1483.5" value="50"/>			
+				<PrizePay count="2" pph="157.5" value="3"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s01" required="false"/>										
+			</Prize>										
+			<Prize name="s02">										
+				<PrizePay count="5" pph="42365.3" value="500"/>			
+				<PrizePay count="4" pph="7781.4" value="200"/>			
+				<PrizePay count="3" pph="1076.5" value="25"/>			
+				<PrizePay count="2" pph="224.1" value="2"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s02" required="false"/>										
+			</Prize>										
+			<Prize name="s03">										
+				<PrizePay count="5" pph="41903.2" value="500"/>			
+				<PrizePay count="4" pph="6889.5" value="100"/>			
+				<PrizePay count="3" pph="1237.3" value="25"/>			
+				<PrizePay count="2" pph="220.0" value="2"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s03" required="false"/>										
+			</Prize>										
+			<Prize name="s04">										
+				<PrizePay count="5" pph="28349.7" value="500"/>			
+				<PrizePay count="4" pph="5991.2" value="100"/>			
+				<PrizePay count="3" pph="701.8" value="20"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s04" required="false"/>										
+			</Prize>										
+			<Prize name="s05">										
+				<PrizePay count="5" pph="10591.3" value="250"/>			
+				<PrizePay count="4" pph="1960.3" value="50"/>			
+				<PrizePay count="3" pph="353.5" value="15"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s05" required="false"/>										
+			</Prize>										
+			<Prize name="s06">										
+				<PrizePay count="5" pph="22724.6" value="250"/>			
+				<PrizePay count="4" pph="3154.2" value="50"/>			
+				<PrizePay count="3" pph="528.6" value="15"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s06" required="false"/>										
+			</Prize>										
+			<Prize name="s07">										
+				<PrizePay count="5" pph="7069.4" value="200"/>			
+				<PrizePay count="4" pph="2059.3" value="25"/>			
+				<PrizePay count="3" pph="391.9" value="10"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s07" required="false"/>										
+			</Prize>										
+			<Prize name="s08">										
+				<PrizePay count="5" pph="10400.6" value="150"/>			
+				<PrizePay count="4" pph="2243.9" value="20"/>			
+				<PrizePay count="3" pph="254.9" value="5"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s08" required="false"/>										
+			</Prize>										
+			<Prize name="s09">										
+				<PrizePay count="5" pph="8667.1" value="150"/>			
+				<PrizePay count="4" pph="2341.4" value="20"/>			
+				<PrizePay count="3" pph="254.9" value="5"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s09" required="false"/>										
+			</Prize>										
+			<!-- NOTE:  Wild pays moved to bottom so as to give priority for wins of same amount but more symbols -->										
+			<Prize name="w01">										
+				<PrizePay count="5" pph="12487168.0" value="100000"/>			
+				<PrizePay count="4" pph="924975.4" value="1000"/>			
+				<PrizePay count="3" pph="43022.1" value="100"/>			
+				<PrizePay count="2" pph="1608.4" value="20"/>			
+				<Symbol id="w01" required="true"/>										
+			</Prize>										
+		</PrizeInfo><PrizeInfo multiplierStrategy="MultiplyAllExcept" name="FreeSpinPrizeInfoLines" strategy="PayLeft">										
+			<Prize name="s01">										
+				<PrizePay count="5" pph="321562.5" value="1000"/>			
+				<PrizePay count="4" pph="30146.5" value="500"/>			
+				<PrizePay count="3" pph="2941.1" value="50"/>			
+				<PrizePay count="2" pph="268.0" value="3"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s01" required="false"/>										
+			</Prize>										
+			<Prize name="s02">										
+				<PrizePay count="5" pph="228135.6" value="500"/>			
+				<PrizePay count="4" pph="13826.4" value="200"/>			
+				<PrizePay count="3" pph="1722.7" value="25"/>			
+				<PrizePay count="2" pph="285.8" value="2"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s02" required="false"/>										
+			</Prize>										
+			<Prize name="s03">										
+				<PrizePay count="5" pph="44193.8" value="500"/>			
+				<PrizePay count="4" pph="5919.4" value="100"/>			
+				<PrizePay count="3" pph="1133.6" value="25"/>			
+				<PrizePay count="2" pph="125.7" value="2"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s03" required="false"/>										
+			</Prize>										
+			<Prize name="s04">										
+				<PrizePay count="5" pph="45320.9" value="500"/>			
+				<PrizePay count="4" pph="7761.9" value="100"/>			
+				<PrizePay count="3" pph="877.0" value="20"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s04" required="false"/>										
+			</Prize>										
+			<Prize name="s05">										
+				<PrizePay count="5" pph="22584.7" value="250"/>			
+				<PrizePay count="4" pph="3828.1" value="50"/>			
+				<PrizePay count="3" pph="520.7" value="15"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s05" required="false"/>										
+			</Prize>										
+			<Prize name="s06">										
+				<PrizePay count="5" pph="10440.3" value="250"/>			
+				<PrizePay count="4" pph="2180.3" value="50"/>			
+				<PrizePay count="3" pph="284.3" value="15"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s06" required="false"/>										
+			</Prize>										
+			<Prize name="s07">										
+				<PrizePay count="5" pph="9581.2" value="200"/>			
+				<PrizePay count="4" pph="1244.8" value="25"/>			
+				<PrizePay count="3" pph="207.2" value="10"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s07" required="false"/>										
+			</Prize>										
+			<Prize name="s08">										
+				<PrizePay count="5" pph="6387.5" value="150"/>			
+				<PrizePay count="4" pph="1352.2" value="20"/>			
+				<PrizePay count="3" pph="172.4" value="5"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s08" required="false"/>										
+			</Prize>										
+			<Prize name="s09">										
+				<PrizePay count="5" pph="6034.7" value="150"/>			
+				<PrizePay count="4" pph="1023.2" value="20"/>			
+				<PrizePay count="3" pph="109.6" value="5"/>			
+				<Symbol id="w01" required="false"/>										
+				<Symbol id="s09" required="false"/>										
+			</Prize>										
+			<!-- NOTE:  Wild pays moved to bottom so as to give priority for wins of same amount but more symbols -->										
+			<Prize name="w01">										
+				<PrizePay count="5" pph="33764062.5" value="100000"/>			
+				<PrizePay count="4" pph="993060.7" value="1000"/>			
+				<PrizePay count="3" pph="30200.4" value="100"/>			
+				<PrizePay count="2" pph="1732.6" value="20"/>			
+				<Symbol id="w01" required="true"/>										
+			</Prize>										
+		</PrizeInfo><PrizeInfo multiplierStrategy="MultiplyAllExcept" name="FreeSpinPrizeInfoScatter" strategy="PayAny">										
+			<Prize name="b01">										
+				<PrizePay count="5" pph="92631.2" value="15"/>			
+				<PrizePay count="4" pph="1894.7" value="10"/>			
+				<PrizePay count="3" pph="100.4" value="5"/>			
+				<Symbol id="b01" required="true"/>										
+			</Prize>										
+		</PrizeInfo><PickerInfo name="Picker.PickerInfo" verifierStrategy="LayerPicker">										
+			<MinPicks name="MinPicks">1</MinPicks>										
+			<MaxPicksPerTurn name="MaxPicksPerTurn">1</MaxPicksPerTurn>										
+			<MaxTotalPicks name="MaxTotalPicks">15</MaxTotalPicks>										
+			<UniquePickRequired name="UniquePickRequired">true</UniquePickRequired>										
+			<MultiplePicksAllowed name="MultiplePicksAllowed">false</MultiplePicksAllowed>										
+			<InitialLayer>0</InitialLayer>										
+			<InitialPickCount>5</InitialPickCount>										
+			<Initial>false</Initial>										
+			<RevealLayer>true</RevealLayer>										
+			<RevealAll>true</RevealAll>										
+			<AutoAdvance>false</AutoAdvance>										
+			<OutcomeTrigger name="Picker"/>										
+			<ExitOutcomeTrigger name="FreeSpin"/>										
+			<Layer index="0" name="layer0">										
+				<Pick cellName="pick0" name="L0C0R0"/>										
+				<Pick cellName="pick1" name="L0C1R0"/>										
+				<Pick cellName="pick2" name="L0C2R0"/>										
+				<Pick cellName="pick3" name="L0C3R0"/>										
+				<Pick cellName="pick4" name="L0C4R0"/>										
+			</Layer>										
+			<Layer index="1" name="layer1">										
+				<Pick cellName="pick0" name="L1C0R0"/>										
+				<Pick cellName="pick1" name="L1C1R0"/>										
+				<Pick cellName="pick2" name="L1C2R0"/>										
+				<Pick cellName="pick3" name="L1C3R0"/>										
+			</Layer>										
+			<Layer index="2" name="layer2">										
+				<Pick cellName="pick0" name="L2C0R0"/>										
+				<Pick cellName="pick1" name="L2C1R0"/>										
+				<Pick cellName="pick2" name="L2C2R0"/>										
+			</Layer>										
+			<Layer index="3" name="layer3">										
+				<Pick cellName="pick0" name="L3C0R0"/>										
+				<Pick cellName="pick1" name="L3C1R0"/>										
+			</Layer>										
+			<Layer index="4" name="layer4">										
+				<Pick cellName="pick0" name="L4C0R0"/>										
+			</Layer>										
+		</PickerInfo><StripInfo name="BaseGame">										
+			<Strip name="Reel0">										
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+			</Strip>										
+			<Strip name="Reel1">										
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+			</Strip>										
+			<Strip name="Reel2">										
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+			</Strip>										
+			<Strip name="Reel3">										
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+			</Strip>										
+			<Strip name="Reel4">										
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="b01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s06" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s08" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s09" weight="1"/>								
+				<Stop symbolID="s03" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s05" weight="1"/>								
+				<Stop symbolID="s02" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+				<Stop symbolID="w01" weight="1"/>								
+				<Stop symbolID="s04" weight="1"/>								
+				<Stop symbolID="s07" weight="1"/>								
+				<Stop symbolID="s01" weight="1"/>								
+			</Strip>										
+		</StripInfo><StripInfo name="FreeSpin">										
+			<Strip name="Reel0">										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+			</Strip>										
+			<Strip name="Reel1">										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+			</Strip>										
+			<Strip name="Reel2">										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+			</Strip>										
+			<Strip name="Reel3">										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+			</Strip>										
+			<Strip name="Reel4">										
+				<Stop symbolID="w01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s01" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="b01" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s02" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s03" weight="1"/>										
+				<Stop symbolID="s09" weight="1"/>										
+				<Stop symbolID="s05" weight="1"/>										
+				<Stop symbolID="s04" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+				<Stop symbolID="s08" weight="1"/>										
+				<Stop symbolID="s07" weight="1"/>										
+				<Stop symbolID="s06" weight="1"/>										
+			</Strip>										
+		</StripInfo><PatternSliderInfo><PatternInfo max="15" min="1">										
+				<Step>1</Step>										
+				<Step>3</Step>										
+				<Step>5</Step>										
+				<Step>9</Step>										
+				<Step>15</Step>										
+			</PatternInfo><BetInfo max="200" min="1"><Step>1</Step><Step>2</Step><Step>3</Step><Step>5</Step><Step>10</Step><Step>20</Step><Step>50</Step><Step>100</Step><Step>200</Step></BetInfo></PatternSliderInfo><AwardCapInfo name="AwardCapInfo">										
+			<TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>									
+		<CurrencyCap><CurrencyType>FPY</CurrencyType><AwardCap>25000000</AwardCap></CurrencyCap></AwardCapInfo><DenominationList><Denomination softwareId="200-1024-001">1.0</Denomination></DenominationList><GameBetInfo><MinChipValue>1.0</MinChipValue><MinBet>1.0</MinBet><MaxBet>15.0</MaxBet></GameBetInfo><AutoSpinInfo enable="True"><Step>10</Step><Step>20</Step><Step>30</Step><Step>40</Step><Step>50</Step></AutoSpinInfo><VersionInfo><GameLogicVersion>1.0</GameLogicVersion></VersionInfo></PaytableResponse>

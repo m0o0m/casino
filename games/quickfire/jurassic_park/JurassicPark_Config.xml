@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config version="5.10332.1" type="gnosis" >
+	<property key="StringsFileName" value="SlotCommonStrings.xml" type="String" />
+	<property key="DialogsFileName" value="JurassicPark_Dialogs.xml" type="String" />
+	<vector key="configs" type="String">
+		<item value="JurassicPark_GeneralConfig.xml" />
+		<item value="JurassicPark_Assets.xml" />
+		<item value="JurassicPark_fields.xml" />
+		<item value="JurassicPark_ControllerEvents.xml" />
+		<item value="JurassicPark_Sounds.xml" />
+		<item value="JurassicPark_Bonus.xml" />
+	</vector>
+</config>

@@ -1,0 +1,81 @@
+<GameLogicResponse><OutcomeDetail><TransactionId>A2310-14264037762802</TransactionId><Stage>BaseGame</Stage><NextStage>BaseGame</NextStage><Balance>3000.00</Balance><GameStatus>Initial</GameStatus><Settled>0</Settled><Pending>0</Pending><Payout>0</Payout></OutcomeDetail><PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
+				<Entry name="Reel0" stripIndex="3">
+					<Cell name="L0C0R0" stripIndex="3">s05</Cell>
+					<Cell name="L0C0R1" stripIndex="4">s02</Cell>
+					<Cell name="L0C0R2" stripIndex="5">s04</Cell>
+					<Cell name="L0C0R3" stripIndex="6">s05</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="17">
+					<Cell name="L0C1R0" stripIndex="17">s03</Cell>
+					<Cell name="L0C1R1" stripIndex="18">s06</Cell>
+					<Cell name="L0C1R2" stripIndex="19">s01</Cell>
+					<Cell name="L0C1R3" stripIndex="20">s07</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="13">
+					<Cell name="L0C2R0" stripIndex="13">s03</Cell>
+					<Cell name="L0C2R1" stripIndex="14">s07</Cell>
+					<Cell name="L0C2R2" stripIndex="15">s05</Cell>
+					<Cell name="L0C2R3" stripIndex="16">w01</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="2">
+					<Cell name="L0C3R0" stripIndex="2">s03</Cell>
+					<Cell name="L0C3R1" stripIndex="3">s05</Cell>
+					<Cell name="L0C3R2" stripIndex="4">s04</Cell>
+					<Cell name="L0C3R3" stripIndex="5">s02</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="2">
+					<Cell name="L0C4R0" stripIndex="2">s06</Cell>
+					<Cell name="L0C4R1" stripIndex="3">s02</Cell>
+					<Cell name="L0C4R2" stripIndex="4">b01</Cell>
+					<Cell name="L0C4R3" stripIndex="5">s05</Cell>
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="Picker.Picks" stage="Picker">
+				<Entry name="L0C0R0" stripIndex="0">
+					<Cell name="L0C0R0" stripIndex="0">spins,5,multiplier,10,trigger,MegatronMult</Cell>		<!-- Megatron Multipier -->
+				</Entry>
+				<Entry name="L0C1R0" stripIndex="1">
+					<Cell name="L0C1R0" stripIndex="1">spins,8,multiplier,10,trigger,OptimusMult</Cell>		<!-- Optimus Multiplier -->
+				</Entry>
+				<Entry name="L0C2R0" stripIndex="2">
+					<Cell name="L0C2R0" stripIndex="2">spins,12,multiplier,5,trigger,ShockwaveMult</Cell>		<!-- Shockwave Multiplier -->
+				</Entry>
+				<Entry name="L0C3R0" stripIndex="3">
+					<Cell name="L0C3R0" stripIndex="3">spins,15,multiplier,4,trigger,BumblebeeMult</Cell>		<!-- Bumblebee Multiplier -->
+				</Entry>
+			</PopulationOutcome><PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+				<Entry name="Reel0" stripIndex="2">
+					<Cell name="L0C0R0" stripIndex="2">s03</Cell>
+					<Cell name="L0C0R1" stripIndex="3">s05</Cell>
+					<Cell name="L0C0R2" stripIndex="4">s02</Cell>
+					<Cell name="L0C0R3" stripIndex="5">s04</Cell>
+				</Entry>
+				<Entry name="Reel1" stripIndex="4">
+					<Cell name="L0C1R0" stripIndex="4">s05</Cell>
+					<Cell name="L0C1R1" stripIndex="5">s03</Cell>
+					<Cell name="L0C1R2" stripIndex="6">s06</Cell>
+					<Cell name="L0C1R3" stripIndex="7">s02</Cell>
+				</Entry>
+				<Entry name="Reel2" stripIndex="16">
+					<Cell name="L0C2R0" stripIndex="16">s01</Cell>
+					<Cell name="L0C2R1" stripIndex="17">s06</Cell>
+					<Cell name="L0C2R2" stripIndex="18">s04</Cell>
+					<Cell name="L0C2R3" stripIndex="19">s07</Cell>
+				</Entry>
+				<Entry name="Reel3" stripIndex="7">
+					<Cell name="L0C3R0" stripIndex="7">s05</Cell>
+					<Cell name="L0C3R1" stripIndex="8">s04</Cell>
+					<Cell name="L0C3R2" stripIndex="9">w01</Cell>
+					<Cell name="L0C3R3" stripIndex="10">s06</Cell>
+				</Entry>
+				<Entry name="Reel4" stripIndex="20">
+					<Cell name="L0C4R0" stripIndex="20">s07</Cell>
+					<Cell name="L0C4R1" stripIndex="21">s02</Cell>
+					<Cell name="L0C4R2" stripIndex="22">s06</Cell>
+					<Cell name="L0C4R3" stripIndex="23">s01</Cell>
+				</Entry>
+			</PopulationOutcome>
+		<PatternSliderInput>
+			<BetPerPattern>1</BetPerPattern>
+			<PatternsBet>60</PatternsBet>
+		</PatternSliderInput>
+	<Balances totalBalance="3000.00"><Balance name="FREE">3000.00</Balance></Balances></GameLogicResponse>

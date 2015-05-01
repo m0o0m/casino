@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data version="5.1.0.12" >
+	<frame type="default" />
+	<assetProviders>
+		<assetProvider id="default">
+			<buttons>
+				<!--button id="Btn_Credits" /-->
+				<button id="Button_SPIN" />
+				<button id="Button_Gamble" />
+				<button id="Button_Win" />
+				<button id="Button_Win_FS" />
+				<button id="Button_Bet" />
+				<button id="Button_Coins" />
+				<button id="Button_Credits" />
+				<button id="ViewPaytableButton" />
+				<button id="Button_Display_Bubble_Coins" />
+				<button id="Button_Display_Bubble_Credits" />
+				<button id="Button_Display_Credits" />
+				<button id="Button_Display_Coins" />
+				<button id="Button_Display_RealCoins" />
+				<button id="Button_Display_RealCredits" />
+				<button id="Button_Display_GuestCredits" />
+				<button id="Button_Display_GuestCoins" />
+				<button id="Button_Display_DemoCoins" />
+				<button id="Button_Display_DemoCredits" />
+				<button id="Button_Display_PracticeCredits" />
+				<button id="Button_Display_PracticeCoins" />
+				<button id="Button_Display_Credits_FS" />
+				<button id="Button_Display_Coins_FS" />
+				<button id="Button_Display_RealCoins_FS" />
+				<button id="Button_Display_RealCredits_FS" />
+				<button id="Button_Display_GuestCredits_FS" />
+				<button id="Button_Display_GuestCoins_FS" />
+				<button id="Button_Display_DemoCoins_FS" />
+				<button id="Button_Display_DemoCredits_FS" />
+				<button id="Button_Display_PracticeCredits_FS" />
+				<button id="Button_Display_PracticeCoins_FS" />
+				<!-- Free Games -->
+				<button id="Button_FG_Collect" />
+				<button id="Button_Skip_Offer" />
+				<button id="Button_Skip_Offer_Exp" />
+				<button id="Frame_BGPanel_SkipOffer" />
+				<button id="FramePanelBG_SkipOfferButton" />
+				<!-- UCS Plus/Minus for Chip Selector-->
+				<button id="UCS_Dec_Button" />
+				<button id="UCS_Inc_Button" />
+				<button id="Button_STOP" />
+				<button id="Header_BetPopUp_Coinsize" />
+				<button id="Header_BetPopUp_Coins" />
+				<button id="Header_WinPopUp_Top5wins" />
+				<button id="Inc_Coins" />
+				<button id="Dec_Coins" />
+				<button id="Inc_Bet" />
+				<button id="Dec_Bet" />
+				<button id="Coin_Popup_BG" />
+				<button id="Button_SpinsInfo" />
+				<button id="Button_Auto_Play" />
+				<button id="Button_STOP_Autoplay" />
+				<button id="Autoplay_10x" />
+				<button id="Autoplay_25x" />
+				<button id="Autoplay_50x" />
+				<button id="Autoplay_75x" />
+				<button id="Autoplay_100x" />
+				<button id="Autoplay_150x" />
+				<button id="Autoplay_UntilStop" />
+				<button id="Autoplay_Custom" />
+				<!--button id="Mc_Creditbox" /-->
+				<!-- Free Spins -->
+				<button id="Button_Freespins_Continue" />
+				<button id="Button_Freespins_Start" /> 
+				<!-- Possibly remove -->
+				<!--button id="Button_Invisible" /-->
+				<button id="Frame_BGPanel_Win" />
+				<button id="BigWinBox" />
+				<button id="Frame_PopupPanel_Win" />
+				<button id="Frame_PopupPanel_Autoplay" />
+				<button id="FramePanelBG_GambleButton" />
+				<button id="Frame_BGPanel_Bet" />
+				<button id="Frame_BGPanel_SpinsInfo" />
+				<button id="Frame_BGPanel_Gamble" />
+				<button id="Frame_BGPanel_SpinStop" />
+				<button id="GambleFeatureDialog" />
+				<button id="WarningDialog" />
+				<button id="Button_Yes" />
+				<button id="Button_No" />
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Regular"/>
+				<sprite id="Frame_Bg_Expert"/>
+				<sprite id="Frame_Bg_Freespins"/>
+				<sprite id="Frame_PopupPanel_Bet" />
+				<sprite id="UCS_CoinSizes" />
+			</sprites>
+			<seperators />
+			<graphicalFonts>
+				<graphicalFont id="UCSNum"				type="sprite" characters="0123456789." />
+				<graphicalFont id="BigWinNum_"			type="sprite" characters="0123456789." />	
+				<graphicalFont id="BalanceNum_"			type="sprite" characters="0123456789. " />					
+				<graphicalFont id="ConsoleWinNum_"		type="sprite" characters="0123456789. " />	
+				<graphicalFont id="ConsoleBigWinNum_"	type="sprite" characters="0123456789. " />	
+				<graphicalFont id="FSWin_"				type="sprite" characters="0123456789. " />					
+			</graphicalFonts>
+			<texts>
+				<text id="Bet_Display"			type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="120"/>
+				<text id="Spins_Display"		type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="50"/>
+				<text id="Coins_Display"		type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="120"/>
+				<text id="Win_Display"			type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="190" />
+				<text id="Big_Win_Display"		type="sprite" font="ConsoleBigWinNum_" align="center" tracking="10" maxWidth="190" />
+				<text id="Top_Win_Display_0"	type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="390" />
+				<text id="Top_Win_Display_1"	type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="390" />
+				<text id="Top_Win_Display_2"	type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="390" />
+				<text id="Top_Win_Display_3"	type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="390" />
+				<text id="Top_Win_Display_4"	type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="390" />
+				<text id="FSWin_Display"		type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="190" />
+				<text id="Balance_Box"			type="sprite" font="BalanceNum_" align="center" tracking="10" maxWidth="120" />
+				<!-- UCS -->				
+				<text id="UCS_text"				type="sprite" font="BalanceNum_" align="center" tracking="10" />				
+			</texts>
+			<textFormats>
+				<textFormat id="info_display_tf" font="Arial" size="20" color="0xffffff" bold="true" italic="false" underline="false" align="center" kerning="true" letterSpacing="0"  />
+			</textFormats>
+			<ucs>
+				<ucs id="ucs" betFormat="coins">
+					<!-- Add the bet pop up panel here to overcome depth issue-->
+					<sprite id="Frame_PopupPanel_Bet" 		x="404" 	y="583.35" />
+					<fixedValue>
+						<sprite id="UCS_FixedValue"	x="88.5"	y="106" />
+					</fixedValue>
+					<dec>
+						<button id="UCS_Dec_Button" x="408.5" y="604.15" event="DecBet"	shortcut=""/>
+					</dec>
+					<inc>
+						<button id="UCS_Inc_Button"	x="511.5" y="604.15"	event="IncBet"	shortcut=""/>
+					</inc>
+					<!-- the coinSizeDeck is a sprite, so needs an entry in data.assetProviders.assetProvider.sprites -->
+					<coinSizeDeck spriteId="UCS_CoinSizes" x="472" y="610" 
+						sizes="1,2,5,10,20,25,50,100,200,500,1000,2000,2500,5000,10000,20000,50000,100000,200000,500000,1000000" />
+				</ucs>			
+			</ucs>
+		</assetProvider>
+	</assetProviders>
+	<!-- Console Descriptions -->
+	<consoles>
+		<console id="BASE_REGULAR" assetProvider="default" description="Regular Normal Console">
+			<buttons>	
+				<button id="Button_SPIN"					x="734.5"	y="678.5"	event="SPIN"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="Button_STOP"					x="734.5"	y="678.5"	event="STOP"					shortcut="13"	activationRule="AlwaysHidden" />
+				<button id="Button_FG_Collect"				x="734.5"	y="678.5"	event="BUTTON_COLLECT"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="FramePanelBG_SkipOfferButton"	x="138"	 	y="640"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_SkipOffer"		x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Skip_Offer"				x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<button id="Button_STOP_Autoplay"			x="734.5"	y="678.5"	event="STOP"					shortcut="13"		activationRule="AlwaysHidden"  />
+				<button id="ViewPaytableButton"				x="103"		y="661"		event="PAYTABLE_OPEN"			shortcut="86"		activationRule="AlwaysEnabled" />				
+				<button id="Button_Display_Credits"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />	
+				<button id="Button_Display_Bubble_Coins"	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />												
+				<button id="Button_Display_Bubble_Credits" 	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<!--WIN-->
+				<button id="Frame_PopupPanel_Win" 		x="553" 	y="502"   	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Win"					x="557.5"	y="678.5"	event="BUTTON_WIN"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Header_WinPopUp_Top5wins"	x="635.5" 	y="513.45"	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_Win" 			x="553" 	y="675"   	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="550.50" 	y="672"   	event="BUTTON_BIG_WIN_BOX"	shortcut=""	activationRule="AlwaysEnabled" />
+				<!--BET-->	
+				<button id="Header_BetPopUp_Coinsize"	x="473.7" 	y="594.9"	event=""					shortcut=""		activationRule="AlwaysEnabled" />				
+				<button id="Header_BetPopUp_Coins"		x="473.7" 	y="639.55"	event=""					shortcut=""		activationRule="AlwaysEnabled" />	
+				<button id="Frame_BGPanel_Bet"			x="404.00" 	y="675.00"	event=""					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Coins"					x="511.5" 	y="649"		event="BUTTON_INC_COINS"	shortcut="67"		activationRule="AlwaysEnabled" />				
+				<button id="Dec_Coins"					x="408.5" 	y="649"		event="BUTTON_DEC_COINS"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Bet"					x="408.5"	y="678.5"	event="BUTTON_BET"			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Bet"					x="511.5"	y="703.5"	event="BUTTON_BET_INC"		shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Dec_Bet"					x="408.5"	y="703.5"	event="BUTTON_BET_DEC"		shortcut=""		activationRule="AlwaysEnabled" />
+				<!--AUTO PLAY-->
+				<button id="Frame_PopupPanel_Autoplay" 	x="303.5" 	y="543"   	event=""					shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Frame_BGPanel_SpinsInfo"	x="312"		y="675"		event="" 					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_SpinsInfo"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Auto_Play"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Autoplay_10x"				x="310.5"	y="550"		event="BUTTON_10X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_25x"				x="352.5"	y="550"		event="BUTTON_25X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_50x"				x="310.5"	y="575"		event="BUTTON_50X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_75x"				x="352.5"	y="575"		event="BUTTON_75X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_100x"				x="310.5"	y="600"		event="BUTTON_100X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_150x"				x="352.5"	y="600"		event="BUTTON_150X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_UntilStop"			x="310.5"	y="625"		event="AUTOPLAY_UNTILSTOP"	shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_Custom"			x="310.5"	y="650"		event="AUTOPLAY_CUSTOM"		shortcut=""		activationRule="AlwaysHidden" />
+				
+				<!--Warning Dialog Box-->
+				<button id="WarningDialog"	x="0"		y="0"	event=""			shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_Yes"		x="346"		y="489"	event="BUTTON_YES"	shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_No"		x="532"		y="489"	event="BUTTON_NO"	shortcut=""	activationRule="AlwaysEnabled"/>
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Expert" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Spins_Display"			x="350"		y="708.5"	value="5" 		graphicFont="Spins_Display" />
+				<text id="Coins_Display"			x="472"		y="656"		value="1000" 	graphicFont="" />
+				<text id="Bet_Display"				x="472" 	y="708.5"	value="0.00" 	graphicFont="" />
+				<text id="Win_Display"				x="636"		y="708.5"	value="0.00" 	graphicFont="Win_Display" />
+				<text id="Big_Win_Display"			x="636"		y="706.5"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_0"		x="636.05"	y="536.45"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_1"		x="636.05"	y="564.00"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_2"		x="636.05"	y="591.55"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_3"		x="636.05"	y="619.10"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_4"		x="636.05"	y="646.70"	value=" " 		graphicFont="" />
+				<text id="Balance_Box"				x="224"		y="708.5"	value="88888888888888" 	graphicFont="Balance_Box" />		
+			</textLayout>	
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		<console id="BASE_EXPERT" assetProvider="default" description="Expert Normal Console">
+			<buttons>
+				<button id="Button_SPIN"					x="734.5"	y="678.5"	event="SPIN"					shortcut="13,32"	activationRule="AlwaysEnabled" />
+				<button id="Button_STOP"					x="734.5"	y="678.5"	event="STOP"					shortcut="13,32"	activationRule="AlwaysHidden"  />		
+				<button id="Button_FG_Collect"				x="734.5"	y="678.5"	event="BUTTON_COLLECT"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="FramePanelBG_SkipOfferButton"	x="138"	 	y="640"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_SkipOffer"		x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Skip_Offer_Exp"			x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<button id="Button_STOP_Autoplay"			x="734.5"	y="678.5"	event="STOP"					shortcut="13"		activationRule="AlwaysHidden"  />
+				<button id="ViewPaytableButton"				x="103"		y="661"		event="PAYTABLE_OPEN"			shortcut="86"		activationRule="AlwaysEnabled" />				
+				<button id="Button_Display_Credits"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />	
+				<button id="Button_Display_Bubble_Coins"	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />												
+				<button id="Button_Display_Bubble_Credits" 	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<!--WIN-->
+				<button id="Frame_PopupPanel_Win" 		x="553" 	y="502"   	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Win"					x="557.5"	y="678.5"	event="BUTTON_WIN"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Header_WinPopUp_Top5wins"	x="635.5"	y="513.45"	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_Win" 			x="553" 	y="675"   	event=""			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="550.50" 	y="672"   	event="BUTTON_BIG_WIN_BOX"	shortcut=""	activationRule="AlwaysEnabled" />
+				<!--BET-->	
+				<button id="Header_BetPopUp_Coinsize"	x="473.7" 	y="594.9"	event=""					shortcut=""		activationRule="AlwaysEnabled" />				
+				<button id="Header_BetPopUp_Coins"		x="473.7" 	y="639.55"	event=""					shortcut=""		activationRule="AlwaysEnabled" />	
+				<button id="Frame_BGPanel_Bet"			x="404.00" 	y="675.00"	event=""					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Coins"					x="511.5" 	y="649"		event="BUTTON_INC_COINS"	shortcut="67"		activationRule="AlwaysEnabled" />				
+				<button id="Dec_Coins"					x="408.5" 	y="649"		event="BUTTON_DEC_COINS"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Bet"					x="408.5"	y="678.5"	event="BUTTON_BET"			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Bet"					x="511.5"	y="703.5"	event="BUTTON_BET_INC"		shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="Dec_Bet"					x="408.5"	y="703.5"	event="BUTTON_BET_DEC"		shortcut=""		activationRule="AlwaysEnabled" />
+				<!--AUTO PLAY-->
+				<button id="Frame_PopupPanel_Autoplay" 	x="303.5" 	y="543"   	event=""					shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Frame_BGPanel_SpinsInfo"	x="312"		y="675"		event="" 					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_SpinsInfo"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Auto_Play"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Autoplay_10x"				x="310.5"	y="550"		event="BUTTON_10X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_25x"				x="352.5"	y="550"		event="BUTTON_25X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_50x"				x="310.5"	y="575"		event="BUTTON_50X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_75x"				x="352.5"	y="575"		event="BUTTON_75X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_100x"				x="310.5"	y="600"		event="BUTTON_100X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_150x"				x="352.5"	y="600"		event="BUTTON_150X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_UntilStop"			x="310.5"	y="625"		event="AUTOPLAY_UNTILSTOP"	shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_Custom"			x="310.5"	y="650"		event="AUTOPLAY_CUSTOM"		shortcut=""		activationRule="AlwaysHidden" />
+				
+				<!--Warning Dialog Box-->
+				<button id="WarningDialog"	x="0"		y="0"	event=""			shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_Yes"		x="346"		y="489"	event="BUTTON_YES"	shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_No"		x="532"		y="489"	event="BUTTON_NO"	shortcut=""	activationRule="AlwaysEnabled"/>
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Expert" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Spins_Display"		x="350"		y="708.5"	value="5" 		graphicFont="Spins_Display" />
+				<text id="Coins_Display"		x="472"		y="656"		value="1000" 	graphicFont="" />
+				<text id="Bet_Display"			x="472" 	y="708.5"	value="0.00" 	graphicFont="" />
+				<text id="Win_Display"			x="636"		y="708.5"	value="0.00" 	graphicFont="Win_Display" />
+				<text id="Big_Win_Display"		x="636"		y="706.5"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_0"	x="636.05"	y="536.45"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_1"	x="636.05"	y="564.00"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_2"	x="636.05"	y="591.55"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_3"	x="636.05"	y="619.10"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_4"	x="636.05"	y="646.70"	value=" " 		graphicFont="" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" 	graphicFont="Balance_Box" />		
+			</textLayout>	
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		
+		<console id="GAMBLING_REGULAR" assetProvider="default" description="Regular Gamble Console"/>
+		<console id="GAMBLE_REGULAR" assetProvider="default" description="Regular Gamble Console">
+			<buttons>
+				<button id="FramePanelBG_GambleButton"		x="723"		y="640"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Frame_BGPanel_Gamble"			x="730"		y="644"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Frame_BGPanel_SpinStop"			x="730"		y="675"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Button_Gamble"					x="730"		y="644"		event="BUTTON_GAMBLE"			shortcut="71"		activationRule="AlwaysEnabled"/>
+				<button id="GambleFeatureDialog"			x="728"		y="479.10"	event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Button_SPIN"					x="734.5"	y="678.5"	event="SPIN"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="Button_STOP"					x="734.5"	y="678.5"	event="STOP"					shortcut="13,32"	activationRule="AlwaysHidden" />
+				<button id="Button_FG_Collect"				x="734.5"	y="678.5"	event="BUTTON_COLLECT"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="FramePanelBG_SkipOfferButton"	x="138"	 	y="640"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_SkipOffer"		x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Skip_Offer"				x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<button id="Button_STOP_Autoplay"			x="734.5"	y="678.5"	event="STOP"					shortcut="13"		activationRule="AlwaysHidden"  />
+				<button id="ViewPaytableButton"				x="103"		y="661"		event="PAYTABLE_OPEN"			shortcut="86"		activationRule="AlwaysEnabled" />				
+				<button id="Button_Display_Credits"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />	
+				<button id="Button_Display_Bubble_Coins"	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />												
+				<button id="Button_Display_Bubble_Credits" 	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<!--WIN-->
+				<button id="Frame_PopupPanel_Win" 		x="553" 	y="502"   	event=""					shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="Button_Win"					x="557.5"	y="678.5"	event="BUTTON_WIN"			shortcut="" activationRule="AlwaysEnabled" />
+				<button id="Header_WinPopUp_Top5wins"	x="635.5" 	y="513.45"	event=""					shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_Win" 			x="553" 	y="675"   	event=""					shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="550.50" 	y="672"   	event="BUTTON_BIG_WIN_BOX"	shortcut=""	activationRule="AlwaysEnabled" />
+
+				<!--BET-->
+				<button id="Frame_BGPanel_Bet"			x="404.00" 	y="675.00"	event="" shortcut="" activationRule="AlwaysEnabled" />
+				<button id="Header_BetPopUp_Coinsize"	x="473.7" 	y="594.9"	event="" shortcut="" activationRule="AlwaysEnabled" />				
+				<button id="Header_BetPopUp_Coins"		x="473.7" 	y="639.55"	event="" shortcut="" activationRule="AlwaysEnabled" />
+				
+				<button id="Inc_Coins"					x="511.5" 	y="649"		event="BUTTON_INC_COINS"	shortcut="67"		activationRule="AlwaysEnabled" />				
+				<button id="Dec_Coins"					x="408.5" 	y="649"		event="BUTTON_DEC_COINS"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Bet"					x="408.5"	y="678.5"	event="BUTTON_BET"			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Bet"					x="511.5"	y="703.5"	event="BUTTON_BET_INC"		shortcut=""	activationRule="AlwaysEnabled" />
+				<button id="Dec_Bet"					x="408.5"	y="703.5"	event="BUTTON_BET_DEC"		shortcut=""		activationRule="AlwaysEnabled" />
+				<!--AUTO PLAY-->
+				<button id="Frame_PopupPanel_Autoplay" 	x="303.5" 	y="543"   	event=""					shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Frame_BGPanel_SpinsInfo"	x="312"		y="675"		event="" 					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_SpinsInfo"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Auto_Play"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Autoplay_10x"				x="310.5"	y="550"		event="BUTTON_10X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_25x"				x="352.5"	y="550"		event="BUTTON_25X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_50x"				x="310.5"	y="575"		event="BUTTON_50X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_75x"				x="352.5"	y="575"		event="BUTTON_75X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_100x"				x="310.5"	y="600"		event="BUTTON_100X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_150x"				x="352.5"	y="600"		event="BUTTON_150X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_UntilStop"			x="310.5"	y="625"		event="AUTOPLAY_UNTILSTOP"	shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_Custom"			x="310.5"	y="650"		event="AUTOPLAY_CUSTOM"		shortcut=""		activationRule="AlwaysHidden" />
+				
+				<!--Warning Dialog Box-->
+				<button id="WarningDialog"	x="0"		y="0"	event=""			shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_Yes"		x="346"		y="489"	event="BUTTON_YES"	shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_No"		x="532"		y="489"	event="BUTTON_NO"	shortcut=""	activationRule="AlwaysEnabled"/>	
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Expert" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Spins_Display"		x="325"		y="707"		value="5" 		graphicFont="Spins_Display" />
+				<text id="Coins_Display"		x="472"		y="656"		value="1000" 	graphicFont="" />
+				<text id="Bet_Display"			x="472" 	y="708.5"	value="0.00" 	graphicFont="" />				
+				<text id="Win_Display"			x="636"		y="708.5"	value="0.00" 	graphicFont="Win_Display" />
+				<text id="Big_Win_Display"		x="636"		y="706.5"	value=" " 		graphicFont="Big_Win_Display" />
+				<text id="Top_Win_Display_0"	x="636.05"	y="536.45"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_1"	x="636.05"	y="564.00"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_2"	x="636.05"	y="591.55"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_3"	x="636.05"	y="619.10"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_4" 	x="636.05"	y="646.70"	value=" " 		graphicFont="" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" 	graphicFont="Balance_Box" />		
+			</textLayout>	
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		
+		<console id="GAMBLING_EXPERT" assetProvider="default" description="Expert Gamble Console"/>
+		<console id="GAMBLE_EXPERT" assetProvider="default" description="Expert Gamble Console">
+			<buttons>
+				<button id="FramePanelBG_GambleButton"		x="723"		y="640"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Frame_BGPanel_Gamble"			x="730"		y="644"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Frame_BGPanel_SpinStop"			x="730"		y="675"		event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Button_Gamble"					x="730"		y="644"		event="BUTTON_GAMBLE"			shortcut="71"		activationRule="AlwaysEnabled"/>
+				<button id="GambleFeatureDialog"			x="728"		y="479.10"	event=""						shortcut=""			activationRule="AlwaysEnabled"/>
+				<button id="Button_SPIN"					x="734.5"	y="678.5"	event="SPIN"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="Button_STOP"					x="734.5"	y="678.5"	event="STOP"					shortcut="13,32"	activationRule="AlwaysHidden" />			
+				<button id="Button_FG_Collect"				x="734.5"	y="678.5"	event="BUTTON_COLLECT"					shortcut="13,32"	activationRule="AlwaysEnabled"/>
+				<button id="FramePanelBG_SkipOfferButton"	x="138"	 	y="640"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_SkipOffer"		x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Skip_Offer_Exp"			x="144"	 	y="644"		event="USELATER"				shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<button id="Button_STOP_Autoplay"			x="734.5"	y="678.5"	event="STOP"					shortcut="13"		activationRule="AlwaysHidden"  />
+				<button id="ViewPaytableButton"				x="103"		y="661"		event="PAYTABLE_OPEN"			shortcut="86"		activationRule="AlwaysEnabled" />				
+				<button id="Button_Display_Credits"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />	
+				<button id="Button_Display_Bubble_Coins"	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />												
+				<button id="Button_Display_Bubble_Credits" 	x="149" 	y="702"		event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				
+				<!--WIN-->
+				<button id="Frame_PopupPanel_Win" 		x="553" 	y="502"   	event=""					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Win"					x="557.5"	y="678.5"	event="BUTTON_WIN"			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Header_WinPopUp_Top5wins"	x="635.5" 	y="513.45"	event=""					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Frame_BGPanel_Win" 			x="553" 	y="675"   	event=""					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="550.50" 	y="672"   	event="BUTTON_BIG_WIN_BOX"	shortcut=""		activationRule="AlwaysEnabled" />
+
+				<!--BET-->
+					<button id="Frame_BGPanel_Bet"		x="404.00" 	y="675.00"	event="" shortcut="" activationRule="AlwaysEnabled" />
+				<button id="Header_BetPopUp_Coinsize"	x="473.7" 	y="594.9"	event="" shortcut="" activationRule="AlwaysEnabled" />				
+				<button id="Header_BetPopUp_Coins"		x="473.7" 	y="639.55"	event="" shortcut="" activationRule="AlwaysEnabled" />
+				
+				<button id="Inc_Coins"	x="511.5" 	y="649"		event="BUTTON_INC_COINS"	shortcut="67"		activationRule="AlwaysEnabled" />				
+				<button id="Dec_Coins"	x="408.5" 	y="649"		event="BUTTON_DEC_COINS"	shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Bet"	x="408.5"	y="678.5"	event="BUTTON_BET"			shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Inc_Bet"	x="511.5"	y="703.5"	event="BUTTON_BET_INC"		shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Dec_Bet"	x="408.5"	y="703.5"	event="BUTTON_BET_DEC"		shortcut=""		activationRule="AlwaysEnabled" />
+				
+				<!--AUTO PLAY-->
+				<button id="Frame_PopupPanel_Autoplay" 	x="303.5" 	y="543"   	event=""					shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Frame_BGPanel_SpinsInfo"	x="312"		y="675"		event="" 					shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_SpinsInfo"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Auto_Play"			x="316.5"	y="678.5"	event="AUTOPLAY"			shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Autoplay_10x"				x="310.5"	y="550"		event="BUTTON_10X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_25x"				x="352.5"	y="550"		event="BUTTON_25X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_50x"				x="310.5"	y="575"		event="BUTTON_50X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_75x"				x="352.5"	y="575"		event="BUTTON_75X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_100x"				x="310.5"	y="600"		event="BUTTON_100X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_150x"				x="352.5"	y="600"		event="BUTTON_150X"			shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_UntilStop"			x="310.5"	y="625"		event="AUTOPLAY_UNTILSTOP"	shortcut=""		activationRule="AlwaysHidden" />
+				<button id="Autoplay_Custom"			x="310.5"	y="650"		event="AUTOPLAY_CUSTOM"		shortcut=""		activationRule="AlwaysHidden" />
+				
+				<!--Warning Dialog Box-->
+				<button id="WarningDialog"	x="0"	y="0"	event=""			shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_Yes"		x="346"	y="489"	event="BUTTON_YES"	shortcut=""	activationRule="AlwaysEnabled"/>
+				<button id="Button_No"		x="532"	y="489"	event="BUTTON_NO"	shortcut=""	activationRule="AlwaysEnabled"/>	
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Expert" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Spins_Display"		x="325"		y="707"		value="5" 		graphicFont="Spins_Display" />
+				<text id="Coins_Display"		x="472"		y="656"		value="1000" 	graphicFont="" />
+				<text id="Bet_Display"			x="472" 	y="708.5"	value="0.00" 	graphicFont="" />				
+				<text id="Win_Display"			x="636"		y="708.5"	value="0.00" 	graphicFont="Win_Display" />
+				<text id="Big_Win_Display"		x="636"		y="706.5"	value=" " 		graphicFont="Big_Win_Display" />
+				<text id="Top_Win_Display_0"	x="636.05"	y="536.45"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_1"	x="636.05"	y="564.00"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_2"	x="636.05"	y="591.55"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_3"	x="636.05"	y="619.10"	value=" " 		graphicFont="" />
+				<text id="Top_Win_Display_4"	x="636.05"	y="646.70"	value=" " 		graphicFont="" />
+				<text id="Balance_Box"				x="224"		y="708.5"	value="88888888888888" 	graphicFont="Balance_Box" />		
+			</textLayout>	
+			<ucs id="ucs"	x="0"	y="0"	activationRule="" />
+		</console>
+		
+		<console id="FREESPINS_REELSET_1_REGULAR" assetProvider="default" description="Regular Free Spin Console">
+			<buttons>
+				<button id="Button_Freespins_Continue"	x="384" y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Freespins_Start"		x="384" y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Win_FS"				x="722"	y="678.5"	event="BUTTON_WIN"				shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Display_Credits_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="715" y="672"   	event="BUTTON_BIG_WIN_BOX"		shortcut=""		activationRule="AlwaysEnabled" />
+			</buttons>
+			
+			<sprites>
+				<sprite id="Frame_Bg_Freespins" x="0" y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Win_Display"			x="798"		y="708.5"	value="888" graphicFont="FSWin_Display" />
+				<text id="Big_Win_Display"		x="798"		y="707"		value="888" graphicFont="Big_Win_Display" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" graphicFont="Balance_Box" />	
+			</textLayout>
+		</console>
+			
+		<console id="FREESPINS_REELSET_1_EXPERT" assetProvider="default" description="Expert Free Spin Console">
+			<buttons>
+				<button id="Button_Freespins_Continue"	x="384" y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Freespins_Start"		x="384" y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Win_FS"				x="722"	y="678.5"	event="BUTTON_WIN"				shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Display_Credits_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="715" y="672"   	event="BUTTON_BIG_WIN_BOX"		shortcut=""		activationRule="AlwaysEnabled" />
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Freespins" x="0" y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Win_Display"			x="798"		y="708.5"	value="888" graphicFont="FSWin_Display" />
+				<text id="Big_Win_Display"		x="798"		y="707"		value="888" graphicFont="Big_Win_Display" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" graphicFont="Balance_Box" />				
+			</textLayout>
+		</console>
+		
+		<console id="FREESPINS_COMPLETE_REELSET_1_REGULAR" assetProvider="default" description="Regular Free Spin Console">
+			<buttons>
+				<button id="Button_Freespins_Continue"	x="384"	y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Freespins_Start"		x="384"	y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Win_FS"				x="722"	y="678.5"	event="BUTTON_WIN"				shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Display_Credits_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="715" y="672"   	event="BUTTON_BIG_WIN_BOX"		shortcut=""		activationRule="AlwaysEnabled" />
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Freespins" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Win_Display"			x="798"		y="708.5"	value="888" graphicFont="FSWin_Display" />
+				<text id="Big_Win_Display"		x="798"		y="704"		value="888" graphicFont="Big_Win_Display" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" graphicFont="Balance_Box" />	
+			</textLayout>
+		</console>	
+
+		<console id="FREESPINS_COMPLETE_REELSET_1_EXPERT" assetProvider="default" description="Expert Free Spin Console">
+			<buttons>
+				<button id="Button_Freespins_Continue"	x="384"	y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Freespins_Start"		x="384"	y="672"		event="FREESPIN_CONTINUE"		shortcut="13"	activationRule="AlwaysEnabled" />
+				<button id="Button_Win_FS"				x="722"	y="678.5"	event="BUTTON_WIN"				shortcut=""		activationRule="AlwaysEnabled" />
+				<button id="Button_Display_Credits_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />							
+				<button id="Button_Display_Coins_FS"			x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="Button_Display_RealCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_RealCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_GuestCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCoins_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_DemoCredits_FS"		x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCoins_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />		
+				<button id="Button_Display_PracticeCredits_FS"	x="148.5"	y="678.5"	event="DISPLAY_COINS_CREDITS"	shortcut=""			activationRule="AlwaysEnabled" />
+				<button id="BigWinBox" 					x="715" y="672"   	event="BUTTON_BIG_WIN_BOX"		shortcut=""		activationRule="AlwaysEnabled" />
+			</buttons>
+			<sprites>
+				<sprite id="Frame_Bg_Freespins" x="0"	y="623" />
+			</sprites>
+			<textLayout>
+				<text id="Win_Display"			x="798"		y="708.5"	value="888" graphicFont="FSWin_Display" />
+				<text id="Big_Win_Display"		x="798"		y="704"		value="888" graphicFont="Big_Win_Display" />
+				<text id="Balance_Box"			x="224"		y="708.5"	value="88888888888888" graphicFont="Balance_Box" />				
+			</textLayout>
+		</console>		
+	</consoles>	
+	<!-- Set Bonus Bubble Cords and arrow -->
+	<positions> 
+		<pos id="bonusBubble" x="297" y="706"/>
+	</positions>
+</data>

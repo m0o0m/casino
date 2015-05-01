@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+	<wrapperConfig>	
+		<gameName name="big bad wolf"/>	
+		<clientName name="big bad wolf" />		
+		<game asVersion="3" configurationStages="3" loadingStages="6" width="640" height="480" nativeWidth="1024" nativeHeight="768" gameFormat="SlotNoAutoplay" gameTitle="QS-BigBadWolf" />
+	</wrapperConfig>
