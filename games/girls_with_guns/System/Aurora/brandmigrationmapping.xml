@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<MigrationServerMapping version="10.1.3.156653">
-	<mapping id="BRM023" lang="fr" url="http://derblpam3.mgsops.net/aurora-systemdev/Aurora-3.9.4/?theme=Denmark&amp;lang=fr" />
-	<mapping id="6001" migrationType="1" lang="en" url="http://derblpam3.mgsops.net/aurora-systemdev/Aurora-3.9.4/?theme=Denmark" />
-	<mapping id="BRM023" lang="en" url="http://derblpam3.mgsops.net/aurora-systemdev/Aurora-3.9.4/?theme=Denmark" />
-	<mapping id="BRM024" lang="" url="" />
-</MigrationServerMapping>

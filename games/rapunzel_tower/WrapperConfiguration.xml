@@ -1,6 +1,0 @@
-	<?xml version="1.0" ?>
-	<wrapperConfig>
-		<gameName name="rapunzel"/>	
-		<clientName name="rapunzel" />
-		<game asVersion="3" gameFormat="SlotNoAutoplay" loadingStages="1" configurationStages="1" height="480" width="640" nativeHeight="768" nativeWidth="1024" gameTitle="QS-Rapunzel"/>
-	</wrapperConfig>

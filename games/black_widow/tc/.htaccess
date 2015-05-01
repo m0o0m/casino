@@ -1,7 +1,0 @@
-Options +FollowSymLinks -MultiViews
-RewriteEngine On
-RewriteBase /
-RewriteRule play$ http://localhost/core/WebEngine.php?game=black_widow|||igt&action=spin [L,NC]
-RewriteRule clientconfig$ http://localhost/core/WebEngine.php?game=black_widow|||igt&action=config [L,NC]
-RewriteRule initstate$ http://localhost/core/WebEngine.php?game=black_widow|||igt&action=init [L,NC]
-RewriteRule paytable$ http://localhost/core/WebEngine.php?game=black_widow|||igt&action=paytable [L,NC]
