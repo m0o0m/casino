@@ -481,13 +481,30 @@ class Slot {
                     $cnt++;
                 }
                 elseif(in_array($s, $this->wild) && $f && !in_array($symbol[0], $this->scatter)) {
-                    $withWild = true;
-                    $cnt++;
-                    if($this->params->doubleIfWild) {
-                        if(!in_array($symbolPosition, $bonusWildPosition)) {
-                            $double = 2;
+                    if($this->params->blockWildsOnReel) {
+                        if(in_array($lineSymbolCount, $this->params->blockWildReels)) {
+                            $f = false;
+                        }
+                        else {
+                            $withWild = true;
+                            $cnt++;
+                            if($this->params->doubleIfWild) {
+                                if(!in_array($symbolPosition, $bonusWildPosition)) {
+                                    $double = 2;
+                                }
+                            }
                         }
                     }
+                    else {
+                        $withWild = true;
+                        $cnt++;
+                        if($this->params->doubleIfWild) {
+                            if(!in_array($symbolPosition, $bonusWildPosition)) {
+                                $double = 2;
+                            }
+                        }
+                    }
+
                 }
                 elseif($this->params->collectingPay && !in_array($s, $symbol) && $f && $lineSymbolCount > 0) {
                     if(in_array($s, $this->params->collectingSymbols) && in_array($symbol[0], $this->params->collectingSymbols)) {
@@ -504,15 +521,36 @@ class Slot {
                 $lineSymbolCount++;
             }
             if($cnt >= $this->params->minWinCount) {
-                $winLines[] = array(
-                    'line' => $line,
-                    'count' => $cnt,
-                    'id' => $lineId,
-                    'double' => $this->double * $double,
-                    'withWild' => $withWild,
-                    'collecting' => $collecting,
-                    'direction' => 'left',
-                );
+                if($this->params->allCanDouble) {
+                    $winLines[] = array(
+                        'line' => $line,
+                        'count' => $cnt,
+                        'id' => $lineId,
+                        'double' => $this->double * $double,
+                        'withWild' => $withWild,
+                        'collecting' => $collecting,
+                        'direction' => 'left',
+                    );
+                }
+                else {
+                    $banString = (string) $symbol[0] .'-'. (string) $cnt;
+                    if(in_array($banString, $this->params->banSymbols)) {
+                        $resultDouble = $double;
+                    }
+                    else {
+                        $resultDouble = $this->double * $double;
+                    }
+                    $winLines[] = array(
+                        'line' => $line,
+                        'count' => $cnt,
+                        'id' => $lineId,
+                        'double' => $resultDouble,
+                        'withWild' => $withWild,
+                        'collecting' => $collecting,
+                        'direction' => 'left',
+                    );
+                }
+
             }
 
 

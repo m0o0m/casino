@@ -21,9 +21,19 @@
     <script type="text/javascript" src="js/swfobject.js"></script>
     <script type="text/javascript" src="js/game.js"></script>    
     <script type="text/javascript" src="js/externalAPI.js"></script>
+    
+    <?php
+        if(!empty($_GET['bonus'])) {
+            $b = '?bonus='.$_GET['bonus'];
+        }
+        else {
+            $b = '';
+        }
+        
+    ?>
 </head>
 <body>
-    <object type="application/x-shockwave-flash" data="gpe/GPE_Flash/framework/GPELauncher/bin/GPELauncher.swf" width="100%" height="100%" id="gameSwf" style="visibility: visible;">
+    <object type="application/x-shockwave-flash" data="gpe/GPE_Flash/framework/GPELauncher/bin/GPELauncher.swf<?=$b?>" width="100%" height="100%" id="gameSwf" style="visibility: visible;">
         <param name="no_flash" value="Sorry, you need to install flash to see this content.">
         <param name="allowFullScreen" value="true">
         <param name="base" value="gpe/casino/skins/MRGR/bin/">

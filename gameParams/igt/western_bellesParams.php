@@ -38,10 +38,10 @@ class western_bellesParams extends Params {
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51,52);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 2,
     );
 
     public $winLines = array(

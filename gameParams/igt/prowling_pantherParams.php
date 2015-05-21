@@ -36,10 +36,10 @@ class prowling_pantherParams extends Params {
     public $wild = array(0);
     public $doubleIfWild = true;
     // Скаттер
-    public $scatter = array(99);
+    public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 1,
     );
 
     public $winLines = array(
@@ -47,7 +47,7 @@ class prowling_pantherParams extends Params {
     );
 
     public $winLineType = 'ways';
-    public $minWinCount = 3;
+    public $minWinCount = 2;
 
     public $payOnlyHighter = true;
     // настройка ставок

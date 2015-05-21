@@ -36,11 +36,12 @@ class golden_goddessParams extends Params {
         's08' => array(8),
         's09' => array(9),
         'w01' => array(0),
+        'b01' => array(21),
     );
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,

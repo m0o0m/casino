@@ -55,12 +55,15 @@ class treasures_of_ice_wind_daleParams extends Params {
         'w02' => array(102),
     );
     // Вайлд
-    public $wild = array(0);
+    public $wild = array(0,102);
+
+    public $blockWildsOnReel = true;
+    public $blockWildReels = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 0,
     );
 
     public $winLines = array(

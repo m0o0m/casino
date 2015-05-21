@@ -4,6 +4,8 @@ require_once('IGTCtrl.php');
 class garden_partyCtrl extends IGTCtrl {
 
     protected function startConfig($request) {
+        $this->setSessionIfEmpty('state', 'SPIN');
+
         $xml = '<params><param name="softwareid" value="200-1172-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Garden Party"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="GardenParty"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="FPY"/></params>';
 
         $this->outXML($xml);
@@ -269,17 +271,79 @@ class garden_partyCtrl extends IGTCtrl {
     protected function startInit($request) {
         $balance = $this->getBalance();
 
+        $state = 'BaseGame';
+        if($_SESSION['state'] == 'FREE') {
+            $state = $_SESSION['fsState'];
+        }
+
+        $fs = '';
+        if($_SESSION['state'] == 'FREE') {
+            $fs = '<FreeSpinOutcome name="">
+        <InitAwarded>'.$_SESSION['initAwarded'].'</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
+    <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
+    <PopulationOutcome name="Picker.Picks" stage="Picker">
+        <Entry name="L0C0R0" stripIndex="0">
+            <Cell name="L0C0R0" stripIndex="0">spins,5,multiplier,20,trigger,multiplier20</Cell>
+        </Entry>
+        <Entry name="L0C1R0" stripIndex="1">
+            <Cell name="L0C1R0" stripIndex="1">spins,10,multiplier,15,trigger,multiplier15</Cell>
+        </Entry>
+        <Entry name="L0C2R0" stripIndex="2">
+            <Cell name="L0C2R0" stripIndex="2">spins,15,multiplier,10,trigger,multiplier10</Cell>
+        </Entry>
+        <Entry name="L0C3R0" stripIndex="3">
+            <Cell name="L0C3R0" stripIndex="3">spins,20,multiplier,5,trigger,multiplier5</Cell>
+        </Entry>
+        <Entry name="L0C4R0" stripIndex="4">
+            <Cell name="L0C4R0" stripIndex="4">spins,30,multiplier,3,trigger,multiplier3</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>1</PicksRemaining>
+        <PickCount>0</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>1</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
+    <MultiplierOutcome name="NextMultiplier">
+        <Multiplier name="">'.$_SESSION['nextMultiple'].'</Multiplier>
+    </MultiplierOutcome>';
+        }
+
+        $patternsBet = 50;
+        if(!empty($_SESSION['lastPick'])) {
+            $patternsBet = $_SESSION['lastPick'];
+        }
+
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>A2110-14264049099527</TransactionId>
-        <Stage>BaseGame</Stage>
-        <NextStage>BaseGame</NextStage>
+        <Stage>'.$state.'</Stage>
+        <NextStage>'.$state.'</NextStage>
         <Balance>'.$balance.'</Balance>
         <GameStatus>Initial</GameStatus>
         <Settled>0</Settled>
         <Pending>0</Pending>
         <Payout>0</Payout>
     </OutcomeDetail>
+    '.$fs.'
     <PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
         <Entry name="Reel0" stripIndex="8">
             <Cell name="L0C0R0" stripIndex="8">s11</Cell>
@@ -363,7 +427,7 @@ class garden_partyCtrl extends IGTCtrl {
     </PopulationOutcome>
     <PatternSliderInput>
         <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>50</PatternsBet>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -406,12 +470,87 @@ class garden_partyCtrl extends IGTCtrl {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
+            case 'FREE':
+                $this->showStartFreeSpinReport($spinData['report'], $spinData['totalWin']);
+                break;
         }
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
         $this->startPay();
+    }
+
+    protected function startFreeSpin($request) {
+        if(!isset($_SESSION['fsType'])) {
+            $pick = (array) $request['PickerInput']->Pick;
+            $pick = $pick['@attributes']['name'];
+            $pick = $pick[3];
+            $_SESSION['fsType'] = $pick;
+
+            switch($pick) {
+                case '0':
+                    $_SESSION['initAwarded'] = 5;
+                    $_SESSION['totalAwarded'] = 5;
+                    $_SESSION['fsLeft'] = 5;
+                    $_SESSION['maxMultiple'] = 20;
+                    break;
+                case '1':
+                    $_SESSION['initAwarded'] = 10;
+                    $_SESSION['totalAwarded'] = 10;
+                    $_SESSION['fsLeft'] = 10;
+                    $_SESSION['maxMultiple'] = 15;
+                    break;
+                case '2':
+                    $_SESSION['initAwarded'] = 15;
+                    $_SESSION['totalAwarded'] = 15;
+                    $_SESSION['fsLeft'] = 15;
+                    $_SESSION['maxMultiple'] = 10;
+                    break;
+                case '3':
+                    $_SESSION['initAwarded'] = 20;
+                    $_SESSION['totalAwarded'] = 20;
+                    $_SESSION['fsLeft'] = 20;
+                    $_SESSION['maxMultiple'] = 5;
+                    break;
+                case '4':
+                    $_SESSION['initAwarded'] = 30;
+                    $_SESSION['totalAwarded'] = 30;
+                    $_SESSION['fsLeft'] = 30;
+                    $_SESSION['maxMultiple'] = 3;
+                    break;
+            }
+
+            $this->showPickInfo();
+        }
+        else {
+            $_SESSION['fsState'] = 'FreeSpin';
+            $stake = $_SESSION['lastBet'];
+            $pick = $_SESSION['lastPick'];
+
+            $this->slot = new Slot($this->gameParams, $pick, $stake);
+            $this->slot->createCustomReels($this->gameParams->reels[1], array(4,4,4,4,4));
+            $this->slot->rows = 4;
+
+            $spinData = $this->getSpinData();
+            $totalWin = $spinData['totalWin'];
+            $respin = $spinData['respin'];
+
+            while(!game_ctrl(0, $totalWin * 100) || $respin) {
+                $spinData = $this->getSpinData();
+                $totalWin = $spinData['totalWin'];
+                $respin = $spinData['respin'];
+            }
+
+            $this->fsPays[] = $spinData['report']['totalWin'];
+
+            $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
+
+            $_SESSION['lastBet'] = $stake;
+            $_SESSION['lastPick'] = $pick;
+            $_SESSION['lastStops'] = $spinData['report']['stops'];
+            $this->startPay();
+        }
     }
 
     protected function getSpinData() {
@@ -421,9 +560,50 @@ class garden_partyCtrl extends IGTCtrl {
 
         $respin = false;
 
-        $report = $this->slot->spin();
+        $bonus = array();
+
+        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
+            $url = $_SERVER['HTTP_REFERER'];
+            $g = '';
+            if(strpos($url, 'bonus=fs') > 0) {
+                $g = 'fs';
+            }
+            switch($g) {
+                case 'fs':
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(5,22,8,8,5),
+                    );
+                    break;
+            }
+        }
+
+        if($_SESSION['state'] == 'FREE') {
+            $bonus = array(
+                'type' => 'multiple',
+                'range' => array($_SESSION['nextMultiple'], $_SESSION['nextMultiple']),
+            );
+        }
+
+        $report = $this->slot->spin($bonus);
 
         $report['type'] = 'SPIN';
+
+        $report['scattersReport'] = $this->slot->getScattersCount();
+
+        if($report['scattersReport']['count'] > 2) {
+            $multiple = 100;
+            if($report['scattersReport']['count'] == 4) {
+                $multiple = 200;
+            }
+            if($report['scattersReport']['count'] == 5) {
+                $multiple = 500;
+            }
+            $report['type'] = 'FREE';
+            $report['scattersReport']['totalWin'] = $report['betOnLine'] * $multiple;
+            $report['totalWin'] += $report['scattersReport']['totalWin'];
+            $report['spinWin'] += $report['scattersReport']['totalWin'];
+        }
 
         $totalWin = $report['totalWin'];
 
@@ -487,6 +667,384 @@ class garden_partyCtrl extends IGTCtrl {
 </GameLogicResponse>';
 
         $this->outXML($xml);
+    }
+
+    protected function showStartFreeSpinReport($report, $totalWin) {
+        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $highlightLeft = $this->getLeftHighlight($report['winLines']);
+        $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
+        $scattersPay = $this->getScattersPay($report['scattersReport']);
+        $display = $this->getDisplay($report);
+        $display2 = $this->getDisplayByReel($this->gameParams->reels[1], false, 'FreeSpin');
+        $leftWinLines = $this->getLeftWayWinLines($report);
+        $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $_SESSION['startBalance'] = $balance-$totalWin;
+
+        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['fsState'] = 'Picker';
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1540-14228693316850</TransactionId>
+        <Stage>BaseGame</Stage>
+        <NextStage>Picker</NextStage>
+        <Balance>'.$_SESSION['startBalance'].'</Balance>
+        <GameStatus>InProgress</GameStatus>
+        <Settled>0</Settled>
+        <Pending>'.$report['bet'].'</Pending>
+        <Payout>0</Payout>
+    </OutcomeDetail>
+    '.$scattersHighlight.'
+    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
+    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
+        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
+    </TriggerOutcome>
+    '.$highlightLeft.'
+
+    '.$display.$display2.'
+    <FreeSpinOutcome name="">
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>0</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>0</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PopulationOutcome name="Picker.Picks" stage="Picker">
+        <Entry name="L0C0R0" stripIndex="0">
+            <Cell name="L0C0R0" stripIndex="0">spins,5,multiplier,20,trigger,multiplier20</Cell>
+        </Entry>
+        <Entry name="L0C1R0" stripIndex="1">
+            <Cell name="L0C1R0" stripIndex="1">spins,10,multiplier,15,trigger,multiplier15</Cell>
+        </Entry>
+        <Entry name="L0C2R0" stripIndex="2">
+            <Cell name="L0C2R0" stripIndex="2">spins,15,multiplier,10,trigger,multiplier10</Cell>
+        </Entry>
+        <Entry name="L0C3R0" stripIndex="3">
+            <Cell name="L0C3R0" stripIndex="3">spins,20,multiplier,5,trigger,multiplier5</Cell>
+        </Entry>
+        <Entry name="L0C4R0" stripIndex="4">
+            <Cell name="L0C4R0" stripIndex="4">spins,30,multiplier,3,trigger,multiplier3</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>1</PicksRemaining>
+        <PickCount>0</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>1</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
+    '.$scattersPay.'
+    '.$leftWinLines.'
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
+    </PrizeOutcome>
+    <TransactionId>A2210-14264043293637</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
+        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$balance.'">
+        <Balance name="FREE">'.$balance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+
+        $_SESSION['state'] = 'FREE';
+        $_SESSION['totalAwarded'] = 0;
+        $_SESSION['fsLeft'] = 0;
+        $_SESSION['fsPlayed'] = 0;
+        $_SESSION['initAwarded'] = 0;
+        $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['nextMultiple'] = 1;
+    }
+
+    protected function showPickInfo() {
+        $balance = $this->getBalance();
+        $display2 = $this->getDisplayByReel($this->gameParams->reels[1], false, 'FreeSpin');
+        $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+
+        $_SESSION['nextMultiple'] = rnd(1, $_SESSION['maxMultiple']);
+
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1440-14228620478679</TransactionId>
+        <Stage>Picker</Stage>
+        <NextStage>FreeSpin</NextStage>
+        <Balance>'.$balance.'</Balance>
+        <GameStatus>InProgress</GameStatus>
+        <Settled>0</Settled>
+        <Pending>50</Pending>
+        <Payout>0</Payout>
+    </OutcomeDetail>
+    <HighlightOutcome name="BaseGame.LeftRightMultiWay" type="" />
+    <FreeSpinOutcome name="">
+        <InitAwarded>'.$_SESSION['initAwarded'].'</InitAwarded>
+        <Awarded>'.$_SESSION['initAwarded'].'</Awarded>
+        <TotalAwarded>'.$_SESSION['initAwarded'].'</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>'.$_SESSION['initAwarded'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PickerOutcome name="">
+        <Layer index="0" name="layer0">
+            <Pick name="L0C0R0" picked="'.(($_SESSION['fsType'] == 0) ? 'true' : 'false').'">
+                <Feature type="spins" value="5" />
+                <Feature type="multiplier" value="20" />
+                <Feature type="trigger" value="multiplier20" />
+            </Pick>
+            <Pick name="L0C1R0" picked="'.(($_SESSION['fsType'] == 1) ? 'true' : 'false').'">
+                <Feature type="spins" value="10" />
+                <Feature type="multiplier" value="15" />
+                <Feature type="trigger" value="multiplier15" />
+            </Pick>
+            <Pick name="L0C2R0" picked="'.(($_SESSION['fsType'] == 2) ? 'true' : 'false').'">
+                <Feature type="spins" value="15" />
+                <Feature type="multiplier" value="10" />
+                <Feature type="trigger" value="multiplier10" />
+            </Pick>
+            <Pick name="L0C3R0" picked="'.(($_SESSION['fsType'] == 3) ? 'true' : 'false').'">
+                <Feature type="spins" value="20" />
+                <Feature type="multiplier" value="5" />
+                <Feature type="trigger" value="multiplier5" />
+            </Pick>
+            <Pick name="L0C4R0" picked="'.(($_SESSION['fsType'] == 4) ? 'true' : 'false').'">
+                <Feature type="spins" value="30" />
+                <Feature type="multiplier" value="3" />
+                <Feature type="trigger" value="multiplier3" />
+            </Pick>
+        </Layer>
+    </PickerOutcome>
+    <MultiplierOutcome name="NextMultiplier">
+        <Multiplier name="">'.$_SESSION['nextMultiple'].'</Multiplier>
+    </MultiplierOutcome>
+    <PopulationOutcome name="Picker.Picks" stage="Picker">
+        <Entry name="L0C0R0" stripIndex="0">
+            <Cell name="L0C0R0" stripIndex="0">spins,5,multiplier,20,trigger,multiplier20</Cell>
+        </Entry>
+        <Entry name="L0C1R0" stripIndex="1">
+            <Cell name="L0C1R0" stripIndex="1">spins,10,multiplier,15,trigger,multiplier15</Cell>
+        </Entry>
+        <Entry name="L0C2R0" stripIndex="2">
+            <Cell name="L0C2R0" stripIndex="2">spins,15,multiplier,10,trigger,multiplier10</Cell>
+        </Entry>
+        <Entry name="L0C3R0" stripIndex="3">
+            <Cell name="L0C3R0" stripIndex="3">spins,20,multiplier,5,trigger,multiplier5</Cell>
+        </Entry>
+        <Entry name="L0C4R0" stripIndex="4">
+            <Cell name="L0C4R0" stripIndex="4">spins,30,multiplier,3,trigger,multiplier3</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PopulationOutcome name="Picker.Multiplier" stage="Picker">
+        <Entry name="multiplier20" stripIndex="6">
+            <Cell name="L0C0R0" stripIndex="6">7</Cell>
+        </Entry>
+        <Entry name="multiplier15" stripIndex="1">
+            <Cell name="L0C1R0" stripIndex="1">2</Cell>
+        </Entry>
+        <Entry name="multiplier10" stripIndex="1">
+            <Cell name="L0C2R0" stripIndex="1">2</Cell>
+        </Entry>
+        <Entry name="multiplier5" stripIndex="0">
+            <Cell name="L0C3R0" stripIndex="0">1</Cell>
+        </Entry>
+        <Entry name="multiplier3" stripIndex="0">
+            <Cell name="L0C4R0" stripIndex="0">1</Cell>
+        </Entry>
+    </PopulationOutcome>
+    '.$baseReels.$display2.'
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>0</PicksRemaining>
+        <PickCount>1</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>1</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="0" stage="" totalPay="0" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="0" payName="" symbolCount="0" totalPay="0" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <TransactionId>R1440-14228620476904</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>1</BetPerPattern>
+        <PatternsBet>50</PatternsBet>
+    </PatternSliderInput>
+    <PickerInput>
+        <Pick name="L0C0R0" />
+    </PickerInput>
+    <Balances totalBalance="'.$balance.'">
+        <Balance name="FREE">'.$balance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+    }
+
+    protected function showPlayFreeSpinReport($report, $totalWin) {
+
+        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $highlightLeft = $this->getLeftHighlight($report['winLines'], 'FreeSpin');
+        $display = $this->getDisplay($report, false, 'FreeSpin');
+        $leftWinLines = $this->getLeftWayWinLines($report, 'FreeSpin');
+        $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $awarded = 0;
+        $scattersHighlight = '';
+        $scattersPay = '';
+        if($report['scattersReport']['count'] > 2) {
+            $awarded = $_SESSION['initAwarded'];
+            $_SESSION['totalAwarded'] += $awarded;
+            $_SESSION['fsLeft'] += $awarded;
+            $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
+            $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
+        }
+
+        $_SESSION['fsPlayed']++;
+        $_SESSION['fsLeft']--;
+
+        $needBalance = $_SESSION['startBalance'];
+
+
+
+        $_SESSION['fsTotalWin'] += $totalWin;
+
+        $nextStage = 'FreeSpin';
+        $baseReels = '';
+        if($_SESSION['fsLeft'] == 0) {
+            $nextStage = 'BaseGame';
+            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+        }
+
+        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+        $_SESSION['nextMultiple'] = rnd(1, $_SESSION['maxMultiple']);
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1540-14228769811206</TransactionId>
+        <Stage>FreeSpin</Stage>
+        <NextStage>'.$nextStage.'</NextStage>
+        <Balance>'.$needBalance.'</Balance>
+        <GameStatus>InProgress</GameStatus>
+        <Settled>0</Settled>
+        <Pending>50</Pending>
+        <Payout>'.$report['totalWin'].'</Payout>
+    </OutcomeDetail>
+    '.$highlightLeft.$scattersHighlight.'
+    <AwardCapOutcome name="AwardCap">
+        <AwardCapExceeded>false</AwardCapExceeded>
+    </AwardCapOutcome>
+    <FreeSpinOutcome name="">
+        <InitAwarded>'.$_SESSION['initAwarded'].'</InitAwarded>
+        <Awarded>'.$awarded.'</Awarded>
+        <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PickerOutcome name="">
+        <Layer index="0" name="layer0">
+            <Pick name="L0C0R0" picked="'.(($_SESSION['fsType'] == 0) ? 'true' : 'false').'">
+                <Feature type="spins" value="5" />
+                <Feature type="multiplier" value="20" />
+                <Feature type="trigger" value="multiplier20" />
+            </Pick>
+            <Pick name="L0C1R0" picked="'.(($_SESSION['fsType'] == 1) ? 'true' : 'false').'">
+                <Feature type="spins" value="10" />
+                <Feature type="multiplier" value="15" />
+                <Feature type="trigger" value="multiplier15" />
+            </Pick>
+            <Pick name="L0C2R0" picked="'.(($_SESSION['fsType'] == 2) ? 'true' : 'false').'">
+                <Feature type="spins" value="15" />
+                <Feature type="multiplier" value="10" />
+                <Feature type="trigger" value="multiplier10" />
+            </Pick>
+            <Pick name="L0C3R0" picked="'.(($_SESSION['fsType'] == 3) ? 'true' : 'false').'">
+                <Feature type="spins" value="20" />
+                <Feature type="multiplier" value="5" />
+                <Feature type="trigger" value="multiplier5" />
+            </Pick>
+            <Pick name="L0C4R0" picked="'.(($_SESSION['fsType'] == 4) ? 'true' : 'false').'">
+                <Feature type="spins" value="30" />
+                <Feature type="multiplier" value="3" />
+                <Feature type="trigger" value="multiplier3" />
+            </Pick>
+        </Layer>
+    </PickerOutcome>
+    <MultiplierOutcome name="NextMultiplier">
+        <Multiplier name="">'.$_SESSION['nextMultiple'].'</Multiplier>
+    </MultiplierOutcome>
+    '.$baseReels.$display.'
+
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    </PrizeOutcome>
+
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
+    </PrizeOutcome>
+    '.$leftWinLines.'
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    '.$scattersPay.'
+    <TransactionId>R1540-14228769811020</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
+        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$balance.'">
+        <Balance name="FREE">'.$balance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+
+
+        if($_SESSION['fsLeft'] == 0) {
+            $_SESSION['state'] = 'SPIN';
+            unset($_SESSION['fsLeft']);
+            unset($_SESSION['fsPlayed']);
+            unset($_SESSION['totalAwarded']);
+            unset($_SESSION['scatterWin']);
+            unset($_SESSION['fsTotalWin']);
+            unset($_SESSION['startBalance']);
+            unset($_SESSION['baseDisplay']);
+            unset($_SESSION['fsState']);
+            unset($_SESSION['initAwarded']);
+            unset($_SESSION['fsType']);
+            unset($_SESSION['maxMultiple']);
+            unset($_SESSION['nextMultiple']);
+        }
     }
 
 }

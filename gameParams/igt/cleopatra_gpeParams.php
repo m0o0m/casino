@@ -20,6 +20,12 @@ class cleopatra_gpeParams extends Params {
 
     public $reelConfig = array(3,3,3,3,3);
 
+    public $allCanDouble = false;
+
+    public $banSymbols = array(
+        '0-5',
+    );
+
     public $symbols = array(
         'b01' => array(21),
         's01' => array(1),
@@ -39,10 +45,13 @@ class cleopatra_gpeParams extends Params {
     public $wild = array(0);
     public $doubleIfWild = true;
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '5' => 100,
+        '4' => 20,
+        '3' => 5,
+        '2' => 2,
     );
 
     public $winLines = array(

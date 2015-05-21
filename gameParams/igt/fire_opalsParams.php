@@ -47,9 +47,11 @@ class fire_opalsParams extends Params {
     // Вайлд
     public $wild = array(0, 100);
     // Скаттер
-    public $scatter = array(99);
+    public $scatter = array(21,22);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
+        '5' => 100,
+        '4' => 20,
         '3' => 3,
     );
 
@@ -96,5 +98,30 @@ class fire_opalsParams extends Params {
         array('symbol'=> 's08', 'count'=> 5, 'multiplier'=> 100),
         array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 20),
         array('symbol'=> 's08', 'count'=> 3, 'multiplier'=> 5),
+
+        array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 1000),
+        array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 150),
+        array('symbol'=> 's10', 'count'=> 3, 'multiplier'=> 50),
+        array('symbol'=> 's11', 'count'=> 5, 'multiplier'=> 300),
+        array('symbol'=> 's11', 'count'=> 4, 'multiplier'=> 75),
+        array('symbol'=> 's11', 'count'=> 3, 'multiplier'=> 25),
+        array('symbol'=> 's12', 'count'=> 5, 'multiplier'=> 200),
+        array('symbol'=> 's12', 'count'=> 4, 'multiplier'=> 50),
+        array('symbol'=> 's12', 'count'=> 3, 'multiplier'=> 15),
+        array('symbol'=> 's13', 'count'=> 5, 'multiplier'=> 125),
+        array('symbol'=> 's13', 'count'=> 4, 'multiplier'=> 25),
+        array('symbol'=> 's13', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's14', 'count'=> 5, 'multiplier'=> 125),
+        array('symbol'=> 's14', 'count'=> 4, 'multiplier'=> 25),
+        array('symbol'=> 's14', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's15', 'count'=> 5, 'multiplier'=> 100),
+        array('symbol'=> 's15', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's15', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's16', 'count'=> 5, 'multiplier'=> 100),
+        array('symbol'=> 's16', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's16', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's17', 'count'=> 5, 'multiplier'=> 100),
+        array('symbol'=> 's17', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's17', 'count'=> 3, 'multiplier'=> 5),
     );
 }

@@ -37,10 +37,10 @@ class one_hundred_pandasParams extends Params {
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 2,
     );
 
     public $winLines = array(
@@ -212,6 +212,5 @@ class one_hundred_pandasParams extends Params {
         array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 100),
         array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 25),
         array('symbol'=> 's10', 'count'=> 3, 'multiplier'=> 5),
-
     );
 }

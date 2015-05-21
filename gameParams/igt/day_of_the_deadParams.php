@@ -1,4 +1,3 @@
-
 <?
 
 class day_of_the_deadParams extends Params {
@@ -37,10 +36,12 @@ class day_of_the_deadParams extends Params {
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(99);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '5' => 50,
+        '4' => 10,
+        '3' => 2,
     );
 
     public $winLines = array(

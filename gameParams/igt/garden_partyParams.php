@@ -36,13 +36,15 @@ class garden_partyParams extends Params {
         'w01' => array(0),
     );
     // Вайлд
-    public $wild = array(0, 100);
+    public $wild = array(0);
     public $doubleIfWild = true;
     // Скаттер
-    public $scatter = array(99);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 100,
+        '4' => 200,
+        '5' => 500,
     );
 
     public $winLines = array(

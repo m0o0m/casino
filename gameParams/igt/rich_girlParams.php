@@ -21,6 +21,7 @@ class rich_girlParams extends Params {
     public $reelConfig = array(3,3,3,3,3);
 
     public $symbols = array(
+        // START FS
         'b01' => array(51),
         's01' => array(1),
         's02' => array(2),
@@ -31,6 +32,7 @@ class rich_girlParams extends Params {
         's07' => array(7),
         's08' => array(8),
         's09' => array(9),
+        // SCATTER PAYD
         's10' => array(10),
         's11' => array(11),
         's12' => array(12),
@@ -43,7 +45,7 @@ class rich_girlParams extends Params {
     public $wild = array(0, 102);
     public $doubleIfWild = true;
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -108,5 +110,24 @@ class rich_girlParams extends Params {
         array('symbol'=> 'w01', 'count'=> 4, 'multiplier'=> 500),
         array('symbol'=> 'w01', 'count'=> 3, 'multiplier'=> 50),
         array('symbol'=> 'w01', 'count'=> 2, 'multiplier'=> 5),
+        array('symbol'=> 's11', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's11', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's11', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's11', 'count'=> 2, 'multiplier'=> 2),
+        array('symbol'=> 's12', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's12', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's12', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's12', 'count'=> 2, 'multiplier'=> 2),
+        array('symbol'=> 's13', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's13', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's13', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's13', 'count'=> 2, 'multiplier'=> 2),
+        array('symbol'=> 's14', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's14', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's14', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's14', 'count'=> 2, 'multiplier'=> 2),
+        array('symbol'=> 'w02', 'count'=> 5, 'multiplier'=> 1000),
+        array('symbol'=> 'w02', 'count'=> 4, 'multiplier'=> 250),
+        array('symbol'=> 'w02', 'count'=> 3, 'multiplier'=> 50),
     );
 }

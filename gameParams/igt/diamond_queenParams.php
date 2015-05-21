@@ -1,4 +1,3 @@
-
 <?
 
 class diamond_queenParams extends Params {
@@ -38,10 +37,10 @@ class diamond_queenParams extends Params {
     public $wild = array(0);
     public $doubleIfWild = true;
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 2,
     );
 
     public $winLines = array(

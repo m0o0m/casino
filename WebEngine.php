@@ -67,8 +67,8 @@ class WebEngine {
             $params = new $paramsName($api->gameSession->create_time);
 
             // Устанавливаем параметры, загруженные из базы
-            if(!empty($api->casinoGame->params)) {
-                foreach($api->casinoGame->params as $key=>$value) {
+            if(!empty( $api->gameParams)) {
+                foreach($api->gameParams as $key=>$value) {
                     $params->$key = $value;
                 }
             }

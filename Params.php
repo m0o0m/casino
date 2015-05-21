@@ -41,6 +41,27 @@ class Params {
     public $collectingPay = false;
 
     /**
+     * Умножать ли каждый символ, когда идет общий множитель
+     *
+     * @var bool
+     */
+    public $allCanDouble = true;
+
+    /**
+     * Список символов, которые не могут быть умножены общим множителем
+     * @var array
+     */
+    public $banSymbols = array(
+    );
+
+    /**
+     * Запрет вайлдов на выбранных барабанах. Они будут работать как обычные символы
+     *
+     * @var bool
+     */
+    public $blockWildsOnReel = false;
+
+    /**
      * Создание параметров игры и установка текущего ID игры
      *
      * @param int $gameID Номер игры

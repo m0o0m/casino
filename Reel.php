@@ -148,7 +148,9 @@ class Reel {
             $this->visibleSymbols[$i] = $this->newSymbols[$i];
             array_push($this->fullVisibleSymbols,$this->newSymbols[$i]);
         }
-        array_push($this->fullVisibleSymbols, $this->newSymbols[$this->visibleCount]);
+        if(!empty($this->newSymbols[$this->visibleCount])) {
+            array_push($this->fullVisibleSymbols, $this->newSymbols[$this->visibleCount]);
+        }
     }
 
     /**
@@ -204,9 +206,8 @@ class Reel {
      */
     public function checkScatters($scatter, $iterate) {
         $offsets = array();
-        $visibleCount = $this->visibleCount - 1;
-        for($i = 0; $i <= $visibleCount; $i++) {
-            if(in_array($this->newSymbols[$i], $scatter)) {
+        for($i = 0; $i < $this->visibleCount; $i++) {
+            if(in_array($this->visibleSymbols[$i], $scatter)) {
                 $offsets[] = $i * 5 + $iterate;
             }
         }
