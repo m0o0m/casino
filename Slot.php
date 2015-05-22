@@ -698,6 +698,14 @@ class Slot {
         return $winLines;
     }
 
+    /**
+     * Получаем список выигрышных линий слева-направо для символа по ways
+     *
+     * Возвращает массив, содержащий описание линий, на которых символов >= minWinCount
+     *
+     * @param array $symbol Массив числовых идентификаторов символа
+     * @return array
+     */
     private function getWays($symbol) {
         $reelConfig = $this->params->reelConfig;
         $alias = $this->params->getSymbolByID($symbol);
@@ -743,6 +751,14 @@ class Slot {
         return $ways->getWinLines();
     }
 
+    /**
+     * Получаем список выигрышных справа-налево линий для символа по ways
+     *
+     * Возвращает массив, содержащий описание линий, на которых символов >= minWinCount
+     *
+     * @param array $symbol Массив числовых идентификаторов символа
+     * @return array
+     */
     private function getWaysRight($symbol) {
         $reelConfig = $this->params->reelConfig;
         $alias = $this->params->getSymbolByID($symbol);
@@ -788,6 +804,14 @@ class Slot {
         return $ways->getWinLines();
     }
 
+    /**
+     * Получаем список выигрышных слева-направо и справа-налево линий для символа по ways
+     *
+     * Возвращает массив, содержащий описание линий, на которых символов >= minWinCount
+     *
+     * @param array $symbol Массив числовых идентификаторов символа
+     * @return array
+     */
     private function getWaysLeftRight($symbol) {
         $left = $this->getWays($symbol);
         $right = $this->getWaysRight($symbol);

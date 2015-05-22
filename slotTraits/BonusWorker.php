@@ -173,8 +173,6 @@ trait BonusWorker {
         $this->double = $resultMultiple;
     }
 
-
-    // TODO: Описать нормально бонус
     /**
      * Бонус Pirate Attack в Treasure island.
      *

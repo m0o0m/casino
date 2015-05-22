@@ -1,8 +1,36 @@
 <?
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
 
+
+
+/**
+ * Class Ways
+ *
+ * Основная логика путей
+ */
 class Ways {
+    /**
+     * @var array Пути
+     */
     public $paths;
 
+    /**
+     * Создание экземпляра с начальными настройками
+     *
+     * @param array $symbol
+     * @param string $alias
+     * @param bool $doubleIfWild Удваивать, если на линии вайлд
+     * @param int $currentDouble Текущий множитель линий
+     * @param int $minWinCount
+     * @param string $direction "left" or "right"
+     */
     public function __construct($symbol, $alias, $doubleIfWild, $currentDouble, $minWinCount, $direction) {
         $this->symbol = $symbol;
         $this->direction = $direction;
@@ -22,6 +50,11 @@ class Ways {
         );
     }
 
+    /**
+     * Добавляем новый путь к уже имеющимся
+     *
+     * @param array $data
+     */
     public function addMatches($data) {
 
         if(empty($data)) {
@@ -50,6 +83,11 @@ class Ways {
         }
     }
 
+    /**
+     * Получение результата выигрышных линий по путям символа
+     *
+     * @return array
+     */
     public function getWinLines() {
         $winLines = array();
         foreach($this->paths as $p) {
