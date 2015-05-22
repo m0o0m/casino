@@ -1,0 +1,3226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1313488575"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1313488575" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/BonusWorker.html">BonusWorker</a></li>
+                                                    <li class="trait"><a href="../classes/SymbolsWorker.html">SymbolsWorker</a></li>
+                                                                            <li class="class"><a href="../classes/Ctrl.html">Ctrl</a></li>
+                                                    <li class="class"><a href="../classes/Params.html">Params</a></li>
+                                                    <li class="class"><a href="../classes/Reel.html">Reel</a></li>
+                                                    <li class="class"><a href="../classes/Slot.html">Slot</a></li>
+                                                    <li class="class"><a href="../classes/Ways.html">Ways</a></li>
+                                                    <li class="class"><a href="../classes/WebEngine.html">WebEngine</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>Slot</h1>
+                    <p><em>Class Slot</em></p>
+                    <p>Основная логика барабанов, спинов, бонусов.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/SymbolsWorker.html#method_checkSymbolOnReelAnyPosition" class="">checkSymbolOnReelAnyPosition()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getSymbolPositionOnReel" class="">getSymbolPositionOnReel()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_chechSymbolOnReel" class="">chechSymbolOnReel()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getReelSymbol" class="">getReelSymbol()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getReelSymbols" class="">getReelSymbols()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getScattersCount" class="">getScattersCount()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getSymbolAnyCount" class="">getSymbolAnyCount()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsOnPos" class="">setWildsOnPos()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setReelsOffsets" class="">setReelsOffsets()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_getFullLineBonus" class="">getFullLineBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_startAvalanche" class="">startAvalanche()</a><br />
+                                                                    <a href="../classes/Slot.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setCtrl" class="">setCtrl()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setParams" class="">setParams()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWinLines" class="">getWinLines()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWinSymbols" class="">getWinSymbols()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setReels" class="">setReels()</a><br />
+                                                                    <a href="../classes/Slot.html#method_createCustomReels" class="">createCustomReels()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setWilds" class="">setWilds()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setScatter" class="">setScatter()</a><br />
+                                                                    <a href="../classes/Slot.html#method_spin" class="">spin()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getReport" class="">getReport()</a><br />
+                                                                    <a href="../classes/Slot.html#method_resetSlotData" class="">resetSlotData()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setBonus" class="">setBonus()</a><br />
+                                                                    <a href="../classes/Slot.html#method_makeReport" class="">makeReport()</a><br />
+                                                                    <a href="../classes/Slot.html#method_checkWinLinesPresent" class="">checkWinLinesPresent()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getOffsetsByLine" class="">getOffsetsByLine()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getReelOffset" class="">getReelOffset()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getOffsets" class="">getOffsets()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Slot.html#property_drawID" class="">$drawID</a><br />
+                                                                    <a href="../classes/Slot.html#property_rows" class="">$rows</a><br />
+                                                                    <a href="../classes/Slot.html#property_bonusWildsMultiple" class="">$bonusWildsMultiple</a><br />
+                                                                    <a href="../classes/Slot.html#property_bonusIterateCount" class="">$bonusIterateCount</a><br />
+                                                                    <a href="../classes/Slot.html#property_double" class="">$double</a><br />
+                                                                    <a href="../classes/Slot.html#property_betOnLine" class="">$betOnLine</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/BonusWorker.html#method_checkBonus" class="">checkBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_executeBonus" class="">executeBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setMultipleByLevel" class="">setMultipleByLevel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsByLevel" class="">setWildsByLevel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setMultipleBySymbolCount" class="">setMultipleBySymbolCount()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setExplodedWild" class="">setExplodedWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelIfSymbolPresent" class="">setWildReelIfSymbolPresent()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setMultipleReel" class="">setMultipleReel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomWildIfSymbolCount" class="">setRandomWildIfSymbolCount()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setSymbolOnPosition" class="">setSymbolOnPosition()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setReplace" class="">setReplace()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomReplace" class="">setRandomReplace()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelsIfSymbol" class="">setWildReelsIfSymbol()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomWildsOnPos" class="">setRandomWildsOnPos()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReelsOfSymbol" class="">setWildReelsOfSymbol()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsIf" class="">setWildsIf()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReel" class="">setWildReel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setRandomWild" class="">setRandomWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setMultipleWithWild" class="">setMultipleWithWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildReels" class="">setWildReels()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_checkExpandWild" class="">checkExpandWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setScatters" class="">setScatters()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildOnReels" class="">setWildOnReels()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setStepWild" class="">setStepWild()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_odinRavens" class="">odinRavens()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getLeft" class="">getLeft()</a><br />
+                                                                    <a href="../classes/Slot.html#method_get243" class="">get243()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWays" class="">getWays()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWaysRight" class="">getWaysRight()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWaysLeftRight" class="">getWaysLeftRight()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getLineSymbols" class="">getLineSymbols()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getRows" class="">getRows()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getFullRows" class="">getFullRows()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Slot.html#property_symbols" class="">$symbols</a><br />
+                                                                    <a href="../classes/Slot.html#property_reels" class="">$reels</a><br />
+                                                                    <a href="../classes/Slot.html#property_lines" class="">$lines</a><br />
+                                                                    <a href="../classes/Slot.html#property_wins" class="">$wins</a><br />
+                                                                    <a href="../classes/Slot.html#property_totalMultiple" class="">$totalMultiple</a><br />
+                                                                    <a href="../classes/Slot.html#property_wild" class="">$wild</a><br />
+                                                                    <a href="../classes/Slot.html#property_scatter" class="">$scatter</a><br />
+                                                                    <a href="../classes/Slot.html#property_report" class="">$report</a><br />
+                                                                    <a href="../classes/Slot.html#property_bonusData" class="">$bonusData</a><br />
+                                                                    <a href="../classes/Slot.html#property_step" class="">$step</a><br />
+                                                                    <a href="../classes/Slot.html#property_ctrl" class="">$ctrl</a><br />
+                                                                    <a href="../classes/Slot.html#property_spinBonus" class="">$spinBonus</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Slot.html"><div class="path-wrapper">Slot.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Slot</div>
+                            </dd>
+
+                        
+                                                                                    <dt>Uses traits</dt>
+                                                        <dd>
+                                <a href="../classes/SymbolsWorker.html">                                    <div class="namespace-wrapper">\SymbolsWorker</div>
+                                </a>                            </dd>
+                                                                                <dd>
+                                <a href="../classes/BonusWorker.html">                                    <div class="namespace-wrapper">\BonusWorker</div>
+                                </a>                            </dd>
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_drawID" name="property_drawID" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$drawID</h3>
+                <pre class="signature">$drawID : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; Номер отрисовки                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_rows" name="property_rows" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$rows</h3>
+                <pre class="signature">$rows : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; Количество строк слота                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_bonusWildsMultiple" name="property_bonusWildsMultiple" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$bonusWildsMultiple</h3>
+                <pre class="signature">$bonusWildsMultiple : array</pre>
+                <p><em>Дополнительные вайлды-множители, которые при попадании на линюю умножают ее</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_bonusIterateCount" name="property_bonusIterateCount" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$bonusIterateCount</h3>
+                <pre class="signature">$bonusIterateCount : integer</pre>
+                <p><em>Итератор, для выхода из зациклившегося бонуса и респина</em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_double" name="property_double" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$double</h3>
+                <pre class="signature">$double : integer</pre>
+                <p><em>Множитель(multiplier) выигрышных линий</em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_betOnLine" name="property_betOnLine" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$betOnLine</h3>
+                <pre class="signature">$betOnLine : float</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                float
+                &mdash; Ставка на линию с учетом индекса                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_symbols" name="property_symbols" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$symbols</h3>
+                <pre class="signature">$symbols : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Ассотиативный массив буквенного и числового значения символа                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_reels" name="property_reels" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$reels</h3>
+                <pre class="signature">$reels : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Содержит массив барабанов слота. Каждый элемент - экземпляр Reel                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lines" name="property_lines" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$lines</h3>
+                <pre class="signature">$lines : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив выигрышных линий.
+Количество линий в массиве зависит от того, сколько линий выбрано в игре.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_wins" name="property_wins" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$wins</h3>
+                <pre class="signature">$wins : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив выплат.
+symbol - буквенной идентификатор символа
+count - количество символов
+multiplier - множитель ставки на линию                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_totalMultiple" name="property_totalMultiple" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$totalMultiple</h3>
+                <pre class="signature">$totalMultiple : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; Суммарный множитель после спина (учитывая бонусы спина)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_wild" name="property_wild" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$wild</h3>
+                <pre class="signature">$wild : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив вайлдов слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_scatter" name="property_scatter" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$scatter</h3>
+                <pre class="signature">$scatter : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив скаттеров слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_report" name="property_report" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$report</h3>
+                <pre class="signature">$report : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Содержит подробную информацию по результатам спина.
+
+winLines - массив линий, на которых выиграли
+totalMultiple - полный множитель ставки на линию
+offset - Массив сдвига барабанов
+rows - Конечные символы строк(не барабанов, а именно строк) слота после спина и применения всех бонусов и т.д
+startRows - Начальные строки слота после спина и ДО применения бонусов и т.д
+bonusData - Дополнительная информация по бонусам
+double - Множитель всех выигрышей
+bet - Общая ставка
+linesCount - Количество играющих линий
+betOnLine - Ставка на линию
+stops - Строка сдвига барабанов (отображает сдвиг второй строки)
+totalWin - Общая сумма выигрыша                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_bonusData" name="property_bonusData" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$bonusData</h3>
+                <pre class="signature">$bonusData : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив данных бонуса.
+Используется для передачи дополнительной информации по бонусам (положение рандомных вайлдов и т.д)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_step" name="property_step" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$step</h3>
+                <pre class="signature">$step : integer</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                &mdash; Номер запуска спина и бонусных спинов                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ctrl" name="property_ctrl" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$ctrl</h3>
+                <pre class="signature">$ctrl : boolean|object</pre>
+                <p><em>Контроллер, который использует слот</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean|object
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_spinBonus" name="property_spinBonus" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$spinBonus</h3>
+                <pre class="signature">$spinBonus : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Бонус спина                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkSymbolOnReelAnyPosition" name="method_checkSymbolOnReelAnyPosition" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">checkSymbolOnReelAnyPosition()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkSymbolOnReelAnyPosition(string  <span class="argument">$symbol</span>, integer  <span class="argument">$reelNumber</span>) : boolean|integer</pre>
+                <p><em>Проверка наличия символа на отображаемых символах барабана</em></p>
+                <p>false - символа нету.
+int - относительное положение символа на слоте</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Буквенный идентификатор символа</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reelNumber </td>
+                                <td><p>Номер барабана ( начинается с 0)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSymbolPositionOnReel" name="method_getSymbolPositionOnReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSymbolPositionOnReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSymbolPositionOnReel(array  <span class="argument">$symbol</span>, integer  <span class="argument">$reel</span>, integer  <span class="argument">$position</span>) : boolean</pre>
+                <p><em>Проверка и получение оффсета символа на барабане.</em></p>
+                <p>Если символа нету на барабане+позиции, то возвращает false</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Числовые идентификаторы символа</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reel </td>
+                                <td><p>Номер барабана</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Позиция символа на барабане</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_chechSymbolOnReel" name="method_chechSymbolOnReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">chechSymbolOnReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">chechSymbolOnReel(string  <span class="argument">$symbol</span>, integer  <span class="argument">$reelNumber</span>, integer  <span class="argument">$position</span>) : boolean</pre>
+                <p><em>Проверка положения символа на определенной позиции барабана</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Буквенный идентификатор символа</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reelNumber </td>
+                                <td><p>Номер барабана ( начинается с 0)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Позиция на отображаемых символах барабана (начинается с 0)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReelSymbol" name="method_getReelSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelSymbol(integer  <span class="argument">$reel</span>, integer  <span class="argument">$position</span>) : integer</pre>
+                <p><em>Получение символа барабана на определенной позиции</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reel </td>
+                                <td><p>Номер барабана (начинается с 0)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$position </td>
+                                <td><p>Позиция на отображаемых символах барабана (начинается с 0)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReelSymbols" name="method_getReelSymbols" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelSymbols()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelSymbols(integer  <span class="argument">$reel</span>) : array</pre>
+                <p><em>Получение массива отображаемых символов барабана</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reel </td>
+                                <td><p>Номер барабана (начинается с 0)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Массив числовых идентификаторов символов, которые отображаются на барабане</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getScattersCount" name="method_getScattersCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getScattersCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getScattersCount() : array</pre>
+                <p><em>Получение количества и положения скаттров на барабанах</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>count - количество скаттеров
+offsets - Массив позиций скаттеров</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSymbolAnyCount" name="method_getSymbolAnyCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSymbolAnyCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSymbolAnyCount(string  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение количества символа на барабанах</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Буквенный идентификатор символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>count - Количество символа на барабанах
+offsets - Позиции символа на барабанах</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsOnPos" name="method_setWildsOnPos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWildsOnPos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsOnPos(array  <span class="argument">$offsets</span>, mixed  <span class="argument">$wildSymbol = false</span>) </pre>
+                <p><em>Устанавливает wild на определенную позицию барабана по переданному offsets</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td><p>Относительное положение символов на слоте</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$wildSymbol </td>
+                                <td><p>Если false, то берется $this-&gt;wild[0], иначе берется переданный $wildSymbol</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReelsOffsets" name="method_setReelsOffsets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setReelsOffsets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReelsOffsets(array  <span class="argument">$offsets</span>) </pre>
+                <p><em>Устанавливает оффсеты для барабанов и обновляет символы</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFullLineBonus" name="method_getFullLineBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFullLineBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFullLineBonus(integer  <span class="argument">$countSymbols = 5</span>) : array</pre>
+                <p><em>Получение данных по дополнительным выплатам по линиям</em></p>
+                <p>Массив символов, которые проверяются содержится в параметрах игры в lineBonus['symbols']
+Массив выплат по количеству содержится в lineBonus['multiplier']</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$countSymbols </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>totalMultiple - общий множитель по всем линиям, которые прошли
+lines - массив линий, которые прошли. Содержит lineId(номер линии), multiple(множитель) и offsets(Положение символов на слоте)
+win - true\false
+count - Количество символов для проверки. То есть длина выигрышной линии.
+primaryLine - ID последней выигрышной линии.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_startAvalanche" name="method_startAvalanche" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">startAvalanche()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">startAvalanche(array  <span class="argument">$report</span>, array  <span class="argument">$addOffset = array()</span>,   <span class="argument">$getOffset = true</span>, integer  <span class="argument">$scattersCount = 3</span>) : array</pre>
+                <p><em>Если есть выигрышные линии, то символы на этих линиях убираются и заменяются
+предыдущими невидимыми символами слота. Репорт делается для каждой победы до тех пор,
+пока выигрышных линий не будет.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$report </td>
+                                <td><ul>
+<li>Репорт спина.</li>
+</ul></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$addOffset </td>
+                                <td><ul>
+<li>Дополнительный массив оффсетов для сдвига</li>
+</ul></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$getOffset </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$scattersCount </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(object  <span class="argument">$params</span>, integer  <span class="argument">$linesCount</span>, float  <span class="argument">$bet</span>, float  <span class="argument">$betOnLineIndex = 1</span>) </pre>
+                <p><em>Инициализация слота</em></p>
+                <p>Получение выигрышных линий в зависимости от количества играющих линий
+Создание массива символов(без повторов), которые учавствуют в выплате
+Создание барабанов слота из раскладок слота.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$params </td>
+                                <td><p>Параметры текущей игры</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$linesCount </td>
+                                <td><p>Количество линий, по которым будет считаться выигрыш</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$bet </td>
+                                <td><p>Общая ставка</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$betOnLineIndex </td>
+                                <td><p>Дополнительный множитель для правильного рассчета ставки на линию</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCtrl" name="method_setCtrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCtrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCtrl(\Ctrl  <span class="argument">$ctrl</span>) </pre>
+                <p><em>Установка контроллера для слота</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Ctrl.html">\Ctrl</a></td>
+                                <td>$ctrl </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setParams" name="method_setParams" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setParams()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setParams(\Params  <span class="argument">$params</span>) </pre>
+                <p><em>Установка новых параметров игры</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Params.html">\Params</a></td>
+                                <td>$params </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWinLines" name="method_getWinLines" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getWinLines()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWinLines(array  <span class="argument">$lines</span>, integer  <span class="argument">$linesCount</span>) : array</pre>
+                <p><em>Получаем список линий, в зависимости от выигрышных линий</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$lines </td>
+                                <td><p>Все выигрышные линии слота</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$linesCount </td>
+                                <td><p>Количество играющих линий</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Текущие выигрышные линии слота</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWinSymbols" name="method_getWinSymbols" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getWinSymbols()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWinSymbols() : array</pre>
+                <p><em>Получаем список символов, которые учавствуют в выплате</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReels" name="method_setReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReels(array  <span class="argument">$params</span>) </pre>
+                <p><em>Установка новых барабанов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>Создание новых барабанов из переданной раскладки</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createCustomReels" name="method_createCustomReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">createCustomReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createCustomReels(array  <span class="argument">$reels</span>, array  <span class="argument">$config</span>) </pre>
+                <p><em>Устанавливает новые барабаны с нужным количеством видимых символов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reels </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td><p>Массив, содержащий количество видимых символов для каждого барабана</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWilds" name="method_setWilds" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWilds()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWilds(array  <span class="argument">$wilds</span>) </pre>
+                <p><em>Установка нового массива вайлдов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wilds </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setScatter" name="method_setScatter" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setScatter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setScatter(array  <span class="argument">$scatter</span>) </pre>
+                <p><em>Установка нового массива скаттеров</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$scatter </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_spin" name="method_spin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">spin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">spin(array  <span class="argument">$bonus = array()</span>) : array</pre>
+                <p><em>Крутим барабаны и создаем репорт спина.</em></p>
+                <p>Инициализация начальных параметров репорта.
+Кручение барабанов
+Проверка и запуск бонусов
+Создание репорта</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$bonus </td>
+                                <td><p>Бонус(или бонусы) для спина</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>$report Полная информация по спину</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReport" name="method_getReport" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReport()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReport() : array</pre>
+                <p><em>Проверка бонусов и создание репорта спина</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Полный репорт спина</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_resetSlotData" name="method_resetSlotData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">resetSlotData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">resetSlotData() </pre>
+                <p><em>Сброс основных параметров слота до спина</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBonus" name="method_setBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBonus(array  <span class="argument">$bonus</span>) </pre>
+                <p><em>Установка бонуса спина</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$bonus </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_makeReport" name="method_makeReport" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">makeReport()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">makeReport() : array</pre>
+                <p><em>Создание репорта спина</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkWinLinesPresent" name="method_checkWinLinesPresent" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">checkWinLinesPresent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkWinLinesPresent() : boolean</pre>
+                <p><em>Проверяем, есть ли выигрышные линии у слота после спина.</em></p>
+                <p>Данная функция нужна для бонусов, которые срабатывают, если есть выигрышные линии.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOffsetsByLine" name="method_getOffsetsByLine" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOffsetsByLine()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOffsetsByLine(array  <span class="argument">$line</span>, integer  <span class="argument">$count</span>) : array</pre>
+                <p><em>Получаем Offset по указанной линии в нужном количестве</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$line </td>
+                                <td><p>Выигрышная линия</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$count </td>
+                                <td><p>Размер возвращаемого массива $offsets</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReelOffset" name="method_getReelOffset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelOffset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelOffset(integer  <span class="argument">$reelNumber</span>) : array</pre>
+                <p><em>Получаем Offset символов барабана по его номеру</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reelNumber </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOffsets" name="method_getOffsets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOffsets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOffsets() : array</pre>
+                <p><em>Получение оффсета(смещения) барабанов</em></p>
+                <p>Массив формируется как для строк слота, а не барабанов</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkBonus" name="method_checkBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">checkBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkBonus() </pre>
+                <p><em>Проверка переданных бонусов и запуск нужных</em></p>
+                <p>Может передаваться как один бонус так и массив бонусов</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_executeBonus" name="method_executeBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">executeBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">executeBonus(array  <span class="argument">$bonus</span>) </pre>
+                <p><em>Применение бонуса</em></p>
+                <p>type - Обязательный параметр бонуса. Указывает тип бонуса
+Для каждого типа бонуса идут дополнительные параметры</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$bonus </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMultipleByLevel" name="method_setMultipleByLevel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setMultipleByLevel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMultipleByLevel(  <span class="argument">$bonus</span>) </pre>
+                <p><em>Устанавливает общий множитель в зависимости от количества выпавших символов за определенный период игры</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$bonus </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsByLevel" name="method_setWildsByLevel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildsByLevel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsByLevel(  <span class="argument">$bonus</span>) </pre>
+                <p><em>Устанавливает вайлды в зависимости от количества выпавших символов за определенный период игры</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$bonus </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMultipleBySymbolCount" name="method_setMultipleBySymbolCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setMultipleBySymbolCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMultipleBySymbolCount(string  <span class="argument">$symbol</span>, integer  <span class="argument">$multipleInc</span>) </pre>
+                <p><em>Устанавливает множитель всех выигрышей, в зависимости от количества выпавших символов на барабанах.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Количество символов = множитель.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$multipleInc </td>
+                                <td><p>Дополнительное значение, которое прибавляется к итоговому множетелю. Может быть отрицательным.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setExplodedWild" name="method_setExplodedWild" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setExplodedWild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setExplodedWild(array  <span class="argument">$config</span>) </pre>
+                <p><em>Бонус Pirate Attack в Treasure island.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReelIfSymbolPresent" name="method_setWildReelIfSymbolPresent" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelIfSymbolPresent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelIfSymbolPresent(integer  <span class="argument">$symbol</span>) </pre>
+                <p><em>Устанавливает барабан в wild-reel, если на барабане присутствует символ</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td><p>Числовой идентификатор символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMultipleReel" name="method_setMultipleReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setMultipleReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMultipleReel(array  <span class="argument">$wildConfig</span>) </pre>
+                <p><em>Устанавливает множитель для всех выиграшей, если какие-то барабаны полностью заполнены вайлдом(или любым другим символом)
+в $wildConfig передаются барабаны множителей и ID вайлда\символа для проверки</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wildConfig </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomWildIfSymbolCount" name="method_setRandomWildIfSymbolCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomWildIfSymbolCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildIfSymbolCount(array  <span class="argument">$offsets</span>, string  <span class="argument">$symbol</span>, integer  <span class="argument">$needleCount</span>, array  <span class="argument">$wildConfig</span>) </pre>
+                <p><em>Устанавливает вайлды(или любой символ) на переданные позиции в рандомном количестве\порядке, если на слоте выпало нужное количество выбранных символов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td><p>Возможные позиции вайлдов\новых символов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Символ, по которому идет проверка</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$needleCount </td>
+                                <td><p>Количество символов, с которым начнется установка вайлдов\новых символов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wildConfig </td>
+                                <td><p>Описание количества вайлдов, шанса количества вайлда и символ вайлда</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSymbolOnPosition" name="method_setSymbolOnPosition" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setSymbolOnPosition()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSymbolOnPosition(array  <span class="argument">$offsets</span>, string  <span class="argument">$symbol</span>) </pre>
+                <p><em>Устанавливает символ на переданные оффсеты</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReplace" name="method_setReplace" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setReplace()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReplace(array  <span class="argument">$relation</span>) </pre>
+                <p><em>Заменяет переданные символы на другие в прямом порядке</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$relation </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomReplace" name="method_setRandomReplace" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomReplace()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomReplace(array  <span class="argument">$symbols</span>, array  <span class="argument">$replacement</span>) </pre>
+                <p><em>Заменяет каждый $symbols на случайный из $replacement</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbols </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$replacement </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReelsIfSymbol" name="method_setWildReelsIfSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelsIfSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsIfSymbol(string  <span class="argument">$symbol</span>, array  <span class="argument">$offsets</span>, integer  <span class="argument">$wildSymbol</span>, string  <span class="argument">$symbolIfEmpty</span>, integer  <span class="argument">$cancelIfLess</span>) </pre>
+                <p><em>Устанавливает барабаны в вайлд, в зависимости от количества выпавших символов и наличие символов для замены</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Если выпал данный символ, то барабаны могут превратиться в wild</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td><p>Оффсет символов для замены на вайлд барабаны.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildSymbol </td>
+                                <td><p>ID вайлда для установки в wild-барабан</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbolIfEmpty </td>
+                                <td><p>Если переданный offset пустой, то проверяет наличие оффсетов по данному символу</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$cancelIfLess </td>
+                                <td><p>Отменять установку барабанов, если переданной значение минус новое количество символов для замены меньше единицы (0 или менее)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomWildsOnPos" name="method_setRandomWildsOnPos" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomWildsOnPos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomWildsOnPos(array  <span class="argument">$positions</span>, integer  <span class="argument">$wildSymbol</span>, integer  <span class="argument">$wildsCount</span>) </pre>
+                <p><em>Устанавливает вайлды в рандомные переданные оффсеты на барабаны.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$positions </td>
+                                <td><p>Допустимые позиции для вайлдов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildSymbol </td>
+                                <td><p>Чистолой идентификатор вайлда</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildsCount </td>
+                                <td><p>Количество вайдов</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReelsOfSymbol" name="method_setWildReelsOfSymbol" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReelsOfSymbol()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReelsOfSymbol(string  <span class="argument">$symbol</span>, array  <span class="argument">$reels</span>, integer  <span class="argument">$wildSymbol</span>) </pre>
+                <p><em>Устанавливает барабаны в wild-reels в зависимости от количества выпавших символов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td><p>Символ, по которому будет подсчитываться количество wild-барабанов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reels </td>
+                                <td><p>Номера барабанов, которые могут стать wild</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildSymbol </td>
+                                <td><p>ID вайлда, который будет установлен на wild-барабаны</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsIf" name="method_setWildsIf" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildsIf()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsIf(string  <span class="argument">$symbol</span>, integer  <span class="argument">$reel</span>, array  <span class="argument">$countConfig</span>) </pre>
+                <p><em>Если определенный символ присутствует на определенном барабане,
+то случайные символы превращаются в вайлды. Количество превращений указано в countConfig</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reel </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$countConfig </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReel" name="method_setWildReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReel(integer  <span class="argument">$reelNumber</span>, integer  <span class="argument">$wild</span>) </pre>
+                <p><em>Устанавливает барабан в wild-барабан</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reelNumber </td>
+                                <td><p>Номер барабана</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wild </td>
+                                <td><p>Числовой идентификатор вайлда</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRandomWild" name="method_setRandomWild" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setRandomWild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRandomWild(array  <span class="argument">$range</span>, integer  <span class="argument">$not</span>) </pre>
+                <p><em>Устанавливает рандомное число вайлдов в зависимости от диапазона ($range)</em></p>
+                <p>Если передан $not, то на этот offset нельзя поставить wild</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$range </td>
+                                <td><p>Диапазон количества рандомных вайлдов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$not </td>
+                                <td><p>Offset</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMultipleWithWild" name="method_setMultipleWithWild" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setMultipleWithWild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMultipleWithWild(integer  <span class="argument">$multiple</span>) </pre>
+                <p><em>Устанавливает множитель и wild на средний символ слота (3 барабан, 2 позиция)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$multiple </td>
+                                <td><p>Множитель всех выигрышей</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildReels" name="method_setWildReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildReels(array  <span class="argument">$reels</span>, boolean  <span class="argument">$setWild = false</span>) </pre>
+                <p><em>Установка барабанов в wild-барабаны</em></p>
+                <p>Если передан $setWild, то этот символ будет использоваться как Wild
+Стандартно используется нулевой символ массива $this-&gt;wild</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reels </td>
+                                <td><p>Массив номеров барабанов(начинается с 0), которые нужно сделать wild-барабанами</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$setWild </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkExpandWild" name="method_checkExpandWild" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">checkExpandWild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkExpandWild(array  <span class="argument">$reels</span>, array  <span class="argument">$symbolsID</span>, integer  <span class="argument">$wild</span>) </pre>
+                <p><em>Проверка на возможность сделать из барабана wild-барабан.</em></p>
+                <p>Если отображаемые символы барабана содержат только символы, переданные в $symbolsID,
+то отображаемые символы заменяются на $wild и барабан становится wild-барабаном</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reels </td>
+                                <td><p>Массив номеров барабанов(начинается с 0), на которых проходит проверка</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbolsID </td>
+                                <td><p>Массив числовых идентификаторов символов, которые должны быть на барабане</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wild </td>
+                                <td><p>Идентификатор вайлда, который заменит все отображаемые символы барабана</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setScatters" name="method_setScatters" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setScatters()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setScatters() </pre>
+                <p><em>Тестовый бонус для установки 3х скаттеров на последний барабан.</em></p>
+                <p>Этот бонус запускает фриспины.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildOnReels" name="method_setWildOnReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildOnReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildOnReels(array  <span class="argument">$offsets</span>) </pre>
+                <p><em>Устанавливает вайлды на переданный offsets</em></p>
+                <p>Вайлд берется как нулевой элемент $this-&gt;wild</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setStepWild" name="method_setStepWild" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setStepWild()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setStepWild(array  <span class="argument">$steps</span>) </pre>
+                <p><em>Устанавливаем нужные вайлды в зависимости от номера спина</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$steps </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_odinRavens" name="method_odinRavens" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">odinRavens()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">odinRavens(array  <span class="argument">$positions</span>, integer  <span class="argument">$x3Chance</span>, integer  <span class="argument">$x6Chance</span>) </pre>
+                <p><em>Бонус ворон одина</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$positions </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$x3Chance </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$x6Chance </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLeft" name="method_getLeft" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getLeft()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLeft(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список для каждого символа по каждой линии слева на право</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get243" name="method_get243" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">get243()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get243(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список выигрышных линий для символа по 243 ways</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWays" name="method_getWays" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getWays()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWays(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список выигрышных линий слева-направо для символа по ways</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWaysRight" name="method_getWaysRight" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getWaysRight()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWaysRight(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список выигрышных справа-налево линий для символа по ways</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWaysLeftRight" name="method_getWaysLeftRight" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getWaysLeftRight()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWaysLeftRight(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список выигрышных слева-направо и справа-налево линий для символа по ways</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLineSymbols" name="method_getLineSymbols" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getLineSymbols()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLineSymbols(integer  <span class="argument">$line</span>) : array</pre>
+                <p><em>Получение списка символов, которые находятся на выигрышной линии</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$line </td>
+                                <td><p>Номер выигрышной линии</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRows" name="method_getRows" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getRows()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRows() : array</pre>
+                <p><em>Получение видимых символов барабанов</em></p>
+                <p>Массив формируется как для строк слота, а не барабанов</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFullRows" name="method_getFullRows" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getFullRows()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFullRows() : array</pre>
+                <p><em>Получение видимых символов барабанов + предыдущие и последующие символы</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Slot.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Slot.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 22nd, 2015 at 11:33.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
