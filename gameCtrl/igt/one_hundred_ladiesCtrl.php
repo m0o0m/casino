@@ -465,6 +465,8 @@ class one_hundred_ladiesCtrl extends IGTCtrl {
         $_SESSION['totalAwarded'] = 10;
         $_SESSION['fsLeft'] = 10;
         $_SESSION['fsPlayed'] = 0;
+
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -473,6 +475,7 @@ class one_hundred_ladiesCtrl extends IGTCtrl {
         $display = $this->getDisplay($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report, 'FreeSpin');
         $betPerLine = $report['bet'] / $report['linesCount'];
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
 
         $awarded = 0;
         $scattersHighlight = '';
@@ -493,9 +496,17 @@ class one_hundred_ladiesCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] += $totalWin;
 
         $nextStage = 'FreeSpin';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
         }
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
@@ -507,11 +518,12 @@ class one_hundred_ladiesCtrl extends IGTCtrl {
         <Stage>FreeSpin</Stage>
         <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$needBalance.'</Balance>
-        <GameStatus>InProgress</GameStatus>
-        <Settled>0</Settled>
-        <Pending>'.$report['bet'].'</Pending>
-        <Payout>0</Payout>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
+    '.$baseScatter.'
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
         <Trigger name="betIncrement0" priority="0" stageConnector=""/>

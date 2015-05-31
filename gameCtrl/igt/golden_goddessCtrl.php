@@ -527,6 +527,7 @@ class golden_goddessCtrl extends IGTCtrl {
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['initAwarded'] = 7;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
     }
 
     protected function showPickInfo($pick) {
@@ -636,9 +637,18 @@ class golden_goddessCtrl extends IGTCtrl {
 
         $nextStage = 'FreeSpin';
         $baseReels = '';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
@@ -650,12 +660,12 @@ class golden_goddessCtrl extends IGTCtrl {
         <Stage>FreeSpin</Stage>
         <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$needBalance.'</Balance>
-        <GameStatus>InProgress</GameStatus>
-        <Settled>0</Settled>
-        <Pending>50</Pending>
-        <Payout>'.$report['totalWin'].'</Payout>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
-    '.$highlight.'
+    '.$baseScatter.$highlight.'
     <AwardCapOutcome name="AwardCap">
         <AwardCapExceeded>false</AwardCapExceeded>
     </AwardCapOutcome>

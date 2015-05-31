@@ -422,8 +422,9 @@ class rich_girlCtrl extends IGTCtrl {
         $highlight = $this->getHighlight($report['winLines']);
         $display = $this->getDisplay($report);
         $sc = '<HighlightOutcome name="BaseGame.Scatter" type=""/>';
-        if(!empty($report['scattersReport']['totalWin'])) {
-            $sc = $this->getScattersHighlight($report['scattersReport']['offsets']);
+        $sr = $report['scattersReport'];
+        if(!empty($sr['totalWin'])) {
+            $sc = $this->getScattersHighlight($sr['offsets']);
         }
         else {
             $report['scattersReport']['totalWin'] = 0;
@@ -451,7 +452,9 @@ class rich_girlCtrl extends IGTCtrl {
     '.$highlight.'
 
     '.$display.'
-    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$report['scattersReport']['totalWin'].'" stage="" totalPay="'.$report['scattersReport']['totalWin'].'" type="Pattern"/>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$sr['totalWin'].'" stage="" totalPay="'.$sr['totalWin'].'" type="Pattern">
+        <Prize betMultiplier="1" multiplier="1" name="Scatter" pay="'.$sr['totalWin'].'" payName="'.$sr['count'].' s10" symbolCount="'.$sr['count'].'" totalPay="'.$sr['totalWin'].'" ways="0" />
+    </PrizeOutcome>
     '.$winLines.'
     <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
@@ -546,6 +549,7 @@ class rich_girlCtrl extends IGTCtrl {
         $_SESSION['fsLeft'] = 3;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -578,9 +582,18 @@ class rich_girlCtrl extends IGTCtrl {
         $nextStage = 'FreeSpin';
 
         $baseReels = '';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
@@ -597,11 +610,12 @@ class rich_girlCtrl extends IGTCtrl {
         <Stage>FreeSpin</Stage>
         <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$needBalance.'</Balance>
-        <GameStatus>InProgress</GameStatus>
-        <Settled>0</Settled>
-        <Pending>'.$report['bet'].'</Pending>
-        <Payout>0</Payout>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
+    '.$baseScatter.'
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
         <Trigger name="betIncrement0" priority="0" stageConnector=""/>

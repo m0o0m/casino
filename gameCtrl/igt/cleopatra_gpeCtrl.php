@@ -455,6 +455,7 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         $_SESSION['fsLeft'] = 15;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -486,9 +487,18 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         $nextStage = 'FreeSpin';
 
         $baseReels = '';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
@@ -501,11 +511,12 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         <Stage>FreeSpin</Stage>
         <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$needBalance.'</Balance>
-        <GameStatus>InProgress</GameStatus>
-        <Settled>0</Settled>
-        <Pending>'.$report['bet'].'</Pending>
-        <Payout>0</Payout>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
+    '.$baseScatter.'
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
         <Trigger name="betIncrement0" priority="0" stageConnector=""/>
