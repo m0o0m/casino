@@ -93,15 +93,21 @@ class Ways {
         foreach($this->paths as $p) {
             if(count(array_intersect($this->symbol, $p['symbols'])) > 0) {
                 if(count($p['offsets']) >= $this->minWinCount) {
-                    $winLines[] = array(
-                        'line' => $p['offsets'],
-                        'count' => count($p['offsets']),
-                        'id' => implode('', $p['offsets']),
-                        'double' => $p['double'],
-                        'withWild' => $p['withWild'],
-                        'collecting' => $p['collecting'],
-                        'direction' => $this->direction,
-                    );
+                    if($this->direction == 'right' && count($p['offsets']) == 5) {
+
+                    }
+                    else {
+                        $winLines[] = array(
+                            'line' => $p['offsets'],
+                            'count' => count($p['offsets']),
+                            'id' => implode('', $p['offsets']),
+                            'double' => $p['double'],
+                            'withWild' => $p['withWild'],
+                            'collecting' => $p['collecting'],
+                            'direction' => $this->direction,
+                        );
+                    }
+
                 }
 
             }

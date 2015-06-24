@@ -435,6 +435,7 @@ class Slot {
             'winLines' => $this->winLines,
             'totalMultiple' => $this->totalMultiple,
             'offset' => $this->getOffsets(),
+            'reels' => $this->getReels(),
             'rows' => $this->getRows(),
             'fullRows' => $this->getFullRows(),
             'startRows' => $this->startRows,
@@ -723,7 +724,8 @@ class Slot {
                     $type = 'symbol';
                     $matched = true;
                 }
-                elseif(in_array($rs, $this->wild)) {
+                elseif(in_array($rs, $this->wild) && count(array_intersect($symbol, $this->params->symbolWithoutWild)) == 0) {
+
                     $type = 'wild';
                     $matched = true;
                 }
@@ -932,6 +934,22 @@ class Slot {
             }
         }
         return $offsets;
+    }
+
+    /**
+     * Получение видимых символов по барабанам
+     *
+     * Массив формируется как для барабанов, а не строк слота
+     *
+     * @return array
+     */
+    public function getReels() {
+        $reelsArray = array();
+        foreach($this->reels as $r) {
+            $reelsArray[] = $r->getVisibleSymbols();
+        }
+
+        return $reelsArray;
     }
 
     /**
