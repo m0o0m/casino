@@ -89,7 +89,10 @@ class sinbadCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -341,7 +344,10 @@ class sinbadCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $bonus = '';
             if($wlNewCount > 0) {
@@ -423,7 +429,10 @@ class sinbadCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $addString = ' display2="'.$this->gameParams->getDisplay($fsReport['rows']).'" replacement="'.implode(',', $fsReport['bonusData']['replaced']).'"';
 
@@ -513,7 +522,10 @@ class sinbadCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $bonus = '';
             $sn = $this->slot->getSymbolAnyCount('SN');

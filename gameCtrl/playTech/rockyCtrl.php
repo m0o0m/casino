@@ -67,7 +67,10 @@ class rockyCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -241,7 +244,10 @@ class rockyCtrl extends Ctrl {
             }
         }
 
-        $this->bonusPays[] = $this->knockOutBonus['bonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->knockOutBonus['bonusWin'],
+            'report' => $report,
+        );
 
     }
 
@@ -314,7 +320,10 @@ class rockyCtrl extends Ctrl {
 
             $this->fsBonus['bonusWin'] += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             $winLines = $this->getWinLinesData($report, array(
                 'reelset' => 1,

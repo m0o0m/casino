@@ -1,4 +1,3 @@
-
 <?
 require_once('IGTCtrl.php');
 
@@ -243,7 +242,10 @@ class day_of_the_deadCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -278,7 +280,10 @@ class day_of_the_deadCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -329,12 +334,18 @@ class day_of_the_deadCtrl extends IGTCtrl {
 
         $report['scattersReport'] = $this->slot->getScattersCount();
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b01', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b01', 1) !== false &&
-            $r2 = $this->slot->checkSymbolOnReelAnyPosition('b01', 2) !== false &&
-            $r3 = $this->slot->checkSymbolOnReelAnyPosition('b01', 3) !== false &&
-            $r4 = $this->slot->checkSymbolOnReelAnyPosition('b01', 4) !== false   ) {
+        $fiveCount = 0;
+        foreach($report['winLines'] as $w) {
+            if($w['alias'] == 'b01' && $w['count'] == 5) {
+                $fiveCount++;
+            }
+        }
+
+        if($fiveCount > 0) {
+            $_SESSION['initFS'] = 8 * $fiveCount;
+            $_SESSION['fiveCount'] = $fiveCount;
             $report['type'] = 'FREE';
+            $report['scattersReport']['totalWin'] = 0;
         }
 
         $scatterPayReport = $this->slot->getSymbolAnyCount('s09');
@@ -425,6 +436,11 @@ class day_of_the_deadCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
+        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
+        $report['scattersReport']['totalWin'] = 0;
+
         $report['scattersReport']['totalWin'] = 0;
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
@@ -438,9 +454,6 @@ class day_of_the_deadCtrl extends IGTCtrl {
         $betPerLine = $report['bet'] / $report['linesCount'];
 
         $_SESSION['startBalance'] = $balance-$totalWin;
-
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -462,11 +475,11 @@ class day_of_the_deadCtrl extends IGTCtrl {
 
     '.$display.$display2.'
     <FreeSpinOutcome name="">
-        <InitAwarded>8</InitAwarded>
-        <Awarded>8</Awarded>
-        <TotalAwarded>8</TotalAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
+        <Awarded>'.$_SESSION['initFS'].'</Awarded>
+        <TotalAwarded>'.$_SESSION['initFS'].'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>8</Countdown>
+        <Countdown>'.$_SESSION['initFS'].'</Countdown>
         <IncrementTriggered>true</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
@@ -496,7 +509,7 @@ class day_of_the_deadCtrl extends IGTCtrl {
         $_SESSION['fsLeft'] = 8;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$highlightRight.$leftWinLines.$rightWinLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -513,9 +526,9 @@ class day_of_the_deadCtrl extends IGTCtrl {
         $scattersPay = '';
         if($report['scattersReport']['count'] > 2) {
             if($report['type'] == 'FREE') {
-                $_SESSION['totalAwarded'] += 8;
-                $_SESSION['fsLeft'] += 8;
-                $awarded = 8;
+                $_SESSION['totalAwarded'] += 8 * $_SESSION['fiveCount'];
+                $_SESSION['fsLeft'] += 8 * $_SESSION['fiveCount'];
+                $awarded = 8 * $_SESSION['fiveCount'];
                 $report['scattersReport']['totalWin'] = 0;
                 $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
                 $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
@@ -577,7 +590,7 @@ class day_of_the_deadCtrl extends IGTCtrl {
         <AwardCapExceeded>false</AwardCapExceeded>
     </AwardCapOutcome>
     <FreeSpinOutcome name="">
-        <InitAwarded>8</InitAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
         <Awarded>'.$awarded.'</Awarded>
         <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
         <Count>'.$_SESSION['fsPlayed'].'</Count>
@@ -625,6 +638,8 @@ class day_of_the_deadCtrl extends IGTCtrl {
             unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
+            unset($_SESSION['initFS']);
+            unset($_SESSION['fiveCount']);
         }
     }
 

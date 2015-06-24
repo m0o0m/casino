@@ -83,15 +83,66 @@ class Ctrl {
      */
     public function startPay() {
         foreach($this->spinPays as $s) {
-            game_ctrl($this->slot->bet * 100, $s * 100, 0, 'standart');
+
+            $reels = $s['report']['reels'];
+            $reelsStr = '';
+            foreach($reels as $r) {
+                $reelsStr .= implode(' ', $r)."\n";
+            }
+
+            $this->api->response = $reelsStr;
+
+            $this->api->request = 'bet: '.$s['report']['bet']."
+betOnLine: ".$s['report']['betOnLine']."
+linesCount: ".$s['report']['linesCount']."
+action: ".strtolower($s['report']['type']);
+
+
+            game_ctrl($this->slot->bet * 100, $s['win'] * 100, 0, 'standart');
         }
 
         foreach($this->fsPays as $f) {
-            game_ctrl(0, $f * 100, 0, 'free');
+
+            $reels = $f['report']['reels'];
+            $reelsStr = '';
+            foreach($reels as $r) {
+                $reelsStr .= implode(' ', $r)."\n";
+            }
+
+            $this->api->response = $reelsStr;
+
+            $this->api->request = 'bet: '.$f['report']['bet']."
+betOnLine: ".$f['report']['betOnLine']."
+linesCount: ".$f['report']['linesCount']."
+action: ".strtolower($f['report']['type']);
+
+
+            game_ctrl(0, $f['win'] * 100, 0, 'free');
         }
 
         foreach($this->bonusPays as $b) {
-            game_ctrl(0, 0, $b * 100, 'bonus');
+
+            $this->api->response = '';
+            $this->api->request = '';
+
+            if(!empty($b['report'])) {
+                $reels = $b['report']['reels'];
+                $reelsStr = '';
+                foreach($reels as $r) {
+                    $reelsStr .= implode(' ', $r)."\n";
+                }
+
+                $this->api->response = $reelsStr;
+
+                $this->api->request = 'bet: '.$b['report']['bet']."
+betOnLine: ".$b['report']['betOnLine']."
+linesCount: ".$b['report']['linesCount']."
+action: ".strtolower($b['report']['type']);
+            }
+
+
+
+            game_ctrl(0, 0, $b['win'] * 100, 'bonus');
         }
     }
 
@@ -197,6 +248,7 @@ class Ctrl {
      */
     protected function outXML($xml) {
         $xml = str_replace(PHP_EOL, '', $xml);
+        $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);
         echo $xml;
     }

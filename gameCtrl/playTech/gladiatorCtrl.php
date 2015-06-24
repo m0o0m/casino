@@ -67,7 +67,10 @@ class gladiatorCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -196,7 +199,10 @@ class gladiatorCtrl extends Ctrl {
         }
         $this->helmetBonus['totalWin'] += $this->helmetBonus['bonusWin'];
 
-        $this->bonusPays[] = $this->helmetBonus['bonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->helmetBonus['bonusWin'],
+            'report' => $report,
+        );
     }
 
 
@@ -301,7 +307,10 @@ class gladiatorCtrl extends Ctrl {
 
             $this->coliseumBonus['bonusWin'] += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             $reelSymbols = $this->slot->getReelSymbols(2);
             if(in_array(0, $reelSymbols)) {

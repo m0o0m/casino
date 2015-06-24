@@ -65,7 +65,10 @@ class beowulfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -251,7 +254,10 @@ class beowulfCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $rReport['totalWin'];
             $this->bonus['totalWin'] += $rReport['totalWin'];
 
-            $this->fsPays[] = $rReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $rReport['totalWin'],
+                'report' => $rReport,
+            );
 
             $addString = ' mask="'.$report['mask'].'" reelsetName="GrendelRespin"';
 
@@ -398,7 +404,10 @@ class beowulfCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             if($reelset == 1) {
                 $addString = ' reelsetName="FreeSpinsNoWD"';

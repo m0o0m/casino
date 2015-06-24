@@ -124,7 +124,10 @@ class sugar_trailCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -408,7 +411,10 @@ class sugar_trailCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $this->bonus['preBonusWin'];
         $this->bonus['totalWin'] += $this->bonus['preBonusWin'];
 
-        $this->bonusPays[] = $this->bonus['preBonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['preBonusWin'],
+            'report' => $report,
+        );
 
         $this->bonus['credits'] = $multiple;
         $this->bonus['respins'] = $respins;
@@ -437,7 +443,10 @@ class sugar_trailCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
 
             $display = $this->gameParams->getDisplay($fsReport['rows']);
@@ -509,7 +518,10 @@ class sugar_trailCtrl extends Ctrl {
         $this->bonus['credits'] = $credits;
         $this->bonus['multiple'] = array_sum($multipleArray);
 
-        $this->bonusPays[] = $this->bonus['bonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['bonusWin'],
+            'report' => $report,
+        );
     }
 
     protected function getCandyBonusData($report) {
@@ -553,7 +565,10 @@ class sugar_trailCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $this->bonus['preBonusWin'];
         $this->bonus['totalWin'] += $this->bonus['preBonusWin'];
 
-        $this->bonusPays[] = $this->bonus['preBonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['preBonusWin'],
+            'report' => $report,
+        );
 
         $this->bonus['credits'] = $credits;
         $this->bonus['wilds'] = $wildsCount;
@@ -594,7 +609,10 @@ class sugar_trailCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
 
             $display = $this->gameParams->getDisplay($fsReport['rows']);

@@ -1,4 +1,3 @@
-
 <?
 require_once('IGTCtrl.php');
 
@@ -208,7 +207,10 @@ class crown_of_egyptCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':

@@ -62,6 +62,14 @@ class Params {
     public $blockWildsOnReel = false;
 
     /**
+     * Список символов, которые не могут дополняться вайлдом
+     *
+     * @var array
+     *
+     */
+    public $symbolWithoutWild = array();
+
+    /**
      * Создание параметров игры и установка текущего ID игры
      *
      * @param int $gameID Номер игры

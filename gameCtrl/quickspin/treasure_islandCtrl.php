@@ -77,7 +77,10 @@ class treasure_islandCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -245,7 +248,10 @@ class treasure_islandCtrl extends Ctrl {
         $this->bonus['totalWin'] += $report['bet'] * 2;
         $this->bonus['bonusWin'] += $report['bet'] * 2;
 
-        $this->bonusPays[] = $report['bet'] * 2;
+        $this->bonusPays[] = array(
+            'win' => $report['bet'] * 2,
+            'report' => $report,
+        );
 
         $this->bonus['bonus'] = '<Scatter offsets="'.implode(',', $report['scattersReport']['offsets']).'" prize="3S" length="3" payout="0.00" />
                 <Bonus offsets="" prize="Credit Bonus" length="0" payout="'.$this->bonus['bonusWin'].'" />
@@ -284,7 +290,10 @@ class treasure_islandCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $totalWin;
         $this->bonus['totalWin'] += $totalWin;
 
-        $this->bonusPays[] = $totalWin;
+        $this->bonusPays[] = array(
+            'win' => $totalWin,
+            'report' => $report,
+        );
 
         $treasureWin = array_sum($treasureMultipleArray) * $report['betOnLine'];
         $digWin = array_sum($digMultipleArray) * $report['betOnLine'];
@@ -407,7 +416,10 @@ class treasure_islandCtrl extends Ctrl {
         $this->bonus['bonusWin'] += $report['betOnLine'] * $totalPayout;
         $this->bonus['totalWin'] += $report['betOnLine'] * $totalPayout;
 
-        $this->bonusPays[] = $report['betOnLine'] * $totalPayout;
+        $this->bonusPays[] = array(
+            'win' => $report['betOnLine'] * $totalPayout,
+            'report' => $report,
+        );
 
         $detail = '';
         foreach($resultArray as $l) {
@@ -510,7 +522,10 @@ class treasure_islandCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {
@@ -570,7 +585,10 @@ class treasure_islandCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {
@@ -626,7 +644,10 @@ class treasure_islandCtrl extends Ctrl {
             $this->bonus['totalWin'] += $fsReport['totalWin'];
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $bonus = '';
             if(!empty($fsReport['bonusData']['explode'])) {

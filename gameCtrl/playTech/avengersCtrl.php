@@ -71,8 +71,11 @@ class avengersCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
 
+        );
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
@@ -318,7 +321,10 @@ class avengersCtrl extends Ctrl {
 
             $drawsXml .= $drawState;
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
         }
         return $drawsXml;
     }
@@ -360,7 +366,10 @@ class avengersCtrl extends Ctrl {
 
             $drawsXml .= $drawState;
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
         }
         return $drawsXml;
     }
@@ -406,7 +415,10 @@ class avengersCtrl extends Ctrl {
 
             $drawsXml .= $drawState;
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
         }
         return $drawsXml;
     }
@@ -452,7 +464,10 @@ class avengersCtrl extends Ctrl {
 
             $drawsXml .= $drawState;
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
         }
         return $drawsXml;
     }

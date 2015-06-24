@@ -99,7 +99,10 @@ class rapunzel_towerCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -295,7 +298,10 @@ class rapunzel_towerCtrl extends Ctrl {
             $bonus['bonusWin'] += $respinReport['totalWin'];
             $bonus['totalWin'] += $respinReport['totalWin'];
 
-            $this->fsPays[] = $respinReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $respinReport['totalWin'],
+                'report' => $respinReport,
+            );
 
             if($respinReport['totalWin'] > 0) {
                 $respin = 'false';
@@ -389,7 +395,10 @@ class rapunzel_towerCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $fsReport['totalWin'];
             $this->bonus['totalWin'] += $fsReport['totalWin'];
 
-            $this->fsPays[] = $fsReport['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $fsReport['totalWin'],
+                'report' => $fsReport,
+            );
 
             $fsReport['scattersReport'] = $this->slot->getScattersCount();
             if($fsReport['scattersReport']['count'] == 3) {

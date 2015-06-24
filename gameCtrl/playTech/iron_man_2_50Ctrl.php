@@ -66,7 +66,10 @@ class iron_man_2_50Ctrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -185,7 +188,11 @@ class iron_man_2_50Ctrl extends Ctrl {
 
             $this->fsBonus['bonusWin'] += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
+
 
             $winLines = $this->getWinLinesData($report, array(
                 'reelset' => 1,

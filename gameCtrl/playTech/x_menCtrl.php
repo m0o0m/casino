@@ -66,7 +66,10 @@ class x_menCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -208,7 +211,10 @@ class x_menCtrl extends Ctrl {
 
                 $this->hero['bonusWin'] += $report['totalWin'];
 
-                $this->fsPays[] = $report['totalWin'];
+                $this->fsPays[] = array(
+                    'win' => $report['totalWin'],
+                    'report' => $report,
+                );
                 // check mode change
                 $centerReel = $this->slot->getReelSymbols(2);
                 if(in_array(2, $centerReel)) {
@@ -244,7 +250,10 @@ class x_menCtrl extends Ctrl {
                 $report = $this->slot->spin();
                 $this->hero['bonusWin'] += $report['totalWin'];
 
-                $this->fsPays[] = $report['totalWin'];
+                $this->fsPays[] = array(
+                    'win' => $report['totalWin'],
+                    'report' => $report,
+                );
 
                 $centerReel = $this->slot->getReelSymbols(2);
                 if(in_array(1, $centerReel)) {

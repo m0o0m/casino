@@ -20,6 +20,8 @@ class prowling_pantherParams extends Params {
 
     public $reelConfig = array(3,4,5,4,3);
 
+    public $symbolWithoutWild = array(51);
+
     public $symbols = array(
         'b01' => array(51),
         's01' => array(1),
@@ -87,5 +89,34 @@ class prowling_pantherParams extends Params {
         array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 10),
         array('symbol'=> 's08', 'count'=> 3, 'multiplier'=> 5),
         array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 50),
+    );
+
+    public $winPay2 = array(
+        array('symbol'=> 's01', 'count'=> 5, 'multiplier'=> 500),
+        array('symbol'=> 's01', 'count'=> 4, 'multiplier'=> 80),
+        array('symbol'=> 's01', 'count'=> 3, 'multiplier'=> 50),
+        array('symbol'=> 's01', 'count'=> 2, 'multiplier'=> 25),
+        array('symbol'=> 's02', 'count'=> 5, 'multiplier'=> 250),
+        array('symbol'=> 's02', 'count'=> 4, 'multiplier'=> 50),
+        array('symbol'=> 's02', 'count'=> 3, 'multiplier'=> 25),
+        array('symbol'=> 's03', 'count'=> 5, 'multiplier'=> 175),
+        array('symbol'=> 's03', 'count'=> 4, 'multiplier'=> 40),
+        array('symbol'=> 's03', 'count'=> 3, 'multiplier'=> 20),
+        array('symbol'=> 's04', 'count'=> 5, 'multiplier'=> 80),
+        array('symbol'=> 's04', 'count'=> 4, 'multiplier'=> 30),
+        array('symbol'=> 's04', 'count'=> 3, 'multiplier'=> 15),
+        array('symbol'=> 's05', 'count'=> 5, 'multiplier'=> 60),
+        array('symbol'=> 's05', 'count'=> 4, 'multiplier'=> 25),
+        array('symbol'=> 's05', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's06', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's06', 'count'=> 4, 'multiplier'=> 10),
+        array('symbol'=> 's06', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's07', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's07', 'count'=> 4, 'multiplier'=> 10),
+        array('symbol'=> 's07', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's08', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 10),
+        array('symbol'=> 's08', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 0),
     );
 }

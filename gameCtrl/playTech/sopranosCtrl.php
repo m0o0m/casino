@@ -223,7 +223,9 @@ class sopranosCtrl extends Ctrl {
     }
 
     public function endStolenGoods($win) {
-        $this->bonusPays[] = $win;
+        $this->bonusPays[] = array(
+            'win' => $win,
+        );
         $this->startPay();
     }
 
@@ -252,7 +254,10 @@ class sopranosCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -479,7 +484,9 @@ class sopranosCtrl extends Ctrl {
     </EEGActionResponse>
 </CompositeResponse>';
 
-        $this->bonusPays[] = $totalWin;
+        $this->bonusPays[] = array(
+            'win' => $totalWin,
+        );
 
         $this->startPay();
 
@@ -503,7 +510,11 @@ class sopranosCtrl extends Ctrl {
             $this->bonus['bonusWin'] += $report['bet'] * $win;
         }
         $this->bonus['totalWin'] = $startWin + $this->bonus['bonusWin'];
-        $this->bonusPays[] = $this->bonus['bonusWin'];
+
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['bonusWin'],
+            'report' => $report,
+        );
     }
 
     public function showStolenReport($report, $totalWin) {
@@ -665,7 +676,10 @@ class sopranosCtrl extends Ctrl {
 
             $totalWin += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
 
 
@@ -782,7 +796,11 @@ class sopranosCtrl extends Ctrl {
             }
 
             $totalWin += $report['totalWin'];
-            $this->fsPays[] = $report['totalWin'];
+
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'" multiplier="'.$report['double'].'"';
@@ -897,7 +915,11 @@ class sopranosCtrl extends Ctrl {
             }
 
             $totalWin += $report['totalWin'];
-            $this->fsPays[] = $report['totalWin'];
+
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';
@@ -999,7 +1021,11 @@ class sopranosCtrl extends Ctrl {
             }
 
             $totalWin += $report['totalWin'];
-            $this->fsPays[] = $report['totalWin'];
+
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             if($i == 0) {
                 $addString = 'freeSpinsWin="'.($totalWin - $report['totalWin']).'" level="'.$level.'" baseWin="'.$_SESSION['baseWin'].'"';

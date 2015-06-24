@@ -1,4 +1,3 @@
-
 <?
 require_once('IGTCtrl.php');
 
@@ -222,7 +221,10 @@ class diamond_queenCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -256,7 +258,10 @@ class diamond_queenCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -465,7 +470,7 @@ class diamond_queenCtrl extends IGTCtrl {
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['wildLevel'] = 1;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlight.$winLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {

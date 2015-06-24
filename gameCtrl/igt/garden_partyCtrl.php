@@ -464,7 +464,10 @@ class garden_partyCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -542,7 +545,10 @@ class garden_partyCtrl extends IGTCtrl {
                 $respin = $spinData['respin'];
             }
 
-            $this->fsPays[] = $spinData['report']['totalWin'];
+            $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
             $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -766,8 +772,9 @@ class garden_partyCtrl extends IGTCtrl {
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['initAwarded'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$leftWinLines, 9));
         $_SESSION['nextMultiple'] = 1;
+        $_SESSION['pickerCount'] = 1;
     }
 
     protected function showPickInfo() {
@@ -776,6 +783,8 @@ class garden_partyCtrl extends IGTCtrl {
         $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
 
         $_SESSION['nextMultiple'] = rnd(1, $_SESSION['maxMultiple']);
+
+        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
 
         $xml = '<GameLogicResponse>
@@ -879,8 +888,8 @@ class garden_partyCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
         <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
     </PrizeOutcome>
-    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="0" stage="" totalPay="0" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="0" payName="" symbolCount="0" totalPay="0" ways="0" />
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0" />
     </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
@@ -902,6 +911,8 @@ class garden_partyCtrl extends IGTCtrl {
 </GameLogicResponse>';
 
         $this->outXML($xml);
+
+        $_SESSION['pickerCount']--;
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -916,9 +927,8 @@ class garden_partyCtrl extends IGTCtrl {
         $scattersHighlight = '';
         $scattersPay = '';
         if($report['scattersReport']['count'] > 2) {
-            $awarded = $_SESSION['initAwarded'];
-            $_SESSION['totalAwarded'] += $awarded;
-            $_SESSION['fsLeft'] += $awarded;
+            $_SESSION['pickerCount']++;
+            $awarded = 1;
             $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
             $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
         }
@@ -947,7 +957,14 @@ class garden_partyCtrl extends IGTCtrl {
             $pending = 0;
             $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+
+            if($_SESSION['pickerCount'] > 0) {
+                $nextStage = 'Picker';
+                $_SESSION['fsState'] = 'Picker';
+            }
         }
+
+
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
@@ -979,35 +996,15 @@ class garden_partyCtrl extends IGTCtrl {
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
-    <PickerOutcome name="">
-        <Layer index="0" name="layer0">
-            <Pick name="L0C0R0" picked="'.(($_SESSION['fsType'] == 0) ? 'true' : 'false').'">
-                <Feature type="spins" value="5" />
-                <Feature type="multiplier" value="20" />
-                <Feature type="trigger" value="multiplier20" />
-            </Pick>
-            <Pick name="L0C1R0" picked="'.(($_SESSION['fsType'] == 1) ? 'true' : 'false').'">
-                <Feature type="spins" value="10" />
-                <Feature type="multiplier" value="15" />
-                <Feature type="trigger" value="multiplier15" />
-            </Pick>
-            <Pick name="L0C2R0" picked="'.(($_SESSION['fsType'] == 2) ? 'true' : 'false').'">
-                <Feature type="spins" value="15" />
-                <Feature type="multiplier" value="10" />
-                <Feature type="trigger" value="multiplier10" />
-            </Pick>
-            <Pick name="L0C3R0" picked="'.(($_SESSION['fsType'] == 3) ? 'true' : 'false').'">
-                <Feature type="spins" value="20" />
-                <Feature type="multiplier" value="5" />
-                <Feature type="trigger" value="multiplier5" />
-            </Pick>
-            <Pick name="L0C4R0" picked="'.(($_SESSION['fsType'] == 4) ? 'true' : 'false').'">
-                <Feature type="spins" value="30" />
-                <Feature type="multiplier" value="3" />
-                <Feature type="trigger" value="multiplier3" />
-            </Pick>
-        </Layer>
-    </PickerOutcome>
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>'.$_SESSION['pickerCount'].'</PicksRemaining>
+        <PickCount>1</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>1</InitAwarded>
+        <Awarded>'.$awarded.'</Awarded>
+        <IncrementTriggered>'.(($awarded > 0) ? 'true' : 'false').'</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
     <MultiplierOutcome name="NextMultiplier">
         <Multiplier name="">'.$_SESSION['nextMultiple'].'</Multiplier>
     </MultiplierOutcome>
@@ -1041,7 +1038,7 @@ class garden_partyCtrl extends IGTCtrl {
         $this->outXML($xml);
 
 
-        if($_SESSION['fsLeft'] == 0) {
+        if($_SESSION['fsLeft'] == 0 && $_SESSION['pickerCount'] == 0) {
             $_SESSION['state'] = 'SPIN';
             unset($_SESSION['fsLeft']);
             unset($_SESSION['fsPlayed']);
@@ -1056,6 +1053,13 @@ class garden_partyCtrl extends IGTCtrl {
             unset($_SESSION['maxMultiple']);
             unset($_SESSION['nextMultiple']);
         }
+        else {
+            if($_SESSION['fsLeft'] == 0 && $_SESSION['pickerCount'] > 0) {
+                unset($_SESSION['fsType']);
+                $_SESSION['fsPlayed'] = 0;
+            }
+        }
+
     }
 
 }

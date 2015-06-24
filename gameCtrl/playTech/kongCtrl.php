@@ -71,7 +71,10 @@ class kongCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -248,7 +251,11 @@ class kongCtrl extends Ctrl {
             }
         }
         $this->bonus['totalWin'] += $this->bonus['bonusWin'];
-        $this->bonusPays[] = $this->bonus['bonusWin'];
+
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['bonusWin'],
+            'report' => $report,
+        );
 
         $this->bonus['eventDescs'] = implode(',', $wins);
 
@@ -272,7 +279,11 @@ class kongCtrl extends Ctrl {
         }
 
         $this->bonus['totalWin'] += $this->bonus['bonusWin'];
-        $this->bonusPays[] = $this->bonus['bonusWin'];
+
+        $this->bonusPays[] = array(
+            'win' => $this->bonus['bonusWin'],
+            'report' => $report,
+        );
 
         $this->bonus['payDescs'] = implode(';', $wins);
 
@@ -312,7 +323,10 @@ class kongCtrl extends Ctrl {
 
                 $this->fsBonus['bonusWin'] += $report['totalWin'];
 
-                $this->fsPays[] = $report['totalWin'];
+                $this->fsPays[] = array(
+                    'win' => $report['totalWin'],
+                    'report' => $report,
+                );
 
                 $display2 = $this->gameParams->getDisplay($report['rows']);
                 $bonus = '<Feature name="FrozenWild" payout="'.($this->fsBonus['bonusWin'] + $startWin).'">
@@ -368,7 +382,10 @@ class kongCtrl extends Ctrl {
 
                 $this->fsBonus['bonusWin'] += $report['totalWin'];
 
-                $this->fsPays[] = $report['totalWin'];
+                $this->fsPays[] = array(
+                    'win' => $report['totalWin'],
+                    'report' => $report,
+                );
 
                 $display2 = $this->gameParams->getDisplay($report['rows']);
                 $bonus = '<Feature name="FrozenWild" payout="'.($this->fsBonus['bonusWin'] + $startWin).'">

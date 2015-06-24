@@ -1,4 +1,3 @@
-
 <?
 require_once('IGTCtrl.php');
 
@@ -220,7 +219,10 @@ class nouveau_richeCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':

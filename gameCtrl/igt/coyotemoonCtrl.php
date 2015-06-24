@@ -241,7 +241,10 @@ class coyotemoonCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -276,7 +279,10 @@ class coyotemoonCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['totalWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -451,7 +457,7 @@ class coyotemoonCtrl extends IGTCtrl {
         $_SESSION['fsLeft'] = 5;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlight.$winLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {

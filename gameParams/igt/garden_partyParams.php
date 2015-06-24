@@ -52,7 +52,7 @@ class garden_partyParams extends Params {
     );
 
     public $winLineType = 'ways';
-    public $minWinCount = 3;
+    public $minWinCount = 2;
 
     public $payOnlyHighter = true;
     // настройка ставок

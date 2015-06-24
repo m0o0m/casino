@@ -67,7 +67,10 @@ class big_bad_wolfCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report'][0]['baseSpinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report'][0]['baseSpinWin'],
+            'report' => $spinData['report'][0],
+        );
 
         $this->showSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -152,7 +155,10 @@ class big_bad_wolfCtrl extends Ctrl {
 
                 $r['runningTotal'] = $preTotal + $r['totalWin'];
 
-                $this->fsPays[] = $r['totalWin'];
+                $this->fsPays[] = array(
+                    'win' => $r['totalWin'],
+                    'report' => $r,
+                );
 
                 $reports[] = $r;
                 $stageCount++;
@@ -358,7 +364,10 @@ class big_bad_wolfCtrl extends Ctrl {
 
             $this->fsBonus['totalWin'] += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             $report['runningTotal'] = $this->fsBonus['totalWin'];
 
@@ -463,7 +472,10 @@ class big_bad_wolfCtrl extends Ctrl {
                     $s = $r['scattersReport']['count'];
                     $this->fsBonus['totalWin'] += $r['totalWin'];
 
-                    $this->fsPays[] = $r['totalWin'];
+                    $this->fsPays[] = array(
+                        'win' => $r['totalWin'],
+                        'report' => $r,
+                    );
 
                     $r['runningTotal'] = $this->fsBonus['totalWin'];
                     $stageCount++;

@@ -66,7 +66,10 @@ class santa_surpriseCtrl extends Ctrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -209,7 +212,10 @@ class santa_surpriseCtrl extends Ctrl {
         }
         $this->bonusGift['totalWin'] += $this->bonusGift['bonusWin'];
 
-        $this->bonusPays[] = $this->bonusGift['bonusWin'];
+        $this->bonusPays[] = array(
+            'win' => $this->bonusGift['bonusWin'],
+            'report' => $report,
+        );
     }
 
 
@@ -262,7 +268,10 @@ class santa_surpriseCtrl extends Ctrl {
 
             $this->fsBonus['bonusWin'] += $report['totalWin'];
 
-            $this->fsPays[] = $report['totalWin'];
+            $this->fsPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
 
             $winLines = $this->getWinLinesData($report, array(
                 'currentSpins' => $totalFsCount,

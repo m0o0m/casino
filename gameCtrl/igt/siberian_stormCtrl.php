@@ -256,7 +256,10 @@ class siberian_stormCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -291,7 +294,10 @@ class siberian_stormCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -342,20 +348,18 @@ class siberian_stormCtrl extends IGTCtrl {
 
         $report['scattersReport'] = $this->slot->getScattersCount();
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b01', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b01', 1) !== false &&
-                $r2 = $this->slot->checkSymbolOnReelAnyPosition('b01', 2) !== false &&
-                    $r3 = $this->slot->checkSymbolOnReelAnyPosition('b01', 3) !== false &&
-                        $r4 = $this->slot->checkSymbolOnReelAnyPosition('b01', 4) !== false   ) {
-            $report['type'] = 'FREE';
+        $fiveCount = 0;
+        foreach($report['winLines'] as $w) {
+            if($w['alias'] == 'b01' && $w['count'] == 5) {
+                $fiveCount++;
+            }
         }
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b02', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b02', 1) !== false &&
-                $r2 = $this->slot->checkSymbolOnReelAnyPosition('b02', 2) !== false &&
-                    $r3 = $this->slot->checkSymbolOnReelAnyPosition('b02', 3) !== false &&
-                        $r4 = $this->slot->checkSymbolOnReelAnyPosition('b02', 4) !== false   ) {
+        if($fiveCount > 0) {
+            $_SESSION['initFS'] = 8 * $fiveCount;
+            $_SESSION['fiveCount'] = $fiveCount;
             $report['type'] = 'FREE';
+            $report['scattersReport']['totalWin'] = $report['betOnLine'] * 50 * $fiveCount;
         }
 
         $scatterPayReport = $this->slot->getSymbolAnyCount('s09');
@@ -458,7 +462,11 @@ class siberian_stormCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
+        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
         $report['scattersReport']['totalWin'] = 0;
+
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
         $highlightRight = $this->getRightHighlight($report['winLines']);
@@ -472,8 +480,7 @@ class siberian_stormCtrl extends IGTCtrl {
 
         $_SESSION['startBalance'] = $balance-$totalWin;
 
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -495,11 +502,11 @@ class siberian_stormCtrl extends IGTCtrl {
 
     '.$display.$display2.'
     <FreeSpinOutcome name="">
-        <InitAwarded>8</InitAwarded>
-        <Awarded>8</Awarded>
-        <TotalAwarded>8</TotalAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
+        <Awarded>'.$_SESSION['initFS'].'</Awarded>
+        <TotalAwarded>'.$_SESSION['initFS'].'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>8</Countdown>
+        <Countdown>'.$_SESSION['initFS'].'</Countdown>
         <IncrementTriggered>true</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
@@ -525,11 +532,11 @@ class siberian_stormCtrl extends IGTCtrl {
         $this->outXML($xml);
 
         $_SESSION['state'] = 'FREE';
-        $_SESSION['totalAwarded'] = 8;
-        $_SESSION['fsLeft'] = 8;
+        $_SESSION['totalAwarded'] = $_SESSION['initFS'];
+        $_SESSION['fsLeft'] = $_SESSION['initFS'];
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$highlightRight.$leftWinLines.$rightWinLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -546,10 +553,9 @@ class siberian_stormCtrl extends IGTCtrl {
         $scattersPay = '';
         if($report['scattersReport']['count'] > 2) {
             if($report['type'] == 'FREE') {
-                $_SESSION['totalAwarded'] += 8;
-                $_SESSION['fsLeft'] += 8;
-                $awarded = 8;
-                $report['scattersReport']['totalWin'] = 0;
+                $_SESSION['totalAwarded'] += 8 * $_SESSION['fiveCount'];
+                $_SESSION['fsLeft'] += 8 * $_SESSION['fiveCount'];
+                $awarded = 8 * $_SESSION['fiveCount'];
                 $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter', 'b02');
                 $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
             }
@@ -588,7 +594,7 @@ class siberian_stormCtrl extends IGTCtrl {
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+        $fsWin = $_SESSION['fsTotalWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -607,7 +613,7 @@ class siberian_stormCtrl extends IGTCtrl {
         <AwardCapExceeded>false</AwardCapExceeded>
     </AwardCapOutcome>
     <FreeSpinOutcome name="">
-        <InitAwarded>8</InitAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
         <Awarded>'.$awarded.'</Awarded>
         <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
         <Count>'.$_SESSION['fsPlayed'].'</Count>
@@ -655,6 +661,8 @@ class siberian_stormCtrl extends IGTCtrl {
             unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
+            unset($_SESSION['initFS']);
+            unset($_SESSION['fiveCount']);
         }
     }
 

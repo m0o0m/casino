@@ -102,7 +102,7 @@ class IGTCtrl extends Ctrl {
             $pay = $scattersReport['totalWin'];
             $cnt = $scattersReport['count'];
             $xml = '<PrizeOutcome multiplier="1" name="'.$name.'" pay="'.$pay.'" stage="" totalPay="'.$pay.'" type="Pattern">
-        <Prize betMultiplier="'.$this->slot->betOnLine.'" multiplier="1" name="Scatter" pay="'.$cnt.'" payName="'.$cnt.' '.$symbol.'" symbolCount="'.$cnt.'" totalPay="'.$pay.'" ways="0" />
+        <Prize betMultiplier="'.$this->slot->betOnLine.'" multiplier="1" name="Scatter" pay="'.$pay.'" payName="'.$cnt.' '.$symbol.'" symbolCount="'.$cnt.'" totalPay="'.$pay.'" ways="0" />
     </PrizeOutcome>';
         }
         else {
@@ -281,11 +281,17 @@ class IGTCtrl extends Ctrl {
     }
 
     protected function getWinLines($report, $name = 'BaseGame') {
+        $baseLinesWin = $report['totalWin'];
+        if(!empty($report['scattersReport'])) {
+            if(!empty($report['scattersReport']['totalWin'])) {
+                $baseLinesWin -= $report['scattersReport']['totalWin'];
+            }
+        }
         if(empty($report['winLines'])) {
             $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="0" stage="" totalPay="0" type="Pattern"/>';
         }
         else {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="'.$report['totalWin'].'" stage="" totalPay="'.$report['totalWin'].'" type="Pattern">';
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="'.$baseLinesWin.'" stage="" totalPay="'.$baseLinesWin.'" type="Pattern">';
 
             foreach($report['winLines'] as $w) {
                 $payout = $report['betOnLine']*$w['multiple'];

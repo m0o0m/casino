@@ -279,7 +279,10 @@ class treasures_of_ice_wind_daleCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -313,7 +316,10 @@ class treasures_of_ice_wind_daleCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 

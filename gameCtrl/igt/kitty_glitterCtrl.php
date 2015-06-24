@@ -116,6 +116,37 @@ class kitty_glitterCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
     </PrizeOutcome>';
+
+            $wu = '<TriggerOutcome component="" name="FreeSpin.TrailTrigger" stage="">
+        <Trigger name="1 w02" priority="0" stageConnector="" />
+    </TriggerOutcome>
+
+    <TriggerOutcome component="" name="FreeSpin.Trail" stage="">';
+            if($_SESSION['wildLevel'] > 2) {
+                $wu .= '<Trigger name="s01" priority="0" stageConnector="" />';
+            }
+            if($_SESSION['wildLevel'] > 5) {
+                $wu .= '<Trigger name="s02" priority="0" stageConnector="" />';
+            }
+            if($_SESSION['wildLevel'] > 8) {
+                $wu .= '<Trigger name="s03" priority="0" stageConnector="" />';
+            }
+            if($_SESSION['wildLevel'] > 11) {
+                $wu .= '<Trigger name="s04" priority="0" stageConnector="" />';
+            }
+            $wu .= '</TriggerOutcome>';
+
+            $wu .= '<HighlightOutcome name="FreeSpin.Trail" type="">
+        <Highlight name="FreeSpin.Trail" type="">';
+            if($_SESSION['wildLevel'] > 0) {
+                for($i = 0; $i < $_SESSION['wildLevel']; $i++) {
+                    $wu .= '<Cell name="L0C'.$i.'R0" type="" />';
+                }
+            }
+            $wu .= '</Highlight>
+    </HighlightOutcome>';
+
+            $fs .= $wu;
         }
 
         $patternsBet = 30;
@@ -225,7 +256,10 @@ class kitty_glitterCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -259,7 +293,10 @@ class kitty_glitterCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -464,7 +501,7 @@ class kitty_glitterCtrl extends IGTCtrl {
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['wildLevel'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlight.$winLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {

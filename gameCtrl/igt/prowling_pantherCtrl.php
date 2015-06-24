@@ -231,7 +231,10 @@ class prowling_pantherCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->spinPays[] = $spinData['report']['spinWin'];
+        $this->spinPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         switch($spinData['report']['type']) {
             case 'SPIN':
@@ -253,6 +256,8 @@ class prowling_pantherCtrl extends IGTCtrl {
         $pick = $_SESSION['lastPick'];
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->gameParams->winPay = $this->gameParams->winPay2;
+        $this->slot->setParams($this->gameParams);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(3,4,5,4,3));
         $this->slot->rows = 5;
 
@@ -266,7 +271,10 @@ class prowling_pantherCtrl extends IGTCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = $spinData['report']['totalWin'];
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -291,15 +299,30 @@ class prowling_pantherCtrl extends IGTCtrl {
 
         $report['scattersReport'] = $this->slot->getScattersCount();
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b01', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b01', 1) !== false &&
-                $r2 = $this->slot->checkSymbolOnReelAnyPosition('b01', 2) !== false &&
-                    $r3 = $this->slot->checkSymbolOnReelAnyPosition('b01', 3) !== false &&
-                        $r4 = $this->slot->checkSymbolOnReelAnyPosition('b01', 4) !== false   ) {
+
+
+        $fiveCount = 0;
+        foreach($report['winLines'] as $w) {
+            if($w['alias'] == 'b01' && $w['count'] == 5) {
+                $fiveCount++;
+            }
+        }
+
+        $report['scattersReport']['show'] = false;
+
+        if($fiveCount > 0) {
+            $_SESSION['fiveCount'] = $fiveCount;
+            $_SESSION['initFS'] = 8 * $fiveCount;
             $report['type'] = 'FREE';
-            $report['scattersReport']['totalWin'] = $report['bet'];
-            $report['totalWin'] += $report['scattersReport']['totalWin'];
-            $report['spinWin'] += $report['scattersReport']['totalWin'];
+            $report['scattersReport']['totalWin'] = $report['betOnLine'] * 50 * $fiveCount;
+
+            if($_SESSION['state'] != 'FREE') {
+                $canPay = true;
+            }
+            else {
+                $canPay = false;
+                $report['scattersReport']['show'] = true;
+            }
         }
 
         $totalWin = $report['totalWin'];
@@ -368,7 +391,11 @@ class prowling_pantherCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
+        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
         $report['scattersReport']['totalWin'] = 0;
+
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
         $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
@@ -380,8 +407,7 @@ class prowling_pantherCtrl extends IGTCtrl {
 
         $_SESSION['startBalance'] = $balance-$totalWin;
 
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -403,11 +429,11 @@ class prowling_pantherCtrl extends IGTCtrl {
 
     '.$display.$display2.'
     <FreeSpinOutcome name="">
-        <InitAwarded>8</InitAwarded>
-        <Awarded>8</Awarded>
-        <TotalAwarded>8</TotalAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
+        <Awarded>'.$_SESSION['initFS'].'</Awarded>
+        <TotalAwarded>'.$_SESSION['initFS'].'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>8</Countdown>
+        <Countdown>'.$_SESSION['initFS'].'</Countdown>
         <IncrementTriggered>true</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
@@ -433,11 +459,11 @@ class prowling_pantherCtrl extends IGTCtrl {
         $this->outXML($xml);
 
         $_SESSION['state'] = 'FREE';
-        $_SESSION['totalAwarded'] = 8;
-        $_SESSION['fsLeft'] = 8;
+        $_SESSION['totalAwarded'] = $_SESSION['initFS'];
+        $_SESSION['fsLeft'] = $_SESSION['initFS'];
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
-        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight, 9));
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$leftWinLines, 9));
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
@@ -450,10 +476,10 @@ class prowling_pantherCtrl extends IGTCtrl {
         $awarded = 0;
         $scattersHighlight = '';
         $scattersPay = '';
-        if(!empty($report['scattersReport']['totalWin'])) {
-            $_SESSION['totalAwarded'] += 8;
-            $_SESSION['fsLeft'] += 8;
-            $awarded = 8;
+        if($report['scattersReport']['show']) {
+            $_SESSION['totalAwarded'] += 8 * $_SESSION['fiveCount'];
+            $_SESSION['fsLeft'] += 8 * $_SESSION['fiveCount'];
+            $awarded = 8 * $_SESSION['fiveCount'];
             $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
             $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
         }
@@ -485,7 +511,7 @@ class prowling_pantherCtrl extends IGTCtrl {
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+        $fsWin = $_SESSION['fsTotalWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -509,7 +535,7 @@ class prowling_pantherCtrl extends IGTCtrl {
         <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
         <Count>'.$_SESSION['fsPlayed'].'</Count>
         <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
-        <IncrementTriggered>false</IncrementTriggered>
+        <IncrementTriggered>'.(($awarded > 0) ? 'true' : 'false').'</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
@@ -551,6 +577,8 @@ class prowling_pantherCtrl extends IGTCtrl {
             unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
+            unset($_SESSION['initFS']);
+            unset($_SESSION['fiveCount']);
         }
     }
 
