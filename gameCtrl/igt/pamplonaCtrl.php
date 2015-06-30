@@ -532,6 +532,8 @@ class pamplonaCtrl extends IGTCtrl {
         $leftWinLines = $this->getLeftWayWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
 
+        $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
+
         $_SESSION['startBalance'] = $balance-$totalWin;
 
         $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
@@ -798,7 +800,7 @@ class pamplonaCtrl extends IGTCtrl {
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
-            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $payout = $_SESSION['fsTotalWin'];
             $settled = $report['bet'];
             $pending = 0;
@@ -814,6 +816,8 @@ class pamplonaCtrl extends IGTCtrl {
 
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
 
         $_SESSION['nextMultiple'] = rnd(1, $_SESSION['maxMultiple']);
 
@@ -865,8 +869,8 @@ class pamplonaCtrl extends IGTCtrl {
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
     '.$leftWinLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0" />
     </PrizeOutcome>
     '.$scattersPay.'
     <TransactionId>R1540-14228769811020</TransactionId>
@@ -899,6 +903,7 @@ class pamplonaCtrl extends IGTCtrl {
             unset($_SESSION['fsType']);
             unset($_SESSION['maxMultiple']);
             unset($_SESSION['nextMultiple']);
+            unset($_SESSION['baseWinLinesWin']);
         }
         else {
             if($_SESSION['fsLeft'] == 0 && $_SESSION['pickerCount'] > 0) {
