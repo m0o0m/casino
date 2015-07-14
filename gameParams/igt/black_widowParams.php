@@ -41,6 +41,8 @@ class black_widowParams extends Params {
         's08' => array(8),
         // 10
         's09' => array(9),
+        // Bonus
+        'b01' => array(10),
         // Random 1
         'r01' => array(11),
         // Random 1
@@ -160,4 +162,6 @@ class black_widowParams extends Params {
         array('symbol'=> 'w01', 'count'=> 3, 'multiplier'=> 50),
         array('symbol'=> 'w01', 'count'=> 2, 'multiplier'=> 10),
     );
+
+    public $captureLevels = array(2,3,5,8,12,18,25,35,50,75,100,200,500,1000);
 }

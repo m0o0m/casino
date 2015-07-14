@@ -476,10 +476,12 @@ class cleopatra_gpeCtrl extends IGTCtrl {
 
         $awarded = 0;
         $scattersHighlight = '';
-        if($report['scattersReport']['count'] > 2) {
-            $_SESSION['totalAwarded'] += 15;
-            $_SESSION['fsLeft'] += 15;
-            $awarded = 15;
+        if($report['scattersReport']['count'] > 1) {
+            if($report['scattersReport']['count'] > 2) {
+                $_SESSION['totalAwarded'] += 15;
+                $_SESSION['fsLeft'] += 15;
+                $awarded = 15;
+            }
             $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
         }
 

@@ -241,19 +241,68 @@ class black_widowCtrl extends IGTCtrl {
     }
 
     protected function startInit($request) {
+        $this->setSessionIfEmpty('greenLevel', 1);
+        $this->setSessionIfEmpty('redLevel', 1);
+        $this->setSessionIfEmpty('blueLevel', 1);
+        $this->setSessionIfEmpty('state', 'SPIN');
+
         $balance = $this->getBalance();
+
+        $state = 'BaseGame';
+        if($_SESSION['state'] == 'FREE') {
+            $state = 'FreeSpin';
+        }
+
+        $fs = '';
+        if($_SESSION['state'] == 'FREE') {
+            $fs = '<FreeSpinOutcome name="">
+        <InitAwarded>10</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>';
+
+            $fs .= '<PrizeOutcome multiplier="1" name="WebCapture.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="40" multiplier="1" name="Scatter" pay="0" payName="1 s01" symbolCount="1" totalPay="0" ways="0" />
+    </PrizeOutcome>';
+            $fs .= '<HighlightOutcome name="WebCapture.Scatter" type=""/>';
+            $fs .= '<TriggerOutcome component="" name="WebCapture" stage=""/>';
+            $fs .= '<TriggerOutcome component="" name="WebCapture.Prizes" stage=""/>';
+            $fs .= '<PrizeOutcome multiplier="1" name="WebCapture.Total" pay="0" stage="" totalPay="0" type="Pattern"/>';
+            $fs .= '<TriggerOutcome component="" name="CurrentLevels" stage="">
+        <Trigger name="GreenLevel'.$_SESSION['greenLevel'].'" priority="0" stageConnector="" />
+        <Trigger name="RedLevel'.$_SESSION['redLevel'].'" priority="0" stageConnector="" />
+        <Trigger name="BlueLevel'.$_SESSION['blueLevel'].'" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+        }
+
+        $patternsBet = 100;
+        if(!empty($_SESSION['lastPick'])) {
+            $patternsBet = $_SESSION['lastPick'];
+        }
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>A2210-14264043298614</TransactionId>
-        <Stage>BaseGame</Stage>
-        <NextStage>BaseGame</NextStage>
+        <Stage>'.$state.'</Stage>
+        <NextStage>'.$state.'</NextStage>
         <Balance>'.$balance.'</Balance>
         <GameStatus>Initial</GameStatus>
         <Settled>0</Settled>
         <Pending>0</Pending>
         <Payout>0</Payout>
     </OutcomeDetail>
+    '.$fs.'
     <PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
         <Entry name="Reel0" stripIndex="46">
             <Cell name="L0C0R0" stripIndex="46">s02</Cell>
@@ -281,9 +330,33 @@ class black_widowCtrl extends IGTCtrl {
             <Cell name="L0C4R2" stripIndex="41">s05</Cell>
         </Entry>
     </PopulationOutcome>
-    <ObfuscatedOutcome>
-        <Data>7d625d41454150405b595a7f4147515655531157344040545e5972515e5a7d5e50564a041a0613142f535f540d0f725b5f5b5b5e1a6051515d5b50672446100f3a240d715c424649145d53545d0b1367225a575c517e544010164744465a42705652544c7c1002130e27383d0e75515c58135c5855530c160d027101621d131441424659447a5c5d5d4e0c1671100c03021c00051e04060105021e0b0a0700056d000000011c1d06000705011801000809071d06730303001c1f030503071802060203081404030570031e03021c00051e04060105021e0b0a0700056d000000011c1d0600070501081c715c545a0f3e480e1d745e59434d0c3c081f645c424c5457455d2e5c7d44444e5e5957083e</Data>
-    </ObfuscatedOutcome>
+    <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+        <Entry name="Reel0" stripIndex="101">
+            <Cell name="L0C0R0" stripIndex="101">w01</Cell>
+            <Cell name="L0C0R1" stripIndex="102">w01</Cell>
+            <Cell name="L0C0R2" stripIndex="103">w01</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="62">
+            <Cell name="L0C1R0" stripIndex="62">s06</Cell>
+            <Cell name="L0C1R1" stripIndex="63">s08</Cell>
+            <Cell name="L0C1R2" stripIndex="64">s09</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="98">
+            <Cell name="L0C2R0" stripIndex="98">s01</Cell>
+            <Cell name="L0C2R1" stripIndex="99">s01</Cell>
+            <Cell name="L0C2R2" stripIndex="100">s01</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="80">
+            <Cell name="L0C3R0" stripIndex="80">s09</Cell>
+            <Cell name="L0C3R1" stripIndex="81">s02</Cell>
+            <Cell name="L0C3R2" stripIndex="82">s02</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="23">
+            <Cell name="L0C4R0" stripIndex="23">s04</Cell>
+            <Cell name="L0C4R1" stripIndex="24">s04</Cell>
+            <Cell name="L0C4R2" stripIndex="25">s04</Cell>
+        </Entry>
+    </PopulationOutcome>
     <PatternSliderInput>
         <BetPerPattern>1</BetPerPattern>
         <PatternsBet>40</PatternsBet>
@@ -330,7 +403,43 @@ class black_widowCtrl extends IGTCtrl {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
                 break;
+            case 'FREE':
+                $this->showStartFreeSpinReport($spinData['report'], $spinData['totalWin']);
+                break;
         }
+
+        $_SESSION['lastBet'] = $stake;
+        $_SESSION['lastPick'] = $pick;
+        $_SESSION['lastStops'] = $spinData['report']['stops'];
+        $this->startPay();
+    }
+
+    protected function startFreeSpin($request) {
+        $stake = $_SESSION['lastBet'];
+        $pick = $_SESSION['lastPick'];
+
+        $this->gameParams->symbolWithoutWild = array(2,3,4);
+
+        $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->slot->createCustomReels($this->gameParams->reels[1], array(3,3,3,3,3));
+        $this->slot->rows = 3;
+
+        $spinData = $this->getSpinData();
+        $totalWin = $spinData['totalWin'];
+        $respin = $spinData['respin'];
+
+        while(!game_ctrl(0, $totalWin * 100) || $respin) {
+            $spinData = $this->getSpinData();
+            $totalWin = $spinData['totalWin'];
+            $respin = $spinData['respin'];
+        }
+
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['spinWin'],
+            'report' => $spinData['report'],
+        );
+
+        $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
         $_SESSION['lastBet'] = $stake;
         $_SESSION['lastPick'] = $pick;
@@ -345,15 +454,128 @@ class black_widowCtrl extends IGTCtrl {
 
         $respin = false;
 
-        $report = $this->slot->spin(array(
-            'type' => 'randomReplace',
-            'symbols' => array(11,12,13,14,15),
-            'replacement' => array(0,1,2,3,4,5,6,7,8,9),
-        ));
+        $bonus = array(
+            array(
+                'type' => 'randomReplace',
+                'symbols' => array(11,15),
+                'replacement' => array(0,1,2,3,4,5,6,7,8,9),
+            ),
+            array(
+                'type' => 'randomReplace',
+                'symbols' => array(12,13,14),
+                'replacement' => array(0,1,2,3,4,5,6,7,8,9,10),
+            ),
+        );
+
+
+        $checkRespin = false;
+        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
+            $url = $_SERVER['HTTP_REFERER'];
+            $g = '';
+            if(strpos($url, 'bonus=fs') > 0) {
+                $g = 'fs';
+            }
+            switch($g) {
+                case 'fs':
+                    $checkRespin = true;
+                    $bonus = array(
+                        array(
+                            'type' => 'randomReplace',
+                            'symbols' => array(11,15),
+                            'replacement' => array(0,1,2,3,4,5,6,7,8,9),
+                        ),
+                        array(
+                            'type' => 'randomReplace',
+                            'symbols' => array(12,13,14),
+                            'replacement' => array(10),
+                        ),
+                    );
+                    break;
+            }
+        }
+
+        $report = $this->slot->spin($bonus);
+
 
         $report['type'] = 'SPIN';
 
+        if($_SESSION['state'] == 'FREE') {
+            $greenLevel = $_SESSION['greenLevel'];
+            $redLevel = $_SESSION['redLevel'];
+            $blueLevel = $_SESSION['blueLevel'];
+
+
+            $_SESSION['levelUp'] = false;
+            $_SESSION['greenWin'] = $_SESSION['redWin'] = $_SESSION['blueWin'] = 0;
+            $symbol = $this->slot->getReelSymbol(2,1);
+            if($symbol == 1) {
+                $_SESSION['levelUp'] = 'Woman';
+
+                $greenLevel++;
+                if($greenLevel > 14) $greenLevel = 14;
+                $redLevel++;
+                if($redLevel > 14) $redLevel = 14;
+                $blueLevel++;
+                if($blueLevel > 14) $blueLevel = 14;
+
+                $multiple = $this->gameParams->captureLevels[$greenLevel-2];
+                $_SESSION['greenWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['greenWin'];
+
+                $multiple = $this->gameParams->captureLevels[$redLevel-2];
+                $_SESSION['redWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['redWin'];
+
+                $multiple = $this->gameParams->captureLevels[$blueLevel-2];
+                $_SESSION['blueWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['blueWin'];
+            }
+            if($symbol == 2) {
+                $greenLevel++;
+                if($greenLevel > 14) $greenLevel = 14;
+                $_SESSION['levelUp'] = 'Green';
+                $multiple = $this->gameParams->captureLevels[$greenLevel-2];
+                $_SESSION['greenWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['greenWin'];
+            }
+            if($symbol == 3) {
+                $redLevel++;
+                if($redLevel > 14) $redLevel = 14;
+                $_SESSION['levelUp'] = 'Red';
+                $multiple = $this->gameParams->captureLevels[$redLevel-2];
+                $_SESSION['redWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['redWin'];
+            }
+            if($symbol == 4) {
+                $blueLevel++;
+                if($blueLevel > 14) $blueLevel = 14;
+                $_SESSION['levelUp'] = 'Blue';
+                $multiple = $this->gameParams->captureLevels[$blueLevel-2];
+                $_SESSION['blueWin'] = $report['bet'] * $multiple;
+                $report['totalWin'] += $_SESSION['blueWin'];
+            }
+        }
+
+        $report['scattersReport'] = $this->slot->getScattersCount();
+
+        if($report['scattersReport']['count'] == 9) {
+            $report['type'] = 'FREE';
+            $report['scattersReport']['totalWin'] = 0;
+        }
+        else {
+            if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN' && $checkRespin) {
+                $respin = true;
+            }
+        }
+
+        $report['spinWin'] = $report['totalWin'];
         $totalWin = $report['totalWin'];
+
+        if(!$respin && $_SESSION['state'] == 'FREE') {
+            $_SESSION['greenLevel'] = $greenLevel;
+            $_SESSION['redLevel'] = $redLevel;
+            $_SESSION['blueLevel'] = $blueLevel;
+        }
 
         return array(
             'totalWin' => $totalWin,
@@ -408,6 +630,295 @@ class black_widowCtrl extends IGTCtrl {
 </GameLogicResponse>';
 
         $this->outXML($xml);
+    }
+
+    protected function showStartFreeSpinReport($report, $totalWin) {
+        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $highlight = $this->getHighlight($report['winLines']);
+        $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
+        $display = $this->getDisplay($report);
+        $winLines = $this->getWinLines($report);
+        $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
+
+        $_SESSION['startBalance'] = $balance-$totalWin;
+
+        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1540-14228693316850</TransactionId>
+        <Stage>BaseGame</Stage>
+        <NextStage>FreeSpin</NextStage>
+        <Balance>'.$_SESSION['startBalance'].'</Balance>
+        <GameStatus>InProgress</GameStatus>
+        <Settled>0</Settled>
+        <Pending>'.$report['bet'].'</Pending>
+        <Payout>0</Payout>
+    </OutcomeDetail>
+    '.$scattersHighlight.'
+    <TriggerOutcome component="" name="CurrentLevels" stage="">
+        <Trigger name="GreenLevel1" priority="0" stageConnector="" />
+        <Trigger name="RedLevel1" priority="0" stageConnector="" />
+        <Trigger name="BlueLevel1" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="WebCapture" stage="" />
+    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
+        <Trigger name="betIncrement0" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="WebCapture.Prizes" stage="" />
+    <TriggerOutcome component="" name="FreeSpin" stage="">
+        <Trigger name="freespin" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <HighlightOutcome name="WebCapture.Scatter" type="" />
+    <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+        <Entry name="Reel0" stripIndex="50">
+            <Cell name="L0C0R0" stripIndex="50">s01</Cell>
+            <Cell name="L0C0R1" stripIndex="51">s06</Cell>
+            <Cell name="L0C0R2" stripIndex="52">s03</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="53">
+            <Cell name="L0C1R0" stripIndex="53">s08</Cell>
+            <Cell name="L0C1R1" stripIndex="54">s02</Cell>
+            <Cell name="L0C1R2" stripIndex="55">s05</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="20">
+            <Cell name="L0C2R0" stripIndex="20">s07</Cell>
+            <Cell name="L0C2R1" stripIndex="21">s07</Cell>
+            <Cell name="L0C2R2" stripIndex="22">s07</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="72">
+            <Cell name="L0C3R0" stripIndex="72">s07</Cell>
+            <Cell name="L0C3R1" stripIndex="73">s06</Cell>
+            <Cell name="L0C3R2" stripIndex="74">s08</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="50">
+            <Cell name="L0C4R0" stripIndex="50">s03</Cell>
+            <Cell name="L0C4R1" stripIndex="51">s05</Cell>
+            <Cell name="L0C4R2" stripIndex="52">s07</Cell>
+        </Entry>
+    </PopulationOutcome>
+    '.$highlight.'
+
+    '.$display.'
+    <FreeSpinOutcome name="">
+        <InitAwarded>7</InitAwarded>
+        <Awarded>7</Awarded>
+        <TotalAwarded>7</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>7</Countdown>
+        <IncrementTriggered>true</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$report['scattersReport']['totalWin'].'" stage="" totalPay="'.$report['scattersReport']['totalWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$report['scattersReport']['totalWin'].'" ways="0" />
+    </PrizeOutcome>
+    '.$winLines.'
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
+    </PrizeOutcome>
+    <TransactionId>A2210-14264043293637</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
+        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$balance.'">
+        <Balance name="FREE">'.$balance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+
+        $_SESSION['state'] = 'FREE';
+        $_SESSION['totalAwarded'] = 7;
+        $_SESSION['fsLeft'] = 7;
+        $_SESSION['fsPlayed'] = 0;
+
+        $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlight.$winLines, 9));
+
+        $_SESSION['greenLevel'] = 1;
+        $_SESSION['redLevel'] = 1;
+        $_SESSION['blueLevel'] = 1;
+    }
+
+
+
+    protected function showPlayFreeSpinReport($report, $totalWin) {
+        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $highlight = $this->getHighlight($report['winLines'], 'FreeSpin.Lines');
+        $display = $this->getDisplay($report, false, 'FreeSpin');
+        $winLines = $this->getWinLines($report, 'FreeSpin');
+        $betPerLine = $report['bet'] / $report['linesCount'];
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+
+        $awarded = 0;
+        $scattersHighlight = '';
+        if($report['scattersReport']['count'] == 9) {
+            $_SESSION['totalAwarded'] += 7;
+            $_SESSION['fsLeft'] += 7;
+            $awarded = 7;
+            $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
+        }
+
+        $_SESSION['fsPlayed']++;
+        $_SESSION['fsLeft']--;
+
+        $needBalance = $_SESSION['startBalance'];
+
+        if(!$_SESSION['levelUp']) {
+            $webCaptureHightlight = '<HighlightOutcome name="WebCapture.Scatter" type=""/>';
+            $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture" stage=""/>';
+            $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture.Prizes" stage=""/>';
+            $webCaptureHightlight .= '<PrizeOutcome multiplier="1" name="WebCapture.Total" pay="0" stage="" totalPay="0" type="Pattern"/>';
+        }
+        else {
+            $webCaptureHightlight = '<HighlightOutcome name="WebCapture.Scatter" type="">
+        <Highlight name="Scatter" type="">
+            <Cell name="L0C2R1" type="" />
+        </Highlight>
+    </HighlightOutcome>';
+
+            $WtotalWin = $_SESSION['greenWin'] + $_SESSION['redWin'] + $_SESSION['blueWin'];
+            $greenLevel = $_SESSION['greenLevel'] - 1;
+            $redLevel = $_SESSION['redLevel'] - 1;
+            $blueLevel = $_SESSION['blueLevel'] - 1;
+
+            if($_SESSION['levelUp'] == 'Woman') {
+                $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture" stage="">
+        <Trigger name="Woman" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+                $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture.Prizes" stage="">
+        <Trigger name="GreenPrize'.($_SESSION['greenLevel']-1).'" priority="0" stageConnector="" />
+        <Trigger name="RedPrize'.($_SESSION['redLevel']-1).'" priority="0" stageConnector="" />
+        <Trigger name="BluePrize'.($_SESSION['blueLevel']-1).'" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+
+
+
+
+                $webCaptureHightlight .= '<PrizeOutcome multiplier="1" name="WebCapture.Total" pay="'.$WtotalWin.'" stage="" totalPay="'.$WtotalWin.'" type="Pattern">
+        <Prize betMultiplier="40" multiplier="1" name="GreenPrize'.$greenLevel.'" pay="'.$_SESSION['greenLevel'].'" payName="GreenPrize'.$greenLevel.'" symbolCount="1" totalPay="'.$_SESSION['greenWin'].'" ways="0" />
+        <Prize betMultiplier="40" multiplier="1" name="RedPrize'.$redLevel.'" pay="'.$_SESSION['redLevel'].'" payName="RedPrize'.$redLevel.'" symbolCount="1" totalPay="'.$_SESSION['redWin'].'" ways="0" />
+        <Prize betMultiplier="40" multiplier="1" name="BluePrize'.$blueLevel.'" pay="'.$_SESSION['blueLevel'].'" payName="BluePrize'.$blueLevel.'" symbolCount="1" totalPay="'.$_SESSION['blueWin'].'" ways="0" />
+    </PrizeOutcome>';
+            }
+            else {
+                $u = strtolower($_SESSION['levelUp']);
+                $level = $_SESSION[$u.'Level'] - 1;
+                $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture" stage="">
+        <Trigger name="'.$_SESSION['levelUp'].'Man" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+                $webCaptureHightlight .= '<TriggerOutcome component="" name="WebCapture.Prizes" stage="">
+        <Trigger name="'.$_SESSION['levelUp'].'Prize'.$level.'" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+
+                $webCaptureHightlight .= '<PrizeOutcome multiplier="1" name="WebCapture.Total" pay="'.$WtotalWin.'" stage="" totalPay="'.$WtotalWin.'" type="Pattern">
+        <Prize betMultiplier="40" multiplier="1" name="'.$_SESSION['levelUp'].'Prize'.$level.'" pay="'.($level+1).'" payName="'.$_SESSION['levelUp'].'Prize'.$level.'" symbolCount="1" totalPay="'.$WtotalWin.'" ways="0" />
+    </PrizeOutcome>';
+            }
+        }
+
+
+
+        $_SESSION['fsTotalWin'] += $totalWin;
+
+        $nextStage = 'FreeSpin';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        if($_SESSION['fsLeft'] == 0) {
+            $nextStage = 'BaseGame';
+            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
+        }
+
+        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1540-14228693316850</TransactionId>
+        <Stage>FreeSpin</Stage>
+        <NextStage>'.$nextStage.'</NextStage>
+        <Balance>'.$needBalance.'</Balance>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
+    </OutcomeDetail>
+    '.$baseScatter.'
+    <TriggerOutcome component="" name="CurrentLevels" stage="">
+        <Trigger name="GreenLevel'.$_SESSION['greenLevel'].'" priority="0" stageConnector="" />
+        <Trigger name="RedLevel'.$_SESSION['redLevel'].'" priority="0" stageConnector="" />
+        <Trigger name="BlueLevel'.$_SESSION['blueLevel'].'" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    '.$webCaptureHightlight.'
+    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
+        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
+    </TriggerOutcome>
+    '.$highlight.'
+    '.$scattersHighlight.'
+    '.$display.'
+    <FreeSpinOutcome name="">
+        <InitAwarded>10</InitAwarded>
+        <Awarded>'.$awarded.'</Awarded>
+        <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    '.$winLines.'
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="WebCapture.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="40" multiplier="1" name="Scatter" pay="0" payName="1 s01" symbolCount="1" totalPay="0" ways="0" />
+    </PrizeOutcome>
+    <TransactionId>A2210-14264043293637</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
+        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$needBalance.'">
+        <Balance name="FREE">'.$needBalance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+
+        if($_SESSION['fsLeft'] == 0) {
+            $_SESSION['state'] = 'SPIN';
+            unset($_SESSION['fsLeft']);
+            unset($_SESSION['fsPlayed']);
+            unset($_SESSION['totalAwarded']);
+            unset($_SESSION['scatterWin']);
+            unset($_SESSION['fsTotalWin']);
+            unset($_SESSION['startBalance']);
+            unset($_SESSION['baseWinLinesWin']);
+        }
     }
 
 }

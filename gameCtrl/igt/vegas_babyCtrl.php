@@ -467,11 +467,13 @@ class vegas_babyCtrl extends IGTCtrl {
 
         $awarded = 0;
         $scattersHighlight = '';
-        if($report['scattersReport']['count'] > 2) {
-            $_SESSION['totalAwarded'] += 15;
-            $_SESSION['fsLeft'] += 15;
-            $awarded = 15;
+        if($report['scattersReport']['count'] > 1) {
             $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter');
+            if($report['scattersReport']['count'] > 2) {
+                $_SESSION['totalAwarded'] += 15;
+                $_SESSION['fsLeft'] += 15;
+                $awarded = 15;
+            }
         }
 
         $_SESSION['fsPlayed']++;
@@ -518,10 +520,6 @@ class vegas_babyCtrl extends IGTCtrl {
         <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
     '.$baseScatter.'
-    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
-    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
-        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
-    </TriggerOutcome>
     '.$highlight.$scattersHighlight.$scattersPay.$display.$baseReels.'
     <FreeSpinOutcome name="">
         <InitAwarded>15</InitAwarded>
@@ -555,6 +553,8 @@ class vegas_babyCtrl extends IGTCtrl {
         <Balance name="FREE">'.$needBalance.'</Balance>
     </Balances>
 </GameLogicResponse>';
+
+
 
         $this->outXML($xml);
 

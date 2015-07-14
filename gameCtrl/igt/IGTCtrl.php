@@ -291,12 +291,15 @@ class IGTCtrl extends Ctrl {
             $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="0" stage="" totalPay="0" type="Pattern"/>';
         }
         else {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="'.$baseLinesWin.'" stage="" totalPay="'.$baseLinesWin.'" type="Pattern">';
-
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="{{count}}" stage="" totalPay="{{count}}" type="Pattern">';
+            $totalPay = 0;
             foreach($report['winLines'] as $w) {
                 $payout = $report['betOnLine']*$w['multiple'];
+                $totalPay += $payout;
                 $xml .= '<Prize betMultiplier="1" multiplier="1" name="Line '.$w['id'].'" pay="'.$payout.'" payName="'.$w['count'].' '.$w['alias'].'" symbolCount="'.$w['count'].'" totalPay="'.$payout.'" ways="0" />';
             }
+
+            $xml = str_replace('{{count}}', $totalPay, $xml);
 
             $xml .= '</PrizeOutcome>';
         }
