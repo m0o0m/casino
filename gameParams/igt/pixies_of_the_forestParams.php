@@ -18,6 +18,8 @@ class pixies_of_the_forestParams extends Params {
         ),
     );
 
+    public $symbolWithoutWild = array(51);
+
     public $reelConfig = array(3,3,3,3,3);
 
     public $symbols = array(
@@ -198,6 +200,7 @@ class pixies_of_the_forestParams extends Params {
         array('symbol'=> 's07', 'count'=> 5, 'multiplier'=> 25),
         array('symbol'=> 's07', 'count'=> 4, 'multiplier'=> 5),
         array('symbol'=> 's07', 'count'=> 3, 'multiplier'=> 1),
+
         array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 0),
         array('symbol'=> 'b01', 'count'=> 4, 'multiplier'=> 0),
         array('symbol'=> 'b01', 'count'=> 3, 'multiplier'=> 0),

@@ -64,6 +64,9 @@ trait BonusWorker {
             case 'wildReels':
                 $this->setWildReels($bonus['reels']);
                 break;
+            case 'fullWildReels':
+                $this->setFullWildReels($bonus['reels']);
+                break;
             case 'expandWild':
                 $this->checkExpandWild($bonus['reels'], $bonus['symbolsID'], $bonus['wild']);
                 break;
@@ -121,8 +124,60 @@ trait BonusWorker {
             case 'multipleByLevel':
                 $this->setMultipleByLevel($bonus);
                 break;
+            case 'wildsExpansion':
+                $this->setWildsExpansion($bonus['wildsCount'], $bonus['wildsCountChance'], $bonus['wildsExpansionChance'], $bonus['wildSymbol']);
+                break;
 
         }
+    }
+
+    private function setWildsExpansion($wildsCount, $wildsCountChance, $wildsExpansionChance, $wildSymbol) {
+        $reelsCount = $this->getReelsCount() - 1;
+        $rows = $this->rows - 1;
+
+        $wc = $wildsCount[$this->getRandParam($wildsCountChance)];
+        $maxOffset = $reelsCount * $rows - 1;
+        $wildsOffsets = array();
+        while(count($wildsOffsets) < $wc) {
+            $rnd = rnd(0,$maxOffset);
+            if(!in_array($rnd, $wildsOffsets)) {
+                $wildsOffsets[] = $rnd;
+            }
+        }
+        $wildExpansion = array();
+        $wildsOffsetAdd = array();
+        foreach($wildsOffsets as $w) {
+            if(rnd(1, $wildsExpansionChance) == 1) {
+                $ceilRow = $this->getCeilRowByOffset($w);
+                $ceil = $ceilRow['ceil'];
+                $row = $ceilRow['row'];
+                if(rnd(0,1) == 0) $add1 = -1;
+                else $add1 = 1;
+                if(rnd(0,1) == 0) $add2 = -1;
+                else $add2 = 1;
+                $ceil += $add1;
+                $row += $add2;
+                if($ceil < 0) $ceil += 2;
+                if($ceil > $reelsCount) $ceil -= 2;
+                if($row < 0) $row += 2;
+                if($row > $rows) $row -= 2;
+                $newOffset = $this->getOffsetByCeilRow($ceil, $row);
+                $wildsOffsetAdd[] = $newOffset;
+                $wildExpansion[] = array(
+                    'main' => $w,
+                    'expansion' => $newOffset,
+                );
+            }
+        }
+
+        $fullOffsets = array_merge($wildsOffsets, $wildsOffsetAdd);
+
+        $this->setWildsOnPos($fullOffsets, $wildSymbol);
+
+        $this->bonusData = array(
+            'wildsOffsets' => $wildsOffsets,
+            'wildExpansion' => $wildExpansion,
+        );
     }
 
     /**
@@ -520,6 +575,16 @@ trait BonusWorker {
     }
 
     /**
+     * Устанавливает барабан(все его символы) в wild-барабан
+     *
+     * @param int $reelNumber Номер барабана
+     * @param int $wild Числовой идентификатор вайлда
+     */
+    private function setFullWildReel($reelNumber, $wild) {
+        $this->reels[$reelNumber]->setAsFullWild($wild);
+    }
+
+    /**
      * Устанавливает рандомное число вайлдов в зависимости от диапазона ($range)
      *
      * Если передан $not, то на этот offset нельзя поставить wild
@@ -584,6 +649,33 @@ trait BonusWorker {
         }
         foreach($reels as $reel) {
             $this->setWildReel($reel, $wild);
+        }
+        $offsets = array();
+        foreach($reels as $r) {
+            $offsets[] = $this->getReelOffset($r);
+        }
+        $this->bonusData = array(
+            'reels' => $reels,
+            'offsets' => $offsets,
+        );
+    }
+
+    /**
+     * Установка барабанов(всех символов, не только видимых) в wild-барабаны
+     *
+     * Если передан $setWild, то этот символ будет использоваться как Wild
+     * Стандартно используется нулевой символ массива $this->wild
+     *
+     * @param array $reels Массив номеров барабанов(начинается с 0), которые нужно сделать wild-барабанами
+     * @param bool $setWild
+     */
+    private function setFullWildReels($reels, $setWild = false) {
+        $wild = $this->wild[0];
+        if($setWild !== false) {
+            $wild = $setWild;
+        }
+        foreach($reels as $reel) {
+            $this->setFullWildReel($reel, $wild);
         }
         $offsets = array();
         foreach($reels as $r) {

@@ -44,6 +44,15 @@ class IGTCtrl extends Ctrl {
                     elseif($_SESSION['state'] == 'FREE') {
                         $this->startFreeSpin($request);
                     }
+                    elseif($_SESSION['state'] == 'PICK') {
+                        $this->startPick($request);
+                    }
+                    elseif($_SESSION['state'] == 'TUMBLE' && $_SESSION['preState'] == 'SPIN') {
+                        $this->startTumble($request);
+                    }
+                    elseif($_SESSION['state'] == 'TUMBLE' && $_SESSION['preState'] == 'FREE') {
+                        $this->startTumbleFree($request);
+                    }
                 }
                 else {
                     $this->startSpin($request);
@@ -53,7 +62,8 @@ class IGTCtrl extends Ctrl {
         }
     }
 
-    protected function getHighlight($winLines, $name = 'BaseGame.Lines') {
+    protected function getHighlight($winLines, $name = 'BaseGame.Lines', $inc = 0, $type = '') {
+        $reelsCount = $this->slot->getReelsCount() - 1;
         if(empty($winLines)) {
             $xml = '<HighlightOutcome name="'.$name.'" type=""/>';
         }
@@ -61,14 +71,21 @@ class IGTCtrl extends Ctrl {
             $xml = '<HighlightOutcome name="'.$name.'" type="">';
 
             foreach($winLines as $w) {
-                $item = '<Highlight name="Line '.$w['id'].'" type="">';
-                for($i = 0; $i < $w['count']; $i++) {
-                    $row = $w['line'][$i];
-                    $item .= '<Cell name="L0C'.$i.'R'.$row.'" type="" />';
-                }
-                $item .= '</Highlight>';
+                if($w['type'] == 'line') {
+                    $item = '<Highlight name="Line '.$w['id'].'" type="">';
+                    for($i = 0; $i < count($w['useSymbols']); $i++) {
+                        $ceil = $i;
+                        if($w['direction'] == 'right') {
+                            $ceil = $reelsCount - $i;
+                        }
+                        $row = $w['line'][$i] + $inc;
+                        $item .= '<Cell name="L0C'.$ceil.'R'.$row.'" type="'.$type.'" />';
+                    }
+                    $item .= '</Highlight>';
 
-                $xml .= $item;
+                    $xml .= $item;
+                }
+
             }
 
             $xml .= '</HighlightOutcome>';
@@ -77,12 +94,12 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
-    protected function getScattersHighlight($offsets, $name = 'BaseGame.Scatter') {
+    protected function getScattersHighlight($offsets, $name = 'BaseGame.Scatter', $inc = 0) {
         $xml = '<HighlightOutcome name="'.$name.'" type="">
         <Highlight name="Scatter" type="">';
         foreach($offsets as $o) {
-            $c = $o % 5;
-            $r = floor($o / 5);
+            $c = ($o % 5);
+            $r = floor($o / 5) + $inc;
             $xml .= '<Cell name="L0C'.$c.'R'.$r.'" type="" />';
         }
         $xml .= '</Highlight>
@@ -113,16 +130,16 @@ class IGTCtrl extends Ctrl {
 
     }
 
-    protected function getLeftHighlight($winLines, $name = 'BaseGame') {
+    protected function getLeftHighlight($winLines, $name = 'BaseGame', $afterName = 'LeftRightMultiWay') {
         $leftLines = array();
         foreach($winLines as $w) {
-            if($w['direction'] == 'left') {
+            if($w['direction'] == 'left' && $w['type'] == 'ways') {
                 $leftLines[] = $w;
             }
         }
 
         if(empty($leftLines)) {
-            $xml = '<HighlightOutcome name="'.$name.'.LeftRightMultiWay" type="" />';
+            $xml = '<HighlightOutcome name="'.$name.'.'.$afterName.'" type="" />';
         }
         else {
             $aliasArray = array();
@@ -150,7 +167,7 @@ class IGTCtrl extends Ctrl {
             }
 
             $reelsCount = count($this->gameParams->reelConfig);
-            $xml = '<HighlightOutcome name="'.$name.'.LeftRightMultiWay" type="">';
+            $xml = '<HighlightOutcome name="'.$name.'.'.$afterName.'" type="">';
             foreach($resultArray as $r) {
                 $item = '<Highlight name="'.$r['count'].' '.$r['alias'].'" type="">';
                 foreach($r['offsets'] as $o) {
@@ -168,16 +185,16 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
-    protected function getRightHighlight($winLines, $name = 'BaseGame') {
+    protected function getRightHighlight($winLines, $name = 'BaseGame', $afterName = 'RightLeftMultiWay') {
         $rightLines = array();
         foreach($winLines as $w) {
-            if($w['direction'] == 'right') {
+            if($w['direction'] == 'right' && $w['type'] == 'ways') {
                 $rightLines[] = $w;
             }
         }
 
         if(empty($rightLines)) {
-            $xml = '<HighlightOutcome name="'.$name.'.RightLeftMultiWay" type="" />';
+            $xml = '<HighlightOutcome name="'.$name.'.'.$afterName.'" type="" />';
         }
         else {
             $aliasArray = array();
@@ -205,7 +222,7 @@ class IGTCtrl extends Ctrl {
             }
 
             $reelsCount = count($this->gameParams->reelConfig);
-            $xml = '<HighlightOutcome name="'.$name.'.RightLeftMultiWay" type="">';
+            $xml = '<HighlightOutcome name="'.$name.'.'.$afterName.'" type="">';
             foreach($resultArray as $r) {
                 $item = '<Highlight name="'.$r['count'].' '.$r['alias'].'" type="">';
                 foreach($r['offsets'] as $o) {
@@ -223,8 +240,8 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
-    protected function getDisplay($report, $full = false, $name = 'BaseGame') {
-        $xml = '<PopulationOutcome name="'.$name.'.Reels" stage="'.$name.'">';
+    protected function getDisplay($report, $full = false, $name = 'BaseGame', $afterName = 'Reels', $startRows = false) {
+        $xml = '<PopulationOutcome name="'.$name.'.'.$afterName.'" stage="'.$name.'">';
 
 
         $addCount = 0;
@@ -232,6 +249,9 @@ class IGTCtrl extends Ctrl {
         if($full) {
             $addCount = 2;
             $rows = 'fullRows';
+        }
+        if($startRows) {
+            $rows = 'startRows';
         }
         for($i = 0; $i < count($this->gameParams->reelConfig); $i++) {
             $stop = $report['offset'][1][$i];
@@ -243,6 +263,31 @@ class IGTCtrl extends Ctrl {
             }
             $xml .= '</Entry>';
         }
+
+        $xml .= '</PopulationOutcome>';
+
+        return $xml;
+    }
+
+    protected function getDisplayReels($report, $full = false, $name = 'BaseGame') {
+        $xml = '<PopulationOutcome name="'.$name.'.Reels" stage="'.$name.'">';
+
+        $cnt = 0;
+        for($i = 0; $i < count($this->gameParams->reelConfig); $i++) {
+            for($j = 0; $j < $this->gameParams->reelConfig[$i]; $j++) {
+                $reel = $this->slot->reels[$i]->reels[$j];
+                $offset = $reel->getOffset();
+                $visible = $reel->getVisibleSymbols();
+                $symbol = $this->gameParams->getSymbolByID($visible);
+
+                $xml .= '<Entry name="Reel'.$cnt.'" stripIndex="'.$offset.'">';
+                $xml .= '<Cell name="L0C'.$i.'R'.$j.'" stripIndex="'.$offset.'">'.$symbol.'</Cell>';
+                $xml .= '</Entry>';
+
+                $cnt++;
+            }
+        }
+
 
         $xml .= '</PopulationOutcome>';
 
@@ -294,9 +339,12 @@ class IGTCtrl extends Ctrl {
             $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.Lines" pay="{{count}}" stage="" totalPay="{{count}}" type="Pattern">';
             $totalPay = 0;
             foreach($report['winLines'] as $w) {
-                $payout = $report['betOnLine']*$w['multiple'];
-                $totalPay += $payout;
-                $xml .= '<Prize betMultiplier="1" multiplier="1" name="Line '.$w['id'].'" pay="'.$payout.'" payName="'.$w['count'].' '.$w['alias'].'" symbolCount="'.$w['count'].'" totalPay="'.$payout.'" ways="0" />';
+                if($w['type'] == 'line') {
+                    $payout = $report['betOnLine'] * $w['multiple'];
+                    $totalPay += $payout;
+                    $pay = $payout / $this->slot->double;
+                    $xml .= '<Prize betMultiplier="1" multiplier="'.$this->slot->double.'" name="Line ' . $w['id'] . '" pay="' . $pay . '" payName="' . $w['count'] . ' ' . $w['alias'] . '" symbolCount="' . $w['count'] . '" totalPay="' . $payout . '" ways="0" />';
+                }
             }
 
             $xml = str_replace('{{count}}', $totalPay, $xml);
@@ -307,22 +355,22 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
-    protected function getLeftWayWinLines($report, $name = 'BaseGame') {
+    protected function getLeftWayWinLines($report, $name = 'BaseGame', $afterName = 'LeftRightMultiWay') {
         $leftLines = array();
         $totalPay = 0;
 
         foreach($report['winLines'] as $w) {
-            if($w['direction'] == 'left') {
+            if($w['direction'] == 'left' && $w['type'] == 'ways') {
                 $leftLines[] = $w;
                 $totalPay += $w['multiple'] * $report['betOnLine'];
             }
         }
 
         if(empty($leftLines)) {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern"/>';
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.'.$afterName.'" pay="0" stage="" totalPay="0" type="Pattern"/>';
         }
         else {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.LeftRightMultiWay" pay="'.$totalPay.'" stage="" totalPay="'.$totalPay.'" type="Pattern">';
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.'.$afterName.'" pay="'.$totalPay.'" stage="" totalPay="'.$totalPay.'" type="Pattern">';
 
             $aliasArray = array();
             $resultArray = array();
@@ -381,21 +429,21 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
-    protected function getRightWayWinLines($report, $name = 'BaseGame') {
+    protected function getRightWayWinLines($report, $name = 'BaseGame', $afterName = 'RightLeftMultiWay') {
         $rightLines = array();
         $totalPay = 0;
         foreach($report['winLines'] as $w) {
-            if($w['direction'] == 'right') {
+            if($w['direction'] == 'right' && $w['type'] == 'ways') {
                 $rightLines[] = $w;
                 $totalPay += $w['multiple'] * $report['betOnLine'];
             }
         }
 
         if(empty($rightLines)) {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern"/>';
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.'.$afterName.'" pay="0" stage="" totalPay="0" type="Pattern"/>';
         }
         else {
-            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.RightLeftMultiWay" pay="'.$totalPay.'" stage="" totalPay="'.$totalPay.'" type="Pattern">';
+            $xml = '<PrizeOutcome multiplier="1" name="'.$name.'.'.$afterName.'" pay="'.$totalPay.'" stage="" totalPay="'.$totalPay.'" type="Pattern">';
 
             $aliasArray = array();
             $resultArray = array();

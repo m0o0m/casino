@@ -105,6 +105,8 @@ class Ways {
                             'withWild' => $p['withWild'],
                             'collecting' => $p['collecting'],
                             'direction' => $this->direction,
+                            'useSymbols' => $p['symbols'],
+                            'type' => 'ways',
                         );
                     }
 

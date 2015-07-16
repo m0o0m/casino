@@ -21,39 +21,34 @@ class cash_coasterParams extends Params {
     public $reelConfig = array(3,3,3,3,3);
 
     public $symbols = array(
-        // Вилд
         'w01' => array(0),
-        // Девушка
         's01' => array(1),
-        // Зеленый
         's02' => array(2),
-        // Розовый
         's03' => array(3),
-        // Синий
         's04' => array(4),
-        // A
         's05' => array(5),
-        // K
         's06' => array(6),
-        // Q
         's07' => array(7),
-        // J
         's08' => array(8),
-        // 10
         's09' => array(9),
-        // Random 1
         's10' => array(10),
-        // Random 1
         's11' => array(11),
-        // Random 1
         'b01' => array(12),
-
-
     );
+
+    public $extraLine = true;
+
+    public $extraLineConfig = array(
+        'symbols' => array(1,2,3,4,5),
+        'any' => true,
+        'alias' => 'any7',
+        'multiplier' => 40,
+    );
+
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(12);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -98,6 +93,9 @@ class cash_coasterParams extends Params {
         // 30
         array(1,0,1,2,1),
     );
+
+    public $winLineType = 'leftRight';
+    public $minWinCount = 3;
 
     public $payOnlyHighter = true;
     // настройка ставок
@@ -145,4 +143,10 @@ class cash_coasterParams extends Params {
         array('symbol'=> 's11', 'count'=> 4, 'multiplier'=> 15),
         array('symbol'=> 's11', 'count'=> 3, 'multiplier'=> 5),
     );
+
+    // шанс 1 к 10, что один из барабанов станет wild
+    public $wildChance = 10;
+
+    // Шанс 1 к 100, что оба барабана (первый и последний) станут вайлдами
+    public $doubleWildChance = 100;
 }

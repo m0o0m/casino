@@ -41,6 +41,27 @@ class Params {
     public $collectingPay = false;
 
     /**
+     * Высчитывать дополнительные линии
+     *
+     * @var bool
+     */
+    public $extraLine = false;
+
+    /**
+     * Удваивать количество для определенно входящего символа в выигрышную линию
+     *
+     * @var bool
+     */
+    public $doubleCount = false;
+
+    /**
+     * Использовать одновременно таблицу выплат для Lines и Ways
+     *
+     * @var bool
+     */
+    public $useTwoPayLines = false;
+
+    /**
      * Умножать ли каждый символ, когда идет общий множитель
      *
      * @var bool
@@ -220,14 +241,30 @@ class Params {
      *
      * @param array $symbol
      * @param int $count
+     * @param string $type Тип линии (или Lines или Ways)
      * @return bool
      */
-    public function checkSymbolCount($symbol, $count) {
+    public function checkSymbolCount($symbol, $count, $type) {
 
         $s = $this->getSymbolByID($symbol);
-        foreach($this->winPay as $w) {
-            if($s == $w['symbol'] && $w['count'] == $count) return true;
+        if($this->useTwoPayLines) {
+            if($type == 'line') {
+                foreach($this->winPay as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return true;
+                }
+            }
+            else {
+                foreach($this->winPayWays as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return true;
+                }
+            }
         }
+        else {
+            foreach($this->winPay as $w) {
+                if($s == $w['symbol'] && $w['count'] == $count) return true;
+            }
+        }
+
         return false;
     }
 
@@ -236,14 +273,31 @@ class Params {
      *
      * @param array $symbol
      * @param int $count
+     * @param string $type Тип линии (или Lines или Ways)
      * @return int|bool
      */
-    public function getWinMultiplier($symbol, $count) {
+    public function getWinMultiplier($symbol, $count, $type) {
 
         $s = $this->getSymbolByID($symbol);
-        foreach($this->winPay as $w) {
-            if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+
+        if($this->useTwoPayLines) {
+            if($type == 'line') {
+                foreach($this->winPay as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+                }
+            }
+            else {
+                foreach($this->winPayWays as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+                }
+            }
         }
+        else {
+            foreach($this->winPay as $w) {
+                if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+            }
+        }
+
         return false;
     }
 

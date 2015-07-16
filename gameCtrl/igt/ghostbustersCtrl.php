@@ -4,6 +4,8 @@ require_once('IGTCtrl.php');
 class ghostbustersCtrl extends IGTCtrl {
 
     protected function startConfig($request) {
+        $this->setSessionIfEmpty('state', 'SPIN');
+
         $xml = '<params><param name="softwareid" value="200-1171-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Ghostbusters"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="Ghostbusters"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="FPY"/></params>';
 
         $this->outXML($xml);
@@ -291,17 +293,85 @@ class ghostbustersCtrl extends IGTCtrl {
     protected function startInit($request) {
         $balance = $this->getBalance();
 
+        $state = 'BaseGame';
+        if($_SESSION['state'] == 'FREE') {
+            $state = 'StayPuftBonus';
+        }
+        if($_SESSION['state'] == 'PICK') {
+            $state = 'BallroomBonus';
+        }
+
+        $fs = '';
+        if($_SESSION['state'] == 'FREE') {
+            $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+            $sticky = '<HighlightOutcome name="StayPuftBonus.StickyWilds" type="">
+        <Highlight name="swp1" type="">';
+            foreach($_SESSION['wildsOffsets'] as $o) {
+                $ceil = $o % 5;
+                $row = floor($o / 5);
+
+                $sticky .= '<Cell name="L0C'.$ceil.'R'.$row.'" type="" />';
+            }
+            $sticky .= '</Highlight>
+    </HighlightOutcome>';
+
+            $fs = '<TriggerOutcome component="" name="StayPuftBonus.ActiveStickyWildsPatterns" stage="">
+        <Trigger name="swp1" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="StayPuftBonus.Features" stage="">
+        <Trigger name="stickyWildsActive" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <FreeSpinOutcome name="StayPuftBonus.FreeSpinOutcome">
+        <InitAwarded>8</InitAwarded>
+        <Awarded>8</Awarded>
+        <TotalAwarded>8</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="StayPuftBonus.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
+    </PrizeOutcome>'.$sticky;
+        }
+        if($_SESSION['state'] == 'PICK') {
+            $fs = $this->getPicksXml();
+
+            $totalWin = $_SESSION['spinWin'] + $_SESSION['ballroomTotalWin'];
+
+            $fs .= '<PrizeOutcome multiplier="1" name="BallroomBonus.Total" pay="'.$_SESSION['ballroomTotalWin'].'" stage="" totalPay="'.$_SESSION['ballroomTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['ballroomTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['ballroomTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0" />
+    </PrizeOutcome>';
+        }
+
+        $patternsBet = 50;
+        if(!empty($_SESSION['lastPick'])) {
+            $patternsBet = $_SESSION['lastPick'];
+        }
+
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>A2010-14264054796419</TransactionId>
-        <Stage>BaseGame</Stage>
-        <NextStage>BaseGame</NextStage>
+        <Stage>'.$state.'</Stage>
+        <NextStage>'.$state.'</NextStage>
         <Balance>'.$balance.'</Balance>
         <GameStatus>Initial</GameStatus>
         <Settled>0</Settled>
         <Pending>0</Pending>
         <Payout>0</Payout>
     </OutcomeDetail>
+    '.$fs.'
     <PopulationOutcome name="BaseGame.Reels" stage="BaseGame">
         <Entry name="Reel0" stripIndex="36">
             <Cell name="L0C0R0" stripIndex="36">s09</Cell>
@@ -414,18 +484,189 @@ class ghostbustersCtrl extends IGTCtrl {
         $this->startPay();
     }
 
+    protected function startFreeSpin($request) {
+        $stake = $_SESSION['lastBet'];
+        $pick = $_SESSION['lastPick'];
+
+        $this->gameParams->winLines = $this->gameParams->winLinesFree;
+        $this->gameParams->reelConfig = array(4,4,4,4,4);
+        $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->slot->createCustomReels($this->gameParams->reels[1], array(4,4,4,4,4));
+        $this->slot->rows = 4;
+
+        $spinData = $this->getSpinData();
+        $totalWin = $spinData['totalWin'];
+        $respin = $spinData['respin'];
+
+        while(!game_ctrl(0, $totalWin * 100) || $respin) {
+            $spinData = $this->getSpinData();
+            $totalWin = $spinData['totalWin'];
+            $respin = $spinData['respin'];
+        }
+
+        $this->fsPays[] = array(
+            'win' => $spinData['report']['totalWin'],
+            'report' => $spinData['report'],
+        );
+
+        $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
+
+        $_SESSION['lastBet'] = $stake;
+        $_SESSION['lastPick'] = $pick;
+        $_SESSION['lastStops'] = $spinData['report']['stops'];
+        $this->startPay();
+    }
+
     protected function getSpinData() {
+        $this->bonusData = array();
         $this->spinPays = array();
         $this->fsPays = array();
         $this->bonusPays = array();
 
+        $bonusCount = 0;
+
         $respin = false;
 
-        $report = $this->slot->spin();
 
+        $mysteryConfig = $this->gameParams->mysteryConfig;
+        $bonus = array();
+        $f = false;
+        if(rnd(1, $mysteryConfig['bonusChance']) == 1) {
+            $bonusCount++;
+            $bonusType = $mysteryConfig['bonusType'][$this->getRandParam($mysteryConfig['bonusTypeChance'])];
+            switch($bonusType) {
+                case 'multiple':
+                    $multiple = $mysteryConfig['multipleValue'][$this->getRandParam($mysteryConfig['multipleValueChance'])];
+                    $bonus = array(
+                        'type' => 'multiple',
+                        'range' => array($multiple, $multiple),
+                    );
+                    $this->bonusData = array(
+                        'type' => 'multiple',
+                        'multiple' => $multiple,
+                    );
+                    break;
+                case 'award':
+                    $credits = $mysteryConfig['awardValue'][$this->getRandParam($mysteryConfig['awardValueChance'])];
+                    $this->bonusData = array(
+                        'type' => 'award',
+                        'credits' => $credits,
+                    );
+                    $f = true;
+                    break;
+                case 'reels':
+                    $reelsCount = $mysteryConfig['reelsCount'][$this->getRandParam($mysteryConfig['reelsCountChance'])];
+                    $reels = array();
+                    while(count($reels) < $reelsCount) {
+                        $rnd = rnd(0,4);
+                        if(in_array($rnd, $reels)) {
+
+                        }
+                        else {
+                            $reels[] = $rnd;
+                        }
+                    }
+                    $bonus = array(
+                        'type' => 'wildReels',
+                        'reels' => $reels,
+                    );
+                    $this->bonusData = array(
+                        'type' => 'reels',
+                        'reels' => $reels,
+                    );
+                    break;
+                case 'wilds':
+                    $bonus = array(
+                        'type' => 'wildsExpansion',
+                        'wildsCount' => $mysteryConfig['wildsCount'],
+                        'wildsCountChance' => $mysteryConfig['wildsCountChance'],
+                        'wildsExpansionChance' => $mysteryConfig['wildsExpansionChance'],
+                        'wildSymbol' => 102,
+                    );
+                    $this->bonusData = array(
+                        'type' => 'wilds',
+                    );
+                    break;
+            }
+        }
+
+        if($_SESSION['state'] == 'FREE') {
+            $config = $this->gameParams->puftConfig;
+            $wildCount = $config['wildCount'][$this->getRandParam($config['wildCountChance'])];
+            $newWildsOffsets = array();
+            while(count($newWildsOffsets) < $wildCount) {
+                $rnd = rnd(0,19);
+                if(!in_array($rnd, $newWildsOffsets) && !in_array($rnd,$_SESSION['wildsOffsets'])) {
+                    $newWildsOffsets[] = $rnd;
+                    $_SESSION['wildsOffsets'][] = $rnd;
+                }
+                $bonus = array(
+                    'type' => 'wildsOnPos',
+                    'offsets' => $_SESSION['wildsOffsets'],
+                    'wildSymbol' => 103,
+                );
+            }
+
+            if(rnd(1, $config['awardChance']) == 1) {
+                $credits = $config['awardValue'][$this->getRandParam($config['awardValueChance'])];
+                $f = true;
+                $this->bonusData = array(
+                    'credits' => $credits,
+                );
+            }
+        }
+
+        else {
+            if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
+                $url = $_SERVER['HTTP_REFERER'];
+                $g = '';
+                if (strpos($url, 'bonus=fs') > 0) {
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(5,17,10,56,5),
+                    );
+                }
+                if (strpos($url, 'bonus=pick') > 0) {
+                    $bonus = array(
+                        'type' => 'setReelsOffsets',
+                        'offsets' => array(5,17,10,37,5),
+                    );
+                }
+            }
+        }
+
+        $report = $this->slot->spin($bonus);
+
+        if($f) {
+            $report['totalWin'] += $report['betOnLine'] * $credits;
+            $report['spinWin'] += $report['betOnLine'] * $credits;
+        }
         $report['type'] = 'SPIN';
 
+        $b1Report = $this->slot->getSymbolAnyCount('b01');
+        $b2Report = $this->slot->getSymbolAnyCount('b02');
+        $b3Report = $this->slot->getSymbolAnyCount('b03');
+
+        $report['scattersReport']['offsets'] = array_merge($b1Report['offsets'], $b2Report['offsets'], $b3Report['offsets']);
+        $totalCount = $b1Report['count'] + $b2Report['count'] + $b3Report['count'];
+        $report['scattersReport']['count'] = $totalCount;
+        $report['scattersReport']['totalWin'] = 0;
+        if($b1Report['count'] == 2 && $b2Report['count'] == 1) {
+            $_SESSION['state'] = 'PICK';
+            $_SESSION['pickerCount'] = 5;
+            $bonusCount++;
+        }
+
+        if($b1Report['count'] == 2 && $b3Report['count'] == 1) {
+            $_SESSION['state'] = 'FREE';
+            $bonusCount++;
+        }
+
         $totalWin = $report['totalWin'];
+
+        if($bonusCount > 1) {
+            $respin = true;
+        }
 
         return array(
             'totalWin' => $totalWin,
@@ -439,13 +680,121 @@ class ghostbustersCtrl extends IGTCtrl {
         $highlight = $this->getHighlight($report['winLines']);
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
+        $scatterHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
         $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $bonus = '<HighlightOutcome name="BaseGame.MysteryWildReels" type="" />
+    <HighlightOutcome name="BaseGame.MysterySingleWilds" type="" />
+    <HighlightOutcome name="BaseGame.MysterySingleWilds.Expansion" type="" />
+    <TriggerOutcome component="" name="MysteryBonus" stage="" />
+    <TriggerOutcome component="" name="MysteryBonus.Awards" stage="" />
+    <TriggerOutcome component="" name="Bonus" stage=""/>
+    <TriggerOutcome component="" name="StayPuftBonus.ActiveStickyWildsPatterns" stage=""/>';
+        if(!empty($this->bonusData)) {
+            switch($this->bonusData['type']) {
+                case 'multiple':
+                    $bonus = '<TriggerOutcome component="" name="MysteryBonus" stage="">
+        <Trigger name="MysteryMultiplier" priority="100" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="MysteryBonus.Awards" stage="">
+        <Trigger name="Multiplier,'.$this->bonusData['multiple'].'" priority="100" stageConnector="" />
+    </TriggerOutcome>
+    <MultiplierOutcome name="MysteryFeature.Multiplier">
+        <Multiplier name="">'.$this->bonusData['multiple'].'</Multiplier>
+    </MultiplierOutcome>';
+                    break;
+                case 'award':
+                    $pay = $report['betOnLine'] * $this->bonusData['credits'];
+                    $bonus = '<TriggerOutcome component="" name="MysteryBonus" stage="">
+        <Trigger name="MysteryCredits" priority="100" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="MysteryBonus.Awards" stage="">
+        <Trigger name="Credits,'.$this->bonusData['credits'].'" priority="100" stageConnector="" />
+    </TriggerOutcome>
+    <PrizeOutcome multiplier="1" name="Mystery.Credits" pay="'.$pay.'" stage="" totalPay="'.$pay.'" type="Pattern">
+        <Prize betMultiplier="1" multiplier="1" name="Credits" pay="'.$pay.'" payName="Credits,'.$this->bonusData['credits'].'" symbolCount="1" totalPay="'.$pay.'" ways="0" />
+    </PrizeOutcome>';
+                    break;
+                case 'reels':
+                    $tmp = array();
+                    foreach($this->bonusData['reels'] as $r) {
+                        $tmp[] = $r + 1;
+                    }
+                    $reelStr = implode('', $tmp);
+                    $bonus = '<TriggerOutcome component="" name="MysteryBonus" stage="">
+        <Trigger name="MysteryWildReels" priority="100" stageConnector="" />
+    </TriggerOutcome>
+    <HighlightOutcome name="BaseGame.MysteryWildReels" type="">
+        <Highlight name="WildReel'.$reelStr.'" type="">';
+                    foreach($this->bonusData['reels'] as $r) {
+                        $bonus .= '<Cell name="L0C'.$r.'R0" type="" />
+            <Cell name="L0C'.$r.'R1" type="" />
+            <Cell name="L0C'.$r.'R2" type="" />';
+                    }
+                    $bonus .= '</Highlight>
+    </HighlightOutcome>';
+                    $display = $this->getDisplay($report, false, 'BaseGame', 'Reels', true);
+                    $display2 = $this->getDisplay($report, false, 'BaseGame', 'MysteryWildReels');
+                    $display .= $display2;
+                    break;
+                case 'wilds':
+                    $display = $this->getDisplay($report, false, 'BaseGame', 'Reels', true);
+                    $display2 = $this->getDisplay($report, false, 'BaseGame', 'MysteryWildReels');
+                    $display .= $display2;
+                    $bonus = '<TriggerOutcome component="" name="MysteryBonus" stage="">
+        <Trigger name="MysterySingleWilds" priority="100" stageConnector="" />
+    </TriggerOutcome>';
+
+                    $bonus .= '<HighlightOutcome name="BaseGame.MysterySingleWilds" type="">
+        <Highlight name="SingleWildPattern" type="">';
+                    foreach($report['bonusData']['wildsOffsets'] as $o) {
+                        $ceilRow = $this->slot->getCeilRowByOffset($o);
+                            $bonus .= '<Cell name="L0C'.$ceilRow['ceil'].'R'.$ceilRow['row'].'" type="" />';
+                    }
+                    $bonus .= '</Highlight></HighlightOutcome>';
+
+                    $bonus .= '<HighlightOutcome name="BaseGame.MysterySingleWilds.Expansion" type="">';
+                    foreach($report['bonusData']['wildExpansion'] as $e) {
+                        $main = $e['main'];
+                        $expansion = $e['expansion'];
+                        $mainCeilRow = $this->slot->getCeilRowByOffset($main);
+                        $bonus .= '<Highlight name="L0C'.$mainCeilRow['ceil'].'R'.$mainCeilRow['row'].'" type="">';
+                        $expansionCeilRow = $this->slot->getCeilRowByOffset($expansion);
+                        $bonus .= '<Cell name="L0C'.$expansionCeilRow['ceil'].'R'.$expansionCeilRow['row'].'" type="" />';
+                        $bonus .= '</Highlight>';
+                    }
+                    $bonus .= '</HighlightOutcome>';
+
+                    break;
+            }
+        }
+
+        $picks = 0;
+        $nextStage = 'BaseGame';
+        if($_SESSION['state'] == 'PICK') {
+            $bonus .= '<TriggerOutcome component="" name="Bonus" stage="">
+        <Trigger name="3 b03" priority="0" stageConnector="" />
+    </TriggerOutcome>';
+            $picks = 5;
+            $nextStage = 'BallroomBonus';
+            $this->startPickData();
+        }
+
+        $awarded = 0;
+        if($_SESSION['state'] == 'FREE') {
+            $nextStage = 'StayPuftBonus';
+            $awarded = 8;
+            $_SESSION['totalAwarded'] = $awarded;
+            $_SESSION['fsLeft'] = $awarded;
+            $_SESSION['fsPlayed'] = 0;
+            $_SESSION['initAwarded'] = $awarded;
+        }
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>R1440-14228540951428</TransactionId>
         <Stage>BaseGame</Stage>
-        <NextStage>BaseGame</NextStage>
+        <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$balance.'</Balance>
         <GameStatus>Start</GameStatus>
         <Settled>'.$report['bet'].'</Settled>
@@ -453,49 +802,71 @@ class ghostbustersCtrl extends IGTCtrl {
         <Payout>'.$totalWin.'</Payout>
     </OutcomeDetail>
     <HighlightOutcome name="BaseGame.Scatter" type=""/>
-    '.$highlight.'
-    <HighlightOutcome name="BaseGame.MysteryWildReels" type=""/>
-    <HighlightOutcome name="BaseGame.MysterySingleWilds" type=""/>
-    <HighlightOutcome name="BaseGame.MysterySingleWilds.Expansion" type=""/>
-    <TriggerOutcome component="" name="Bonus" stage=""/>
-    <TriggerOutcome component="" name="StayPuftBonus.ActiveStickyWildsPatterns" stage=""/>
-    <TriggerOutcome component="" name="MysteryBonus" stage=""/>
-    <TriggerOutcome component="" name="MysteryBonus.Awards" stage=""/>
+    '.$highlight.$scatterHighlight.'
+    '.$bonus.'
     <AwardCapOutcome name="AwardCap">
         <AwardCapExceeded>false</AwardCapExceeded>
     </AwardCapOutcome>
     <FreeSpinOutcome name="StayPuftBonus.FreeSpinOutcome">
-        <InitAwarded>0</InitAwarded>
-        <Awarded>0</Awarded>
-        <TotalAwarded>0</TotalAwarded>
+        <InitAwarded>'.$awarded.'</InitAwarded>
+        <Awarded>'.$awarded.'</Awarded>
+        <TotalAwarded>'.$awarded.'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>0</Countdown>
+        <Countdown>'.$awarded.'</Countdown>
         <IncrementTriggered>false</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
-    <PickerOutcome name=""/>
-    <MultiplierOutcome name="MysteryFeature.Multiplier">
-        <Multiplier name="">1</Multiplier>
-    </MultiplierOutcome>
-    '.$display.'
+    <PopulationOutcome name="StayPuftBonus.Reels" stage="StayPuftBonus">
+        <Entry name="Reel0" stripIndex="6">
+            <Cell name="L0C0R0" stripIndex="6">s11</Cell>
+            <Cell name="L0C0R1" stripIndex="7">s19</Cell>
+            <Cell name="L0C0R2" stripIndex="8">s15</Cell>
+            <Cell name="L0C0R3" stripIndex="9">s15</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="6">
+            <Cell name="L0C1R0" stripIndex="6">s11</Cell>
+            <Cell name="L0C1R1" stripIndex="7">s20</Cell>
+            <Cell name="L0C1R2" stripIndex="8">s15</Cell>
+            <Cell name="L0C1R3" stripIndex="9">s18</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="7">
+            <Cell name="L0C2R0" stripIndex="7">s12</Cell>
+            <Cell name="L0C2R1" stripIndex="8">s18</Cell>
+            <Cell name="L0C2R2" stripIndex="9">s19</Cell>
+            <Cell name="L0C2R3" stripIndex="10">s13</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="26">
+            <Cell name="L0C3R0" stripIndex="26">w03</Cell>
+            <Cell name="L0C3R1" stripIndex="27">s20</Cell>
+            <Cell name="L0C3R2" stripIndex="28">s17</Cell>
+            <Cell name="L0C3R3" stripIndex="29">s12</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="1">
+            <Cell name="L0C4R0" stripIndex="1">s14</Cell>
+            <Cell name="L0C4R1" stripIndex="2">s16</Cell>
+            <Cell name="L0C4R2" stripIndex="3">s20</Cell>
+            <Cell name="L0C4R3" stripIndex="4">w03</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PickerOutcome name="" />
     <PopulationOutcome name="BaseGame.RandomPresentationSeed" stage="BaseGame">
-        <Entry name="RandomPresentationSeed" stripIndex="85">
-            <Cell name="L0C0R0" stripIndex="85">85</Cell>
+        <Entry name="RandomPresentationSeed" stripIndex="24">
+            <Cell name="L0C0R0" stripIndex="24">24</Cell>
         </Entry>
     </PopulationOutcome>
     <PickerSummaryOutcome name="">
-        <PicksRemaining>0</PicksRemaining>
+        <PicksRemaining>'.$picks.'</PicksRemaining>
         <PickCount>0</PickCount>
-        <CurrentLayer index="0" name="layer0"/>
-        <InitAwarded>0</InitAwarded>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>'.$picks.'</InitAwarded>
         <Awarded>0</Awarded>
         <IncrementTriggered>false</IncrementTriggered>
         <MaxPicksAwarded>false</MaxPicksAwarded>
     </PickerSummaryOutcome>
+    '.$display.'
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Mystery.Credits" pay="0" stage="" totalPay="0" type="Pattern"/>
     <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
@@ -512,9 +883,326 @@ class ghostbustersCtrl extends IGTCtrl {
     </Balances>
 </GameLogicResponse>';
 
+        $_SESSION['spinWin'] = $totalWin;
+
+        if($_SESSION['state'] !== 'SPIN') {
+            $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+            $_SESSION['baseScatter'] = base64_encode(gzcompress($scatterHighlight.$highlight.$winLines, 9));
+
+            $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
+            $_SESSION['startBalance'] = $balance-$totalWin;
+            $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
+            $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
+            $_SESSION['wildsOffsets'] = array();
+        }
+
+        $this->outXML($xml);
+    }
+
+    public function startPickData() {
+        $place = array('L0C0R0', 'L0C8R0', 'L0C4R0', 'L0C9R0', 'L0C7R0', 'L0C1R0', 'L0C2R0', 'L0C3R0', 'L0C5R0', 'L0C6R0');
+        $multiple = array(150,150,200,275,275,1250);
+        shuffle($place);
+        shuffle($multiple);
+        $placeMultiple = array();
+        foreach($place as $p) {
+            $placeMultiple[] = array(
+                'place' => $p,
+                'credits' => array_pop($multiple),
+                'multiple' => 1,
+                'picked' => false,
+            );
+        }
+        $_SESSION['placeMultiple'] = $placeMultiple;
+        $_SESSION['ballroomTotalWin'] = 0;
+    }
+
+    public function startPick($request) {
+        $balance = $this->getBalance();
+        $stake = $_SESSION['lastBet'];
+        $betOnLine = $stake / 50;
+
+        $pick = (array) $request['PickerInput']->Pick->attributes()->name;
+        $pick = $pick[0];
+
+        $_SESSION['pickerCount']--;
+        if($_SESSION['pickerCount'] < 0) {
+            die('No picks allowed');
+        }
+        $credits = 0;
+        $multiple = 1;
+
+        $config = $this->gameParams->ballroomConfig;
+
+        foreach($_SESSION['placeMultiple'] as &$p) {
+            if($p['place'] == $pick) {
+                if($p['picked'] == true) {
+                    die('Already picked');
+                }
+                else {
+                    $p['picked'] = true;
+                    if(!empty($p['credits'])) {
+
+                        $credits = $p['credits'];
+                        if(rnd(1, $config['multipleChance']) == 1) {
+                            $multiple = $config['multipleValue'][$this->getRandParam($config['multipleValueChance'])];
+                        }
+                        $p['payed'] = true;
+                        $p['multiple'] = $multiple;
+                    }
+                    else {
+                        $credits = 0;
+                    }
+                }
+            }
+        }
+
+        $pickWin = $credits * $betOnLine * $multiple;
+
+        $_SESSION['ballroomTotalWin'] += $pickWin;
+        $totalWin = $_SESSION['spinWin'] + $_SESSION['ballroomTotalWin'];
+
+
+
+        $payout = 0;
+        $nextStage = 'BallroomBonus';
+        $addString = '';
+        if($_SESSION['pickerCount'] == 0) {
+            $nextStage = 'BaseGame';
+            $pickXml = $this->getPicksXml(true);
+            $payout = $totalWin;
+            $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+            $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+            $addString = $baseScatter . $baseReels;
+        }
+        else {
+            $pickXml = $this->getPicksXml();
+        }
+
+        $balance += $pickWin;
+
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R0240-14353242067151</TransactionId>
+        <Stage>BallroomBonus</Stage>
+        <NextStage>'.$nextStage.'</NextStage>
+        <Balance>'.$balance.'</Balance>
+        <GameStatus>InProgress</GameStatus>
+        <Settled>0</Settled>
+        <Pending>50</Pending>
+        <Payout>'.$payout.'</Payout>
+    </OutcomeDetail>
+    '.$addString.$pickXml.'
+    <PickerInput>
+        <Pick name="'.$pick.'" />
+    </PickerInput>
+    <MultiplierOutcome name="BallroomBonus.Multiplier">
+        <Multiplier name="">'.$multiple.'</Multiplier>
+    </MultiplierOutcome>
+    <PrizeOutcome multiplier="1" name="BallroomBonus.Total" pay="'.$_SESSION['ballroomTotalWin'].'" stage="" totalPay="'.$_SESSION['ballroomTotalWin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['ballroomTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['ballroomTotalWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="BallroomBonus.Picks" pay="'.$pickWin.'" stage="" totalPay="'.$pickWin.'" type="">
+        <Prize betMultiplier="1" multiplier="'.$multiple.'" name="BallroomBonus" pay="'.($credits * $betOnLine).'" payName="Credits" symbolCount="0" totalPay="'.$pickWin.'" ways="0" />
+    </PrizeOutcome>
+    <TransactionId>R0340-14353205063940</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>1</BetPerPattern>
+        <PatternsBet>50</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$balance.'">
+        <Balance name="FREE">'.$balance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
         $this->outXML($xml);
 
+        $this->bonusPays[] = array(
+            'win' => $pickWin,
+        );
 
+        $this->startPay();
+
+        if($_SESSION['pickerCount'] == 0) {
+            unset($_SESSION['pickerCount']);
+            unset($_SESSION['placeMultiple']);
+            unset($_SESSION['ballroomTotalWin']);
+            unset($_SESSION['spinWin']);
+        }
+    }
+
+    private function getPicksXml($all = false) {
+        $xml = '<PickerOutcome name="">
+        <Layer index="0" name="layer0">';
+        foreach($_SESSION['placeMultiple'] as $p) {
+            if($p['picked'] || $all) {
+                $xml .= '<Pick name="'.$p['place'].'" picked="'.(($p['picked']) ? "true" : "false").'">';
+                if(!empty($p['payed']) || ($all && !empty($p['credits']))) {
+                    $xml .= '<Feature type="credits" value="'.$p['credits'].'" />';
+                    $xml .= '<Feature type="multiplier" value="'.$p['multiple'].'" />';
+                }
+                else {
+                    $xml .= '<Feature type="none" value="-1" />';
+                }
+                $xml .= '</Pick>';
+            }
+        }
+
+        $xml .= '</Layer>
+    </PickerOutcome>';
+
+        $xml .= '<PickerSummaryOutcome name="">
+        <PicksRemaining>'.$_SESSION['pickerCount'].'</PicksRemaining>
+        <PickCount>'.(5 - $_SESSION['pickerCount']).'</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>5</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>';
+
+        return $xml;
+    }
+
+
+
+    protected function showPlayFreeSpinReport($report, $totalWin) {
+        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $highlight = $this->getHighlight($report['winLines'], 'StayPuftBonus.Lines');
+        $display = $this->getDisplay($report, false, 'StayPuftBonus', 'Reels', true);
+        $display .= $this->getDisplay($report, false, 'StayPuftBonus', 'StickyWildsReels', false);
+        $winLines = $this->getWinLines($report, 'StayPuftBonus');
+
+        $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $_SESSION['fsPlayed']++;
+        $_SESSION['fsLeft']--;
+
+        $needBalance = $_SESSION['startBalance'];
+
+        $_SESSION['fsTotalWin'] += $totalWin;
+
+        $nextStage = 'StayPuftBonus';
+
+        $baseReels = '';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+        if($_SESSION['fsLeft'] == 0) {
+            $nextStage = 'BaseGame';
+            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
+            $payout = $_SESSION['fsTotalWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
+            $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+        }
+
+        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+
+        $sticky = '<HighlightOutcome name="StayPuftBonus.StickyWilds" type="">
+        <Highlight name="swp1" type="">';
+        foreach($_SESSION['wildsOffsets'] as $o) {
+            $ceilRow = $this->slot->getCeilRowByOffset($o);
+            $sticky .= '<Cell name="L0C'.$ceilRow['ceil'].'R'.$ceilRow['row'].'" type="" />';
+        }
+        $sticky .= '</Highlight>
+    </HighlightOutcome>';
+
+
+        $bonusFutures = '';
+        $bonusCredits = 0;
+        if(!empty($this->bonusData['credits'])) {
+            $bonusCredits = $this->bonusData['credits'];
+            $bonusFutures = '<HighlightOutcome name="StayPuftBonus.Features" type="">
+        <Highlight name="features" type="">
+            <Cell name="features" type="" />
+        </Highlight>
+    </HighlightOutcome>';
+        }
+
+
+        $xml = '<GameLogicResponse>
+    <OutcomeDetail>
+        <TransactionId>R1540-14228693316850</TransactionId>
+        <Stage>StayPuftBonus</Stage>
+        <NextStage>'.$nextStage.'</NextStage>
+        <Balance>'.$needBalance.'</Balance>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
+    </OutcomeDetail>
+    <TriggerOutcome component="" name="StayPuftBonus.ActiveStickyWildsPatterns" stage="">
+        <Trigger name="swp1" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    <TriggerOutcome component="" name="StayPuftBonus.Features" stage="">
+        <Trigger name="stickyWildsActive" priority="0" stageConnector="" />
+    </TriggerOutcome>
+    '.$bonusFutures.'
+    '.$baseScatter.$sticky.'
+    '.$highlight.$display.$baseReels.'
+    <FreeSpinOutcome name="StayPuftBonus.FreeSpinOutcome">
+        <InitAwarded>8</InitAwarded>
+        <Awarded>8</Awarded>
+        <TotalAwarded>8</TotalAwarded>
+        <Count>'.$_SESSION['fsPlayed'].'</Count>
+        <Countdown>'.$_SESSION['fsLeft'].'</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    '.$winLines.'
+    <PrizeOutcome multiplier="1" name="StayPuftBonus.CreditsGag" pay="'.$bonusCredits.'" stage="" totalPay="'.$bonusCredits.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="features" pay="'.$bonusCredits.'" payName="credits,'.($bonusCredits/$report['betOnLine']).'" symbolCount="1" totalPay="'.$bonusCredits.'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="StayPuftBonus.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0" />
+    </PrizeOutcome>
+    <TransactionId>A2210-14264043293637</TransactionId>
+    <ActionInput>
+        <Action>play</Action>
+    </ActionInput>
+    <PatternSliderInput>
+        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
+        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+    </PatternSliderInput>
+    <Balances totalBalance="'.$needBalance.'">
+        <Balance name="FREE">'.$needBalance.'</Balance>
+    </Balances>
+</GameLogicResponse>';
+
+        $this->outXML($xml);
+
+        if($_SESSION['fsLeft'] == 0) {
+            $_SESSION['state'] = 'SPIN';
+            unset($_SESSION['fsLeft']);
+            unset($_SESSION['fsPlayed']);
+            unset($_SESSION['totalAwarded']);
+            unset($_SESSION['scatterWin']);
+            unset($_SESSION['fsTotalWin']);
+            unset($_SESSION['startBalance']);
+            unset($_SESSION['baseDisplay']);
+            unset($_SESSION['baseWinLinesWin']);
+        }
     }
 
 }

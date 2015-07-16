@@ -146,4 +146,24 @@ trait SymbolsWorker {
             'offsets' => $offsets,
         );
     }
+
+    public function getCeilRowByOffset($offset) {
+        $reelsCount = $this->getReelsCount();
+
+        $ceil = $offset % $reelsCount;
+        $row = floor($offset / $reelsCount);
+
+        return array(
+            'ceil' => $ceil,
+            'row' => $row,
+        );
+    }
+
+    public function getOffsetByCeilRow($ceil, $row) {
+        $reelsCount = $this->getReelsCount();
+
+        $offset = $row * $reelsCount + $ceil;
+
+        return $offset;
+    }
 }

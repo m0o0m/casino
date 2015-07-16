@@ -185,6 +185,19 @@ class Reel {
     }
 
     /**
+     * Устанавливает барабан(все его символы) как wild-барабан
+     *
+     * @param int $wildSymbol Числовой идентификатор вайлда
+     */
+    public function setAsFullWild($wildSymbol) {
+        // TODO
+        for($i = 0; $i < count($this->newSymbols); $i++) {
+            $this->newSymbols[$i] = $wildSymbol;
+        }
+        $this->updateVisibleSymbols();
+    }
+
+    /**
      * Установка символа на определенную позицию
      *
      * @param int $pos Позиция на барабане (начинается с 0)

@@ -22,18 +22,18 @@ class Slot {
     /**
      * @var array $symbols Ассотиативный массив буквенного и числового значения символа
      */
-    private $symbols = array();
+    public $symbols = array();
 
     /**
      * @var array $reels Содержит массив барабанов слота. Каждый элемент - экземпляр Reel
      */
-    private $reels = array();
+    public $reels = array();
 
     /**
      * @var array $lines Массив выигрышных линий.
      * Количество линий в массиве зависит от того, сколько линий выбрано в игре.
      */
-    private $lines = array();
+    public $lines = array();
 
     /**
      * @var array $wins Массив выплат.
@@ -41,7 +41,7 @@ class Slot {
      * count - количество символов
      * multiplier - множитель ставки на линию
      */
-    private $wins = array();
+    public $wins = array();
 
     /**
      * @var int $totalMultiple Суммарный множитель после спина (учитывая бонусы спина)
@@ -51,12 +51,12 @@ class Slot {
     /**
      * @var array $wild Массив вайлдов слота. Может быть как 1 элемент(чаще всего), так и несколько
      */
-    private $wild = array();
+    public $wild = array();
 
     /**
      * @var array $scatter Массив скаттеров слота. Может быть как 1 элемент(чаще всего), так и несколько
      */
-    private $scatter = array();
+    public $scatter = array();
 
     /**
      * @var array $report Содержит подробную информацию по результатам спина.
@@ -234,6 +234,14 @@ class Slot {
     }
 
     /**
+     * Получение количество барабанов слота
+     *
+     * @return int
+     */
+    public function getReelsCount() {
+        return count($this->reels);
+    }
+    /**
      * Устанавливает новые барабаны с нужным количеством видимых символов
      *
      * @param array $reels
@@ -332,6 +340,14 @@ class Slot {
      * @return array
      */
     public function makeReport() {
+
+        if($this->params->extraLine) {
+            $extraLines = $this->getExtraLine($this->params->extraLineConfig);
+            foreach($extraLines as $e) {
+                $this->winLines[] = $e;
+            }
+        }
+
         foreach($this->winSymbols as $winLine) {
             // Номер символа
 
@@ -341,6 +357,9 @@ class Slot {
             // Получаем все комбинации
             if($this->params->winLineType == 'left') {
                 $SymbolwinLines = $this->getLeft($v);
+            }
+            if($this->params->winLineType == 'leftRight') {
+                $SymbolwinLines = $this->getLeftRight($v);
             }
             elseif($this->params->winLineType == '243') {
                 $SymbolwinLines = $this->get243($v);
@@ -354,13 +373,16 @@ class Slot {
             elseif ($this->params->winLineType == 'waysLeftRight') {
                 $SymbolwinLines = $this->getWaysLeftRight($v);
             }
+            elseif ($this->params->winLineType == 'lineWays') {
+                $SymbolwinLines = $this->getLineWays($v);
+            }
             else {
                 $SymbolwinLines = $this->getLeft($v);
             }
 
             foreach($SymbolwinLines as $w) {
-                if($this->params->checkSymbolCount($v, $w['count'])) {
-                    $multiplier = $this->params->getWinMultiplier($v, $w['count']);
+                if($this->params->checkSymbolCount($v, $w['count'], $w['type'])) {
+                    $multiplier = $this->params->getWinMultiplier($v, $w['count'], $w['type']);
                     $addMultiplier = array();
                     foreach($this->bonusWildsMultiple as $bonusWild) {
                         if(in_array($bonusWild['offset'], $w['line'])) {
@@ -392,6 +414,8 @@ class Slot {
                                 'withWild' => $w['withWild'],
                                 'addMultiplier' => $addMultiplier,
                                 'direction' => $w['direction'],
+                                'useSymbols' => $w['useSymbols'],
+                                'type' => $w['type'],
                             );
                             if(!empty($w['collecting'])) {
                                 $addArray['collecting'] = $w['collecting'];
@@ -413,6 +437,8 @@ class Slot {
                             'withWild' => $w['withWild'],
                             'addMultiplier' => $addMultiplier,
                             'direction' => $w['direction'],
+                            'useSymbols' => $w['useSymbols'],
+                            'type' => $w['type'],
                         );
                         if(!empty($w['collecting'])) {
                             $addArray['collecting'] = $w['collecting'];
@@ -453,6 +479,41 @@ class Slot {
         return $this->report;
     }
 
+
+    public function getExtraLine($config) {
+        $winLines = array();
+
+        $lineId = 0;
+        foreach($this->lines as $line) {
+            $lineSymbol = $this->getLineSymbols($line);
+            if($config['any']) {
+                $diffCount = count(array_diff($lineSymbol, $config['symbols']));
+            }
+            else {
+                $diffCount = count(array_diff($config['symbols'], $lineSymbol));
+            }
+            if($diffCount == 0) {
+                $winLines[] = array(
+                    'line' => $line,
+                    'multiple' => $config['multiplier'],
+                    'symbol' => $config['alias'],
+                    'alias' => $config['alias'],
+                    'count' => count($config['symbols']),
+                    'id' => $lineId + 1,
+                    'collecting' => false,
+                    'double' => false,
+                    'withWild' => false,
+                    'addMultiplier' => array(),
+                    'direction' => 'left',
+                    'type' => 'line',
+                );
+            }
+            $lineId++;
+        }
+
+        return $winLines;
+    }
+
     /**
      * Получаем список для каждого символа по каждой линии слева на право
      *
@@ -476,12 +537,22 @@ class Slot {
             $withWild = false;
             $lineSymbolCount = 0;
             $collecting = false;
+            $useSymbols = array();
             foreach($lineSymbol as $s) {
                 $symbolPosition = $line[$lineSymbolCount];
                 if(in_array($s, $symbol) && $f) {
                     $cnt++;
+                    $useSymbols[] = $s;
+                    if($this->params->doubleCount) {
+                        if(!empty($this->params->doubleCountConfig[$s])) {
+                            $p = $this->params->doubleCountConfig[$s];
+                            if(in_array($symbol[0], $p)) {
+                                $cnt++;
+                            }
+                        }
+                    }
                 }
-                elseif(in_array($s, $this->wild) && $f && !in_array($symbol[0], $this->scatter)) {
+                elseif(in_array($s, $this->wild) && $f && !in_array($symbol[0], $this->scatter) && count(array_intersect($symbol, $this->params->symbolWithoutWild)) == 0) {
                     if($this->params->blockWildsOnReel) {
                         if(in_array($lineSymbolCount, $this->params->blockWildReels)) {
                             $f = false;
@@ -489,6 +560,15 @@ class Slot {
                         else {
                             $withWild = true;
                             $cnt++;
+                            $useSymbols[] = $s;
+                            if($this->params->doubleCount) {
+                                if(!empty($this->params->doubleCountConfig[$s])) {
+                                    $p = $this->params->doubleCountConfig[$s];
+                                    if(in_array($symbol[0], $p)) {
+                                        $cnt++;
+                                    }
+                                }
+                            }
                             if($this->params->doubleIfWild) {
                                 if(!in_array($symbolPosition, $bonusWildPosition)) {
                                     $double = 2;
@@ -499,6 +579,15 @@ class Slot {
                     else {
                         $withWild = true;
                         $cnt++;
+                        $useSymbols[] = $s;
+                        if($this->params->doubleCount) {
+                            if(!empty($this->params->doubleCountConfig[$s])) {
+                                $p = $this->params->doubleCountConfig[$s];
+                                if(in_array($symbol[0], $p)) {
+                                    $cnt++;
+                                }
+                            }
+                        }
                         if($this->params->doubleIfWild) {
                             if(!in_array($symbolPosition, $bonusWildPosition)) {
                                 $double = 2;
@@ -508,13 +597,47 @@ class Slot {
 
                 }
                 elseif($this->params->collectingPay && !in_array($s, $symbol) && $f && $lineSymbolCount > 0) {
-                    if(in_array($s, $this->params->collectingSymbols) && in_array($symbol[0], $this->params->collectingSymbols)) {
-                        $collecting = true;
-                        $cnt++;
+                    if(is_array($this->params->collectingSymbols[0])) {
+                        $g = false;
+                        foreach($this->params->collectingSymbols as $cs) {
+                            if(in_array($s, $cs) && in_array($symbol[0], $cs)) {
+                                $collecting = true;
+                                $cnt++;
+                                $useSymbols[] = $s;
+                                if($this->params->doubleCount) {
+                                    if(!empty($this->params->doubleCountConfig[$s])) {
+                                        $p = $this->params->doubleCountConfig[$s];
+                                        if(in_array($symbol[0], $p)) {
+                                            $cnt++;
+                                        }
+                                    }
+                                }
+                                $g = true;
+                            }
+                        }
+                        if(!$g) {
+                            $f = false;
+                        }
                     }
                     else {
-                        $f = false;
+                        if(in_array($s, $this->params->collectingSymbols) && in_array($symbol[0], $this->params->collectingSymbols)) {
+                            $collecting = true;
+                            $cnt++;
+                            $useSymbols[] = $s;
+                            if($this->params->doubleCount) {
+                                if(!empty($this->params->doubleCountConfig[$s])) {
+                                    $p = $this->params->doubleCountConfig[$s];
+                                    if(in_array($symbol[0], $p)) {
+                                        $cnt++;
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            $f = false;
+                        }
                     }
+
                 }
                 else {
                     $f = false;
@@ -531,6 +654,8 @@ class Slot {
                         'withWild' => $withWild,
                         'collecting' => $collecting,
                         'direction' => 'left',
+                        'useSymbols' => $useSymbols,
+                        'type' => 'line',
                     );
                 }
                 else {
@@ -549,6 +674,8 @@ class Slot {
                         'withWild' => $withWild,
                         'collecting' => $collecting,
                         'direction' => 'left',
+                        'useSymbols' => $useSymbols,
+                        'type' => 'line',
                     );
                 }
 
@@ -558,6 +685,187 @@ class Slot {
             $lineId++;
         }
         return $winLines;
+    }
+
+    /**
+     * Получаем список для каждого символа по каждой линии справо налево
+     *
+     * Возвращает массив, содержащий описание линий, на которых символов >= minWinCount
+     *
+     * @param array $symbol Массив числовых идентификаторов символа
+     * @return array
+     */
+    private function getRight($symbol) {
+        $winLines = array();
+        $lineId = 0;
+        $bonusWildPosition = array();
+        foreach($this->bonusWildsMultiple as $b) {
+            $bonusWildPosition[] = $b['offset'];
+        }
+        foreach($this->lines as $line) {
+            $lineSymbol = array_reverse($this->getLineSymbols($line));
+            $cnt = 0;
+            $f = true;
+            $double = 1;
+            $withWild = false;
+            $lineSymbolCount = 0;
+            $collecting = false;
+            $useSymbols = array();
+            foreach($lineSymbol as $s) {
+                $symbolPosition = $line[$lineSymbolCount];
+                if(in_array($s, $symbol) && $f) {
+                    $cnt++;
+                    $useSymbols[] = $s;
+                    if($this->params->doubleCount) {
+                        if(!empty($this->params->doubleCountConfig[$s])) {
+                            $p = $this->params->doubleCountConfig[$s];
+                            if(in_array($symbol[0], $p)) {
+                                $cnt++;
+                            }
+                        }
+                    }
+                }
+                elseif(in_array($s, $this->wild) && $f && !in_array($symbol[0], $this->scatter) && count(array_intersect($symbol, $this->params->symbolWithoutWild)) == 0) {
+                    if($this->params->blockWildsOnReel) {
+                        if(in_array($lineSymbolCount, $this->params->blockWildReels)) {
+                            $f = false;
+                        }
+                        else {
+                            $withWild = true;
+                            if($this->params->doubleIfWild) {
+                                if(!in_array($symbolPosition, $bonusWildPosition)) {
+                                    $double = 2;
+                                }
+                            }
+
+                            $cnt++;
+                            $useSymbols[] = $s;
+                            if($this->params->doubleCount) {
+                                if(!empty($this->params->doubleCountConfig[$s])) {
+                                    $p = $this->params->doubleCountConfig[$s];
+                                    if(in_array($symbol[0], $p)) {
+                                        $cnt++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        $withWild = true;
+                        if($this->params->doubleIfWild) {
+                            if(!in_array($symbolPosition, $bonusWildPosition)) {
+                                $double = 2;
+                            }
+                        }
+
+                        $cnt++;
+                        $useSymbols[] = $s;
+                        if($this->params->doubleCount) {
+                            if(!empty($this->params->doubleCountConfig[$s])) {
+                                $p = $this->params->doubleCountConfig[$s];
+                                if(in_array($symbol[0], $p)) {
+                                    $cnt++;
+                                }
+                            }
+                        }
+                    }
+
+                }
+                elseif($this->params->collectingPay && !in_array($s, $symbol) && $f && $lineSymbolCount > 0) {
+                    if(is_array($this->params->collectingSymbols[0])) {
+                        $g = false;
+                        foreach($this->params->collectingSymbols as $cs) {
+                            if(in_array($s, $cs) && in_array($symbol[0], $cs)) {
+                                $collecting = true;
+                                $cnt++;
+                                $useSymbols[] = $s;
+                                if($this->params->doubleCount) {
+                                    if(!empty($this->params->doubleCountConfig[$s])) {
+                                        $p = $this->params->doubleCountConfig[$s];
+                                        if(in_array($symbol[0], $p)) {
+                                            $cnt++;
+                                        }
+                                    }
+                                }
+                                $g = true;
+                            }
+                        }
+                        if(!$g) {
+                            $f = false;
+                        }
+                    }
+                    else {
+                        if(in_array($s, $this->params->collectingSymbols) && in_array($symbol[0], $this->params->collectingSymbols)) {
+                            $collecting = true;
+                            $cnt++;
+                            $useSymbols[] = $s;
+                            if($this->params->doubleCount) {
+                                if(!empty($this->params->doubleCountConfig[$s])) {
+                                    $p = $this->params->doubleCountConfig[$s];
+                                    if(in_array($symbol[0], $p)) {
+                                        $cnt++;
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            $f = false;
+                        }
+                    }
+                }
+                else {
+                    $f = false;
+                }
+                $lineSymbolCount++;
+            }
+            if($cnt != count($this->reels)) {
+                if($cnt >= $this->params->minWinCount) {
+                    if($this->params->allCanDouble) {
+                        $winLines[] = array(
+                            'line' => $line,
+                            'count' => $cnt,
+                            'id' => $lineId,
+                            'double' => $this->double * $double,
+                            'withWild' => $withWild,
+                            'collecting' => $collecting,
+                            'direction' => 'right',
+                            'useSymbols' => $useSymbols,
+                            'type' => 'line',
+                        );
+                    }
+                    else {
+                        $banString = (string) $symbol[0] .'-'. (string) $cnt;
+                        if(in_array($banString, $this->params->banSymbols)) {
+                            $resultDouble = $double;
+                        }
+                        else {
+                            $resultDouble = $this->double * $double;
+                        }
+                        $winLines[] = array(
+                            'line' => $line,
+                            'count' => $cnt,
+                            'id' => $lineId,
+                            'double' => $resultDouble,
+                            'withWild' => $withWild,
+                            'collecting' => $collecting,
+                            'direction' => 'right',
+                            'useSymbols' => $useSymbols,
+                            'type' => 'line',
+                        );
+                    }
+
+                }
+            }
+            $lineId++;
+        }
+        return $winLines;
+    }
+
+    private function getLeftRight($symbol) {
+        $left = $this->getLeft($symbol);
+        $right = $this->getRight($symbol);
+
+        return array_merge($left, $right);
     }
 
     /**
@@ -821,6 +1129,36 @@ class Slot {
         return array_merge($left, $right);
     }
 
+
+    private function getLineWays($symbol) {
+        $line = $this->getLeft($symbol);
+        $ways = $this->getWays($symbol);
+
+        $normalWays = array();
+
+        $reelsCount = $this->getReelsCount();
+
+        foreach($ways as $w) {
+            $wOffsets = $w['line'];
+            $f = true;
+            foreach($line as $l) {
+                $cnt = $l['count'];
+                $lineOffsets = array();
+                for($i = 0; $i < $cnt; $i++) {
+                    $lineOffsets[] = $l['line'][$i] * $reelsCount + $i;
+                }
+                if(count(array_diff($wOffsets, $lineOffsets)) == 0) {
+                    $f = false;
+                }
+            }
+            if($f) {
+                $normalWays[] = $w;
+            }
+        }
+
+        return array_merge($line, $normalWays);
+    }
+
     /**
      * Проверяем, есть ли выигрышные линии у слота после спина.
      * Данная функция нужна для бонусов, которые срабатывают, если есть выигрышные линии.
@@ -844,7 +1182,7 @@ class Slot {
                 $SymbolwinLines = $this->getLeft($v);
             }
             foreach ($SymbolwinLines as $w) {
-                if ($this->params->checkSymbolCount($v, $w['count'])) {
+                if ($this->params->checkSymbolCount($v, $w['count'], $w['type'])) {
                     $present = true;
                     return $present;
                 }
@@ -886,6 +1224,16 @@ class Slot {
             array(10, 11 , 12, 13, 14),
             // Четвертая строка
             array(15, 16, 17, 18, 19),
+            // Пятая строка
+            array(20, 21, 22, 23, 24),
+            // Шестая строка
+            array(25, 26, 27, 28, 29),
+            // Седьмая строка
+            array(30, 31, 32, 33, 34),
+            // Восьмая строка
+            array(35, 36, 37, 38, 39),
+
+
         );
         for($i = 0; $i < $count; $i++) {
             $offsets[] = $position[$line[$i]][$i];
@@ -959,7 +1307,7 @@ class Slot {
      *
      * @return array
      */
-    private function getRows() {
+    public function getRows() {
         $rows = array();
         for($i = 1; $i <= $this->rows; $i++) {
             $rows["$i"] = array();
@@ -992,6 +1340,17 @@ class Slot {
             }
         }
         return $rows;
+    }
+
+
+    /**
+     * Получение рандомного элемента массива
+     *
+     * @param array $param
+     * @return mixed
+     */
+    protected function getRandParam($param) {
+        return $param[rnd(0, count($param)-1)];
     }
 }
 

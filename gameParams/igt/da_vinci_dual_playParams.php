@@ -18,6 +18,8 @@ class da_vinci_dual_playParams extends Params {
         ),
     );
 
+    public $symbolWithoutWild = array(21);
+
     public $reelConfig = array(6,6,6,6,6);
 
     public $symbols = array(
@@ -34,7 +36,7 @@ class da_vinci_dual_playParams extends Params {
     // Вайлд
     public $wild = array(0);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -94,6 +96,87 @@ class da_vinci_dual_playParams extends Params {
         array(4,3,5,3,4),
     );
 
+
+    public $winLinesFree = array(
+        // 1
+        array(1,1,1,1,1),
+        array(0,0,0,0,0),
+        array(2,2,2,2,2),
+        array(0,1,2,1,0),
+        // 5
+        array(2,1,0,1,2),
+        array(0,0,1,0,0),
+        array(2,2,1,2,2),
+        array(1,2,2,2,1),
+        array(1,0,0,0,1),
+        // 10
+        array(0,1,1,1,0),
+        array(2,1,1,1,2),
+        array(0,1,0,1,0),
+        array(2,1,2,1,2),
+        array(1,0,1,0,1),
+        // 15
+        array(1,2,1,2,1),
+        array(1,1,0,1,1),
+        array(1,1,2,1,1),
+        array(0,2,0,2,0),
+        array(2,0,2,0,2),
+        // 20
+        array(1,0,2,0,1),
+
+        // 21
+        array(4,4,4,4,4),
+        array(3,3,3,3,3),
+        array(5,5,5,5,5),
+        array(3,4,5,4,3),
+        // 25
+        array(5,4,3,4,5),
+        array(3,3,4,3,3),
+        array(5,5,4,5,5),
+        array(4,5,5,5,4),
+        array(4,3,3,3,4),
+        // 30
+        array(3,4,4,4,3),
+        array(5,4,4,4,5),
+        array(3,4,3,4,3),
+        array(5,4,5,4,5),
+        array(4,3,4,3,4),
+        // 35
+        array(4,5,4,5,4),
+        array(4,4,3,4,4),
+        array(4,4,5,4,4),
+        array(3,5,3,5,3),
+        array(5,3,5,3,5),
+        // 40
+        array(4,3,5,3,4),
+
+        // NEW LINES
+        array(1,2,3,2,1),
+        array(4,3,2,3,4),
+        array(2,3,4,3,2),
+        array(3,2,1,2,3),
+        // 45
+        array(2,2,3,2,2),
+        array(3,3,2,3,3),
+        array(2,3,3,3,2),
+        array(3,2,2,2,3),
+        array(2,3,2,3,2),
+        // 50
+        array(3,2,3,2,3),
+        array(1,3,1,3,1),
+        array(3,1,3,1,3),
+        array(2,4,2,4,2),
+        array(4,2,4,2,4),
+        // 55
+        array(3,4,2,4,3),
+        array(4,3,2,1,0),
+        array(1,2,3,4,5),
+        array(2,1,3,1,2),
+        array(3,2,4,2,3),
+        // 60
+        array(2,3,1,3,2),
+    );
+
     public $payOnlyHighter = true;
     // настройка ставок
     public $currency = '$';
@@ -127,5 +210,7 @@ class da_vinci_dual_playParams extends Params {
         array('symbol'=> 's07', 'count'=> 5, 'multiplier'=> 80),
         array('symbol'=> 's07', 'count'=> 4, 'multiplier'=> 20),
         array('symbol'=> 's07', 'count'=> 3, 'multiplier'=> 6),
+
+        array('symbol'=> 'b01', 'count'=> 3, 'multiplier'=> 0),
     );
 }

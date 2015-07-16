@@ -45,12 +45,13 @@ class ghostbustersParams extends Params {
         's19' => array(19),
         's20' => array(20),
         'w01' => array(0),
+        'w02' => array(102),
         'w03' => array(103),
     );
     // Вайлд
-    public $wild = array(0);
+    public $wild = array(0, 102, 103);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51,52,53);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -94,6 +95,58 @@ class ghostbustersParams extends Params {
         array(2,2,1,0,0),
         // 30
         array(1,0,1,2,1),
+    );
+
+    public $winLinesFree = array(
+        // 1
+        array(0,0,0,0,0),
+        array(1,1,1,1,1),
+        array(2,2,2,2,2),
+        array(3,3,3,3,3),
+        // 5
+        array(0,0,1,0,0),
+        array(3,3,2,3,3),
+        array(1,1,0,1,1),
+        array(2,2,3,2,2),
+        array(1,1,2,1,1),
+        // 10
+        array(2,2,1,2,2),
+        array(1,0,0,0,1),
+        array(2,3,3,3,2),
+        array(0,1,1,1,0),
+        array(3,2,2,2,3),
+        // 15
+        array(2,1,1,1,2),
+        array(1,2,2,2,1),
+        array(1,0,1,0,1),
+        array(2,3,2,3,2),
+        array(0,1,0,1,0),
+        // 20
+        array(3,2,3,2,3),
+        array(1,2,1,2,1),
+        array(2,1,2,1,2),
+        array(0,0,2,0,0),
+        array(3,3,1,3,3),
+        // 25
+        array(1,1,3,1,1),
+        array(2,2,0,2,2),
+        array(2,0,2,0,2),
+        array(1,3,1,3,1),
+        array(0,2,0,2,0),
+        // 30
+        array(3,1,3,1,3),
+        array(2,0,0,0,2),
+        array(1,3,3,3,1),
+        array(0,2,2,2,0),
+        array(3,1,1,1,3),
+        // 35
+        array(2,1,0,1,2),
+        array(1,2,3,2,1),
+        array(0,1,2,1,0),
+        array(3,2,1,2,3),
+        array(1,0,2,0,1),
+        // 40
+        array(2,3,1,3,2),
     );
 
     public $payOnlyHighter = true;
@@ -141,5 +194,125 @@ class ghostbustersParams extends Params {
         array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 100),
         array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 20),
         array('symbol'=> 's10', 'count'=> 3, 'multiplier'=> 5),
+
+
+
+        array('symbol'=> 'w03', 'count'=> 5, 'multiplier'=> 250),
+        array('symbol'=> 'w03', 'count'=> 4, 'multiplier'=> 100),
+        array('symbol'=> 'w03', 'count'=> 3, 'multiplier'=> 25),
+        array('symbol'=> 's11', 'count'=> 5, 'multiplier'=> 125),
+        array('symbol'=> 's11', 'count'=> 4, 'multiplier'=> 40),
+        array('symbol'=> 's11', 'count'=> 3, 'multiplier'=> 15),
+        array('symbol'=> 's12', 'count'=> 5, 'multiplier'=> 125),
+        array('symbol'=> 's12', 'count'=> 4, 'multiplier'=> 40),
+        array('symbol'=> 's12', 'count'=> 3, 'multiplier'=> 15),
+        array('symbol'=> 's13', 'count'=> 5, 'multiplier'=> 100),
+        array('symbol'=> 's13', 'count'=> 4, 'multiplier'=> 30),
+        array('symbol'=> 's13', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's14', 'count'=> 5, 'multiplier'=> 100),
+        array('symbol'=> 's14', 'count'=> 4, 'multiplier'=> 30),
+        array('symbol'=> 's14', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's15', 'count'=> 5, 'multiplier'=> 75),
+        array('symbol'=> 's15', 'count'=> 4, 'multiplier'=> 20),
+        array('symbol'=> 's15', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 's16', 'count'=> 5, 'multiplier'=> 60),
+        array('symbol'=> 's16', 'count'=> 4, 'multiplier'=> 15),
+        array('symbol'=> 's16', 'count'=> 3, 'multiplier'=> 2),
+        array('symbol'=> 's17', 'count'=> 5, 'multiplier'=> 60),
+        array('symbol'=> 's17', 'count'=> 4, 'multiplier'=> 15),
+        array('symbol'=> 's17', 'count'=> 3, 'multiplier'=> 2),
+        array('symbol'=> 's18', 'count'=> 5, 'multiplier'=> 60),
+        array('symbol'=> 's18', 'count'=> 4, 'multiplier'=> 15),
+        array('symbol'=> 's18', 'count'=> 3, 'multiplier'=> 2),
+        array('symbol'=> 's19', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's19', 'count'=> 4, 'multiplier'=> 10),
+        array('symbol'=> 's19', 'count'=> 3, 'multiplier'=> 2),
+        array('symbol'=> 's20', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's20', 'count'=> 4, 'multiplier'=> 10),
+        array('symbol'=> 's20', 'count'=> 3, 'multiplier'=> 2),
+    );
+
+    public $mysteryConfig = array(
+        'bonusChance' => 10,
+        'bonusType' => array('multiple', 'award', 'wilds', 'reels'),
+        'bonusTypeChance' => array(
+            0,0,0,0,0,0,0,0,0,
+            1,1,1,1,1,
+            2,2,2,
+            3,
+        ),
+
+        'multipleValue' => array(2,3,4,5),
+        'multipleValueChance' => array(
+            0,0,0,0,
+            1,1,1,
+            2,2,
+            3,
+        ),
+
+        'awardValue' => array(60,100,200,250,300,500,800,1000),
+        'awardValueChance' => array(
+            0,0,0,0,0,0,0,0,0,
+            1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,
+            3,3,3,3,3,3,
+            4,4,4,4,4,
+            5,5,5,5,
+            6,6,6,
+            7,7,
+        ),
+
+        'reelsCount' => array(1,2,3),
+        'reelsCountChance' => array(
+            0,0,0,0,0,0,
+            1,1,1,
+            2,
+        ),
+
+        'wildsCount' => array(1,2,3,4),
+        'wildsCountChance' => array(
+            0,0,0,0,
+            1,1,1,1,1,1,
+            2,2,
+            3,
+        ),
+        // шанс 1 к 2
+        'wildsExpansionChance' => 2,
+    );
+
+    public $ballroomConfig = array(
+        // 1 к 3
+        'multipleChance' => 5,
+        'multipleValue' => array(2,3,4,5),
+        'multipleValueChance' => array(
+            0,0,0,0,
+            1,1,1,
+            2,2,
+            3,
+        ),
+    );
+
+    public $puftConfig = array(
+        'wildCount' => array(0,1,2,3),
+        'wildCountChance' => array(
+            0,0,0,0,
+            1,1,1,
+            2,2,
+            3,
+        ),
+
+        // 1 к 5
+        'awardChance' => 1,
+        'awardValue' => array(50,100,200,250,300,500,800,1000),
+        'awardValueChance' => array(
+            0,0,0,0,0,0,0,0,0,
+            1,1,1,1,1,1,1,1,
+            2,2,2,2,2,2,2,
+            3,3,3,3,3,3,
+            4,4,4,4,4,
+            5,5,5,5,
+            6,6,6,
+            7,7,
+        ),
     );
 }

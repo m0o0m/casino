@@ -1,4 +1,3 @@
-
 <?
 
 class treasures_of_ice_wind_daleParams extends Params {
