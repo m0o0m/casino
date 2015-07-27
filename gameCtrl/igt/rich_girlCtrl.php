@@ -429,8 +429,14 @@ class rich_girlCtrl extends IGTCtrl {
         $display = $this->getDisplay($report);
         $sc = '<HighlightOutcome name="BaseGame.Scatter" type=""/>';
         $sr = $report['scattersReport'];
+        $sp = '<PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>';
         if(!empty($sr['totalWin'])) {
             $sc = $this->getScattersHighlight($sr['offsets']);
+
+            $c = $this->gameParams->scatterMultiple[$sr['count']];
+            $sp = '<PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$sr['totalWin'].'" stage="" totalPay="'.$sr['totalWin'].'" type="Pattern">
+        <Prize betMultiplier="9" multiplier="1" name="Scatter" pay="'.$c.'" payName="'.$sr['count'].' s10" symbolCount="'.$sr['count'].'" totalPay="'.$sr['totalWin'].'" ways="0" />
+    </PrizeOutcome>';
         }
         else {
             $sr['totalWin'] = 0;
@@ -450,19 +456,30 @@ class rich_girlCtrl extends IGTCtrl {
         <Pending>0</Pending>
         <Payout>'.$totalWin.'</Payout>
     </OutcomeDetail>
-    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
-    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
-        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
-    </TriggerOutcome>
+    <TriggerOutcome component="" name="FreeSpin" stage="" />
     '.$sc.'
     '.$highlight.'
-
+    <AwardCapOutcome name="AwardCap">
+        <AwardCapExceeded>false</AwardCapExceeded>
+    </AwardCapOutcome>
+    <FreeSpinOutcome name="">
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>0</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>0</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
     '.$display.'
-    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$sr['totalWin'].'" stage="" totalPay="'.$sr['totalWin'].'" type="Pattern">
-        <Prize betMultiplier="1" multiplier="1" name="Scatter" pay="'.$sr['totalWin'].'" payName="'.$sr['count'].' s10" symbolCount="'.$sr['count'].'" totalPay="'.$sr['totalWin'].'" ways="0" />
-    </PrizeOutcome>
-    '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
+    <PopulationOutcome name="HighestNumberOfFreeSpin" stage="HighestNumberOfFreeSpin">
+        <Entry name="HighestFreeSpin" stripIndex="0">
+            <Cell name="L0C0R0" stripIndex="0">0</Cell>
+        </Entry>
+    </PopulationOutcome>
+    '.$sp.$winLines.'
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
@@ -598,7 +615,7 @@ class rich_girlCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
@@ -626,10 +643,6 @@ class rich_girlCtrl extends IGTCtrl {
         <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
     '.$baseScatter.'
-    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
-    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
-        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
-    </TriggerOutcome>
     '.$scattersHighlight.'
     '.$highlight.'
     '.$display.$baseReels.'

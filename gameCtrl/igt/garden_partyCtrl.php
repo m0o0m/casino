@@ -314,7 +314,7 @@ class garden_partyCtrl extends IGTCtrl {
         </Entry>
     </PopulationOutcome>
     <PickerSummaryOutcome name="">
-        <PicksRemaining>1</PicksRemaining>
+        <PicksRemaining>'.$_SESSION['pickerCount'].'</PicksRemaining>
         <PickCount>0</PickCount>
         <CurrentLayer index="0" name="layer0" />
         <InitAwarded>1</InitAwarded>
@@ -523,6 +523,8 @@ class garden_partyCtrl extends IGTCtrl {
                     $_SESSION['maxMultiple'] = 3;
                     break;
             }
+
+            $_SESSION['fsState'] = 'FreeSpin';
 
             $this->showPickInfo();
         }
@@ -954,7 +956,7 @@ class garden_partyCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';

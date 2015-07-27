@@ -322,6 +322,9 @@ class cleopatra_gpeCtrl extends IGTCtrl {
 
         if($report['scattersReport']['count'] > 1) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+            if($_SESSION['state'] == 'FREE') {
+                $report['scattersReport']['totalWin'] *= 3;
+            }
             $report['totalWin'] += $report['scattersReport']['totalWin'];
             $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
@@ -505,7 +508,7 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';

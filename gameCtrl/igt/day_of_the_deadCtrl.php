@@ -436,12 +436,9 @@ class day_of_the_deadCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+        $_SESSION['fsTotalWin'] = 0;
+        $_SESSION['scatterWin'] = $report['betOnLine'] * $_SESSION['fiveCount'] * 50;
 
-        $report['scattersReport']['totalWin'] = 0;
-
-        $report['scattersReport']['totalWin'] = 0;
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
         $highlightRight = $this->getRightHighlight($report['winLines']);
@@ -469,10 +466,6 @@ class day_of_the_deadCtrl extends IGTCtrl {
         <Payout>0</Payout>
     </OutcomeDetail>
     '.$scattersHighlight.'
-    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
-    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
-        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
-    </TriggerOutcome>
     '.$highlightLeft.$highlightRight.'
 
     '.$display.$display2.'
@@ -507,8 +500,8 @@ class day_of_the_deadCtrl extends IGTCtrl {
         $this->outXML($xml);
 
         $_SESSION['state'] = 'FREE';
-        $_SESSION['totalAwarded'] = 8;
-        $_SESSION['fsLeft'] = 8;
+        $_SESSION['totalAwarded'] = 8 * $_SESSION['fiveCount'];
+        $_SESSION['fsLeft'] = 8 * $_SESSION['fiveCount'];
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
         $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$highlightRight.$leftWinLines.$rightWinLines, 9));
@@ -566,16 +559,16 @@ class day_of_the_deadCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+        $fsWin = $_SESSION['fsTotalWin'];
 
-        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+        $gameTotal = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -606,8 +599,6 @@ class day_of_the_deadCtrl extends IGTCtrl {
     '.$baseReels.$display.'
 
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
-    <PrizeOutcome multiplier="1" name="BaseGame.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
-    <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
 
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
@@ -626,8 +617,8 @@ class day_of_the_deadCtrl extends IGTCtrl {
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
         <PatternsBet>'.$report['linesCount'].'</PatternsBet>
     </PatternSliderInput>
-    <Balances totalBalance="'.$balance.'">
-        <Balance name="FREE">'.$balance.'</Balance>
+    <Balances totalBalance="'.$needBalance.'">
+        <Balance name="FREE">'.$needBalance.'</Balance>
     </Balances>
 </GameLogicResponse>';
 

@@ -302,9 +302,13 @@ class prowling_pantherCtrl extends IGTCtrl {
 
 
         $fiveCount = 0;
+        $noCount = 0;
         foreach($report['winLines'] as $w) {
             if($w['alias'] == 'b01' && $w['count'] == 5) {
                 $fiveCount++;
+            }
+            else {
+                $noCount++;
             }
         }
 
@@ -324,6 +328,7 @@ class prowling_pantherCtrl extends IGTCtrl {
                 $report['scattersReport']['show'] = true;
             }
         }
+
 
         $totalWin = $report['totalWin'];
 
@@ -394,6 +399,8 @@ class prowling_pantherCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
         $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
 
+        $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
+
         $report['scattersReport']['totalWin'] = 0;
 
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
@@ -405,7 +412,7 @@ class prowling_pantherCtrl extends IGTCtrl {
         $leftWinLines = $this->getLeftWayWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
 
-        $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
+
 
         $_SESSION['startBalance'] = $balance-$totalWin;
 
@@ -506,7 +513,7 @@ class prowling_pantherCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
@@ -565,8 +572,8 @@ class prowling_pantherCtrl extends IGTCtrl {
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
         <PatternsBet>'.$report['linesCount'].'</PatternsBet>
     </PatternSliderInput>
-    <Balances totalBalance="'.$balance.'">
-        <Balance name="FREE">'.$balance.'</Balance>
+    <Balances totalBalance="'.$needBalance.'">
+        <Balance name="FREE">'.$needBalance.'</Balance>
     </Balances>
 </GameLogicResponse>';
 

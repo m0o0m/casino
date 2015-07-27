@@ -515,7 +515,7 @@ class jewel_of_the_artsCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
@@ -525,6 +525,20 @@ class jewel_of_the_artsCtrl extends IGTCtrl {
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
         $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+
+        $wildReelsHighLight = '<HighlightOutcome name="FreeSpin.WildHighlight" type="">';
+        $wildReelsHighLight .= '<Highlight name="WildReel'.$_SESSION['wildLevel'].'" type="">';
+        for($i = 0; $i < $_SESSION['wildLevel']; $i++) {
+            $c = $i + 1;
+            if($i > 2) {
+                continue;
+            }
+            $wildReelsHighLight .= '<Cell name="L0C'.$c.'R0" type="" />
+            <Cell name="L0C'.$c.'R1" type="" />
+            <Cell name="L0C'.$c.'R2" type="" />';
+        }
+        $wildReelsHighLight .= '</Highlight>';
+        $wildReelsHighLight .= '</HighlightOutcome>';
 
 
         $xml = '<GameLogicResponse>
@@ -538,7 +552,7 @@ class jewel_of_the_artsCtrl extends IGTCtrl {
         <Pending>'.$pending.'</Pending>
         <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
-    '.$baseScatter.'
+    '.$baseScatter.$wildReelsHighLight.'
     <TriggerOutcome component="" name="FreeSpin.CurrentState" stage="">
         <Trigger name="WildReel'.$currentWildLevel.'" priority="50" stageConnector="" />
     </TriggerOutcome>

@@ -48,7 +48,9 @@ class rich_girlParams extends Params {
     public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
-        '3' => 3,
+        '3' => 2,
+        '4' => 10,
+        '5' => 25,
     );
 
     public $winLines = array(

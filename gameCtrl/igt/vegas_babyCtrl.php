@@ -313,6 +313,9 @@ class vegas_babyCtrl extends IGTCtrl {
 
         if($report['scattersReport']['count'] > 1) {
             $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
+            if($_SESSION['state'] == 'FREE') {
+                $report['scattersReport']['totalWin'] *= 3;
+            }
             $report['totalWin'] += $report['scattersReport']['totalWin'];
             $report['spinWin'] += $report['scattersReport']['totalWin'];
             if($report['scattersReport']['count'] >= 3) {
@@ -358,12 +361,8 @@ class vegas_babyCtrl extends IGTCtrl {
         <Pending>0</Pending>
         <Payout>'.$totalWin.'</Payout>
     </OutcomeDetail>
-    <TriggerOutcome component="" name="CurrentLevels" stage=""/>
-    <TriggerOutcome component="" name="Common.BetIncrement" stage="">
-        <Trigger name="betIncrement0" priority="0" stageConnector=""/>
-    </TriggerOutcome>
     '.$sc.$highlight.$display.$scatterPays.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
@@ -496,7 +495,7 @@ class vegas_babyCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';

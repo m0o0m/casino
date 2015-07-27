@@ -35,7 +35,6 @@ class diamond_queenParams extends Params {
     );
     // Вайлд
     public $wild = array(0);
-    public $doubleIfWild = true;
     // Скаттер
     public $scatter = array(21);
     // Умножение ставки, когда выпали скаттеры

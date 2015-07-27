@@ -35,7 +35,6 @@ class jewel_of_the_artsParams extends Params {
     );
     // Вайлд
     public $wild = array(0);
-    public $doubleIfWild = true;
     // Скаттер
     public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры

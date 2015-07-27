@@ -24,7 +24,92 @@ class cash_coasterCtrl extends IGTCtrl {
         $xml = '<PaytableResponse>
     <PaytableStatistics description="Cash Coaster 30L 3x3x3x3x3" maxRTP="96.06" minRTP="91.99" name="Cash Coaster" type="Slot" />
     <PrizeInfo multiplierStrategy="null" name="PrizeInfoLines" strategy="PayBoth">
-        '.$symbolPay.'
+        <Prize name="s01">
+				<PrizePay count="5" pph="633600" value="500"/>
+				<PrizePay count="4" pph="30171.4" value="150"/>
+				<PrizePay count="3" pph="2618.2" value="50"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s01" required="false"/>
+			</Prize>
+			<Prize name="s02">
+				<PrizePay count="5" pph="52800" value="300"/>
+				<PrizePay count="4" pph="8336.8" value="75"/>
+				<PrizePay count="3" pph="1440" value="30"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s02" required="false"/>
+			</Prize>
+			<Prize name="s03">
+				<PrizePay count="5" pph="31680" value="250"/>
+				<PrizePay count="4" pph="5002.1" value="60"/>
+				<PrizePay count="3" pph="864" value="20"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s03" required="false"/>
+			</Prize>
+			<Prize name="s04">
+				<PrizePay count="5" pph="10560" value="200"/>
+				<PrizePay count="4" pph="1667.4" value="30"/>
+				<PrizePay count="3" pph="378.9" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s04" required="false"/>
+			</Prize>
+			<Prize name="s05">
+				<PrizePay count="5" pph="5280" value="200"/>
+				<PrizePay count="4" pph="833.7" value="30"/>
+				<PrizePay count="3" pph="189.5" value="15"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s05" required="false"/>
+			</Prize>
+			<Prize name="s06">
+				<PrizePay count="5" pph="5280" value="150"/>
+				<PrizePay count="4" pph="1104.3" value="25"/>
+				<PrizePay count="3" pph="224.6" value="10"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s06" required="false"/>
+			</Prize>
+			<Prize name="s07">
+				<PrizePay count="5" pph="4224" value="125"/>
+				<PrizePay count="4" pph="938.7" value="25"/>
+				<PrizePay count="3" pph="202.1" value="5"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s07" required="false"/>
+			</Prize>
+			<Prize name="s08">
+				<PrizePay count="5" pph="10560" value="100"/>
+				<PrizePay count="4" pph="1667.4" value="20"/>
+				<PrizePay count="3" pph="378.9" value="5"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s08" required="false"/>
+			</Prize>
+			<Prize name="s09">
+				<PrizePay count="5" pph="5280" value="100"/>
+				<PrizePay count="4" pph="833.7" value="20"/>
+				<PrizePay count="3" pph="189.5" value="5"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s09" required="false"/>
+			</Prize>
+			<Prize name="s10">
+				<PrizePay count="5" pph="5280" value="75"/>
+				<PrizePay count="4" pph="1104.3" value="15"/>
+				<PrizePay count="3" pph="224.6" value="5"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s10" required="false"/>
+			</Prize>
+			<Prize name="s11">
+				<PrizePay count="5" pph="4224" value="75"/>
+				<PrizePay count="4" pph="938.7" value="15"/>
+				<PrizePay count="3" pph="202.1" value="5"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s11" required="false"/>
+			</Prize>
+			<Prize name="any7">
+				<PrizePay count="5" pph="4224" value="40"/>
+				<Symbol id="w01" required="false"/>
+				<Symbol id="s01" required="false"/>
+				<Symbol id="s02" required="false"/>
+				<Symbol id="s03" required="false"/>
+				<Symbol id="s04" required="false"/>
+				<Symbol id="s05" required="false"/>
+			</Prize>
     </PrizeInfo>
     <PrizeInfo name="PrizeInfoScatter" strategy="PayAny">
         <Prize name="b01">
@@ -327,10 +412,13 @@ class cash_coasterCtrl extends IGTCtrl {
 
     protected function startFreeSpin($request) {
         if(!isset($_SESSION['fsType'])) {
+
             $pick = (array) $request['PickerInput']->Pick;
             $pick = $pick['@attributes']['name'];
             $pick = $pick[3];
             $_SESSION['fsType'] = $pick;
+
+            $_SESSION['fsState'] = 'FreeSpin';
 
             $this->showPickInfo($request);
         }
@@ -427,11 +515,6 @@ class cash_coasterCtrl extends IGTCtrl {
             $report['totalWin'] += $report['scattersReport']['totalWin'];
             $report['spinWin'] += $report['scattersReport']['totalWin'];
         }
-        else {
-            if($_SESSION['state'] == 'FREE') {
-                //$respin = true;
-            }
-        }
 
         $totalWin = $report['totalWin'];
 
@@ -500,7 +583,7 @@ class cash_coasterCtrl extends IGTCtrl {
     '.$display.'
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
@@ -693,9 +776,9 @@ class cash_coasterCtrl extends IGTCtrl {
         $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'] - $_SESSION['baseWinLinesWin'];
+        $fsWin = $_SESSION['fsTotalWin'];
 
-        $totalWin = $_SESSION['fsTotalWin'];
+        $totalWin = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
         $leftArray = array();
 
@@ -741,7 +824,7 @@ class cash_coasterCtrl extends IGTCtrl {
         <Awarded>'.$_SESSION['initAwarded'].'</Awarded>
         <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>5</Countdown>
+        <Countdown>'.$_SESSION['totalAwarded'].'</Countdown>
         <IncrementTriggered>true</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
@@ -833,8 +916,8 @@ class cash_coasterCtrl extends IGTCtrl {
         <IncrementTriggered>false</IncrementTriggered>
         <MaxPicksAwarded>false</MaxPicksAwarded>
     </PickerSummaryOutcome>
-    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0" />
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
     </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0" />
@@ -848,7 +931,7 @@ class cash_coasterCtrl extends IGTCtrl {
         <PatternsBet>40</PatternsBet>
     </PatternSliderInput>
     <PickerInput>
-        <Pick name="L0C1R0" />
+        <Pick name="'.$pick[0].'" />
     </PickerInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -899,7 +982,7 @@ class cash_coasterCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';

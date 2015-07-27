@@ -716,6 +716,8 @@ class fire_opalsCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
         $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
 
+        $gameTotal = $totalWin - $_SESSION['baseWinLinesWin'];
+
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>R1540-14228693316850</TransactionId>
@@ -745,10 +747,15 @@ class fire_opalsCtrl extends IGTCtrl {
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
-    '.$scattersPay.'
     '.$leftWinLines.$rightWinLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="1" multiplier="1" name="Scatter" pay="0" payName="5 b01" symbolCount="5" totalPay="0" ways="0" />
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
+    </PrizeOutcome>
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
@@ -822,14 +829,14 @@ class fire_opalsCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+        $fsWin = $_SESSION['fsTotalWin'];
 
         $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
 
@@ -861,11 +868,9 @@ class fire_opalsCtrl extends IGTCtrl {
     </FreeSpinOutcome>
     '.$baseReels.$display.'
 
-    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
-        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="'.$_SESSION['scatterWin'].'" payName="5 b01" symbolCount="5" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="0" payName="5 b01" symbolCount="5" totalPay="0" ways="0" />
     </PrizeOutcome>
-    <PrizeOutcome multiplier="1" name="BaseGame.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
-    <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
 
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>

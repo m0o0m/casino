@@ -1060,7 +1060,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGameTumble';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
@@ -1210,7 +1210,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         else {
             if($_SESSION['fsLeft'] == 0) {
                 $nextStage = 'BaseGameTumble';
-                $payout = $_SESSION['fsTotalWin'];
+                $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
                 $status = 'Start';
             }
         }

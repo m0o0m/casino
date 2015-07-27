@@ -90,6 +90,6 @@ class day_of_the_deadParams extends Params {
         array('symbol'=> 's08', 'count'=> 5, 'multiplier'=> 50),
         array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 15),
         array('symbol'=> 's08', 'count'=> 3, 'multiplier'=> 5),
-        array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 0),
+        array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 50),
     );
 }

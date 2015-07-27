@@ -505,6 +505,7 @@ class Slot {
                     'withWild' => false,
                     'addMultiplier' => array(),
                     'direction' => 'left',
+                    'useSymbols' => $lineSymbol,
                     'type' => 'line',
                 );
             }

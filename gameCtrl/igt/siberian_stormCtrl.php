@@ -359,7 +359,7 @@ class siberian_stormCtrl extends IGTCtrl {
             $_SESSION['initFS'] = 8 * $fiveCount;
             $_SESSION['fiveCount'] = $fiveCount;
             $report['type'] = 'FREE';
-            $report['scattersReport']['totalWin'] = $report['betOnLine'] * 50 * $fiveCount;
+            $report['scattersReport']['totalWin'] = 0;
         }
 
         $scatterPayReport = $this->slot->getSymbolAnyCount('s09');
@@ -462,10 +462,8 @@ class siberian_stormCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
-
-        $report['scattersReport']['totalWin'] = 0;
+        $_SESSION['fsTotalWin'] = 0;
+        $_SESSION['scatterWin'] = $report['betOnLine'] * $_SESSION['fiveCount'] * 50;
 
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
@@ -558,6 +556,7 @@ class siberian_stormCtrl extends IGTCtrl {
                 $_SESSION['totalAwarded'] += 8 * $_SESSION['fiveCount'];
                 $_SESSION['fsLeft'] += 8 * $_SESSION['fiveCount'];
                 $awarded = 8 * $_SESSION['fiveCount'];
+                $report['scattersReport']['totalWin'] = 0;
                 $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter', 'b02');
                 $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
             }
@@ -589,7 +588,7 @@ class siberian_stormCtrl extends IGTCtrl {
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
-            $payout = $_SESSION['fsTotalWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
@@ -598,7 +597,7 @@ class siberian_stormCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'];
 
-        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+        $gameTotal = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -629,8 +628,6 @@ class siberian_stormCtrl extends IGTCtrl {
     '.$baseReels.$display.'
 
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
-    <PrizeOutcome multiplier="1" name="BaseGame.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
-    <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
 
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
@@ -649,8 +646,8 @@ class siberian_stormCtrl extends IGTCtrl {
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
         <PatternsBet>'.$report['linesCount'].'</PatternsBet>
     </PatternSliderInput>
-    <Balances totalBalance="'.$balance.'">
-        <Balance name="FREE">'.$balance.'</Balance>
+    <Balances totalBalance="'.$needBalance.'">
+        <Balance name="FREE">'.$needBalance.'</Balance>
     </Balances>
 </GameLogicResponse>';
 
