@@ -534,13 +534,6 @@ class noahs_arkCtrl extends IGTCtrl {
     }
 
     protected function showSpinReport($report, $totalWin) {
-
-        ob_start();
-
-        print_r($report);
-
-
-
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlight = $this->getHighlight($report['winLines']);
         $display = $this->getDisplay($report);
@@ -560,15 +553,6 @@ class noahs_arkCtrl extends IGTCtrl {
         if($report['scattersReport']['count'] > 3) {
             $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
         }
-
-        $content = ob_get_contents();
-        ob_end_clean();
-
-        $f = fopen('report', 'w+');
-        fwrite($f, $content);
-        fclose($f);
-
-
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
