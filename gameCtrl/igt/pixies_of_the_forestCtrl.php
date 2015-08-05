@@ -868,7 +868,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     }
 
     public function showTumbleReport($report, $totalWin) {
-        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $balance = $this->getBalance() + $totalWin;
         $highlight = $this->getHighlight($report['winLines'], 'BaseGame.Lines', 0, 'Remove');
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
@@ -880,8 +880,10 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $status = 'Start';
         $settled = 0;
         $pending = $report['bet'];
-        $payout = $_SESSION['totalWin'];
+        $payout = $balance - $_SESSION['startSpinBalance'];
         $trigger = '<TriggerOutcome component="" name="BaseGameTumble" stage="" />';
+
+        $gameTotal = $balance - $_SESSION['startSpinBalance'];
 
         if(!empty($report['winLines'])) {
             $balance = $_SESSION['startSpinBalance'];
@@ -933,8 +935,8 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
     '.$display.'
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['totalWin'].'" stage="" totalPay="'.$_SESSION['totalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['totalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['totalWin'].'" ways="0"/>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
@@ -963,7 +965,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     }
 
     public function showFreeFromTumble($report, $totalWin) {
-        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $balance = $this->getBalance() - $report['bet'];
         $highlight = $this->getHighlight($report['winLines'], 'BaseGame.Lines', 0, 'Remove');
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
@@ -976,7 +978,9 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] = 0;
 
         $_SESSION['startFreeBalance'] = $this->getBalance();
-        $_SESSION['startBalance'] = $this->getBalance();
+        $_SESSION['startBalance'] = $this->getBalance() - $report['bet'];
+
+        $_SESSION['startSpinBalance'] = $balance;
 
 
 
@@ -1261,6 +1265,8 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
         $_SESSION['fsTotalWin'] += $totalWin;
 
+        $_SESSION['singleFreeSpin'] = $totalWin;
+
         $nextStage = 'FreeSpin';
 
         $baseReels = '';
@@ -1319,7 +1325,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         <GameStatus>'.$gameStatus.'</GameStatus>
         <Settled>'.$settled.'</Settled>
         <Pending>'.$pending.'</Pending>
-        <Payout>'.$payout.'</Payout>
+        <Payout>0</Payout>
     </OutcomeDetail>
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
@@ -1339,6 +1345,9 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
     '.$winLines.'
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total.SingleFreeSpin" pay="'.$_SESSION['singleFreeSpin'].'" stage="" totalPay="'.$_SESSION['singleFreeSpin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['singleFreeSpin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['singleFreeSpin'].'" ways="0" />
+    </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
@@ -1388,6 +1397,8 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $_SESSION['totalWin'] += $totalWin;
 
         $_SESSION['fsTotalWin'] += $totalWin;
+
+        $_SESSION['singleFreeSpin'] += $totalWin;
 
 
         $nextStage = 'FreeSpin';
@@ -1454,7 +1465,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         <GameStatus>'.$status.'</GameStatus>
         <Settled>'.$settled.'</Settled>
         <Pending>'.$pending.'</Pending>
-        <Payout>'.$payout.'</Payout>
+        <Payout>0</Payout>
     </OutcomeDetail>
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
@@ -1476,6 +1487,9 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     </FreeSpinOutcome>
     '.$display.$baseReels.'
     '.$winLines.'
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total.SingleFreeSpin" pay="'.$_SESSION['singleFreeSpin'].'" stage="" totalPay="'.$_SESSION['singleFreeSpin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['singleFreeSpin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['singleFreeSpin'].'" ways="0" />
+    </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
