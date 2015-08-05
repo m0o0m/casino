@@ -661,7 +661,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
         $this->slot = new Slot($this->gameParams, $pick, $stake, 3);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(3,3,3,3,3));
-        $this->slot->reels = unserialize($_SESSION['reels']);
+        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reels'])));
 
         foreach($_SESSION['avalancheOffsets'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -707,7 +707,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
         $this->slot = new Slot($this->gameParams, $pick, $stake, 3);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(3,3,3,3,3));
-        $this->slot->reels = unserialize($_SESSION['reelsFree']);
+        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reelsFree'])));
 
         foreach($_SESSION['avalancheOffsetsFree'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -807,7 +807,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = serialize($this->slot->reels);
+            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -896,7 +896,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = serialize($this->slot->reels);
+            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -980,7 +980,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
 
 
-        $_SESSION['reels'] = serialize($this->slot->reels);
+        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -1118,7 +1118,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
 
 
-        $_SESSION['reels'] = serialize($this->slot->reels);
+        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -1289,7 +1289,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         <Trigger name="BaseGameTumble" priority="0" stageConnector="" />
     </TriggerOutcome>';
 
-            $_SESSION['reelsFree'] = serialize($this->slot->reels);
+            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -1410,7 +1410,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reelsFree'] = serialize($this->slot->reels);
+            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {

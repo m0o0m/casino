@@ -18,7 +18,7 @@ class Api {
         
         $this->gameSession->create_time = 1411559061;
         
-        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 100000;
+        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 1000000;
         
         $this->playerBalance = $_SESSION['balance'];
     }

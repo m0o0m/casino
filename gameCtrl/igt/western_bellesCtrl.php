@@ -223,9 +223,12 @@ class western_bellesCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
+        $slotPick = $pick;
+
         if($pick == 200) {
             $i = 1/5;
             $this->wildReel = true;
+            $slotPick = 40;
         }
         else {
             $i = 1;
@@ -238,11 +241,12 @@ class western_bellesCtrl extends IGTCtrl {
             die();
         }
 
-        $this->slot = new Slot($this->gameParams, $pick, $stake, $i);
+        $this->slot = new Slot($this->gameParams, $slotPick, $stake, $i);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));
         $this->slot->rows = 4;
 
         $spinData = $this->getSpinData();
+
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
@@ -276,16 +280,19 @@ class western_bellesCtrl extends IGTCtrl {
         $stake = $_SESSION['lastBet'];
         $pick = $_SESSION['lastPick'];
 
+        $slotPick = $pick;
+
         $i = 1;
         if($_SESSION['wildReel']) {
             $i = 1/5;
             $this->wildReel = true;
+            $slotPick = 40;
         }
         else {
             $this->wildReel = false;
         }
 
-        $this->slot = new Slot($this->gameParams, $pick, $stake, $i);
+        $this->slot = new Slot($this->gameParams, $slotPick, $stake, $i);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(4,4,4,4,4));
         $this->slot->rows = 4;
 
@@ -378,6 +385,11 @@ class western_bellesCtrl extends IGTCtrl {
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
+        $patternsBet = $report['linesCount'];
+        if($this->wildReel) {
+            $betPerLine = $betPerLine / 5;
+            $patternsBet *= 5;
+        }
 
         if($this->wildReel) {
             $wx = '<TriggerOutcome component="" name="WildReelsMapping" stage="">
@@ -439,7 +451,7 @@ class western_bellesCtrl extends IGTCtrl {
     </ActionInput>
     <PatternSliderInput>
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -458,6 +470,11 @@ class western_bellesCtrl extends IGTCtrl {
         $display2 = $this->getDisplay($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
+        $patternsBet = $report['linesCount'];
+        if($this->wildReel) {
+            $betPerLine = $betPerLine / 5;
+            $patternsBet *= 5;
+        }
 
         $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
 
@@ -532,7 +549,7 @@ class western_bellesCtrl extends IGTCtrl {
     </ActionInput>
     <PatternSliderInput>
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -555,6 +572,11 @@ class western_bellesCtrl extends IGTCtrl {
         $display = $this->getDisplay($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report, 'FreeSpin');
         $betPerLine = $report['bet'] / $report['linesCount'];
+        $patternsBet = $report['linesCount'];
+        if($this->wildReel) {
+            $betPerLine = $betPerLine / 5;
+            $patternsBet *= 5;
+        }
         $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
 
         $awarded = 0;
@@ -674,7 +696,7 @@ class western_bellesCtrl extends IGTCtrl {
     </ActionInput>
     <PatternSliderInput>
         <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$needBalance.'">
         <Balance name="FREE">'.$needBalance.'</Balance>

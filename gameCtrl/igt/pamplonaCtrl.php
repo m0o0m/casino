@@ -637,6 +637,8 @@ class pamplonaCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
+        $_SESSION['pickerCount']--;
+
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -728,7 +730,7 @@ class pamplonaCtrl extends IGTCtrl {
     </PopulationOutcome>
     '.$baseReels.$display2.'
     <PickerSummaryOutcome name="">
-        <PicksRemaining>0</PicksRemaining>
+        <PicksRemaining>'.$_SESSION['pickerCount'].'</PicksRemaining>
         <PickCount>1</PickCount>
         <CurrentLayer index="0" name="layer0" />
         <InitAwarded>1</InitAwarded>
@@ -763,7 +765,7 @@ class pamplonaCtrl extends IGTCtrl {
 
         $this->outXML($xml);
 
-        $_SESSION['pickerCount']--;
+
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {

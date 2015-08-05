@@ -531,7 +531,34 @@ class rich_girlCtrl extends IGTCtrl {
     </TriggerOutcome>
     '.$highlight.'
 
-    '.$display.$display2.'
+    '.$display.'
+    <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+        <Entry name="Reel0" stripIndex="3">
+            <Cell name="L0C0R0" stripIndex="3">s12</Cell>
+            <Cell name="L0C0R1" stripIndex="4">s13</Cell>
+            <Cell name="L0C0R2" stripIndex="5">s11</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="12">
+            <Cell name="L0C1R0" stripIndex="12">s11</Cell>
+            <Cell name="L0C1R1" stripIndex="13">s14</Cell>
+            <Cell name="L0C1R2" stripIndex="14">s12</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="22">
+            <Cell name="L0C2R0" stripIndex="22">s11</Cell>
+            <Cell name="L0C2R1" stripIndex="23">s12</Cell>
+            <Cell name="L0C2R2" stripIndex="24">s13</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="15">
+            <Cell name="L0C3R0" stripIndex="15">s12</Cell>
+            <Cell name="L0C3R1" stripIndex="16">s14</Cell>
+            <Cell name="L0C3R2" stripIndex="17">s13</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="3">
+            <Cell name="L0C4R0" stripIndex="3">s14</Cell>
+            <Cell name="L0C4R1" stripIndex="4">s13</Cell>
+            <Cell name="L0C4R2" stripIndex="5">s11</Cell>
+        </Entry>
+    </PopulationOutcome>
     <FreeSpinOutcome name="">
         <InitAwarded>3</InitAwarded>
         <Awarded>3</Awarded>
@@ -662,6 +689,9 @@ class rich_girlCtrl extends IGTCtrl {
         </Entry>
     </PopulationOutcome>
     '.$winLines.'
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="9" multiplier="1" name="Scatter" pay="0" payName="3 b01" symbolCount="3" totalPay="0" ways="0" />
+    </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
         <Prize betMultiplier="9" multiplier="1" name="Scatter" pay="0" payName="'.$wr['count'].' w02" symbolCount="'.$wr['count'].'" totalPay="0" ways="0" />
     </PrizeOutcome>

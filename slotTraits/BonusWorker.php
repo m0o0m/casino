@@ -127,8 +127,33 @@ trait BonusWorker {
             case 'wildsExpansion':
                 $this->setWildsExpansion($bonus['wildsCount'], $bonus['wildsCountChance'], $bonus['wildsExpansionChance'], $bonus['wildSymbol']);
                 break;
+            case 'KittyWaterBonus':
+                $this->setKittyWaterBonus();
+                break;
 
         }
+    }
+
+    private function setKittyWaterBonus() {
+        $r = $this->getSymbolAnyCount('w02');
+        if($r['count'] > 0) {
+            $_SESSION['wildLevel']++;
+        }
+
+        $wilds = array(0,102);
+        if($_SESSION['wildLevel'] > 2) {
+            $wilds = array(0,102,1);
+        }
+        if($_SESSION['wildLevel'] > 5) {
+            $wilds = array(0,102,1,2);
+        }
+        if($_SESSION['wildLevel'] > 8) {
+            $wilds = array(0,102,1,2,3);
+        }
+        if($_SESSION['wildLevel'] > 11) {
+            $wilds = array(0,102,1,2,3,4);
+        }
+        $this->setWilds($wilds);
     }
 
     private function setWildsExpansion($wildsCount, $wildsCountChance, $wildsExpansionChance, $wildSymbol) {

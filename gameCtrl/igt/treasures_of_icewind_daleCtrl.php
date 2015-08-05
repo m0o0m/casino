@@ -433,33 +433,22 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
 
         $respin = false;
 
-        if($_SESSION['state'] == 'FREE') {
-            $wilds = array(0,102);
-            if($_SESSION['wildLevel'] > 2) {
-                $wilds = array(0,102,1);
-            }
-            if($_SESSION['wildLevel'] > 5) {
-                $wilds = array(0,102,1,2);
-            }
-            if($_SESSION['wildLevel'] > 8) {
-                $wilds = array(0,102,1,2,3);
-            }
-            if($_SESSION['wildLevel'] > 11) {
-                $wilds = array(0,102,1,2,3,4);
-            }
-            $this->slot->setWilds($wilds);
-        }
-
         $bonus = array(
             'type' => 'randomReplace',
             'symbols' => array(61,62,63,64,65),
             'replacement' => array(1,2,3,4,5,6,7,8,9),
         );
+
         if($_SESSION['state'] == 'FREE') {
             $bonus = array(
-                'type' => 'randomReplace',
-                'symbols' => array(61,62,63,64,65),
-                'replacement' => array(1,2,3,4),
+                array(
+                    'type' => 'randomReplace',
+                    'symbols' => array(61,62,63,64,65),
+                    'replacement' => array(1,2,3,4),
+                ),
+                array(
+                    'type' => 'KittyWaterBonus',
+                ),
             );
         }
 
@@ -489,7 +478,6 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
         if($_SESSION['state'] == 'FREE') {
             $r = $this->slot->getSymbolAnyCount('w02');
             if($r['count'] > 0) {
-                $_SESSION['wildLevel']++;
                 $report['wildUp'] = true;
             }
             else {
@@ -563,6 +551,8 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
+
+        $_SESSION['baseWinLinesWin'] = $report['totalWin'] - $report['scattersReport']['totalWin'];
 
         $_SESSION['startBalance'] = $balance-$totalWin;
 
@@ -839,14 +829,24 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
         $nextStage = 'FreeSpin';
 
         $baseReels = '';
+        $payout = 0;
+        $settled = 0;
+        $pending = $report['bet'];
+        $gameStatus = 'InProgress';
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
-            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'];
+            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
+            $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
+            $settled = $report['bet'];
+            $pending = 0;
+            $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
         }
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
+        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -854,11 +854,12 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
         <Stage>FreeSpin</Stage>
         <NextStage>'.$nextStage.'</NextStage>
         <Balance>'.$needBalance.'</Balance>
-        <GameStatus>InProgress</GameStatus>
-        <Settled>0</Settled>
-        <Pending>'.$report['bet'].'</Pending>
-        <Payout>0</Payout>
+        <GameStatus>'.$gameStatus.'</GameStatus>
+        <Settled>'.$settled.'</Settled>
+        <Pending>'.$pending.'</Pending>
+        <Payout>'.$payout.'</Payout>
     </OutcomeDetail>
+    '.$baseScatter.'
     <TriggerOutcome component="" name="CurrentLevels" stage=""/>
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
         <Trigger name="betIncrement0" priority="0" stageConnector=""/>
@@ -893,8 +894,8 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0" />
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
@@ -921,6 +922,7 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
             unset($_SESSION['wildLevel']);
+            unset($_SESSION['baseWinLinesWin']);
         }
     }
 

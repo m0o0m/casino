@@ -7,7 +7,7 @@ class IGTCtrl extends Ctrl {
         if(strpos($uri, 'clientconfig') > 0) $action = 'config';
         if(strpos($uri, 'initstate') > 0) $action = 'init';
         if(strpos($uri, 'paytable') > 0) $action = 'paytable';
-        if(strpos($uri, 'play') > 0) $action = 'spin';
+        if(strpos($uri, '/play') > 0) $action = 'spin';
 
         /*
         echo '<pre>';
@@ -63,6 +63,7 @@ class IGTCtrl extends Ctrl {
     }
 
     protected function getHighlight($winLines, $name = 'BaseGame.Lines', $inc = 0, $type = '') {
+        $baseType = $type;
         $reelsCount = $this->slot->getReelsCount() - 1;
         if(empty($winLines)) {
             $xml = '<HighlightOutcome name="'.$name.'" type=""/>';
@@ -79,6 +80,23 @@ class IGTCtrl extends Ctrl {
                             $ceil = $reelsCount - $i;
                         }
                         $row = $w['line'][$i] + $inc;
+
+                        if($this->gameParams->doubleCount) {
+                            $symbol = $w['useSymbols'][$i];
+                            $mainSymbolID = $w['symbol'][0];
+
+                            if(isset($this->gameParams->doubleCountConfig[$symbol])) {
+                                foreach($this->gameParams->doubleCountConfig[$symbol] as $j) {
+                                    if($j == $mainSymbolID) {
+                                        $type = 2;
+                                    }
+                                }
+                            }
+                            else {
+                                $type = $baseType;
+                            }
+                        }
+
                         $item .= '<Cell name="L0C'.$ceil.'R'.$row.'" type="'.$type.'" />';
                     }
                     $item .= '</Highlight>';

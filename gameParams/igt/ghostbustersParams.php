@@ -281,7 +281,7 @@ class ghostbustersParams extends Params {
     );
 
     public $ballroomConfig = array(
-        // 1 к 3
+        // 1 к 5
         'multipleChance' => 5,
         'multipleValue' => array(2,3,4,5),
         'multipleValueChance' => array(

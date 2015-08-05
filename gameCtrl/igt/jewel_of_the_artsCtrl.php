@@ -131,6 +131,22 @@ class jewel_of_the_artsCtrl extends IGTCtrl {
     <TriggerOutcome name="FreeSpin.WildState">
         <Trigger name="WildReel'.$_SESSION['wildLevel'].'" />
     </TriggerOutcome>';
+
+            $wildReelsHighLight = '<HighlightOutcome name="FreeSpin.WildHighlight" type="">';
+            $wildReelsHighLight .= '<Highlight name="WildReel'.$_SESSION['wildLevel'].'" type="">';
+            for($i = 0; $i < $_SESSION['wildLevel']; $i++) {
+                $c = $i + 1;
+                if($i > 2) {
+                    continue;
+                }
+                $wildReelsHighLight .= '<Cell name="L0C'.$c.'R0" type="" />
+            <Cell name="L0C'.$c.'R1" type="" />
+            <Cell name="L0C'.$c.'R2" type="" />';
+            }
+            $wildReelsHighLight .= '</Highlight>';
+            $wildReelsHighLight .= '</HighlightOutcome>';
+
+            $fs.= $wildReelsHighLight;
         }
         else {
             $fs = '<TriggerOutcome name="FreeSpin.WildState">

@@ -336,20 +336,9 @@ class water_dragonsCtrl extends IGTCtrl {
         }
 
         if($_SESSION['state'] == 'FREE') {
-            $wilds = array(0,102);
-            if($_SESSION['wildLevel'] > 2) {
-                $wilds = array(0,102,1);
-            }
-            if($_SESSION['wildLevel'] > 5) {
-                $wilds = array(0,102,1,2);
-            }
-            if($_SESSION['wildLevel'] > 8) {
-                $wilds = array(0,102,1,2,3);
-            }
-            if($_SESSION['wildLevel'] > 11) {
-                $wilds = array(0,102,1,2,3,4);
-            }
-            $this->slot->setWilds($wilds);
+            $bonus = array(
+                'type' => 'KittyWaterBonus',
+            );
         }
 
         $report = $this->slot->spin($bonus);
@@ -368,16 +357,11 @@ class water_dragonsCtrl extends IGTCtrl {
         if($_SESSION['state'] == 'FREE') {
             $r = $this->slot->getSymbolAnyCount('w02');
             if($r['count'] > 0) {
-                $_SESSION['wildLevel']++;
                 $report['wildUp'] = true;
             }
             else {
                 $report['wildUp'] = false;
             }
-        }
-
-        if($report['scattersReport']['count'] < 3 || empty($report['winLines'])) {
-            //$respin = true;
         }
 
         $totalWin = $report['totalWin'];

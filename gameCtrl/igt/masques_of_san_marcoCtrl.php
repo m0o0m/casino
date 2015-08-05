@@ -463,7 +463,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(6,6,6,6,6));
         $this->slot->rows = 6;
-        $this->slot->reels = unserialize($_SESSION['reels']);
+        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reels'])));
 
         foreach($_SESSION['avalancheOffsets'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -511,7 +511,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(6,6,6,6,6));
         $this->slot->rows = 6;
-        $this->slot->reels = unserialize($_SESSION['reelsFree']);
+        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reelsFree'])));
 
         foreach($_SESSION['avalancheOffsetsFree'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -576,6 +576,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             }
         }
 
+        if($report['type'] !== 'FREE') {
+            //$respin = true;
+        }
+
 
         return array(
             'totalWin' => $totalWin,
@@ -611,7 +615,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = serialize($this->slot->reels);
+            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -649,7 +653,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </AwardCapOutcome>
     '.$display.'
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
@@ -683,8 +687,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $status = 'Start';
         $settled = 0;
         $pending = $report['bet'];
-        $payout = $_SESSION['totalWin'];
+        $payout = $balance - $_SESSION['startSpinBalance'];
         $trigger = '<TriggerOutcome component="" name="BaseGameTumble" stage="" />';
+
+        $gameTotal = $balance - $_SESSION['startSpinBalance'];
 
         if(!empty($report['winLines'])) {
             $balance = $_SESSION['startSpinBalance'];
@@ -699,7 +705,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = serialize($this->slot->reels);
+            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -734,8 +740,8 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </AwardCapOutcome>
     '.$display.'
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['totalWin'].'" stage="" totalPay="'.$_SESSION['totalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['totalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['totalWin'].'" ways="0"/>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
@@ -765,7 +771,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
 
     public function showFreeFromTumble($report, $totalWin) {
-        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $balance = $this->getBalance() - $report['bet'];
         $highlight = $this->getHighlight($report['winLines'], 'BaseGame.Lines', 0, 'Remove');
         $display = $this->getDisplay($report);
         $winLines = $this->getWinLines($report);
@@ -778,11 +784,13 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] = 0;
 
         $_SESSION['startFreeBalance'] = $this->getBalance();
-        $_SESSION['startBalance'] = $this->getBalance();
+        $_SESSION['startBalance'] = $this->getBalance() - $report['bet'];
+
+        $_SESSION['startSpinBalance'] = $balance;
 
 
 
-        $_SESSION['reels'] = serialize($this->slot->reels);
+        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -915,7 +923,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
 
 
-        $_SESSION['reels'] = serialize($this->slot->reels);
+        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -1027,7 +1035,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
-        $balance = $this->getBalance() - $report['bet'] + $totalWin;
+        $balance = $_SESSION['startBalance'];
         $highlight = $this->getHighlight($report['winLines'], 'FreeSpin.Lines', 0, 'Remove');
         $display = $this->getDisplay($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report, 'FreeSpin');
@@ -1049,6 +1057,8 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
         $_SESSION['fsTotalWin'] += $totalWin;
 
+        $_SESSION['singleFreeSpin'] = $totalWin;
+
         $nextStage = 'FreeSpin';
 
         $baseReels = '';
@@ -1059,7 +1069,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGameTumble';
-            $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
+            $needBalance = $_SESSION['startBalance'];
             $payout = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
             $settled = $report['bet'];
             $pending = 0;
@@ -1077,7 +1087,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <Trigger name="BaseGameTumble" priority="0" stageConnector="" />
     </TriggerOutcome>';
 
-            $_SESSION['reelsFree'] = serialize($this->slot->reels);
+            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -1107,7 +1117,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <GameStatus>'.$gameStatus.'</GameStatus>
         <Settled>'.$settled.'</Settled>
         <Pending>'.$pending.'</Pending>
-        <Payout>'.$payout.'</Payout>
+        <Payout>0</Payout>
     </OutcomeDetail>
     '.$baseScatter.'
     '.$trigger.$highlight.'
@@ -1123,6 +1133,9 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
     '.$winLines.'
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total.SingleFreeSpin" pay="'.$_SESSION['singleFreeSpin'].'" stage="" totalPay="'.$_SESSION['singleFreeSpin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['singleFreeSpin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['singleFreeSpin'].'" ways="0" />
+    </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
@@ -1150,7 +1163,6 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             unset($_SESSION['fsLeft']);
             unset($_SESSION['fsPlayed']);
             unset($_SESSION['totalAwarded']);
-            unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
             unset($_SESSION['baseWinLinesWin']);
@@ -1162,7 +1174,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
 
     public function showTumbleFreeReport($report, $totalWin) {
-        $balance = $this->getBalance() + $totalWin;
+        $balance = $_SESSION['startBalance'];
         $highlight = $this->getHighlight($report['winLines'], 'FreeSpin.Lines', 0, 'Remove');
         $display = $this->getDisplay($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report, 'FreeSpin');
@@ -1172,6 +1184,8 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $_SESSION['totalWin'] += $totalWin;
 
         $_SESSION['fsTotalWin'] += $totalWin;
+
+        $_SESSION['singleFreeSpin'] += $totalWin;
 
 
         $nextStage = 'FreeSpin';
@@ -1194,7 +1208,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reelsFree'] = serialize($this->slot->reels);
+            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -1227,6 +1241,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'];
 
+        $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
 
         $xml = '<GameLogicResponse>
@@ -1238,7 +1253,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <GameStatus>'.$status.'</GameStatus>
         <Settled>'.$settled.'</Settled>
         <Pending>'.$pending.'</Pending>
-        <Payout>'.$payout.'</Payout>
+        <Payout>0</Payout>
     </OutcomeDetail>
     '.$trigger.$highlight.'
     <AwardCapOutcome name="AwardCap">
@@ -1254,8 +1269,11 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
-    '.$display.$baseReels.'
+    '.$display.$baseReels.$baseScatter.'
     '.$winLines.'
+    <PrizeOutcome multiplier="1" name="FreeSpin.Total.SingleFreeSpin" pay="'.$_SESSION['singleFreeSpin'].'" stage="" totalPay="'.$_SESSION['singleFreeSpin'].'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['singleFreeSpin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['singleFreeSpin'].'" ways="0" />
+    </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
@@ -1295,7 +1313,6 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             unset($_SESSION['fsLeft']);
             unset($_SESSION['fsPlayed']);
             unset($_SESSION['totalAwarded']);
-            unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
             unset($_SESSION['baseWinLinesWin']);

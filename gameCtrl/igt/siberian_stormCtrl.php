@@ -330,7 +330,7 @@ class siberian_stormCtrl extends IGTCtrl {
                 case 'fs':
                     $bonus = array(
                         'type' => 'setReelsOffsets',
-                        'offsets' => array(5,12,2,34,19),
+                        'offsets' => array(5,10,2,34,19),
                     );
                     break;
                 case 'scatter':
@@ -349,9 +349,13 @@ class siberian_stormCtrl extends IGTCtrl {
         $report['scattersReport'] = $this->slot->getScattersCount();
 
         $fiveCount = 0;
+        $noCount = 0;
         foreach($report['winLines'] as $w) {
             if($w['alias'] == 'b01' && $w['count'] == 5) {
                 $fiveCount++;
+            }
+            else {
+                $noCount++;
             }
         }
 

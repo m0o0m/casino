@@ -535,6 +535,12 @@ class noahs_arkCtrl extends IGTCtrl {
 
     protected function showSpinReport($report, $totalWin) {
 
+        ob_start();
+
+        print_r($report);
+
+
+
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlight = $this->getHighlight($report['winLines']);
         $display = $this->getDisplay($report);
@@ -550,7 +556,18 @@ class noahs_arkCtrl extends IGTCtrl {
         $betPerLine = $report['bet'] / $report['linesCount'];
 
         $scattersPay = $this->getScattersPay($report['scattersReport']);
-        $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
+        $scattersHighlight = '<HighlightOutcome name="BaseGame.Scatter" type=""/>';
+        if($report['scattersReport']['count'] > 3) {
+            $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets']);
+        }
+
+        $content = ob_get_contents();
+        ob_end_clean();
+
+        $f = fopen('report', 'w+');
+        fwrite($f, $content);
+        fclose($f);
+
 
 
         $xml = '<GameLogicResponse>
@@ -568,11 +585,9 @@ class noahs_arkCtrl extends IGTCtrl {
     <TriggerOutcome component="" name="Common.BetIncrement" stage="">
         <Trigger name="betIncrement0" priority="0" stageConnector=""/>
     </TriggerOutcome>
-    <HighlightOutcome name="BaseGame.Scatter" type=""/>
     '.$highlight.$scattersPay.$scattersHighlight.'
 
     '.$display.'
-    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>
     '.$winLines.'
     <PrizeOutcome multiplier="1" name="Game.Total" pay="0" stage="" totalPay="0" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
@@ -782,8 +797,8 @@ class noahs_arkCtrl extends IGTCtrl {
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
-        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+    <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern">
+        <Prize betMultiplier="30" multiplier="1" name="Scatter" pay="0" payName="5 b01" symbolCount="5" totalPay="0" ways="0" />
     </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>

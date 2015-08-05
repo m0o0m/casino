@@ -612,6 +612,9 @@ class garden_partyCtrl extends IGTCtrl {
             $report['totalWin'] += $report['scattersReport']['totalWin'];
             $report['spinWin'] += $report['scattersReport']['totalWin'];
         }
+        else {
+            //$respin = true;
+        }
 
         $totalWin = $report['totalWin'];
 
@@ -790,6 +793,8 @@ class garden_partyCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
+        $_SESSION['pickerCount']--;
+
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -881,7 +886,7 @@ class garden_partyCtrl extends IGTCtrl {
     </PopulationOutcome>
     '.$baseReels.$display2.'
     <PickerSummaryOutcome name="">
-        <PicksRemaining>0</PicksRemaining>
+        <PicksRemaining>'.$_SESSION['pickerCount'].'</PicksRemaining>
         <PickCount>1</PickCount>
         <CurrentLayer index="0" name="layer0" />
         <InitAwarded>1</InitAwarded>
@@ -916,7 +921,7 @@ class garden_partyCtrl extends IGTCtrl {
 
         $this->outXML($xml);
 
-        $_SESSION['pickerCount']--;
+
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {

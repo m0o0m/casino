@@ -413,6 +413,8 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
         $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
 
+        $totalWin -= $_SESSION['baseWinLinesWin'];
+
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
         <TransactionId>R1540-14228693316850</TransactionId>
@@ -446,6 +448,7 @@ class cleopatra_gpeCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0"/>
     </PrizeOutcome>
+
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
         <Action>play</Action>
@@ -505,6 +508,11 @@ class cleopatra_gpeCtrl extends IGTCtrl {
         $pending = $report['bet'];
         $gameStatus = 'InProgress';
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+
+        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
+
+        $gameTotal = $_SESSION['fsTotalWin'];
+
         if($_SESSION['fsLeft'] == 0) {
             $nextStage = 'BaseGame';
             $needBalance = $_SESSION['startBalance'] + $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
@@ -513,11 +521,10 @@ class cleopatra_gpeCtrl extends IGTCtrl {
             $pending = 0;
             $gameStatus = 'Start';
             $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+            $gameTotal += $_SESSION['baseWinLinesWin'];
         }
 
-        $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
-        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
 
 
         $xml = '<GameLogicResponse>

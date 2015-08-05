@@ -665,6 +665,7 @@ class ghostbustersCtrl extends IGTCtrl {
         $totalWin = $report['totalWin'];
 
         if($bonusCount > 1) {
+            $_SESSION['state'] = 'SPIN';
             $respin = true;
         }
 

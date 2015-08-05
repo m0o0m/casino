@@ -198,7 +198,7 @@ class crown_of_egyptCtrl extends IGTCtrl {
     </PopulationOutcome>
     <PatternSliderInput>
         <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>80</PatternsBet>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -315,6 +315,16 @@ class crown_of_egyptCtrl extends IGTCtrl {
         if($report['scattersReport']['count'] > 1) {
             $report['type'] = 'FREE';
             $report['scattersReport']['totalWin'] = 0;
+        }
+
+
+        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
+            $url = $_SERVER['HTTP_REFERER'];
+            if (strpos($url, 'bonus=fs') > 0) {
+                if($report['scattersReport']['count'] < 2) {
+                    $respin = true;
+                }
+            }
         }
 
         $totalWin = $report['totalWin'];
@@ -521,7 +531,7 @@ class crown_of_egyptCtrl extends IGTCtrl {
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
-        $highlight = $this->getHighlight($report['winLines'], 'FreeSpin');
+        $highlight = $this->getHighlight($report['winLines'], 'FreeSpin.Lines');
         $highlightLeft = $this->getLeftHighlight($report['winLines'], 'FreeSpin', 'MultiWayLeftRight');
         $display = $this->getDisplayReels($report, false, 'FreeSpin');
         $winLines = $this->getWinLines($report, 'FreeSpin');
