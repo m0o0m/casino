@@ -79,7 +79,7 @@ class IGTCtrl extends Ctrl {
                         if($w['direction'] == 'right') {
                             $ceil = $reelsCount - $i;
                         }
-                        $row = $w['line'][$i] + $inc;
+                        $row = $w['line'][$ceil] + $inc;
 
                         if($this->gameParams->doubleCount) {
                             $symbol = $w['useSymbols'][$i];
@@ -116,9 +116,16 @@ class IGTCtrl extends Ctrl {
         $xml = '<HighlightOutcome name="'.$name.'" type="">
         <Highlight name="Scatter" type="">';
         foreach($offsets as $o) {
+            $type = '';
+            if($this->gameParams->doubleCount) {
+                $symbol = $this->slot->getSymbolByOffset($o);
+                if(in_array($symbol, $this->gameParams->doubleCountScatter)) {
+                    $type = 2;
+                }
+            }
             $c = ($o % 5);
             $r = floor($o / 5) + $inc;
-            $xml .= '<Cell name="L0C'.$c.'R'.$r.'" type="" />';
+            $xml .= '<Cell name="L0C'.$c.'R'.$r.'" type="'.$type.'" />';
         }
         $xml .= '</Highlight>
     </HighlightOutcome>';
@@ -268,8 +275,11 @@ class IGTCtrl extends Ctrl {
             $addCount = 2;
             $rows = 'fullRows';
         }
-        if($startRows) {
+        if($startRows === true) {
             $rows = 'startRows';
+        }
+        if($startRows !== true && $startRows !== false) {
+            $rows = $startRows;
         }
         for($i = 0; $i < count($this->gameParams->reelConfig); $i++) {
             $stop = $report['offset'][1][$i];

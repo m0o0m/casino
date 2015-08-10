@@ -117,6 +117,8 @@ class siberian_stormCtrl extends IGTCtrl {
 
         $fs = '';
         if($_SESSION['state'] == 'FREE') {
+            $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+
             $fs = '<FreeSpinOutcome name="">
         <InitAwarded>8</InitAwarded>
         <Awarded>0</Awarded>
@@ -136,6 +138,8 @@ class siberian_stormCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
     <PrizeOutcome multiplier="1" name="BaseGame.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
     <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />';
+
+            $fs .= $baseScatter;
         }
 
         $patternsBet = 50;
@@ -351,7 +355,7 @@ class siberian_stormCtrl extends IGTCtrl {
         $fiveCount = 0;
         $noCount = 0;
         foreach($report['winLines'] as $w) {
-            if($w['alias'] == 'b01' && $w['count'] == 5) {
+            if(($w['alias'] == 'b01' || $w['alias'] == 'b02') && $w['count'] == 5) {
                 $fiveCount++;
             }
             else {

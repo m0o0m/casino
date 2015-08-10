@@ -775,6 +775,10 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
 
         $m = $this->slot->getSymbolAnyCount('w02');
 
+        if($_SESSION['wildLevel'] > 12) {
+            $_SESSION['wildLevel'] = 12;
+        }
+
 
         $wu = '<TriggerOutcome component="" name="FreeSpin.TrailTrigger" stage="">
         <Trigger name="1 w02" priority="0" stageConnector="" />

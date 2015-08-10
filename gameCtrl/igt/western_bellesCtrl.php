@@ -223,6 +223,10 @@ class western_bellesCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
+        $_SESSION['betPerLine'] = $stake / $totalBet;
+        $_SESSION['lastBet'] = $stake;
+        $_SESSION['lastPick'] = $pick;
+
         $slotPick = $pick;
 
         if($pick == 200) {
@@ -270,8 +274,6 @@ class western_bellesCtrl extends IGTCtrl {
                 break;
         }
 
-        $_SESSION['lastBet'] = $stake;
-        $_SESSION['lastPick'] = $pick;
         $_SESSION['lastStops'] = $spinData['report']['stops'];
         $this->startPay();
     }
@@ -450,8 +452,8 @@ class western_bellesCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$patternsBet.'</PatternsBet>
+        <BetPerPattern>'. $_SESSION['betPerLine'].'</BetPerPattern>
+        <PatternsBet>'.$_SESSION['lastPick'].'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -548,8 +550,8 @@ class western_bellesCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$patternsBet.'</PatternsBet>
+        <BetPerPattern>'. $_SESSION['betPerLine'].'</BetPerPattern>
+        <PatternsBet>'.$_SESSION['lastPick'].'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -695,8 +697,8 @@ class western_bellesCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$patternsBet.'</PatternsBet>
+        <BetPerPattern>'.$_SESSION['betPerLine'].'</BetPerPattern>
+        <PatternsBet>'.$_SESSION['lastPick'].'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$needBalance.'">
         <Balance name="FREE">'.$needBalance.'</Balance>

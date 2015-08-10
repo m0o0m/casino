@@ -98,6 +98,8 @@ class sumatran_stormParams extends Params {
         array('symbol'=> 's08', 'count'=> 5, 'multiplier'=> 60),
         array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 10),
         array('symbol'=> 's08', 'count'=> 3, 'multiplier'=> 5),
+        array('symbol'=> 'b01', 'count'=> 5, 'multiplier'=> 0),
+        array('symbol'=> 'b02', 'count'=> 5, 'multiplier'=> 0),
 
 
         array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 1000),

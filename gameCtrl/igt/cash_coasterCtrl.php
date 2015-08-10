@@ -21,191 +21,7 @@ class cash_coasterCtrl extends IGTCtrl {
         $betPattern = $this->getBetPattern();
         $selective = $this->getSelective();
 
-        $xml = '<PaytableResponse>
-    <PaytableStatistics description="Cash Coaster 30L 3x3x3x3x3" maxRTP="96.06" minRTP="91.99" name="Cash Coaster" type="Slot" />
-    <PrizeInfo multiplierStrategy="null" name="PrizeInfoLines" strategy="PayBoth">
-        <Prize name="s01">
-				<PrizePay count="5" pph="633600" value="500"/>
-				<PrizePay count="4" pph="30171.4" value="150"/>
-				<PrizePay count="3" pph="2618.2" value="50"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s01" required="false"/>
-			</Prize>
-			<Prize name="s02">
-				<PrizePay count="5" pph="52800" value="300"/>
-				<PrizePay count="4" pph="8336.8" value="75"/>
-				<PrizePay count="3" pph="1440" value="30"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s02" required="false"/>
-			</Prize>
-			<Prize name="s03">
-				<PrizePay count="5" pph="31680" value="250"/>
-				<PrizePay count="4" pph="5002.1" value="60"/>
-				<PrizePay count="3" pph="864" value="20"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s03" required="false"/>
-			</Prize>
-			<Prize name="s04">
-				<PrizePay count="5" pph="10560" value="200"/>
-				<PrizePay count="4" pph="1667.4" value="30"/>
-				<PrizePay count="3" pph="378.9" value="15"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s04" required="false"/>
-			</Prize>
-			<Prize name="s05">
-				<PrizePay count="5" pph="5280" value="200"/>
-				<PrizePay count="4" pph="833.7" value="30"/>
-				<PrizePay count="3" pph="189.5" value="15"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s05" required="false"/>
-			</Prize>
-			<Prize name="s06">
-				<PrizePay count="5" pph="5280" value="150"/>
-				<PrizePay count="4" pph="1104.3" value="25"/>
-				<PrizePay count="3" pph="224.6" value="10"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s06" required="false"/>
-			</Prize>
-			<Prize name="s07">
-				<PrizePay count="5" pph="4224" value="125"/>
-				<PrizePay count="4" pph="938.7" value="25"/>
-				<PrizePay count="3" pph="202.1" value="5"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s07" required="false"/>
-			</Prize>
-			<Prize name="s08">
-				<PrizePay count="5" pph="10560" value="100"/>
-				<PrizePay count="4" pph="1667.4" value="20"/>
-				<PrizePay count="3" pph="378.9" value="5"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s08" required="false"/>
-			</Prize>
-			<Prize name="s09">
-				<PrizePay count="5" pph="5280" value="100"/>
-				<PrizePay count="4" pph="833.7" value="20"/>
-				<PrizePay count="3" pph="189.5" value="5"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s09" required="false"/>
-			</Prize>
-			<Prize name="s10">
-				<PrizePay count="5" pph="5280" value="75"/>
-				<PrizePay count="4" pph="1104.3" value="15"/>
-				<PrizePay count="3" pph="224.6" value="5"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s10" required="false"/>
-			</Prize>
-			<Prize name="s11">
-				<PrizePay count="5" pph="4224" value="75"/>
-				<PrizePay count="4" pph="938.7" value="15"/>
-				<PrizePay count="3" pph="202.1" value="5"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s11" required="false"/>
-			</Prize>
-			<Prize name="any7">
-				<PrizePay count="5" pph="4224" value="40"/>
-				<Symbol id="w01" required="false"/>
-				<Symbol id="s01" required="false"/>
-				<Symbol id="s02" required="false"/>
-				<Symbol id="s03" required="false"/>
-				<Symbol id="s04" required="false"/>
-				<Symbol id="s05" required="false"/>
-			</Prize>
-    </PrizeInfo>
-    <PrizeInfo name="PrizeInfoScatter" strategy="PayAny">
-        <Prize name="b01">
-            <PrizePay count="3" pph="142.4" value="1" />
-            <Symbol id="b01" required="true" />
-        </Prize>
-    </PrizeInfo>
-    <StripInfo name="BaseGame">
-        '.$baseReel.'
-    </StripInfo>
-    <StripInfo name="FreeSpin">
-        '.$freeReel.'
-    </StripInfo>
-    <PickerInfo name="Picker.PickerInfo" verifierStrategy="LayerPicker">
-        <Layer index="0" name="layer0">
-            <Pick cellName="Pick0" name="L0C0R0" />
-            <Pick cellName="Pick1" name="L0C1R0" />
-            <Pick cellName="Pick2" name="L0C2R0" />
-        </Layer>
-        <MinPicks>1</MinPicks>
-        <MaxPicksPerTurn>1</MaxPicksPerTurn>
-        <MaxTotalPicks>50</MaxTotalPicks>
-        <UniquePickRequired>true</UniquePickRequired>
-        <MultiplePicksAllowed>false</MultiplePicksAllowed>
-        <InitialLayer>0</InitialLayer>
-        <InitialPickCount>1</InitialPickCount>
-        <Initial>false</Initial>
-        <RevealLayer>true</RevealLayer>
-        <RevealAll>true</RevealAll>
-        <OutcomeTrigger name="FreeSpin" />
-        <ExitOutcomeTrigger name="FreeSpin" />
-        <Triggers />
-        <Increment>
-            <Strategy>NoIncrement</Strategy>
-            <Triggers />
-        </Increment>
-        <Decrement>
-            <Strategy>PickSize</Strategy>
-            <Count>0</Count>
-            <Triggers />
-        </Decrement>
-    </PickerInfo>
-    <FreeSpinInfo name="FreeSpin.FreeSpinInfo">
-        <Reset>false</Reset>
-        <Increment>
-            <Strategy> HighestOnly </Strategy>
-            <MaxFreeSpins> 200  </MaxFreeSpins>
-            <Triggers>
-                <Trigger freespins="0" name="3 b01" />
-                <!-- The following triggers are for front-end ONLY please do not clone this method -->
-                <Trigger freespins="4" name="4spins" />
-                <Trigger freespins="5" name="5spins" />
-                <Trigger freespins="6" name="6spins" />
-                <Trigger freespins="4" name="4spinsRetrigger" />
-                <Trigger freespins="5" name="5spinsRetrigger" />
-                <Trigger freespins="6" name="6spinsRetrigger" />
-            </Triggers>
-        </Increment>
-        <Decrement>
-            <Strategy> ConstantDecrement </Strategy>
-            <Count> 1  </Count>
-        </Decrement>
-        <OutcomeTrigger name="FreeSpin" />
-    </FreeSpinInfo>
-    <PatternSliderInfo>
-        <PatternInfo max="40" min="40">
-            <Step>40</Step>
-        </PatternInfo>
-        '.$betPattern.'
-    </PatternSliderInfo>
-    <AwardCapInfo name="AwardCapInfo">
-        <TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame" />
-        <CurrencyCap>
-            <CurrencyType>FPY</CurrencyType>
-            <AwardCap>25000000</AwardCap>
-        </CurrencyCap>
-    </AwardCapInfo>
-    <DenominationList>
-        <Denomination softwareId="200-1232-001">1.0</Denomination>
-    </DenominationList>
-    <GameBetInfo>
-        <MinChipValue>1.0</MinChipValue>
-        <MinBet>1.0</MinBet>
-        <MaxBet>30.0</MaxBet>
-    </GameBetInfo>
-    <AutoSpinInfo enable="True">
-        <Step>10</Step>
-        <Step>20</Step>
-        <Step>30</Step>
-        <Step>40</Step>
-        <Step>50</Step>
-    </AutoSpinInfo>
-    <VersionInfo>
-        <GameLogicVersion>2.0</GameLogicVersion>
-    </VersionInfo>
-</PaytableResponse>';
+        $xml = '<PaytableResponse><PaytableStatistics description="Cash Coaster 30L 3x3x3x3x3" maxRTP="96.06" minRTP="91.99" name="Cash Coaster" type="Slot"/><PrizeInfo multiplierStrategy="null" name="PrizeInfoLines" strategy="PayBoth"><Prize name="s01"><PrizePay count="5" pph="633600" value="500"/><PrizePay count="4" pph="30171.4" value="150"/><PrizePay count="3" pph="2618.2" value="50"/><Symbol id="w01" required="false"/><Symbol id="s01" required="false"/></Prize><Prize name="s02"><PrizePay count="5" pph="52800" value="300"/><PrizePay count="4" pph="8336.8" value="75"/><PrizePay count="3" pph="1440" value="30"/><Symbol id="w01" required="false"/><Symbol id="s02" required="false"/></Prize><Prize name="s03"><PrizePay count="5" pph="31680" value="250"/><PrizePay count="4" pph="5002.1" value="60"/><PrizePay count="3" pph="864" value="20"/><Symbol id="w01" required="false"/><Symbol id="s03" required="false"/></Prize><Prize name="s04"><PrizePay count="5" pph="10560" value="200"/><PrizePay count="4" pph="1667.4" value="30"/><PrizePay count="3" pph="378.9" value="15"/><Symbol id="w01" required="false"/><Symbol id="s04" required="false"/></Prize><Prize name="s05"><PrizePay count="5" pph="5280" value="200"/><PrizePay count="4" pph="833.7" value="30"/><PrizePay count="3" pph="189.5" value="15"/><Symbol id="w01" required="false"/><Symbol id="s05" required="false"/></Prize><Prize name="s06"><PrizePay count="5" pph="5280" value="150"/><PrizePay count="4" pph="1104.3" value="25"/><PrizePay count="3" pph="224.6" value="10"/><Symbol id="w01" required="false"/><Symbol id="s06" required="false"/></Prize><Prize name="s07"><PrizePay count="5" pph="4224" value="125"/><PrizePay count="4" pph="938.7" value="25"/><PrizePay count="3" pph="202.1" value="5"/><Symbol id="w01" required="false"/><Symbol id="s07" required="false"/></Prize><Prize name="s08"><PrizePay count="5" pph="10560" value="100"/><PrizePay count="4" pph="1667.4" value="20"/><PrizePay count="3" pph="378.9" value="5"/><Symbol id="w01" required="false"/><Symbol id="s08" required="false"/></Prize><Prize name="s09"><PrizePay count="5" pph="5280" value="100"/><PrizePay count="4" pph="833.7" value="20"/><PrizePay count="3" pph="189.5" value="5"/><Symbol id="w01" required="false"/><Symbol id="s09" required="false"/></Prize><Prize name="s10"><PrizePay count="5" pph="5280" value="75"/><PrizePay count="4" pph="1104.3" value="15"/><PrizePay count="3" pph="224.6" value="5"/><Symbol id="w01" required="false"/><Symbol id="s10" required="false"/></Prize><Prize name="s11"><PrizePay count="5" pph="4224" value="75"/><PrizePay count="4" pph="938.7" value="15"/><PrizePay count="3" pph="202.1" value="5"/><Symbol id="w01" required="false"/><Symbol id="s11" required="false"/></Prize><Prize name="any7"><PrizePay count="5" pph="4224" value="40"/><Symbol id="w01" required="false"/><Symbol id="s01" required="false"/><Symbol id="s02" required="false"/><Symbol id="s03" required="false"/><Symbol id="s04" required="false"/><Symbol id="s05" required="false"/></Prize></PrizeInfo><PrizeInfo name="PrizeInfoScatter" strategy="PayAny"><Prize name="b01"><PrizePay count="3" pph="142.4" value="1"/><Symbol id="b01" required="true"/></Prize></PrizeInfo><StripInfo name="BaseGame"><Strip name="Reel0"><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s06" weight="1"/></Strip><Strip name="Reel1"><Stop symbolID="s10" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/></Strip><Strip name="Reel2"><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/></Strip><Strip name="Reel3"><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/></Strip><Strip name="Reel4"><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s11" weight="1"/></Strip></StripInfo><StripInfo name="FreeSpin"><Strip name="Reel0"><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/></Strip><Strip name="Reel1"><Stop symbolID="s10" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/></Strip><Strip name="Reel2"><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s08" weight="1"/></Strip><Strip name="Reel3"><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s08" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s02" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s01" weight="1"/><Stop symbolID="s06" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s11" weight="1"/><Stop symbolID="s04" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="s05" weight="1"/><Stop symbolID="s10" weight="1"/><Stop symbolID="s07" weight="1"/><Stop symbolID="s03" weight="1"/><Stop symbolID="s09" weight="1"/><Stop symbolID="b01" weight="1"/><Stop symbolID="s08" weight="1"/></Strip><Strip name="Reel4"><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/><Stop symbolID="w01" weight="1"/></Strip></StripInfo><PickerInfo name="Picker.PickerInfo" verifierStrategy="LayerPicker"><Layer index="0" name="layer0"><Pick cellName="Pick0" name="L0C0R0"/><Pick cellName="Pick1" name="L0C1R0"/><Pick cellName="Pick2" name="L0C2R0"/></Layer><MinPicks>1</MinPicks><MaxPicksPerTurn>1</MaxPicksPerTurn><MaxTotalPicks>50</MaxTotalPicks><UniquePickRequired>true</UniquePickRequired><MultiplePicksAllowed>false</MultiplePicksAllowed><InitialLayer>0</InitialLayer><InitialPickCount>1</InitialPickCount><Initial>false</Initial><RevealLayer>true</RevealLayer><RevealAll>true</RevealAll><OutcomeTrigger name="FreeSpin"/><ExitOutcomeTrigger name="FreeSpin"/><Triggers/><Increment><Strategy>NoIncrement</Strategy><Triggers/></Increment><Decrement><Strategy>PickSize</Strategy><Count>0</Count><Triggers/></Decrement></PickerInfo><FreeSpinInfo name="FreeSpin.FreeSpinInfo"><Reset>false</Reset><Increment><Strategy> HighestOnly </Strategy><MaxFreeSpins> 200  </MaxFreeSpins><Triggers><Trigger freespins="0" name="3 b01"/><Trigger freespins="4" name="4spins"/><Trigger freespins="5" name="5spins"/><Trigger freespins="6" name="6spins"/><Trigger freespins="4" name="4spinsRetrigger"/><Trigger freespins="5" name="5spinsRetrigger"/><Trigger freespins="6" name="6spinsRetrigger"/></Triggers></Increment><Decrement><Strategy> ConstantDecrement </Strategy><Count> 1  </Count></Decrement><OutcomeTrigger name="FreeSpin"/></FreeSpinInfo><PatternSliderInfo><PatternInfo max="40" min="40"><Step>40</Step></PatternInfo><BetInfo max="1000" min="1"><Step>1</Step><Step>2</Step><Step>3</Step><Step>5</Step><Step>10</Step><Step>20</Step><Step>30</Step><Step>50</Step><Step>100</Step><Step>200</Step><Step>300</Step><Step>500</Step><Step>1000</Step></BetInfo></PatternSliderInfo><AwardCapInfo name="AwardCapInfo"><TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/><CurrencyCap><CurrencyType>FPY</CurrencyType><AwardCap>25000000</AwardCap></CurrencyCap></AwardCapInfo><DenominationList><Denomination softwareId="200-1232-001">1.0</Denomination></DenominationList><GameBetInfo><MinChipValue>1.0</MinChipValue><MinBet>1.0</MinBet><MaxBet>30.0</MaxBet></GameBetInfo><AutoSpinInfo enable="True"><Step>10</Step><Step>20</Step><Step>30</Step><Step>40</Step><Step>50</Step></AutoSpinInfo><VersionInfo><GameLogicVersion>2.0</GameLogicVersion></VersionInfo></PaytableResponse>';
 
         $this->outXML($xml);
     }
@@ -528,11 +344,18 @@ class cash_coasterCtrl extends IGTCtrl {
     protected function showSpinReport($report, $totalWin) {
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlight = $this->getHighlight($report['winLines'], 'BaseGame.Lines', 1);
-        $display = $this->getDisplay($report, true);
+        $display = $this->getDisplay($report, true, 'BaseGame', 'Reels', 'startFullRows');
+        $display2 = $this->getDisplay($report, true, 'BaseGame', 'TransformedReels');
         $winLines = $this->getWinLines($report);
         $betPerLine = $report['bet'] / $report['linesCount'];
 
+        $mystery = '<PopulationOutcome name="BaseGame.MysteryFeature" stage="BaseGame">
+        <Entry name="MysteryFeature" stripIndex="0">
+            <Cell name="L0C5R0" stripIndex="0">inactive</Cell>
+        </Entry>
+    </PopulationOutcome>';
         if(!empty($report['bonusData'])) {
+            $mystery = '<PopulationOutcome name="BaseGame.MysteryFeature" stage="BaseGame">';
             $transform = '<HighlightOutcome name="BaseGame.TransformedReels" type="">';
             $trigger = '<TriggerOutcome component="" name="MysteryTrigger" stage="">';
             foreach($report['bonusData']['reels'] as $r) {
@@ -545,6 +368,10 @@ class cash_coasterCtrl extends IGTCtrl {
             <Cell name="L0C0R4" type="" />
         </Highlight>';
                     $trigger .= '<Trigger name="CoasterReel1" priority="0" stageConnector="" />';
+
+                    $mystery .= '<Entry name="MysteryFeature" stripIndex="1">
+            <Cell name="L0C5R0" stripIndex="1">CoasterReel1</Cell>
+        </Entry>';
                 }
                 if($r == 4) {
                     $transform .= '<Highlight name="CoasterReel5" type="">
@@ -554,15 +381,20 @@ class cash_coasterCtrl extends IGTCtrl {
             <Cell name="L0C4R3" type="" />
             <Cell name="L0C4R4" type="" />
         </Highlight>';
-                    $trigger .= '<Trigger name="CoasterReel5" priority="0" stageConnector="" />';
+                    $trigger .= '<Trigger name="CoasterReel5" priority="10" stageConnector="" />';
+
+                    $mystery .= '<Entry name="MysteryFeature" stripIndex="2">
+            <Cell name="L0C5R0" stripIndex="2">CoasterReel5</Cell>
+        </Entry>';
                 }
             }
             $transform .= '</HighlightOutcome>';
             $trigger .= '</TriggerOutcome>';
+            $mystery .= '</PopulationOutcome>';
         }
         else {
             $transform = '<HighlightOutcome name="BaseGame.TransformedReels" type="" />';
-            $trigger = '';
+            $trigger = '<TriggerOutcome component="" name="MysteryTrigger" stage="" />';
         }
 
 
@@ -578,9 +410,69 @@ class cash_coasterCtrl extends IGTCtrl {
         <Payout>'.$totalWin.'</Payout>
     </OutcomeDetail>
     <HighlightOutcome name="BaseGame.Scatter" type=""/>
-    '.$highlight.$transform.$trigger.'
-
-    '.$display.'
+    '.$transform.$highlight.'
+    <TriggerOutcome component="" name="Picker" stage="" />
+    '.$trigger.'
+    <AwardCapOutcome name="AwardCap">
+        <AwardCapExceeded>false</AwardCapExceeded>
+    </AwardCapOutcome>
+    <FreeSpinOutcome name="">
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <TotalAwarded>0</TotalAwarded>
+        <Count>0</Count>
+        <Countdown>0</Countdown>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxAwarded>false</MaxAwarded>
+        <MaxSpinsHit>false</MaxSpinsHit>
+    </FreeSpinOutcome>
+    '.$display2.$display.$mystery.'
+    <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
+        <Entry name="Reel0" stripIndex="2">
+            <Cell name="L0C0R0" stripIndex="0">w01</Cell>
+            <Cell name="L0C0R1" stripIndex="1">w01</Cell>
+            <Cell name="L0C0R2" stripIndex="2">w01</Cell>
+            <Cell name="L0C0R3" stripIndex="3">w01</Cell>
+            <Cell name="L0C0R4" stripIndex="4">w01</Cell>
+        </Entry>
+        <Entry name="Reel1" stripIndex="6">
+            <Cell name="L0C1R0" stripIndex="4">s11</Cell>
+            <Cell name="L0C1R1" stripIndex="5">s11</Cell>
+            <Cell name="L0C1R2" stripIndex="6">s01</Cell>
+            <Cell name="L0C1R3" stripIndex="7">s08</Cell>
+            <Cell name="L0C1R4" stripIndex="8">s03</Cell>
+        </Entry>
+        <Entry name="Reel2" stripIndex="20">
+            <Cell name="L0C2R0" stripIndex="18">s03</Cell>
+            <Cell name="L0C2R1" stripIndex="19">s07</Cell>
+            <Cell name="L0C2R2" stripIndex="20">s06</Cell>
+            <Cell name="L0C2R3" stripIndex="21">b01</Cell>
+            <Cell name="L0C2R4" stripIndex="22">s09</Cell>
+        </Entry>
+        <Entry name="Reel3" stripIndex="6">
+            <Cell name="L0C3R0" stripIndex="4">s11</Cell>
+            <Cell name="L0C3R1" stripIndex="5">s05</Cell>
+            <Cell name="L0C3R2" stripIndex="6">s09</Cell>
+            <Cell name="L0C3R3" stripIndex="7">s10</Cell>
+            <Cell name="L0C3R4" stripIndex="8">s01</Cell>
+        </Entry>
+        <Entry name="Reel4" stripIndex="2">
+            <Cell name="L0C4R0" stripIndex="0">w01</Cell>
+            <Cell name="L0C4R1" stripIndex="1">w01</Cell>
+            <Cell name="L0C4R2" stripIndex="2">w01</Cell>
+            <Cell name="L0C4R3" stripIndex="3">w01</Cell>
+            <Cell name="L0C4R4" stripIndex="4">w01</Cell>
+        </Entry>
+    </PopulationOutcome>
+    <PickerSummaryOutcome name="">
+        <PicksRemaining>0</PicksRemaining>
+        <PickCount>0</PickCount>
+        <CurrentLayer index="0" name="layer0" />
+        <InitAwarded>0</InitAwarded>
+        <Awarded>0</Awarded>
+        <IncrementTriggered>false</IncrementTriggered>
+        <MaxPicksAwarded>false</MaxPicksAwarded>
+    </PickerSummaryOutcome>
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>
     '.$winLines.'
     <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$totalWin.'" stage="" totalPay="'.$totalWin.'" type="">

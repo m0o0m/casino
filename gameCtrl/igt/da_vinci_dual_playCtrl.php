@@ -430,7 +430,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         $pick = $_SESSION['lastPick'];
 
         $this->gameParams->winLines = $this->gameParams->winLinesFree;
-        $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->slot = new Slot($this->gameParams, 60, $stake, 6/4);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(6,6,6,6,6));
         $this->slot->rows = 6;
 
@@ -462,7 +462,6 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         $pick = $_SESSION['lastPick'];
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
-        $this->slot->createCustomReels($this->gameParams->reels[0], array(6,6,6,6,6));
         $this->slot->rows = 6;
         $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reels'])));
 
@@ -509,7 +508,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         $pick = $_SESSION['lastPick'];
 
         $this->gameParams->winLines = $this->gameParams->winLinesFree;
-        $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->slot = new Slot($this->gameParams, 60, $stake, 6/4);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(6,6,6,6,6));
         $this->slot->rows = 6;
         $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reelsFree'])));
@@ -553,7 +552,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             if (strpos($url, 'bonus=fs') > 0) {
                 $bonus = array(
                     'type' => 'setReelsOffsets',
-                    'offsets' => array(7,24,3,5,10),
+                    'offsets' => array(8,25,3,5,10),
                 );
             }
         }
@@ -570,17 +569,18 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             $_SESSION['state'] = 'TUMBLE';
         }
 
+        $startFS = false;
+        $winLines = false;
         foreach($report['winLines'] as $w) {
             if($w['alias'] == 'b01') {
                 $_SESSION['state'] = 'FREE';
                 $report['type'] = 'FREE';
+                $startFS = true;
+            }
+            else {
+                $winLines = true;
             }
         }
-
-        if($report['type'] !== 'FREE') {
-                //$respin = true;
-        }
-
 
         return array(
             'totalWin' => $totalWin,
@@ -628,7 +628,9 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+            sort($_SESSION['avalancheOffsets']);
             $_SESSION['totalWin'] = $totalWin;
+            $_SESSION['startBalance'] = $balance;
             $_SESSION['startSpinBalance'] = $balance;
 
             $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
@@ -718,6 +720,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+            sort($_SESSION['avalancheOffsets']);
 
             $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
             $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
@@ -780,14 +783,9 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
 
         $_SESSION['baseWinLinesWin'] = $_SESSION['startSpinBalance'];
 
-        $_SESSION['startSpinBalance'] = $balance;
-
         $_SESSION['fsTotalWin'] = 0;
 
         $_SESSION['startFreeBalance'] = $this->getBalance();
-        $_SESSION['startBalance'] = $this->getBalance() - $report['bet'];
-
-        $_SESSION['startSpinBalance'] = $balance;
 
 
 
@@ -803,6 +801,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             }
         }
         $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+        sort($_SESSION['avalancheOffsets']);
 
 
 
@@ -936,6 +935,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             }
         }
         $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+        sort($_SESSION['avalancheOffsets']);
 
 
 
@@ -1100,6 +1100,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsetsFree'] = array_unique($_SESSION['avalancheOffsetsFree']);
+            sort($_SESSION['avalancheOffsetsFree']);
             $_SESSION['totalWin'] = $totalWin;
             $_SESSION['startBalance'] = $balance;
         }
@@ -1148,8 +1149,8 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <BetPerPattern>'.$this->slot->betOnLine.'</BetPerPattern>
+        <PatternsBet>40</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$needBalance.'">
         <Balance name="FREE">'.$needBalance.'</Balance>
@@ -1221,6 +1222,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsetsFree'] = array_unique($_SESSION['avalancheOffsetsFree']);
+            sort($_SESSION['avalancheOffsetsFree']);
         }
         else {
             if($_SESSION['fsLeft'] == 0) {
@@ -1244,6 +1246,8 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
 
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
         $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+
+        $gameTotal = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -1278,16 +1282,16 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0"/>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <BetPerPattern>'.$this->slot->betOnLine.'</BetPerPattern>
+        <PatternsBet>40</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>

@@ -136,6 +136,16 @@ class Slot {
     public $betOnLine;
 
     /**
+     * @var array Стартовые строки слота до применения бонусов
+     */
+    public $startRows;
+
+    /**
+     * @var array Стартовые строки слота до применения бонусов в расширенном виде(+1 строка снизу и сверху)
+     */
+    public $startFullRows;
+
+    /**
      * Инициализация слота
      *
      * Получение выигрышных линий в зависимости от количества играющих линий
@@ -294,6 +304,7 @@ class Slot {
         }
 
         $this->startRows = $this->getRows();
+        $this->startFullRows = $this->getFullRows();
 
         $this->spinBonus = $bonus;
 
@@ -306,6 +317,13 @@ class Slot {
      * @return array Полный репорт спина
      */
     public function getReport() {
+        if($this->params->extraLine) {
+            $extraLines = $this->getExtraLine($this->params->extraLineConfig);
+            foreach($extraLines as $e) {
+                $this->winLines[] = $e;
+            }
+        }
+
         $this->checkBonus();
 
         $this->drawID++;
@@ -340,14 +358,6 @@ class Slot {
      * @return array
      */
     public function makeReport() {
-
-        if($this->params->extraLine) {
-            $extraLines = $this->getExtraLine($this->params->extraLineConfig);
-            foreach($extraLines as $e) {
-                $this->winLines[] = $e;
-            }
-        }
-
         foreach($this->winSymbols as $winLine) {
             // Номер символа
 
@@ -465,6 +475,7 @@ class Slot {
             'rows' => $this->getRows(),
             'fullRows' => $this->getFullRows(),
             'startRows' => $this->startRows,
+            'startFullRows' => $this->startFullRows,
             'bonusData' => $this->bonusData,
             'double' => $this->double,
             'bet' => $this->bet,

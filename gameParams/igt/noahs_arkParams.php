@@ -67,6 +67,8 @@ class noahs_arkParams extends Params {
 
     public $doubleCount = true;
 
+    public $doubleCountScatter = array(52);
+
     public $doubleCountConfig = array(
         '31' => array(1,31),
         '32' => array(2,32),

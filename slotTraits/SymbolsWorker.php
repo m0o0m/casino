@@ -166,4 +166,15 @@ trait SymbolsWorker {
 
         return $offset;
     }
+
+    public function getSymbolByOffset($offset) {
+        $reelsCount = count($this->params->reelConfig);
+
+        $c = ($offset % $reelsCount);
+        $r = floor($offset / $reelsCount);
+
+        $symbol = $this->reels[$c]->getVisibleSymbol($r);
+
+        return $symbol;
+    }
 }

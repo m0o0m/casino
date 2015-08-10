@@ -651,7 +651,10 @@ class rich_girlCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'] - $_SESSION['scatterWin'];
 
-        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+        $gameTotal = $_SESSION['fsTotalWin'];
+        if($gameTotal < 0) {
+            $gameTotal = 0;
+        }
 
         if($_SESSION['fsPlayed'] > $_SESSION['maxSpin']) {
             $_SESSION['maxSpin'] = $_SESSION['fsPlayed'];

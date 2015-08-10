@@ -819,8 +819,10 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+            sort($_SESSION['avalancheOffsets']);
             $_SESSION['totalWin'] = $totalWin;
             $_SESSION['startSpinBalance'] = $balance;
+            $_SESSION['startBalance'] = $balance;
 
             $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
             $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
@@ -910,7 +912,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
-
+            sort($_SESSION['avalancheOffsets']);
             $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
             $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
         }
@@ -973,16 +975,10 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
 
         $_SESSION['baseWinLinesWin'] = $_SESSION['startSpinBalance'];
 
-        $_SESSION['startSpinBalance'] = $balance;
 
         $_SESSION['fsTotalWin'] = 0;
 
         $_SESSION['startFreeBalance'] = $this->getBalance();
-        $_SESSION['startBalance'] = $this->getBalance() - $report['bet'];
-
-        $_SESSION['startSpinBalance'] = $balance;
-
-
 
         $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
         $_SESSION['avalancheOffsets'] = array();
@@ -996,6 +992,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
             }
         }
         $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+        sort($_SESSION['avalancheOffsets']);
 
 
 
@@ -1134,6 +1131,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
             }
         }
         $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
+        sort($_SESSION['avalancheOffsets']);
 
 
 
@@ -1307,6 +1305,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsetsFree'] = array_unique($_SESSION['avalancheOffsetsFree']);
+            sort($_SESSION['avalancheOffsetsFree']);
             $_SESSION['totalWin'] = $totalWin;
             $_SESSION['startBalance'] = $balance;
         }
@@ -1433,6 +1432,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
                 }
             }
             $_SESSION['avalancheOffsetsFree'] = array_unique($_SESSION['avalancheOffsetsFree']);
+            sort($_SESSION['avalancheOffsetsFree']);
         }
         else {
             if($_SESSION['fsLeft'] == 0) {
@@ -1453,6 +1453,8 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         }
 
         $fsWin = $_SESSION['fsTotalWin'];
+
+        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
 
         $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
 
@@ -1493,8 +1495,8 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>
     </PrizeOutcome>
-    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$_SESSION['fsTotalWin'].'" stage="" totalPay="'.$_SESSION['fsTotalWin'].'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0"/>
+    <PrizeOutcome multiplier="1" name="Game.Total" pay="'.$gameTotal.'" stage="" totalPay="'.$gameTotal.'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$gameTotal.'" payName="" symbolCount="0" totalPay="'.$gameTotal.'" ways="0"/>
     </PrizeOutcome>
     <TransactionId>A2210-14264043293637</TransactionId>
     <ActionInput>

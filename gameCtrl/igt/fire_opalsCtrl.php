@@ -415,34 +415,34 @@ class fire_opalsCtrl extends IGTCtrl {
         </Entry>
     </PopulationOutcome>
     <PopulationOutcome name="FreeSpin.Reels" stage="FreeSpin">
-        <Entry name="Reel0" stripIndex="75">
-            <Cell name="L0C0R0" stripIndex="75">s05</Cell>
-            <Cell name="L0C0R1" stripIndex="76">s04</Cell>
-            <Cell name="L0C0R2" stripIndex="77">s02</Cell>
+        <Entry name="Reel0" stripIndex="2">
+            <Cell name="L0C0R0" stripIndex="2">s11</Cell>
+            <Cell name="L0C0R1" stripIndex="3">s11</Cell>
+            <Cell name="L0C0R2" stripIndex="4">b02</Cell>
         </Entry>
-        <Entry name="Reel1" stripIndex="15">
-            <Cell name="L0C1R0" stripIndex="15">s08</Cell>
-            <Cell name="L0C1R1" stripIndex="16">s01</Cell>
-            <Cell name="L0C1R2" stripIndex="17">s06</Cell>
-            <Cell name="L0C1R3" stripIndex="18">s05</Cell>
+        <Entry name="Reel1" stripIndex="168">
+            <Cell name="L0C1R0" stripIndex="168">w02</Cell>
+            <Cell name="L0C1R1" stripIndex="169">w02</Cell>
+            <Cell name="L0C1R2" stripIndex="170">w02</Cell>
+            <Cell name="L0C1R3" stripIndex="171">s13</Cell>
         </Entry>
-        <Entry name="Reel2" stripIndex="12">
-            <Cell name="L0C2R0" stripIndex="12">s02</Cell>
-            <Cell name="L0C2R1" stripIndex="13">s02</Cell>
-            <Cell name="L0C2R2" stripIndex="14">b01</Cell>
-            <Cell name="L0C2R3" stripIndex="15">s09</Cell>
-            <Cell name="L0C2R4" stripIndex="16">s02</Cell>
+        <Entry name="Reel2" stripIndex="5">
+            <Cell name="L0C2R0" stripIndex="5">s12</Cell>
+            <Cell name="L0C2R1" stripIndex="6">s14</Cell>
+            <Cell name="L0C2R2" stripIndex="7">s16</Cell>
+            <Cell name="L0C2R3" stripIndex="8">s17</Cell>
+            <Cell name="L0C2R4" stripIndex="9">b02</Cell>
         </Entry>
-        <Entry name="Reel3" stripIndex="82">
-            <Cell name="L0C3R0" stripIndex="82">w01</Cell>
-            <Cell name="L0C3R1" stripIndex="83">w01</Cell>
-            <Cell name="L0C3R2" stripIndex="84">s06</Cell>
-            <Cell name="L0C3R3" stripIndex="85">s04</Cell>
+        <Entry name="Reel3" stripIndex="14">
+            <Cell name="L0C3R0" stripIndex="14">s18</Cell>
+            <Cell name="L0C3R1" stripIndex="15">s13</Cell>
+            <Cell name="L0C3R2" stripIndex="16">s14</Cell>
+            <Cell name="L0C3R3" stripIndex="17">s10</Cell>
         </Entry>
-        <Entry name="Reel4" stripIndex="155">
-            <Cell name="L0C4R0" stripIndex="155">s09</Cell>
-            <Cell name="L0C4R1" stripIndex="156">s03</Cell>
-            <Cell name="L0C4R2" stripIndex="157">s08</Cell>
+        <Entry name="Reel4" stripIndex="10">
+            <Cell name="L0C4R0" stripIndex="10">s15</Cell>
+            <Cell name="L0C4R1" stripIndex="11">s18</Cell>
+            <Cell name="L0C4R2" stripIndex="12">s17</Cell>
         </Entry>
     </PopulationOutcome>
     <PatternSliderInput>

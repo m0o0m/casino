@@ -103,6 +103,8 @@ class day_of_the_deadCtrl extends IGTCtrl {
 
         $fs = '';
         if($_SESSION['state'] == 'FREE') {
+            $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
+
             $fs = '<FreeSpinOutcome name="">
         <InitAwarded>8</InitAwarded>
         <Awarded>0</Awarded>
@@ -122,6 +124,8 @@ class day_of_the_deadCtrl extends IGTCtrl {
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern" />
     <PrizeOutcome multiplier="1" name="BaseGame.RightLeftMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />
     <PrizeOutcome multiplier="1" name="BaseGame.LeftRightMultiWay" pay="0" stage="" totalPay="0" type="Pattern" />';
+
+            $fs .= $baseScatter;
         }
 
         $patternsBet = 50;

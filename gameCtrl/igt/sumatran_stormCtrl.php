@@ -345,7 +345,7 @@ class sumatran_stormCtrl extends IGTCtrl {
                 case 'fs':
                     $bonus = array(
                         'type' => 'setReelsOffsets',
-                        'offsets' => array(5,12,2,34,19),
+                        'offsets' => array(5,10,2,34,19),
                     );
                     break;
                 case 'scatter':
@@ -363,20 +363,22 @@ class sumatran_stormCtrl extends IGTCtrl {
 
         $report['scattersReport'] = $this->slot->getScattersCount();
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b01', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b01', 1) !== false &&
-                $r2 = $this->slot->checkSymbolOnReelAnyPosition('b01', 2) !== false &&
-                    $r3 = $this->slot->checkSymbolOnReelAnyPosition('b01', 3) !== false &&
-                        $r4 = $this->slot->checkSymbolOnReelAnyPosition('b01', 4) !== false   ) {
-            $report['type'] = 'FREE';
+        $fiveCount = 0;
+        $noCount = 0;
+        foreach($report['winLines'] as $w) {
+            if(($w['alias'] == 'b01' || $w['alias'] == 'b02') && $w['count'] == 5) {
+                $fiveCount++;
+            }
+            else {
+                $noCount++;
+            }
         }
 
-        if( $r0 = $this->slot->checkSymbolOnReelAnyPosition('b02', 0) !== false &&
-            $r1 = $this->slot->checkSymbolOnReelAnyPosition('b02', 1) !== false &&
-                $r2 = $this->slot->checkSymbolOnReelAnyPosition('b02', 2) !== false &&
-                    $r3 = $this->slot->checkSymbolOnReelAnyPosition('b02', 3) !== false &&
-                        $r4 = $this->slot->checkSymbolOnReelAnyPosition('b02', 4) !== false   ) {
+        if($fiveCount > 0) {
+            $_SESSION['initFS'] = 5 * $fiveCount;
+            $_SESSION['fiveCount'] = $fiveCount;
             $report['type'] = 'FREE';
+            $report['scattersReport']['totalWin'] = 0;
         }
 
         $scatterPayReport = $this->slot->getSymbolAnyCount('s09');
@@ -479,7 +481,9 @@ class sumatran_stormCtrl extends IGTCtrl {
 
 
     protected function showStartFreeSpinReport($report, $totalWin) {
-        $report['scattersReport']['totalWin'] = 0;
+        $_SESSION['fsTotalWin'] = 0;
+        $_SESSION['scatterWin'] = $report['betOnLine'] * $_SESSION['fiveCount'] * 50;
+
         $balance = $this->getBalance() - $report['bet'] + $totalWin;
         $highlightLeft = $this->getLeftHighlight($report['winLines']);
         $highlightRight = $this->getRightHighlight($report['winLines']);
@@ -495,8 +499,7 @@ class sumatran_stormCtrl extends IGTCtrl {
 
         $_SESSION['startBalance'] = $balance-$totalWin;
 
-        $_SESSION['fsTotalWin'] = $report['scattersReport']['totalWin'];
-        $_SESSION['scatterWin'] = $report['scattersReport']['totalWin'];
+
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -518,11 +521,11 @@ class sumatran_stormCtrl extends IGTCtrl {
 
     '.$display.$display2.'
     <FreeSpinOutcome name="">
-        <InitAwarded>5</InitAwarded>
-        <Awarded>5</Awarded>
-        <TotalAwarded>5</TotalAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
+        <Awarded>'.$_SESSION['initFS'].'</Awarded>
+        <TotalAwarded>'.$_SESSION['initFS'].'</TotalAwarded>
         <Count>0</Count>
-        <Countdown>5</Countdown>
+        <Countdown>'.$_SESSION['initFS'].'</Countdown>
         <IncrementTriggered>true</IncrementTriggered>
         <MaxAwarded>false</MaxAwarded>
         <MaxSpinsHit>false</MaxSpinsHit>
@@ -548,8 +551,8 @@ class sumatran_stormCtrl extends IGTCtrl {
         $this->outXML($xml);
 
         $_SESSION['state'] = 'FREE';
-        $_SESSION['totalAwarded'] = 5;
-        $_SESSION['fsLeft'] = 5;
+        $_SESSION['totalAwarded'] = $_SESSION['initFS'];
+        $_SESSION['fsLeft'] = $_SESSION['initFS'];
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
         $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlightLeft.$highlightRight.$leftWinLines.$rightWinLines, 9));
@@ -569,9 +572,9 @@ class sumatran_stormCtrl extends IGTCtrl {
         $scattersPay = '';
         if($report['scattersReport']['count'] > 2) {
             if($report['type'] == 'FREE') {
-                $_SESSION['totalAwarded'] += 5;
-                $_SESSION['fsLeft'] += 5;
-                $awarded = 5;
+                $_SESSION['totalAwarded'] += 5 * $_SESSION['fiveCount'];
+                $_SESSION['fsLeft'] += 5 * $_SESSION['fiveCount'];
+                $awarded = 5 * $_SESSION['fiveCount'];
                 $report['scattersReport']['totalWin'] = 0;
                 $scattersHighlight = $this->getScattersHighlight($report['scattersReport']['offsets'], 'FreeSpin.Scatter', 'b02');
                 $scattersPay = $this->getScattersPay($report['scattersReport'], 'FreeSpin.Scatter');
@@ -613,7 +616,7 @@ class sumatran_stormCtrl extends IGTCtrl {
 
         $fsWin = $_SESSION['fsTotalWin'];
 
-        $gameTotal = $_SESSION['baseWinLinesWin'] + $_SESSION['fsTotalWin'];
+        $gameTotal = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
         $xml = '<GameLogicResponse>
     <OutcomeDetail>
@@ -632,7 +635,7 @@ class sumatran_stormCtrl extends IGTCtrl {
         <AwardCapExceeded>false</AwardCapExceeded>
     </AwardCapOutcome>
     <FreeSpinOutcome name="">
-        <InitAwarded>5</InitAwarded>
+        <InitAwarded>'.$_SESSION['initFS'].'</InitAwarded>
         <Awarded>'.$awarded.'</Awarded>
         <TotalAwarded>'.$_SESSION['totalAwarded'].'</TotalAwarded>
         <Count>'.$_SESSION['fsPlayed'].'</Count>
@@ -678,6 +681,8 @@ class sumatran_stormCtrl extends IGTCtrl {
             unset($_SESSION['fsTotalWin']);
             unset($_SESSION['startBalance']);
             unset($_SESSION['baseDisplay']);
+            unset($_SESSION['initFS']);
+            unset($_SESSION['fiveCount']);
             unset($_SESSION['baseWinLinesWin']);
         }
     }
