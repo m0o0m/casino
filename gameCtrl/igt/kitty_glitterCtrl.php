@@ -489,7 +489,7 @@ class kitty_glitterCtrl extends IGTCtrl {
         $_SESSION['totalAwarded'] = 15;
         $_SESSION['fsLeft'] = 15;
         $_SESSION['fsPlayed'] = 0;
-        $_SESSION['wildLevel'] = 12;
+        $_SESSION['wildLevel'] = 0;
         $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
         $_SESSION['baseScatter'] = base64_encode(gzcompress($scattersHighlight.$highlight.$winLines, 9));
     }

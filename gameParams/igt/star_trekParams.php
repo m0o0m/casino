@@ -42,13 +42,21 @@ class star_trekParams extends Params {
     public $reelConfig = array(3,3,3,3,3);
 
     public $symbols = array(
+        // main scatter
         'b01' => array(51),
+        // kirk
         'b02' => array(52),
+        // spock
         'b03' => array(53),
+        // Uhura
         'b04' => array(54),
+        // Scotty
         'b05' => array(55),
+        // KIRK
         's01' => array(1),
+        // SPOCK
         's02' => array(2),
+        // UHURA
         's03' => array(3),
         's04' => array(4),
         's05' => array(5),
@@ -56,33 +64,54 @@ class star_trekParams extends Params {
         's07' => array(7),
         's08' => array(8),
         's09' => array(9),
+        // SPOCK BONUS DOUBLE KIRK
         's10' => array(10),
+        // SPOCK BONUS SPOCK
         's11' => array(11),
+        // SPOCK BONUS SPOCK & UHURA
         's12' => array(12),
+        // SPOCK BONUS OLD SPOCK
         's13' => array(13),
+        // KIRK BONUS KIRK
         's14' => array(14),
+        // KIRK BONUS SPOCK
         's15' => array(15),
+        // KIRK BONUS KITAETS
         's16' => array(16),
+        // KIRK BONUS SHIP
         's17' => array(17),
+        // UHURA BONUS GREEN LADY
         's18' => array(18),
+        // SCOTTY BONUS SCOTTY RED
         's19' => array(19),
+        // SCOTTY BONUS SCOTTY
         's20' => array(20),
+        // SCOTTY BONUS EARTH
         's21' => array(21),
         'w01' => array(0),
         'w02' => array(102),
         'w03' => array(103),
         'w04' => array(104),
+        // KIRK BONUS KiRK&SPOCK
         'w05' => array(105),
+        // UHURA BONUS SCATTER
         'w06' => array(106),
         'w07' => array(107),
     );
     // Вайлд
-    public $wild = array(0);
+    public $wild = array(0,102,103,104,106,107);
     // Скаттер
-    public $scatter = array(10);
+    public $scatter = array(51,52,53,54,55);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
+    );
+
+
+    public $collectingPay = true;
+    public $collectingSymbols = array(
+        array(105,14),
+        array(105,15),
     );
 
     public $winLines = array(
@@ -164,5 +193,62 @@ class star_trekParams extends Params {
         array('symbol'=> 's09', 'count'=> 3, 'multiplier'=> 5),
         array('symbol'=> 's09', 'count'=> 4, 'multiplier'=> 20),
         array('symbol'=> 's09', 'count'=> 5, 'multiplier'=> 100),
+
+        // KIRK BONUS PAY
+
+        array('symbol'=> 's14', 'count'=> 3, 'multiplier'=> 50),
+        array('symbol'=> 's14', 'count'=> 4, 'multiplier'=> 300),
+        array('symbol'=> 's14', 'count'=> 5, 'multiplier'=> 1000),
+
+        array('symbol'=> 's15', 'count'=> 3, 'multiplier'=> 40),
+        array('symbol'=> 's15', 'count'=> 4, 'multiplier'=> 200),
+        array('symbol'=> 's15', 'count'=> 5, 'multiplier'=> 750),
+
+        array('symbol'=> 's16', 'count'=> 3, 'multiplier'=> 30),
+        array('symbol'=> 's16', 'count'=> 4, 'multiplier'=> 125),
+        array('symbol'=> 's16', 'count'=> 5, 'multiplier'=> 400),
+
+        array('symbol'=> 's17', 'count'=> 3, 'multiplier'=> 20),
+        array('symbol'=> 's17', 'count'=> 4, 'multiplier'=> 100),
+        array('symbol'=> 's17', 'count'=> 5, 'multiplier'=> 300),
+
+        // SPOCK BONUS PAY
+
+        array('symbol'=> 's10', 'count'=> 3, 'multiplier'=> 100),
+        array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 600),
+        array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 2000),
+
+        array('symbol'=> 's11', 'count'=> 3, 'multiplier'=> 40),
+        array('symbol'=> 's11', 'count'=> 4, 'multiplier'=> 200),
+        array('symbol'=> 's11', 'count'=> 5, 'multiplier'=> 750),
+
+        array('symbol'=> 's12', 'count'=> 3, 'multiplier'=> 30),
+        array('symbol'=> 's12', 'count'=> 4, 'multiplier'=> 125),
+        array('symbol'=> 's12', 'count'=> 5, 'multiplier'=> 400),
+
+        array('symbol'=> 's13', 'count'=> 3, 'multiplier'=> 20),
+        array('symbol'=> 's13', 'count'=> 4, 'multiplier'=> 100),
+        array('symbol'=> 's13', 'count'=> 5, 'multiplier'=> 300),
+
+        // UHURA BONUS PAY
+
+        array('symbol'=> 's18', 'count'=> 3, 'multiplier'=> 20),
+        array('symbol'=> 's18', 'count'=> 4, 'multiplier'=> 100),
+        array('symbol'=> 's18', 'count'=> 5, 'multiplier'=> 300),
+
+        // SCOTTY BONUS PAY
+
+        array('symbol'=> 's19', 'count'=> 3, 'multiplier'=> 40),
+        array('symbol'=> 's19', 'count'=> 4, 'multiplier'=> 200),
+        array('symbol'=> 's19', 'count'=> 5, 'multiplier'=> 750),
+
+        array('symbol'=> 's20', 'count'=> 3, 'multiplier'=> 30),
+        array('symbol'=> 's20', 'count'=> 4, 'multiplier'=> 125),
+        array('symbol'=> 's20', 'count'=> 5, 'multiplier'=> 400),
+
+        array('symbol'=> 's21', 'count'=> 3, 'multiplier'=> 20),
+        array('symbol'=> 's21', 'count'=> 4, 'multiplier'=> 100),
+        array('symbol'=> 's21', 'count'=> 5, 'multiplier'=> 300),
+
     );
 }

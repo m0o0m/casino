@@ -48,6 +48,9 @@ class sumatran_stormParams extends Params {
     public $wild = array(0, 102);
     // Скаттер
     public $scatter = array(51,52);
+
+    public $symbolWithoutWild = array(51, 52);
+
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '5' => 50,
