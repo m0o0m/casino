@@ -100,7 +100,7 @@ class Ways {
                         $winLines[] = array(
                             'line' => $p['offsets'],
                             'count' => count($p['offsets']),
-                            'id' => implode('', $p['offsets']),
+                            'id' => implode('_', $p['offsets']),
                             'double' => $p['double'],
                             'withWild' => $p['withWild'],
                             'collecting' => $p['collecting'],

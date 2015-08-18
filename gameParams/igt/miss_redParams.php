@@ -22,22 +22,45 @@ class miss_redParams extends Params {
 
     public $symbols = array(
         'b01' => array(51),
+        // баба
         's01' => array(1),
+        // Волк
         's02' => array(2),
+        // Бабушка
         's03' => array(3),
+        // Мужик
         's04' => array(4),
+        // Кролик
         's05' => array(5),
+        // Белка
         's06' => array(6),
+        // Гриб
         's07' => array(7),
+        // Шишка
         's08' => array(8),
+        // Клубника
         's09' => array(9),
+        // Цветок
         's10' => array(10),
+        // Wolf+LittleRed
         'w01' => array(0),
+        'w02' => array(20),
+
+        'e01' => array(11),
+        'e02' => array(12),
+    );
+
+    public $collectingPay = true;
+    public $collectingSymbols = array(
+        array(0,1,11),
+        array(0,2,12),
+        array(0,20),
+
     );
     // Вайлд
-    public $wild = array(0);
+    public $wild = array(999);
     // Скаттер
-    public $scatter = array(99);
+    public $scatter = array(51);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
         '3' => 3,
@@ -47,7 +70,7 @@ class miss_redParams extends Params {
 
     );
 
-    public $winLineType = 'waysLeftRight';
+    public $winLineType = 'waysLeftRightMiddle';
     public $minWinCount = 3;
 
     public $payOnlyHighter = true;
@@ -87,7 +110,34 @@ class miss_redParams extends Params {
         array('symbol'=> 's02', 'count'=> 5, 'multiplier'=> 40),
         array('symbol'=> 's02', 'count'=> 4, 'multiplier'=> 12),
         array('symbol'=> 's02', 'count'=> 3, 'multiplier'=> 5),
+    );
 
+    public $winPayFree = array(
+        array('symbol'=> 's03', 'count'=> 5, 'multiplier'=> 150),
+        array('symbol'=> 's03', 'count'=> 4, 'multiplier'=> 75),
+        array('symbol'=> 's03', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's04', 'count'=> 5, 'multiplier'=> 125),
+        array('symbol'=> 's04', 'count'=> 4, 'multiplier'=> 75),
+        array('symbol'=> 's04', 'count'=> 3, 'multiplier'=> 10),
+        array('symbol'=> 's05', 'count'=> 5, 'multiplier'=> 25),
+        array('symbol'=> 's05', 'count'=> 4, 'multiplier'=> 8),
+        array('symbol'=> 's06', 'count'=> 5, 'multiplier'=> 25),
+        array('symbol'=> 's06', 'count'=> 4, 'multiplier'=> 8),
+        array('symbol'=> 's07', 'count'=> 5, 'multiplier'=> 15),
+        array('symbol'=> 's07', 'count'=> 4, 'multiplier'=> 5),
+        array('symbol'=> 's08', 'count'=> 5, 'multiplier'=> 15),
+        array('symbol'=> 's08', 'count'=> 4, 'multiplier'=> 5),
+        array('symbol'=> 's09', 'count'=> 5, 'multiplier'=> 15),
+        array('symbol'=> 's09', 'count'=> 4, 'multiplier'=> 5),
+        array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 15),
+        array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 5),
+
+        array('symbol'=> 's01', 'count'=> 5, 'multiplier'=> 50),
+        array('symbol'=> 's01', 'count'=> 4, 'multiplier'=> 15),
+        array('symbol'=> 's01', 'count'=> 3, 'multiplier'=> 8),
+        array('symbol'=> 's02', 'count'=> 5, 'multiplier'=> 40),
+        array('symbol'=> 's02', 'count'=> 4, 'multiplier'=> 12),
+        array('symbol'=> 's02', 'count'=> 3, 'multiplier'=> 5),
 
         array('symbol'=> 'w01', 'count'=> 5, 'multiplier'=> 50),
         array('symbol'=> 'w01', 'count'=> 4, 'multiplier'=> 15),

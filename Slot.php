@@ -383,6 +383,9 @@ class Slot {
             elseif ($this->params->winLineType == 'waysLeftRight') {
                 $SymbolwinLines = $this->getWaysLeftRight($v);
             }
+            elseif ($this->params->winLineType == 'waysLeftRightMiddle') {
+                $SymbolwinLines = $this->getWaysLeftRightMiddle($v);
+            }
             elseif ($this->params->winLineType == 'lineWays') {
                 $SymbolwinLines = $this->getLineWays($v);
             }
@@ -403,7 +406,7 @@ class Slot {
                     if($this->params->payOnlyHighter) {
                         $f = true;
                         foreach ($this->winLines as $k=>$zzz) {
-                            if ($zzz['id'] == $w['id'] + 1) {
+                            if ($zzz['id'] == $w['id']) {
                                 if ($zzz['multiple'] > $multiplier * $w['double']) {
                                     $f = false;
                                 } else {
@@ -1050,10 +1053,25 @@ class Slot {
                     $matched = true;
                 }
                 elseif($this->params->collectingPay) {
-                    if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
-                        $type = 'collecting';
-                        $matched = true;
+                    if(is_array($this->params->collectingSymbols[0])) {
+                        $g = false;
+                        foreach($this->params->collectingSymbols as $cs) {
+                            if(in_array($rs, $cs) && count(array_intersect($symbol, $cs)) > 0) {
+                                $g = true;
+                            }
+                        }
+                        if($g) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
                     }
+                    else {
+                        if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
+                    }
+
                 }
                 if($isWild && $matched) {
                     $type = 'wild';
@@ -1103,10 +1121,85 @@ class Slot {
                     $matched = true;
                 }
                 elseif($this->params->collectingPay) {
-                    if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
-                        $type = 'collecting';
-                        $matched = true;
+                    if(is_array($this->params->collectingSymbols[0])) {
+                        $g = false;
+                        foreach($this->params->collectingSymbols as $cs) {
+                            if(in_array($rs, $cs) && count(array_intersect($symbol, $cs)) > 0) {
+                                $g = true;
+                            }
+                        }
+                        if($g) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
                     }
+                    else {
+                        if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
+                    }
+                }
+                if($isWild && $matched) {
+                    $type = 'wild';
+                }
+
+                if($matched) {
+                    $matches[] = array(
+                        'offset' => $offset,
+                        'type' => $type,
+                        'symbol' => $rs,
+                    );
+                }
+            }
+            $ways->addMatches($matches);
+
+        }
+        return $ways->getWinLines();
+    }
+
+    private function getWaysMiddle($symbol) {
+        $reelConfig = $this->params->reelConfig;
+        $alias = $this->params->getSymbolByID($symbol);
+        $ways = new Ways($symbol, $alias, $this->params->doubleIfWild, $this->double, $this->params->minWinCount, 'middle');
+        $isWild = !!count(array_intersect($symbol, $this->wild));
+        for($i = 1; $i < (count($reelConfig)-1); $i++) {
+            $reelSymbols = $this->reels[$i]->getVisibleSymbols();
+            $matches = array();
+            for($j = 0; $j < count($reelSymbols); $j++) {
+                $rs = $reelSymbols[$j];
+                $offset = $j * 5 + $i;
+                $type = '';
+                $matched = false;
+                if(in_array($rs, $symbol)) {
+                    $type = 'symbol';
+                    $matched = true;
+                }
+                elseif(in_array($rs, $this->wild) && count(array_intersect($symbol, $this->params->symbolWithoutWild)) == 0) {
+
+                    $type = 'wild';
+                    $matched = true;
+                }
+                elseif($this->params->collectingPay) {
+                    if(is_array($this->params->collectingSymbols[0])) {
+                        $g = false;
+                        foreach($this->params->collectingSymbols as $cs) {
+                            if(in_array($rs, $cs) && count(array_intersect($symbol, $cs)) > 0) {
+                                $g = true;
+                            }
+                        }
+                        if($g) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
+                    }
+                    else {
+                        if(in_array($rs, $this->params->collectingSymbols) && count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                            $type = 'collecting';
+                            $matched = true;
+                        }
+                    }
+
                 }
                 if($isWild && $matched) {
                     $type = 'wild';
@@ -1139,6 +1232,33 @@ class Slot {
         $right = $this->getWaysRight($symbol);
 
         return array_merge($left, $right);
+    }
+
+    private function getWaysLeftRightMiddle($symbol) {
+        $left = $this->getWays($symbol);
+        $right = $this->getWaysRight($symbol);
+        $middle = $this->getWaysMiddle($symbol);
+
+        $exceeded = false;
+        foreach($left as $w) {
+            if($w['count'] > 3) {
+                $exceeded = true;
+            }
+        }
+        foreach($right as $w) {
+            if($w['count'] > 3) {
+                $exceeded = true;
+            }
+        }
+
+        if($exceeded) {
+            return array_merge($left, $right);
+        }
+        else {
+            return array_merge($left, $right, $middle);
+        }
+
+
     }
 
 

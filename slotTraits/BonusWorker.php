@@ -134,6 +134,117 @@ trait BonusWorker {
         }
     }
 
+    public function getMissRedBonus($report) {
+        // r - row count
+        $wolfChange = false;
+        $ladyChange = false;
+        for($r = 0; $r < 4; $r++) {
+            // c - ceil count
+            $wOffsets = array();
+            $lOffsets = array();
+            for($c = 0; $c < 5; $c++) {
+                if($this->chechSymbolOnReel('s02', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $wOffsets[] = $offset;
+                }
+                if($this->chechSymbolOnReel('s01', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $lOffsets[] = $offset;
+                }
+            }
+            if(count($wOffsets) > 1) {
+                $wF = $wOffsets[0] + 1;
+                $wL = end($wOffsets);
+                for($z = $wF; $z < $wL; $z++) {
+                    $CeilRow = $this->getCeilRowByOffset($z);
+                    $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
+                    $replace = 12;
+                    if($symbol == 1) {
+                        $replace = 0;
+                    }
+                    if($symbol !== 2) {
+                        $wolfChange = true;
+                        $this->reels[$CeilRow['ceil']]->setSymbolOnPosition($CeilRow['row'], $replace);
+                    }
+
+                }
+            }
+            if(count($lOffsets) > 1) {
+
+                $wF = $lOffsets[0] + 1;
+                $wL = end($lOffsets);
+                for($z = $wF; $z < $wL; $z++) {
+                    $CeilRow = $this->getCeilRowByOffset($z);
+                    $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
+                    $replace = 11;
+                    if($symbol == 2) {
+                        $replace = 0;
+                    }
+                    if($symbol !== 1) {
+                        $ladyChange = true;
+                        $this->reels[$CeilRow['ceil']]->setSymbolOnPosition($CeilRow['row'], $replace);
+                    }
+
+                }
+            }
+        }
+
+        $this->resetSlotData();
+        $this->startRows = $this->getRows();
+        $this->startFullRows = $this->getFullRows();
+        $this->spinBonus = array();
+
+        $report = $this->getReport();
+        $report['wolfChange'] = $wolfChange;
+        $report['ladyChange'] = $ladyChange;
+        $report['replace'] = array();
+
+        return $report;
+    }
+
+    public function getMissRedBonusFree($report) {
+        $wilds = $this->getSymbolAnyCount('w01');
+
+
+        $wolfChange = false;
+        for($r = 0; $r < 4; $r++) {
+            // c - ceil count
+            $wOffsets = array();
+            for($c = 0; $c < 5; $c++) {
+                if($this->chechSymbolOnReel('w01', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $wOffsets[] = $offset;
+                }
+            }
+            if(count($wOffsets) > 1) {
+                $wF = $wOffsets[0] + 1;
+                $wL = end($wOffsets);
+                for($z = $wF; $z < $wL; $z++) {
+                    $CeilRow = $this->getCeilRowByOffset($z);
+                    $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
+                    $replace = 20;
+                    if($symbol !== 0) {
+                        $wolfChange = true;
+                        $this->reels[$CeilRow['ceil']]->setSymbolOnPosition($CeilRow['row'], $replace);
+                    }
+
+                }
+            }
+        }
+
+        $this->resetSlotData();
+        $this->startRows = $this->getRows();
+        $this->startFullRows = $this->getFullRows();
+        $this->spinBonus = array();
+
+        $report = $this->getReport();
+        $report['wolfChange'] = $wolfChange;
+        $report['replace'] = $wilds;
+
+        return $report;
+    }
+
+
     private function setKittyWaterBonus() {
         $r = $this->getSymbolAnyCount('w02');
         if($r['count'] > 0) {

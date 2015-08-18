@@ -215,6 +215,7 @@ class Params {
      * @return array
      */
     public function getSymbolID($symbol) {
+        //echo $symbol.PHP_EOL;
         return $this->symbols[$symbol];
     }
 
