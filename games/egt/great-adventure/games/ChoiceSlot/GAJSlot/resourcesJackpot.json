@@ -1,0 +1,193 @@
+{
+    "resourcesUrl": "ChoiceSlot/GAJSlot/resourcesJackpot.data",
+    "reelImages": [
+        "reelImages/jack.png",
+        "reelImages/queen.png",
+        "reelImages/king.png",
+        "reelImages/ace.png",
+        "reelImages/scarab.png",
+        "reelImages/mask.png",
+        "reelImages/woman.png",
+        "reelImages/man.png",
+        "reelImages/scatter.png",
+		
+		"reelImages/jack_gold.png",
+        "reelImages/queen_gold.png",
+        "reelImages/king_gold.png",
+        "reelImages/ace_gold.png",
+        "reelImages/scarab_gold.png",
+        "reelImages/mask_gold.png",
+        "reelImages/woman_gold.png",
+        "reelImages/man_gold.png"
+		
+    ],
+    "smallReelImages": [
+        "smallImages/jack.png",
+        "smallImages/queen.png",
+        "smallImages/king.png",
+        "smallImages/ace.png",
+        "smallImages/scarab.png",
+        "smallImages/mask.png",
+        "smallImages/woman.png",
+        "smallImages/man.png",
+        "smallImages/scatter.png"
+    ],
+    "mainCardsImages": [
+        "mainCards/cardBackBlack.png",
+        "mainCards/cardBackRed.png",
+        "mainCards/clubs.png",
+        "mainCards/diamonds.png",
+        "mainCards/hearts.png",
+        "mainCards/spades.png",
+        "mainCards/jackImage.png",
+        "mainCards/queenImage.png",
+        "mainCards/kingImage.png",
+        "mainCards/aceImage.png"
+    ],
+    "gambleCardsImages": [
+        "gambleCards/redBack.png",
+        "gambleCards/blackBack.png",
+        "gambleCards/clubs.png",
+        "gambleCards/diamonds.png",
+        "gambleCards/hearts.png",
+        "gambleCards/spades.png"
+    ],
+    "generalImages": {
+        "background": "background.jpg",
+        "gameTitle": "gameTitle.png",
+        "jackpotBackground": "jackpotImages/jackpotBackground.png",
+        "jackpotBoxes": "jackpotImages/jackpotBoxes.png",
+        "diamond": "diamond.png"
+    },
+    "gambleImages": {
+        "gambleBackground": "gambleBackground.png",
+        "gambleWin": "gambleWin.png"
+    },
+    "jackpotImages": [
+        "jackpotImages/clubs.png",
+        "jackpotImages/diamonds.png",
+        "jackpotImages/hearts.png",
+        "jackpotImages/spades.png",
+        "jackpotImages/clubsInactive.png",
+        "jackpotImages/diamondsInactive.png",
+        "jackpotImages/heartsInactive.png",
+        "jackpotImages/spadesInactive.png",
+        "jackpotImages/clubsActive.png",
+        "jackpotImages/diamondsActive.png",
+        "jackpotImages/heartsActive.png",
+        "jackpotImages/spadesActive.png",
+        "jackpotImages/lightOff.png",
+        "jackpotImages/lightOn.png"
+    ],
+    "winSounds": [
+        "",
+        "",
+        "",
+        "",
+        "winScarab",
+        "winMask",
+        "winWoman",
+        "winMan",
+        "winScatter"
+    ],
+    "winFullSounds": [
+        {
+            "card": 0,
+            "url": "fullLine1"
+        },
+        {
+            "card": 1,
+            "url": "fullLine1"
+        },
+        {
+            "card": 2,
+            "url": "fullLine2"
+        },
+        {
+            "card": 3,
+            "url": "fullLine2"
+        },
+        {
+            "card": 4,
+            "url": "fullLine3"
+        },
+        {
+            "card": 5,
+            "url": "fullLine3"
+        },
+        {
+            "card": 6,
+            "url": "fullLine4"
+        },
+        {
+            "card": 7,
+            "url": "fullLine4"
+        }
+    ],
+    "mainSounds": {
+        "stopReelSingleSound": "stopReelSingle",
+        "stopReelAllSound": "stopReelAll",
+        "collectButtonSound": "collectButton",
+        "reelAccelerateSound": "reelAccelerate",
+        "mainButtonSound": "mainButton",
+        "startAutoplaySound": "startAuto",
+        "stopAutoplaySound": "stopAuto",
+        "takeWinSound": "takeWin",
+        "creditAnimationSound": "creditAnimation",
+        "currencySound": "currency",
+        "creditSound": "credit",
+        "paytableOpenSound": "paytable",
+        "paytableCloseSound": "paytable",
+        "volumeSound": "volume",
+        "changeLanguageSound": "mainButton",
+        "showDenominationsSound": "showDenominations",
+        "openFullscreenSound": "showDenominations",
+        "closeFullscreenSound": "hideDenominations",
+        "hideDenominationsSound": "hideDenominations",
+        "changeDenominationSound": "changeDenomination",
+        "paytableNavigationSound": "paytable",
+        "showLanguagesSound": "showLanguages",
+        "hideLanguagesSound": "hideLanguages",
+        "coinAnimationSound": "coins",
+        "helpOpenSound": "paytable",
+        "gambleOpenSound": "gambleOpen",
+        "gambleCardClickSound": "gambleCardClick",
+        "gambleLostSound": "gambleLost",
+        "gambleWonSound": "gambleWon",
+        "jackpotCardOpenSound": "jackpotCardOpen",
+        "jackpotBoxesShowSound": "jackpotBoxesShow",
+        "jackpotCardClickSound": "jackpotCardBlink",
+        "jackpotCardFigureMoveSound": "jackpotCardFigureMove",
+        "jackpotCardFigurePulseSound": "jackpotCardFigurePulse",
+        "jackpotBackgroundSound": "jackpotBackground",
+        "jackpotShowWinnerSound": "jackpotShowWinner"
+    },
+    "scatterSounds": [
+        {
+            "scatter": 8,
+            "sounds": [
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter"
+            ]
+        }
+    ],
+    "enterFreespinsScatterSounds": [
+        "winScatterFreespins"
+    ],
+    "lineSelectSounds": [
+        "selectLine1",
+        "selectLine2",
+        "selectLine3",
+        "selectLine4",
+        "selectLine5"
+    ],
+    "jackpotWinSounds": [
+        "jackpotWin1",
+        "jackpotWin2",
+        "jackpotWin3",
+        "jackpotWin4"
+    ]
+}

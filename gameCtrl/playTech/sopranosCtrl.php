@@ -153,7 +153,16 @@ class sopranosCtrl extends Ctrl {
     </EEGActionResponse>
 </CompositeResponse>';
 
-        $this->outXML($xml);
+        if($this->emulation) {
+            if($_SESSION['stolenCount'] > 1) {
+                $this->outXML($xml);
+            }
+        }
+        else {
+            $this->outXML($xml);
+        }
+
+
     }
 
     protected function clearSession() {
@@ -259,6 +268,10 @@ class sopranosCtrl extends Ctrl {
             'report' => $spinData['report'],
         );
 
+        $_SESSION['lastBet'] = $stake;
+        $_SESSION['lastPick'] = $pick;
+        $_SESSION['lastStops'] = $spinData['report']['stops'];
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
@@ -277,9 +290,6 @@ class sopranosCtrl extends Ctrl {
                 break;
         }
 
-        $_SESSION['lastBet'] = $stake;
-        $_SESSION['lastPick'] = $pick;
-        $_SESSION['lastStops'] = $spinData['report']['stops'];
         $this->startPay();
     }
 
@@ -439,11 +449,23 @@ class sopranosCtrl extends Ctrl {
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawState.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        $this->outXML($xml);
-
         $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['bonus'] = 'raid';
         $_SESSION['bonusWIN'] = $report['totalWin'];
+
+        if($this->emulation) {
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGActionRequest gameTitle="PT-Sopranos" gameId="1411559061">
+    <Action pick="0101" type="Raid"/>
+  </EEGActionRequest>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+        }
+        else {
+            $this->outXML($xml);
+        }
+
     }
 
     public function showRaidCash($request) {
@@ -544,14 +566,33 @@ class sopranosCtrl extends Ctrl {
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawState.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        $this->outXML($xml);
-
         $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['bonus'] = 'stolen';
         $_SESSION['bonusWIN'] = $report['totalWin'];
         $_SESSION['stolenCount'] = 0;
         $_SESSION['picks'] = array();
         $_SESSION['prizes'] = array();
+
+        if($this->emulation) {
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGActionRequest gameTitle="PT-Sopranos" gameId="1411559061">
+    <Action pick="7" type="StolenGoods"/>
+  </EEGActionRequest>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGActionRequest gameTitle="PT-Sopranos" gameId="1411559061">
+    <Action pick="keep" type="StolenGoods"/>
+  </EEGActionRequest>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+        }
+        else {
+            $this->outXML($xml);
+        }
     }
 
     private function getStolenPrizesByBet($bet) {
@@ -598,12 +639,24 @@ class sopranosCtrl extends Ctrl {
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawState.'</EEGLoadResultsResponse>
         </CompositeResponse>';
 
-        $this->outXML($xml);
-
         $_SESSION['bonus'] = 'freespin';
         $_SESSION['drawStates'] = base64_encode(gzcompress($drawState, 9));
         $_SESSION['baseWin'] = $totalWin;
         $_SESSION['bonusWIN'] = $totalWin;
+
+        if($this->emulation) {
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGActionRequest gameTitle="PT-Sopranos" gameId="1411559061">
+    <Action pick="0" type="FREE_SPINS"/>
+  </EEGActionRequest>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+        }
+        else {
+            $this->outXML($xml);
+        }
+
     }
 
     public function startSoldierFS() {

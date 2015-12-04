@@ -89,17 +89,7 @@ class pyramidCtrl extends IGTCtrl {
             <Step>9</Step>
             <Step>15</Step>
         </PatternInfo>
-        <BetInfo max="200" min="1">
-            <Step>1</Step>
-            <Step>2</Step>
-            <Step>3</Step>
-            <Step>5</Step>
-            <Step>10</Step>
-            <Step>20</Step>
-            <Step>50</Step>
-            <Step>100</Step>
-            <Step>200</Step>
-        </BetInfo>
+        '.$this->getBetInfo().'
     </PatternSliderInfo>
     <AwardCapInfo name="AwardCapInfo">
         <TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>
@@ -214,7 +204,7 @@ class pyramidCtrl extends IGTCtrl {
     protected function startSpin($request) {
         $obj = $request['PatternSliderInput'];
         $totalBet = $obj->PatternsBet;
-        $betPerLine = $obj->BetPerPattern;
+        $betPerLine = (float) $obj->BetPerPattern;
 
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;

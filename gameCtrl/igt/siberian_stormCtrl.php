@@ -61,21 +61,7 @@ class siberian_stormCtrl extends IGTCtrl {
         <PatternInfo max="50" min="50">
             <Step>50</Step>
         </PatternInfo>
-        <BetInfo max="1000" min="1">
-            <Step>1</Step>
-            <Step>2</Step>
-            <Step>3</Step>
-            <Step>5</Step>
-            <Step>10</Step>
-            <Step>20</Step>
-            <Step>30</Step>
-            <Step>50</Step>
-            <Step>100</Step>
-            <Step>200</Step>
-            <Step>300</Step>
-            <Step>500</Step>
-            <Step>1000</Step>
-        </BetInfo>
+        '.$this->getBetInfo().'
     </PatternSliderInfo>
     <AwardCapInfo name="AwardCapInfo">
         <TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>
@@ -236,7 +222,7 @@ class siberian_stormCtrl extends IGTCtrl {
     protected function startSpin($request) {
         $obj = $request['PatternSliderInput'];
         $totalBet = $obj->PatternsBet;
-        $betPerLine = $obj->BetPerPattern;
+        $betPerLine = (float) $obj->BetPerPattern;
 
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;

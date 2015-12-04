@@ -148,7 +148,7 @@ class Reel {
             $this->visibleSymbols[$i] = $this->newSymbols[$i];
             array_push($this->fullVisibleSymbols,$this->newSymbols[$i]);
         }
-        if(!empty($this->newSymbols[$this->visibleCount])) {
+        if(isset($this->newSymbols[$this->visibleCount])) {
             array_push($this->fullVisibleSymbols, $this->newSymbols[$this->visibleCount]);
         }
     }

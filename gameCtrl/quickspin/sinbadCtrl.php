@@ -94,6 +94,10 @@ class sinbadCtrl extends Ctrl {
             'report' => $spinData['report'],
         );
 
+        $_SESSION['lastBet'] = $stake;
+        $_SESSION['lastPick'] = $pick;
+        $_SESSION['lastStops'] = $spinData['report']['stops'];
+
         switch($spinData['report']['type']) {
             case 'SPIN':
                 $this->showSpinReport($spinData['report'], $spinData['totalWin']);
@@ -103,9 +107,6 @@ class sinbadCtrl extends Ctrl {
                 break;
         }
 
-        $_SESSION['lastBet'] = $stake;
-        $_SESSION['lastPick'] = $pick;
-        $_SESSION['lastStops'] = $spinData['report']['stops'];
         $this->startPay();
     }
 
@@ -224,7 +225,24 @@ class sinbadCtrl extends Ctrl {
         $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates, 9));
         $_SESSION['bonusWIN'] = $totalWin;
 
-        $this->outXML($xml);
+        if($this->emulation) {
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGActionRequest gameTitle="QS-Sinbad" gameId="1411559061">
+    <Action type="pick" pick="roc"/>
+  </EEGActionRequest>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+
+            $_POST['xml'] = '<CompositeRequest>
+  <EEGLoadResultsRequest gameTitle="QS-Sinbad" gameId="1411559061"/>
+</CompositeRequest>';
+            $this->request = $this->getRequest();
+            $this->processRequest($this->request);
+        }
+        else {
+            $this->outXML($xml);
+        }
     }
 
     protected function startAction($request) {
@@ -235,8 +253,13 @@ class sinbadCtrl extends Ctrl {
 
             $xml = '<?xml version="1.0" encoding="UTF-8"?>
 <CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><EEGActionResponse name="'.$pick.'" gameId="'.$this->gameID.'"/></CompositeResponse>';
+            if($this->emulation) {
 
-            $this->outXML($xml);
+            }
+            else {
+                $this->outXML($xml);
+            }
+
         }
         else {
             die('Hack error');

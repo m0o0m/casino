@@ -10,10 +10,16 @@
 
 /* DELETE */
 if($_SERVER['HTTP_HOST'] == 'localhost') {
-    session_start();
+    if(isset($_GET['sessionID'])) {
+        session_id($_GET['sessionID']);
+        session_start();
+    }
+    else {
+        session_start();
+    }
     require_once 'api.php';
-
 }
+
 /* DELETE */
 
 require_once 'slot_funcs.php';

@@ -600,4 +600,17 @@ class IGTCtrl extends Ctrl {
 
         return $xml;
     }
+
+    protected function getBetInfo() {
+        $config = $this->gameParams->denominations;
+
+        $xml = '<BetInfo max="'.end($config).'" min="'.$config[0].'">';
+        foreach($config as $d) {
+            $xml .= '<Step>'.$d.'</Step>';
+        }
+
+        $xml .= '</BetInfo>';
+
+        return $xml;
+    }
 }

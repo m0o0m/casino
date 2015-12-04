@@ -48,21 +48,7 @@ class western_bellesCtrl extends IGTCtrl {
             <Step>40</Step>
             <Step trigger="WildReel">200</Step>
         </PatternInfo>
-        <BetInfo max="1000" min="1">
-            <Step>1</Step>
-            <Step>2</Step>
-            <Step>3</Step>
-            <Step>5</Step>
-            <Step>10</Step>
-            <Step>20</Step>
-            <Step>30</Step>
-            <Step>50</Step>
-            <Step>100</Step>
-            <Step>200</Step>
-            <Step>300</Step>
-            <Step>500</Step>
-            <Step>1000</Step>
-        </BetInfo>
+        '.$this->getBetInfo().'
     </PatternSliderInfo>
     <AwardCapInfo name="AwardCapInfo">
         <TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>
@@ -218,7 +204,7 @@ class western_bellesCtrl extends IGTCtrl {
     protected function startSpin($request) {
         $obj = $request['PatternSliderInput'];
         $totalBet = $obj->PatternsBet;
-        $betPerLine = $obj->BetPerPattern;
+        $betPerLine = (float) $obj->BetPerPattern;
 
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
@@ -415,7 +401,7 @@ class western_bellesCtrl extends IGTCtrl {
 
             $popularity = '<PopulationOutcome name="BaseGame.WildReels" stage="BaseGame">
         <Entry name="WildReel" stripIndex="1">
-            <Cell name="WildReel" stripIndex="1">Reel2Wild</Cell>
+            <Cell name="WildReel" stripIndex="1">Reel'.$this->wildReel.'Wild</Cell>
         </Entry>
     </PopulationOutcome>';
         }

@@ -406,12 +406,24 @@ class Slot {
                     if($this->params->payOnlyHighter) {
                         $f = true;
                         foreach ($this->winLines as $k=>$zzz) {
-                            if ($zzz['id'] == $w['id']) {
-                                if ($zzz['multiple'] > $multiplier * $w['double']) {
-                                    $f = false;
-                                } else {
-                                    $f = true;
-                                    unset($this->winLines[$k]);
+                            if($this->params->winLineType == 'left' || $this->params->winLineType == 'lefleftRightt') {
+                                if ($zzz['id'] == $w['id'] + 1) {
+                                    if ($zzz['multiple'] > $multiplier * $w['double']) {
+                                        $f = false;
+                                    } else {
+                                        $f = true;
+                                        unset($this->winLines[$k]);
+                                    }
+                                }
+                            }
+                            else {
+                                if ($zzz['id'] == $w['id']) {
+                                    if ($zzz['multiple'] > $multiplier * $w['double']) {
+                                        $f = false;
+                                    } else {
+                                        $f = true;
+                                        unset($this->winLines[$k]);
+                                    }
                                 }
                             }
                         }

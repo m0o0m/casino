@@ -883,7 +883,7 @@ class black_widowCtrl extends IGTCtrl {
     </FreeSpinOutcome>
     '.$winLines.'
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
-        <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
+        <Prize betMultiplier="40" multiplier="1" name="Scatter" pay="0" payName="9 b01" symbolCount="9" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />
     </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="FreeSpin.Total" pay="'.$fsWin.'" stage="" totalPay="'.$fsWin.'" type="">
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$fsWin.'" payName="" symbolCount="0" totalPay="'.$fsWin.'" ways="0"/>

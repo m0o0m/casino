@@ -113,23 +113,7 @@ class monopoly_dream_lifeCtrl extends IGTCtrl {
         <PatternInfo max="20" min="20">
             <Step>20</Step>
         </PatternInfo>
-        <BetInfo max="3000" min="1">
-            <Step>1</Step>
-            <Step>2</Step>
-            <Step>3</Step>
-            <Step>5</Step>
-            <Step>10</Step>
-            <Step>20</Step>
-            <Step>30</Step>
-            <Step>50</Step>
-            <Step>100</Step>
-            <Step>200</Step>
-            <Step>300</Step>
-            <Step>500</Step>
-            <Step>1000</Step>
-            <Step>2000</Step>
-            <Step>3000</Step>
-        </BetInfo>
+        '.$this->getBetInfo().'
     </PatternSliderInfo>
     <AwardCapInfo name="AwardCapInfo">
         <TriggerInfo name="AwardCapExceeded" priority="100" stageConnector="AwardCapToBaseGame"/>
@@ -244,7 +228,7 @@ class monopoly_dream_lifeCtrl extends IGTCtrl {
     protected function startSpin($request) {
         $obj = $request['PatternSliderInput'];
         $totalBet = $obj->PatternsBet;
-        $betPerLine = $obj->BetPerPattern;
+        $betPerLine = (float) $obj->BetPerPattern;
 
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;

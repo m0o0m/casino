@@ -63,6 +63,11 @@ class Ctrl {
     public $bonusPays = array();
 
     /**
+     * @var bool Текущий статус для эмуляции спинов + бонусов + ФСов
+     */
+    public $emulation = false;
+
+    /**
      * Обработка запроса и запуск нужного метода
      *
      * @param object $params Параметры игры
@@ -92,10 +97,12 @@ class Ctrl {
 
             $this->api->response = $reelsStr;
 
+            $type = (!empty($s['report']['type'])) ? strtolower($s['report']['type']) : '';
+
             $this->api->request = 'bet: '.$s['report']['bet']."
 betOnLine: ".$s['report']['betOnLine']."
 linesCount: ".$s['report']['linesCount']."
-action: ".strtolower($s['report']['type']);
+action: ".$type;
 
 
             game_ctrl($this->slot->bet * 100, $s['win'] * 100, 0, 'standart');
@@ -111,10 +118,12 @@ action: ".strtolower($s['report']['type']);
 
             $this->api->response = $reelsStr;
 
+            $type = (!empty($f['report']['type'])) ? strtolower($f['report']['type']) : '';
+
             $this->api->request = 'bet: '.$f['report']['bet']."
 betOnLine: ".$f['report']['betOnLine']."
 linesCount: ".$f['report']['linesCount']."
-action: ".strtolower($f['report']['type']);
+action: ".$type;
 
 
             game_ctrl(0, $f['win'] * 100, 0, 'free');
@@ -134,10 +143,12 @@ action: ".strtolower($f['report']['type']);
 
                 $this->api->response = $reelsStr;
 
+                $type = (!empty($b['report']['type'])) ? strtolower($b['report']['type']) : '';
+
                 $this->api->request = 'bet: '.$b['report']['bet']."
 betOnLine: ".$b['report']['betOnLine']."
 linesCount: ".$b['report']['linesCount']."
-action: ".strtolower($b['report']['type']);
+action: ".$type;
             }
 
 
@@ -226,6 +237,10 @@ action: ".strtolower($b['report']['type']);
      * @return array
      */
     protected  function getRequest() {
+        if(isset($_POST['emulation'])) {
+            $this->emulation = true;
+        }
+
         if(isset($_POST['xml'])) return (array) simplexml_load_string($_POST['xml']);
         else return (array) simplexml_load_string($this->api->getRequestBody());
         //echo '<pre>';
