@@ -162,7 +162,7 @@ class star_trekParams extends Params {
     public $defaultCoinsCount = 60;
 
     //public $denominations = array(0.01,0.02,0.03,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
-    public $denominations = array(1,2,3,5,10,20,30,50,100,200,300,500,1000);
+    public $denominations = array(0.1, 1,2,3,5,10,20,30,50,100,200,300,500,1000);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
 

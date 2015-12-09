@@ -130,7 +130,42 @@ trait BonusWorker {
             case 'KittyWaterBonus':
                 $this->setKittyWaterBonus();
                 break;
+            case 'expandWildIfLines':
+                $this->setExpandWildIfLines($bonus['symbol']);
+                break;
 
+        }
+    }
+
+    public function setExpandWildIfLines($symbol) {
+        $bonusData = array();
+        $reelNumber = 0;
+
+        $tmpReels = array();
+
+        foreach($this->reels as $r) {
+            $tmpReels[] = clone $r;
+
+            $offsets = $r->checkSymbol(array($symbol), $reelNumber);
+            if(count($offsets) > 0) {
+                $r->setAsWild($symbol);
+                $bonusData[] = array(
+                    'reel' => $reelNumber,
+                    'offsets' => $offsets,
+                    'expandOffsets' => $this->getOtherOffsetsByReel($offsets, $reelNumber),
+                );
+            }
+            $reelNumber++;
+        }
+
+        $present = $this->checkWinLinesPresent();
+
+        if($present) {
+            $this->bonusData = $bonusData;
+            $this->tmpReels = $tmpReels;
+        }
+        else {
+            $this->reels = $tmpReels;
         }
     }
 

@@ -372,7 +372,7 @@ class black_widowCtrl extends IGTCtrl {
     protected function startSpin($request) {
         $obj = $request['PatternSliderInput'];
         $totalBet = $obj->PatternsBet;
-        $betPerLine = $obj->BetPerPattern;
+        $betPerLine = (float) $obj->BetPerPattern;
 
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
@@ -621,8 +621,8 @@ class black_widowCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$betPerLine.'</BetPerPattern>
-        <PatternsBet>'.$report['linesCount'].'</PatternsBet>
+        <BetPerPattern>'.$this->slot->betOnLine.'</BetPerPattern>
+        <PatternsBet>'.$this->slot->linesCount.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>

@@ -64,6 +64,23 @@ class egtCtrl extends Ctrl {
         return '"reels": ['.implode(',', $display).'],';
     }
 
+    protected function getDisplayByTmp() {
+        $display = array();
+        if(isset($this->slot->tmpReels)) {
+            foreach($this->slot->tmpReels as $r) {
+                $display = array_merge($display, $r->getFullVisibleSymbols());
+            }
+        }
+        else {
+            foreach($this->slot->reels as $r) {
+                $display = array_merge($display, $r->getFullVisibleSymbols());
+            }
+        }
+
+
+        return '"reels": ['.implode(',', $display).'],';
+    }
+
     protected function getWinLinesData($report, $override = array()) {
         $winLines = '"lines": [';
         $linesArray = array();
@@ -115,24 +132,45 @@ class egtCtrl extends Ctrl {
         return $data;
     }
 
-    protected function getPaytable() {
+    protected function getPaytable($multiple = 1, $scatters = 1) {
         $data = array();
         foreach($this->gameParams->winPay as $w) {
             if(!isset($data[$w['symbol']])) {
                 $data[$w['symbol']] = array();
             }
-            $data[$w['symbol']][] = $w['multiplier'];
+            $data[$w['symbol']][] = $w['multiplier'] * $multiple;
+            sort($data[$w['symbol']]);
         }
 
         if(!empty($this->gameParams->scatter)) {
-            $data[$this->gameParams->scatter[0]] = $this->gameParams->scatterMultiple;
+            if(count($this->gameParams->scatter) == 1) {
+                foreach($this->gameParams->scatterMultiple as $m) {
+                    $data[$this->gameParams->scatter[0]][] = $m / $scatters;
+                }
+            }
+            else {
+                foreach($this->gameParams->scatter as $s) {
+                    $data[$s] = array();
+                    foreach($this->gameParams->scatterMultiple[$s] as $m) {
+                        $data[$s][] = $m / $scatters;
+                    }
+                }
+            }
+
         }
 
         $jsonStrings = array();
         foreach($data as $s=>$m) {
+            $currentMultiplier = 1;
+            if($this->gameParams->doubleIfWild) {
+                $currentMultiplier = 2;
+            }
+            if(in_array($s, $this->gameParams->wild) || in_array($s, $this->gameParams->scatter)) {
+                $currentMultiplier = 1;
+            }
             $jsonStrings[] = '"'.$s.'": {
                 "coef": ['.implode(',', $m).'],
-                "multiplier": 1
+                "multiplier": '.$currentMultiplier.'
             }';
         }
 
@@ -161,6 +199,32 @@ class egtCtrl extends Ctrl {
 
     protected function getTimeStamp() {
         return round(microtime(true) * 1000);
+    }
+
+    protected function getRandomDisplay() {
+        if(empty($this->slot)) {
+            $this->slot = new Slot($this->gameParams, 1, 1);
+        }
+
+        $this->slot->spin();
+
+        return $this->getDisplay();
+    }
+
+    protected function getExpand($offsets) {
+        if(!empty($offsets)) {
+            $pos = array();
+            foreach($offsets as $o) {
+                $cr = $this->slot->getCeilRowByOffset($o);
+                $pos[] = $cr['ceil'];
+                $pos[] = $cr['row'];
+            }
+
+            return '"expand": ['.implode(',', $pos).'],';
+        }
+        else {
+            return '"expand": [],';
+        }
     }
 
 }

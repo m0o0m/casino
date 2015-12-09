@@ -62,10 +62,10 @@ class dragon_reelsCtrl extends egtCtrl {
         '.$reels.'
         "jackpotMaxBet": 100000,
         "denominations": [
-            [100]
+            [100, 70, 3000000]
         ]
     },
-    "gameIdentificationNumber": 813,
+    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
     "gameNumber": -1,
     "sessionKey": "'.$this->sessionKey.'",
     "msg": "success",
@@ -88,7 +88,7 @@ class dragon_reelsCtrl extends egtCtrl {
             $fsUsed = 0;
             $gamblesUsed = 0;
             $totalFs = 0;
-            $reelsLinesScatters = '"reels": [1, 9, 5, 7, 2, 0, 9, 2, 4, 8, 10, 5, 3, 7, 5, 5, 7, 1, 6, 0, 11, 0, 3, 6, 0],
+            $reelsLinesScatters = $this->getRandomDisplay().'
             "lines": [],
             "scatters": [],';
         }
@@ -100,7 +100,7 @@ class dragon_reelsCtrl extends egtCtrl {
             $totalFs = $_SESSION['fsLeft'];
 
             $report = unserialize(gzuncompress(base64_decode($_SESSION['report'])));
-            $reelsLinesScatters = $_SESSION['reels'].$this->getWinLinesData($report).$this->getScatters($report, '12');
+            $reelsLinesScatters = $_SESSION['reels'].$this->getWinLinesData($report).$this->getScatters($report, $this->gameParams->scatter[0]);
         }
         elseif($_SESSION['state'] == 'GAMBLE') {
             $state = 'gamble';
@@ -110,7 +110,7 @@ class dragon_reelsCtrl extends egtCtrl {
             $totalFs = 0;
 
             $report = unserialize(gzuncompress(base64_decode($_SESSION['report'])));
-            $reelsLinesScatters = $_SESSION['reels'].$this->getWinLinesData($report).$this->getScatters($report, '12');
+            $reelsLinesScatters = $_SESSION['reels'].$this->getWinLinesData($report).$this->getScatters($report, $this->gameParams->scatter[0]);
         }
 
         $json = '{
@@ -278,7 +278,7 @@ class dragon_reelsCtrl extends egtCtrl {
 
         if($_SESSION['state'] == 'SPIN') {
             $report['scattersReport'] = $this->slot->getScattersCount();
-            if($report['scattersReport']['count'] > 1) {
+            if(!empty($this->gameParams->scatterMultiple[$report['scattersReport']['count']])) {
                 $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']];
                 $report['totalWin'] += $report['scattersReport']['totalWin'];
                 $report['spinWin'] += $report['scattersReport']['totalWin'];
@@ -292,8 +292,8 @@ class dragon_reelsCtrl extends egtCtrl {
             }
         }
         else {
-            $a = $this->slot->getSymbolAnyCount('11');
-            $b = $this->slot->getSymbolAnyCount('12');
+            $a = $this->slot->getSymbolAnyCount($this->gameParams->wild[0]);
+            $b = $this->slot->getSymbolAnyCount($this->gameParams->scatter[0]);
             $report['scattersReport'] = array();
             $report['scattersReport']['count'] = $a['count'] + $b['count'];
             $report['scattersReport']['offsets'] = array_merge($a['offsets'], $b['offsets']);
@@ -331,7 +331,7 @@ class dragon_reelsCtrl extends egtCtrl {
         $display = $this->getDisplay();
         $winLines = $this->getWinLinesData($report);
         $balance = $this->getBalance() * 100;
-        $scatters = $this->getScatters($report, '12');
+        $scatters = $this->getScatters($report, $this->gameParams->scatter[0]);
 
         $state = 'idle';
         $_SESSION['gambles'] = 0;
@@ -374,7 +374,7 @@ class dragon_reelsCtrl extends egtCtrl {
         $display = $this->getDisplay();
         $winLines = $this->getWinLinesData($report);
         $balance = $this->getBalance() * 100 - $report['bet'] * 100;
-        $scatters = $this->getScatters($report, '12');
+        $scatters = $this->getScatters($report, $this->gameParams->scatter[0]);
 
         $json = '{
     "complex": {
@@ -417,7 +417,7 @@ class dragon_reelsCtrl extends egtCtrl {
     public function showPlayFreeSpinReport($report, $totalWin) {
         $display = $this->getDisplay();
         $winLines = $this->getWinLinesData($report);
-        $scatters = $this->getScatters($report, '12');
+        $scatters = $this->getScatters($report, $this->gameParams->scatter[0]);
 
         $_SESSION['fsTotalWin'] += $report['totalWin'];
         $_SESSION['fsLeft']--;

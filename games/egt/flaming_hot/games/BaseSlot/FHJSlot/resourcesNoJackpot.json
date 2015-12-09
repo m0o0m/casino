@@ -1,0 +1,134 @@
+{
+    "resourcesUrl": "BaseSlot/FHJSlot/resourcesNoJackpot.data",
+    "reelImages": [
+        "reelImages/fh_cherry.png",
+        "reelImages/fh_peach.png",
+        "reelImages/fh_apple.png",
+        "reelImages/fh_grapes.png",
+        "reelImages/fh_watermelon.png",
+        "reelImages/fh_bannana.png",
+        "reelImages/fh_bar.png",
+        "reelImages/fh_seven.png",
+        "reelImages/fh_wild.png",
+        "reelImages/fh_dollar.png"
+		],             
+	
+    "smallReelImages": [
+        "smallImages/fh_cherry.png",
+        "smallImages/fh_peach.png",
+        "smallImages/fh_apple.png",
+        "smallImages/fh_grapes.png",
+        "smallImages/fh_watermelon.png",
+        "smallImages/fh_bannana.png",
+        "smallImages/fh_bar.png",
+        "smallImages/fh_seven.png",
+		"smallImages/fh_wild.png",
+		"smallImages/fh_dollar.png"
+    ],
+    "gambleCardsImages": [
+        "gambleCards/redBack.png",
+        "gambleCards/blackBack.png",
+        "gambleCards/clubs.png",
+        "gambleCards/diamonds.png",
+        "gambleCards/hearts.png",
+        "gambleCards/spades.png"
+    ],
+    "generalImages": {
+        "background": "background.jpg",
+        "gameTitle": "gameTitle.png",
+        "diamond": "diamond.png"
+    },
+    "gambleImages": {
+        "gambleBackground": "gambleBackground.png",
+        "gambleWin": "gambleWin.png"
+    },
+    "winSounds": [
+      "win_cherry",
+        "win_peach",
+        "win_apple",
+        "win_grapes",
+        "win_watermelon",
+        "win_bannana",
+        "win_bar",
+        "win_seven",
+        "",
+        "win_dollar"
+    ],
+    "winFullSounds": [
+        {
+            "card": 0,
+            "url": "fullLine1"
+        },
+        {
+            "card": 1,
+            "url": "fullLine1"
+        },
+        {
+            "card": 2,
+            "url": "fullLine1"
+        },
+        {
+            "card": 3,
+            "url": "fullLine1"
+        },
+        {
+            "card": 4,
+            "url": "fullLine2"
+        },
+        {
+            "card": 5,
+            "url": "fullLine2"
+        },
+        {
+            "card": 6,
+            "url": "fullLine3"
+        },
+		{
+            "card": 7,
+            "url": "fullLine4"
+        }
+    ],
+    "mainSounds": {
+        "stopReelSingleSound": "stopReelSingle",
+        "stopReelAllSound": "stopReelAll",
+        "stopReelWildSound": "stopWild",
+        "collectButtonSound": "collectButton",
+        "mainButtonSound": "mainButton",
+        "startAutoplaySound": "startAuto",
+        "stopAutoplaySound": "stopAuto",
+        "takeWinSound": "takeWin",
+        "creditAnimationSound": "creditAnimation",
+        "currencySound": "currency",
+        "creditSound": "credit",
+        "paytableOpenSound": "paytable",
+        "paytableCloseSound": "paytable",
+        "volumeSound": "volume",
+        "changeLanguageSound": "mainButton",
+        "showDenominationsSound": "showDenominations",
+        "openFullscreenSound": "showDenominations",
+        "closeFullscreenSound": "hideDenominations",
+        "hideDenominationsSound": "hideDenominations",
+        "changeDenominationSound": "changeDenomination",
+        "paytableNavigationSound": "paytable",
+        "showLanguagesSound": "showLanguages",
+        "hideLanguagesSound": "hideLanguages",
+        "coinAnimationSound": "coins",
+        "helpOpenSound": "paytable",
+        "gambleOpenSound": "gambleOpen",
+        "gambleCardClickSound": "gambleCardClick",
+        "gambleLostSound": "gambleLost",
+        "gambleWonSound": "gambleWon"
+    },
+    "scatterSounds": [
+        {
+            "scatter": 9,
+            "sounds": [
+                "stop_reel_scatter",
+                "stop_reel_scatter2",
+                "stop_reel_scatter3",
+                "stop_reel_scatter4",
+                "stop_reel_scatter5"
+            ]
+        }
+    ]
+}

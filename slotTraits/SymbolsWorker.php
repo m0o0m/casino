@@ -177,4 +177,21 @@ trait SymbolsWorker {
 
         return $symbol;
     }
+
+    public function getReelOffsets($reel) {
+        $rowsCount = $this->params->reelConfig[$reel];
+        $reelsCount = count($this->params->reelConfig);
+
+        $offsets = array();
+        for($i = 0; $i < $rowsCount; $i++) {
+            $offsets[] = $i * $reelsCount + $reel;
+        }
+
+        return $offsets;
+    }
+
+    public function getOtherOffsetsByReel($offsets, $reel) {
+        $fullOffsets = $this->getReelOffsets($reel);
+        return array_diff($fullOffsets, $offsets);
+    }
 }

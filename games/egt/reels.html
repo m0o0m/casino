@@ -1,56 +1,47 @@
+<title>Reels</title>
 <div id="result"></div>
 <script>
+    var coef = 1;
+
     var pt =  {
             "0": {
-                "coef": [10, 20, 100],
+                "coef": [10, 30, 100],
                 "multiplier": 1
             },
             "1": {
-                "coef": [10, 20, 100],
+                "coef": [10, 30, 100],
                 "multiplier": 1
             },
             "2": {
-                "coef": [10, 20, 100],
+                "coef": [10, 30, 100],
                 "multiplier": 1
             },
             "3": {
-                "coef": [10, 20, 100],
+                "coef": [10, 30, 100],
                 "multiplier": 1
             },
             "4": {
-                "coef": [10, 20, 100],
+                "coef": [20, 50, 200],
                 "multiplier": 1
             },
             "5": {
-                "coef": [10, 40, 200],
+                "coef": [40, 100, 500],
                 "multiplier": 1
             },
             "6": {
-                "coef": [10, 50, 200],
+                "coef": [40, 100, 500],
                 "multiplier": 1
             },
             "7": {
-                "coef": [10, 100, 400],
-                "multiplier": 1
-            },
-            "8": {
-                "coef": [10, 100, 400],
+                "coef": [10, 50, 200, 3000],
                 "multiplier": 1
             },
             "9": {
-                "coef": [10, 100, 750],
+                "coef": [20],
                 "multiplier": 1
             },
             "10": {
-                "coef": [10, 100, 1000],
-                "multiplier": 1
-            },
-            "12": {
-                "coef": [2, 4, 50, 100],
-                "multiplier": 1
-            },
-            "11": {
-                "coef": [100, 1000, 5000],
+                "coef": [3, 20, 100],
                 "multiplier": 1
             }
         };
@@ -60,7 +51,7 @@
         var item = pt[i];
         var start = 5;
         for(var j = item.coef.length - 1; j >= 0; j--) {
-            result += 'array(\'symbol\'=> \''+i+'\', \'count\'=> '+start+', \'multiplier\'=> '+item.coef[j]+'),<br>';
+            result += 'array(\'symbol\'=> \''+i+'\', \'count\'=> '+start+', \'multiplier\'=> '+(item.coef[j]/coef)+'),<br>';
             start--;
         }
      }   
