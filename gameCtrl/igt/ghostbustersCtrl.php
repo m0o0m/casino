@@ -6,7 +6,7 @@ class ghostbustersCtrl extends IGTCtrl {
     protected function startConfig($request) {
         $this->setSessionIfEmpty('state', 'SPIN');
 
-        $xml = '<params><param name="softwareid" value="200-1171-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Ghostbusters"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="Ghostbusters"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="FPY"/></params>';
+        $xml = '<params><param name="softwareid" value="200-1171-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Ghostbusters"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="Ghostbusters"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="'.$this->gameParams->curiso.'"/></params>';
 
         $this->outXML($xml);
     }
@@ -343,8 +343,10 @@ class ghostbustersCtrl extends IGTCtrl {
         }
 
         $patternsBet = 50;
+        $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];
+            $coinValue = $_SESSION['lastBet'] / $_SESSION['lastPick'];
         }
 
         $xml = '<GameLogicResponse>
@@ -419,8 +421,8 @@ class ghostbustersCtrl extends IGTCtrl {
         </Entry>
     </PopulationOutcome>
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>50</PatternsBet>
+        <BetPerPattern>'.$coinValue.'</BetPerPattern>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -1003,8 +1005,8 @@ class ghostbustersCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>50</PatternsBet>
+        <BetPerPattern>'.$this->slot->betOnLine.'</BetPerPattern>
+        <PatternsBet>'.$this->slot->linesCount.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -1154,8 +1156,8 @@ class ghostbustersCtrl extends IGTCtrl {
         <MaxSpinsHit>false</MaxSpinsHit>
     </FreeSpinOutcome>
     '.$winLines.'
-    <PrizeOutcome multiplier="1" name="StayPuftBonus.CreditsGag" pay="'.$bonusCredits.'" stage="" totalPay="'.$bonusCredits.'" type="">
-        <Prize betMultiplier="1" multiplier="1" name="features" pay="'.$bonusCredits.'" payName="credits,'.($bonusCredits/$report['betOnLine']).'" symbolCount="1" totalPay="'.$bonusCredits.'" ways="0" />
+    <PrizeOutcome multiplier="1" name="StayPuftBonus.CreditsGag" pay="'.($bonusCredits*$report['betOnLine']).'" stage="" totalPay="'.($bonusCredits*$report['betOnLine']).'" type="">
+        <Prize betMultiplier="1" multiplier="1" name="features" pay="'.($bonusCredits*$report['betOnLine']).'" payName="credits,'.$bonusCredits.'" symbolCount="1" totalPay="'.($bonusCredits*$report['betOnLine']).'" ways="0" />
     </PrizeOutcome>
     <PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$_SESSION['scatterWin'].'" stage="" totalPay="'.$_SESSION['scatterWin'].'" type="Pattern">
         <Prize betMultiplier="100" multiplier="1" name="Scatter" pay="2" payName="3 b01" symbolCount="3" totalPay="'.$_SESSION['scatterWin'].'" ways="0" />

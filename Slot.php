@@ -265,6 +265,29 @@ class Slot {
         }
     }
 
+    public function getReelsCreateArray() {
+        $config = array();
+        foreach($this->reels as $r) {
+            $config[] = array(
+                'symbols' => $r->getNewSymbols(),
+                'offset' => $r->getOffset(),
+                'visible' => $r->getVisibleSymbols(),
+            );
+        }
+
+        return $config;
+    }
+
+    public function setReelsCreate($config) {
+        $n = 0;
+        foreach($this->reels as $r) {
+            $r->setNewSymbols($config[$n]['symbols']);
+            $r->setRealOffset($config[$n]['offset']);
+            $r->setVisibleSymbols($config[$n]['visible']);
+            $n++;
+        }
+    }
+
     /**
      * Установка нового массива вайлдов
      *

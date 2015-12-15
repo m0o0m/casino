@@ -129,6 +129,10 @@ class Reel {
         return $this->visibleSymbols;
     }
 
+    public function setVisibleSymbols($symbols) {
+        $this->visibleSymbols = $symbols;
+    }
+
     /**
      * Получение полных видимых символов барабана
      *
@@ -141,7 +145,7 @@ class Reel {
     /**
      * Обновление видимых символов барабана. Устанавливаются как первые символы барабана(после смещения)
      */
-    private function updateVisibleSymbols() {
+    public function updateVisibleSymbols() {
         $this->fullVisibleSymbols = array();
         array_push($this->fullVisibleSymbols, end($this->newSymbols));
         for($i = 0; $i < $this->visibleCount; $i++) {
@@ -279,6 +283,19 @@ class Reel {
      */
     public function getVisibleCount() {
         return $this->visibleCount;
+    }
+
+    public function getNewSymbols() {
+        return $this->newSymbols;
+    }
+
+    public function setNewSymbols($symbols) {
+        $this->symbols = $symbols;
+        $this->newSymbols = $this->symbols;
+    }
+
+    public function setRealOffset($offset) {
+        $this->offset = $offset;
     }
 }
 

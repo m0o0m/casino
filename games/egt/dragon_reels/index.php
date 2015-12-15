@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <object type="application/x-shockwave-flash" id="GamePlatform" data="GamePlatform.swf?ts=1440967567933" width="100%" height="100%"><param name="menu" value="false"><param name="allowFullscreen" value="true"><param name="allowScriptAccess" value="always"><param name="bgcolor" value="#000000"><param name="allowFullScreenInteractive" value="true"><param name="flashvars" value="tcpHost=localhost&amp;tcpPort=1128&amp;sessionKey=dragon_reels|||egt|||<?=session_id()?>&amp;lang=en&amp;content=assets/content.xml&amp;gameIdentificationNumber=813"></object>
+    <object type="application/x-shockwave-flash" id="GamePlatform" data="GamePlatform.swf?ts=1440967567933" width="100%" height="100%"><param name="menu" value="false"><param name="allowFullscreen" value="true"><param name="allowScriptAccess" value="always"><param name="bgcolor" value="#000000"><param name="allowFullScreenInteractive" value="true"><param name="flashvars" value="tcpHost=134.249.187.32&amp;tcpPort=1128&amp;sessionKey=dragon_reels|||egt|||<?=session_id()?>&amp;lang=en&amp;content=assets/content.xml&amp;gameIdentificationNumber=813"></object>
 </body>
 </html>
 

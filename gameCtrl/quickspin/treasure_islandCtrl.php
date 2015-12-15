@@ -26,8 +26,7 @@ class treasure_islandCtrl extends Ctrl {
             else $draws = $gDraw;
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <CustomerFunBalanceResponse balance="'.$this->getBalance().'" />
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
@@ -180,8 +179,7 @@ class treasure_islandCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>';
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
@@ -712,8 +710,7 @@ class treasure_islandCtrl extends Ctrl {
     protected function startBonusResult() {
         $draws = gzuncompress(base64_decode($_SESSION['drawStates']));
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <EEGLoadResultsResponse gameId="'.$this->gameID.'">'.$draws.'</EEGLoadResultsResponse>
 </CompositeResponse>';
 

@@ -6,7 +6,7 @@ class miss_redCtrl extends IGTCtrl {
     protected function startConfig($request) {
         $this->setSessionIfEmpty('state', 'SPIN');
 
-        $xml = '<params><param name="softwareid" value="200-1227-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Miss Red"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="MissRed"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="FPY"/></params>';
+        $xml = '<params><param name="softwareid" value="200-1227-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Miss Red"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="MissRed"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="'.$this->gameParams->curiso.'"/></params>';
 
         $this->outXML($xml);
     }
@@ -262,7 +262,7 @@ class miss_redCtrl extends IGTCtrl {
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$totalWin.'" payName="" symbolCount="0" totalPay="'.$totalWin.'" ways="0" />
     </PrizeOutcome>';
 
-            //$fs .= $baseGame;
+            $fs .= $baseGame;
         }
         if($_SESSION['state'] == 'FREE') {
             $state = 'FreeSpin';
@@ -290,6 +290,13 @@ class miss_redCtrl extends IGTCtrl {
         <Prize betMultiplier="1" multiplier="1" name="Total" pay="'.$_SESSION['fsTotalWin'].'" payName="" symbolCount="0" totalPay="'.$_SESSION['fsTotalWin'].'" ways="0" />
     </PrizeOutcome>';
             $fs .= $baseGame;
+        }
+
+        $patternsBet = 45;
+        $coinValue = $this->gameParams->default_coinvalue;
+        if(!empty($_SESSION['lastPick'])) {
+            $patternsBet = $_SESSION['lastPick'];
+            $coinValue = $_SESSION['lastBet'] / $_SESSION['lastPick'];
         }
 
         $xml = '<GameLogicResponse>
@@ -418,8 +425,8 @@ class miss_redCtrl extends IGTCtrl {
     </PopulationOutcome>
     '.$fs.'
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>45</PatternsBet>
+        <BetPerPattern>'.$coinValue.'</BetPerPattern>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>
@@ -1169,8 +1176,8 @@ class miss_redCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>45</PatternsBet>
+        <BetPerPattern>'.($_SESSION['lastBet']/$_SESSION['lastPick']).'</BetPerPattern>
+        <PatternsBet>'.$_SESSION['lastPick'].'</PatternsBet>
     </PatternSliderInput>
     <PickerInput>
         <Pick name="'.$pick.'" />
@@ -1207,16 +1214,6 @@ class miss_redCtrl extends IGTCtrl {
     }
 
     protected function showPlayFreeSpinReport($report, $totalWin) {
-        ob_start();
-        print_r($report);
-        $c = ob_get_contents();
-        ob_end_clean();
-        $f = fopen('report.txt', 'w+');
-        fwrite($f, $c);
-        fclose($f);
-
-
-
         $transform = $this->getTransform($report['replace']['offsets']);
 
         $originalHighLight = $this->getMultiWay($report['winLines'], true, 'FreeSpin', 'OriginalMultiWay');

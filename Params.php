@@ -216,6 +216,11 @@ class Params {
      */
     public function getSymbolID($symbol) {
         //echo $symbol.PHP_EOL;
+        if(empty($this->symbols[$symbol])) {
+            //$debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 5);
+            //print_r($debug);
+            //die();
+        }
         return $this->symbols[$symbol];
     }
 

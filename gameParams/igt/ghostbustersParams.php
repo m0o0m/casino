@@ -153,7 +153,7 @@ class ghostbustersParams extends Params {
     // настройка ставок
     public $currency = '$';
     public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
+    public $default_coinvalue = 5;
     public $defaultCoinsCount = 50;
 
     //public $denominations = array(0.01,0.02,0.03,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
@@ -303,7 +303,7 @@ class ghostbustersParams extends Params {
         ),
 
         // 1 к 5
-        'awardChance' => 1,
+        'awardChance' => 5,
         'awardValue' => array(50,100,200,250,300,500,800,1000),
         'awardValueChance' => array(
             0,0,0,0,0,0,0,0,0,

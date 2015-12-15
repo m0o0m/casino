@@ -241,8 +241,8 @@ class gladiatorCtrl extends Ctrl {
         $this->coliseumBonus['multiple'] = $totalMultiple;
 
         $extraWild = 'null';
-
         $extraScatter = 'null';
+
         if(rnd(1, $bonusParams['extraScatterChance']) == $bonusParams['extraScatterChance']) {
             $extraScatter = $this->getRandParam($bonusParams['extraScatterSymbols']);
         }
@@ -257,6 +257,7 @@ class gladiatorCtrl extends Ctrl {
         while($extraWild == $extraScatter && $extraScatter != 'null' && $extraWild != 'null') {
             $extraScatter = $this->getRandParam($bonusParams['extraScatterSymbols']);
         }
+
         $this->coliseumBonus['scatter'] = $extraScatter;
         $this->coliseumBonus['wild'] = $extraWild;
 
@@ -286,7 +287,7 @@ class gladiatorCtrl extends Ctrl {
                 $bonus = '';
             }
 
-            if($this->coliseumBonus['scatter'] != 'null') {
+            if(in_array($this->coliseumBonus['scatter'],$bonusParams['extraScatterSymbols'])) {
                 $report['extraScatterReport'] = $this->slot->getSymbolAnyCount($this->coliseumBonus['scatter']);
                 $esr = $report['extraScatterReport'];
                 if(!empty($this->gameParams->scatterMultiple[$esr['count']])) {

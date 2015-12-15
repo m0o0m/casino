@@ -565,4 +565,14 @@ action: ".$type;
         }
         return $c;
     }
+
+    public function startLog() {
+        ob_start();
+        print_r($this);
+        $c = ob_get_contents();
+        ob_end_clean();
+        $f = fopen('log', 'w+');
+        fwrite($f, $c);
+        fclose($f);
+    }
 }

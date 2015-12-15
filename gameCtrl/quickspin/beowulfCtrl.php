@@ -25,8 +25,7 @@ class beowulfCtrl extends Ctrl {
             else $draws = $gDraw;
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <CustomerFunBalanceResponse balance="'.$this->getBalance().'" />
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
@@ -217,8 +216,7 @@ class beowulfCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>';
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">
                 '.$drawStates.'
@@ -304,8 +302,7 @@ class beowulfCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>'.$this->bonus['drawStates'];
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
@@ -467,8 +464,7 @@ class beowulfCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>'.$this->bonus['drawStates'];
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';

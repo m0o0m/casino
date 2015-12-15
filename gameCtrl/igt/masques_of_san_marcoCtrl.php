@@ -7,7 +7,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $this->setSessionIfEmpty('state', 'SPIN');
         $this->setSessionIfEmpty('preState', 'SPIN');
 
-        $xml = '<params><param name="softwareid" value="200-1206-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Masques Of San Marco"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="MasquesOfSanMarco"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="FPY"/></params>';
+        $xml = '<params><param name="softwareid" value="200-1206-001"/><param name="minbet" value="1.0"/><param name="availablebalance" value="0.0"/><param name="denomid" value="44"/><param name="gametitle" value="Masques Of San Marco"/><param name="terminalid" value=""/><param name="ipaddress" value="31.131.103.75"/><param name="affiliate" value=""/><param name="gameWindowHeight" value="815"/><param name="gameWindowWidth" value="1024"/><param name="nsbuyin" value=""/><param name="nscashout" value=""/><param name="cashiertype" value="N"/><param name="game" value="MasquesOfSanMarco"/><param name="studio" value="interactive"/><param name="nsbuyinamount" value=""/><param name="buildnumber" value="4.2.F.O.CL104654_220"/><param name="autopull" value="N"/><param name="consoleCode" value="CSTM"/><param name="BCustomViewHeight" value="47"/><param name="BCustomViewWidth" value="1024"/><param name="consoleTimeStamp" value="1349855268588"/><param name="filtered" value="Y"/><param name="defaultbuyinamount" value="0.0"/><param name="xtautopull" value=""/><param name="server" value="../../../../../"/><param name="showInitialCashier" value="false"/><param name="audio" value="on"/><param name="nscode" value="MRGR"/><param name="uniqueid" value="Guest"/><param name="countrycode" value=""/><param name="presenttype" value="FLSH"/><param name="securetoken" value=""/><param name="denomamount" value="1.0"/><param name="skincode" value="MRGR"/><param name="language" value="en"/><param name="channel" value="INT"/><param name="currencycode" value="'.$this->gameParams->curiso.'"/></params>';
         $this->outXML($xml);
     }
 
@@ -249,8 +249,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         }
 
         $patternsBet = 40;
+        $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];
+            $coinValue = $_SESSION['lastBet'] / $_SESSION['lastPick'];
         }
 
         $xml = '<GameLogicResponse>
@@ -350,7 +352,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </PopulationOutcome>
     '.$fs.$base.'
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
+        <BetPerPattern>'.$coinValue.'</BetPerPattern>
         <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
@@ -445,8 +447,9 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $pick = $_SESSION['lastPick'];
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->slot->createCustomReels($this->gameParams->reels[0], array(6,6,6,6,6));
         $this->slot->rows = 6;
-        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reels'])));
+        $this->slot->setReelsCreate($_SESSION['reels']);
 
         foreach($_SESSION['avalancheOffsets'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -494,7 +497,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $this->slot = new Slot($this->gameParams, 60, $stake, 6/4);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(6,6,6,6,6));
         $this->slot->rows = 6;
-        $this->slot->reels = unserialize(gzuncompress(base64_decode($_SESSION['reelsFree'])));
+        $this->slot->setReelsCreate($_SESSION['reelsFree']);
 
         foreach($_SESSION['avalancheOffsetsFree'] as $o) {
             $ceilRow = $this->slot->getCeilRowByOffset($o);
@@ -599,7 +602,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+            $_SESSION['reels'] = $this->slot->getReelsCreateArray();
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -616,7 +619,11 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             $_SESSION['startBalance'] = $balance;
             $_SESSION['startSpinBalance'] = $balance;
 
-            $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+            $_SESSION['baseDisplay'] = array(
+                'offset' => $report['offset'],
+                'rows' => $report['rows'],
+            );
+
             $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
         }
 
@@ -691,7 +698,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+            $_SESSION['reels'] = $this->slot->getReelsCreateArray();
             $_SESSION['avalancheOffsets'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -705,7 +712,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             $_SESSION['avalancheOffsets'] = array_unique($_SESSION['avalancheOffsets']);
             sort($_SESSION['avalancheOffsets']);
 
-            $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+            $_SESSION['baseDisplay'] = array(
+                'offset' => $report['offset'],
+                'rows' => $report['rows'],
+            );
             $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
         }
 
@@ -772,7 +782,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
 
 
-        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+        $_SESSION['reels'] = $this->slot->getReelsCreateArray();
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -881,7 +891,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $_SESSION['totalAwarded'] = 6;
         $_SESSION['fsLeft'] = 6;
         $_SESSION['fsPlayed'] = 0;
-        $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseDisplay'] = array(
+            'offset' => $report['offset'],
+            'rows' => $report['rows'],
+        );
         $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
     }
 
@@ -906,7 +919,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
 
 
-        $_SESSION['reels'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+        $_SESSION['reels'] = $this->slot->getReelsCreateArray();
         $_SESSION['avalancheOffsets'] = array();
         $tmp = array();
         foreach($report['winLines'] as $w) {
@@ -1014,7 +1027,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $_SESSION['totalAwarded'] = 6;
         $_SESSION['fsLeft'] = 6;
         $_SESSION['fsPlayed'] = 0;
-        $_SESSION['baseDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseDisplay'] = array(
+            'offset' => $report['offset'],
+            'rows' => $report['rows'],
+        );
         $_SESSION['baseScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
     }
 
@@ -1058,7 +1074,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             $settled = $report['bet'];
             $pending = 0;
             $gameStatus = 'Start';
-            $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+            $baseReels = $this->getDisplay($_SESSION['baseDisplay']);
         }
 
 
@@ -1071,7 +1087,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         <Trigger name="BaseGameTumble" priority="0" stageConnector="" />
     </TriggerOutcome>';
 
-            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+            $_SESSION['reelsFree'] = $this->slot->getReelsCreateArray();
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -1153,7 +1169,11 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             unset($_SESSION['baseWinLinesWin']);
         }
 
-        $_SESSION['baseFreeDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseFreeDisplay'] = array(
+            'offset' => $report['offset'],
+            'rows' => $report['rows'],
+        );
+
         $_SESSION['baseFreeScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
     }
 
@@ -1193,7 +1213,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
     </TriggerOutcome>';
 
 
-            $_SESSION['reelsFree'] = base64_encode(gzcompress(serialize($this->slot->reels), 9));
+            $_SESSION['reelsFree'] = $this->slot->getReelsCreateArray();
             $_SESSION['avalancheOffsetsFree'] = array();
             $tmp = array();
             foreach($report['winLines'] as $w) {
@@ -1228,7 +1248,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $fsWin = $_SESSION['fsTotalWin'];
 
         $baseScatter = gzuncompress(base64_decode($_SESSION['baseScatter']));
-        $baseReels = gzuncompress(base64_decode($_SESSION['baseDisplay']));
+        $baseReels = $this->getDisplay($_SESSION['baseDisplay']);
 
         $gameTotal = $_SESSION['fsTotalWin'] + $_SESSION['baseWinLinesWin'];
 
@@ -1283,7 +1303,11 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
 
         $this->outXML($xml);
 
-        $_SESSION['baseFreeDisplay'] = base64_encode(gzcompress($display, 9));
+        $_SESSION['baseFreeDisplay'] = array(
+            'offset' => $report['offset'],
+            'rows' => $report['rows'],
+        );
+
         $_SESSION['baseFreeScatter'] = base64_encode(gzcompress($highlight.$winLines, 9));
 
         if(empty($report['winLines'])) {

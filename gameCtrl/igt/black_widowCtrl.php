@@ -42,7 +42,7 @@ class black_widowCtrl extends IGTCtrl {
     <param name="skincode" value="MRGR"/>
     <param name="language" value="en"/>
     <param name="channel" value="INT"/>
-    <param name="currencycode" value="FPY"/>
+    <param name="currencycode" value="'.$this->gameParams->curiso.'"/>
 </params>';
 
         $this->outXML($xml);
@@ -287,8 +287,10 @@ class black_widowCtrl extends IGTCtrl {
         }
 
         $patternsBet = 100;
+        $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];
+            $coinValue = $_SESSION['lastBet'] / $_SESSION['lastPick'];
         }
 
         $xml = '<GameLogicResponse>
@@ -358,8 +360,8 @@ class black_widowCtrl extends IGTCtrl {
         </Entry>
     </PopulationOutcome>
     <PatternSliderInput>
-        <BetPerPattern>1</BetPerPattern>
-        <PatternsBet>40</PatternsBet>
+        <BetPerPattern>'.$coinValue.'</BetPerPattern>
+        <PatternsBet>'.$patternsBet.'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>

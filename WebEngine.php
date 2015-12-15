@@ -72,18 +72,20 @@ class WebEngine {
 
             $params = new $paramsName($api->gameSession->create_time);
 
-            // Устанавливаем параметры, загруженные из базы
-            if(!empty( $api->gameParams)) {
-                foreach($api->gameParams as $key=>$value) {
-                    $params->$key = $value;
-                }
-            }
             // Устанавливаем конфиг, загруженный из базы
             if(!empty($api->config)) {
                 foreach($api->config as $key=>$value) {
                     $params->$key = $value;
                 }
             }
+
+            // Устанавливаем параметры, загруженные из базы
+            if(!empty($api->gameParams)) {
+                foreach($api->gameParams as $key=>$value) {
+                    $params->$key = $value;
+                }
+            }
+
             $params->createBetConfig();
 
             $ctrl = new $ctrlName($params);
@@ -102,5 +104,12 @@ class WebEngine {
 }
 
 $WE = new WebEngine();
+
+/*
+$json = json_encode($_SESSION);
+$f = fopen('count', 'ab');
+fwrite($f, strlen($json).PHP_EOL);
+fclose($f);
+*/
 
 ?>

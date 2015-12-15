@@ -44,8 +44,7 @@ class sinbadCtrl extends Ctrl {
             }
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <CustomerFunBalanceResponse balance="'.$this->getBalance().'" />
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
@@ -179,8 +178,7 @@ class sinbadCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>';
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
@@ -214,8 +212,7 @@ class sinbadCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="pending"/>
                 </DrawState>';
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
@@ -251,8 +248,7 @@ class sinbadCtrl extends Ctrl {
             $pick = $attrs['@attributes']['pick'];
             $_SESSION['fsPick'] = $pick;
 
-            $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><EEGActionResponse name="'.$pick.'" gameId="'.$this->gameID.'"/></CompositeResponse>';
+            $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><EEGActionResponse name="'.$pick.'" gameId="'.$this->gameID.'"/></CompositeResponse>';
             if($this->emulation) {
 
             }
@@ -269,8 +265,7 @@ class sinbadCtrl extends Ctrl {
     protected function startBonusResult() {
         if(empty($_SESSION['fsPick'])) {
             $draw = gzuncompress(base64_decode($_SESSION['drawStates']));
-            $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+            $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <EEGLoadResultsResponse gameId="'.$this->gameID.'">'.$draw.'</EEGLoadResultsResponse>
 </CompositeResponse>';
 
@@ -604,8 +599,7 @@ class sinbadCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="'.$report['bet'].'" pick="L'.$report['linesCount'].'" payout="'.$this->bonus['totalWin'].'" won="true"/>
                 </DrawState>'.$this->bonus['drawStates'];
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <EEGLoadResultsResponse gameId="'.$this->gameID.'">'.$drawStates.'</EEGLoadResultsResponse>
 </CompositeResponse>';
 
