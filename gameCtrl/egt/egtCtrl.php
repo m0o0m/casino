@@ -232,7 +232,47 @@ class egtCtrl extends Ctrl {
 
 
 
+    public function startSettings($request) {
+        $paytable = $this->getPaytable();
+        $reels = $this->getMainReels();
 
+        $json = '{
+    "complex": {
+        '.$paytable.'
+        "rtp": "96.44",
+        "bets": ['.implode(',', $this->gameParams->denominations).'],
+        "jackpotMinBet": 1,
+        "jackpot": false,
+        '.$reels.'
+        "jackpotMaxBet": 100000,
+        "denominations": [
+            [100, 70, 3000000]
+        ]
+    },
+    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
+    "gameNumber": -1,
+    "sessionKey": "'.$this->sessionKey.'",
+    "msg": "success",
+    "messageId": "'.$this->messageId.'",
+    "qName": "app.services.messages.response.GameResponse",
+    "command": "settings",
+    "eventTimestamp": '.$this->getTimeStamp().'
+}';
+        $this->out($json);
+    }
+
+    public function startPing($request) {
+        $json = '{
+    "sessionKey": "'.$this->sessionKey.'",
+    "msg": "success",
+    "messageId": "'.$this->messageId.'",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": '.$this->getTimeStamp().'
+}';
+
+        $this->out($json);
+    }
 
     public function startCollect($request) {
         if($_SESSION['lastWin'] <= 0) {
@@ -285,8 +325,8 @@ class egtCtrl extends Ctrl {
         }
 
         $color = $request->bet->color;
-        //$rndCard = rnd(0,3);
-        $rndCard = 0;
+        $rndCard = rnd(0,3);
+        //$rndCard = 0;
 
         $unset = false;
 
@@ -294,7 +334,7 @@ class egtCtrl extends Ctrl {
             $state = 'gamble';
             $_SESSION['gambles']--;
             $_SESSION['lastWin'] *= 2;
-            if($_SESSION['lastWin'] > $_SESSION['lastBet'] * 35) {
+            if($_SESSION['lastWin'] > $_SESSION['lastBet'] * 35 || $_SESSION['gambles'] == 0) {
 
 
                 $report = unserialize(gzuncompress(base64_decode($_SESSION['report'])));

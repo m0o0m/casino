@@ -48,35 +48,6 @@ class dragon_reelsCtrl extends egtCtrl {
         $this->out($json);
     }
 
-    public function startSettings($request) {
-        $paytable = $this->getPaytable();
-        $reels = $this->getMainReels();
-
-        $json = '{
-    "complex": {
-        '.$paytable.'
-        "rtp": "96.44",
-        "bets": ['.implode(',', $this->gameParams->denominations).'],
-        "jackpotMinBet": 1,
-        "jackpot": false,
-        '.$reels.'
-        "jackpotMaxBet": 100000,
-        "denominations": [
-            [100, 70, 3000000]
-        ]
-    },
-    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
-    "gameNumber": -1,
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.GameResponse",
-    "command": "settings",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
-        $this->out($json);
-    }
-
     public function startSubscribe($request) {
         $state = '';
 
@@ -145,19 +116,6 @@ class dragon_reelsCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-
-        $this->out($json);
-    }
-
-    public function startPing($request) {
-        $json = '{
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.BaseResponse",
-    "command": "ping",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
 
         $this->out($json);
     }
@@ -347,7 +305,14 @@ class dragon_reelsCtrl extends egtCtrl {
         if($report['totalWin'] > 0 && $report['totalWin'] < $report['bet'] * 35) {
             $state = 'gamble';
             $_SESSION['gambles'] = 5;
-            $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
+            $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
+                'winLines' => $report['winLines'],
+                'reels' => $report['reels'],
+                'type' => $report['type'],
+                'bet' => $report['bet'],
+                'betOnLine' => $report['betOnLine'],
+                'linesCount' => $report['linesCount'],
+            )), 9));
             $_SESSION['reels'] = $display;
             $_SESSION['state'] = 'GAMBLE';
         }
@@ -411,7 +376,14 @@ class dragon_reelsCtrl extends egtCtrl {
         $_SESSION['fsLeft'] = 10;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['fsTotalWin'] = $report['totalWin'];
-        $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
+        $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
+            'winLines' => $report['winLines'],
+            'reels' => $report['reels'],
+            'type' => $report['type'],
+            'bet' => $report['bet'],
+            'betOnLine' => $report['betOnLine'],
+            'linesCount' => $report['linesCount'],
+        )), 9));
         $_SESSION['reels'] = $display;
 
         $this->spinPays[] = array(

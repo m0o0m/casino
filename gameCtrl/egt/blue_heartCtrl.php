@@ -48,35 +48,6 @@ class blue_heartCtrl extends egtCtrl {
         $this->out($json);
     }
 
-    public function startSettings($request) {
-        $paytable = $this->getPaytable();
-        $reels = $this->getMainReels();
-
-        $json = '{
-    "complex": {
-        '.$paytable.'
-        "rtp": "96.44",
-        "bets": ['.implode(',', $this->gameParams->denominations).'],
-        "jackpotMinBet": 1,
-        "jackpot": false,
-        '.$reels.'
-        "jackpotMaxBet": 100000,
-        "denominations": [
-            [100, 70, 3000000]
-        ]
-    },
-    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
-    "gameNumber": -1,
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.GameResponse",
-    "command": "settings",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
-        $this->out($json);
-    }
-
     public function startSubscribe($request) {
         $state = '';
 
@@ -145,19 +116,6 @@ class blue_heartCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-
-        $this->out($json);
-    }
-
-    public function startPing($request) {
-        $json = '{
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.BaseResponse",
-    "command": "ping",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
 
         $this->out($json);
     }
@@ -301,10 +259,19 @@ class blue_heartCtrl extends egtCtrl {
     }
 
     public function showSpinReport($report, $totalWin) {
-        $this->spinPays[] = array(
-            'win' => 0,
-            'report' => $report,
-        );
+        if($report['totalWin'] >= $report['bet'] * 35) {
+            $this->spinPays[] = array(
+                'win' => $report['totalWin'],
+                'report' => $report,
+            );
+        }
+        else {
+            $this->spinPays[] = array(
+                'win' => 0,
+                'report' => $report,
+            );
+
+        }
         $this->startPay();
 
         $display = $this->getDisplay();
@@ -314,10 +281,17 @@ class blue_heartCtrl extends egtCtrl {
 
         $state = 'idle';
         $_SESSION['gambles'] = 0;
-        if($report['totalWin'] > 0) {
+        if($report['totalWin'] > 0 && $report['totalWin'] < $report['bet'] * 35) {
             $state = 'gamble';
             $_SESSION['gambles'] = 5;
-            $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
+            $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
+                'winLines' => $report['winLines'],
+                'reels' => $report['reels'],
+                'type' => $report['type'],
+                'bet' => $report['bet'],
+                'betOnLine' => $report['betOnLine'],
+                'linesCount' => $report['linesCount'],
+            )), 9));
             $_SESSION['reels'] = $display;
             $_SESSION['state'] = 'GAMBLE';
         }
@@ -381,7 +355,14 @@ class blue_heartCtrl extends egtCtrl {
         $_SESSION['fsLeft'] = 10;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['fsTotalWin'] = $report['totalWin'];
-        $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
+        $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
+            'winLines' => $report['winLines'],
+            'reels' => $report['reels'],
+            'type' => $report['type'],
+            'bet' => $report['bet'],
+            'betOnLine' => $report['betOnLine'],
+            'linesCount' => $report['linesCount'],
+        )), 9));
         $_SESSION['reels'] = $display;
 
         $this->spinPays[] = array(
@@ -443,97 +424,6 @@ class blue_heartCtrl extends egtCtrl {
             unset($_SESSION['report']);
             unset($_SESSION['reels']);
         }
-
-        $this->out($json);
-    }
-
-    public function startCollect($request) {
-        if($_SESSION['lastWin'] <= 0) {
-            die('error');
-        }
-
-        $report = unserialize(gzuncompress(base64_decode($_SESSION['report'])));
-
-        $report['type'] = 'collect';
-        $this->bonusPays[] = array(
-            'win' => $_SESSION['lastWin'],
-            'report' => $report,
-        );
-        $this->startPay();
-
-        $balance = $this->getBalance() * 100;
-
-        $json = '{
-    "complex": {
-        "gameCommand": "collect"
-    },
-    "state": "idle",
-    "winAmount": '.($_SESSION['lastWin']*100).',
-    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
-    "gameNumber": 1272723877896,
-    "balance": '.$balance.',
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.GameEventResponse",
-    "command": "bet",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
-
-        $_SESSION['gambles'] = 0;
-        $_SESSION['lastWin'] = 0;
-        $_SESSION['state'] = 'SPIN';
-
-        $this->out($json);
-
-        $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
-    }
-
-    protected function startGamble($request) {
-        if($_SESSION['gambles'] <= 0) {
-            die('error');
-        }
-        if($_SESSION['lastWin'] > $_SESSION['lastBet'] * 35) {
-            die('error');
-        }
-
-        $color = $request->bet->color;
-        $rndCard = rnd(0,3);
-
-        if( ($color == 0 && ($rndCard == 1 || $rndCard == 2)) || ($color == 1 && ($rndCard == 0 || $rndCard == 3))) {
-            $state = 'gamble';
-            $_SESSION['gambles']--;
-            $_SESSION['lastWin'] *= 2;
-        }
-        else {
-            $state = 'idle';
-            $_SESSION['gambles'] = 0;
-            $_SESSION['lastWin'] = 0;
-            $_SESSION['state'] = 'SPIN';
-            unset($_SESSION['report']);
-            unset($_SESSION['reels']);
-        }
-
-        array_push($_SESSION['gambleCards'], $rndCard);
-
-        $json = '{
-    "complex": {
-        "gambles": '.$_SESSION['gambles'].',
-        "card": '.$rndCard.',
-        "jackpot": false,
-        "gameCommand": "gamble"
-    },
-    "state": "'.$state.'",
-    "winAmount": '.($_SESSION['lastWin']*100).',
-    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
-    "gameNumber": 1304901365810,
-    "sessionKey": "'.$this->sessionKey.'",
-    "msg": "success",
-    "messageId": "'.$this->messageId.'",
-    "qName": "app.services.messages.response.GameEventResponse",
-    "command": "bet",
-    "eventTimestamp": '.$this->getTimeStamp().'
-}';
 
         $this->out($json);
     }
