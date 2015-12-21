@@ -1,0 +1,164 @@
+{
+
+    "resourcesUrl": "ExpandSlot/FSJSlot/resourcesNoJackpot.data",
+
+    "reelImages": [
+        "reelImages/00.png",
+        "reelImages/01.png",
+        "reelImages/02.png",
+        "reelImages/03.png",
+        "reelImages/04.png",
+        "reelImages/05.png",
+        "reelImages/06.png",
+        "reelImages/07.png",
+        "reelImages/08.png",
+        "reelImages/09.png"
+    ],
+
+    "smallReelImages": [
+        "smallImages/00s.png",
+        "smallImages/01s.png",
+        "smallImages/02s.png",
+        "smallImages/03s.png",
+        "smallImages/04s.png",
+        "smallImages/05s.png",
+        "smallImages/06s.png",
+        "smallImages/07s.png",
+        "smallImages/08s.png",
+        "smallImages/09s.png"
+    ],
+
+    "gambleCardsImages": [
+        "gambleCards/redBack.png",
+        "gambleCards/blackBack.png",
+        "gambleCards/clubs.png",
+        "gambleCards/diamonds.png",
+        "gambleCards/hearts.png",
+        "gambleCards/spades.png"
+    ],
+
+    "generalImages": {
+        "background": "background.jpg",
+        "gameTitle": "gameTitle.png",
+        "diamond": "diamond.png",
+        "freeSpinsExpandFrame": "expframe.png"
+    },
+
+    "gambleImages": {
+        "gambleBackground": "gambleBackground.png",
+        "gambleWin": "gambleWin.png"
+    },
+
+    "winSounds": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "win_mushroom",
+        "win_dwarf",
+        "win_fairy",
+        "win_wizard",
+        "win_unicorn"
+    ],
+
+    "winFullSounds": [
+        {
+            "card": 0,
+            "url": "fullLine1"
+        },
+        {
+            "card": 1,
+            "url": "fullLine1"
+        },
+        {
+            "card": 2,
+            "url": "fullLine1"
+        },
+        {
+            "card": 3,
+            "url": "fullLine1"
+        },
+        {
+            "card": 4,
+            "url": "fullLine1"
+        },
+        {
+            "card": 5,
+            "url": "fullLine2"
+        },
+        {
+            "card": 6,
+            "url": "fullLine2"
+        },
+        {
+            "card": 7,
+            "url": "fullLine3"
+        },
+        {
+            "card": 8,
+            "url": "fullLine4"
+        }
+    ],
+
+    "mainSounds": {
+        "stopReelSingleSound": "stopReelSingle",
+        "stopReelAllSound": "stopReelAll",
+        "collectButtonSound": "collectButton",
+        "reelAccelerateSound": "reelAccelerate",
+        "mainButtonSound": "mainButton",
+        "startAutoplaySound": "startAuto",
+        "stopAutoplaySound": "stopAuto",
+        "takeWinSound": "takeWin",
+        "creditAnimationSound": "creditAnimation",
+        "currencySound": "currency",
+        "creditSound": "credit",
+        "paytableOpenSound": "paytable",
+        "paytableCloseSound": "paytable",
+        "exitButtonSound": "exitButton",
+		"freespinMusicSound":"freespinMusic",
+        "volumeSound": "volume",
+        "changeLanguageSound": "mainButton",
+        "openFullscreenSound": "showDenominations",
+	"closeFullscreenSound": "hideDenominations",
+        "showDenominationsSound": "showDenominations",
+        "hideDenominationsSound": "hideDenominations",
+        "changeDenominationSound": "changeDenomination",
+        "paytableNavigationSound": "paytable",
+        "showLanguagesSound": "showLanguages",
+        "hideLanguagesSound": "hideLanguages",
+        "coinAnimationSound": "coins",
+        "helpOpenSound": "paytable",
+        "gambleOpenSound": "gambleOpen",
+        "gambleCardClickSound": "gambleCardClick",
+        "gambleLostSound": "gambleLost",
+        "gambleWonSound": "gambleWon",
+        "freeSpinsExpandSound": "expandingbang"
+    },
+
+    "scatterSounds": [
+        {
+            "scatter": 9,
+            "sounds": [
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter",
+                "stopReelScatter"
+            ]
+        }
+    ],
+
+    "enterFreespinsScatterSounds": [
+        "win_unicorn"
+    ],
+
+    "lineSelectSounds": [
+        "selectLine1",
+        "selectLine2",
+        "selectLine3",
+        "selectLine4",
+        "selectLine5"
+    ]
+
+}

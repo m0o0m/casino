@@ -215,6 +215,7 @@ class flaming_hotCtrl extends egtCtrl {
                 'bet' => $report['bet'],
                 'betOnLine' => $report['betOnLine'],
                 'linesCount' => $report['linesCount'],
+                'scattersReport' => $report['scattersReport'],
             )), 9));
             $_SESSION['reels'] = $display;
             $_SESSION['state'] = 'GAMBLE';

@@ -44,7 +44,7 @@ class egtCtrl extends Ctrl {
                 }
                 break;
             case 'unsubscribe':
-                echo 'lalka off';
+                echo 'off';
                 break;
         }
     }
@@ -94,6 +94,32 @@ class egtCtrl extends Ctrl {
                 "line": '.($w['id']-1).',
                 "winAmount": '.$lineWin.',
                 "cells": ['.$this->getLineHighlight($w).'],
+                "card": '.$alias.'
+            }';
+        }
+        $winLines .= implode(',', $linesArray);
+
+        $winLines .= '],';
+
+        return $winLines;
+    }
+
+
+    protected function getExpandSymbolLines($report) {
+        $winLines = '"freeSpinsExpandLines": [';
+        $linesArray = array();
+        foreach($report['extraLines'] as $w) {
+            $lineWin = $report['betOnLine'] * $w['multiple'] * 100;
+            $alias = $this->gameParams->getSymbolID($w['alias'])[0];
+            $pos = array();
+            foreach($w['colNumber'] as $c) {
+                $pos[] = $c;
+                $pos[] = $w['line'][$c];
+            }
+            $linesArray[] = '{
+                "line": '.($w['id']-1).',
+                "winAmount": '.$lineWin.',
+                "cells": ['.implode(',', $pos).'],
                 "card": '.$alias.'
             }';
         }
@@ -214,7 +240,7 @@ class egtCtrl extends Ctrl {
         return $this->getDisplay();
     }
 
-    protected function getExpand($offsets) {
+    protected function getExpand($offsets, $name = 'expand') {
         if(!empty($offsets)) {
             $pos = array();
             foreach($offsets as $o) {
@@ -223,14 +249,12 @@ class egtCtrl extends Ctrl {
                 $pos[] = $cr['row'];
             }
 
-            return '"expand": ['.implode(',', $pos).'],';
+            return '"'.$name.'": ['.implode(',', $pos).'],';
         }
         else {
-            return '"expand": [],';
+            return '"'.$name.'": [],';
         }
     }
-
-
 
     public function startSettings($request) {
         $paytable = $this->getPaytable();

@@ -1327,6 +1327,50 @@ class Slot {
     }
 
     /**
+     * @param int $symbol
+     * @return array
+     */
+    public function getAnyPosWinLines($symbol) {
+        $winLines = array();
+        $lineId = 0;
+        foreach($this->lines as $line) {
+            $lineSymbol = $this->getLineSymbols($line);
+            $cnt = 0;
+            $double = 1;
+            $withWild = false;
+            $lineSymbolCount = 0;
+            $collecting = false;
+            $useSymbols = array();
+            $colNumber = array();
+            foreach($lineSymbol as $s) {
+                if($s == $symbol) {
+                    $cnt++;
+                    $useSymbols[] = $s;
+                    $colNumber[] = $lineSymbolCount;
+                }
+                $lineSymbolCount++;
+            }
+            if($cnt >= $this->params->minWinCount) {
+                $winLines[] = array(
+                    'line' => $line,
+                    'count' => $cnt,
+                    'id' => $lineId,
+                    'double' => $this->double * $double,
+                    'withWild' => $withWild,
+                    'collecting' => $collecting,
+                    'direction' => 'left',
+                    'useSymbols' => $useSymbols,
+                    'colNumber' => $colNumber,
+                    'type' => 'line',
+                );
+
+            }
+            $lineId++;
+        }
+        return $winLines;
+    }
+
+    /**
      * Проверяем, есть ли выигрышные линии у слота после спина.
      * Данная функция нужна для бонусов, которые срабатывают, если есть выигрышные линии.
      *

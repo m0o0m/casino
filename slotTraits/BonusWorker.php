@@ -985,6 +985,59 @@ trait BonusWorker {
         }
     }
 
+
+
+    public function getExpandLines($symbol) {
+        $tmpReels = array();
+
+        foreach($this->reels as $r) {
+            $tmpReels[] = clone $r;
+            $offsets = $r->checkSymbol(array($symbol), 0);
+            if(!empty($offsets)) {
+                $r->setAsWild($symbol);
+            }
+        }
+
+        $winLines = $this->getAnyPosWinLines($symbol);
+
+        $resultLines = array();
+        $v = array($symbol);
+        $totalMultiple = 0;
+        foreach($winLines as $w) {
+            if($this->params->checkSymbolCount($v, $w['count'], $w['type'])) {
+                $multiplier = $this->params->getWinMultiplier($v, $w['count'], $w['type']);
+                $totalMultiple += $multiplier;
+
+                $addArray = array(
+                    'line' => $w['line'],
+                    'multiple' => $multiplier * $w['double'],
+                    'symbol' => $v,
+                    'alias' => $this->params->getSymbolByID($v),
+                    'count' => $w['count'],
+                    'id' => $w['id'] + 1,
+                    'collecting' => $w['collecting'],
+                    'double' => $w['double'],
+                    'withWild' => $w['withWild'],
+                    'direction' => $w['direction'],
+                    'useSymbols' => $w['useSymbols'],
+                    'colNumber' => $w['colNumber'],
+                    'type' => $w['type'],
+                );
+
+                $resultLines[] = $addArray;
+            }
+        }
+
+        $this->reels = $tmpReels;
+
+        return array(
+            'totalMultiple' => $totalMultiple,
+            'winLines' => $resultLines,
+        );
+    }
+
+
+
     /**
      * Получение данных по дополнительным выплатам по линиям
      *
