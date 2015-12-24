@@ -32,7 +32,7 @@ trait SymbolsWorker {
         $offset = false;
         foreach($visible as $v) {
             if(in_array($v, $id)) {
-                $offset = $c * 5 + $reelNumber;
+                $offset = $c * count($this->reels) + $reelNumber;
             }
             $c++;
         }
@@ -52,7 +52,7 @@ trait SymbolsWorker {
         $v = $this->getReelSymbol($reel, $position);
         $offset = false;
         if(in_array($v, $symbol)) {
-            $offset = $position * 5 + $reel;
+            $offset = $position * count($this->params->reelConfig) + $reel;
         }
         return $offset;
     }

@@ -1,0 +1,40 @@
+{
+ "resourcesUrl":"BaseSlot/SHJSlot/resourcesNoJackpot.data",
+  "reelImages":[	
+				"reelImages/cherry.png",
+				"reelImages/apple.png",
+				"reelImages/apricot.png",
+				"reelImages/grapes.png",
+			    "reelImages/bell.png",
+				"reelImages/star.png",
+				"reelImages/bar.png",
+				"reelImages/dollar.png",
+				"reelImages/wild.png"
+			   ],
+ "smallReelImages":[
+				"smallImages/cherry.png",
+				"smallImages/apple.png",
+				"smallImages/apricot.png",
+				"smallImages/grapes.png",
+			    "smallImages/bell.png",
+				"smallImages/star.png",
+				"smallImages/bar.png",
+				"smallImages/dollar.png",
+				"smallImages/wild.png"
+			   ],
+ "gambleCardsImages":["gambleCards/redBack.png", "gambleCards/blackBack.png", "gambleCards/clubs.png", "gambleCards/diamonds.png", "gambleCards/hearts.png", "gambleCards/spades.png"],
+ "generalImages":{"background":"background.jpg", "gameTitle":"gameTitle.png", "diamond":"diamond.png", "waysToPayBorder":"waysToPayBorder.png","x2":"x2.png"},
+ "gambleImages":{"gambleBackground":"gambleBackground.png", "gambleWin":"gambleWin.png"},
+ "winSounds":["winCherry", "winApple", "winPeach", "winGrapes", "winBell", "winStar", "winBar", "winDollar", "winSeven"],
+ "winFullSounds":[],
+ "mainSounds":{"stopReelSingleSound":"stopReelSingle", "stopReelAllSound":"stopReelAll", "collectButtonSound":"collectButton",
+				"mainButtonSound":"mainButton", "startAutoplaySound":"startAuto", "stopAutoplaySound":"stopAuto", "takeWinSound":"takeWin",
+				"creditAnimationSound":"creditAnimation", "currencySound":"currency", "creditSound":"credit", "paytableOpenSound":"paytable", "paytableCloseSound":"paytable", 
+				"volumeSound":"volume", "changeLanguageSound":"mainButton", "showDenominationsSound":"showDenominations", "openFullscreenSound":"showDenominations", "closeFullscreenSound":"hideDenominations",
+				"hideDenominationsSound":"hideDenominations", "changeDenominationSound":"changeDenomination", "paytableNavigationSound":"paytable", "showLanguagesSound":"showLanguages",
+				"hideLanguagesSound":"hideLanguages", "helpOpenSound":"paytable", "gambleOpenSound":"gambleOpen", "gambleCardClickSound":"gambleCardClick",
+				"gambleLostSound":"gambleLost", "gambleWonSound":"gambleWon"},
+ "scatterSounds":[],
+ "enterFreespinsScatterSounds":[]
+ 
+}

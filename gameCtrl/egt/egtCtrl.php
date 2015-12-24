@@ -104,6 +104,65 @@ class egtCtrl extends Ctrl {
         return $winLines;
     }
 
+    protected function getWinWaysData($report) {
+        $combos = '"combos": [';
+
+        $tmpArray = array();
+        foreach($report['winLines'] as $w) {
+            if(empty($tmpArray[$w['alias']])) {
+                $tmpArray[$w['alias']] = array();
+            }
+            $tmpArray[$w['alias']][] = $w;
+        }
+
+        $resultArray = array();
+        foreach($tmpArray as $s=>$a) {
+            $resultArray[$s] = array(
+                'symbol' => $s,
+                'lenght' => 0,
+                'count' => 0,
+                'multiple' => 0,
+                'totalMultiple' => 0,
+                'offsets' => array(),
+            );
+
+            foreach($a as $w) {
+                $resultArray[$s]['count']++;
+                $resultArray[$s]['lenght'] = $w['count'];
+                $resultArray[$s]['multiple'] = $w['multiple'];
+                $resultArray[$s]['totalMultiple'] += $w['multiple'];
+                $resultArray[$s]['offsets'] = array_merge($resultArray[$s]['offsets'], $w['line']);
+            }
+            $resultArray[$s]['offsets'] = array_unique($resultArray[$s]['offsets']);
+        }
+
+        $combosArray = array();
+
+        foreach($resultArray as $k=>$v) {
+            $pos = array();
+            foreach($v['offsets'] as $o) {
+                $ceilRow = $this->slot->getCeilRowByOffset($o);
+                $pos[] = $ceilRow['ceil'];
+                $pos[] = $ceilRow['row'];
+            }
+
+            $combosArray[] = '{
+                "card": '.$v['symbol'].',
+                "len": '.$v['lenght'].',
+                "count": '.$v['count'].',
+                "winPerCount": '.($v['multiple']*$report['betOnLine']*100).',
+                "multiplier": '.$report['double'].',
+                "winAmount": '.($v['totalMultiple']*$report['betOnLine']*100).',
+                "cells": ['.implode(',', $pos).']
+            }';
+        }
+
+        $combos .= implode(',', $combosArray);
+
+        $combos .= '],';
+        return $combos;
+    }
+
 
     protected function getExpandSymbolLines($report) {
         $winLines = '"freeSpinsExpandLines": [';

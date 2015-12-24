@@ -177,7 +177,7 @@ trait BonusWorker {
             // c - ceil count
             $wOffsets = array();
             $lOffsets = array();
-            for($c = 0; $c < 5; $c++) {
+            for($c = 0; $c < count($this->params->reelConfig); $c++) {
                 if($this->chechSymbolOnReel('s02', $c, $r)) {
                     $offset = $this->getOffsetByCeilRow($c, $r);
                     $wOffsets[] = $offset;
@@ -245,7 +245,7 @@ trait BonusWorker {
         for($r = 0; $r < 4; $r++) {
             // c - ceil count
             $wOffsets = array();
-            for($c = 0; $c < 5; $c++) {
+            for($c = 0; $c < count($this->params->reelConfig); $c++) {
                 if($this->chechSymbolOnReel('w01', $c, $r)) {
                     $offset = $this->getOffsetByCeilRow($c, $r);
                     $wOffsets[] = $offset;
@@ -452,8 +452,8 @@ trait BonusWorker {
                         );
                     }
                     else {
-                        $reelNumber = $e['offsets'][$explodedCount] % 5;
-                        $p = floor($e['offsets'][$explodedCount] / 5);
+                        $reelNumber = $e['offsets'][$explodedCount] % count($this->params->reelConfig);
+                        $p = floor($e['offsets'][$explodedCount] / count($this->params->reelConfig));
                         $this->reels[$reelNumber]->setSymbolOnPosition($p, $explodedSymbolReplaceId);
                         $newExplodedOffsets = array();
                         while(count($newExplodedOffsets) !== $config['newWildsCount']) {
@@ -585,8 +585,8 @@ trait BonusWorker {
     private function setSymbolOnPosition($offsets, $symbol) {
         $id = $this->params->getSymbolID($symbol);
         foreach($offsets as $pos) {
-            $reelNumber = $pos % 5;
-            $p = floor($pos / 5);
+            $reelNumber = $pos % count($this->params->reelConfig);
+            $p = floor($pos / count($this->params->reelConfig));
             $this->reels[$reelNumber]->setSymbolOnPosition($p, $id[0]);
         }
     }
@@ -650,7 +650,7 @@ trait BonusWorker {
                 }
                 for($i = 0; $i < $info['count']; $i++) {
                     if(isset($offsets[$i])) {
-                        $reelNumber = $offsets[$i] % 5;
+                        $reelNumber = $offsets[$i] % count($this->params->reelConfig);
                         $this->setWildReel($reelNumber, $wildSymbol);
                         $changedOffsets[] = $offsets[$i];
                     }
@@ -798,8 +798,8 @@ trait BonusWorker {
             $wildSymbol = $this->wild[0];
         }
         foreach($offsets as $pos) {
-            $reelNumber = $pos % 5;
-            $p = floor($pos / 5);
+            $reelNumber = $pos % count($this->params->reelConfig);
+            $p = floor($pos / count($this->params->reelConfig));
             $this->reels[$reelNumber]->setSymbolOnPosition($p, $wildSymbol);
         }
     }
@@ -904,8 +904,8 @@ trait BonusWorker {
     private function setWildOnReels($offsets) {
         $replacedSymbols = array();
         foreach($offsets as $pos) {
-            $reelNumber = $pos % 5;
-            $p = floor($pos / 5);
+            $reelNumber = $pos % count($this->params->reelConfig);
+            $p = floor($pos / count($this->params->reelConfig));
             $replacedSymbols[] = $this->reels[$reelNumber]->getVisibleSymbols()[$p];
             $this->reels[$reelNumber]->setSymbolOnPosition($p, $this->wild[0]);
         }
@@ -1109,8 +1109,8 @@ trait BonusWorker {
         $resultOffsets = array_unique($resultOffsets);
         sort($resultOffsets);
         foreach($resultOffsets as $offset) {
-            $reelNumber = $offset % 5;
-            $p = floor($offset / 5);
+            $reelNumber = $offset % count($this->params->reelConfig);
+            $p = floor($offset / count($this->params->reelConfig));
             $this->reels[$reelNumber]->avalanche($p);
         }
 

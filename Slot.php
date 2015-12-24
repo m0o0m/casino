@@ -1075,7 +1075,7 @@ class Slot {
             $matches = array();
             for($j = 0; $j < count($reelSymbols); $j++) {
                 $rs = $reelSymbols[$j];
-                $offset = $j * 5 + $i;
+                $offset = $j * count($this->params->reelConfig) + $i;
                 $type = '';
                 $matched = false;
                 if(in_array($rs, $symbol)) {
@@ -1144,7 +1144,7 @@ class Slot {
             $matches = array();
             for($j = 0; $j < count($reelSymbols); $j++) {
                 $rs = $reelSymbols[$j];
-                $offset = $j * 5 + $i;
+                $offset = $j * count($this->params->reelConfig) + $i;
                 $type = '';
                 $matched = false;
                 if(in_array($rs, $symbol)) {
@@ -1203,7 +1203,7 @@ class Slot {
             $matches = array();
             for($j = 0; $j < count($reelSymbols); $j++) {
                 $rs = $reelSymbols[$j];
-                $offset = $j * 5 + $i;
+                $offset = $j * count($this->params->reelConfig) + $i;
                 $type = '';
                 $matched = false;
                 if(in_array($rs, $symbol)) {

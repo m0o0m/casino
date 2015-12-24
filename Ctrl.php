@@ -566,12 +566,12 @@ action: ".$type;
         return $c;
     }
 
-    public function startLog() {
+    public function startLog($target, $filename = 'log') {
         ob_start();
-        print_r($this);
+        print_r($target);
         $c = ob_get_contents();
         ob_end_clean();
-        $f = fopen('log', 'w+');
+        $f = fopen($filename, 'w+');
         fwrite($f, $c);
         fclose($f);
     }
