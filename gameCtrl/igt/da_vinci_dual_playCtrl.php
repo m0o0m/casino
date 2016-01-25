@@ -288,7 +288,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             }
         }
 
-        $patternsBet = 40;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

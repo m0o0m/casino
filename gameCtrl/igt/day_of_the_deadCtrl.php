@@ -153,7 +153,7 @@ class day_of_the_deadCtrl extends IGTCtrl {
             $fs .= $baseScatter;
         }
 
-        $patternsBet = 50;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

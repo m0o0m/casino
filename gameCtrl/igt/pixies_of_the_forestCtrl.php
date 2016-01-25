@@ -264,7 +264,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     </PrizeOutcome>';
         }
 
-        $patternsBet = 33;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

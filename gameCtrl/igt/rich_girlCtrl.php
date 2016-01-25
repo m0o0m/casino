@@ -209,7 +209,7 @@ class rich_girlCtrl extends IGTCtrl {
     </PopulationOutcome>';
         }
 
-        $patternsBet = 9;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

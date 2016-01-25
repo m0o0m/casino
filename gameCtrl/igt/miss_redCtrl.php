@@ -331,7 +331,7 @@ class miss_redCtrl extends IGTCtrl {
             $fs .= $baseGame;
         }
 
-        $patternsBet = 45;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

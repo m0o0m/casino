@@ -350,7 +350,7 @@ class catsCtrl extends IGTCtrl {
     </PrizeOutcome>';
         }
 
-        $patternsBet = 30;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

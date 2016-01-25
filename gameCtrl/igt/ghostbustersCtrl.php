@@ -381,7 +381,7 @@ class ghostbustersCtrl extends IGTCtrl {
     </PrizeOutcome>';
         }
 
-        $patternsBet = 50;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

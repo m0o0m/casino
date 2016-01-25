@@ -214,7 +214,7 @@ class golden_goddessCtrl extends IGTCtrl {
     </PopulationOutcome>'.$display2;
         }
 
-        $patternsBet = 40;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

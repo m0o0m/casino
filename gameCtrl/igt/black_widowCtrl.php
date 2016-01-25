@@ -288,7 +288,7 @@ class black_widowCtrl extends IGTCtrl {
     </TriggerOutcome>';
         }
 
-        $patternsBet = 100;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

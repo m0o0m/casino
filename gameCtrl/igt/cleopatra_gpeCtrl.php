@@ -147,7 +147,7 @@ class cleopatra_gpeCtrl extends IGTCtrl {
     </PrizeOutcome>';
         }
 
-        $patternsBet = 20;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

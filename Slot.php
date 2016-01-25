@@ -170,6 +170,9 @@ class Slot {
         $this->bet = $bet;
         $this->linesCount = $linesCount;
         $this->betOnLine = $bet * $betOnLineIndex / $linesCount;
+        if(!empty($_SESSION['denominationAmount'])) {
+            $this->betOnLine *= $_SESSION['denominationAmount'];
+        }
 
         foreach($params->reels[0] as $reel) {
             $this->reels[] = new Reel($reel);

@@ -634,30 +634,76 @@ class IGTCtrl extends Ctrl {
     }
 
     protected function getDenominationAmount() {
-        $this->gameParams->default_coinvalue;
-        $this->gameParams->defaultCoinsCount;
-        $balance = $this->getBalance();
+        if($_SESSION['state'] == 'SPIN') {
+            $this->gameParams->default_coinvalue;
+            $this->gameParams->defaultCoinsCount;
+            $balance = $this->getBalance();
 
-        $coinMin = 1;
-        if($this->gameParams->default_coinvalue < 1) {
-            $coinMin = 0.1;
+            $coinMin = 1;
+            if($this->gameParams->default_coinvalue < 1) {
+                $coinMin = 0.1;
+            }
+            if($this->gameParams->default_coinvalue < 0.1) {
+                $coinMin = 0.01;
+            }
+
+            $balanceMin = 1;
+            if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount > $balance) {
+                $balanceMin = 0.1;
+            }
+            if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount *10 > $balance) {
+                $balanceMin = 0.01;
+            }
+            $j = array($coinMin, $balanceMin);
+
+            $_SESSION['denominationAmount'] = min($j);
+
+            return $_SESSION['denominationAmount'];
         }
-        if($this->gameParams->default_coinvalue < 0.1) {
-            0.01;
+        else {
+            return $_SESSION['denominationAmount'];
         }
+    }
 
-        $balanceMin = 1;
-        if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount > $balance) {
-            $balanceMin = 0.1;
+    protected function multipleXmlParamValue($xml, $name, $multiple) {
+        $item = ' '.$name.'="';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, '"', $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
         }
-        if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount *10 > $balance) {
-            $balanceMin = 0.01;
+        return $xml;
+    }
+
+    protected function multipleXmlParam($xml, $name, $multiple) {
+        $item = '<'.$name.'>';
+        $itemClose = '</'.$name.'>';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, $itemClose, $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
         }
-        $j = array($coinMin, $balanceMin);
+        return $xml;
+    }
 
-        $_SESSION['denomination'] = min($j);
+    protected function outXML($xml) {
+        $xml = str_replace(PHP_EOL, '', $xml);
+        $xml = str_replace("\n", '', $xml);
+        $xml = preg_replace('/> +</', '><', $xml);
 
-        return $_SESSION['denomination'];
+        //$multiple = 1 / $_SESSION['denominationAmount'];
 
+        //$xml = $this->multipleXmlParamValue($xml, 'totalPay', $multiple);
+        //$xml = $this->multipleXmlParamValue($xml, 'pay', $multiple);
+        //$xml = $this->multipleXmlParam($xml, 'Payout', $multiple);
+        //$xml = $this->multipleXmlParam($xml, 'BetPerPattern', $multiple);
+
+        echo $xml;
     }
 }

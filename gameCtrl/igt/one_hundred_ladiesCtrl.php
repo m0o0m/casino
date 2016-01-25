@@ -161,7 +161,7 @@ class one_hundred_ladiesCtrl extends IGTCtrl {
     </PrizeOutcome>';
         }
 
-        $patternsBet = 100;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];

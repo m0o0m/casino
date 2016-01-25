@@ -163,7 +163,7 @@ class diamond_queenCtrl extends IGTCtrl {
             $display2 = '';
         }
 
-        $patternsBet = 20;
+        $patternsBet = $this->gameParams->defaultCoinsCount;
         $coinValue = $this->gameParams->default_coinvalue;
         if(!empty($_SESSION['lastPick'])) {
             $patternsBet = $_SESSION['lastPick'];
