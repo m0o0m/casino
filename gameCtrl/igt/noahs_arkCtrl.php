@@ -404,10 +404,7 @@ class noahs_arkCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
 
@@ -501,13 +498,6 @@ class noahs_arkCtrl extends IGTCtrl {
             $report['type'] = 'FREE';
         }
         else {
-            if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-                $url = $_SERVER['HTTP_REFERER'];
-                $g = '';
-                if (strpos($url, 'bonus=fs') > 0) {
-                    $respin = true;
-                }
-            }
         }
 
         $totalWin = $report['totalWin'];

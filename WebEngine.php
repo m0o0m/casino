@@ -59,29 +59,30 @@ class WebEngine {
      * Инициализация обработчика. Проверяем, есть ли настройки игры.
      * Если есть - запускает обработку запроса флешки.
      */
-    public function __construct() {
-        global $api;
+    public function __construct($api) {
         self::$api = &$api;
-        $game = $api->gameSession->game->string_id;
+        $game = $api->getGameStringId();
 
         $ctrlName = $game.'Ctrl';
         $paramsName = $game.'Params';
-        if(file_exists(__DIR__.'/gameParams/'.$api->sectionId.'/'.$paramsName.'.php') && file_exists(__DIR__.'/gameCtrl/'.$api->sectionId.'/'.$game.'Ctrl.php')) {
-            include_once 'gameParams/'.$api->sectionId.'/'.$paramsName.'.php';
-            include_once 'gameCtrl/'.$api->sectionId.'/'.$ctrlName.'.php';
+        if(file_exists(__DIR__.'/gameParams/'.$api->getGameSectionStringId().'/'.$paramsName.'.php') && file_exists(__DIR__.'/gameCtrl/'.$api->getGameSectionStringId().'/'.$game.'Ctrl.php')) {
+            include_once 'gameParams/'.$api->getGameSectionStringId().'/'.$paramsName.'.php';
+            include_once 'gameCtrl/'.$api->getGameSectionStringId().'/'.$ctrlName.'.php';
 
-            $params = new $paramsName($api->gameSession->create_time);
+            $params = new $paramsName(crc32($api->sessionStringId));
 
             // Устанавливаем конфиг, загруженный из базы
-            if(!empty($api->config)) {
-                foreach($api->config as $key=>$value) {
+            $config = $api->getConfigVars();
+            if(!empty($config)) {
+                foreach($config as $key=>$value) {
                     $params->$key = $value;
                 }
             }
 
+            $gameParams = $api->getLaunchParams();
             // Устанавливаем параметры, загруженные из базы
-            if(!empty($api->gameParams)) {
-                foreach($api->gameParams as $key=>$value) {
+            if(!empty($gameParams)) {
+                foreach($gameParams as $key=>$value) {
                     $params->$key = $value;
                 }
             }
@@ -103,7 +104,7 @@ class WebEngine {
     }
 }
 
-$WE = new WebEngine();
+$WE = new WebEngine($api);
 
 /*
 $json = json_encode($_SESSION);

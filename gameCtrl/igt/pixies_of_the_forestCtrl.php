@@ -264,10 +264,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet * 3;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake, 3);
 
@@ -562,17 +559,6 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if (strpos($url, 'bonus=fs') > 0) {
-                $bonus = array(
-                    'type' => 'setReelsOffsets',
-                    'offsets' => array(1,12,11,5,10),
-                );
-            }
-        }
 
         $report = $this->slot->spin($bonus);
 

@@ -1430,10 +1430,7 @@ class red_mansionsCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new SlotReel($this->gameParams, $pick, $stake);
         $this->slot->rows = 4;
@@ -1522,16 +1519,6 @@ class red_mansionsCtrl extends IGTCtrl {
         if($report['scattersReport']['count'] > 1) {
             $report['type'] = 'FREE';
             $report['scattersReport']['totalWin'] = 0;
-        }
-
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            if (strpos($url, 'bonus=fs') > 0) {
-                if($report['scattersReport']['count'] < 2) {
-                    $respin = true;
-                }
-            }
         }
 
         $totalWin = $report['totalWin'];

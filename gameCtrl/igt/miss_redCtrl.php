@@ -444,10 +444,7 @@ class miss_redCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));
@@ -522,23 +519,6 @@ class miss_redCtrl extends IGTCtrl {
 
         $respin = false;
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=fs') > 0) {
-                $g = 'fs';
-            }
-            switch($g) {
-                case 'fs':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        //'offsets' => array(167,17,1,41,58),
-                        'offsets' => array(3,9,35,4,7),
-                    );
-                    break;
-            }
-        }
 
         if($_SESSION['state'] == 'FREE') {
             $bonus = array(

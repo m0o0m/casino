@@ -200,10 +200,7 @@ class prowling_pantherCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(3,4,5,4,3));

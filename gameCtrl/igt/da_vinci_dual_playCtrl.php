@@ -372,10 +372,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(6,6,6,6,6));
@@ -532,17 +529,6 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if (strpos($url, 'bonus=fs') > 0) {
-                $bonus = array(
-                    'type' => 'setReelsOffsets',
-                    'offsets' => array(8,25,3,5,10),
-                );
-            }
-        }
 
         $report = $this->slot->spin($bonus);
 

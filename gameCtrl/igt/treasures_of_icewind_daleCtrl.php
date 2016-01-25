@@ -2770,10 +2770,7 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
 
@@ -2874,16 +2871,6 @@ class treasures_of_icewind_daleCtrl extends IGTCtrl {
             $report['scattersReport']['totalWin'] = $report['bet'] * 3;
             $report['totalWin'] += $report['scattersReport']['totalWin'];
             $report['spinWin'] += $report['scattersReport']['totalWin'];
-        }
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if (strpos($url, 'bonus=fs') > 0) {
-                if($report['scattersReport']['count'] < 3) {
-                    $respin = true;
-                }
-            }
         }
 
         if($_SESSION['state'] == 'FREE') {

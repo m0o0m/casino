@@ -74,13 +74,12 @@ class Ctrl {
      */
     public function __construct($params) {
         $this->api = WebEngine::api();
-        $this->game = $this->api->gameSession->game->string_id;
-        $this->gameID = $this->api->gameSession->create_time;
+        $this->game = $this->api->getGameStringId();
+        $this->gameID = crc32($this->api->sessionStringId);
         $this->request = $this->getRequest();
         $this->gameParams = $params;
 
         $this->processRequest($this->request);
-
     }
 
     /**
@@ -95,14 +94,14 @@ class Ctrl {
                 $reelsStr .= implode(' ', $r)."\n";
             }
 
-            $this->api->response = $reelsStr;
+            $this->api->setResponse($reelsStr);
 
             $type = (!empty($s['report']['type'])) ? strtolower($s['report']['type']) : '';
 
-            $this->api->request = 'bet: '.$s['report']['bet']."
+            $this->api->setRequest('bet: '.$s['report']['bet']."
 betOnLine: ".$s['report']['betOnLine']."
 linesCount: ".$s['report']['linesCount']."
-action: ".$type;
+action: ".$type);
 
 
             game_ctrl($this->slot->bet * 100, $s['win'] * 100, 0, 'standart');
@@ -116,14 +115,14 @@ action: ".$type;
                 $reelsStr .= implode(' ', $r)."\n";
             }
 
-            $this->api->response = $reelsStr;
+            $this->api->setResponse($reelsStr);
 
             $type = (!empty($f['report']['type'])) ? strtolower($f['report']['type']) : '';
 
-            $this->api->request = 'bet: '.$f['report']['bet']."
+            $this->api->setRequest('bet: '.$f['report']['bet']."
 betOnLine: ".$f['report']['betOnLine']."
 linesCount: ".$f['report']['linesCount']."
-action: ".$type;
+action: ".$type);
 
 
             game_ctrl(0, $f['win'] * 100, 0, 'free');
@@ -131,8 +130,8 @@ action: ".$type;
 
         foreach($this->bonusPays as $b) {
 
-            $this->api->response = '';
-            $this->api->request = '';
+            $this->api->setResponse('');
+            $this->api->setRequest('');
 
             if(!empty($b['report'])) {
                 $reels = $b['report']['reels'];
@@ -141,14 +140,14 @@ action: ".$type;
                     $reelsStr .= implode(' ', $r)."\n";
                 }
 
-                $this->api->response = $reelsStr;
+                $this->api->setResponse($reelsStr);
 
                 $type = (!empty($b['report']['type'])) ? strtolower($b['report']['type']) : '';
 
-                $this->api->request = 'bet: '.$b['report']['bet']."
+                $this->api->setRequest('bet: '.$b['report']['bet']."
 betOnLine: ".$b['report']['betOnLine']."
 linesCount: ".$b['report']['linesCount']."
-action: ".$type;
+action: ".$type);
             }
 
 
@@ -274,7 +273,7 @@ action: ".$type;
      * @return float
      */
     protected function getBalance() {
-        $balance = $this->api->playerBalance / 100;
+        $balance = $this->api->getPlayerBalance() / 100;
         if(!empty($_SESSION['bonusWIN'])) $balance -= $_SESSION['bonusWIN'];
         return $balance;
     }

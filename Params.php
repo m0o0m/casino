@@ -16,6 +16,11 @@
  */
 class Params {
     /**
+     * @var array Стандартное количество барабанов
+     */
+    public $reelConfig = array(3,3,3,3,3);
+
+    /**
      * @var bool $doubleIfWild Удваивать, если в выиграшной линии есть вайлд
      */
     public $doubleIfWild = false;

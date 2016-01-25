@@ -613,4 +613,51 @@ class IGTCtrl extends Ctrl {
 
         return $xml;
     }
+
+    protected function checkSpinAvailable($bet) {
+        $balance = $this->getBalance();
+        if($bet > $balance) {
+            $xml = '<Exception>
+    <Id>1024</Id>
+    <Reference>R42-GE-1024</Reference>
+    <Message>Not enough money for a spin</Message>
+    <Buttons>
+        <Button>
+            <Text>OK</Text>
+            <Cmd name="reloadGame" />
+        </Button>
+    </Buttons>
+</Exception>';
+            $this->outXML($xml);
+            die();
+        }
+    }
+
+    protected function getDenominationAmount() {
+        $this->gameParams->default_coinvalue;
+        $this->gameParams->defaultCoinsCount;
+        $balance = $this->getBalance();
+
+        $coinMin = 1;
+        if($this->gameParams->default_coinvalue < 1) {
+            $coinMin = 0.1;
+        }
+        if($this->gameParams->default_coinvalue < 0.1) {
+            0.01;
+        }
+
+        $balanceMin = 1;
+        if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount > $balance) {
+            $balanceMin = 0.1;
+        }
+        if($this->gameParams->default_coinvalue * $this->gameParams->defaultCoinsCount *10 > $balance) {
+            $balanceMin = 0.01;
+        }
+        $j = array($coinMin, $balanceMin);
+
+        $_SESSION['denomination'] = min($j);
+
+        return $_SESSION['denomination'];
+
+    }
 }

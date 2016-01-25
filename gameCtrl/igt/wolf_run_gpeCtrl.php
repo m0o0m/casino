@@ -218,10 +218,7 @@ class wolf_run_gpeCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));
@@ -296,22 +293,6 @@ class wolf_run_gpeCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=fs') > 0) {
-                $g = 'fs';
-            }
-            switch($g) {
-                case 'fs':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(13,10,15,18,5),
-                    );
-                    break;
-            }
-        }
 
         $report = $this->slot->spin($bonus);
 

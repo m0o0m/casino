@@ -439,10 +439,7 @@ class ghostbustersCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
 
@@ -606,22 +603,7 @@ class ghostbustersCtrl extends IGTCtrl {
         }
 
         else {
-            if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-                $url = $_SERVER['HTTP_REFERER'];
-                $g = '';
-                if (strpos($url, 'bonus=fs') > 0) {
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(5,17,10,56,5),
-                    );
-                }
-                if (strpos($url, 'bonus=pick') > 0) {
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(5,17,10,37,5),
-                    );
-                }
-            }
+
         }
 
         $report = $this->slot->spin($bonus);

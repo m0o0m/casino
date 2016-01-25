@@ -171,8 +171,7 @@ class pixies_of_the_forestParams extends Params {
     public $default_coinvalue = 0.05;
     public $defaultCoinsCount = 33;
 
-    //public $denominations = array(0.01,0.02,0.03,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
-    public $denominations = array(1,2,3,5,10,20,30,50,100,200,300,500,1000);
+    public $denominations = array(1,2,3,5,10,20,30,50,100,200,300,500,1000,2000,3000,5000,10000,20000,30000,50000,100000);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
 

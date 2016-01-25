@@ -427,10 +427,7 @@ class star_trekCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
 
@@ -519,49 +516,6 @@ class star_trekCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=kirk') > 0) {
-                $g = 'kirk';
-            }
-            if(strpos($url, 'bonus=spock') > 0) {
-                $g = 'spock';
-            }
-            if(strpos($url, 'bonus=uhura') > 0) {
-                $g = 'uhura';
-            }
-            if(strpos($url, 'bonus=scotty') > 0) {
-                $g = 'scotty';
-            }
-            switch($g) {
-                case 'kirk':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(6,6,1,6,5),
-                    );
-                    break;
-                case 'spock':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(6,6,1,16,5),
-                    );
-                    break;
-                case 'uhura':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(6,6,1,34,5),
-                    );
-                    break;
-                case 'scotty':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(6,6,1,56,5),
-                    );
-                    break;
-            }
-        }
 
         if($_SESSION['state'] == 'FREE') {
             switch($_SESSION['fsType']) {

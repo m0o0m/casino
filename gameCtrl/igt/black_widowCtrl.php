@@ -379,10 +379,7 @@ class black_widowCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
 
@@ -471,30 +468,6 @@ class black_widowCtrl extends IGTCtrl {
 
 
         $checkRespin = false;
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=fs') > 0) {
-                $g = 'fs';
-            }
-            switch($g) {
-                case 'fs':
-                    $checkRespin = true;
-                    $bonus = array(
-                        array(
-                            'type' => 'randomReplace',
-                            'symbols' => array(11,15),
-                            'replacement' => array(0,1,2,3,4,5,6,7,8,9),
-                        ),
-                        array(
-                            'type' => 'randomReplace',
-                            'symbols' => array(12,13,14),
-                            'replacement' => array(10),
-                        ),
-                    );
-                    break;
-            }
-        }
 
         $report = $this->slot->spin($bonus);
 

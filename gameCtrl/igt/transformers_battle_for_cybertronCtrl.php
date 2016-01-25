@@ -217,10 +217,7 @@ class transformers_battle_for_cybertronCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet * 4/6;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake, 4/6);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));

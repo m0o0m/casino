@@ -228,10 +228,7 @@ class western_bellesCtrl extends IGTCtrl {
         }
         $_SESSION['wildReel'] = $this->wildReel;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $slotPick, $stake, $i);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));

@@ -229,10 +229,7 @@ class siberian_stormCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(3,4,5,4,3));
@@ -307,32 +304,6 @@ class siberian_stormCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=fs') > 0) {
-                $g = 'fs';
-            }
-            if(strpos($url, 'bonus=scatter') > 0) {
-                $g = 'scatter';
-            }
-
-            switch($g) {
-                case 'fs':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(5,10,2,34,19),
-                    );
-                    break;
-                case 'scatter':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(0,22,10,5,12),
-                    );
-                    break;
-            }
-        }
 
         $report = $this->slot->spin($bonus);
 

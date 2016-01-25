@@ -281,10 +281,7 @@ class pamplonaCtrl extends IGTCtrl {
         $stake = $totalBet * $betPerLine;
         $pick = (int) $totalBet;
 
-        $balance = $this->getBalance();
-        if($stake > $balance) {
-            die();
-        }
+        $this->checkSpinAvailable($stake);
 
         $this->slot = new Slot($this->gameParams, $pick, $stake);
         $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));
@@ -405,22 +402,6 @@ class pamplonaCtrl extends IGTCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($this->gameParams->testBonusEnable && $_SESSION['state'] == 'SPIN') {
-            $url = $_SERVER['HTTP_REFERER'];
-            $g = '';
-            if(strpos($url, 'bonus=fs') > 0) {
-                $g = 'fs';
-            }
-            switch($g) {
-                case 'fs':
-                    $bonus = array(
-                        'type' => 'setReelsOffsets',
-                        'offsets' => array(5,22,8,8,5),
-                    );
-                    break;
-            }
-        }
 
         if($_SESSION['state'] == 'FREE') {
             $bonus = array(
