@@ -4,6 +4,11 @@ require_once('IGTCtrl.php');
 class black_widowCtrl extends IGTCtrl {
 
     protected function startConfig($request) {
+        $this->setSessionIfEmpty('greenLevel', 1);
+        $this->setSessionIfEmpty('redLevel', 1);
+        $this->setSessionIfEmpty('blueLevel', 1);
+        $this->setSessionIfEmpty('state', 'SPIN');
+
         $xml = '<params>
     <param name="softwareid" value="200-1187-001"/>
     <param name="minbet" value="1.0"/>
@@ -241,10 +246,7 @@ class black_widowCtrl extends IGTCtrl {
     }
 
     protected function startInit($request) {
-        $this->setSessionIfEmpty('greenLevel', 1);
-        $this->setSessionIfEmpty('redLevel', 1);
-        $this->setSessionIfEmpty('blueLevel', 1);
-        $this->setSessionIfEmpty('state', 'SPIN');
+
 
         $balance = $this->getBalance();
 
