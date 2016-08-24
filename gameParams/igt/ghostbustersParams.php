@@ -194,9 +194,9 @@ class ghostbustersParams extends Params {
         array('symbol'=> 's10', 'count'=> 5, 'multiplier'=> 100),
         array('symbol'=> 's10', 'count'=> 4, 'multiplier'=> 20),
         array('symbol'=> 's10', 'count'=> 3, 'multiplier'=> 5),
+    );
 
-
-
+    public $winPay2 = array(
         array('symbol'=> 'w03', 'count'=> 5, 'multiplier'=> 250),
         array('symbol'=> 'w03', 'count'=> 4, 'multiplier'=> 100),
         array('symbol'=> 'w03', 'count'=> 3, 'multiplier'=> 25),

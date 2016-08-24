@@ -2,28 +2,11 @@
 
 class IGTCtrl extends Ctrl {
     protected function processRequest($request) {
-        //$action = $_GET['action'];
         $uri = $_SERVER['REQUEST_URI'];
         if(strpos($uri, 'clientconfig') > 0) $action = 'config';
         if(strpos($uri, 'initstate') > 0) $action = 'init';
         if(strpos($uri, 'paytable') > 0) $action = 'paytable';
         if(strpos($uri, '/play') > 0) $action = 'spin';
-
-        /*
-        echo '<pre>';
-        $request = (array) simplexml_load_string('<GameLogicRequest>
-  <TransactionId>R1540-14228693316850</TransactionId>
-  <ActionInput>
-    <Action>play</Action>
-  </ActionInput>
-  <PatternSliderInput>
-    <BetPerPattern>1</BetPerPattern>
-    <PatternsBet>40</PatternsBet>
-  </PatternSliderInput>
-</GameLogicRequest>');
-        $action = 'spin';
-        */
-
 
 
         switch($action) {
@@ -368,9 +351,9 @@ class IGTCtrl extends Ctrl {
             $totalPay = 0;
             foreach($report['winLines'] as $w) {
                 if($w['type'] == 'line') {
-                    $payout = $report['betOnLine'] * $w['multiple'];
+                    $payout = round($report['betOnLine'] * $w['multiple'], 2);
                     $totalPay += $payout;
-                    $pay = $payout / $this->slot->double;
+                    $pay = round($payout / $this->slot->double, 2);
                     $xml .= '<Prize betMultiplier="1" multiplier="'.$this->slot->double.'" name="Line ' . $w['id'] . '" pay="' . $pay . '" payName="' . $w['count'] . ' ' . $w['alias'] . '" symbolCount="' . $w['count'] . '" totalPay="' . $payout . '" ways="0" />';
                 }
             }
@@ -442,7 +425,7 @@ class IGTCtrl extends Ctrl {
 
             foreach($resultArray as $r) {
                 if($this->gameParams->doubleIfWild) {
-                    $r['ways'] = $r['withWild'] * 2 + $r['withoutWild'];
+                    $r['ways'] = $r['withWild'] + $r['withoutWild'];
                 }
                 else {
                     $r['ways'] = $r['withWild'] + $r['withoutWild'];
@@ -513,7 +496,7 @@ class IGTCtrl extends Ctrl {
 
             foreach($resultArray as $r) {
                 if($this->gameParams->doubleIfWild) {
-                    $r['ways'] = $r['withWild'] * 2 + $r['withoutWild'];
+                    $r['ways'] = $r['withWild'] + $r['withoutWild'];
                 }
                 else {
                     $r['ways'] = $r['withWild'] + $r['withoutWild'];
@@ -665,45 +648,54 @@ class IGTCtrl extends Ctrl {
         }
     }
 
-    protected function multipleXmlParamValue($xml, $name, $multiple) {
-        $item = ' '.$name.'="';
-        $inc = 0;
-        while(strpos($xml, $item, $inc)) {
-            $start = strpos($xml, $item, $inc) + strlen($item);
-            $end = strpos($xml, '"', $start);
-            $value = substr($xml, $start, $end-$start) * $multiple;
-            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
-            $inc = $end;
-        }
-        return $xml;
-    }
-
-    protected function multipleXmlParam($xml, $name, $multiple) {
-        $item = '<'.$name.'>';
-        $itemClose = '</'.$name.'>';
-        $inc = 0;
-        while(strpos($xml, $item, $inc)) {
-            $start = strpos($xml, $item, $inc) + strlen($item);
-            $end = strpos($xml, $itemClose, $start);
-            $value = substr($xml, $start, $end-$start) * $multiple;
-            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
-            $inc = $end;
-        }
-        return $xml;
-    }
-
     protected function outXML($xml) {
         $xml = str_replace(PHP_EOL, '', $xml);
         $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);
 
-        //$multiple = 1 / $_SESSION['denominationAmount'];
+        if(!empty($_SESSION['denominationAmount'])) {
+            $multiple = 1 / $_SESSION['denominationAmount'];
 
-        //$xml = $this->multipleXmlParamValue($xml, 'totalPay', $multiple);
-        //$xml = $this->multipleXmlParamValue($xml, 'pay', $multiple);
-        //$xml = $this->multipleXmlParam($xml, 'Payout', $multiple);
-        //$xml = $this->multipleXmlParam($xml, 'BetPerPattern', $multiple);
+            $xml = $this->multipleXmlParamValue($xml, 'totalPay', $multiple);
+            $xml = $this->multipleXmlParamValue($xml, 'pay', $multiple);
+            $xml = $this->multipleXmlParam($xml, 'Payout', $multiple);
+            $xml = $this->multipleXmlParam($xml, 'BetPerPattern', $multiple);
+        }
+
+        $xml = $this->roundXmlParamValue($xml, 'pay');
+        $xml = $this->roundXmlParamValue($xml, 'totalPay');
+        $xml = $this->roundXmlParam($xml, 'Payout');
+
+
 
         echo $xml;
+    }
+
+    protected function getDisplayFromArray($array, $stage) {
+        $reelsCount = count($this->gameParams->reelConfig);
+
+
+        $xml = '<PopulationOutcome name="'.$stage.'.Reels" stage="'.$stage.'">';
+        $entry = '';
+
+        for($i = 1; $i <= $reelsCount; $i++) {
+            $entryItem = '<Entry name="Reel'.($i-1).'" stripIndex="'.$array['offset'][1][$i-1].'">';
+
+            for($j = 1; $j <= $this->gameParams->reelConfig[$i-1]; $j++) {
+                $needOffset = $array['offset'][$j][$i-1];
+                $needSymbol = $array['rows'][$j][$i-1];
+                $symbol = $this->gameParams->getSymbolByID(array($needSymbol));
+                $entryItem .= '<Cell name="L0C'.($i-1).'R'.($j-1).'" stripIndex="'.$needOffset.'">'.$symbol.'</Cell>';
+            }
+
+            $entryItem .= '</Entry>';
+
+            $entry .= $entryItem;
+        }
+
+        $xml .= $entry;
+        $xml .='</PopulationOutcome>';
+
+        return $xml;
     }
 }

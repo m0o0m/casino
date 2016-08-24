@@ -59,6 +59,7 @@ class beowulfCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];

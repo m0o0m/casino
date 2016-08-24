@@ -39,10 +39,11 @@ class cash_coasterParams extends Params {
     public $extraLine = true;
 
     public $extraLineConfig = array(
-        'symbols' => array(1,2,3,4,5),
+        'symbols' => array(1,2,3,4,5,0),
         'any' => true,
         'alias' => 'any7',
         'multiplier' => 40,
+        'afterBonus' => true,
     );
 
     // Вайлд
@@ -145,8 +146,8 @@ class cash_coasterParams extends Params {
     );
 
     // шанс 1 к 10, что один из барабанов станет wild
-    public $wildChance = 10;
+    public $wildChance = 1;
 
     // Шанс 1 к 100, что оба барабана (первый и последний) станут вайлдами
-    public $doubleWildChance = 100;
+    public $doubleWildChance = 1;
 }

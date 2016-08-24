@@ -76,10 +76,28 @@ class Ctrl {
         $this->api = WebEngine::api();
         $this->game = $this->api->getGameStringId();
         $this->gameID = crc32($this->api->sessionStringId);
+
+        $this->updateSessionParamsType();
+
         $this->request = $this->getRequest();
         $this->gameParams = $params;
 
         $this->processRequest($this->request);
+    }
+
+    /**
+     * Устанавливаем некоторым переменным сессии типы
+     */
+    private function updateSessionParamsType() {
+        $reg = '/^-?(?:\d+|\d*\.\d+)$/';
+        foreach($_SESSION as $k=>$v) {
+            if(!is_array($v)) {
+                if(preg_match($reg, $v)) {
+                    $_SESSION[$k] = floatval($v);
+                }
+            }
+
+        }
     }
 
     /**
@@ -104,7 +122,7 @@ linesCount: ".$s['report']['linesCount']."
 action: ".$type);
 
 
-            game_ctrl($this->slot->bet * 100, $s['win'] * 100, 0, 'standart');
+            game_ctrl(round($this->slot->bet * 100), round($s['win'] * 100), 0, 'standart');
         }
 
         foreach($this->fsPays as $f) {
@@ -125,7 +143,7 @@ linesCount: ".$f['report']['linesCount']."
 action: ".$type);
 
 
-            game_ctrl(0, $f['win'] * 100, 0, 'free');
+            game_ctrl(0, round($f['win'] * 100), 0, 'free');
         }
 
         foreach($this->bonusPays as $b) {
@@ -152,7 +170,7 @@ action: ".$type);
 
 
 
-            game_ctrl(0, 0, $b['win'] * 100, 'bonus');
+            game_ctrl(0, 0, round($b['win'] * 100), 'bonus');
         }
     }
 
@@ -242,8 +260,7 @@ action: ".$type);
 
         if(isset($_POST['xml'])) return (array) simplexml_load_string($_POST['xml']);
         else return (array) simplexml_load_string($this->api->getRequestBody());
-        //echo '<pre>';
-        //return (array) simplexml_load_string('<CompositeRequest><EEGPlaceBetsRequest gameTitle="PT-Avengers" gameId="172704504"><Bet type="line" pick="L20" stake="1" autoPlay="false"/></EEGPlaceBetsRequest><EEGLoadResultsRequest gameId="172704504" gameTitle="PT-Avengers"/></CompositeRequest>');
+
     }
 
     /**
@@ -264,7 +281,22 @@ action: ".$type);
         $xml = str_replace(PHP_EOL, '', $xml);
         $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);
+
+        $xml = $this->roundXmlParamValue($xml, 'payout');
+        $xml = $this->roundXmlParamValue($xml, 'drawWin');
+        $xml = $this->roundXmlParamValue($xml, 'runningTotal');
+        $xml = $this->roundXmlParamValue($xml, 'newBalance');
+
         echo $xml;
+    }
+
+    /**
+     * Отдаем отформатированный JSON.
+     *
+     * @param string $json
+     */
+    protected function outJSON($json) {
+        echo $json;
     }
 
     /**
@@ -275,7 +307,7 @@ action: ".$type);
     protected function getBalance() {
         $balance = $this->api->getPlayerBalance() / 100;
         if(!empty($_SESSION['bonusWIN'])) $balance -= $_SESSION['bonusWIN'];
-        return $balance;
+        return round($balance, 2);
     }
 
     /**
@@ -293,7 +325,7 @@ action: ".$type);
             }
         }
 
-        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="75000.00" defaultStake="'.$defaultBet.'" roundLimit="'.$stake['maxBet'].'">
+        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="'.($stake['maxBet']*1000).'" defaultStake="'.$defaultBet.'" roundLimit="'.$stake['maxBet'].'">
         '.$this->gameParams->getIncreaseData().'</EEGConfigResponse>';
 
         return $xml;
@@ -490,6 +522,88 @@ action: ".$type);
         }
     }
 
+
+    /**
+     * Округляет заданные параметры в готовом XML
+     *
+     * @param $xml
+     * @param $name
+     * @return string
+     *
+     */
+    protected function roundXmlParamValue($xml, $name) {
+        $item = ' '.$name.'="';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, '"', $start);
+            $value = round(substr($xml, $start, $end-$start), 2);
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    protected function roundXmlParam($xml, $name) {
+        $item = '<'.$name.'>';
+        $itemClose = '</'.$name.'>';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, $itemClose, $start);
+            $value = round(substr($xml, $start, $end-$start), 2);
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    /**
+     *
+     * Умножает выбранные параметры на $multiple
+     *
+     * @param $xml
+     * @param $name
+     * @param $multiple
+     * @return string
+     *
+     */
+    protected function multipleXmlParamValue($xml, $name, $multiple) {
+        $item = ' '.$name.'="';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, '"', $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    /**
+     *
+     * Умножает параметр на $multiple
+     *
+     * @param $xml
+     * @param $name
+     * @param $multiple
+     * @return string
+     */
+    protected function multipleXmlParam($xml, $name, $multiple) {
+        $item = '<'.$name.'>';
+        $itemClose = '</'.$name.'>';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, $itemClose, $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
     /**
      * Дополняет\перезаписывает массив $c всем из массива $p
      *
@@ -563,6 +677,33 @@ action: ".$type);
             $c[] = $i - 1;
         }
         return $c;
+    }
+
+    /**
+     * Сжатие массива данных для уменьшения веса сессии
+     *
+     * @param $array
+     * @return string
+     */
+    public function compressArray($array) {
+        return base64_encode(gzcompress(json_encode($array), 9));
+    }
+
+    /**
+     *
+     * Распакова массива из строки.
+     *
+     * @param $string
+     * @return mixed
+     */
+    public function decompressArray($string) {
+        if(!empty($string)) {
+            return json_decode(gzuncompress(base64_decode($string)), true);
+        }
+        else {
+            return array();
+        }
+
     }
 
     public function startLog($target, $filename = 'log') {

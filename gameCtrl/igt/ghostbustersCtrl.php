@@ -40,7 +40,7 @@ class ghostbustersCtrl extends IGTCtrl {
     <param name="countrycode" value=""/>
     <param name="presenttype" value="FLSH"/>
     <param name="securetoken" value=""/>
-    <param name="denomamount" value="1.0"/>
+    <param name="denomamount" value="'.$this->getDenominationAmount().'"/>
     <param name="skincode" value="MRGR"/>
     <param name="language" value="en"/>
     <param name="channel" value="INT"/>
@@ -475,7 +475,7 @@ class ghostbustersCtrl extends IGTCtrl {
         $totalBet = $obj->PatternsBet;
         $betPerLine = (float) $obj->BetPerPattern;
 
-        $stake = $totalBet * $betPerLine;
+        $stake = $totalBet * $betPerLine * $_SESSION['denominationAmount'];
         $pick = (int) $totalBet;
 
         $this->checkSpinAvailable($stake);
@@ -516,6 +516,8 @@ class ghostbustersCtrl extends IGTCtrl {
         $this->gameParams->winLines = $this->gameParams->winLinesFree;
         $this->gameParams->reelConfig = array(4,4,4,4,4);
         $this->slot = new Slot($this->gameParams, $pick, $stake);
+        $this->gameParams->winPay = $this->gameParams->winPay2;
+        $this->slot->setParams($this->gameParams);
         $this->slot->createCustomReels($this->gameParams->reels[1], array(4,4,4,4,4));
         $this->slot->rows = 4;
 
@@ -1026,8 +1028,8 @@ class ghostbustersCtrl extends IGTCtrl {
         <Action>play</Action>
     </ActionInput>
     <PatternSliderInput>
-        <BetPerPattern>'.$this->slot->betOnLine.'</BetPerPattern>
-        <PatternsBet>'.$this->slot->linesCount.'</PatternsBet>
+        <BetPerPattern>'.$_SESSION['lastBet'] / $_SESSION['lastPick'].'</BetPerPattern>
+        <PatternsBet>'.$_SESSION['lastPick'].'</PatternsBet>
     </PatternSliderInput>
     <Balances totalBalance="'.$balance.'">
         <Balance name="FREE">'.$balance.'</Balance>

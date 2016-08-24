@@ -43,98 +43,101 @@ trait BonusWorker {
      * @param array $bonus
      */
     private function executeBonus($bonus) {
-        switch($bonus['type']) {
-            case 'multiple':
-                $this->double = rnd($bonus['range'][0], $bonus['range'][1]);
-                break;
-            case 'wildReel':
-                $this->setWildReel($bonus['number'], $this->wild[0]);
-                break;
-            case 'randomWild':
-                $not = (empty($bonus['not'])) ? false : $bonus['not'];
-                $this->setRandomWild($bonus['range'], $not);
-                break;
-            case 'multipleWithWild':
-                $this->setMultipleWithWild($bonus['multiple']);
-                break;
-            case 'wildsOnPos':
-                $wildSymbol = (empty($bonus['wildSymbol'])) ? false : $bonus['wildSymbol'];
-                $this->setWildsOnPos($bonus['offsets'], $wildSymbol);
-                break;
-            case 'wildReels':
-                $this->setWildReels($bonus['reels']);
-                break;
-            case 'fullWildReels':
-                $this->setFullWildReels($bonus['reels']);
-                break;
-            case 'expandWild':
-                $this->checkExpandWild($bonus['reels'], $bonus['symbolsID'], $bonus['wild']);
-                break;
-            case 'testFS':
-                $this->setScatters();
-                break;
-            case 'stepWild':
-                $this->setStepWild($bonus['steps']);
-                break;
-            case 'setWildsIf':
-                $this->setWildsIf($bonus['symbol'], $bonus['reel'], $bonus['countConfig']);
-                break;
-            case 'odinRavens':
-                $this->odinRavens($bonus['positions'], $bonus['x3Chance'], $bonus['x6Chance']);
-                break;
-            case 'setReelsOffsets':
-                $this->setReelsOffsets($bonus['offsets']);
-                break;
-            case 'wildReelsOfSymbol':
-                $this->setWildReelsOfSymbol($bonus['symbol'], $bonus['reels'], $bonus['wildSymbol']);
-                break;
-            case 'randomWildsOnPos':
-                $this->setRandomWildsOnPos($bonus['positions'], $bonus['wildSymbol'], $bonus['wildsCount']);
-                break;
-            case 'wildReelsIfSymbol':
-                $this->setWildReelsIfSymbol($bonus['symbol'], $bonus['offsets'], $bonus['wildSymbol'], $bonus['symbolIfEmpty'], $bonus['cancelIfLess']);
-                break;
-            case 'randomReplace':
-                $this->setRandomReplace($bonus['symbols'], $bonus['replacement']);
-                break;
-            case 'replace':
-                $this->setReplace($bonus['relation']);
-                break;
-            case 'symbolOnPosition':
-                $this->setSymbolOnPosition($bonus['offsets'], $bonus['symbol']);
-                break;
-            case 'randomWildIfSymbolCount':
-                $this->setRandomWildIfSymbolCount($bonus['offsets'], $bonus['symbol'], $bonus['needleCount'], $bonus['wildConfig']);
-                break;
-            case 'multipleReel':
-                $this->setMultipleReel($bonus['wildConfig']);
-                break;
-            case 'wildReelIfSymbolPresent':
-                $this->setWildReelIfSymbolPresent($bonus['symbol']);
-                break;
-            case 'explodedWild':
-                $this->setExplodedWild($bonus);
-                break;
-            case 'multipleBySymbolCount':
-                $this->setMultipleBySymbolCount($bonus['symbol'], $bonus['multipleInc']);
-                break;
-            case 'wildsByLevel':
-                $this->setWildsByLevel($bonus);
-                break;
-            case 'multipleByLevel':
-                $this->setMultipleByLevel($bonus);
-                break;
-            case 'wildsExpansion':
-                $this->setWildsExpansion($bonus['wildsCount'], $bonus['wildsCountChance'], $bonus['wildsExpansionChance'], $bonus['wildSymbol']);
-                break;
-            case 'KittyWaterBonus':
-                $this->setKittyWaterBonus();
-                break;
-            case 'expandWildIfLines':
-                $this->setExpandWildIfLines($bonus['symbol']);
-                break;
+        if(isset($bonus['type'])) {
+            switch($bonus['type']) {
+                case 'multiple':
+                    $this->double = rnd($bonus['range'][0], $bonus['range'][1]);
+                    break;
+                case 'wildReel':
+                    $this->setWildReel($bonus['number'], $this->wild[0]);
+                    break;
+                case 'randomWild':
+                    $not = (empty($bonus['not'])) ? false : $bonus['not'];
+                    $this->setRandomWild($bonus['range'], $not);
+                    break;
+                case 'multipleWithWild':
+                    $this->setMultipleWithWild($bonus['multiple']);
+                    break;
+                case 'wildsOnPos':
+                    $wildSymbol = (empty($bonus['wildSymbol'])) ? false : $bonus['wildSymbol'];
+                    $this->setWildsOnPos($bonus['offsets'], $wildSymbol);
+                    break;
+                case 'wildReels':
+                    $this->setWildReels($bonus['reels']);
+                    break;
+                case 'fullWildReels':
+                    $this->setFullWildReels($bonus['reels']);
+                    break;
+                case 'expandWild':
+                    $this->checkExpandWild($bonus['reels'], $bonus['symbolsID'], $bonus['wild']);
+                    break;
+                case 'testFS':
+                    $this->setScatters();
+                    break;
+                case 'stepWild':
+                    $this->setStepWild($bonus['steps']);
+                    break;
+                case 'setWildsIf':
+                    $this->setWildsIf($bonus['symbol'], $bonus['reel'], $bonus['countConfig']);
+                    break;
+                case 'odinRavens':
+                    $this->odinRavens($bonus['positions'], $bonus['x3Chance'], $bonus['x6Chance']);
+                    break;
+                case 'setReelsOffsets':
+                    $this->setReelsOffsets($bonus['offsets']);
+                    break;
+                case 'wildReelsOfSymbol':
+                    $this->setWildReelsOfSymbol($bonus['symbol'], $bonus['reels'], $bonus['wildSymbol']);
+                    break;
+                case 'randomWildsOnPos':
+                    $this->setRandomWildsOnPos($bonus['positions'], $bonus['wildSymbol'], $bonus['wildsCount']);
+                    break;
+                case 'wildReelsIfSymbol':
+                    $this->setWildReelsIfSymbol($bonus['symbol'], $bonus['offsets'], $bonus['wildSymbol'], $bonus['symbolIfEmpty'], $bonus['cancelIfLess']);
+                    break;
+                case 'randomReplace':
+                    $this->setRandomReplace($bonus['symbols'], $bonus['replacement']);
+                    break;
+                case 'replace':
+                    $this->setReplace($bonus['relation']);
+                    break;
+                case 'symbolOnPosition':
+                    $this->setSymbolOnPosition($bonus['offsets'], $bonus['symbol']);
+                    break;
+                case 'randomWildIfSymbolCount':
+                    $this->setRandomWildIfSymbolCount($bonus['offsets'], $bonus['symbol'], $bonus['needleCount'], $bonus['wildConfig']);
+                    break;
+                case 'multipleReel':
+                    $this->setMultipleReel($bonus['wildConfig']);
+                    break;
+                case 'wildReelIfSymbolPresent':
+                    $this->setWildReelIfSymbolPresent($bonus['symbol']);
+                    break;
+                case 'explodedWild':
+                    $this->setExplodedWild($bonus);
+                    break;
+                case 'multipleBySymbolCount':
+                    $this->setMultipleBySymbolCount($bonus['symbol'], $bonus['multipleInc']);
+                    break;
+                case 'wildsByLevel':
+                    $this->setWildsByLevel($bonus);
+                    break;
+                case 'multipleByLevel':
+                    $this->setMultipleByLevel($bonus);
+                    break;
+                case 'wildsExpansion':
+                    $this->setWildsExpansion($bonus['wildsCount'], $bonus['wildsCountChance'], $bonus['wildsExpansionChance'], $bonus['wildSymbol']);
+                    break;
+                case 'KittyWaterBonus':
+                    $this->setKittyWaterBonus();
+                    break;
+                case 'expandWildIfLines':
+                    $this->setExpandWildIfLines($bonus['symbol']);
+                    break;
 
+            }
         }
+
     }
 
     public function setExpandWildIfLines($symbol) {
@@ -194,7 +197,7 @@ trait BonusWorker {
                     $CeilRow = $this->getCeilRowByOffset($z);
                     $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
                     $replace = 12;
-                    if($symbol == 1) {
+                    if($symbol == 1 || $symbol == 11 || $symbol == 0) {
                         $replace = 0;
                     }
                     if($symbol !== 2) {
@@ -212,7 +215,66 @@ trait BonusWorker {
                     $CeilRow = $this->getCeilRowByOffset($z);
                     $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
                     $replace = 11;
-                    if($symbol == 2) {
+                    if($symbol == 2 || $symbol == 12 || $symbol == 0) {
+                        $replace = 0;
+                    }
+                    if($symbol !== 1) {
+                        $ladyChange = true;
+                        $this->reels[$CeilRow['ceil']]->setSymbolOnPosition($CeilRow['row'], $replace);
+                    }
+
+                }
+            }
+        }
+
+        for($r = 0; $r < 4; $r++) {
+            // c - ceil count
+            $wOffsets = array();
+            $lOffsets = array();
+            for($c = 0; $c < count($this->params->reelConfig); $c++) {
+                if($this->chechSymbolOnReel('s02', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $wOffsets[] = $offset;
+                }
+                if($this->chechSymbolOnReel('e02', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $wOffsets[] = $offset;
+                }
+                if($this->chechSymbolOnReel('s01', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $lOffsets[] = $offset;
+                }
+                if($this->chechSymbolOnReel('e01', $c, $r)) {
+                    $offset = $this->getOffsetByCeilRow($c, $r);
+                    $lOffsets[] = $offset;
+                }
+            }
+            if(count($wOffsets) > 1) {
+                $wF = $wOffsets[0] + 1;
+                $wL = end($wOffsets);
+                for($z = $wF; $z < $wL; $z++) {
+                    $CeilRow = $this->getCeilRowByOffset($z);
+                    $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
+                    $replace = 12;
+                    if($symbol == 1 || $symbol == 11 || $symbol == 0) {
+                        $replace = 0;
+                    }
+                    if($symbol !== 2) {
+                        $wolfChange = true;
+                        $this->reels[$CeilRow['ceil']]->setSymbolOnPosition($CeilRow['row'], $replace);
+                    }
+
+                }
+            }
+            if(count($lOffsets) > 1) {
+
+                $wF = $lOffsets[0] + 1;
+                $wL = end($lOffsets);
+                for($z = $wF; $z < $wL; $z++) {
+                    $CeilRow = $this->getCeilRowByOffset($z);
+                    $symbol = $this->getReelSymbol($CeilRow['ceil'], $CeilRow['row']);
+                    $replace = 11;
+                    if($symbol == 2 || $symbol == 12 || $symbol == 0) {
                         $replace = 0;
                     }
                     if($symbol !== 1) {
@@ -981,7 +1043,10 @@ trait BonusWorker {
      */
     public function setReelsOffsets($offsets) {
         for($i = 0; $i < count($offsets); $i++) {
-            $this->reels[$i]->setOffset($offsets[$i]);
+            if($offsets[$i] !== false) {
+                $this->reels[$i]->setOffset($offsets[$i]);
+            }
+
         }
     }
 

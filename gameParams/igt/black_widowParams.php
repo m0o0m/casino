@@ -121,10 +121,10 @@ class black_widowParams extends Params {
     // настройка ставок
     public $currency = '$';
     public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
+    public $default_coinvalue = 1;
     public $defaultCoinsCount = 40;
 
-    public $denominations = array(1,2,3,5,10,20,30,50,100,200,300,500,1000,2000,3000,5000,10000,20000,30000,50000,100000);
+    public $denominations = array(1,2,3,5,10,20,30,50);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
 

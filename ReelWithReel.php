@@ -9,7 +9,7 @@ class ReelWithReel extends Reel {
         }
     }
 
-    public function spin() {
+    public function spin($bonus = array()) {
         foreach($this->reels as $r) {
             $r->spin();
         }

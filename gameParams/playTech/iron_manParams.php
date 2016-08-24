@@ -34,9 +34,9 @@ class iron_manParams extends Params {
         // Stark
         'D' => array(3),
         // Iron Man
-        'B' => array(2),
+        'B' => array(1),
         // Suitcase
-        'E' => array(5),
+        'E' => array(4),
         // 9
         'N' => array(11),
         // J
@@ -44,9 +44,9 @@ class iron_manParams extends Params {
         // K
         'K' => array(7),
         // Rockets
-        'M' => array(4),
+        'M' => array(5),
         // Iron Man Fly
-        'C' => array(1),
+        'C' => array(2),
         // A
         'A' => array(6),
         // WILD

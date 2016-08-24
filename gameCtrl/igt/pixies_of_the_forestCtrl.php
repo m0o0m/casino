@@ -41,7 +41,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
     <param name="countrycode" value=""/>
     <param name="presenttype" value="FLSH"/>
     <param name="securetoken" value=""/>
-    <param name="denomamount" value="1.0"/>
+    <param name="denomamount" value="'.$this->getDenominationAmount().'"/>
     <param name="skincode" value="MRGR"/>
     <param name="language" value="en"/>
     <param name="channel" value="INT"/>
@@ -300,7 +300,7 @@ class pixies_of_the_forestCtrl extends IGTCtrl {
         $totalBet = $obj->PatternsBet;
         $betPerLine = (float) $obj->BetPerPattern;
 
-        $stake = $totalBet * $betPerLine;
+        $stake = $totalBet * $betPerLine * $_SESSION['denominationAmount'];
         $pick = (int) $totalBet * 3;
 
         $this->checkSpinAvailable($stake);

@@ -66,6 +66,7 @@ class avengersCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -308,6 +309,10 @@ class avengersCtrl extends Ctrl {
                 $bonus .= '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
             }
 
+            if($i == 8) {
+                $currentSpins += 9;
+            }
+
             $winLines = $this->getWinLinesData($report, array(
                 'currentSpins' => $currentSpins,
                 'spins' => $this->fsBonus['spins'],
@@ -352,6 +357,10 @@ class avengersCtrl extends Ctrl {
                 $sr['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$sr['count']];
                 $report['totalWin'] += $sr['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+            }
+
+            if($i == 8) {
+                $currentSpins += 9;
             }
 
             $winLines = $this->getWinLinesData($report, array(
@@ -401,6 +410,10 @@ class avengersCtrl extends Ctrl {
                 $bonus .= '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
             }
 
+            if($i == 8) {
+                $currentSpins += 9;
+            }
+
             $winLines = $this->getWinLinesData($report, array(
                 'currentSpins' => $currentSpins,
                 'spins' => $this->fsBonus['spins'],
@@ -448,6 +461,10 @@ class avengersCtrl extends Ctrl {
                 $sr['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$sr['count']] * $report['bonusData']['multiple'];
                 $report['totalWin'] += $sr['totalWin'];
                 $bonus .= '<Scatter offsets="'.implode(',', $sr['offsets']).'" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+            }
+
+            if($i == 8) {
+                $currentSpins += 9;
             }
 
             $winLines = $this->getWinLinesData($report, array(

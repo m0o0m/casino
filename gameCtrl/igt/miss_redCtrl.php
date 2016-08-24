@@ -40,7 +40,7 @@ class miss_redCtrl extends IGTCtrl {
     <param name="countrycode" value=""/>
     <param name="presenttype" value="FLSH"/>
     <param name="securetoken" value=""/>
-    <param name="denomamount" value="1.0"/>
+    <param name="denomamount" value="'.$this->getDenominationAmount().'"/>
     <param name="skincode" value="MRGR"/>
     <param name="language" value="en"/>
     <param name="channel" value="INT"/>
@@ -480,7 +480,7 @@ class miss_redCtrl extends IGTCtrl {
         $totalBet = $obj->PatternsBet;
         $betPerLine = (float) $obj->BetPerPattern;
 
-        $stake = $totalBet * $betPerLine;
+        $stake = $totalBet * $betPerLine * $_SESSION['denominationAmount'];
         $pick = (int) $totalBet;
 
         $this->checkSpinAvailable($stake);
@@ -559,6 +559,14 @@ class miss_redCtrl extends IGTCtrl {
         $respin = false;
         $bonus = array();
 
+        /*
+        $bonus = array(
+            'type' => 'setReelsOffsets',
+            'offsets' => array(92,44,60,82,98),
+        );
+        */
+
+
         if($_SESSION['state'] == 'FREE') {
             $bonus = array(
                 'type' => 'randomReplace',
@@ -586,7 +594,6 @@ class miss_redCtrl extends IGTCtrl {
             $report['replace'] = $r;
             $newReport = $this->slot->getMissRedBonusFree($report);
         }
-
 
 
         $fullWinLines = $newReport['winLines'];

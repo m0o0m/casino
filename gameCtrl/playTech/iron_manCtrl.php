@@ -21,7 +21,7 @@ class iron_manCtrl extends Ctrl {
     }
 
     public function startInit($request) {
-        if(empty($_SESSION['seed'])) $_SESSION['seed'] = true;
+        $this->setSessionIfEmpty('seed', true);
         $stake = $this->gameParams->betConfig;
 
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
@@ -46,6 +46,16 @@ class iron_manCtrl extends Ctrl {
             catch (Exception $e) {
                 print_r($e);
             }
+
+            if(!empty($_SESSION['gameDrawStates'])) {
+                try {
+                    $gDraw .= gzuncompress(base64_decode($_SESSION['gameDrawStates']));
+                }
+                catch (Exception $e) {
+                    print_r($e);
+                }
+            }
+
             if(!empty($_SESSION['savedState'])) {
                 $savedState = '';
                 foreach($_SESSION['savedState'] as $key=>$val) {
@@ -69,8 +79,9 @@ class iron_manCtrl extends Ctrl {
         unset($_SESSION['bonusWIN']);
         unset($_SESSION['bonus']);
         unset($_SESSION['gameDrawStates']);
-        unset($_SESSION['fsDrawStates']);
         unset($_SESSION['nextDraw']);
+        unset($_SESSION['bonusWIN']);
+        unset($_SESSION['savedState']);
 
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'"><FOSettleBetsResponse nextDrawId="1" newBalance="'.$this->getBalance().'"/><FOCloseGameResponse/></CompositeResponse>';
 
@@ -113,6 +124,7 @@ class iron_manCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -210,10 +222,10 @@ class iron_manCtrl extends Ctrl {
         $display = $this->gameParams->getDisplay($report[$params['display']]);
 
         if(empty($report['winLines']) && empty($params['bonus'])) {
-            $xml = '<WinLines spins="'.$params['spins'].'" display="'.$display.'"'.$params['addString'].' />';
+            $xml = '<WinLines runningTotal="'.$params['runningTotal'].'" spins="'.$params['spins'].'" display="'.$display.'"'.$params['addString'].' />';
         }
         else {
-            $xml = '<WinLines spins="'.$params['spins'].'" display="'.$display.'"'.$params['addString'].'>';
+            $xml = '<WinLines runningTotal="'.$params['runningTotal'].'" spins="'.$params['spins'].'" display="'.$display.'"'.$params['addString'].'>';
             foreach($report['winLines'] as $winLine) {
                 $offset = $this->slot->getOffsetsByLine($winLine['line'], $winLine['count']);
                 $xml .= '<WinLine line="'.$winLine['id'].'" offsets="'.implode(',', $offset).'" length="'.$winLine['count'].'" payout="'.$report['bet']*$winLine['multiple'] / $report['linesCount'].'" />';
@@ -251,14 +263,21 @@ class iron_manCtrl extends Ctrl {
         $win = ($report['totalWin'] > 0) ? "true" : "false";
 
         $seed = rnd(1000000000, 1999999999);
-        if($_SESSION['seed'] == true) {
-            $seed = ''.strval($seed);
-            $_SESSION['seed'] = false;
+        if(isset($_SESSION['seed'])) {
+            if($_SESSION['seed'] == true) {
+                $seed = ''.strval($seed);
+                $_SESSION['seed'] = false;
+            }
+            else {
+                $seed = '-'.strval($seed);
+                $_SESSION['seed'] = true;
+            }
         }
         else {
             $seed = '-'.strval($seed);
             $_SESSION['seed'] = true;
         }
+
         $event = $this->getEvent($report);
 
         $drawStates = '<DrawState drawId="0" seed="'.$seed.'" state="settling">
@@ -347,11 +366,12 @@ class iron_manCtrl extends Ctrl {
                 $this->fsBonus['bonusItems'][] = $params['multiple']['alias'][$rnd];
                 if($multiple == 0) {
                     $multiple = $params['multiple']['count'][$rnd];
+                    $picks++;
                 }
                 else {
                     $cnt = 30;
                 }
-                $picks++;
+
             }
             $cnt++;
         }
@@ -390,11 +410,12 @@ class iron_manCtrl extends Ctrl {
                     $this->fsBonus['bonusItems'][] = $params['multiple']['alias'][$rnd];
                     if($multiple == 0) {
                         $multiple = $params['multiple']['count'][$rnd];
+                        $picks++;
                     }
                     else {
                         $cnt = 30;
                     }
-                    $picks++;
+
                 }
                 $cnt++;
             }
@@ -411,6 +432,12 @@ class iron_manCtrl extends Ctrl {
         $this->fsBonus['totalWin'] = $this->fsBonus['bonusWin'] + $startWin;
 
         $totalFs = $fsCount;
+
+        // Выплата за ракеты
+        $this->fsPays[] = array(
+            'win' => $prize,
+            'report' => $report,
+        );
 
         $this->slot->setReels($this->gameParams->reels[1]);
         $counter = 1;
@@ -469,21 +496,22 @@ class iron_manCtrl extends Ctrl {
             ));
 
             $seed = rnd(1000000000, 1999999999);
-            if($_SESSION['seed'] == true) {
-                $seed = ''.strval($seed);
-                $_SESSION['seed'] = false;
+            if(isset($_SESSION['seed'])) {
+                if($_SESSION['seed'] == true) {
+                    $seed = ''.strval($seed);
+                    $_SESSION['seed'] = false;
+                }
+                else {
+                    $seed = '-'.strval($seed);
+                    $_SESSION['seed'] = true;
+                }
             }
             else {
                 $seed = '-'.strval($seed);
                 $_SESSION['seed'] = true;
             }
-            $event = $this->getEvent($report);
 
-            $drawState = '<FOLoadResultsResponse gameId="467894091">
-        <DrawState drawId="'.$counter.'" seed="'.$seed.'" state="betting">
-            '.$event.$winLines.'
-        </DrawState>
-    </FOLoadResultsResponse>';
+            $event = $this->getEvent($report);
 
             $drawState = '<DrawState drawId="'.$counter.'" seed="'.$seed.'" state="betting">
             '.$event.$winLines.'
@@ -504,8 +532,6 @@ class iron_manCtrl extends Ctrl {
         $this->fsBonus['drawStates'] = str_replace('{{count}}', $totalFs, $this->fsBonus['drawStates']);
         $_SESSION['gameDrawStates'] = str_replace('{{count}}', $totalFs, $_SESSION['gameDrawStates']);
         $_SESSION['gameDrawStates'] = base64_encode(gzcompress($_SESSION['gameDrawStates'], 9));
-
-        $_SESSION['fsDrawStates'] = base64_encode(gzcompress($this->fsBonus['drawStates'], 9));
     }
 
     public function showFreeSpinReport($report, $totalWin) {
@@ -539,14 +565,21 @@ class iron_manCtrl extends Ctrl {
             $win = 'false';
         }
         $seed = rnd(1000000000, 1999999999);
-        if($_SESSION['seed'] == true) {
-            $seed = ''.strval($seed);
-            $_SESSION['seed'] = false;
+        if(isset($_SESSION['seed'])) {
+            if($_SESSION['seed'] == true) {
+                $seed = ''.strval($seed);
+                $_SESSION['seed'] = false;
+            }
+            else {
+                $seed = '-'.strval($seed);
+                $_SESSION['seed'] = true;
+            }
         }
         else {
             $seed = '-'.strval($seed);
             $_SESSION['seed'] = true;
         }
+
         $event = $this->getEvent($report);
 
         $drawStates = '<DrawState drawId="0" seed="'.$seed.'" state="settling">
@@ -562,15 +595,7 @@ class iron_manCtrl extends Ctrl {
     </FOLoadResultsResponse>
 </CompositeResponse>';
 
-        $gameDrawStates = '';
-        try {
-            $gameDrawStates = gzuncompress(base64_decode($_SESSION['gameDrawStates']));
-        }
-        catch (Exception $e) {
-
-        }
-
-        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates . $gameDrawStates));
+        $_SESSION['drawStates'] = base64_encode(gzcompress($drawStates));
         $_SESSION['bonusWIN'] = $report['totalWin'];
         $_SESSION['nextDraw'] = $this->fsBonus['totalFs'] + 1;
 
@@ -578,13 +603,15 @@ class iron_manCtrl extends Ctrl {
     }
 
     public function startResult() {
-        $draws = '';
+        $draws = '<FOLoadResultsResponse gameId="'.$this->gameID.'">';
         try {
-            $draws = gzuncompress(base64_decode($_SESSION['fsDrawStates']));
+            $draws .= gzuncompress(base64_decode($_SESSION['gameDrawStates']));
         }
         catch (Exception $e) {
 
         }
+
+        $draws .= '</FOLoadResultsResponse>';
 
         $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">'.$draws.'</CompositeResponse>';
 

@@ -65,18 +65,27 @@ class Ways {
             foreach($this->paths as $p) {
                 foreach($data as $d) {
                     $newP = $p;
+                    $doubled = false;
                     array_push($newP['offsets'], $d['offset']);
                     array_push($newP['symbols'], $d['symbol']);
                     if($d['type'] == 'wild') {
                         $newP['withWild'] = true;
                         if($this->doubleIfWild) {
-                            $newP['double'] = $this->currentDouble * 2;
+                            $doubled = true;
+                            // CHANGE 2 TO 1
+                            $newP['double'] = $this->currentDouble * 1;
                         }
                     }
                     if($d['type'] == 'collecting') {
                         $newP['collecting'] = true;
                     }
+
                     $tmpPath[] = $newP;
+
+                    // ADD NEW PATH
+                    if($doubled) {
+                        $tmpPath[] = $newP;
+                    }
                 }
             }
             $this->paths = $tmpPath;
@@ -90,6 +99,7 @@ class Ways {
      */
     public function getWinLines() {
         $winLines = array();
+
         foreach($this->paths as $p) {
             if(count(array_intersect($this->symbol, $p['symbols'])) > 0) {
                 if(count($p['offsets']) >= $this->minWinCount) {
@@ -114,6 +124,7 @@ class Ways {
 
             }
         }
+
         return $winLines;
     }
 }

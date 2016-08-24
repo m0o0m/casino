@@ -59,6 +59,11 @@ class Slot {
     public $scatter = array();
 
     /**
+     * @var array $winLines Список выигрышных линий слота за спин
+     */
+    public $winLines = array();
+
+    /**
      * @var array $report Содержит подробную информацию по результатам спина.
      *
      * winLines - массив линий, на которых выиграли
@@ -168,11 +173,9 @@ class Slot {
         $this->drawID = -1;
 
         $this->bet = $bet;
-        $this->linesCount = $linesCount;
-        $this->betOnLine = $bet * $betOnLineIndex / $linesCount;
-        if(!empty($_SESSION['denominationAmount'])) {
-            $this->betOnLine *= $_SESSION['denominationAmount'];
-        }
+        $this->linesCount = (int) $linesCount;
+        $this->betOnLine = (float) ($bet * $betOnLineIndex / $linesCount);
+        $this->betOnLine = round($this->betOnLine, 2);
 
         foreach($params->reels[0] as $reel) {
             $this->reels[] = new Reel($reel);
@@ -326,7 +329,7 @@ class Slot {
         $this->step = 0;
 
         foreach($this->reels as $reel) {
-            $reel->spin();
+            $reel->spin($bonus);
         }
 
         $this->startRows = $this->getRows();
@@ -344,13 +347,25 @@ class Slot {
      */
     public function getReport() {
         if($this->params->extraLine) {
-            $extraLines = $this->getExtraLine($this->params->extraLineConfig);
-            foreach($extraLines as $e) {
-                $this->winLines[] = $e;
+            if(!isset($this->params->extraLineConfig['afterBonus'])) {
+                $extraLines = $this->getExtraLine($this->params->extraLineConfig);
+                foreach($extraLines as $e) {
+                    $this->winLines[] = $e;
+                }
             }
+
         }
 
         $this->checkBonus();
+
+        if($this->params->extraLine) {
+            if(isset($this->params->extraLineConfig['afterBonus'])) {
+                $extraLines = $this->getExtraLine($this->params->extraLineConfig);
+                foreach($extraLines as $e) {
+                    $this->winLines[] = $e;
+                }
+            }
+        }
 
         $this->drawID++;
 
@@ -367,6 +382,13 @@ class Slot {
         $this->double = 1;
         $this->bonusData = array();
         $this->bonusWildsMultiple = array();
+    }
+
+    /**
+     * Установка дефолтных (нулевых) раскладок барабанов для слота. Нужно при респине.
+     */
+    public function setDefaultReels() {
+        $this->setReels($this->params->reels[0]);
     }
 
     /**
@@ -420,7 +442,15 @@ class Slot {
             }
 
             foreach($SymbolwinLines as $w) {
-                if($this->params->checkSymbolCount($v, $w['count'], $w['type'])) {
+                $symbolIncluded = false;
+
+                foreach($w['useSymbols'] as $useSymbol) {
+                    if(in_array($useSymbol, $v) || isset($w['alias'])) {
+                        $symbolIncluded = true;
+                    }
+                }
+
+                if($this->params->checkSymbolCount($v, $w['count'], $w['type']) && $symbolIncluded) {
                     $multiplier = $this->params->getWinMultiplier($v, $w['count'], $w['type']);
                     $addMultiplier = array();
                     foreach($this->bonusWildsMultiple as $bonusWild) {
@@ -432,7 +462,7 @@ class Slot {
                     if($this->params->payOnlyHighter) {
                         $f = true;
                         foreach ($this->winLines as $k=>$zzz) {
-                            if($this->params->winLineType == 'left' || $this->params->winLineType == 'lefleftRightt') {
+                            if($this->params->winLineType == 'left' || $this->params->winLineType == 'leftRight') {
                                 if ($zzz['id'] == $w['id'] + 1) {
                                     if ($zzz['multiple'] > $multiplier * $w['double']) {
                                         $f = false;
@@ -443,8 +473,8 @@ class Slot {
                                 }
                             }
                             else {
-                                if ($zzz['id'] == $w['id']) {
-                                    if ($zzz['multiple'] > $multiplier * $w['double']) {
+                                if($zzz['id'] == $w['id'] && strlen($zzz['id'] == strlen($w['id']))) {
+                                    if($zzz['multiple'] > $multiplier * $w['double']) {
                                         $f = false;
                                     } else {
                                         $f = true;
@@ -456,12 +486,12 @@ class Slot {
                         if ($f) {
                             $addArray = array(
                                 'line' => $w['line'],
-                                'multiple' => $multiplier * $w['double'],
+                                'multiple' => round($multiplier * $w['double']),
                                 'symbol' => $v,
                                 'alias' => $alias,
                                 'count' => $w['count'],
                                 'id' => $w['id'] + 1,
-                                'double' => $w['double'],
+                                'double' => round($w['double']),
                                 'withWild' => $w['withWild'],
                                 'addMultiplier' => $addMultiplier,
                                 'direction' => $w['direction'],
@@ -478,13 +508,13 @@ class Slot {
                         $this->totalMultiple += $multiplier * $w['double'];
                         $addArray = array(
                             'line' => $w['line'],
-                            'multiple' => $multiplier * $w['double'],
+                            'multiple' => round($multiplier * $w['double']),
                             'symbol' => $v,
                             'alias' => $alias,
                             'count' => $w['count'],
                             'id' => $w['id'] + 1,
                             'collecting' => $w['collecting'],
-                            'double' => $w['double'],
+                            'double' => round($w['double']),
                             'withWild' => $w['withWild'],
                             'addMultiplier' => $addMultiplier,
                             'direction' => $w['direction'],
@@ -508,9 +538,11 @@ class Slot {
             }
         }
 
+        $this->totalMultiple = round($this->totalMultiple);
+
         $this->report = array(
             'winLines' => $this->winLines,
-            'totalMultiple' => $this->totalMultiple,
+            'totalMultiple' => round($this->totalMultiple),
             'offset' => $this->getOffsets(),
             'reels' => $this->getReels(),
             'rows' => $this->getRows(),
@@ -518,22 +550,25 @@ class Slot {
             'startRows' => $this->startRows,
             'startFullRows' => $this->startFullRows,
             'bonusData' => $this->bonusData,
-            'double' => $this->double,
-            'bet' => $this->bet,
-            'linesCount' => $this->linesCount,
-            'betOnLine' => $this->betOnLine,
+            'double' => round($this->double),
+            'bet' => round($this->bet, 2),
+            'linesCount' => round($this->linesCount),
+            'betOnLine' => round($this->betOnLine, 2),
             'stops' => implode(',', $this->getOffsets()[1]),
-            'totalWin' => $this->betOnLine * $this->totalMultiple,
-            'spinWin' => $this->betOnLine * $this->totalMultiple,
+            'totalWin' => round($this->betOnLine * $this->totalMultiple, 2),
+            'spinWin' => round($this->betOnLine * $this->totalMultiple, 2),
             'drawID' => $this->drawID,
             'addDraws' => '',
         );
+
         return $this->report;
     }
 
 
     public function getExtraLine($config) {
         $winLines = array();
+
+        $z = fopen('winLinesExtraDiff', 'ab');
 
         $lineId = 0;
         foreach($this->lines as $line) {
@@ -550,7 +585,7 @@ class Slot {
                     'multiple' => $config['multiplier'],
                     'symbol' => $config['alias'],
                     'alias' => $config['alias'],
-                    'count' => count($config['symbols']),
+                    'count' => count($lineSymbol),
                     'id' => $lineId + 1,
                     'collecting' => false,
                     'double' => false,
@@ -562,7 +597,10 @@ class Slot {
                 );
             }
             $lineId++;
+
+            fwrite($z, $lineId.' - '.$diffCount.' - '.json_encode($lineSymbol).PHP_EOL);
         }
+        fclose($z);
 
         return $winLines;
     }
@@ -636,6 +674,7 @@ class Slot {
                         if($this->params->doubleCount) {
                             if(!empty($this->params->doubleCountConfig[$s])) {
                                 $p = $this->params->doubleCountConfig[$s];
+
                                 if(in_array($symbol[0], $p)) {
                                     $cnt++;
                                 }
@@ -1076,11 +1115,13 @@ class Slot {
         for($i = 0; $i < count($reelConfig); $i++) {
             $reelSymbols = $this->reels[$i]->getVisibleSymbols();
             $matches = array();
+
             for($j = 0; $j < count($reelSymbols); $j++) {
                 $rs = $reelSymbols[$j];
                 $offset = $j * count($this->params->reelConfig) + $i;
                 $type = '';
                 $matched = false;
+
                 if(in_array($rs, $symbol)) {
                     $type = 'symbol';
                     $matched = true;
@@ -1123,9 +1164,13 @@ class Slot {
                     );
                 }
             }
+
+
+
             $ways->addMatches($matches);
 
         }
+
         return $ways->getWinLines();
     }
 

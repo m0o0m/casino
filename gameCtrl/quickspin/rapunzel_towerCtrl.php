@@ -25,13 +25,12 @@ class rapunzel_towerCtrl extends Ctrl {
             else $draws = $gDraw;
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <CustomerFunBalanceResponse balance="'.$this->getBalance().'" />
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
     </EEGOpenGameResponse>
-    '.$this->gameParams->getReels().$this->gameParams->getWinLines().$this->getStakeParams().'
+    '.$this->gameParams->getReels(array('Base', 'BaseRespin', 'FreeSpin', 'FSRespin')).$this->gameParams->getWinLines().$this->getStakeParams().'
     <EEGLoadOddsResponse gameId="'.$this->gameID.'">
         <DrawOdds payTableSet="0">
             '.$this->gameParams->getPrizes().'
@@ -64,13 +63,12 @@ class rapunzel_towerCtrl extends Ctrl {
             else $draws = $gDraw;
         }
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <CustomerFunBalanceResponse balance="'.$this->getBalance().'" />
     <EEGOpenGameResponse gameId="'.$this->gameID.'">
         '.$draws.'
     </EEGOpenGameResponse>
-    '.$this->gameParams->getReels().$this->gameParams->getWinLines().$this->getStakeParams().'
+    '.$this->gameParams->getReels(array('Base', 'BaseRespin', 'FreeSpin', 'FSRespin')).$this->gameParams->getWinLines().$this->getStakeParams().'
 </CompositeResponse>';
 
         $this->outXML($xml);
@@ -94,6 +92,7 @@ class rapunzel_towerCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -213,8 +212,7 @@ class rapunzel_towerCtrl extends Ctrl {
                     <Bet seq="0" type="line" stake="' . $report['bet'] . '" pick="L' . $report['linesCount'] . '" payout="' . $totalWin . '" won="' . $win . '"/>
                 </DrawState>'.$addDraws;
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-        <CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
+        $xml = '<CompositeResponse elapsed="0" date="' . $this->getFormatedDate() . '">
             <EEGPlaceBetsResponse newBalance="' . $balanceWithoutBet . '" gameId="' . $this->gameID . '"/>
             <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
         </CompositeResponse>';
@@ -248,8 +246,7 @@ class rapunzel_towerCtrl extends Ctrl {
 
         $drawStates = str_replace('{{count}}', $this->bonus['totalFS'], $drawStates);
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>
-<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
+        $xml = '<CompositeResponse elapsed="0" date="'.$this->getFormatedDate().'">
     <EEGPlaceBetsResponse newBalance="'.$balanceWithoutBet.'" freeGames="0" gameId="' . $this->gameID . '" />
     <EEGLoadResultsResponse gameId="' . $this->gameID . '">'.$drawStates.'</EEGLoadResultsResponse>
 </CompositeResponse>';
@@ -277,10 +274,11 @@ class rapunzel_towerCtrl extends Ctrl {
         $drawID = (empty($config['drawID'])) ? $this->slot->drawID : $config['drawID'];
         while($bonus['bonusWin'] == 0) {
             $currentMultiple = $config['multiplier'];
+            $addBonus = array();
             if(isset($config['fs'])) {
-                if($this->bonus['ladder']['multiple'] > $currentMultiple) {
-                    $currentMultiple = $this->bonus['ladder']['multiple'];
-                }
+                $addBonus = array(
+                    'type' => 'blockEndOffset',
+                );
             }
 
             $respinReport = $this->slot->spin(array(
@@ -293,6 +291,7 @@ class rapunzel_towerCtrl extends Ctrl {
                     'type' => 'multiple',
                     'range' => array($config['multiplier'], $config['multiplier']),
                 ),
+                $addBonus,
             ));
 
             $bonus['bonusWin'] += $respinReport['totalWin'];
@@ -314,7 +313,7 @@ class rapunzel_towerCtrl extends Ctrl {
 
             $totalOffsets = $respinReport['sticky']['offsets'];
 
-            $addString = ' rsName="'.$config['rsName'].'" multiplier="'.$currentMultiple.'" respin="'.$respin.'"';
+
 
             $addTotal = empty($config['addTotal']) ? 0 : $config['addTotal'];
 
@@ -326,6 +325,14 @@ class rapunzel_towerCtrl extends Ctrl {
                 $config['bonus'] = '<Feature name="ladder" value="'.$this->bonus['ladder']['ladderLevel'].'" level="'.$this->bonus['ladder']['level'].'" spins="'.$this->bonus['ladder']['bonusSpins'].'" />';
                 $config['multiplier'] = $this->bonus['ladder']['multiple'];
             }
+
+            if(isset($config['fs'])) {
+                if($this->bonus['ladder']['multiple'] > $currentMultiple) {
+                    $currentMultiple = $this->bonus['ladder']['multiple'];
+                }
+            }
+
+            $addString = ' rsName="'.$config['rsName'].'" multiplier="'.$currentMultiple.'" respin="'.$respin.'"';
 
             $spins = empty($config['spins']) ? $drawID : $config['spins'];
             $currentSpins = empty($config['currentSpins']) ? $drawID : $config['currentSpins'];
@@ -386,8 +393,13 @@ class rapunzel_towerCtrl extends Ctrl {
             $this->slot->setReels($this->gameParams->reels[2]);
 
             $fsReport = $this->slot->spin(array(
-                'type' => 'multiple',
-                'range' => array($this->bonus['ladder']['multiple'], $this->bonus['ladder']['multiple']),
+                array(
+                    'type' => 'multiple',
+                    'range' => array($this->bonus['ladder']['multiple'], $this->bonus['ladder']['multiple']),
+                ),
+                array(
+                    'type' => 'blockEndOffset',
+                ),
             ));
 
             $currentDraw = $this->slot->drawID;
@@ -442,6 +454,7 @@ class rapunzel_towerCtrl extends Ctrl {
                 'lastSpins' => $totalSpins,
                 'bonus' => $bonus,
             ));
+
             if($fsReport['sticky']['count'] > 2 && $report['linesCount'] == 30) {
                 $fsReport['bonus'] = $this->getRespinData($fsReport, array(
                     'rsName' => 'FSRespin',
@@ -496,29 +509,27 @@ class rapunzel_towerCtrl extends Ctrl {
 
     protected function checkLadderLevel($stickyCount) {
         $this->bonus['ladder']['ladderLevel'] += $stickyCount;
+        $this->bonus['ladder']['bonusSpins'] = 0;
         if($this->bonus['ladder']['ladderLevel'] > 24 && !$this->bonus['ladder']['l4PD']) {
             $this->bonus['ladder']['level'] = 4;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['multiple'] = 2;
             $this->bonus['ladder']['l4PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 19 && !$this->bonus['ladder']['l3PD']) {
             $this->bonus['ladder']['level'] = 3;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['l3PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 14 && !$this->bonus['ladder']['l2PD']) {
             $this->bonus['ladder']['level'] = 2;
-            $this->bonus['ladder']['bonusSpins'] = 1;
+            $this->bonus['ladder']['bonusSpins'] += 1;
             $this->bonus['ladder']['l2PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 9 && !$this->bonus['ladder']['l1PD']) {
             $this->bonus['ladder']['level'] = 1;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['l1PD'] = true;
-        }
-        else {
-            $this->bonus['ladder']['bonusSpins'] = 0;
         }
     }
 

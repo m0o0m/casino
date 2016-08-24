@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule play.action$ /core/WebEngine.php?action=play
+RewriteRule authenticate.action$ /core/WebEngine.php?action=authenticate
+RewriteRule initstate.action$ /core/WebEngine.php?action=initstate
+RewriteRule paytable.action$ /core/WebEngine.php?action=paytable

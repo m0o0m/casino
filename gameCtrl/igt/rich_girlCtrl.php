@@ -41,7 +41,7 @@ class rich_girlCtrl extends IGTCtrl {
     <param name="countrycode" value=""/>
     <param name="presenttype" value="FLSH"/>
     <param name="securetoken" value=""/>
-    <param name="denomamount" value="1.0"/>
+    <param name="denomamount" value="'.$this->getDenominationAmount().'"/>
     <param name="skincode" value="MRGR"/>
     <param name="language" value="en"/>
     <param name="channel" value="INT"/>
@@ -304,7 +304,7 @@ class rich_girlCtrl extends IGTCtrl {
         $totalBet = $obj->PatternsBet;
         $betPerLine = (float) $obj->BetPerPattern;
 
-        $stake = $totalBet * $betPerLine;
+        $stake = $totalBet * $betPerLine * $_SESSION['denominationAmount'];
         $pick = (int) $totalBet;
 
         $this->checkSpinAvailable($stake);
@@ -429,10 +429,9 @@ class rich_girlCtrl extends IGTCtrl {
         $sp = '<PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="0" stage="" totalPay="0" type="Pattern"/>';
         if(!empty($sr['totalWin'])) {
             $sc = $this->getScattersHighlight($sr['offsets']);
-
             $c = $this->gameParams->scatterMultiple[$sr['count']];
             $sp = '<PrizeOutcome multiplier="1" name="BaseGame.Scatter" pay="'.$sr['totalWin'].'" stage="" totalPay="'.$sr['totalWin'].'" type="Pattern">
-        <Prize betMultiplier="9" multiplier="1" name="Scatter" pay="'.$c.'" payName="'.$sr['count'].' s10" symbolCount="'.$sr['count'].'" totalPay="'.$sr['totalWin'].'" ways="0" />
+        <Prize betMultiplier="'.($report['bet'] * $this->gameParams->scatterMultiple[$sr['count']]).'" multiplier="1" name="Scatter" pay="1" payName="'.$sr['count'].' s10" position="0" symbolCount="'.$sr['count'].'" totalPay="'.$sr['totalWin'].'" ways="0" />
     </PrizeOutcome>';
         }
         else {

@@ -109,18 +109,26 @@ class Params {
      *
      * @return string
      */
-    public function getReels() {
+    public function getReels($rsName = false) {
         $reelsStr = '';
 
+        $z = 0;
         foreach($this->reels as $i=>$reel) {
             $reelsStr .= '<EEGLoadReelsResponse gameId="'.$this->gameID.'">';
             $c = count($reel);
-            $reelsStr .= '<Reels reelset="'.$i.'" numReels="'.$c.'">';
+            if($rsName !== false) {
+                $rsCurrent = ' rsName="'.$rsName[$z].'"';
+            }
+            else {
+                $rsCurrent = '';
+            }
+            $reelsStr .= '<Reels reelset="'.$i.'" numReels="'.$c.'"'.$rsCurrent.'>';
             foreach($reel as $k=>$row) {
                 $reelsStr .= '<Reel id="'.$k.'" numStops="'.count($row).'" stops="'.implode(',', $row).'" />';
             }
             $reelsStr .= '</Reels>';
             $reelsStr .= '</EEGLoadReelsResponse>';
+            $z++;
         }
 
         return $reelsStr;
@@ -225,6 +233,7 @@ class Params {
             //$debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 5);
             //print_r($debug);
             //die();
+            return array(0);
         }
         return $this->symbols[$symbol];
     }

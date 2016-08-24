@@ -38,6 +38,13 @@ class rockyCtrl extends Ctrl {
             '.$this->gameParams->getPrizes().'
             <BetOdds type="line" />
         </DrawOdds>
+        <DrawOdds payTableSet="1">
+            <Prize odds="100" type="5S" />
+            <Prize odds="10" type="4S" />
+            <Prize odds="5" type="3S" />
+            <Prize odds="1" type="2S" />
+            <BetOdds type="scatter" />
+        </DrawOdds>
     </EEGLoadOddsResponse>
     '.$this->gameParams->getReels().'</CompositeResponse>';
 
@@ -62,6 +69,7 @@ class rockyCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -346,12 +354,26 @@ class rockyCtrl extends Ctrl {
 
     public function showFreeSpinReport($report, $totalWin) {
         $sr = $report['scattersReport'];
-        $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" spins="15" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
+
+        $fsCount = 15;
+        switch($sr['count']) {
+            case 3:
+                $fsCount = 15;
+                break;
+            case 4:
+                $fsCount = 20;
+                break;
+            case 5:
+                $fsCount = 25;
+                break;
+        }
+
+        $bonus = '<Scatter offsets="'.implode(',', $sr['offsets']).'" spins="'.$fsCount.'" prize="'.$sr['count'].'S" length="'.$sr['count'].'" payout="'.$sr['totalWin'].'" />';
 
         $winLines = $this->getWinLinesData($report, array(
             'runningTotal' => $report['totalWin'] - $this->fsBonus['bonusWin'],
-            'spins' => 15,
-            'currentSpins' => 15,
+            'spins' => $fsCount,
+            'currentSpins' => $fsCount,
             'bonus' => $bonus,
             'drawWin' => $report['totalWin'] - $this->fsBonus['bonusWin'],
         ));

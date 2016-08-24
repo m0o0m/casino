@@ -60,6 +60,7 @@ class goldilocksCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -322,22 +323,20 @@ class goldilocksCtrl extends Ctrl {
 
     protected function checkLadderLevel($stickyCount) {
         $this->bonus['ladder']['ladderLevel'] += $stickyCount;
+        $this->bonus['ladder']['bonusSpins'] = 0;
         if($this->bonus['ladder']['ladderLevel'] > 12 && !$this->bonus['ladder']['l3PD']) {
             $this->bonus['ladder']['level'] = 3;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['l3PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 7 && !$this->bonus['ladder']['l2PD']) {
             $this->bonus['ladder']['level'] = 2;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['l2PD'] = true;
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 2 && !$this->bonus['ladder']['l1PD']) {
             $this->bonus['ladder']['level'] = 1;
             $this->bonus['ladder']['l1PD'] = true;
-        }
-        else {
-            $this->bonus['ladder']['bonusSpins'] = 0;
         }
     }
 

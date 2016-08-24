@@ -9,7 +9,7 @@
  */
 
 /* DELETE */
-if($_SERVER['HTTP_HOST'] == 'localhost') {
+if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '134.249.187.32') {
     if(isset($_GET['sessionID'])) {
         session_id($_GET['sessionID']);
         session_start();
@@ -32,6 +32,7 @@ require_once 'Reel.php';
 require_once 'Ctrl.php';
 require_once 'Params.php';
 require_once 'Ways.php';
+
 $_SESSION['lastRequestTime'] = time();
 
 /**

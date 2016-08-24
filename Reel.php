@@ -60,12 +60,35 @@ class Reel {
      * Устанавливаем offset барабана
      * Обновляем видимые символы
      *
+     * @param $bonus Некоторые бонусы спина барабана
+     *
      * @return $this
      */
-    public function spin() {
+    public function spin($bonus = array()) {
+        $blockEnd = false;
+        if(!empty($bonus['type'])) {
+            if($bonus['type'] == 'blockEndOffset') {
+                $blockEnd = true;
+            }
+        }
+        else {
+            foreach($bonus as $b) {
+                if(!empty($b['type'])) {
+                    if($b['type'] == 'blockEndOffset') {
+                        $blockEnd = true;
+                    }
+                }
+            }
+        }
         $tmp = array_merge($this->symbols, $this->symbols);
         $cnt = count($this->symbols);
         $this->offset = rnd(0, $cnt);
+        if($blockEnd) {
+            while($cnt - $this->offset <= $this->visibleCount) {
+                $this->offset = rnd(0, $cnt);
+            }
+        }
+
         $this->newSymbols = array_slice($tmp, $this->offset, $cnt);
         $this->updateVisibleSymbols();
 

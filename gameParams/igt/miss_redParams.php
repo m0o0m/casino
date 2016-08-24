@@ -46,7 +46,9 @@ class miss_redParams extends Params {
         'w01' => array(0),
         'w02' => array(20),
 
+        // Miss replace
         'e01' => array(11),
+        // Wolf replace
         'e02' => array(12),
     );
 

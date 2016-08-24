@@ -83,6 +83,7 @@ class sinbadCtrl extends Ctrl {
         $respin = $spinData['respin'];
 
         while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+            $this->slot->createCustomReels($this->gameParams->reels[0], array(3,4,4,4,3));
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -481,9 +482,10 @@ class sinbadCtrl extends Ctrl {
 
     protected function checkLadderLevel($stickyCount) {
         $this->bonus['ladder']['ladderLevel'] += $stickyCount;
+        $this->bonus['ladder']['bonusSpins'] = 0;
         if($this->bonus['ladder']['ladderLevel'] > 10 && !$this->bonus['ladder']['l3PD']) {
             $this->bonus['ladder']['level'] = 3;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->slot->createCustomReels($this->gameParams->reels[3], array(3,4,4,4,3));
             $this->bonus['reelset'] = 3;
             $this->slot->setWilds(array(3,4,5,6));
@@ -491,7 +493,7 @@ class sinbadCtrl extends Ctrl {
         }
         elseif($this->bonus['ladder']['ladderLevel'] > 6 && !$this->bonus['ladder']['l2PD']) {
             $this->bonus['ladder']['level'] = 2;
-            $this->bonus['ladder']['bonusSpins'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
             $this->slot->setWilds(array(3,4,5));
             $this->bonus['ladder']['l2PD'] = true;
         }
@@ -499,9 +501,6 @@ class sinbadCtrl extends Ctrl {
             $this->bonus['ladder']['level'] = 1;
             $this->slot->setWilds(array(3,4));
             $this->bonus['ladder']['l1PD'] = true;
-        }
-        else {
-            $this->bonus['ladder']['bonusSpins'] = 0;
         }
     }
 

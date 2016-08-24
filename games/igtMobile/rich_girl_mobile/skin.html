@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" name="viewport">
+	<style type="text/css">
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	z-index:0;/*Safari bug iPhone 2.0 bug. This establishes a stacking context on every element */
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+}
+
+html {
+	overflow:hidden;
+	width:inherit;
+}
+
+body
+{
+	position:absolute;
+	width:100%;
+	font-family: arial,helvetica,sans-serif;
+	font-size: 100%;
+	-webkit-text-size-adjust: none;
+}
+
+/* header bar*/
+.header {
+	position:relative;
+	background-color:#1b50b6;
+	text-align:center;
+	height:43px;
+	background-image:linear-gradient(top,#000103 0%,#031944 100%);
+	/* TODO make prefix free handle these */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#000103), color-stop(100%,#031944));
+	border-bottom:1px solid #000;
+}
+
+.header > img {
+	margin:7px auto;
+}
+
+/* menu body */
+nav {
+	display:block;
+	width:100%;
+	font-weight: bold;
+	background-color: #ddd;
+	border-bottom:solid 2px #556062;
+	padding:5px 0;
+	box-sizing:border-box;
+}
+
+/* menu item */
+nav a {
+	display:block;
+	color: #0024b0;
+	text-decoration:none;
+	white-space:pre;
+	margin:5px auto;
+	text-align:left;
+	width:94%;
+	padding:8px 10px 6px 10px;
+	box-sizing:border-box;
+	border-radius:8px;
+	border:solid 1px #a0adae;
+	box-shadow:0px 1px #fff;
+	background-image:linear-gradient(top,#fff 0%,#ececec 50%,#cacaca 100%);
+	/* TODO make prefix free handle these */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(50%,#ececec), color-stop(100%,#cacaca));
+}
+
+nav a:after {
+	display:block;
+	width:12px;
+	height:19px;
+	float:right;
+	margin-top:2px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAATCAYAAACk9eypAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAb9JREFUeNpinD59OgMIZLbd+M/Aq8fA8PnS6ulVGmEMOAATWHH7VaBiYyCLlQFIhwL5q/BqYPj9DVWUxyw0s/XKKpwaZFl25zC8WYcqw2cemtlyeRVWDezs7HslmU8uYni9BlWW3yI0sw1VE1hDcXHxDb3Pz9sNP2/C1MQL1NR+4xSqH4AgoHv6jU/Syu0SzKcWMTxfDBT5geQnY9PMruf/UTSAQElJyQ1ubu52SY4rUxmezEHVxKnCANLEhO4pqKYpDEzMDAw/36FKsvAzsGALujtvtKQZRB2A0SKCEPz9jIHh/eplGBoyy7bJMkg47sFQ/GTRZVmRz9NRnJRZt00EqPgRFsWPZIQ/VVZVVR2Ba8hs2urNIOD4GkPxS7DirOrq6q1gb4AVV2z2ZhBz2YKh+NnCR3o61yszE6ZvRY0HUTtsihmkBT6BFC9DienOzk45hve7EGEOUvx4AUhxtMaHp1vRA4VZUFCQgfP/i49fXl1xYWBhZ2B4vpZBSuhTFjB9rUttbP+IoaG9vf3niRMnHknJ3brN9uGkNx83ezRIcVlZ2Uecybu8vPzR93eKy1jY5eXZ2Ni24lIMAgABBgB/hK3N1CTrbgAAAABJRU5ErkJggg==);
+	background-size:contain;/*width and height must be exactly 1/2 the image size*/
+	content: ' '
+}
+
+/* menu item icon */
+a > img {
+	float:right;
+	height:16px;
+}
+
+#activate {
+	float:right;
+	display:inline-block;
+	//border:2px solid #000;
+	//border-top:0;
+	//border-radius: 0 0 5px 5px;
+	min-width:74px;
+	text-align:center;
+	//background-image:linear-gradient(bottom,#c8c8c8 0%,#fff 80%);
+	/* TODO make prefix free handle these */
+	//background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0%,#c8c8c8), color-stop(80%,#fff));
+	//padding:6px 0 3px;
+}
+
+#activate:after {
+	display:inline-block;
+	width:74px;
+	height:30px;
+	color: #1b50b6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAAAeCAYAAACLz4iQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAu5JREFUeNrsmV9IU2EYxp9zdFg5bY6R/4IWDCcOnEbRRVTSVUKJrIvuJttFF90Uo5IQDLToRhasKwlmGnSRII2K6MbCuotVSlrsj46y2mbMLbaIue10zjdcx0CatM63tfPCyzjnY+Pjd57nPd/7jsGOAQ5C7OrAH4Phk0N5RfgN+ajM3WDZ/L7IoCzjFyimTAlsHRQr08gLFCsrSlZU6YLiSu6tQMl6pWdzdoOiJE57fxtSc8fhvNqePZ7k1hjy2de7m6y/mjxEZX9il239HFXAGBpdRNeBOph7muB6tgLX05XcmlFfA/ulVsTiKViuLFDZ3yaKYiTPaDzNQ3hHYDiHDNA2byf3VbUKjPHXO5WVsI14MOuJU9mf+Gy5deuxhZX2rCfBw/ASKFN2Y9aSF/Vob1Fi4mEQ4w9C9Gz319YrcC0efxTG0f1qmE/UY/pWJ47sU2HOG4fN7qduuaJrYWw3/OjQKwkkwYqmCwvEmsXSWrEbFCVxDp7RYnrUiL6TjYgmMrAMezDzOgbrsBeBUBLG1hqyPjVioLI/sZqZ3JjF0C35U9I2VsE9kR3vHDv7FrPeRG5Nxdcs9x0j9jRU4VT/e7hmInSkNP/4d0UxkqegGus1H1/IKzA2qCNvu/U1J38tQHLc+wLXi1Uq+xMfwqkeOIV0PY/CMRlEu64a9vN7yb1zp5vQc1iNOd932Bwfiuyt9696vTymojbHR3R11sLcrUEgmMSgpQmxRBqmy76iadal6fXy+GnTgB9uZxuBJIT1+hIC4WTRjH+oW289A6E12G4uZ1ub20Jd+kZ9T5tYj/6TG38SIVmMo2mqTXEpzbn+sz8XGAkUJY+C8wSVSQEVCpmIONIpESiiJN7b0c+ARivDEYfARLAzI4CqrvuKxKoGiy95VWUAdTOg2FbegNZ+AJFPQMCdrd08IwYtd3sR8k0htZathFxGVpK4ZlcqONTrTCyW5++jQX8QSnWQp8fJhHKnAI4wEdjwjH4KMAAd9NinfQrzvQAAAABJRU5ErkJggg==);
+	//background-size:contain;/*width and height must be exactly 1/2 the image size*/
+	content: ' ';
+}
+
+#deactivate {
+	position:absolute;
+	top:0;
+	right:0;
+	display:inline-block;
+	margin:4px 6px;
+	width:64px;
+	height:32px;
+	border-top:solid 1px #000a7b;
+	border-radius:4px;
+	text-align:center;
+	background-image: linear-gradient(top,#0020ab 0%,#0044d5 100%);
+	/* TODO make prefix free handle these */
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #0020ab),color-stop(1, #0044d5));
+	box-shadow: 0px 1px #000a7b;
+}
+
+#deactivate:after {
+	line-height:32px;
+	font-weight: bold;
+	color: #fcfcfe;
+	font-size:20px;
+	content: 'X';
+}
+
+#mxf-timer {
+	float: left;
+	line-height: 9px;
+	border: 1px solid #888;
+	box-shadow: 0px 0px 0px 1px #444;
+	margin: 1px;
+	border-radius: 3px;
+	text-align: center;
+	color: #fff;
+	background-color: #222;
+	line-height: 12px;
+	width: 48px;
+	font-size: 9px;
+}
+
+	</style>
+</head>
+<body id="slider">
+	<div id="content">
+		<div class="header">
+			<img width="58" height="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAeCAYAAAB9hg0IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABP5JREFUeNrcmGtsVEUUx+9ue7t9WCygPApqWkBQ0hJIAFES0eAjYoxSgyIRTBo+aOODCBIiPqMmxuAX/cIXxCgBhQ8o0fiIGF9gSG3A2qBFDOADKEi0CNjS3fV/4u/G4Xpbdutu4zLJL93O3Dkz58zMmTMnlk6nvTyUKuGLI97/pMT70WeQmNVH+2gxT7wkrhPDnbYyMYP+RQOqqa1olsTFD2KJaBCLRTFtMXG1aE7/XXaKKqfvUPGROCbqnfoLRV0/5pIxnjPBs33sizvEZpFK/1PmRnx7v9gt3hS1obY7xZNipFO3QPwkxuRb0SKxgtUI6opR4mLHGDbpB8QeR9FZEYJniGGi3OkfNmip83u0uEFUOP/bTinJtaLG3aJHrBJNokXsE5URHdeLHeJesUlMz3BXZMoksa6Xsf+zonZGTqTPLI/00nGlGOvshotyrGggN6dbd7xYLbrT/y7vipp8T2IgsOtlpDgq1otPRAqHfErMFjvEfaLCcdZJr8BKLCJg2C6uEIvFe2KcmCCaIe0VYIlSdLl4lIu/0ztHSnFE3QfifJQcI5aKS8RW8bL4MwO5CbGSSOgJcSKDPiVimRjMvDaIL/Op6NfiOwbeKCaLNvECYdvzbOexYp/YTb+pYqhoEb+KUaKUuHc8ylbx9xvGvoowdBsylmFk8wG7xHHaO5D3C8YbjF/5HcPPFN3iC8fHZBwCDscTtxO5WHmdi92uoePilLhRPMwdbHUdYrLYJfaKW4mkLPL5TXQSRLwqTiPjY8LAA6KLqMnnf+u3nPFXcIebvMNivtjCPLu40/3evG5fAX8Syx/DI9tqLxTlbE1bsZvgD7bpAc53JZY3OTEc2fvUXynm4/g2EeRPZbVt1zwj6lmloL8X+mu7p0bcLN4Sn4kGUZvp1g2XMs6KCTwt6ji/ixyD2EDXikbxtPgQI6QcL31S9DgyPRTpds5oCnk21tu0lToyXM85VxwSz4ouR06iP8+0GCtlFm8Xz7EaptB+vinHcZiCQ/h9S4QDijkrcsbpCRnejHkpxqukPRWS4+EbeiJkZP0ePcmgFihcTmBh1p3Oo3qbsyovigViFXWXMbkiZ2JxZ7wu6hMYKhgvzso+KK5BER8HFZaRcFaxgrl5OLCsFDWPtloM48wcFGvETtobmbB5vXdENef2EFdRiskn+c5lj3hDTBO3sdWbUczan+LRvp2He4OzPQMZPnLM4HPYaevEYdrOGjCESz0Hvw0371N3FOt3IrwWZb9H2cApdLAbAktXci2ZAaaw6i3snhrHbxzhmwlcK+WMmUDGjxi5jPmYkb7C2J9CVooWUvExyhoivHNG0UkEHbaLviUftYHdV+c6qeICX8F2IrdXxAgnPJ1IlLSXFd7qFdq7krdw+JFvkdTGiPd0Uqy1pEI8xxbOdQozRoxbwv/VRF/hchDP7ZYeYuB7RGsuFTXvtxY3n7NsLB7fro0l4jWupLBjsTv0IR4LTQQvScLKfud1+8r3NjrpTcvyXR9KxSRC3we/R4lB5IBnRsie4qR69oulpIDizgPk9lBmcZp4PMgk5vMsVfN6aXLqLhCPiUWhc1bNy6iVyYVlzQ7lki2XtTCkWF8L4OXbcUwMJarHiZ9JlY5w6i2f+zlKtPEUjDnOxwwzj1yvPc/Oy3YuA32PFnHGfKKYIPAfQpR0F0/BzTwaoiZnD4xWHvcZl78EGADDy7p25fyoBgAAAABJRU5ErkJggg=="/>
+			<span id="deactivate"></span>
+		</div>
+		<nav>
+			<a id="home" href="http://www.casinoeuro.com/igt/MobileServlet.jsp?skinid=[Skinid]&type=1" data-translate="home"></a>
+			<a id="deposit" href="http://www.casinoeuro.com/igt/MobileServlet.jsp?skinid=[Skinid]&type=2" data-translate="deposit" target="_blank"></a>
+			<div id="commands"></div>
+		</nav>
+	</div>
+	<div id="activateContainer"><span id="activate"></span></div>
+
+	<script type="text/javascript">var timerLibLoaded=false;</script>
+	<script type="text/javascript" src="../MXF/lib/extern.js"></script>
+	<script type="text/javascript" onload="timerLibLoaded=true;" src="../MXF/lib/timer.js"></script>
+	<script type="text/javascript">
+
+	//translations MUST be plain text
+	//Javascript encoded (JSON encode, but beware of unicode line terminators)
+	var translations = {
+		"cs": {
+			"splashMessage":"",
+			"home":"Domů",
+			"deposit":"Vložte",
+			"gRules":"Pravidla hry",
+			"pTable":"Tabulka výplat"
+		},
+		"el": {
+			"splashMessage":"",
+			"home":"Αρχική σελίδα",
+			"deposit":"Καταθέτετε",
+			"gRules":"Κανόν Πχν",
+			"pTable":"Πίνακας πληρωμών"
+		},
+		"en": {
+			"splashMessage":"",
+			"home":"Home",
+			"deposit":"Deposit",
+			"gRules":"Game Rules",
+			"pTable":"Pay Table"
+		},
+		"es": {
+			"splashMessage":"",
+			"home":"Inicio",
+			"deposit":"Deposita",
+			"gRules":"Reglas Juego",
+			"pTable":"Tabla de premios"
+		},
+		"fi": {
+			"splashMessage":"",
+			"home":"Kotisivu",
+			"deposit":"Talleta",
+			"gRules":"Pelin Säännöt",
+			"pTable":"Maksutaulukko"
+		},
+		"fr": {
+			"splashMessage":"",
+			"home":"Accueil",
+			"deposit":"Déposez",
+			"gRules":"Règles",
+			"pTable":"Tableau des paiements"
+		},
+		"it": {
+			"splashMessage":"",
+			"home":"Home",
+			"deposit":"Deposit",
+			"gRules":"Game Rules",
+			"pTable":"Pay Table"
+		},
+		"pt": {
+			"splashMessage":"",
+			"home":"Inicial",
+			"deposit":"Depositar",
+			"gRules":"Regras do Jogo",
+			"pTable":"Tabela de prémios"
+		},
+		"ru": {
+			"splashMessage":"",
+			"home":"Cтарт",
+			"deposit":"Внесение депозита",
+			"gRules":"Правила",
+			"pTable":"Таблица выплат"
+		},
+		"sv": {
+			"splashMessage":"",
+			"home":"Hem",
+			"deposit":"Insättning",
+			"gRules":"Spelregler",
+			"pTable":"Utbetalningstabell"
+		}
+	};
+
+	var showTimers = true;
+
+	//MOVE TO LIB
+	document.addEventListener('DOMContentLoaded',function()
+	{
+		var language = location.search.match(/(?:\?|&)language=([\w-]+)(?:&|$)/);
+
+		//if no langauge found, use en
+		language = language && language[1] || 'en';
+		//discard the unwanted translations
+		translations = translations[language] || translations['en'];
+		var paramList = location.search.substr(location.search.indexOf("?")+1);
+		var params = paramList.split("&");
+		[].slice.call(document.querySelectorAll('[data-translate]'),0).forEach(
+			function(element)
+			{
+				var translation = element.getAttribute('data-translate');
+				element.appendChild(document.createTextNode(translations[translation] || translation))
+				for (var i=0; i < params.length; i++) {
+					if (params[i].indexOf('cKEY') == 0) {
+						var thisKey = params[i].substr(params[i].indexOf('=') + 1);
+						var keyIdx = location.search.indexOf("cKEY=" + thisKey);
+						var valIdx = location.search.indexOf("cVAL=", keyIdx + 2);
+						var valEndIdx = 0;
+						if (location.search.indexOf("&", valIdx) > 0) {
+							valEndIdx = location.search.indexOf("&", valIdx);
+						} else {
+							valEndIdx = location.search.length;
+						}
+						var thisVal = location.search.substring(valIdx + 5, valEndIdx);
+						if (element.href.indexOf('[' + thisKey + ']') > 0) {
+							element.href = element.href.replace('[' + thisKey + ']', thisVal);
+						}
+					}
+				}
+			}
+		);
+	});
+
+	//MOVE SOME OF THIS TO LIB?
+	window.addEventListener('com.igt.events.bridgeReady',
+		function(event)
+		{
+			var bridge = event.bridge;
+			var enabled = 1;
+			var active = 0;
+			var activating = 0; //set when the consol is in the process of actiavting
+			var deactivating = 0; //set when the console is in the process of deactivating
+			var visiblePopup =0; //set whena popu message is visible
+			var activate = document.getElementById('activate');
+			var slider = document.getElementById('slider');
+			var commands = document.getElementById('commands');
+			var slideup = 1; //set to ms time of slideup whenm closing the console (1 is instant)
+			var slidedown = 200; //set to ms time of slideup whenm closing the console (1 is instant)
+
+			slider.addEventListener('webkitTransitionEnd',function()
+			{
+				//just became inactive
+				if(deactivating)
+				{
+					activate.style.display = '';
+					bridge.console.activate(activate.offsetHeight + 'px');
+					deactivating = 0;
+				}
+				else //just became active
+				{
+					slider.style.webkitTransition = 'top '+slideup+'ms';
+				}
+			});
+
+			var showConsole = function()
+			{
+				if(enabled && !active && !activating)
+				{
+					activate.style.display = 'none';
+					slider.style.webkitTransition = 'top '+slidedown+'ms';
+					activating = slidedown;
+					bridge.console.activate(slider.offsetHeight+'px');
+					active = !active;
+					if (showTimers && timerLibLoaded) {
+						document.getElementById('mxf-timer').style.display = "none";
+					}
+				}
+			};
+
+			var hideConsole = function()
+			{
+				if(active && !deactivating)
+				{
+					deactivating = 1;
+					slider.style.top = -content.offsetHeight + 'px'; //slide up
+					active = !active;
+					//remove focus so the keyboard disappears. Doesn't work though :(
+					document.activeElement && document.activeElement.blur();
+					if (showTimers && timerLibLoaded) {
+						document.getElementById('mxf-timer').style.display = "inline";
+					}
+				}
+			}
+
+			var updateLayout = function()
+			{
+				if(visiblePopup)
+				{
+					bridge.console.activate(visiblePopup.offsetHeight + 'px');
+				}
+				else if(!active)
+				{
+					//there si a minor bug here after an orientation change
+					slider.style.top = -content.offsetHeight + 'px'
+				}
+				else
+				{
+					bridge.console.activate(slider.offsetHeight+'px');
+				}
+			};
+
+			activate.addEventListener(document.body.ontouchstart ? 'touchstart' : 'mousedown',showConsole);
+			deactivate.addEventListener(document.body.ontouchstart ? 'touchstart' : 'mousedown',hideConsole);
+
+			updateLayout();
+			bridge.consoleReady();
+			if (showTimers && timerLibLoaded) {
+				//create a timer
+				(function() {
+					var timer = com.igt.console.timer('mxf-timer','mxf-clock','mxf-elapsed');
+					activateContainer.appendChild(timer.element);
+					timer.show(true);
+				}());
+			}
+
+			//grab any links without "target" that have an href defined
+			//in other words any link that should replace the game...
+			[].slice.call(document.querySelectorAll('a[href]:not([target])'),0).forEach(function(link)
+				{
+					link.addEventListener('click',
+						function(event)
+						{
+							//prevent built-in navigation
+							event.preventDefault();
+							//change location on the parent frame (or self if this is the top frame)
+							window.parent.location = event.target.href;
+						}
+					);
+				}
+			);
+
+			bridge.addEvents({
+				consoleResized: function(_height)
+				{
+					if(activating)
+					{
+						slider.style.top = 0; //slide down
+						activating = 0;
+					}
+				},
+				wagerIsStarting: function()
+				{
+					hideConsole();
+					enabled = 0;
+//AT THIS POINT WE SHOULD BE CALLING SOMETHING TO STOP DEFAULT
+					//slide complicates things, should be waiting for the slide to finish really....
+					bridge.console.resume();
+				},
+//MXF should this just get the outcome. Seems simpler that way
+				wagerIsComplete: function()
+				{
+					enabled = 1;
+//AT THIS POINT WE SHOULD BE CALLING SOMETHING TO STOP DEFAULT
+					bridge.console.resume();
+				},
+				orientationchange: updateLayout,
+				register: function(IGTcontrol)
+				{
+					var element;
+
+					//switch for future possible extension
+					switch(IGTcontrol.type)
+					{
+					case 'command':
+						element = document.createElement('a');
+						element.appendChild(document.createTextNode(IGTcontrol.text));
+						element.addEventListener('click',function()
+						{
+							IGTcontrol.setValue();
+							hideConsole();
+						});
+						document.getElementById('commands').appendChild(element);
+						break;
+					case 'boolean':
+					case 'list':
+					//balance is a special case, it's range defaults to [0,Infinity)
+					case 'balance':
+					//Stake is a special case, it's never enabled for update on this side
+					case 'stake':
+					case 'range':
+					default:
+					}
+					//whenever content is appended, move the slider up
+					element && updateLayout();
+				}
+			});
+
+			//If there are asynchronous tasks to start, start them and
+			//call this method when the console has completed initialisation
+		}
+	);
+	</script>
+	<script src="../MXF/igtBridge.js"></script>
+	<script type="text/javascript">/**
+ * StyleFix 1.0.3 & PrefixFree 1.0.7
+ * @author Lea Verou
+ * MIT license
+ */
+ (function() {
+    function t(e, t) {
+        return [].slice.call((t || document).querySelectorAll(e))
+    }
+    if (!window.addEventListener) return;
+    var e = window.StyleFix = {
+        link: function(t) {
+            try {
+                if (t.rel !== "stylesheet" || t.hasAttribute("data-noprefix")) return
+            } catch (n) {
+                return
+            }
+            var r = t.href || t.getAttribute("data-href"),
+                i = r.replace(/[^\/]+$/, ""),
+                s = t.parentNode,
+                o = new XMLHttpRequest,
+                u;
+            o.onreadystatechange = function() {
+                o.readyState === 4 && u()
+            };
+            u = function() {
+                var n = o.responseText;
+                if (n && t.parentNode && (!o.status || o.status < 400 || o.status > 600)) {
+                    n = e.fix(n, !0, t);
+                    if (i) {
+                        n = n.replace(/url\(\s*?((?:"|')?)(.+?)\1\s*?\)/gi, function(e, t, n) {
+                            return /^([a-z]{3,10}:|\/|#)/i.test(n) ? e : 'url("' + i + n + '")'
+                        });
+                        var r = i.replace(/([\\\^\$*+[\]?{}.=!:(|)])/g, "\\$1");
+                        n = n.replace(RegExp("\\b(behavior:\\s*?url\\('?\"?)" + r, "gi"), "$1")
+                    }
+                    var u = document.createElement("style");
+                    u.textContent = n;
+                    u.media = t.media;
+                    u.disabled = t.disabled;
+                    u.setAttribute("data-href", t.getAttribute("href"));
+                    s.insertBefore(u, t);
+                    s.removeChild(t);
+                    u.media = t.media
+                }
+            };
+            try {
+                o.open("GET", r);
+                o.send(null)
+            } catch (n) {
+                if (typeof XDomainRequest != "undefined") {
+                    o = new XDomainRequest;
+                    o.onerror = o.onprogress = function() {};
+                    o.onload = u;
+                    o.open("GET", r);
+                    o.send(null)
+                }
+            }
+            t.setAttribute("data-inprogress", "")
+        },
+        styleElement: function(t) {
+            if (t.hasAttribute("data-noprefix")) return;
+            var n = t.disabled;
+            t.textContent = e.fix(t.textContent, !0, t);
+            t.disabled = n
+        },
+        styleAttribute: function(t) {
+            var n = t.getAttribute("style");
+            n = e.fix(n, !1, t);
+            t.setAttribute("style", n)
+        },
+        process: function() {
+            t('link[rel="stylesheet"]:not([data-inprogress])').forEach(StyleFix.link);
+            t("style").forEach(StyleFix.styleElement);
+            t("[style]").forEach(StyleFix.styleAttribute)
+        },
+        register: function(t, n) {
+            (e.fixers = e.fixers || []).splice(n === undefined ? e.fixers.length : n, 0, t)
+        },
+        fix: function(t, n, r) {
+            for (var i = 0; i < e.fixers.length; i++) t = e.fixers[i](t, n, r) || t;
+            return t
+        },
+        camelCase: function(e) {
+            return e.replace(/-([a-z])/g, function(e, t) {
+                return t.toUpperCase()
+            }).replace("-", "")
+        },
+        deCamelCase: function(e) {
+            return e.replace(/[A-Z]/g, function(e) {
+                return "-" + e.toLowerCase()
+            })
+        }
+    };
+    (function() {
+        setTimeout(function() {
+            t('link[rel="stylesheet"]').forEach(StyleFix.link)
+        }, 10);
+        document.addEventListener("DOMContentLoaded", StyleFix.process, !1)
+    })()
+})();
+(function(e) {
+    function t(e, t, r, i, s) {
+        e = n[e];
+        if (e.length) {
+            var o = RegExp(t + "(" + e.join("|") + ")" + r, "gi");
+            s = s.replace(o, i)
+        }
+        return s
+    }
+    if (!window.StyleFix || !window.getComputedStyle) return;
+    var n = window.PrefixFree = {
+        prefixCSS: function(e, r, i) {
+            var s = n.prefix;
+            n.functions.indexOf("linear-gradient") > -1 && (e = e.replace(/(\s|:|,)(repeating-)?linear-gradient\(\s*(-?\d*\.?\d*)deg/ig, function(e, t, n, r) {
+                return t + (n || "") + "linear-gradient(" + (90 - r) + "deg"
+            }));
+            e = t("functions", "(\\s|:|,)", "\\s*\\(", "$1" + s + "$2(", e);
+            e = t("keywords", "(\\s|:)", "(\\s|;|\\}|$)", "$1" + s + "$2$3", e);
+            e = t("properties", "(^|\\{|\\s|;)", "\\s*:", "$1" + s + "$2:", e);
+            if (n.properties.length) {
+                var o = RegExp("\\b(" + n.properties.join("|") + ")(?!:)", "gi");
+                e = t("valueProperties", "\\b", ":(.+?);", function(e) {
+                    return e.replace(o, s + "$1")
+                }, e)
+            }
+            if (r) {
+                e = t("selectors", "", "\\b", n.prefixSelector, e);
+                e = t("atrules", "@", "\\b", "@" + s + "$1", e)
+            }
+            e = e.replace(RegExp("-" + s, "g"), "-");
+            e = e.replace(/-\*-(?=[a-z]+)/gi, n.prefix);
+            return e
+        },
+        property: function(e) {
+            return (n.properties.indexOf(e) ? n.prefix : "") + e
+        },
+        value: function(e, r) {
+            e = t("functions", "(^|\\s|,)", "\\s*\\(", "$1" + n.prefix + "$2(", e);
+            e = t("keywords", "(^|\\s)", "(\\s|$)", "$1" + n.prefix + "$2$3", e);
+            return e
+        },
+        prefixSelector: function(e) {
+            return e.replace(/^:{1,2}/, function(e) {
+                return e + n.prefix
+            })
+        },
+        prefixProperty: function(e, t) {
+            var r = n.prefix + e;
+            return t ? StyleFix.camelCase(r) : r
+        }
+    };
+    (function() {
+        var e = {},
+            t = [],
+            r = {},
+            i = getComputedStyle(document.documentElement, null),
+            s = document.createElement("div").style,
+            o = function(n) {
+                if (n.charAt(0) === "-") {
+                    t.push(n);
+                    var r = n.split("-"),
+                        i = r[1];
+                    e[i] = ++e[i] || 1;
+                    while (r.length > 3) {
+                        r.pop();
+                        var s = r.join("-");
+                        u(s) && t.indexOf(s) === -1 && t.push(s)
+                    }
+                }
+            },
+            u = function(e) {
+                return StyleFix.camelCase(e) in s
+            };
+        if (i.length > 0)
+            for (var a = 0; a < i.length; a++) o(i[a]);
+        else
+            for (var f in i) o(StyleFix.deCamelCase(f));
+        var l = {
+            uses: 0
+        };
+        for (var c in e) {
+            var h = e[c];
+            l.uses < h && (l = {
+                prefix: c,
+                uses: h
+            })
+        }
+        n.prefix = "-" + l.prefix + "-";
+        n.Prefix = StyleFix.camelCase(n.prefix);
+        n.properties = [];
+        for (var a = 0; a < t.length; a++) {
+            var f = t[a];
+            if (f.indexOf(n.prefix) === 0) {
+                var p = f.slice(n.prefix.length);
+                u(p) || n.properties.push(p)
+            }
+        }
+        n.Prefix == "Ms" && !("transform" in s) && !("MsTransform" in s) && "msTransform" in s && n.properties.push("transform", "transform-origin");
+        n.properties.sort()
+    })();
+    (function() {
+        function i(e, t) {
+            r[t] = "";
+            r[t] = e;
+            return !!r[t]
+        }
+        var e = {
+            "linear-gradient": {
+                property: "backgroundImage",
+                params: "red, teal"
+            },
+            calc: {
+                property: "width",
+                params: "1px + 5%"
+            },
+            element: {
+                property: "backgroundImage",
+                params: "#foo"
+            },
+            "cross-fade": {
+                property: "backgroundImage",
+                params: "url(a.png), url(b.png), 50%"
+            }
+        };
+        e["repeating-linear-gradient"] = e["repeating-radial-gradient"] = e["radial-gradient"] = e["linear-gradient"];
+        var t = {
+            initial: "color",
+            "zoom-in": "cursor",
+            "zoom-out": "cursor",
+            box: "display",
+            flexbox: "display",
+            "inline-flexbox": "display",
+            flex: "display",
+            "inline-flex": "display"
+        };
+        n.functions = [];
+        n.keywords = [];
+        var r = document.createElement("div").style;
+        for (var s in e) {
+            var o = e[s],
+                u = o.property,
+                a = s + "(" + o.params + ")";
+            !i(a, u) && i(n.prefix + a, u) && n.functions.push(s)
+        }
+        for (var f in t) {
+            var u = t[f];
+            !i(f, u) && i(n.prefix + f, u) && n.keywords.push(f)
+        }
+    })();
+    (function() {
+        function s(e) {
+            i.textContent = e + "{}";
+            return !!i.sheet.cssRules.length
+        }
+        var t = {
+                ":read-only": null,
+                ":read-write": null,
+                ":any-link": null,
+                "::selection": null
+            },
+            r = {
+                keyframes: "name",
+                viewport: null,
+                document: 'regexp(".")'
+            };
+        n.selectors = [];
+        n.atrules = [];
+        var i = e.appendChild(document.createElement("style"));
+        for (var o in t) {
+            var u = o + (t[o] ? "(" + t[o] + ")" : "");
+            !s(u) && s(n.prefixSelector(u)) && n.selectors.push(o)
+        }
+        for (var a in r) {
+            var u = a + " " + (r[a] || "");
+            !s("@" + u) && s("@" + n.prefix + u) && n.atrules.push(a)
+        }
+        e.removeChild(i)
+    })();
+    n.valueProperties = ["transition", "transition-property"];
+    e.className += " " + n.prefix;
+    StyleFix.register(n.prefixCSS)
+})(document.documentElement);
+ </script>
+</body>
+</html>
+

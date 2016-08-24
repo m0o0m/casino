@@ -6,19 +6,27 @@ class Api {
     public function __construct() {
         $this->gameSession = new stdClass();
         $this->gameSession->game = new stdClass();
-        $tmp = $_GET['game'];
-        $p = explode('|||', $_GET['game']);
-        $this->gameSession->game->string_id = $p[0];
-        $this->sectionId = $p[1];
+        if(isset($_GET['game'])) {
+            $tmp = $_GET['game'];
+            $p = explode('|||', $_GET['game']);
+            $this->gameSession->game->string_id = $p[0];
+            $this->sectionId = $p[1];
 
-        if(!empty($p[2])) {
-            $_GET['bonus'] = $p[2];
+            if(!empty($p[2])) {
+                $_GET['bonus'] = $p[2];
+            }
+        }
+        else {
+            if(isset($_SESSION['start_game'])) {
+                $this->gameSession->game->string_id = $_SESSION['start_game'];
+                $this->sectionId = $_SESSION['start_publisher'];
+            }
         }
 
         
         $this->sessionStringId = 1411559061;
         
-        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 1000000;
+        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 100000;
         
         $this->playerBalance = $_SESSION['balance'];
     }
