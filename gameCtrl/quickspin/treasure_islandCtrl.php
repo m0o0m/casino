@@ -69,7 +69,7 @@ class treasure_islandCtrl extends Ctrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $this->slot->createCustomReels($this->gameParams->reels[0], array(4,4,4,4,4));
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];

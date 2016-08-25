@@ -257,7 +257,7 @@ class sopranosCtrl extends Ctrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $this->slot->setDefaultReels();
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
@@ -671,7 +671,7 @@ class sopranosCtrl extends Ctrl {
         $spinData = $this->getSoldierData();
         $totalWin = $spinData['totalWin'];
 
-        while(!game_ctrl($bet * 100, $totalWin * 100)) {
+        while($this->checkBankPayments($bet * 100, $totalWin * 100)) {
             $spinData = $this->getSoldierData();
             $totalWin = $spinData['totalWin'];
         }
@@ -787,7 +787,7 @@ class sopranosCtrl extends Ctrl {
         $spinData = $this->getCapoData();
         $totalWin = $spinData['totalWin'];
 
-        while(!game_ctrl($bet * 100, $totalWin * 100)) {
+        while($this->checkBankPayments($bet * 100, $totalWin * 100)) {
             $spinData = $this->getCapoData();
             $totalWin = $spinData['totalWin'];
         }
@@ -904,7 +904,7 @@ class sopranosCtrl extends Ctrl {
         $spinData = $this->getBossData();
         $totalWin = $spinData['totalWin'];
 
-        while(!game_ctrl($bet * 100, $totalWin * 100)) {
+        while($this->checkBankPayments($bet * 100, $totalWin * 100)) {
             $spinData = $this->getBossData();
             $totalWin = $spinData['totalWin'];
         }
@@ -1026,7 +1026,7 @@ class sopranosCtrl extends Ctrl {
         $spinData = $this->getFamilyData();
         $totalWin = $spinData['totalWin'];
 
-        while(!game_ctrl($bet * 100, $totalWin * 100)) {
+        while($this->checkBankPayments($bet * 100, $totalWin * 100)) {
             $spinData = $this->getFamilyData();
             $totalWin = $spinData['totalWin'];
         }

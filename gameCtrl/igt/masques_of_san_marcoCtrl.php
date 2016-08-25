@@ -344,7 +344,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $_SESSION['state'] = 'SPIN';
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
@@ -384,7 +384,7 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl(0, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments(0, $totalWin * 100) || $respin) {
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -513,7 +513,11 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             if($_SESSION['state'] == 'FREE') $_SESSION['preState'] = 'FREE';
             $_SESSION['state'] = 'TUMBLE';
         }
+        else {
+            $_SESSION['state'] == $_SESSION['preState'];
+        }
 
+        /*
         $startFS = false;
         $winLines = false;
         foreach($report['winLines'] as $w) {
@@ -527,9 +531,10 @@ class masques_of_san_marcoCtrl extends IGTCtrl {
             }
         }
 
-        if($report['type'] !== 'FREE') {
-            //$respin = true;
+        if(!$startFS || !$winLines) {
+            $respin = true;
         }
+        */
 
         return array(
             'totalWin' => $totalWin,

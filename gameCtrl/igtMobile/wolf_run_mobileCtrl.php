@@ -503,7 +503,7 @@ class wolf_run_mobileCtrl extends IGTMobileCtrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
@@ -541,7 +541,7 @@ class wolf_run_mobileCtrl extends IGTMobileCtrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl(0, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments(0, $totalWin * 100) || $respin) {
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];

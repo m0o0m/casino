@@ -82,7 +82,7 @@ class sinbadCtrl extends Ctrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $this->slot->createCustomReels($this->gameParams->reels[0], array(3,4,4,4,3));
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
@@ -277,7 +277,7 @@ class sinbadCtrl extends Ctrl {
             $this->slot->rows = 4;
 
             $this->getBonusResult();
-            while(!game_ctrl(0, $this->bonus['bonusWin'] * 100)) {
+            while($this->checkBankPayments(0, $this->bonus['bonusWin'] * 100)) {
 
                 $this->getBonusResult();
             }

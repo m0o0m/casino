@@ -68,6 +68,23 @@ class Ctrl {
     public $emulation = false;
 
     /**
+     *
+     * Максимальное количество респинов, в которое слот пытается уложится в баланс банка игры.
+     * Если количество > указанного, то слот выплачивает любую сумму.
+     *
+     * @var int
+     */
+    public $respinMaxCount = 100;
+
+    /**
+     *
+     * Текущее количество респинов в слоте(респины проверки возможности выплаты банком игры)
+     *
+     * @var int
+     */
+    protected $respinCount = 0;
+
+    /**
      * Обработка запроса и запуск нужного метода
      *
      * @param object $params Параметры игры
@@ -81,6 +98,8 @@ class Ctrl {
 
         $this->request = $this->getRequest();
         $this->gameParams = $params;
+
+        //$this->respinMaxCount = $this->gameParams->respinMaxCount;
 
         $this->processRequest($this->request);
     }
@@ -98,6 +117,17 @@ class Ctrl {
             }
 
         }
+    }
+
+    public function checkBankPayments($bet,$win,$bonus_win=0,$type='',$jackpot=0) {
+        $this->respinCount++;
+        if($this->respinCount < $this->respinMaxCount) {
+            return !game_ctrl($bet, $win, $bonus_win, $type, $jackpot);
+        }
+        else {
+            return false;
+        }
+
     }
 
     /**

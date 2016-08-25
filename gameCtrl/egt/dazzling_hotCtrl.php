@@ -128,7 +128,7 @@ class dazzling_hotCtrl extends egtCtrl {
         $totalWin = $spinData['totalWin'];
         $respin = $spinData['respin'];
 
-        while(!game_ctrl($stake * 100, $totalWin * 100) || $respin) {
+        while($this->checkBankPayments($stake * 100, $totalWin * 100) || $respin) {
             $spinData = $this->getSpinData();
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
