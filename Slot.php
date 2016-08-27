@@ -568,8 +568,6 @@ class Slot {
     public function getExtraLine($config) {
         $winLines = array();
 
-        $z = fopen('winLinesExtraDiff', 'ab');
-
         $lineId = 0;
         foreach($this->lines as $line) {
             $lineSymbol = $this->getLineSymbols($line);
@@ -597,10 +595,7 @@ class Slot {
                 );
             }
             $lineId++;
-
-            fwrite($z, $lineId.' - '.$diffCount.' - '.json_encode($lineSymbol).PHP_EOL);
         }
-        fclose($z);
 
         return $winLines;
     }
