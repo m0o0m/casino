@@ -497,10 +497,9 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
         /*
         $bonus = array(
             'type' => 'setReelsOffsets',
-            'offsets' => array(3,21,1,1,1),
+            'offsets' => array(17,23,10,47,21),
         );
         */
-
 
 
         $report = $this->slot->spin($bonus);
@@ -518,7 +517,7 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             $_SESSION['state'] == $_SESSION['preState'];
         }
 
-        /*
+
         $startFS = false;
         $winLines = false;
         foreach($report['winLines'] as $w) {
@@ -532,10 +531,6 @@ class da_vinci_dual_playCtrl extends IGTCtrl {
             }
         }
 
-        if(!$startFS || !$winLines) {
-            $respin = true;
-        }
-        */
 
         return array(
             'totalWin' => $totalWin,
