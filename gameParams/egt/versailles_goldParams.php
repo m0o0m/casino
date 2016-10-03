@@ -79,9 +79,8 @@ class versailles_goldParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
+	public $currency = 'USD';
+
     public $defaultCoinsCount = 10;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!

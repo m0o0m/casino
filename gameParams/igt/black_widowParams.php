@@ -119,10 +119,9 @@ class black_widowParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 1;
-    public $defaultCoinsCount = 40;
+	public $currency = 'USD';
+
+	public $defaultCoinsCount = 40;
 
     public $denominations = array(1,2,3,5,10,20,30,50);
     public $lang = 'en';

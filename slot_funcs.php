@@ -38,3 +38,14 @@ function game_ctrl($bet,$win,$bonus_win=0,$type='',$jackpot=0) {
 		return true;
 	}
 }
+
+function getCurrencyChar($curiso) {
+	$c=[
+        'USD'=>'$',
+		'EUR'=>'€',
+	    'NAN'=>' ',
+		'FPY'=>' ',
+		'GBR'=>'£',
+    ];
+	return (array_key_exists($curiso,$c)?$c[$curiso]:$curiso);
+}

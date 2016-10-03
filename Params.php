@@ -152,6 +152,11 @@ class Params {
         if(!is_array($this->denominations)) {
             $this->denominations = explode(',', $this->denominations);
         }
+
+		$this->curiso = $this->currency;
+		$this->currency = getCurrencyChar($this->curiso);
+		$this->default_coinvalue = $this->denominations[0];
+
         $this->betConfig['minBet'] = $this->denominations[0];
         $this->betConfig['maxBet'] = end($this->denominations) * $winLinesCount;
         $this->betConfig['defaultBet'] = $this->default_coinvalue;

@@ -13,7 +13,12 @@ class SlotReel extends Slot {
 
         $this->bet = $bet;
         $this->linesCount = $linesCount;
-        $this->betOnLine = $bet * $betOnLineIndex / $linesCount;
+        $this->betOnLine = (float) ($bet * $betOnLineIndex / $linesCount);
+
+        if(round($this->betOnLine,3) < 0.01) {
+            die('bad bet');
+        }
+        $this->betOnLine = round($this->betOnLine, 2);
 
         $this->setReels($params->reels[0]);
     }

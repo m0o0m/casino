@@ -175,6 +175,10 @@ class Slot {
         $this->bet = $bet;
         $this->linesCount = (int) $linesCount;
         $this->betOnLine = (float) ($bet * $betOnLineIndex / $linesCount);
+
+        if(round($this->betOnLine,3) < 0.01) {
+            die('bad bet');
+        }
         $this->betOnLine = round($this->betOnLine, 2);
 
         foreach($params->reels[0] as $reel) {

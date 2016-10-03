@@ -3,6 +3,9 @@
 class IGTCtrl extends Ctrl {
     protected function processRequest($request) {
         $uri = $_SERVER['REQUEST_URI'];
+
+		$action = '';
+
         if(strpos($uri, 'clientconfig') > 0) $action = 'config';
         if(strpos($uri, 'initstate') > 0) $action = 'init';
         if(strpos($uri, 'paytable') > 0) $action = 'paytable';
@@ -561,18 +564,6 @@ class IGTCtrl extends Ctrl {
         return $reelsXml;
     }
 
-    protected function getBetPattern() {
-        $config = $this->gameParams->denominations;
-
-        $xml = '<BetInfo max="'.max($config).'" min="'.min($config).'">';
-        foreach($config as $d) {
-            $xml .= '<Step>'.$d.'</Step>';
-        }
-        $xml .= '</BetInfo>';
-
-        return $xml;
-    }
-
     protected function getSelective() {
         $config = $this->gameParams->denominations;
 
@@ -584,8 +575,36 @@ class IGTCtrl extends Ctrl {
         return $xml;
     }
 
+	protected function getBetPattern() {
+		/*
+		$config = $this->gameParams->denominations;
+
+		$xml = '<BetInfo max="'.max($config).'" min="'.min($config).'">';
+		foreach($config as $d) {
+			$xml .= '<Step>'.$d.'</Step>';
+		}
+		$xml .= '</BetInfo>';
+
+		return $xml;
+		*/
+
+		return $this->getBetInfo();
+	}
+
     protected function getBetInfo() {
         $config = $this->gameParams->denominations;
+		$multiple = 1;
+
+		if($config[0] < 0.1) {
+			$multiple = 100;
+		}
+		elseif($config[0] < 1) {
+			$multiple = 10;
+		}
+
+		foreach($config as &$d) {
+			$d *= $multiple;
+		}
 
         $xml = '<BetInfo max="'.end($config).'" min="'.$config[0].'">';
         foreach($config as $d) {
@@ -618,6 +637,30 @@ class IGTCtrl extends Ctrl {
 
     protected function getDenominationAmount() {
         if($_SESSION['state'] == 'SPIN') {
+        	$coinvalue = 1;
+			$multiple = 1;
+			$elem = $this->gameParams->denominations[0];
+
+			if($elem < 0.1) {
+				$multiple = 100;
+				$coinvalue = 0.01;
+			}
+			elseif($elem < 1) {
+				$multiple = 10;
+				$coinvalue = 0.1;
+			}
+
+			foreach($this->gameParams->denominations as &$d) {
+				$d *= $multiple;
+			}
+
+			$this->gameParams->default_coinvalue = $coinvalue;
+			$_SESSION['denominationAmount'] = $coinvalue;
+
+			return $coinvalue;
+
+
+			/*
             $this->gameParams->default_coinvalue;
             $this->gameParams->defaultCoinsCount;
             $balance = $this->getBalance();
@@ -642,6 +685,7 @@ class IGTCtrl extends Ctrl {
             $_SESSION['denominationAmount'] = min($j);
 
             return $_SESSION['denominationAmount'];
+			*/
         }
         else {
             return $_SESSION['denominationAmount'];

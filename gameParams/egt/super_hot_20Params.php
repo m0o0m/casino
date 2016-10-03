@@ -86,9 +86,8 @@ class super_hot_20Params extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
+	public $currency = 'USD';
+
     public $defaultCoinsCount = 20;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!

@@ -76,32 +76,9 @@ class sopranosParams extends Params {
         // Sopranos
         'S' => array(13),
     );
-    // Настройки бонуса BadaBing
-    public $badaBingConfig = array(
-        // Символ бонуса BadaBing
-        'symbol' => 'I',
-        // Множитель выигрышей для BadaBing
-        'multiplier' => array(4,5,6,7,8,9,10),
-        // Минимальное количество визитов
-        'minCount' => 3,
-        // Максимальное количество визитов
-        'maxCount' => 5,
-    );
-    // Настройки Stolen Goods
-    public $stolenGoodsParams = array(
-        'symbol' => 'O',
-        'multiplier' => array(30, 20, 15, 12, 11, 10, 9, 8, 6, 4),
-    );
-    public $fsConfig = array(
-        'symbol' => 'S',
-    );
-    // raid bonus chance. Шанс 1 к 25
-    public $randBonusChance = 25;
-    // Вайлд
+	// Вайлд
     public $wild = array(0);
-    // Soldier wild
-    public $soldierWild = array(0, 2);
-    // Скаттер
+	// Скаттер
     public $scatter = array(13);
     // Умножение ставки, когда выпали скаттеры
     public $scatterMultiple = array(
@@ -140,10 +117,9 @@ class sopranosParams extends Params {
     // Выплачивать только максимальный выигрыш на линии
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
-    public $denominations = array(0.01,0.02,0.03,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
+	public $currency = 'USD';
+
+	public $denominations = array(0.01,0.02,0.03,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
     // Выплаты
@@ -185,6 +161,32 @@ class sopranosParams extends Params {
         array('symbol'=> 'T', 'count'=> 3, 'multiplier'=> 5.00),
         array('symbol'=> 'C', 'count'=> 2, 'multiplier'=> 4.00),
     );
+
+	// Настройки бонуса BadaBing
+	public $badaBingConfig = array(
+		// Символ бонуса BadaBing
+		'symbol' => 'I',
+		// Множитель выигрышей для BadaBing
+		'multiplier' => array(4,5,6,7,8,9,10),
+		// Минимальное количество визитов
+		'minCount' => 3,
+		// Максимальное количество визитов
+		'maxCount' => 5,
+	);
+	// Настройки Stolen Goods
+	public $stolenGoodsParams = array(
+		'symbol' => 'O',
+		'multiplier' => array(30, 20, 15, 12, 11, 10, 9, 8, 6, 4),
+	);
+	public $fsConfig = array(
+		'symbol' => 'S',
+	);
+	// Soldier wild
+	public $soldierWild = array(0, 2);
+
+	// raid bonus chance. Шанс 1 к 25
+	public $randBonusChance = 25;
+
     // Шанс выпадения вайлдов в Боссе
     public $bonusRand = array(
         2,2,2,2,

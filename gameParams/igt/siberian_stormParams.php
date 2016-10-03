@@ -67,10 +67,9 @@ class siberian_stormParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 1;
-    public $defaultCoinsCount = 50;
+	public $currency = 'USD';
+
+	public $defaultCoinsCount = 50;
 
     public $denominations = array(1,2,3,5,10,20,30,50,100,200,300,500,1000,2000,3000,5000,10000,20000,30000,50000,100000);
     public $lang = 'en';

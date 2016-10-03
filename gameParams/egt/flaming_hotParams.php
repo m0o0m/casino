@@ -110,10 +110,9 @@ class flaming_hotParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
-    public $defaultCoinsCount = 40;
+	public $currency = 'USD';
+
+	public $defaultCoinsCount = 40;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!
     public $denominations = array(1, 2, 5, 10, 20);

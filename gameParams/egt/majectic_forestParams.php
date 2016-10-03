@@ -79,10 +79,9 @@ class majectic_forestParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
-    public $defaultCoinsCount = 10;
+	public $currency = 'USD';
+
+	public $defaultCoinsCount = 10;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!
     public $denominations = array(1, 2, 5, 10, 20);

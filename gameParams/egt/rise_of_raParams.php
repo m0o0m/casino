@@ -101,10 +101,9 @@ class rise_of_raParams extends Params {
 
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.05;
-    public $defaultCoinsCount = 15;
+	public $currency = 'USD';
+
+	public $defaultCoinsCount = 15;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!
     public $denominations = array(1, 2, 5, 10, 20);

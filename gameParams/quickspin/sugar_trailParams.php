@@ -120,10 +120,9 @@ class sugar_trailParams extends Params {
     // Выплачивать только максимальный выигрыш на линии
     public $payOnlyHighter = true;
     // настройка ставок
-    public $currency = '$';
-    public $curiso = 'USD';
-    public $default_coinvalue = 0.04;
-    public $denominations = array(0.01,0.02,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
+	public $currency = 'USD';
+
+	public $denominations = array(0.01,0.02,0.04,0.05,0.1,0.25,0.5,1,2,3,4,5,6,7,8,9,10);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
     // Выплаты
